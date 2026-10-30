@@ -11,41 +11,65 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PayoutSettings : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("allowed") is { } nullNodeAllowed && nullNodeAllowed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Allowed = null;
+            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("enabledFromDate") is { } nullNodeEnabledFromDate && nullNodeEnabledFromDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnabledFromDate = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("priority") is { } nullNodePriority && nullNodePriority.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Priority = null;
+            if (parseNode.GetChildNode("transferInstrumentId") is { } nullNodeTransferInstrumentId && nullNodeTransferInstrumentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferInstrumentId = null;
+            if (parseNode.GetChildNode("verificationStatus") is { } nullNodeVerificationStatus && nullNodeVerificationStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VerificationStatus = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates if payouts to the bank account are allowed. This value is set automatically based on the status of the verification process. The value is:* **true** if `verificationStatus` is **valid**.* **false** for all other values.</summary>
-        public bool? Allowed { get; set; }
+        public bool? Allowed { get => _explicitNullValueAllowed; set { _explicitNullValueAllowed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed"); else _explicitNullProperties?.Remove("allowed"); } }
+        private bool? _explicitNullValueAllowed = default!;
         /// <summary>Indicates if payouts to this bank account are enabled. Default: **true**.To receive payouts into this bank account, both `enabled` and `allowed` must be **true**.</summary>
-        public bool? Enabled { get; set; }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        private bool? _explicitNullValueEnabled = default!;
         /// <summary>The date when Adyen starts paying out to this bank account.Format: [ISO 8601](https://www.w3.org/TR/NOTE-datetime), for example, **2019-11-23T12:25:28Z** or **2020-05-27T20:25:28+08:00**.If not specified, the `enabled` field indicates if payouts are enabled for this bank account.If a date is specified and:* `enabled`: **true**, payouts are enabled starting the specified date.* `enabled`: **false**, payouts are disabled until the specified date. On the specified date, `enabled` changes to **true** and this field is reset to **null**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EnabledFromDate { get; set; }
+        public string? EnabledFromDate { get => _explicitNullValueEnabledFromDate; set { _explicitNullValueEnabledFromDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabledFromDate"); else _explicitNullProperties?.Remove("enabledFromDate"); } }
+        private string? _explicitNullValueEnabledFromDate = default!;
 #nullable restore
 #else
-        public string EnabledFromDate { get; set; }
+        public string EnabledFromDate { get => _explicitNullValueEnabledFromDate; set { _explicitNullValueEnabledFromDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabledFromDate"); else _explicitNullProperties?.Remove("enabledFromDate"); } }
+        private string _explicitNullValueEnabledFromDate = default!;
 #endif
         /// <summary>The unique identifier of the payout setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>Determines how long it takes for the funds to reach the bank account. Adyen pays out based on the [payout frequency](https://docs.adyen.com/account/getting-paid#payout-frequency). Depending on the currencies and banks involved in transferring the money, it may take up to three days for the payout funds to arrive in the bank account. Possible values:* **first**: same day.* **urgent**: the next day.* **normal**: between 1 and 3 days.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutSettingsPriority? Priority { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutSettingsPriority? Priority { get => _explicitNullValuePriority; set { _explicitNullValuePriority = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("priority"); else _explicitNullProperties?.Remove("priority"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PayoutSettingsPriority? _explicitNullValuePriority = default!;
         /// <summary>The unique identifier of the [transfer instrument](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/transferInstruments) that contains the details of the bank account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TransferInstrumentId { get; set; }
+        public string? TransferInstrumentId { get => _explicitNullValueTransferInstrumentId; set { _explicitNullValueTransferInstrumentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferInstrumentId"); else _explicitNullProperties?.Remove("transferInstrumentId"); } }
+        private string? _explicitNullValueTransferInstrumentId = default!;
 #nullable restore
 #else
-        public string TransferInstrumentId { get; set; }
+        public string TransferInstrumentId { get => _explicitNullValueTransferInstrumentId; set { _explicitNullValueTransferInstrumentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferInstrumentId"); else _explicitNullProperties?.Remove("transferInstrumentId"); } }
+        private string _explicitNullValueTransferInstrumentId = default!;
 #endif
         /// <summary>The status of the verification process for the bank account.Possible values:* **valid**: the verification was successful.* **pending**: the verification is in progress.* **invalid**: the information provided is not complete.* **rejected**:  there are reasons to refuse working with this entity.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutSettingsVerificationStatus? VerificationStatus { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutSettingsVerificationStatus? VerificationStatus { get => _explicitNullValueVerificationStatus; set { _explicitNullValueVerificationStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verificationStatus"); else _explicitNullProperties?.Remove("verificationStatus"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PayoutSettingsVerificationStatus? _explicitNullValueVerificationStatus = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PayoutSettings"/> and sets the default values.
         /// </summary>
@@ -61,7 +85,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.PayoutSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.PayoutSettings();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.PayoutSettings(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,6 +118,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutSettingsPriority>("priority", Priority);
             writer.WriteStringValue("transferInstrumentId", TransferInstrumentId);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutSettingsVerificationStatus>("verificationStatus", VerificationStatus);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

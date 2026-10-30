@@ -11,160 +11,224 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ThreeDs2ResponseData : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("acsChallengeMandated") is { } nullNodeAcsChallengeMandated && nullNodeAcsChallengeMandated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcsChallengeMandated = null;
+            if (parseNode.GetChildNode("acsOperatorID") is { } nullNodeAcsOperatorID && nullNodeAcsOperatorID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcsOperatorID = null;
+            if (parseNode.GetChildNode("acsReferenceNumber") is { } nullNodeAcsReferenceNumber && nullNodeAcsReferenceNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcsReferenceNumber = null;
+            if (parseNode.GetChildNode("acsSignedContent") is { } nullNodeAcsSignedContent && nullNodeAcsSignedContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcsSignedContent = null;
+            if (parseNode.GetChildNode("acsTransID") is { } nullNodeAcsTransID && nullNodeAcsTransID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcsTransID = null;
+            if (parseNode.GetChildNode("acsURL") is { } nullNodeAcsURL && nullNodeAcsURL.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcsURL = null;
+            if (parseNode.GetChildNode("authenticationType") is { } nullNodeAuthenticationType && nullNodeAuthenticationType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthenticationType = null;
+            if (parseNode.GetChildNode("cardHolderInfo") is { } nullNodeCardHolderInfo && nullNodeCardHolderInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardHolderInfo = null;
+            if (parseNode.GetChildNode("cavvAlgorithm") is { } nullNodeCavvAlgorithm && nullNodeCavvAlgorithm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CavvAlgorithm = null;
+            if (parseNode.GetChildNode("challengeIndicator") is { } nullNodeChallengeIndicator && nullNodeChallengeIndicator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChallengeIndicator = null;
+            if (parseNode.GetChildNode("dsReferenceNumber") is { } nullNodeDsReferenceNumber && nullNodeDsReferenceNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DsReferenceNumber = null;
+            if (parseNode.GetChildNode("dsTransID") is { } nullNodeDsTransID && nullNodeDsTransID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DsTransID = null;
+            if (parseNode.GetChildNode("exemptionIndicator") is { } nullNodeExemptionIndicator && nullNodeExemptionIndicator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExemptionIndicator = null;
+            if (parseNode.GetChildNode("messageVersion") is { } nullNodeMessageVersion && nullNodeMessageVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageVersion = null;
+            if (parseNode.GetChildNode("riskScore") is { } nullNodeRiskScore && nullNodeRiskScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RiskScore = null;
+            if (parseNode.GetChildNode("sdkEphemPubKey") is { } nullNodeSdkEphemPubKey && nullNodeSdkEphemPubKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SdkEphemPubKey = null;
+            if (parseNode.GetChildNode("threeDSServerTransID") is { } nullNodeThreeDSServerTransID && nullNodeThreeDSServerTransID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDSServerTransID = null;
+            if (parseNode.GetChildNode("transStatus") is { } nullNodeTransStatus && nullNodeTransStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransStatus = null;
+            if (parseNode.GetChildNode("transStatusReason") is { } nullNodeTransStatusReason && nullNodeTransStatusReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransStatusReason = null;
+        }
+
         /// <summary>The acsChallengeMandated property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AcsChallengeMandated { get; set; }
+        public string? AcsChallengeMandated { get => _explicitNullValueAcsChallengeMandated; set { _explicitNullValueAcsChallengeMandated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acsChallengeMandated"); else _explicitNullProperties?.Remove("acsChallengeMandated"); } }
+        private string? _explicitNullValueAcsChallengeMandated = default!;
 #nullable restore
 #else
-        public string AcsChallengeMandated { get; set; }
+        public string AcsChallengeMandated { get => _explicitNullValueAcsChallengeMandated; set { _explicitNullValueAcsChallengeMandated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acsChallengeMandated"); else _explicitNullProperties?.Remove("acsChallengeMandated"); } }
+        private string _explicitNullValueAcsChallengeMandated = default!;
 #endif
         /// <summary>The acsOperatorID property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AcsOperatorID { get; set; }
+        public string? AcsOperatorID { get => _explicitNullValueAcsOperatorID; set { _explicitNullValueAcsOperatorID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acsOperatorID"); else _explicitNullProperties?.Remove("acsOperatorID"); } }
+        private string? _explicitNullValueAcsOperatorID = default!;
 #nullable restore
 #else
-        public string AcsOperatorID { get; set; }
+        public string AcsOperatorID { get => _explicitNullValueAcsOperatorID; set { _explicitNullValueAcsOperatorID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acsOperatorID"); else _explicitNullProperties?.Remove("acsOperatorID"); } }
+        private string _explicitNullValueAcsOperatorID = default!;
 #endif
         /// <summary>The acsReferenceNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AcsReferenceNumber { get; set; }
+        public string? AcsReferenceNumber { get => _explicitNullValueAcsReferenceNumber; set { _explicitNullValueAcsReferenceNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acsReferenceNumber"); else _explicitNullProperties?.Remove("acsReferenceNumber"); } }
+        private string? _explicitNullValueAcsReferenceNumber = default!;
 #nullable restore
 #else
-        public string AcsReferenceNumber { get; set; }
+        public string AcsReferenceNumber { get => _explicitNullValueAcsReferenceNumber; set { _explicitNullValueAcsReferenceNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acsReferenceNumber"); else _explicitNullProperties?.Remove("acsReferenceNumber"); } }
+        private string _explicitNullValueAcsReferenceNumber = default!;
 #endif
         /// <summary>The acsSignedContent property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AcsSignedContent { get; set; }
+        public string? AcsSignedContent { get => _explicitNullValueAcsSignedContent; set { _explicitNullValueAcsSignedContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acsSignedContent"); else _explicitNullProperties?.Remove("acsSignedContent"); } }
+        private string? _explicitNullValueAcsSignedContent = default!;
 #nullable restore
 #else
-        public string AcsSignedContent { get; set; }
+        public string AcsSignedContent { get => _explicitNullValueAcsSignedContent; set { _explicitNullValueAcsSignedContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acsSignedContent"); else _explicitNullProperties?.Remove("acsSignedContent"); } }
+        private string _explicitNullValueAcsSignedContent = default!;
 #endif
         /// <summary>The acsTransID property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AcsTransID { get; set; }
+        public string? AcsTransID { get => _explicitNullValueAcsTransID; set { _explicitNullValueAcsTransID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acsTransID"); else _explicitNullProperties?.Remove("acsTransID"); } }
+        private string? _explicitNullValueAcsTransID = default!;
 #nullable restore
 #else
-        public string AcsTransID { get; set; }
+        public string AcsTransID { get => _explicitNullValueAcsTransID; set { _explicitNullValueAcsTransID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acsTransID"); else _explicitNullProperties?.Remove("acsTransID"); } }
+        private string _explicitNullValueAcsTransID = default!;
 #endif
         /// <summary>The acsURL property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AcsURL { get; set; }
+        public string? AcsURL { get => _explicitNullValueAcsURL; set { _explicitNullValueAcsURL = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acsURL"); else _explicitNullProperties?.Remove("acsURL"); } }
+        private string? _explicitNullValueAcsURL = default!;
 #nullable restore
 #else
-        public string AcsURL { get; set; }
+        public string AcsURL { get => _explicitNullValueAcsURL; set { _explicitNullValueAcsURL = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acsURL"); else _explicitNullProperties?.Remove("acsURL"); } }
+        private string _explicitNullValueAcsURL = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The authenticationType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AuthenticationType { get; set; }
+        public string? AuthenticationType { get => _explicitNullValueAuthenticationType; set { _explicitNullValueAuthenticationType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticationType"); else _explicitNullProperties?.Remove("authenticationType"); } }
+        private string? _explicitNullValueAuthenticationType = default!;
 #nullable restore
 #else
-        public string AuthenticationType { get; set; }
+        public string AuthenticationType { get => _explicitNullValueAuthenticationType; set { _explicitNullValueAuthenticationType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticationType"); else _explicitNullProperties?.Remove("authenticationType"); } }
+        private string _explicitNullValueAuthenticationType = default!;
 #endif
         /// <summary>The cardHolderInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CardHolderInfo { get; set; }
+        public string? CardHolderInfo { get => _explicitNullValueCardHolderInfo; set { _explicitNullValueCardHolderInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardHolderInfo"); else _explicitNullProperties?.Remove("cardHolderInfo"); } }
+        private string? _explicitNullValueCardHolderInfo = default!;
 #nullable restore
 #else
-        public string CardHolderInfo { get; set; }
+        public string CardHolderInfo { get => _explicitNullValueCardHolderInfo; set { _explicitNullValueCardHolderInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardHolderInfo"); else _explicitNullProperties?.Remove("cardHolderInfo"); } }
+        private string _explicitNullValueCardHolderInfo = default!;
 #endif
         /// <summary>The cavvAlgorithm property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CavvAlgorithm { get; set; }
+        public string? CavvAlgorithm { get => _explicitNullValueCavvAlgorithm; set { _explicitNullValueCavvAlgorithm = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cavvAlgorithm"); else _explicitNullProperties?.Remove("cavvAlgorithm"); } }
+        private string? _explicitNullValueCavvAlgorithm = default!;
 #nullable restore
 #else
-        public string CavvAlgorithm { get; set; }
+        public string CavvAlgorithm { get => _explicitNullValueCavvAlgorithm; set { _explicitNullValueCavvAlgorithm = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cavvAlgorithm"); else _explicitNullProperties?.Remove("cavvAlgorithm"); } }
+        private string _explicitNullValueCavvAlgorithm = default!;
 #endif
         /// <summary>The challengeIndicator property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ChallengeIndicator { get; set; }
+        public string? ChallengeIndicator { get => _explicitNullValueChallengeIndicator; set { _explicitNullValueChallengeIndicator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("challengeIndicator"); else _explicitNullProperties?.Remove("challengeIndicator"); } }
+        private string? _explicitNullValueChallengeIndicator = default!;
 #nullable restore
 #else
-        public string ChallengeIndicator { get; set; }
+        public string ChallengeIndicator { get => _explicitNullValueChallengeIndicator; set { _explicitNullValueChallengeIndicator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("challengeIndicator"); else _explicitNullProperties?.Remove("challengeIndicator"); } }
+        private string _explicitNullValueChallengeIndicator = default!;
 #endif
         /// <summary>The dsReferenceNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DsReferenceNumber { get; set; }
+        public string? DsReferenceNumber { get => _explicitNullValueDsReferenceNumber; set { _explicitNullValueDsReferenceNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dsReferenceNumber"); else _explicitNullProperties?.Remove("dsReferenceNumber"); } }
+        private string? _explicitNullValueDsReferenceNumber = default!;
 #nullable restore
 #else
-        public string DsReferenceNumber { get; set; }
+        public string DsReferenceNumber { get => _explicitNullValueDsReferenceNumber; set { _explicitNullValueDsReferenceNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dsReferenceNumber"); else _explicitNullProperties?.Remove("dsReferenceNumber"); } }
+        private string _explicitNullValueDsReferenceNumber = default!;
 #endif
         /// <summary>The dsTransID property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DsTransID { get; set; }
+        public string? DsTransID { get => _explicitNullValueDsTransID; set { _explicitNullValueDsTransID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dsTransID"); else _explicitNullProperties?.Remove("dsTransID"); } }
+        private string? _explicitNullValueDsTransID = default!;
 #nullable restore
 #else
-        public string DsTransID { get; set; }
+        public string DsTransID { get => _explicitNullValueDsTransID; set { _explicitNullValueDsTransID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dsTransID"); else _explicitNullProperties?.Remove("dsTransID"); } }
+        private string _explicitNullValueDsTransID = default!;
 #endif
         /// <summary>The exemptionIndicator property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExemptionIndicator { get; set; }
+        public string? ExemptionIndicator { get => _explicitNullValueExemptionIndicator; set { _explicitNullValueExemptionIndicator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exemptionIndicator"); else _explicitNullProperties?.Remove("exemptionIndicator"); } }
+        private string? _explicitNullValueExemptionIndicator = default!;
 #nullable restore
 #else
-        public string ExemptionIndicator { get; set; }
+        public string ExemptionIndicator { get => _explicitNullValueExemptionIndicator; set { _explicitNullValueExemptionIndicator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exemptionIndicator"); else _explicitNullProperties?.Remove("exemptionIndicator"); } }
+        private string _explicitNullValueExemptionIndicator = default!;
 #endif
         /// <summary>The messageVersion property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MessageVersion { get; set; }
+        public string? MessageVersion { get => _explicitNullValueMessageVersion; set { _explicitNullValueMessageVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messageVersion"); else _explicitNullProperties?.Remove("messageVersion"); } }
+        private string? _explicitNullValueMessageVersion = default!;
 #nullable restore
 #else
-        public string MessageVersion { get; set; }
+        public string MessageVersion { get => _explicitNullValueMessageVersion; set { _explicitNullValueMessageVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messageVersion"); else _explicitNullProperties?.Remove("messageVersion"); } }
+        private string _explicitNullValueMessageVersion = default!;
 #endif
         /// <summary>The riskScore property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RiskScore { get; set; }
+        public string? RiskScore { get => _explicitNullValueRiskScore; set { _explicitNullValueRiskScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("riskScore"); else _explicitNullProperties?.Remove("riskScore"); } }
+        private string? _explicitNullValueRiskScore = default!;
 #nullable restore
 #else
-        public string RiskScore { get; set; }
+        public string RiskScore { get => _explicitNullValueRiskScore; set { _explicitNullValueRiskScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("riskScore"); else _explicitNullProperties?.Remove("riskScore"); } }
+        private string _explicitNullValueRiskScore = default!;
 #endif
         /// <summary>The sdkEphemPubKey property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SdkEphemPubKey { get; set; }
+        public string? SdkEphemPubKey { get => _explicitNullValueSdkEphemPubKey; set { _explicitNullValueSdkEphemPubKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdkEphemPubKey"); else _explicitNullProperties?.Remove("sdkEphemPubKey"); } }
+        private string? _explicitNullValueSdkEphemPubKey = default!;
 #nullable restore
 #else
-        public string SdkEphemPubKey { get; set; }
+        public string SdkEphemPubKey { get => _explicitNullValueSdkEphemPubKey; set { _explicitNullValueSdkEphemPubKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdkEphemPubKey"); else _explicitNullProperties?.Remove("sdkEphemPubKey"); } }
+        private string _explicitNullValueSdkEphemPubKey = default!;
 #endif
         /// <summary>The threeDSServerTransID property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ThreeDSServerTransID { get; set; }
+        public string? ThreeDSServerTransID { get => _explicitNullValueThreeDSServerTransID; set { _explicitNullValueThreeDSServerTransID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSServerTransID"); else _explicitNullProperties?.Remove("threeDSServerTransID"); } }
+        private string? _explicitNullValueThreeDSServerTransID = default!;
 #nullable restore
 #else
-        public string ThreeDSServerTransID { get; set; }
+        public string ThreeDSServerTransID { get => _explicitNullValueThreeDSServerTransID; set { _explicitNullValueThreeDSServerTransID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSServerTransID"); else _explicitNullProperties?.Remove("threeDSServerTransID"); } }
+        private string _explicitNullValueThreeDSServerTransID = default!;
 #endif
         /// <summary>The transStatus property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TransStatus { get; set; }
+        public string? TransStatus { get => _explicitNullValueTransStatus; set { _explicitNullValueTransStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transStatus"); else _explicitNullProperties?.Remove("transStatus"); } }
+        private string? _explicitNullValueTransStatus = default!;
 #nullable restore
 #else
-        public string TransStatus { get; set; }
+        public string TransStatus { get => _explicitNullValueTransStatus; set { _explicitNullValueTransStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transStatus"); else _explicitNullProperties?.Remove("transStatus"); } }
+        private string _explicitNullValueTransStatus = default!;
 #endif
         /// <summary>The transStatusReason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TransStatusReason { get; set; }
+        public string? TransStatusReason { get => _explicitNullValueTransStatusReason; set { _explicitNullValueTransStatusReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transStatusReason"); else _explicitNullProperties?.Remove("transStatusReason"); } }
+        private string? _explicitNullValueTransStatusReason = default!;
 #nullable restore
 #else
-        public string TransStatusReason { get; set; }
+        public string TransStatusReason { get => _explicitNullValueTransStatusReason; set { _explicitNullValueTransStatusReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transStatusReason"); else _explicitNullProperties?.Remove("transStatusReason"); } }
+        private string _explicitNullValueTransStatusReason = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2ResponseData"/> and sets the default values.
@@ -181,7 +245,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2ResponseData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2ResponseData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2ResponseData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -238,6 +302,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("threeDSServerTransID", ThreeDSServerTransID);
             writer.WriteStringValue("transStatus", TransStatus);
             writer.WriteStringValue("transStatusReason", TransStatusReason);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

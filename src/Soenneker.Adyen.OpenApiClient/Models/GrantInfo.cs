@@ -11,32 +11,48 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GrantInfo : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("counterparty") is { } nullNodeCounterparty && nullNodeCounterparty.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Counterparty = null;
+            if (parseNode.GetChildNode("grantAccountId") is { } nullNodeGrantAccountId && nullNodeGrantAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GrantAccountId = null;
+            if (parseNode.GetChildNode("grantOfferId") is { } nullNodeGrantOfferId && nullNodeGrantOfferId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GrantOfferId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Contains the details of the party that receives the grant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.GrantInfoCounterpartyComposed? Counterparty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.GrantInfoCounterpartyComposed? Counterparty { get => _explicitNullValueCounterparty; set { _explicitNullValueCounterparty = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("counterparty"); else _explicitNullProperties?.Remove("counterparty"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.GrantInfoCounterpartyComposed? _explicitNullValueCounterparty = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.GrantInfoCounterpartyComposed Counterparty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.GrantInfoCounterpartyComposed Counterparty { get => _explicitNullValueCounterparty; set { _explicitNullValueCounterparty = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("counterparty"); else _explicitNullProperties?.Remove("counterparty"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.GrantInfoCounterpartyComposed _explicitNullValueCounterparty = default!;
 #endif
         /// <summary>The unique identifier of the grant account that tracks this grant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GrantAccountId { get; set; }
+        public string? GrantAccountId { get => _explicitNullValueGrantAccountId; set { _explicitNullValueGrantAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grantAccountId"); else _explicitNullProperties?.Remove("grantAccountId"); } }
+        private string? _explicitNullValueGrantAccountId = default!;
 #nullable restore
 #else
-        public string GrantAccountId { get; set; }
+        public string GrantAccountId { get => _explicitNullValueGrantAccountId; set { _explicitNullValueGrantAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grantAccountId"); else _explicitNullProperties?.Remove("grantAccountId"); } }
+        private string _explicitNullValueGrantAccountId = default!;
 #endif
         /// <summary>The unique identifier of the selected offer. Adyen uses the details of the selected offer to create a grant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GrantOfferId { get; set; }
+        public string? GrantOfferId { get => _explicitNullValueGrantOfferId; set { _explicitNullValueGrantOfferId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grantOfferId"); else _explicitNullProperties?.Remove("grantOfferId"); } }
+        private string? _explicitNullValueGrantOfferId = default!;
 #nullable restore
 #else
-        public string GrantOfferId { get; set; }
+        public string GrantOfferId { get => _explicitNullValueGrantOfferId; set { _explicitNullValueGrantOfferId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grantOfferId"); else _explicitNullProperties?.Remove("grantOfferId"); } }
+        private string _explicitNullValueGrantOfferId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.GrantInfo"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.GrantInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.GrantInfo();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.GrantInfo(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GrantInfoCounterpartyComposed>("counterparty", Counterparty);
             writer.WriteStringValue("grantAccountId", GrantAccountId);
             writer.WriteStringValue("grantOfferId", GrantOfferId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

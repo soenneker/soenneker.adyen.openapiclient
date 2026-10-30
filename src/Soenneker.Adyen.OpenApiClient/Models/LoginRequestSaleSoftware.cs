@@ -12,40 +12,59 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LoginRequestSaleSoftware : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("ApplicationName") is { } nullNodeApplicationName && nullNodeApplicationName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApplicationName = null;
+            if (parseNode.GetChildNode("CertificationCode") is { } nullNodeCertificationCode && nullNodeCertificationCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CertificationCode = null;
+            if (parseNode.GetChildNode("ManufacturerID") is { } nullNodeManufacturerID && nullNodeManufacturerID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ManufacturerID = null;
+            if (parseNode.GetChildNode("SoftwareVersion") is { } nullNodeSoftwareVersion && nullNodeSoftwareVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SoftwareVersion = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Name of the software product.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApplicationName { get; set; }
+        public string? ApplicationName { get => _explicitNullValueApplicationName; set { _explicitNullValueApplicationName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ApplicationName"); else _explicitNullProperties?.Remove("ApplicationName"); } }
+        private string? _explicitNullValueApplicationName = default!;
 #nullable restore
 #else
-        public string ApplicationName { get; set; }
+        public string ApplicationName { get => _explicitNullValueApplicationName; set { _explicitNullValueApplicationName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ApplicationName"); else _explicitNullProperties?.Remove("ApplicationName"); } }
+        private string _explicitNullValueApplicationName = default!;
 #endif
         /// <summary>Certification code of the software which manages the Sale to POI protocol.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CertificationCode { get; set; }
+        public string? CertificationCode { get => _explicitNullValueCertificationCode; set { _explicitNullValueCertificationCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CertificationCode"); else _explicitNullProperties?.Remove("CertificationCode"); } }
+        private string? _explicitNullValueCertificationCode = default!;
 #nullable restore
 #else
-        public string CertificationCode { get; set; }
+        public string CertificationCode { get => _explicitNullValueCertificationCode; set { _explicitNullValueCertificationCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CertificationCode"); else _explicitNullProperties?.Remove("CertificationCode"); } }
+        private string _explicitNullValueCertificationCode = default!;
 #endif
         /// <summary>Identification of the Manufacturer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ManufacturerID { get; set; }
+        public string? ManufacturerID { get => _explicitNullValueManufacturerID; set { _explicitNullValueManufacturerID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ManufacturerID"); else _explicitNullProperties?.Remove("ManufacturerID"); } }
+        private string? _explicitNullValueManufacturerID = default!;
 #nullable restore
 #else
-        public string ManufacturerID { get; set; }
+        public string ManufacturerID { get => _explicitNullValueManufacturerID; set { _explicitNullValueManufacturerID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ManufacturerID"); else _explicitNullProperties?.Remove("ManufacturerID"); } }
+        private string _explicitNullValueManufacturerID = default!;
 #endif
         /// <summary>Version of the software product.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SoftwareVersion { get; set; }
+        public string? SoftwareVersion { get => _explicitNullValueSoftwareVersion; set { _explicitNullValueSoftwareVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SoftwareVersion"); else _explicitNullProperties?.Remove("SoftwareVersion"); } }
+        private string? _explicitNullValueSoftwareVersion = default!;
 #nullable restore
 #else
-        public string SoftwareVersion { get; set; }
+        public string SoftwareVersion { get => _explicitNullValueSoftwareVersion; set { _explicitNullValueSoftwareVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SoftwareVersion"); else _explicitNullProperties?.Remove("SoftwareVersion"); } }
+        private string _explicitNullValueSoftwareVersion = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.LoginRequestSaleSoftware"/> and sets the default values.
@@ -62,7 +81,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.LoginRequestSaleSoftware CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.LoginRequestSaleSoftware();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.LoginRequestSaleSoftware(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -89,6 +108,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("CertificationCode", CertificationCode);
             writer.WriteStringValue("ManufacturerID", ManufacturerID);
             writer.WriteStringValue("SoftwareVersion", SoftwareVersion);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

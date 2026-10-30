@@ -24,6 +24,7 @@ namespace Soenneker.Adyen.OpenApiClient.TransferServiceV4
             get => new global::Soenneker.Adyen.OpenApiClient.TransferServiceV4.Cashouts.CashoutsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The grants property</summary>
+        [Obsolete("")]
         public global::Soenneker.Adyen.OpenApiClient.TransferServiceV4.Grants.GrantsRequestBuilder Grants
         {
             get => new global::Soenneker.Adyen.OpenApiClient.TransferServiceV4.Grants.GrantsRequestBuilder(PathParameters, RequestAdapter);

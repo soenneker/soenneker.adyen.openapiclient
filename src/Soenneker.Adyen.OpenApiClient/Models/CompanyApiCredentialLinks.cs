@@ -12,56 +12,81 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CompanyApiCredentialLinks : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("allowedOrigins") is { } nullNodeAllowedOrigins && nullNodeAllowedOrigins.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedOrigins = null;
+            if (parseNode.GetChildNode("company") is { } nullNodeCompany && nullNodeCompany.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Company = null;
+            if (parseNode.GetChildNode("generateApiKey") is { } nullNodeGenerateApiKey && nullNodeGenerateApiKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GenerateApiKey = null;
+            if (parseNode.GetChildNode("generateClientKey") is { } nullNodeGenerateClientKey && nullNodeGenerateClientKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GenerateClientKey = null;
+            if (parseNode.GetChildNode("merchant") is { } nullNodeMerchant && nullNodeMerchant.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Merchant = null;
+            if (parseNode.GetChildNode("self") is { } nullNodeSelf && nullNodeSelf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Self = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>List of allowed origins.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ApiCredentialLinksAllowedOrigins? AllowedOrigins { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ApiCredentialLinksAllowedOrigins? AllowedOrigins { get => _explicitNullValueAllowedOrigins; set { _explicitNullValueAllowedOrigins = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedOrigins"); else _explicitNullProperties?.Remove("allowedOrigins"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ApiCredentialLinksAllowedOrigins? _explicitNullValueAllowedOrigins = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ApiCredentialLinksAllowedOrigins AllowedOrigins { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ApiCredentialLinksAllowedOrigins AllowedOrigins { get => _explicitNullValueAllowedOrigins; set { _explicitNullValueAllowedOrigins = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedOrigins"); else _explicitNullProperties?.Remove("allowedOrigins"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ApiCredentialLinksAllowedOrigins _explicitNullValueAllowedOrigins = default!;
 #endif
         /// <summary>Company account that the API credential is linked to. Only present for company-level webhooks.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ApiCredentialLinksCompany? Company { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ApiCredentialLinksCompany? Company { get => _explicitNullValueCompany; set { _explicitNullValueCompany = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("company"); else _explicitNullProperties?.Remove("company"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ApiCredentialLinksCompany? _explicitNullValueCompany = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ApiCredentialLinksCompany Company { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ApiCredentialLinksCompany Company { get => _explicitNullValueCompany; set { _explicitNullValueCompany = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("company"); else _explicitNullProperties?.Remove("company"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ApiCredentialLinksCompany _explicitNullValueCompany = default!;
 #endif
         /// <summary>Generates a new API key. When you generate a new one, the existing key remains valid for 24 hours. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ApiCredentialLinksGenerateApiKey? GenerateApiKey { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ApiCredentialLinksGenerateApiKey? GenerateApiKey { get => _explicitNullValueGenerateApiKey; set { _explicitNullValueGenerateApiKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generateApiKey"); else _explicitNullProperties?.Remove("generateApiKey"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ApiCredentialLinksGenerateApiKey? _explicitNullValueGenerateApiKey = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ApiCredentialLinksGenerateApiKey GenerateApiKey { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ApiCredentialLinksGenerateApiKey GenerateApiKey { get => _explicitNullValueGenerateApiKey; set { _explicitNullValueGenerateApiKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generateApiKey"); else _explicitNullProperties?.Remove("generateApiKey"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ApiCredentialLinksGenerateApiKey _explicitNullValueGenerateApiKey = default!;
 #endif
         /// <summary>Generates a new client key, used to authenticate client-side requests. When you generate a new one, the existing key remains valid for 24 hours.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ApiCredentialLinksGenerateClientKey? GenerateClientKey { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ApiCredentialLinksGenerateClientKey? GenerateClientKey { get => _explicitNullValueGenerateClientKey; set { _explicitNullValueGenerateClientKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generateClientKey"); else _explicitNullProperties?.Remove("generateClientKey"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ApiCredentialLinksGenerateClientKey? _explicitNullValueGenerateClientKey = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ApiCredentialLinksGenerateClientKey GenerateClientKey { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ApiCredentialLinksGenerateClientKey GenerateClientKey { get => _explicitNullValueGenerateClientKey; set { _explicitNullValueGenerateClientKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generateClientKey"); else _explicitNullProperties?.Remove("generateClientKey"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ApiCredentialLinksGenerateClientKey _explicitNullValueGenerateClientKey = default!;
 #endif
         /// <summary>The merchant account that the API credential is linked to. Only present for merchant-level API credentials.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ApiCredentialLinksMerchant? Merchant { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ApiCredentialLinksMerchant? Merchant { get => _explicitNullValueMerchant; set { _explicitNullValueMerchant = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchant"); else _explicitNullProperties?.Remove("merchant"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ApiCredentialLinksMerchant? _explicitNullValueMerchant = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ApiCredentialLinksMerchant Merchant { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ApiCredentialLinksMerchant Merchant { get => _explicitNullValueMerchant; set { _explicitNullValueMerchant = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchant"); else _explicitNullProperties?.Remove("merchant"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ApiCredentialLinksMerchant _explicitNullValueMerchant = default!;
 #endif
         /// <summary>Link to the resource itself.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ApiCredentialLinksSelf? Self { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ApiCredentialLinksSelf? Self { get => _explicitNullValueSelf; set { _explicitNullValueSelf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("self"); else _explicitNullProperties?.Remove("self"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ApiCredentialLinksSelf? _explicitNullValueSelf = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ApiCredentialLinksSelf Self { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ApiCredentialLinksSelf Self { get => _explicitNullValueSelf; set { _explicitNullValueSelf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("self"); else _explicitNullProperties?.Remove("self"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ApiCredentialLinksSelf _explicitNullValueSelf = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CompanyApiCredentialLinks"/> and sets the default values.
@@ -78,7 +103,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.CompanyApiCredentialLinks CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.CompanyApiCredentialLinks();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.CompanyApiCredentialLinks(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -109,6 +134,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ApiCredentialLinksGenerateClientKey>("generateClientKey", GenerateClientKey);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ApiCredentialLinksMerchant>("merchant", Merchant);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ApiCredentialLinksSelf>("self", Self);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

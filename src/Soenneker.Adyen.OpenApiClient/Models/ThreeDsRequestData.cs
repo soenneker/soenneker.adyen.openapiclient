@@ -11,17 +11,32 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ThreeDsRequestData : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("challengeWindowSize") is { } nullNodeChallengeWindowSize && nullNodeChallengeWindowSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChallengeWindowSize = null;
+            if (parseNode.GetChildNode("dataOnly") is { } nullNodeDataOnly && nullNodeDataOnly.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataOnly = null;
+            if (parseNode.GetChildNode("nativeThreeDS") is { } nullNodeNativeThreeDS && nullNodeNativeThreeDS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NativeThreeDS = null;
+            if (parseNode.GetChildNode("threeDSVersion") is { } nullNodeThreeDSVersion && nullNodeThreeDSVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDSVersion = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Dimensions of the 3DS2 challenge window to be displayed to the cardholder.Possible values:* **01** - size of 250x400 * **02** - size of 390x400* **03** - size of 500x600* **04** - size of 600x400* **05** - Fullscreen</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsRequestDataChallengeWindowSize? ChallengeWindowSize { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsRequestDataChallengeWindowSize? ChallengeWindowSize { get => _explicitNullValueChallengeWindowSize; set { _explicitNullValueChallengeWindowSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("challengeWindowSize"); else _explicitNullProperties?.Remove("challengeWindowSize"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsRequestDataChallengeWindowSize? _explicitNullValueChallengeWindowSize = default!;
         /// <summary>Required to trigger the [data-only flow](https://docs.adyen.com/online-payments/3d-secure/data-only/). When set to **true**, forces the 3D Secure 2 data-only flow for all transactions where it is possible. </summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsRequestDataDataOnly? DataOnly { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsRequestDataDataOnly? DataOnly { get => _explicitNullValueDataOnly; set { _explicitNullValueDataOnly = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataOnly"); else _explicitNullProperties?.Remove("dataOnly"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsRequestDataDataOnly? _explicitNullValueDataOnly = default!;
         /// <summary>Indicates if [native 3D Secure authentication](https://docs.adyen.com/online-payments/3d-secure/native-3ds2) should be triggered when available. Adyen can still select to fallback to the redirect flow to optimize authorization rates and improve the shopper&apos;s experience.Possible values:* **preferred**: Use native 3D Secure authentication when available.* **disabled**: Use the redirect 3D Secure authentication flow.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsRequestDataNativeThreeDs? NativeThreeDS { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsRequestDataNativeThreeDs? NativeThreeDS { get => _explicitNullValueNativeThreeDS; set { _explicitNullValueNativeThreeDS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nativeThreeDS"); else _explicitNullProperties?.Remove("nativeThreeDS"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsRequestDataNativeThreeDs? _explicitNullValueNativeThreeDS = default!;
         /// <summary>The version of 3D Secure to use.Possible values:* **2.1.0*** **2.2.0**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsRequestDataThreeDsVersion? ThreeDSVersion { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsRequestDataThreeDsVersion? ThreeDSVersion { get => _explicitNullValueThreeDSVersion; set { _explicitNullValueThreeDSVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSVersion"); else _explicitNullProperties?.Remove("threeDSVersion"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsRequestDataThreeDsVersion? _explicitNullValueThreeDSVersion = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsRequestData"/> and sets the default values.
         /// </summary>
@@ -37,7 +52,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsRequestData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsRequestData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsRequestData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -64,6 +79,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsRequestDataDataOnly>("dataOnly", DataOnly);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsRequestDataNativeThreeDs>("nativeThreeDS", NativeThreeDS);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsRequestDataThreeDsVersion>("threeDSVersion", ThreeDSVersion);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

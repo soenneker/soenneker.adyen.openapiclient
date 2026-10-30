@@ -12,15 +12,28 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TerminalSettingsHardwareMember1 : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("displayMaximumBackLight") is { } nullNodeDisplayMaximumBackLight && nullNodeDisplayMaximumBackLight.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayMaximumBackLight = null;
+            if (parseNode.GetChildNode("resetTotalsHour") is { } nullNodeResetTotalsHour && nullNodeResetTotalsHour.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResetTotalsHour = null;
+            if (parseNode.GetChildNode("restartHour") is { } nullNodeRestartHour && nullNodeRestartHour.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RestartHour = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The brightness of the display when the terminal is being used, expressed as a percentage.</summary>
-        public int? DisplayMaximumBackLight { get; set; }
+        public int? DisplayMaximumBackLight { get => _explicitNullValueDisplayMaximumBackLight; set { _explicitNullValueDisplayMaximumBackLight = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("displayMaximumBackLight"); else _explicitNullProperties?.Remove("displayMaximumBackLight"); } }
+        private int? _explicitNullValueDisplayMaximumBackLight = default!;
         /// <summary>The hour of the day when the terminal is set to reset the Totals report. By default, the reset hour is at 6:00 AM in the timezone of the terminal. Minimum value: 0, maximum value: 23.</summary>
-        public int? ResetTotalsHour { get; set; }
+        public int? ResetTotalsHour { get => _explicitNullValueResetTotalsHour; set { _explicitNullValueResetTotalsHour = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resetTotalsHour"); else _explicitNullProperties?.Remove("resetTotalsHour"); } }
+        private int? _explicitNullValueResetTotalsHour = default!;
         /// <summary>The hour of the day when the terminal is set to reboot to apply the configuration and software updates. By default, the restart hour is at 6:00 AM in the timezone of the terminal. Minimum value: 0, maximum value: 23.</summary>
-        public int? RestartHour { get; set; }
+        public int? RestartHour { get => _explicitNullValueRestartHour; set { _explicitNullValueRestartHour = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("restartHour"); else _explicitNullProperties?.Remove("restartHour"); } }
+        private int? _explicitNullValueRestartHour = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHardwareMember1"/> and sets the default values.
         /// </summary>
@@ -36,7 +49,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHardwareMember1 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHardwareMember1();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHardwareMember1(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -61,6 +74,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteIntValue("displayMaximumBackLight", DisplayMaximumBackLight);
             writer.WriteIntValue("resetTotalsHour", ResetTotalsHour);
             writer.WriteIntValue("restartHour", RestartHour);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

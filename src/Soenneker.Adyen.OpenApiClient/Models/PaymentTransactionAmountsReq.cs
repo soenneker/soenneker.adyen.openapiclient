@@ -12,31 +12,55 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PaymentTransactionAmountsReq : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("CashBackAmount") is { } nullNodeCashBackAmount && nullNodeCashBackAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CashBackAmount = null;
+            if (parseNode.GetChildNode("Currency") is { } nullNodeCurrency && nullNodeCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Currency = null;
+            if (parseNode.GetChildNode("MaximumCashBackAmount") is { } nullNodeMaximumCashBackAmount && nullNodeMaximumCashBackAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaximumCashBackAmount = null;
+            if (parseNode.GetChildNode("MinimumAmountToDeliver") is { } nullNodeMinimumAmountToDeliver && nullNodeMinimumAmountToDeliver.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinimumAmountToDeliver = null;
+            if (parseNode.GetChildNode("MinimumSplitAmount") is { } nullNodeMinimumSplitAmount && nullNodeMinimumSplitAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinimumSplitAmount = null;
+            if (parseNode.GetChildNode("PaidAmount") is { } nullNodePaidAmount && nullNodePaidAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaidAmount = null;
+            if (parseNode.GetChildNode("RequestedAmount") is { } nullNodeRequestedAmount && nullNodeRequestedAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestedAmount = null;
+            if (parseNode.GetChildNode("TipAmount") is { } nullNodeTipAmount && nullNodeTipAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TipAmount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The cash-back part of the amount requested by the Sale for the payment.</summary>
-        public double? CashBackAmount { get; set; }
+        public double? CashBackAmount { get => _explicitNullValueCashBackAmount; set { _explicitNullValueCashBackAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CashBackAmount"); else _explicitNullProperties?.Remove("CashBackAmount"); } }
+        private double? _explicitNullValueCashBackAmount = default!;
         /// <summary>Currency of a monetary amount.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Currency { get; set; }
+        public string? Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Currency"); else _explicitNullProperties?.Remove("Currency"); } }
+        private string? _explicitNullValueCurrency = default!;
 #nullable restore
 #else
-        public string Currency { get; set; }
+        public string Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Currency"); else _explicitNullProperties?.Remove("Currency"); } }
+        private string _explicitNullValueCurrency = default!;
 #endif
         /// <summary>Maximum amount which could be requested for cash-back to the Sale System. Allows the Cashier   to limit the amount value of cash-back to deliver to the Customer.</summary>
-        public double? MaximumCashBackAmount { get; set; }
+        public double? MaximumCashBackAmount { get => _explicitNullValueMaximumCashBackAmount; set { _explicitNullValueMaximumCashBackAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MaximumCashBackAmount"); else _explicitNullProperties?.Remove("MaximumCashBackAmount"); } }
+        private double? _explicitNullValueMaximumCashBackAmount = default!;
         /// <summary>Minimum amount the Sale System is allowed to deliver for this payment. For the OneTimeReservation, when the maximum amount is unknown, the Sale System indicates the minimum amount it allows.</summary>
-        public double? MinimumAmountToDeliver { get; set; }
+        public double? MinimumAmountToDeliver { get => _explicitNullValueMinimumAmountToDeliver; set { _explicitNullValueMinimumAmountToDeliver = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MinimumAmountToDeliver"); else _explicitNullProperties?.Remove("MinimumAmountToDeliver"); } }
+        private double? _explicitNullValueMinimumAmountToDeliver = default!;
         /// <summary>Minimum amount of a split, which could be requested by a Customer.Allows the Merchant to limit the number of split requested by the Customer.</summary>
-        public double? MinimumSplitAmount { get; set; }
+        public double? MinimumSplitAmount { get => _explicitNullValueMinimumSplitAmount; set { _explicitNullValueMinimumSplitAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MinimumSplitAmount"); else _explicitNullProperties?.Remove("MinimumSplitAmount"); } }
+        private double? _explicitNullValueMinimumSplitAmount = default!;
         /// <summary>Amount already paid in case of split payment. Depending on the context, a split payment is either a split amount, or a split basket (required by some payment means as fleet cards). The PaidAmount is present when the split payment is a split     of the amount. Split of the basket involves two Sale Transactions, and does not have to be recognised by     the POI.</summary>
-        public double? PaidAmount { get; set; }
+        public double? PaidAmount { get => _explicitNullValuePaidAmount; set { _explicitNullValuePaidAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PaidAmount"); else _explicitNullProperties?.Remove("PaidAmount"); } }
+        private double? _explicitNullValuePaidAmount = default!;
         /// <summary>Amount requested by the Sale for the payment.</summary>
-        public double? RequestedAmount { get; set; }
+        public double? RequestedAmount { get => _explicitNullValueRequestedAmount; set { _explicitNullValueRequestedAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("RequestedAmount"); else _explicitNullProperties?.Remove("RequestedAmount"); } }
+        private double? _explicitNullValueRequestedAmount = default!;
         /// <summary>Amount paid for a tip. Allow the printing of the tip on the receipt, and to qualify the tip part of the amount.</summary>
-        public double? TipAmount { get; set; }
+        public double? TipAmount { get => _explicitNullValueTipAmount; set { _explicitNullValueTipAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TipAmount"); else _explicitNullProperties?.Remove("TipAmount"); } }
+        private double? _explicitNullValueTipAmount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentTransactionAmountsReq"/> and sets the default values.
         /// </summary>
@@ -52,7 +76,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.PaymentTransactionAmountsReq CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.PaymentTransactionAmountsReq();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.PaymentTransactionAmountsReq(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -87,6 +111,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteDoubleValue("PaidAmount", PaidAmount);
             writer.WriteDoubleValue("RequestedAmount", RequestedAmount);
             writer.WriteDoubleValue("TipAmount", TipAmount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

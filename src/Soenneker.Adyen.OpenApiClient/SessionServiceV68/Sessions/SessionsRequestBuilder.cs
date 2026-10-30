@@ -52,7 +52,7 @@ namespace Soenneker.Adyen.OpenApiClient.SessionServiceV68.Sessions
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.CreateSessionResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.CreateSessionResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.CreateSessionResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.CreateSessionResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Establishes a secure communications session between the POS Mobile SDK and the Adyen payments platform, through mutual authentication. The request sends a setup token that identifies the SDK and the device. The response returns a session token that the SDK can use to authenticate responses received from the Adyen payments platform.&gt;This request applies to **mobile in-person** transactions. You cannot use this request to create online payments sessions. 

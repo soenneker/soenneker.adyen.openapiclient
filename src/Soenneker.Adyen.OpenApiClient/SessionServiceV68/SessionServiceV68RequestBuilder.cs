@@ -16,6 +16,7 @@ namespace Soenneker.Adyen.OpenApiClient.SessionServiceV68
     public partial class SessionServiceV68RequestBuilder : BaseRequestBuilder
     {
         /// <summary>The sessions property</summary>
+        [Obsolete("")]
         public global::Soenneker.Adyen.OpenApiClient.SessionServiceV68.Sessions.SessionsRequestBuilder Sessions
         {
             get => new global::Soenneker.Adyen.OpenApiClient.SessionServiceV68.Sessions.SessionsRequestBuilder(PathParameters, RequestAdapter);

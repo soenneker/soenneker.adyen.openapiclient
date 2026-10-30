@@ -12,93 +12,134 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PaymentRequest3DDccQuote : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("account") is { } nullNodeAccount && nullNodeAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Account = null;
+            if (parseNode.GetChildNode("accountType") is { } nullNodeAccountType && nullNodeAccountType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountType = null;
+            if (parseNode.GetChildNode("baseAmount") is { } nullNodeBaseAmount && nullNodeBaseAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BaseAmount = null;
+            if (parseNode.GetChildNode("basePoints") is { } nullNodeBasePoints && nullNodeBasePoints.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BasePoints = null;
+            if (parseNode.GetChildNode("buy") is { } nullNodeBuy && nullNodeBuy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Buy = null;
+            if (parseNode.GetChildNode("interbank") is { } nullNodeInterbank && nullNodeInterbank.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Interbank = null;
+            if (parseNode.GetChildNode("reference") is { } nullNodeReference && nullNodeReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reference = null;
+            if (parseNode.GetChildNode("sell") is { } nullNodeSell && nullNodeSell.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sell = null;
+            if (parseNode.GetChildNode("signature") is { } nullNodeSignature && nullNodeSignature.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Signature = null;
+            if (parseNode.GetChildNode("source") is { } nullNodeSource && nullNodeSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Source = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("validTill") is { } nullNodeValidTill && nullNodeValidTill.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidTill = null;
+        }
+
         /// <summary>The account name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Account { get; set; }
+        public string? Account { get => _explicitNullValueAccount; set { _explicitNullValueAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account"); else _explicitNullProperties?.Remove("account"); } }
+        private string? _explicitNullValueAccount = default!;
 #nullable restore
 #else
-        public string Account { get; set; }
+        public string Account { get => _explicitNullValueAccount; set { _explicitNullValueAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account"); else _explicitNullProperties?.Remove("account"); } }
+        private string _explicitNullValueAccount = default!;
 #endif
         /// <summary>The account type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountType { get; set; }
+        public string? AccountType { get => _explicitNullValueAccountType; set { _explicitNullValueAccountType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountType"); else _explicitNullProperties?.Remove("accountType"); } }
+        private string? _explicitNullValueAccountType = default!;
 #nullable restore
 #else
-        public string AccountType { get; set; }
+        public string AccountType { get => _explicitNullValueAccountType; set { _explicitNullValueAccountType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountType"); else _explicitNullProperties?.Remove("accountType"); } }
+        private string _explicitNullValueAccountType = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The base amount.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ForexQuoteBaseAmount? BaseAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ForexQuoteBaseAmount? BaseAmount { get => _explicitNullValueBaseAmount; set { _explicitNullValueBaseAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("baseAmount"); else _explicitNullProperties?.Remove("baseAmount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ForexQuoteBaseAmount? _explicitNullValueBaseAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ForexQuoteBaseAmount BaseAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ForexQuoteBaseAmount BaseAmount { get => _explicitNullValueBaseAmount; set { _explicitNullValueBaseAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("baseAmount"); else _explicitNullProperties?.Remove("baseAmount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ForexQuoteBaseAmount _explicitNullValueBaseAmount = default!;
 #endif
         /// <summary>The base points.</summary>
-        public int? BasePoints { get; set; }
+        public int? BasePoints { get => _explicitNullValueBasePoints; set { _explicitNullValueBasePoints = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("basePoints"); else _explicitNullProperties?.Remove("basePoints"); } }
+        private int? _explicitNullValueBasePoints = default!;
         /// <summary>The buy rate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ForexQuoteBuy? Buy { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ForexQuoteBuy? Buy { get => _explicitNullValueBuy; set { _explicitNullValueBuy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buy"); else _explicitNullProperties?.Remove("buy"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ForexQuoteBuy? _explicitNullValueBuy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ForexQuoteBuy Buy { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ForexQuoteBuy Buy { get => _explicitNullValueBuy; set { _explicitNullValueBuy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buy"); else _explicitNullProperties?.Remove("buy"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ForexQuoteBuy _explicitNullValueBuy = default!;
 #endif
         /// <summary>The interbank amount.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ForexQuoteInterbank? Interbank { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ForexQuoteInterbank? Interbank { get => _explicitNullValueInterbank; set { _explicitNullValueInterbank = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interbank"); else _explicitNullProperties?.Remove("interbank"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ForexQuoteInterbank? _explicitNullValueInterbank = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ForexQuoteInterbank Interbank { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ForexQuoteInterbank Interbank { get => _explicitNullValueInterbank; set { _explicitNullValueInterbank = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interbank"); else _explicitNullProperties?.Remove("interbank"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ForexQuoteInterbank _explicitNullValueInterbank = default!;
 #endif
         /// <summary>The reference assigned to the forex quote request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Reference { get; set; }
+        public string? Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
+        private string? _explicitNullValueReference = default!;
 #nullable restore
 #else
-        public string Reference { get; set; }
+        public string Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
+        private string _explicitNullValueReference = default!;
 #endif
         /// <summary>The sell rate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ForexQuoteSell? Sell { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ForexQuoteSell? Sell { get => _explicitNullValueSell; set { _explicitNullValueSell = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sell"); else _explicitNullProperties?.Remove("sell"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ForexQuoteSell? _explicitNullValueSell = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ForexQuoteSell Sell { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ForexQuoteSell Sell { get => _explicitNullValueSell; set { _explicitNullValueSell = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sell"); else _explicitNullProperties?.Remove("sell"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ForexQuoteSell _explicitNullValueSell = default!;
 #endif
         /// <summary>The signature to validate the integrity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Signature { get; set; }
+        public string? Signature { get => _explicitNullValueSignature; set { _explicitNullValueSignature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signature"); else _explicitNullProperties?.Remove("signature"); } }
+        private string? _explicitNullValueSignature = default!;
 #nullable restore
 #else
-        public string Signature { get; set; }
+        public string Signature { get => _explicitNullValueSignature; set { _explicitNullValueSignature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signature"); else _explicitNullProperties?.Remove("signature"); } }
+        private string _explicitNullValueSignature = default!;
 #endif
         /// <summary>The source of the forex quote.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Source { get; set; }
+        public string? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        private string? _explicitNullValueSource = default!;
 #nullable restore
 #else
-        public string Source { get; set; }
+        public string Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        private string _explicitNullValueSource = default!;
 #endif
         /// <summary>The type of forex.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; set; }
+        public string? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private string? _explicitNullValueType = default!;
 #nullable restore
 #else
-        public string Type { get; set; }
+        public string Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private string _explicitNullValueType = default!;
 #endif
         /// <summary>The date until which the forex quote is valid.</summary>
-        public DateTimeOffset? ValidTill { get; set; }
+        public DateTimeOffset? ValidTill { get => _explicitNullValueValidTill; set { _explicitNullValueValidTill = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validTill"); else _explicitNullProperties?.Remove("validTill"); } }
+        private DateTimeOffset? _explicitNullValueValidTill = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DDccQuote"/> and sets the default values.
         /// </summary>
@@ -114,7 +155,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DDccQuote CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DDccQuote();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DDccQuote(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -157,6 +198,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("source", Source);
             writer.WriteStringValue("type", Type);
             writer.WriteDateTimeOffsetValue("validTill", ValidTill);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

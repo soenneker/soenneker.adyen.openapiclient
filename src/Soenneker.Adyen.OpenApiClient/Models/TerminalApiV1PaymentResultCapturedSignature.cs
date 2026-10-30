@@ -12,24 +12,37 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TerminalApiV1PaymentResultCapturedSignature : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("AreaSize") is { } nullNodeAreaSize && nullNodeAreaSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AreaSize = null;
+            if (parseNode.GetChildNode("SignaturePoint") is { } nullNodeSignaturePoint && nullNodeSignaturePoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SignaturePoint = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Size of an area. Contain the size of the pad area where the signature is written, given with the maximum abscissa and ordinate values (X and Y). The maximum value is FFFF.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CapturedSignatureAreaSize? AreaSize { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CapturedSignatureAreaSize? AreaSize { get => _explicitNullValueAreaSize; set { _explicitNullValueAreaSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AreaSize"); else _explicitNullProperties?.Remove("AreaSize"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.CapturedSignatureAreaSize? _explicitNullValueAreaSize = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CapturedSignatureAreaSize AreaSize { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CapturedSignatureAreaSize AreaSize { get => _explicitNullValueAreaSize; set { _explicitNullValueAreaSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AreaSize"); else _explicitNullProperties?.Remove("AreaSize"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.CapturedSignatureAreaSize _explicitNullValueAreaSize = default!;
 #endif
         /// <summary>Coordinates of a point where the pen changes direction or lift. Contain the Coordinates of a point of the written signature where the pen changes direction or lift where (X and Y). When the signer lifts the pen, both X and Y have the value FFFF.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.Point>? SignaturePoint { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.Point>? SignaturePoint { get => _explicitNullValueSignaturePoint; set { _explicitNullValueSignaturePoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SignaturePoint"); else _explicitNullProperties?.Remove("SignaturePoint"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.Point>? _explicitNullValueSignaturePoint = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.Point> SignaturePoint { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.Point> SignaturePoint { get => _explicitNullValueSignaturePoint; set { _explicitNullValueSignaturePoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SignaturePoint"); else _explicitNullProperties?.Remove("SignaturePoint"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.Point> _explicitNullValueSignaturePoint = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultCapturedSignature"/> and sets the default values.
@@ -46,7 +59,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultCapturedSignature CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultCapturedSignature();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultCapturedSignature(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +82,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapturedSignatureAreaSize>("AreaSize", AreaSize);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Point>("SignaturePoint", SignaturePoint);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

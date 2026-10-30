@@ -12,19 +12,36 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EnhancedSchemeDataHealthcare : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("dentalValue") is { } nullNodeDentalValue && nullNodeDentalValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DentalValue = null;
+            if (parseNode.GetChildNode("otherMedicalValue") is { } nullNodeOtherMedicalValue && nullNodeOtherMedicalValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OtherMedicalValue = null;
+            if (parseNode.GetChildNode("prescriptionValue") is { } nullNodePrescriptionValue && nullNodePrescriptionValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrescriptionValue = null;
+            if (parseNode.GetChildNode("totalHealthcareValue") is { } nullNodeTotalHealthcareValue && nullNodeTotalHealthcareValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalHealthcareValue = null;
+            if (parseNode.GetChildNode("visionPrescriptionValue") is { } nullNodeVisionPrescriptionValue && nullNodeVisionPrescriptionValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VisionPrescriptionValue = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The dental amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000</summary>
-        public long? DentalValue { get; set; }
+        public long? DentalValue { get => _explicitNullValueDentalValue; set { _explicitNullValueDentalValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dentalValue"); else _explicitNullProperties?.Remove("dentalValue"); } }
+        private long? _explicitNullValueDentalValue = default!;
         /// <summary>The other medical amount not covered by the specific categories, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000</summary>
-        public long? OtherMedicalValue { get; set; }
+        public long? OtherMedicalValue { get => _explicitNullValueOtherMedicalValue; set { _explicitNullValueOtherMedicalValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("otherMedicalValue"); else _explicitNullProperties?.Remove("otherMedicalValue"); } }
+        private long? _explicitNullValueOtherMedicalValue = default!;
         /// <summary>The prescription/Rx amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000</summary>
-        public long? PrescriptionValue { get; set; }
+        public long? PrescriptionValue { get => _explicitNullValuePrescriptionValue; set { _explicitNullValuePrescriptionValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prescriptionValue"); else _explicitNullProperties?.Remove("prescriptionValue"); } }
+        private long? _explicitNullValuePrescriptionValue = default!;
         /// <summary>The total healthcare amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000</summary>
-        public long? TotalHealthcareValue { get; set; }
+        public long? TotalHealthcareValue { get => _explicitNullValueTotalHealthcareValue; set { _explicitNullValueTotalHealthcareValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalHealthcareValue"); else _explicitNullProperties?.Remove("totalHealthcareValue"); } }
+        private long? _explicitNullValueTotalHealthcareValue = default!;
         /// <summary>The vision/optical prescription amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000</summary>
-        public long? VisionPrescriptionValue { get; set; }
+        public long? VisionPrescriptionValue { get => _explicitNullValueVisionPrescriptionValue; set { _explicitNullValueVisionPrescriptionValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("visionPrescriptionValue"); else _explicitNullProperties?.Remove("visionPrescriptionValue"); } }
+        private long? _explicitNullValueVisionPrescriptionValue = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeDataHealthcare"/> and sets the default values.
         /// </summary>
@@ -40,7 +57,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeDataHealthcare CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeDataHealthcare();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeDataHealthcare(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +86,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteLongValue("prescriptionValue", PrescriptionValue);
             writer.WriteLongValue("totalHealthcareValue", TotalHealthcareValue);
             writer.WriteLongValue("visionPrescriptionValue", VisionPrescriptionValue);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

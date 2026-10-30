@@ -11,102 +11,148 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TransferInfo : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("amount") is { } nullNodeAmount && nullNodeAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Amount = null;
+            if (parseNode.GetChildNode("balanceAccountId") is { } nullNodeBalanceAccountId && nullNodeBalanceAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalanceAccountId = null;
+            if (parseNode.GetChildNode("category") is { } nullNodeCategory && nullNodeCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Category = null;
+            if (parseNode.GetChildNode("counterparty") is { } nullNodeCounterparty && nullNodeCounterparty.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Counterparty = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("executionDate") is { } nullNodeExecutionDate && nullNodeExecutionDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExecutionDate = null;
+            if (parseNode.GetChildNode("paymentInstrumentId") is { } nullNodePaymentInstrumentId && nullNodePaymentInstrumentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentInstrumentId = null;
+            if (parseNode.GetChildNode("priorities") is { } nullNodePriorities && nullNodePriorities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Priorities = null;
+            if (parseNode.GetChildNode("priority") is { } nullNodePriority && nullNodePriority.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Priority = null;
+            if (parseNode.GetChildNode("reference") is { } nullNodeReference && nullNodeReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reference = null;
+            if (parseNode.GetChildNode("referenceForBeneficiary") is { } nullNodeReferenceForBeneficiary && nullNodeReferenceForBeneficiary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferenceForBeneficiary = null;
+            if (parseNode.GetChildNode("review") is { } nullNodeReview && nullNodeReview.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Review = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("ultimateParty") is { } nullNodeUltimateParty && nullNodeUltimateParty.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UltimateParty = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The amount of the transfer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoAmount? Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoAmount? Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoAmount? _explicitNullValueAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoAmount Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoAmount Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoAmount _explicitNullValueAmount = default!;
 #endif
         /// <summary>The unique identifier of the source [balance account](https://docs.adyen.com/api-explorer/balanceplatform/latest/post/balanceAccounts#responses-200-id).If you want to make a transfer using a **virtual** **bankAccount** assigned to the balance account, you must specify the [payment instrument ID](https://docs.adyen.com/api-explorer/balanceplatform/latest/post/paymentInstruments#responses-200-id) of the **virtual** **bankAccount**. If you only specify a balance account ID, Adyen uses the default **physical** **bankAccount** payment instrument assigned to the balance account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BalanceAccountId { get; set; }
+        public string? BalanceAccountId { get => _explicitNullValueBalanceAccountId; set { _explicitNullValueBalanceAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceAccountId"); else _explicitNullProperties?.Remove("balanceAccountId"); } }
+        private string? _explicitNullValueBalanceAccountId = default!;
 #nullable restore
 #else
-        public string BalanceAccountId { get; set; }
+        public string BalanceAccountId { get => _explicitNullValueBalanceAccountId; set { _explicitNullValueBalanceAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceAccountId"); else _explicitNullProperties?.Remove("balanceAccountId"); } }
+        private string _explicitNullValueBalanceAccountId = default!;
 #endif
         /// <summary>The category of the transfer.Possible values: - **bank**: A transfer involving a [transfer instrument](https://docs.adyen.com/api-explorer/legalentity/latest/post/transferInstruments#responses-200-id) or a bank account.- **card**: A transfer involving a third-party card.- **internal**: A transfer between [balance accounts](https://docs.adyen.com/api-explorer/balanceplatform/latest/post/balanceAccounts#responses-200-id) within your platform.- **issuedCard**: A transfer initiated by an Adyen-issued card.- **platformPayment**: Funds movements related to payments that are acquired for your users.- **topUp**: An incoming transfer initiated by your user to top up their balance account.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoCategory? Category { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoCategory? Category { get => _explicitNullValueCategory; set { _explicitNullValueCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category"); else _explicitNullProperties?.Remove("category"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoCategory? _explicitNullValueCategory = default!;
         /// <summary>The other party involved in the funds transfer. A bank account, a balance account, a card, or a transfer instrument is required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoCounterparty? Counterparty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoCounterparty? Counterparty { get => _explicitNullValueCounterparty; set { _explicitNullValueCounterparty = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("counterparty"); else _explicitNullProperties?.Remove("counterparty"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoCounterparty? _explicitNullValueCounterparty = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoCounterparty Counterparty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoCounterparty Counterparty { get => _explicitNullValueCounterparty; set { _explicitNullValueCounterparty = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("counterparty"); else _explicitNullProperties?.Remove("counterparty"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoCounterparty _explicitNullValueCounterparty = default!;
 #endif
         /// <summary>Your description for the transfer. It is used by most banks as the transfer description. We recommend sending a maximum of 140 characters, otherwise the description may be truncated.Supported characters: **[a-z] [A-Z] [0-9] / - ?** **: ( ) . , &apos; + Space**Supported characters for **regular** and **fast** transfers to a US counterparty: **[a-z] [A-Z] [0-9] &amp; $ % # @** **~ = + - _ &apos; &quot; ! ?**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>The date when the transfer will be processed. This date must be within 30 days of the current date.Until the `executionDate`:- The `status` of the transfer remains as **received**.- The `reason` of the transfer remains as **pending**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoExecutionDate? ExecutionDate { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoExecutionDate? ExecutionDate { get => _explicitNullValueExecutionDate; set { _explicitNullValueExecutionDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("executionDate"); else _explicitNullProperties?.Remove("executionDate"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoExecutionDate? _explicitNullValueExecutionDate = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoExecutionDate ExecutionDate { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoExecutionDate ExecutionDate { get => _explicitNullValueExecutionDate; set { _explicitNullValueExecutionDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("executionDate"); else _explicitNullProperties?.Remove("executionDate"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoExecutionDate _explicitNullValueExecutionDate = default!;
 #endif
         /// <summary>The unique identifier of the source [payment instrument](https://docs.adyen.com/api-explorer/balanceplatform/latest/post/paymentInstruments#responses-200-id).If you want to make a transfer using a **virtual** **bankAccount**, you must specify the payment instrument ID of the **virtual** **bankAccount**. If you only specify a balance account ID, Adyen uses the default **physical** **bankAccount** payment instrument assigned to the balance account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaymentInstrumentId { get; set; }
+        public string? PaymentInstrumentId { get => _explicitNullValuePaymentInstrumentId; set { _explicitNullValuePaymentInstrumentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentInstrumentId"); else _explicitNullProperties?.Remove("paymentInstrumentId"); } }
+        private string? _explicitNullValuePaymentInstrumentId = default!;
 #nullable restore
 #else
-        public string PaymentInstrumentId { get; set; }
+        public string PaymentInstrumentId { get => _explicitNullValuePaymentInstrumentId; set { _explicitNullValuePaymentInstrumentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentInstrumentId"); else _explicitNullProperties?.Remove("paymentInstrumentId"); } }
+        private string _explicitNullValuePaymentInstrumentId = default!;
 #endif
         /// <summary> The list of priorities for the bank transfer. This sets the speed at which the transfer is sent and the fees that you have to pay. You can provide multiple priorities. Adyen will try to pay out using the priority you list first. If that&apos;s not possible, it moves on to the next option in the order of your provided priorities. Possible values:* **regular**: For normal, low-value transactions.* **fast**: A faster way to transfer funds, but the fees are higher. Recommended for high-priority, low-value transactions.* **wire**: The fastest way to transfer funds, but this has the highest fees. Recommended for high-priority, high-value transactions.* **instant**: For instant funds transfers within the United States and in [SEPA locations](https://www.ecb.europa.eu/paym/integration/retail/sepa/html/index.en.html).* **crossBorder**: For high-value transfers to a recipient in a different country.* **internal**: For transfers to an Adyen-issued business bank account (by bank account number/IBAN).Required for transfers with `category` **bank**. For more details, see [fallback priorities](https://docs.adyen.com/payouts/payout-service/payout-to-users/#fallback-priorities).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoPrioritiesItem?>? Priorities { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoPrioritiesItem?>? Priorities { get => _explicitNullValuePriorities; set { _explicitNullValuePriorities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("priorities"); else _explicitNullProperties?.Remove("priorities"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoPrioritiesItem?>? _explicitNullValuePriorities = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoPrioritiesItem?> Priorities { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoPrioritiesItem?> Priorities { get => _explicitNullValuePriorities; set { _explicitNullValuePriorities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("priorities"); else _explicitNullProperties?.Remove("priorities"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoPrioritiesItem?> _explicitNullValuePriorities = default!;
 #endif
         /// <summary>The priority for the bank transfer. This sets the speed at which the transfer is sent and the fees that you have to pay. Required for transfers with `category` **bank**.Possible values:* **regular**: For normal, low-value transactions.* **fast**: A faster way to transfer funds, but the fees are higher. Recommended for high-priority, low-value transactions.* **wire**: The fastest way to transfer funds, but this has the highest fees. Recommended for high-priority, high-value transactions.* **instant**: For instant funds transfers within the United States and in [SEPA locations](https://www.ecb.europa.eu/paym/integration/retail/sepa/html/index.en.html).* **crossBorder**: For high-value transfers to a recipient in a different country.* **internal**: For transfers to an Adyen-issued business bank account (by bank account number/IBAN).</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoPriority? Priority { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoPriority? Priority { get => _explicitNullValuePriority; set { _explicitNullValuePriority = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("priority"); else _explicitNullProperties?.Remove("priority"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoPriority? _explicitNullValuePriority = default!;
         /// <summary>Your reference for the transfer, used internally within your platform. If you don&apos;t provide this in the request, Adyen generates a unique reference.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Reference { get; set; }
+        public string? Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
+        private string? _explicitNullValueReference = default!;
 #nullable restore
 #else
-        public string Reference { get; set; }
+        public string Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
+        private string _explicitNullValueReference = default!;
 #endif
         /// <summary> A reference that is sent to the recipient. This reference is also sent in all webhooks related to the transfer, so you can use it to track statuses for both parties involved in the funds movement. Supported characters: **a-z**, **A-Z**, **0-9**. The maximum length depends on the `category`.- **internal**: 80 characters- **bank**: 35 characters when transferring to an IBAN, 15 characters for others.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReferenceForBeneficiary { get; set; }
+        public string? ReferenceForBeneficiary { get => _explicitNullValueReferenceForBeneficiary; set { _explicitNullValueReferenceForBeneficiary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenceForBeneficiary"); else _explicitNullProperties?.Remove("referenceForBeneficiary"); } }
+        private string? _explicitNullValueReferenceForBeneficiary = default!;
 #nullable restore
 #else
-        public string ReferenceForBeneficiary { get; set; }
+        public string ReferenceForBeneficiary { get => _explicitNullValueReferenceForBeneficiary; set { _explicitNullValueReferenceForBeneficiary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenceForBeneficiary"); else _explicitNullProperties?.Remove("referenceForBeneficiary"); } }
+        private string _explicitNullValueReferenceForBeneficiary = default!;
 #endif
         /// <summary>Contains information required for triggering transfer reviews. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoReview? Review { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoReview? Review { get => _explicitNullValueReview; set { _explicitNullValueReview = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("review"); else _explicitNullProperties?.Remove("review"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoReview? _explicitNullValueReview = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoReview Review { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoReview Review { get => _explicitNullValueReview; set { _explicitNullValueReview = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("review"); else _explicitNullProperties?.Remove("review"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoReview _explicitNullValueReview = default!;
 #endif
         /// <summary>The type of transfer.Possible values: - **bankTransfer**: for push transfers to a transfer instrument or a bank account. The `category` must be **bank**.- **internalTransfer**: for push transfers between balance accounts. The `category` must be **internal**.- **internalDirectDebit**: for pull transfers (direct debits) between balance accounts. The `category` must be **internal**. </summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoType? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoType? _explicitNullValueType = default!;
         /// <summary>The ultimate sender of the funds of the transfer (ultimate debtor).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoUltimateParty? UltimateParty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoUltimateParty? UltimateParty { get => _explicitNullValueUltimateParty; set { _explicitNullValueUltimateParty = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ultimateParty"); else _explicitNullProperties?.Remove("ultimateParty"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoUltimateParty? _explicitNullValueUltimateParty = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoUltimateParty UltimateParty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoUltimateParty UltimateParty { get => _explicitNullValueUltimateParty; set { _explicitNullValueUltimateParty = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ultimateParty"); else _explicitNullProperties?.Remove("ultimateParty"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoUltimateParty _explicitNullValueUltimateParty = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferInfo"/> and sets the default values.
@@ -123,7 +169,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.TransferInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.TransferInfo();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.TransferInfo(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -170,6 +216,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoReview>("review", Review);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoType>("type", Type);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoUltimateParty>("ultimateParty", UltimateParty);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

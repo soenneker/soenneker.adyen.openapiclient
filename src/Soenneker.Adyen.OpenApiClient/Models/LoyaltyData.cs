@@ -12,24 +12,37 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LoyaltyData : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("CardAcquisitionReference") is { } nullNodeCardAcquisitionReference && nullNodeCardAcquisitionReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardAcquisitionReference = null;
+            if (parseNode.GetChildNode("LoyaltyAccountID") is { } nullNodeLoyaltyAccountID && nullNodeLoyaltyAccountID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoyaltyAccountID = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Identification of a transaction for the Sale System or the POI System.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType? CardAcquisitionReference { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType? CardAcquisitionReference { get => _explicitNullValueCardAcquisitionReference; set { _explicitNullValueCardAcquisitionReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CardAcquisitionReference"); else _explicitNullProperties?.Remove("CardAcquisitionReference"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType? _explicitNullValueCardAcquisitionReference = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType CardAcquisitionReference { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType CardAcquisitionReference { get => _explicitNullValueCardAcquisitionReference; set { _explicitNullValueCardAcquisitionReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CardAcquisitionReference"); else _explicitNullProperties?.Remove("CardAcquisitionReference"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType _explicitNullValueCardAcquisitionReference = default!;
 #endif
         /// <summary>Identification of a Loyalty account.In the Payment Request message, it allows to identify the loyalty account by the Sale Terminal instead of the POI Terminal (e.g. because the account identification is a bar-code read by the Cashier on a scanner device).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountId? LoyaltyAccountID { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountId? LoyaltyAccountID { get => _explicitNullValueLoyaltyAccountID; set { _explicitNullValueLoyaltyAccountID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LoyaltyAccountID"); else _explicitNullProperties?.Remove("LoyaltyAccountID"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountId? _explicitNullValueLoyaltyAccountID = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountId LoyaltyAccountID { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountId LoyaltyAccountID { get => _explicitNullValueLoyaltyAccountID; set { _explicitNullValueLoyaltyAccountID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LoyaltyAccountID"); else _explicitNullProperties?.Remove("LoyaltyAccountID"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountId _explicitNullValueLoyaltyAccountID = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyData"/> and sets the default values.
@@ -46,7 +59,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +82,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType>("CardAcquisitionReference", CardAcquisitionReference);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountId>("LoyaltyAccountID", LoyaltyAccountID);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

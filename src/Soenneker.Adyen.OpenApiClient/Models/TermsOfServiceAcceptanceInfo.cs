@@ -11,39 +11,61 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TermsOfServiceAcceptanceInfo : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("acceptedBy") is { } nullNodeAcceptedBy && nullNodeAcceptedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcceptedBy = null;
+            if (parseNode.GetChildNode("acceptedFor") is { } nullNodeAcceptedFor && nullNodeAcceptedFor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcceptedFor = null;
+            if (parseNode.GetChildNode("createdAt") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("validTo") is { } nullNodeValidTo && nullNodeValidTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidTo = null;
+        }
+
         /// <summary>The unique identifier of the user that accepted the Terms of Service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AcceptedBy { get; set; }
+        public string? AcceptedBy { get => _explicitNullValueAcceptedBy; set { _explicitNullValueAcceptedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acceptedBy"); else _explicitNullProperties?.Remove("acceptedBy"); } }
+        private string? _explicitNullValueAcceptedBy = default!;
 #nullable restore
 #else
-        public string AcceptedBy { get; set; }
+        public string AcceptedBy { get => _explicitNullValueAcceptedBy; set { _explicitNullValueAcceptedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acceptedBy"); else _explicitNullProperties?.Remove("acceptedBy"); } }
+        private string _explicitNullValueAcceptedBy = default!;
 #endif
         /// <summary>The unique identifier of the legal entity for which the Terms of Service are accepted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AcceptedFor { get; set; }
+        public string? AcceptedFor { get => _explicitNullValueAcceptedFor; set { _explicitNullValueAcceptedFor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acceptedFor"); else _explicitNullProperties?.Remove("acceptedFor"); } }
+        private string? _explicitNullValueAcceptedFor = default!;
 #nullable restore
 #else
-        public string AcceptedFor { get; set; }
+        public string AcceptedFor { get => _explicitNullValueAcceptedFor; set { _explicitNullValueAcceptedFor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acceptedFor"); else _explicitNullProperties?.Remove("acceptedFor"); } }
+        private string _explicitNullValueAcceptedFor = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date when the Terms of Service were accepted, in ISO 8601 extended format. For example, 2022-12-18T10:15:30+01:00.</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
+        private DateTimeOffset? _explicitNullValueCreatedAt = default!;
         /// <summary>An Adyen-generated reference for the accepted Terms of Service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The type of Terms of Service.Possible values:*  **adyenForPlatformsManage***  **adyenIssuing***  **adyenForPlatformsAdvanced***  **adyenCapital***  **adyenCapitalCashAdvance***  **adyenAccount***  **adyenCard***  **adyenFranchisee***  **adyenPccr***  **adyenChargeCard***  **kycOnInvite***  **directDebit**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TermsOfServiceAcceptanceInfoType? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TermsOfServiceAcceptanceInfoType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TermsOfServiceAcceptanceInfoType? _explicitNullValueType = default!;
         /// <summary>The expiration date for the Terms of Service acceptance, in ISO 8601 extended format. For example, 2022-12-18T00:00:00+01:00.</summary>
-        public DateTimeOffset? ValidTo { get; set; }
+        public DateTimeOffset? ValidTo { get => _explicitNullValueValidTo; set { _explicitNullValueValidTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validTo"); else _explicitNullProperties?.Remove("validTo"); } }
+        private DateTimeOffset? _explicitNullValueValidTo = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TermsOfServiceAcceptanceInfo"/> and sets the default values.
         /// </summary>
@@ -59,7 +81,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.TermsOfServiceAcceptanceInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.TermsOfServiceAcceptanceInfo();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.TermsOfServiceAcceptanceInfo(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -90,6 +112,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TermsOfServiceAcceptanceInfoType>("type", Type);
             writer.WriteDateTimeOffsetValue("validTo", ValidTo);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -13,13 +13,26 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BalanceAccountPlatformPaymentConfiguration : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("salesDayClosingTime") is { } nullNodeSalesDayClosingTime && nullNodeSalesDayClosingTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SalesDayClosingTime = null;
+            if (parseNode.GetChildNode("settlementDelayDays") is { } nullNodeSettlementDelayDays && nullNodeSettlementDelayDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SettlementDelayDays = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specifies at what time a sales day ends for this account.Possible values: Time in **&quot;HH:MM&quot;** format. **HH** ranges from **00** to **07**. **MM** must be **00**.Default value: **&quot;00:00&quot;**.</summary>
-        public Time? SalesDayClosingTime { get; set; }
+#nullable enable
+        public string? SalesDayClosingTime { get => _explicitNullValueSalesDayClosingTime; set { _explicitNullValueSalesDayClosingTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("salesDayClosingTime"); else _explicitNullProperties?.Remove("salesDayClosingTime"); } }
+        private string? _explicitNullValueSalesDayClosingTime = default!;
+#nullable restore
         /// <summary>Specifies after how many business days the funds in a settlement batch are made available in this balance account. Requires Custom Sales Day Payout to be enabled for your balance account. Contact your account manager or implementation manager to enable this.Possible values: **1** to **20**, or **null**.Default value: **null**.</summary>
-        public int? SettlementDelayDays { get; set; }
+        public int? SettlementDelayDays { get => _explicitNullValueSettlementDelayDays; set { _explicitNullValueSettlementDelayDays = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("settlementDelayDays"); else _explicitNullProperties?.Remove("settlementDelayDays"); } }
+        private int? _explicitNullValueSettlementDelayDays = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountPlatformPaymentConfiguration"/> and sets the default values.
         /// </summary>
@@ -35,7 +48,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountPlatformPaymentConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountPlatformPaymentConfiguration();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountPlatformPaymentConfiguration(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,7 +58,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "salesDayClosingTime", n => { SalesDayClosingTime = n.GetTimeValue(); } },
+                { "salesDayClosingTime", n => { SalesDayClosingTime = n.GetStringValue(); } },
                 { "settlementDelayDays", n => { SettlementDelayDays = n.GetIntValue(); } },
             };
         }
@@ -56,8 +69,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteTimeValue("salesDayClosingTime", SalesDayClosingTime);
+            writer.WriteStringValue("salesDayClosingTime", SalesDayClosingTime);
             writer.WriteIntValue("settlementDelayDays", SettlementDelayDays);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

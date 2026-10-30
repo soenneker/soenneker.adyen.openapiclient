@@ -66,6 +66,8 @@ namespace Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.Termi
                 { "404", global::Soenneker.Adyen.OpenApiClient.Models.DeleteCompaniesCompanyIdTerminalThemesIdAssets404Response.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Adyen.OpenApiClient.Models.DeleteCompaniesCompanyIdTerminalThemesIdAssets422Response.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Adyen.OpenApiClient.Models.DeleteCompaniesCompanyIdTerminalThemesIdAssets500Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -85,11 +87,11 @@ namespace Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.Termi
         /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.PostCompaniesCompanyIdTerminalThemesIdAssets500Response">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Adyen.OpenApiClient.Models.ThemeAsset?> PostAsync(MultipartBody body, Action<RequestConfiguration<global::Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.TerminalThemes.Item.Assets.AssetsRequestBuilder.AssetsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Adyen.OpenApiClient.Models.ThemeAsset?> PostAsync(global::Microsoft.Kiota.Abstractions.MultipartBody body, Action<RequestConfiguration<global::Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.TerminalThemes.Item.Assets.AssetsRequestBuilder.AssetsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Adyen.OpenApiClient.Models.ThemeAsset> PostAsync(MultipartBody body, Action<RequestConfiguration<global::Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.TerminalThemes.Item.Assets.AssetsRequestBuilder.AssetsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Adyen.OpenApiClient.Models.ThemeAsset> PostAsync(global::Microsoft.Kiota.Abstractions.MultipartBody body, Action<RequestConfiguration<global::Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.TerminalThemes.Item.Assets.AssetsRequestBuilder.AssetsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -103,6 +105,8 @@ namespace Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.Termi
                 { "422", global::Soenneker.Adyen.OpenApiClient.Models.PostCompaniesCompanyIdTerminalThemesIdAssets422Response.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Adyen.OpenApiClient.Models.PostCompaniesCompanyIdTerminalThemesIdAssets429Response.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Adyen.OpenApiClient.Models.PostCompaniesCompanyIdTerminalThemesIdAssets500Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.ThemeAsset>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.ThemeAsset.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -133,11 +137,11 @@ namespace Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.Termi
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(MultipartBody body, Action<RequestConfiguration<global::Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.TerminalThemes.Item.Assets.AssetsRequestBuilder.AssetsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Kiota.Abstractions.MultipartBody body, Action<RequestConfiguration<global::Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.TerminalThemes.Item.Assets.AssetsRequestBuilder.AssetsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(MultipartBody body, Action<RequestConfiguration<global::Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.TerminalThemes.Item.Assets.AssetsRequestBuilder.AssetsRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Kiota.Abstractions.MultipartBody body, Action<RequestConfiguration<global::Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.TerminalThemes.Item.Assets.AssetsRequestBuilder.AssetsRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

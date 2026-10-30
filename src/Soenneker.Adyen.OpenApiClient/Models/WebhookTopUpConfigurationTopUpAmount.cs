@@ -12,24 +12,37 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WebhookTopUpConfigurationTopUpAmount : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("fixedAmount") is { } nullNodeFixedAmount && nullNodeFixedAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FixedAmount = null;
+            if (parseNode.GetChildNode("targetAmount") is { } nullNodeTargetAmount && nullNodeTargetAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetAmount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The fixed amount with which you want to top up the balance account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpAmountFixedAmount? FixedAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpAmountFixedAmount? FixedAmount { get => _explicitNullValueFixedAmount; set { _explicitNullValueFixedAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fixedAmount"); else _explicitNullProperties?.Remove("fixedAmount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpAmountFixedAmount? _explicitNullValueFixedAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpAmountFixedAmount FixedAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpAmountFixedAmount FixedAmount { get => _explicitNullValueFixedAmount; set { _explicitNullValueFixedAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fixedAmount"); else _explicitNullProperties?.Remove("fixedAmount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpAmountFixedAmount _explicitNullValueFixedAmount = default!;
 #endif
         /// <summary>The target balance for the balance account that the top-up must achieve.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpAmountTargetAmount? TargetAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpAmountTargetAmount? TargetAmount { get => _explicitNullValueTargetAmount; set { _explicitNullValueTargetAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetAmount"); else _explicitNullProperties?.Remove("targetAmount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpAmountTargetAmount? _explicitNullValueTargetAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpAmountTargetAmount TargetAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpAmountTargetAmount TargetAmount { get => _explicitNullValueTargetAmount; set { _explicitNullValueTargetAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetAmount"); else _explicitNullProperties?.Remove("targetAmount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpAmountTargetAmount _explicitNullValueTargetAmount = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpConfigurationTopUpAmount"/> and sets the default values.
@@ -46,7 +59,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpConfigurationTopUpAmount CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpConfigurationTopUpAmount();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpConfigurationTopUpAmount(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +82,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpAmountFixedAmount>("fixedAmount", FixedAmount);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpAmountTargetAmount>("targetAmount", TargetAmount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

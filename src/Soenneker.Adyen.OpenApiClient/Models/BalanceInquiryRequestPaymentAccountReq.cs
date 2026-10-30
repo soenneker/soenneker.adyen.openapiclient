@@ -12,26 +12,41 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BalanceInquiryRequestPaymentAccountReq : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("AccountType") is { } nullNodeAccountType && nullNodeAccountType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountType = null;
+            if (parseNode.GetChildNode("CardAcquisitionReference") is { } nullNodeCardAcquisitionReference && nullNodeCardAcquisitionReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardAcquisitionReference = null;
+            if (parseNode.GetChildNode("PaymentInstrumentData") is { } nullNodePaymentInstrumentData && nullNodePaymentInstrumentData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentInstrumentData = null;
+        }
+
         /// <summary>Type of cardholder account used for the transaction. Allows a cardholder to select the type of account used for the transaction.Possible values:* **Default*** **Savings*** **Checking*** **CreditCard*** **Universal*** **Investment*** **CardTotals*** **EpurseCard**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentAccountReqAccountType? AccountType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentAccountReqAccountType? AccountType { get => _explicitNullValueAccountType; set { _explicitNullValueAccountType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AccountType"); else _explicitNullProperties?.Remove("AccountType"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentAccountReqAccountType? _explicitNullValueAccountType = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Identification of a transaction for the Sale System or the POI System.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType? CardAcquisitionReference { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType? CardAcquisitionReference { get => _explicitNullValueCardAcquisitionReference; set { _explicitNullValueCardAcquisitionReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CardAcquisitionReference"); else _explicitNullProperties?.Remove("CardAcquisitionReference"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType? _explicitNullValueCardAcquisitionReference = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType CardAcquisitionReference { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType CardAcquisitionReference { get => _explicitNullValueCardAcquisitionReference; set { _explicitNullValueCardAcquisitionReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CardAcquisitionReference"); else _explicitNullProperties?.Remove("CardAcquisitionReference"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType _explicitNullValueCardAcquisitionReference = default!;
 #endif
         /// <summary>Data related to the instrument of payment for the transaction.Sent in the result of the payment transaction. For a card, it could also be sent in the `CardAcquisition` response, to be processed by the Sale System.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentAccountReqPaymentInstrumentData? PaymentInstrumentData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentAccountReqPaymentInstrumentData? PaymentInstrumentData { get => _explicitNullValuePaymentInstrumentData; set { _explicitNullValuePaymentInstrumentData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PaymentInstrumentData"); else _explicitNullProperties?.Remove("PaymentInstrumentData"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentAccountReqPaymentInstrumentData? _explicitNullValuePaymentInstrumentData = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentAccountReqPaymentInstrumentData PaymentInstrumentData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentAccountReqPaymentInstrumentData PaymentInstrumentData { get => _explicitNullValuePaymentInstrumentData; set { _explicitNullValuePaymentInstrumentData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PaymentInstrumentData"); else _explicitNullProperties?.Remove("PaymentInstrumentData"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentAccountReqPaymentInstrumentData _explicitNullValuePaymentInstrumentData = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalanceInquiryRequestPaymentAccountReq"/> and sets the default values.
@@ -48,7 +63,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.BalanceInquiryRequestPaymentAccountReq CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.BalanceInquiryRequestPaymentAccountReq();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.BalanceInquiryRequestPaymentAccountReq(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,6 +88,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentAccountReqAccountType>("AccountType", AccountType);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType>("CardAcquisitionReference", CardAcquisitionReference);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentAccountReqPaymentInstrumentData>("PaymentInstrumentData", PaymentInstrumentData);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -63,6 +63,8 @@ namespace Soenneker.Adyen.OpenApiClient.HopServiceV6.GetOnboardingUrl
                 { "403", global::Soenneker.Adyen.OpenApiClient.Models.HopServiceV6ServiceError.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Adyen.OpenApiClient.Models.HopServiceV6ServiceError.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Adyen.OpenApiClient.Models.HopServiceV6ServiceError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.GetOnboardingUrlResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.GetOnboardingUrlResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

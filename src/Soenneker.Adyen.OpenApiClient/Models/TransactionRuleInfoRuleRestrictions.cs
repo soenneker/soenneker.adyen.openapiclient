@@ -12,208 +12,290 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TransactionRuleInfoRuleRestrictions : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("activeNetworkTokens") is { } nullNodeActiveNetworkTokens && nullNodeActiveNetworkTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActiveNetworkTokens = null;
+            if (parseNode.GetChildNode("brandVariants") is { } nullNodeBrandVariants && nullNodeBrandVariants.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BrandVariants = null;
+            if (parseNode.GetChildNode("counterpartyBank") is { } nullNodeCounterpartyBank && nullNodeCounterpartyBank.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CounterpartyBank = null;
+            if (parseNode.GetChildNode("counterpartyTypes") is { } nullNodeCounterpartyTypes && nullNodeCounterpartyTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CounterpartyTypes = null;
+            if (parseNode.GetChildNode("countries") is { } nullNodeCountries && nullNodeCountries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Countries = null;
+            if (parseNode.GetChildNode("dayOfWeek") is { } nullNodeDayOfWeek && nullNodeDayOfWeek.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DayOfWeek = null;
+            if (parseNode.GetChildNode("differentCurrencies") is { } nullNodeDifferentCurrencies && nullNodeDifferentCurrencies.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DifferentCurrencies = null;
+            if (parseNode.GetChildNode("entryModes") is { } nullNodeEntryModes && nullNodeEntryModes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntryModes = null;
+            if (parseNode.GetChildNode("internationalTransaction") is { } nullNodeInternationalTransaction && nullNodeInternationalTransaction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InternationalTransaction = null;
+            if (parseNode.GetChildNode("matchingTransactions") is { } nullNodeMatchingTransactions && nullNodeMatchingTransactions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MatchingTransactions = null;
+            if (parseNode.GetChildNode("matchingValues") is { } nullNodeMatchingValues && nullNodeMatchingValues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MatchingValues = null;
+            if (parseNode.GetChildNode("mccs") is { } nullNodeMccs && nullNodeMccs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mccs = null;
+            if (parseNode.GetChildNode("merchantNames") is { } nullNodeMerchantNames && nullNodeMerchantNames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantNames = null;
+            if (parseNode.GetChildNode("merchants") is { } nullNodeMerchants && nullNodeMerchants.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Merchants = null;
+            if (parseNode.GetChildNode("processingTypes") is { } nullNodeProcessingTypes && nullNodeProcessingTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProcessingTypes = null;
+            if (parseNode.GetChildNode("riskScores") is { } nullNodeRiskScores && nullNodeRiskScores.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RiskScores = null;
+            if (parseNode.GetChildNode("sameAmountRestriction") is { } nullNodeSameAmountRestriction && nullNodeSameAmountRestriction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SameAmountRestriction = null;
+            if (parseNode.GetChildNode("sameCounterpartyRestriction") is { } nullNodeSameCounterpartyRestriction && nullNodeSameCounterpartyRestriction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SameCounterpartyRestriction = null;
+            if (parseNode.GetChildNode("sourceAccountTypes") is { } nullNodeSourceAccountTypes && nullNodeSourceAccountTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceAccountTypes = null;
+            if (parseNode.GetChildNode("timeOfDay") is { } nullNodeTimeOfDay && nullNodeTimeOfDay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeOfDay = null;
+            if (parseNode.GetChildNode("tokenRequestors") is { } nullNodeTokenRequestors && nullNodeTokenRequestors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TokenRequestors = null;
+            if (parseNode.GetChildNode("totalAmount") is { } nullNodeTotalAmount && nullNodeTotalAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalAmount = null;
+            if (parseNode.GetChildNode("walletProviderAccountScore") is { } nullNodeWalletProviderAccountScore && nullNodeWalletProviderAccountScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WalletProviderAccountScore = null;
+            if (parseNode.GetChildNode("walletProviderDeviceScore") is { } nullNodeWalletProviderDeviceScore && nullNodeWalletProviderDeviceScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WalletProviderDeviceScore = null;
+            if (parseNode.GetChildNode("walletProviderDeviceType") is { } nullNodeWalletProviderDeviceType && nullNodeWalletProviderDeviceType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WalletProviderDeviceType = null;
+        }
+
         /// <summary>The total number of tokens that a card can have across different kinds of digital wallets on the user&apos;s phones, watches, or other wearables.Supported operations: **equals**, **notEquals**, **greaterThanOrEqualTo**, **greaterThan**, **lessThanOrEqualTo**, **lessThan**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsActiveNetworkTokens? ActiveNetworkTokens { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsActiveNetworkTokens? ActiveNetworkTokens { get => _explicitNullValueActiveNetworkTokens; set { _explicitNullValueActiveNetworkTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activeNetworkTokens"); else _explicitNullProperties?.Remove("activeNetworkTokens"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsActiveNetworkTokens? _explicitNullValueActiveNetworkTokens = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsActiveNetworkTokens ActiveNetworkTokens { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsActiveNetworkTokens ActiveNetworkTokens { get => _explicitNullValueActiveNetworkTokens; set { _explicitNullValueActiveNetworkTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activeNetworkTokens"); else _explicitNullProperties?.Remove("activeNetworkTokens"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsActiveNetworkTokens _explicitNullValueActiveNetworkTokens = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>List of card brand variants and the operation.Supported operations: **anyMatch**, **noneMatch**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsBrandVariants? BrandVariants { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsBrandVariants? BrandVariants { get => _explicitNullValueBrandVariants; set { _explicitNullValueBrandVariants = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("brandVariants"); else _explicitNullProperties?.Remove("brandVariants"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsBrandVariants? _explicitNullValueBrandVariants = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsBrandVariants BrandVariants { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsBrandVariants BrandVariants { get => _explicitNullValueBrandVariants; set { _explicitNullValueBrandVariants = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("brandVariants"); else _explicitNullProperties?.Remove("brandVariants"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsBrandVariants _explicitNullValueBrandVariants = default!;
 #endif
         /// <summary>Contains a list of counterparty financial institutions and how they must be evaluated.Supported operations: **anyMatch**, **noneMatch**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsCounterpartyBank? CounterpartyBank { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsCounterpartyBank? CounterpartyBank { get => _explicitNullValueCounterpartyBank; set { _explicitNullValueCounterpartyBank = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("counterpartyBank"); else _explicitNullProperties?.Remove("counterpartyBank"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsCounterpartyBank? _explicitNullValueCounterpartyBank = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsCounterpartyBank CounterpartyBank { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsCounterpartyBank CounterpartyBank { get => _explicitNullValueCounterpartyBank; set { _explicitNullValueCounterpartyBank = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("counterpartyBank"); else _explicitNullProperties?.Remove("counterpartyBank"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsCounterpartyBank _explicitNullValueCounterpartyBank = default!;
 #endif
         /// <summary>Contains a list of counterparty types and how they must be evaluated.Supported operations: **anyMatch**, **noneMatch**.Supported value inputs:- **balanceAccount**- **bankAccount**- **card**- **transferInstrument**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsCounterpartyTypes? CounterpartyTypes { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsCounterpartyTypes? CounterpartyTypes { get => _explicitNullValueCounterpartyTypes; set { _explicitNullValueCounterpartyTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("counterpartyTypes"); else _explicitNullProperties?.Remove("counterpartyTypes"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsCounterpartyTypes? _explicitNullValueCounterpartyTypes = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsCounterpartyTypes CounterpartyTypes { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsCounterpartyTypes CounterpartyTypes { get => _explicitNullValueCounterpartyTypes; set { _explicitNullValueCounterpartyTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("counterpartyTypes"); else _explicitNullProperties?.Remove("counterpartyTypes"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsCounterpartyTypes _explicitNullValueCounterpartyTypes = default!;
 #endif
         /// <summary>List of countries and the operation.Supported operations: **anyMatch**, **noneMatch**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsCountries? Countries { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsCountries? Countries { get => _explicitNullValueCountries; set { _explicitNullValueCountries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("countries"); else _explicitNullProperties?.Remove("countries"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsCountries? _explicitNullValueCountries = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsCountries Countries { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsCountries Countries { get => _explicitNullValueCountries; set { _explicitNullValueCountries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("countries"); else _explicitNullProperties?.Remove("countries"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsCountries _explicitNullValueCountries = default!;
 #endif
         /// <summary>List of week days and the operation. Supported operations: **anyMatch**, **noneMatch**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsDayOfWeek? DayOfWeek { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsDayOfWeek? DayOfWeek { get => _explicitNullValueDayOfWeek; set { _explicitNullValueDayOfWeek = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dayOfWeek"); else _explicitNullProperties?.Remove("dayOfWeek"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsDayOfWeek? _explicitNullValueDayOfWeek = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsDayOfWeek DayOfWeek { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsDayOfWeek DayOfWeek { get => _explicitNullValueDayOfWeek; set { _explicitNullValueDayOfWeek = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dayOfWeek"); else _explicitNullProperties?.Remove("dayOfWeek"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsDayOfWeek _explicitNullValueDayOfWeek = default!;
 #endif
         /// <summary>Compares the currency of the payment against the currency of the payment instrument, and specifies the operation.Supported operations: **equals**, **notEquals**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsDifferentCurrencies? DifferentCurrencies { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsDifferentCurrencies? DifferentCurrencies { get => _explicitNullValueDifferentCurrencies; set { _explicitNullValueDifferentCurrencies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("differentCurrencies"); else _explicitNullProperties?.Remove("differentCurrencies"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsDifferentCurrencies? _explicitNullValueDifferentCurrencies = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsDifferentCurrencies DifferentCurrencies { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsDifferentCurrencies DifferentCurrencies { get => _explicitNullValueDifferentCurrencies; set { _explicitNullValueDifferentCurrencies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("differentCurrencies"); else _explicitNullProperties?.Remove("differentCurrencies"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsDifferentCurrencies _explicitNullValueDifferentCurrencies = default!;
 #endif
         /// <summary>List of point-of-sale entry modes and the operation..Supported operations: **anyMatch**, **noneMatch**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsEntryModes? EntryModes { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsEntryModes? EntryModes { get => _explicitNullValueEntryModes; set { _explicitNullValueEntryModes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entryModes"); else _explicitNullProperties?.Remove("entryModes"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsEntryModes? _explicitNullValueEntryModes = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsEntryModes EntryModes { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsEntryModes EntryModes { get => _explicitNullValueEntryModes; set { _explicitNullValueEntryModes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entryModes"); else _explicitNullProperties?.Remove("entryModes"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsEntryModes _explicitNullValueEntryModes = default!;
 #endif
         /// <summary>Indicates whether transaction is an international transaction and specifies the operation.Supported operations: **equals**, **notEquals**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsInternationalTransaction? InternationalTransaction { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsInternationalTransaction? InternationalTransaction { get => _explicitNullValueInternationalTransaction; set { _explicitNullValueInternationalTransaction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("internationalTransaction"); else _explicitNullProperties?.Remove("internationalTransaction"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsInternationalTransaction? _explicitNullValueInternationalTransaction = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsInternationalTransaction InternationalTransaction { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsInternationalTransaction InternationalTransaction { get => _explicitNullValueInternationalTransaction; set { _explicitNullValueInternationalTransaction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("internationalTransaction"); else _explicitNullProperties?.Remove("internationalTransaction"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsInternationalTransaction _explicitNullValueInternationalTransaction = default!;
 #endif
         /// <summary>The number of transactions and the operation.Supported operations: **equals**, **notEquals**, **greaterThanOrEqualTo**, **greaterThan**, **lessThanOrEqualTo**, **lessThan**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsMatchingTransactions? MatchingTransactions { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsMatchingTransactions? MatchingTransactions { get => _explicitNullValueMatchingTransactions; set { _explicitNullValueMatchingTransactions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("matchingTransactions"); else _explicitNullProperties?.Remove("matchingTransactions"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsMatchingTransactions? _explicitNullValueMatchingTransactions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsMatchingTransactions MatchingTransactions { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsMatchingTransactions MatchingTransactions { get => _explicitNullValueMatchingTransactions; set { _explicitNullValueMatchingTransactions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("matchingTransactions"); else _explicitNullProperties?.Remove("matchingTransactions"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsMatchingTransactions _explicitNullValueMatchingTransactions = default!;
 #endif
         /// <summary>Checks if a user has recently made multiple transfers with the specified values.To use this restriction, you must:- Set the rule `type` to **velocity**.- Specify a time `interval`.- Specify a number of `matchingTransactions`.Supported operation: **allMatch**.Supported value inputs:- **merchantId** and **acquirerId**- **amount** and **currency**- **merchantName**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsMatchingValues? MatchingValues { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsMatchingValues? MatchingValues { get => _explicitNullValueMatchingValues; set { _explicitNullValueMatchingValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("matchingValues"); else _explicitNullProperties?.Remove("matchingValues"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsMatchingValues? _explicitNullValueMatchingValues = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsMatchingValues MatchingValues { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsMatchingValues MatchingValues { get => _explicitNullValueMatchingValues; set { _explicitNullValueMatchingValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("matchingValues"); else _explicitNullProperties?.Remove("matchingValues"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsMatchingValues _explicitNullValueMatchingValues = default!;
 #endif
         /// <summary>List of merchant category codes (MCCs) and the operation.Supported operations: **anyMatch**, **noneMatch**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsMccs? Mccs { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsMccs? Mccs { get => _explicitNullValueMccs; set { _explicitNullValueMccs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mccs"); else _explicitNullProperties?.Remove("mccs"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsMccs? _explicitNullValueMccs = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsMccs Mccs { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsMccs Mccs { get => _explicitNullValueMccs; set { _explicitNullValueMccs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mccs"); else _explicitNullProperties?.Remove("mccs"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsMccs _explicitNullValueMccs = default!;
 #endif
         /// <summary>List of names that will be compared to the merchant name according to the matching type.Supported operations: **anyMatch**, **noneMatch**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsMerchantNames? MerchantNames { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsMerchantNames? MerchantNames { get => _explicitNullValueMerchantNames; set { _explicitNullValueMerchantNames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantNames"); else _explicitNullProperties?.Remove("merchantNames"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsMerchantNames? _explicitNullValueMerchantNames = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsMerchantNames MerchantNames { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsMerchantNames MerchantNames { get => _explicitNullValueMerchantNames; set { _explicitNullValueMerchantNames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantNames"); else _explicitNullProperties?.Remove("merchantNames"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsMerchantNames _explicitNullValueMerchantNames = default!;
 #endif
         /// <summary>List of merchant ID and acquirer ID pairs, and the operation.Supported operations: **anyMatch**, **noneMatch**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsMerchants? Merchants { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsMerchants? Merchants { get => _explicitNullValueMerchants; set { _explicitNullValueMerchants = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchants"); else _explicitNullProperties?.Remove("merchants"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsMerchants? _explicitNullValueMerchants = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsMerchants Merchants { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsMerchants Merchants { get => _explicitNullValueMerchants; set { _explicitNullValueMerchants = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchants"); else _explicitNullProperties?.Remove("merchants"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsMerchants _explicitNullValueMerchants = default!;
 #endif
         /// <summary>List of processing types and the operation.Supported operations: **anyMatch**, **noneMatch**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsProcessingTypes? ProcessingTypes { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsProcessingTypes? ProcessingTypes { get => _explicitNullValueProcessingTypes; set { _explicitNullValueProcessingTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processingTypes"); else _explicitNullProperties?.Remove("processingTypes"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsProcessingTypes? _explicitNullValueProcessingTypes = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsProcessingTypes ProcessingTypes { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsProcessingTypes ProcessingTypes { get => _explicitNullValueProcessingTypes; set { _explicitNullValueProcessingTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processingTypes"); else _explicitNullProperties?.Remove("processingTypes"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsProcessingTypes _explicitNullValueProcessingTypes = default!;
 #endif
         /// <summary>Risk scores provided by specific sources. The same operation applies to all scores.Current sources available: **visa**, **mastercard**Supported operations: **equals**, **notEquals**, **greaterThanOrEqualTo**, **greaterThan**, **lessThanOrEqualTo**, **lessThan**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsRiskScores? RiskScores { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsRiskScores? RiskScores { get => _explicitNullValueRiskScores; set { _explicitNullValueRiskScores = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("riskScores"); else _explicitNullProperties?.Remove("riskScores"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsRiskScores? _explicitNullValueRiskScores = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsRiskScores RiskScores { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsRiskScores RiskScores { get => _explicitNullValueRiskScores; set { _explicitNullValueRiskScores = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("riskScores"); else _explicitNullProperties?.Remove("riskScores"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsRiskScores _explicitNullValueRiskScores = default!;
 #endif
         /// <summary>Checks if a user has recently sent the same amount of funds in multiple transfers.To use this restriction, you must:- Set the rule `type` to **velocity**.- Specify a time `interval`.- Specify a number of `matchingTransactions`.Supported operation: **equals**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsSameAmountRestriction? SameAmountRestriction { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsSameAmountRestriction? SameAmountRestriction { get => _explicitNullValueSameAmountRestriction; set { _explicitNullValueSameAmountRestriction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sameAmountRestriction"); else _explicitNullProperties?.Remove("sameAmountRestriction"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsSameAmountRestriction? _explicitNullValueSameAmountRestriction = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsSameAmountRestriction SameAmountRestriction { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsSameAmountRestriction SameAmountRestriction { get => _explicitNullValueSameAmountRestriction; set { _explicitNullValueSameAmountRestriction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sameAmountRestriction"); else _explicitNullProperties?.Remove("sameAmountRestriction"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsSameAmountRestriction _explicitNullValueSameAmountRestriction = default!;
 #endif
         /// <summary>Checks if a user has recently made multiple transfers to the same counterparty.To use this restriction, you must:- Set the rule `type` to **velocity**.- Specify a time `interval`.- Specify a number of `matchingTransactions`.Supported operations: **equals**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsSameCounterpartyRestriction? SameCounterpartyRestriction { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsSameCounterpartyRestriction? SameCounterpartyRestriction { get => _explicitNullValueSameCounterpartyRestriction; set { _explicitNullValueSameCounterpartyRestriction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sameCounterpartyRestriction"); else _explicitNullProperties?.Remove("sameCounterpartyRestriction"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsSameCounterpartyRestriction? _explicitNullValueSameCounterpartyRestriction = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsSameCounterpartyRestriction SameCounterpartyRestriction { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsSameCounterpartyRestriction SameCounterpartyRestriction { get => _explicitNullValueSameCounterpartyRestriction; set { _explicitNullValueSameCounterpartyRestriction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sameCounterpartyRestriction"); else _explicitNullProperties?.Remove("sameCounterpartyRestriction"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsSameCounterpartyRestriction _explicitNullValueSameCounterpartyRestriction = default!;
 #endif
         /// <summary>Contains a list of source account types and how they must be evaluated.Supported operations: **anyMatch**, **noneMatch**.Supported value inputs:- **balanceAccount**- **businessAccount**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsSourceAccountTypes? SourceAccountTypes { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsSourceAccountTypes? SourceAccountTypes { get => _explicitNullValueSourceAccountTypes; set { _explicitNullValueSourceAccountTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceAccountTypes"); else _explicitNullProperties?.Remove("sourceAccountTypes"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsSourceAccountTypes? _explicitNullValueSourceAccountTypes = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsSourceAccountTypes SourceAccountTypes { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsSourceAccountTypes SourceAccountTypes { get => _explicitNullValueSourceAccountTypes; set { _explicitNullValueSourceAccountTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceAccountTypes"); else _explicitNullProperties?.Remove("sourceAccountTypes"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsSourceAccountTypes _explicitNullValueSourceAccountTypes = default!;
 #endif
         /// <summary>A start and end time in a time-only ISO-8601 extended offset format. Supported operations: **equals**, **notEquals**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsTimeOfDay? TimeOfDay { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsTimeOfDay? TimeOfDay { get => _explicitNullValueTimeOfDay; set { _explicitNullValueTimeOfDay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeOfDay"); else _explicitNullProperties?.Remove("timeOfDay"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsTimeOfDay? _explicitNullValueTimeOfDay = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsTimeOfDay TimeOfDay { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsTimeOfDay TimeOfDay { get => _explicitNullValueTimeOfDay; set { _explicitNullValueTimeOfDay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeOfDay"); else _explicitNullProperties?.Remove("timeOfDay"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsTimeOfDay _explicitNullValueTimeOfDay = default!;
 #endif
         /// <summary>List of token requestor IDs and the operation.Supported operations: **anyMatch**, **noneMatch**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsTokenRequestors? TokenRequestors { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsTokenRequestors? TokenRequestors { get => _explicitNullValueTokenRequestors; set { _explicitNullValueTokenRequestors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tokenRequestors"); else _explicitNullProperties?.Remove("tokenRequestors"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsTokenRequestors? _explicitNullValueTokenRequestors = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsTokenRequestors TokenRequestors { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsTokenRequestors TokenRequestors { get => _explicitNullValueTokenRequestors; set { _explicitNullValueTokenRequestors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tokenRequestors"); else _explicitNullProperties?.Remove("tokenRequestors"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsTokenRequestors _explicitNullValueTokenRequestors = default!;
 #endif
         /// <summary>The total amount and the operation.Supported operations: **equals**, **notEquals**, **greaterThanOrEqualTo**, **greaterThan**, **lessThanOrEqualTo**, **lessThan**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsTotalAmount? TotalAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsTotalAmount? TotalAmount { get => _explicitNullValueTotalAmount; set { _explicitNullValueTotalAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalAmount"); else _explicitNullProperties?.Remove("totalAmount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsTotalAmount? _explicitNullValueTotalAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsTotalAmount TotalAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsTotalAmount TotalAmount { get => _explicitNullValueTotalAmount; set { _explicitNullValueTotalAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalAmount"); else _explicitNullProperties?.Remove("totalAmount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsTotalAmount _explicitNullValueTotalAmount = default!;
 #endif
         /// <summary>Checks the wallet account score.Supported operations: **equals**, **notEquals**, **greaterThanOrEqualTo**, **greaterThan**, **lessThanOrEqualTo**, **lessThan**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsWalletProviderAccountScore? WalletProviderAccountScore { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsWalletProviderAccountScore? WalletProviderAccountScore { get => _explicitNullValueWalletProviderAccountScore; set { _explicitNullValueWalletProviderAccountScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("walletProviderAccountScore"); else _explicitNullProperties?.Remove("walletProviderAccountScore"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsWalletProviderAccountScore? _explicitNullValueWalletProviderAccountScore = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsWalletProviderAccountScore WalletProviderAccountScore { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsWalletProviderAccountScore WalletProviderAccountScore { get => _explicitNullValueWalletProviderAccountScore; set { _explicitNullValueWalletProviderAccountScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("walletProviderAccountScore"); else _explicitNullProperties?.Remove("walletProviderAccountScore"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsWalletProviderAccountScore _explicitNullValueWalletProviderAccountScore = default!;
 #endif
         /// <summary>Wallet Provider Device Score and the operation.Supported operations: **equals**, **notEquals**, **greaterThanOrEqualTo**, **greaterThan**, **lessThanOrEqualTo**, **lessThan**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsWalletProviderDeviceScore? WalletProviderDeviceScore { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsWalletProviderDeviceScore? WalletProviderDeviceScore { get => _explicitNullValueWalletProviderDeviceScore; set { _explicitNullValueWalletProviderDeviceScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("walletProviderDeviceScore"); else _explicitNullProperties?.Remove("walletProviderDeviceScore"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsWalletProviderDeviceScore? _explicitNullValueWalletProviderDeviceScore = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsWalletProviderDeviceScore WalletProviderDeviceScore { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsWalletProviderDeviceScore WalletProviderDeviceScore { get => _explicitNullValueWalletProviderDeviceScore; set { _explicitNullValueWalletProviderDeviceScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("walletProviderDeviceScore"); else _explicitNullProperties?.Remove("walletProviderDeviceScore"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsWalletProviderDeviceScore _explicitNullValueWalletProviderDeviceScore = default!;
 #endif
         /// <summary>Wallet Provider Device Type and the operation.Supported operations: **anyMatch**, **noneMatch**.Supported value inputs:- **MOBILE_PHONE**- **TABLET_OR_EREADER**- **WATCH_OR_WRISTBAND**- **WEARABLE**- **CARD**- **PC**- **OTHER**- **UNKNOWN**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsWalletProviderDeviceType? WalletProviderDeviceType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsWalletProviderDeviceType? WalletProviderDeviceType { get => _explicitNullValueWalletProviderDeviceType; set { _explicitNullValueWalletProviderDeviceType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("walletProviderDeviceType"); else _explicitNullProperties?.Remove("walletProviderDeviceType"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsWalletProviderDeviceType? _explicitNullValueWalletProviderDeviceType = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsWalletProviderDeviceType WalletProviderDeviceType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsWalletProviderDeviceType WalletProviderDeviceType { get => _explicitNullValueWalletProviderDeviceType; set { _explicitNullValueWalletProviderDeviceType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("walletProviderDeviceType"); else _explicitNullProperties?.Remove("walletProviderDeviceType"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsWalletProviderDeviceType _explicitNullValueWalletProviderDeviceType = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleInfoRuleRestrictions"/> and sets the default values.
@@ -230,7 +312,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleInfoRuleRestrictions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleInfoRuleRestrictions();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleInfoRuleRestrictions(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -299,6 +381,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsWalletProviderAccountScore>("walletProviderAccountScore", WalletProviderAccountScore);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsWalletProviderDeviceScore>("walletProviderDeviceScore", WalletProviderDeviceScore);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictionsWalletProviderDeviceType>("walletProviderDeviceType", WalletProviderDeviceType);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,48 +11,70 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class DsPublicKeyDetail : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("brand") is { } nullNodeBrand && nullNodeBrand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Brand = null;
+            if (parseNode.GetChildNode("directoryServerId") is { } nullNodeDirectoryServerId && nullNodeDirectoryServerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DirectoryServerId = null;
+            if (parseNode.GetChildNode("fromSDKVersion") is { } nullNodeFromSDKVersion && nullNodeFromSDKVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FromSDKVersion = null;
+            if (parseNode.GetChildNode("publicKey") is { } nullNodePublicKey && nullNodePublicKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicKey = null;
+            if (parseNode.GetChildNode("rootCertificates") is { } nullNodeRootCertificates && nullNodeRootCertificates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RootCertificates = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Card brand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Brand { get; set; }
+        public string? Brand { get => _explicitNullValueBrand; set { _explicitNullValueBrand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("brand"); else _explicitNullProperties?.Remove("brand"); } }
+        private string? _explicitNullValueBrand = default!;
 #nullable restore
 #else
-        public string Brand { get; set; }
+        public string Brand { get => _explicitNullValueBrand; set { _explicitNullValueBrand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("brand"); else _explicitNullProperties?.Remove("brand"); } }
+        private string _explicitNullValueBrand = default!;
 #endif
         /// <summary>Directory Server (DS) identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DirectoryServerId { get; set; }
+        public string? DirectoryServerId { get => _explicitNullValueDirectoryServerId; set { _explicitNullValueDirectoryServerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("directoryServerId"); else _explicitNullProperties?.Remove("directoryServerId"); } }
+        private string? _explicitNullValueDirectoryServerId = default!;
 #nullable restore
 #else
-        public string DirectoryServerId { get; set; }
+        public string DirectoryServerId { get => _explicitNullValueDirectoryServerId; set { _explicitNullValueDirectoryServerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("directoryServerId"); else _explicitNullProperties?.Remove("directoryServerId"); } }
+        private string _explicitNullValueDirectoryServerId = default!;
 #endif
         /// <summary>The version of the mobile 3D Secure 2 SDK. For the possible values, refer to the versions in [Adyen 3DS2 Android](https://github.com/Adyen/adyen-3ds2-android/releases) and [Adyen 3DS2 iOS](https://github.com/Adyen/adyen-3ds2-ios/releases).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FromSDKVersion { get; set; }
+        public string? FromSDKVersion { get => _explicitNullValueFromSDKVersion; set { _explicitNullValueFromSDKVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fromSDKVersion"); else _explicitNullProperties?.Remove("fromSDKVersion"); } }
+        private string? _explicitNullValueFromSDKVersion = default!;
 #nullable restore
 #else
-        public string FromSDKVersion { get; set; }
+        public string FromSDKVersion { get => _explicitNullValueFromSDKVersion; set { _explicitNullValueFromSDKVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fromSDKVersion"); else _explicitNullProperties?.Remove("fromSDKVersion"); } }
+        private string _explicitNullValueFromSDKVersion = default!;
 #endif
         /// <summary>Public key. The 3D Secure 2 SDK encrypts the device information by using the DS public key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? PublicKey { get; set; }
+        public byte[]? PublicKey { get => _explicitNullValuePublicKey; set { _explicitNullValuePublicKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publicKey"); else _explicitNullProperties?.Remove("publicKey"); } }
+        private byte[]? _explicitNullValuePublicKey = default!;
 #nullable restore
 #else
-        public byte[] PublicKey { get; set; }
+        public byte[] PublicKey { get => _explicitNullValuePublicKey; set { _explicitNullValuePublicKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publicKey"); else _explicitNullProperties?.Remove("publicKey"); } }
+        private byte[] _explicitNullValuePublicKey = default!;
 #endif
         /// <summary>Directory Server root certificates. The 3D Secure 2 SDK verifies the ACS signed content using the rootCertificates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RootCertificates { get; set; }
+        public string? RootCertificates { get => _explicitNullValueRootCertificates; set { _explicitNullValueRootCertificates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rootCertificates"); else _explicitNullProperties?.Remove("rootCertificates"); } }
+        private string? _explicitNullValueRootCertificates = default!;
 #nullable restore
 #else
-        public string RootCertificates { get; set; }
+        public string RootCertificates { get => _explicitNullValueRootCertificates; set { _explicitNullValueRootCertificates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rootCertificates"); else _explicitNullProperties?.Remove("rootCertificates"); } }
+        private string _explicitNullValueRootCertificates = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.DsPublicKeyDetail"/> and sets the default values.
@@ -69,7 +91,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.DsPublicKeyDetail CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.DsPublicKeyDetail();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.DsPublicKeyDetail(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -98,6 +120,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("fromSDKVersion", FromSDKVersion);
             writer.WriteByteArrayValue("publicKey", PublicKey);
             writer.WriteStringValue("rootCertificates", RootCertificates);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

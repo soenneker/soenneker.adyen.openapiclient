@@ -12,71 +12,105 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LoginRequest : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("CustomerOrderReq") is { } nullNodeCustomerOrderReq && nullNodeCustomerOrderReq.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerOrderReq = null;
+            if (parseNode.GetChildNode("DateTime") is { } nullNodeDateTime && nullNodeDateTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateTime = null;
+            if (parseNode.GetChildNode("OperatorID") is { } nullNodeOperatorID && nullNodeOperatorID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OperatorID = null;
+            if (parseNode.GetChildNode("OperatorLanguage") is { } nullNodeOperatorLanguage && nullNodeOperatorLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OperatorLanguage = null;
+            if (parseNode.GetChildNode("POISerialNumber") is { } nullNodePOISerialNumber && nullNodePOISerialNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) POISerialNumber = null;
+            if (parseNode.GetChildNode("SaleSoftware") is { } nullNodeSaleSoftware && nullNodeSaleSoftware.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SaleSoftware = null;
+            if (parseNode.GetChildNode("SaleTerminalData") is { } nullNodeSaleTerminalData && nullNodeSaleTerminalData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SaleTerminalData = null;
+            if (parseNode.GetChildNode("ShiftNumber") is { } nullNodeShiftNumber && nullNodeShiftNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShiftNumber = null;
+            if (parseNode.GetChildNode("TokenRequestedType") is { } nullNodeTokenRequestedType && nullNodeTokenRequestedType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TokenRequestedType = null;
+            if (parseNode.GetChildNode("TrainingModeFlag") is { } nullNodeTrainingModeFlag && nullNodeTrainingModeFlag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrainingModeFlag = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>List of customer order open, closed or both to be sent in the response messages.Possible values:* **Both*** **Closed*** **Open**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.LoginRequestCustomerOrderReqItem?>? CustomerOrderReq { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.LoginRequestCustomerOrderReqItem?>? CustomerOrderReq { get => _explicitNullValueCustomerOrderReq; set { _explicitNullValueCustomerOrderReq = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CustomerOrderReq"); else _explicitNullProperties?.Remove("CustomerOrderReq"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.LoginRequestCustomerOrderReqItem?>? _explicitNullValueCustomerOrderReq = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.LoginRequestCustomerOrderReqItem?> CustomerOrderReq { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.LoginRequestCustomerOrderReqItem?> CustomerOrderReq { get => _explicitNullValueCustomerOrderReq; set { _explicitNullValueCustomerOrderReq = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CustomerOrderReq"); else _explicitNullProperties?.Remove("CustomerOrderReq"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.LoginRequestCustomerOrderReqItem?> _explicitNullValueCustomerOrderReq = default!;
 #endif
         /// <summary>Date and Time. In the Login request message, the Sale System gives its date and time to the POI System. In the Login response, the POI System gives its date and time to the Sale System.</summary>
-        public DateTimeOffset? DateTime { get; set; }
+        public DateTimeOffset? DateTime { get => _explicitNullValueDateTime; set { _explicitNullValueDateTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DateTime"); else _explicitNullProperties?.Remove("DateTime"); } }
+        private DateTimeOffset? _explicitNullValueDateTime = default!;
         /// <summary>Identification of the Cashier or Operator.Four conditions to send it:* The Sale System wants the POI to log it in the transaction log.* Because of reconciliation with total on OperatorID.* Because the POI needs it.* Acquirer or issuer need it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OperatorID { get; set; }
+        public string? OperatorID { get => _explicitNullValueOperatorID; set { _explicitNullValueOperatorID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OperatorID"); else _explicitNullProperties?.Remove("OperatorID"); } }
+        private string? _explicitNullValueOperatorID = default!;
 #nullable restore
 #else
-        public string OperatorID { get; set; }
+        public string OperatorID { get => _explicitNullValueOperatorID; set { _explicitNullValueOperatorID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OperatorID"); else _explicitNullProperties?.Remove("OperatorID"); } }
+        private string _explicitNullValueOperatorID = default!;
 #endif
         /// <summary>Language of the Cashier or Operator.Default value for Device type displays.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OperatorLanguage { get; set; }
+        public string? OperatorLanguage { get => _explicitNullValueOperatorLanguage; set { _explicitNullValueOperatorLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OperatorLanguage"); else _explicitNullProperties?.Remove("OperatorLanguage"); } }
+        private string? _explicitNullValueOperatorLanguage = default!;
 #nullable restore
 #else
-        public string OperatorLanguage { get; set; }
+        public string OperatorLanguage { get => _explicitNullValueOperatorLanguage; set { _explicitNullValueOperatorLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OperatorLanguage"); else _explicitNullProperties?.Remove("OperatorLanguage"); } }
+        private string _explicitNullValueOperatorLanguage = default!;
 #endif
         /// <summary>Serial number of a POI Terminal.If the login involve a POI Terminal and not the first Login to the POI System.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? POISerialNumber { get; set; }
+        public string? POISerialNumber { get => _explicitNullValuePOISerialNumber; set { _explicitNullValuePOISerialNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("POISerialNumber"); else _explicitNullProperties?.Remove("POISerialNumber"); } }
+        private string? _explicitNullValuePOISerialNumber = default!;
 #nullable restore
 #else
-        public string POISerialNumber { get; set; }
+        public string POISerialNumber { get => _explicitNullValuePOISerialNumber; set { _explicitNullValuePOISerialNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("POISerialNumber"); else _explicitNullProperties?.Remove("POISerialNumber"); } }
+        private string _explicitNullValuePOISerialNumber = default!;
 #endif
         /// <summary>Information related to the software of the Sale System which manages the Sale to POI protocol.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.LoginRequestSaleSoftware? SaleSoftware { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LoginRequestSaleSoftware? SaleSoftware { get => _explicitNullValueSaleSoftware; set { _explicitNullValueSaleSoftware = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SaleSoftware"); else _explicitNullProperties?.Remove("SaleSoftware"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.LoginRequestSaleSoftware? _explicitNullValueSaleSoftware = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.LoginRequestSaleSoftware SaleSoftware { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LoginRequestSaleSoftware SaleSoftware { get => _explicitNullValueSaleSoftware; set { _explicitNullValueSaleSoftware = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SaleSoftware"); else _explicitNullProperties?.Remove("SaleSoftware"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.LoginRequestSaleSoftware _explicitNullValueSaleSoftware = default!;
 #endif
         /// <summary>Information related to the software and hardware feature of the Sale Terminal.Present if the login involve a Sale Terminal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.LoginRequestSaleTerminalData? SaleTerminalData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LoginRequestSaleTerminalData? SaleTerminalData { get => _explicitNullValueSaleTerminalData; set { _explicitNullValueSaleTerminalData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SaleTerminalData"); else _explicitNullProperties?.Remove("SaleTerminalData"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.LoginRequestSaleTerminalData? _explicitNullValueSaleTerminalData = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.LoginRequestSaleTerminalData SaleTerminalData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LoginRequestSaleTerminalData SaleTerminalData { get => _explicitNullValueSaleTerminalData; set { _explicitNullValueSaleTerminalData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SaleTerminalData"); else _explicitNullProperties?.Remove("SaleTerminalData"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.LoginRequestSaleTerminalData _explicitNullValueSaleTerminalData = default!;
 #endif
         /// <summary>Shift number.Same as OperatorID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ShiftNumber { get; set; }
+        public string? ShiftNumber { get => _explicitNullValueShiftNumber; set { _explicitNullValueShiftNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ShiftNumber"); else _explicitNullProperties?.Remove("ShiftNumber"); } }
+        private string? _explicitNullValueShiftNumber = default!;
 #nullable restore
 #else
-        public string ShiftNumber { get; set; }
+        public string ShiftNumber { get => _explicitNullValueShiftNumber; set { _explicitNullValueShiftNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ShiftNumber"); else _explicitNullProperties?.Remove("ShiftNumber"); } }
+        private string _explicitNullValueShiftNumber = default!;
 #endif
         /// <summary>Type of token replacing the PAN of a payment card to identify the payment mean of the customer. It allows, for a merchant, to use a token for a transaction only or for a longer period.Possible values:* **Transaction*** **Customer**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.LoginRequestTokenRequestedType? TokenRequestedType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LoginRequestTokenRequestedType? TokenRequestedType { get => _explicitNullValueTokenRequestedType; set { _explicitNullValueTokenRequestedType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TokenRequestedType"); else _explicitNullProperties?.Remove("TokenRequestedType"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.LoginRequestTokenRequestedType? _explicitNullValueTokenRequestedType = default!;
         /// <summary>Training mode.This flag indicates to the POI that the entire session will be not used to make real transaction, but is used for test of system or operator training.</summary>
-        public bool? TrainingModeFlag { get; set; }
+        public bool? TrainingModeFlag { get => _explicitNullValueTrainingModeFlag; set { _explicitNullValueTrainingModeFlag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TrainingModeFlag"); else _explicitNullProperties?.Remove("TrainingModeFlag"); } }
+        private bool? _explicitNullValueTrainingModeFlag = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.LoginRequest"/> and sets the default values.
         /// </summary>
@@ -93,7 +127,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.LoginRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.LoginRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.LoginRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -132,6 +166,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("ShiftNumber", ShiftNumber);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LoginRequestTokenRequestedType>("TokenRequestedType", TokenRequestedType);
             writer.WriteBoolValue("TrainingModeFlag", TrainingModeFlag);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

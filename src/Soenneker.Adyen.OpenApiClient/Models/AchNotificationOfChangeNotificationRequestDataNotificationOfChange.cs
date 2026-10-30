@@ -12,29 +12,46 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AchNotificationOfChangeNotificationRequestDataNotificationOfChange : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("newBankAccountNumber") is { } nullNodeNewBankAccountNumber && nullNodeNewBankAccountNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewBankAccountNumber = null;
+            if (parseNode.GetChildNode("newBankAccountType") is { } nullNodeNewBankAccountType && nullNodeNewBankAccountType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewBankAccountType = null;
+            if (parseNode.GetChildNode("newBranchCode") is { } nullNodeNewBranchCode && nullNodeNewBranchCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewBranchCode = null;
+            if (parseNode.GetChildNode("reasonCode") is { } nullNodeReasonCode && nullNodeReasonCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReasonCode = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>New bank account number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NewBankAccountNumber { get; set; }
+        public string? NewBankAccountNumber { get => _explicitNullValueNewBankAccountNumber; set { _explicitNullValueNewBankAccountNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newBankAccountNumber"); else _explicitNullProperties?.Remove("newBankAccountNumber"); } }
+        private string? _explicitNullValueNewBankAccountNumber = default!;
 #nullable restore
 #else
-        public string NewBankAccountNumber { get; set; }
+        public string NewBankAccountNumber { get => _explicitNullValueNewBankAccountNumber; set { _explicitNullValueNewBankAccountNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newBankAccountNumber"); else _explicitNullProperties?.Remove("newBankAccountNumber"); } }
+        private string _explicitNullValueNewBankAccountNumber = default!;
 #endif
         /// <summary>New bank account type.Possible values:*  **Savings***  **Checking**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AchNotificationOfChangeNotificationRequestDataNocNewBankAccountType? NewBankAccountType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AchNotificationOfChangeNotificationRequestDataNocNewBankAccountType? NewBankAccountType { get => _explicitNullValueNewBankAccountType; set { _explicitNullValueNewBankAccountType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newBankAccountType"); else _explicitNullProperties?.Remove("newBankAccountType"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.AchNotificationOfChangeNotificationRequestDataNocNewBankAccountType? _explicitNullValueNewBankAccountType = default!;
         /// <summary>New branch code.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NewBranchCode { get; set; }
+        public string? NewBranchCode { get => _explicitNullValueNewBranchCode; set { _explicitNullValueNewBranchCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newBranchCode"); else _explicitNullProperties?.Remove("newBranchCode"); } }
+        private string? _explicitNullValueNewBranchCode = default!;
 #nullable restore
 #else
-        public string NewBranchCode { get; set; }
+        public string NewBranchCode { get => _explicitNullValueNewBranchCode; set { _explicitNullValueNewBranchCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newBranchCode"); else _explicitNullProperties?.Remove("newBranchCode"); } }
+        private string _explicitNullValueNewBranchCode = default!;
 #endif
         /// <summary>Notification of Change reason code.Possible values:*  **C01** : Incorrect bank account number.*  **C02** : Incorrect transit/routing number.*  **C03** : Incorrect transit/routing number and bank account number.*  **C04** : Bank account name change.*  **C05** : Incorrect payment code.*  **C06** : Incorrect bank account number and transit code.*  **C07** : Incorrect transit/routing number, bank account number and payment code.*  **C09** : Incorrect individual ID number.*  **C10** : Incorrect company name.*  **C11** : Incorrect company identification.*  **C12** : Incorrect company name and company ID.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AchNotificationOfChangeNotificationRequestDataNocReasonCode? ReasonCode { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AchNotificationOfChangeNotificationRequestDataNocReasonCode? ReasonCode { get => _explicitNullValueReasonCode; set { _explicitNullValueReasonCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reasonCode"); else _explicitNullProperties?.Remove("reasonCode"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.AchNotificationOfChangeNotificationRequestDataNocReasonCode? _explicitNullValueReasonCode = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AchNotificationOfChangeNotificationRequestDataNotificationOfChange"/> and sets the default values.
         /// </summary>
@@ -50,7 +67,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.AchNotificationOfChangeNotificationRequestDataNotificationOfChange CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.AchNotificationOfChangeNotificationRequestDataNotificationOfChange();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.AchNotificationOfChangeNotificationRequestDataNotificationOfChange(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,6 +94,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AchNotificationOfChangeNotificationRequestDataNocNewBankAccountType>("newBankAccountType", NewBankAccountType);
             writer.WriteStringValue("newBranchCode", NewBranchCode);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AchNotificationOfChangeNotificationRequestDataNocReasonCode>("reasonCode", ReasonCode);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

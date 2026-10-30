@@ -12,107 +12,152 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AccountHolderNotificationDataAccountHolder : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("balancePlatform") is { } nullNodeBalancePlatform && nullNodeBalancePlatform.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalancePlatform = null;
+            if (parseNode.GetChildNode("capabilities") is { } nullNodeCapabilities && nullNodeCapabilities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Capabilities = null;
+            if (parseNode.GetChildNode("contactDetails") is { } nullNodeContactDetails && nullNodeContactDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContactDetails = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("legalEntityId") is { } nullNodeLegalEntityId && nullNodeLegalEntityId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LegalEntityId = null;
+            if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
+            if (parseNode.GetChildNode("migratedAccountHolderCode") is { } nullNodeMigratedAccountHolderCode && nullNodeMigratedAccountHolderCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MigratedAccountHolderCode = null;
+            if (parseNode.GetChildNode("primaryBalanceAccount") is { } nullNodePrimaryBalanceAccount && nullNodePrimaryBalanceAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrimaryBalanceAccount = null;
+            if (parseNode.GetChildNode("reference") is { } nullNodeReference && nullNodeReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reference = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("timeZone") is { } nullNodeTimeZone && nullNodeTimeZone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeZone = null;
+            if (parseNode.GetChildNode("verificationDeadlines") is { } nullNodeVerificationDeadlines && nullNodeVerificationDeadlines.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VerificationDeadlines = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The unique identifier of the [balance platform](https://docs.adyen.com/api-explorer/#/balanceplatform/latest/get/balancePlatforms/{id}__queryParam_id) to which the account holder belongs. Required in the request if your API credentials can be used for multiple balance platforms.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BalancePlatform { get; set; }
+        public string? BalancePlatform { get => _explicitNullValueBalancePlatform; set { _explicitNullValueBalancePlatform = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balancePlatform"); else _explicitNullProperties?.Remove("balancePlatform"); } }
+        private string? _explicitNullValueBalancePlatform = default!;
 #nullable restore
 #else
-        public string BalancePlatform { get; set; }
+        public string BalancePlatform { get => _explicitNullValueBalancePlatform; set { _explicitNullValueBalancePlatform = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balancePlatform"); else _explicitNullProperties?.Remove("balancePlatform"); } }
+        private string _explicitNullValueBalancePlatform = default!;
 #endif
         /// <summary>Contains key-value pairs that specify the actions that an account holder can do in your platform. The key is a capability required for your integration. For example, **issueCard** for Issuing. The value is an object containing the settings for the capability.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfigurationNotificationV2AccountHolderCapabilities? Capabilities { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfigurationNotificationV2AccountHolderCapabilities? Capabilities { get => _explicitNullValueCapabilities; set { _explicitNullValueCapabilities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("capabilities"); else _explicitNullProperties?.Remove("capabilities"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfigurationNotificationV2AccountHolderCapabilities? _explicitNullValueCapabilities = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfigurationNotificationV2AccountHolderCapabilities Capabilities { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfigurationNotificationV2AccountHolderCapabilities Capabilities { get => _explicitNullValueCapabilities; set { _explicitNullValueCapabilities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("capabilities"); else _explicitNullProperties?.Remove("capabilities"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfigurationNotificationV2AccountHolderCapabilities _explicitNullValueCapabilities = default!;
 #endif
         /// <summary>Contact details of the account holder.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfigurationNotificationV2AccountHolderContactDetails? ContactDetails { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfigurationNotificationV2AccountHolderContactDetails? ContactDetails { get => _explicitNullValueContactDetails; set { _explicitNullValueContactDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contactDetails"); else _explicitNullProperties?.Remove("contactDetails"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfigurationNotificationV2AccountHolderContactDetails? _explicitNullValueContactDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfigurationNotificationV2AccountHolderContactDetails ContactDetails { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfigurationNotificationV2AccountHolderContactDetails ContactDetails { get => _explicitNullValueContactDetails; set { _explicitNullValueContactDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contactDetails"); else _explicitNullProperties?.Remove("contactDetails"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfigurationNotificationV2AccountHolderContactDetails _explicitNullValueContactDetails = default!;
 #endif
         /// <summary>Your description for the account holder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>The unique identifier of the account holder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The unique identifier of the [legal entity](https://docs.adyen.com/api-explorer/legalentity/latest/post/legalEntities#responses-200-id) associated with the account holder. Adyen performs a verification process against the legal entity of the account holder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LegalEntityId { get; set; }
+        public string? LegalEntityId { get => _explicitNullValueLegalEntityId; set { _explicitNullValueLegalEntityId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalEntityId"); else _explicitNullProperties?.Remove("legalEntityId"); } }
+        private string? _explicitNullValueLegalEntityId = default!;
 #nullable restore
 #else
-        public string LegalEntityId { get; set; }
+        public string LegalEntityId { get => _explicitNullValueLegalEntityId; set { _explicitNullValueLegalEntityId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalEntityId"); else _explicitNullProperties?.Remove("legalEntityId"); } }
+        private string _explicitNullValueLegalEntityId = default!;
 #endif
         /// <summary>A set of key and value pairs for general use.The keys do not have specific names and may be used for storing miscellaneous data as desired.&gt; Note that during an update of metadata, the omission of existing key-value pairs will result in the deletion of those key-value pairs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfigurationNotificationV2AccountHolderMetadata? Metadata { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfigurationNotificationV2AccountHolderMetadata? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfigurationNotificationV2AccountHolderMetadata? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfigurationNotificationV2AccountHolderMetadata Metadata { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfigurationNotificationV2AccountHolderMetadata Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfigurationNotificationV2AccountHolderMetadata _explicitNullValueMetadata = default!;
 #endif
         /// <summary>The unique identifier of the migrated account holder in the classic integration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MigratedAccountHolderCode { get; set; }
+        public string? MigratedAccountHolderCode { get => _explicitNullValueMigratedAccountHolderCode; set { _explicitNullValueMigratedAccountHolderCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("migratedAccountHolderCode"); else _explicitNullProperties?.Remove("migratedAccountHolderCode"); } }
+        private string? _explicitNullValueMigratedAccountHolderCode = default!;
 #nullable restore
 #else
-        public string MigratedAccountHolderCode { get; set; }
+        public string MigratedAccountHolderCode { get => _explicitNullValueMigratedAccountHolderCode; set { _explicitNullValueMigratedAccountHolderCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("migratedAccountHolderCode"); else _explicitNullProperties?.Remove("migratedAccountHolderCode"); } }
+        private string _explicitNullValueMigratedAccountHolderCode = default!;
 #endif
         /// <summary>The ID of the account holder&apos;s primary balance account. By default, this is set to the first balance account that you create for the account holder. To assign a different balance account, send a PATCH request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrimaryBalanceAccount { get; set; }
+        public string? PrimaryBalanceAccount { get => _explicitNullValuePrimaryBalanceAccount; set { _explicitNullValuePrimaryBalanceAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primaryBalanceAccount"); else _explicitNullProperties?.Remove("primaryBalanceAccount"); } }
+        private string? _explicitNullValuePrimaryBalanceAccount = default!;
 #nullable restore
 #else
-        public string PrimaryBalanceAccount { get; set; }
+        public string PrimaryBalanceAccount { get => _explicitNullValuePrimaryBalanceAccount; set { _explicitNullValuePrimaryBalanceAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primaryBalanceAccount"); else _explicitNullProperties?.Remove("primaryBalanceAccount"); } }
+        private string _explicitNullValuePrimaryBalanceAccount = default!;
 #endif
         /// <summary>Your reference for the account holder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Reference { get; set; }
+        public string? Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
+        private string? _explicitNullValueReference = default!;
 #nullable restore
 #else
-        public string Reference { get; set; }
+        public string Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
+        private string _explicitNullValueReference = default!;
 #endif
         /// <summary>The status of the account holder.Possible values:  * **active**: The account holder is active and allowed to use its capabilities. This is the initial status for account holders and balance accounts. You can change this status to **suspended** or **closed**.  * **suspended**: The account holder is temporarily disabled and payouts are blocked. You can change this status to **active** or **closed**. * **closed**: The account holder and all of its capabilities are permanently disabled. This is a final status and cannot be changed.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfigurationNotificationV2AccountHolderStatus? Status { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfigurationNotificationV2AccountHolderStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfigurationNotificationV2AccountHolderStatus? _explicitNullValueStatus = default!;
         /// <summary>The time zone of the account holder. For example, **Europe/Amsterdam**.Defaults to the time zone of the balance platform if no time zone is set. For possible values, see the [list of time zone codes](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TimeZone { get; set; }
+        public string? TimeZone { get => _explicitNullValueTimeZone; set { _explicitNullValueTimeZone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeZone"); else _explicitNullProperties?.Remove("timeZone"); } }
+        private string? _explicitNullValueTimeZone = default!;
 #nullable restore
 #else
-        public string TimeZone { get; set; }
+        public string TimeZone { get => _explicitNullValueTimeZone; set { _explicitNullValueTimeZone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeZone"); else _explicitNullProperties?.Remove("timeZone"); } }
+        private string _explicitNullValueTimeZone = default!;
 #endif
         /// <summary>List of verification deadlines and the capabilities that will be disallowed if verification errors are not resolved.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.VerificationDeadline>? VerificationDeadlines { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.VerificationDeadline>? VerificationDeadlines { get => _explicitNullValueVerificationDeadlines; set { _explicitNullValueVerificationDeadlines = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verificationDeadlines"); else _explicitNullProperties?.Remove("verificationDeadlines"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.VerificationDeadline>? _explicitNullValueVerificationDeadlines = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.VerificationDeadline> VerificationDeadlines { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.VerificationDeadline> VerificationDeadlines { get => _explicitNullValueVerificationDeadlines; set { _explicitNullValueVerificationDeadlines = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verificationDeadlines"); else _explicitNullProperties?.Remove("verificationDeadlines"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.VerificationDeadline> _explicitNullValueVerificationDeadlines = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderNotificationDataAccountHolder"/> and sets the default values.
@@ -129,7 +174,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderNotificationDataAccountHolder CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderNotificationDataAccountHolder();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderNotificationDataAccountHolder(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -174,6 +219,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfigurationNotificationV2AccountHolderStatus>("status", Status);
             writer.WriteStringValue("timeZone", TimeZone);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.VerificationDeadline>("verificationDeadlines", VerificationDeadlines);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

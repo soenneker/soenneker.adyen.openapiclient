@@ -12,45 +12,68 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PayoutScheduleStateNotificationRequestData : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("balanceAccountId") is { } nullNodeBalanceAccountId && nullNodeBalanceAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalanceAccountId = null;
+            if (parseNode.GetChildNode("balanceAccountPayoutScheduleId") is { } nullNodeBalanceAccountPayoutScheduleId && nullNodeBalanceAccountPayoutScheduleId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalanceAccountPayoutScheduleId = null;
+            if (parseNode.GetChildNode("balancePlatform") is { } nullNodeBalancePlatform && nullNodeBalancePlatform.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalancePlatform = null;
+            if (parseNode.GetChildNode("result") is { } nullNodeResult && nullNodeResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Result = null;
+            if (parseNode.GetChildNode("resultDetails") is { } nullNodeResultDetails && nullNodeResultDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResultDetails = null;
+            if (parseNode.GetChildNode("triggeredAt") is { } nullNodeTriggeredAt && nullNodeTriggeredAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TriggeredAt = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The unique identifier of the balance account from which the payout is initiated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BalanceAccountId { get; set; }
+        public string? BalanceAccountId { get => _explicitNullValueBalanceAccountId; set { _explicitNullValueBalanceAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceAccountId"); else _explicitNullProperties?.Remove("balanceAccountId"); } }
+        private string? _explicitNullValueBalanceAccountId = default!;
 #nullable restore
 #else
-        public string BalanceAccountId { get; set; }
+        public string BalanceAccountId { get => _explicitNullValueBalanceAccountId; set { _explicitNullValueBalanceAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceAccountId"); else _explicitNullProperties?.Remove("balanceAccountId"); } }
+        private string _explicitNullValueBalanceAccountId = default!;
 #endif
         /// <summary>The unique identifier of the managed payout schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BalanceAccountPayoutScheduleId { get; set; }
+        public string? BalanceAccountPayoutScheduleId { get => _explicitNullValueBalanceAccountPayoutScheduleId; set { _explicitNullValueBalanceAccountPayoutScheduleId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceAccountPayoutScheduleId"); else _explicitNullProperties?.Remove("balanceAccountPayoutScheduleId"); } }
+        private string? _explicitNullValueBalanceAccountPayoutScheduleId = default!;
 #nullable restore
 #else
-        public string BalanceAccountPayoutScheduleId { get; set; }
+        public string BalanceAccountPayoutScheduleId { get => _explicitNullValueBalanceAccountPayoutScheduleId; set { _explicitNullValueBalanceAccountPayoutScheduleId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceAccountPayoutScheduleId"); else _explicitNullProperties?.Remove("balanceAccountPayoutScheduleId"); } }
+        private string _explicitNullValueBalanceAccountPayoutScheduleId = default!;
 #endif
         /// <summary>The unique identifier of the balance platform.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BalancePlatform { get; set; }
+        public string? BalancePlatform { get => _explicitNullValueBalancePlatform; set { _explicitNullValueBalancePlatform = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balancePlatform"); else _explicitNullProperties?.Remove("balancePlatform"); } }
+        private string? _explicitNullValueBalancePlatform = default!;
 #nullable restore
 #else
-        public string BalancePlatform { get; set; }
+        public string BalancePlatform { get => _explicitNullValueBalancePlatform; set { _explicitNullValueBalancePlatform = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balancePlatform"); else _explicitNullProperties?.Remove("balancePlatform"); } }
+        private string _explicitNullValueBalancePlatform = default!;
 #endif
         /// <summary>The result of the execution.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutStateWebhookDataResult? Result { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutStateWebhookDataResult? Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PayoutStateWebhookDataResult? _explicitNullValueResult = default!;
         /// <summary>The resultDetails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ResultDetails? ResultDetails { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ResultDetails? ResultDetails { get => _explicitNullValueResultDetails; set { _explicitNullValueResultDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resultDetails"); else _explicitNullProperties?.Remove("resultDetails"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ResultDetails? _explicitNullValueResultDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ResultDetails ResultDetails { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ResultDetails ResultDetails { get => _explicitNullValueResultDetails; set { _explicitNullValueResultDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resultDetails"); else _explicitNullProperties?.Remove("resultDetails"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ResultDetails _explicitNullValueResultDetails = default!;
 #endif
         /// <summary>The timestamp of the moment when the execution was triggered.</summary>
-        public DateTimeOffset? TriggeredAt { get; set; }
+        public DateTimeOffset? TriggeredAt { get => _explicitNullValueTriggeredAt; set { _explicitNullValueTriggeredAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("triggeredAt"); else _explicitNullProperties?.Remove("triggeredAt"); } }
+        private DateTimeOffset? _explicitNullValueTriggeredAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PayoutScheduleStateNotificationRequestData"/> and sets the default values.
         /// </summary>
@@ -66,7 +89,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.PayoutScheduleStateNotificationRequestData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.PayoutScheduleStateNotificationRequestData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.PayoutScheduleStateNotificationRequestData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -97,6 +120,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutStateWebhookDataResult>("result", Result);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ResultDetails>("resultDetails", ResultDetails);
             writer.WriteDateTimeOffsetValue("triggeredAt", TriggeredAt);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

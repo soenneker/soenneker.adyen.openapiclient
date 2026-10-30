@@ -12,24 +12,37 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LegalArrangementEntityDetailIndividualDetails : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("personalData") is { } nullNodePersonalData && nullNodePersonalData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PersonalData = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The name of the individual.&gt;Make sure your account holder registers using the name shown on their Photo ID.  Maximum length: 80 characters  Cannot contain numbers. /n Cannot be empty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.IndividualDetailsName? Name { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.IndividualDetailsName? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.IndividualDetailsName? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.IndividualDetailsName Name { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.IndividualDetailsName Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.IndividualDetailsName _explicitNullValueName = default!;
 #endif
         /// <summary>Personal information of the individual.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.IndividualDetailsPersonalData? PersonalData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.IndividualDetailsPersonalData? PersonalData { get => _explicitNullValuePersonalData; set { _explicitNullValuePersonalData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personalData"); else _explicitNullProperties?.Remove("personalData"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.IndividualDetailsPersonalData? _explicitNullValuePersonalData = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.IndividualDetailsPersonalData PersonalData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.IndividualDetailsPersonalData PersonalData { get => _explicitNullValuePersonalData; set { _explicitNullValuePersonalData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personalData"); else _explicitNullProperties?.Remove("personalData"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.IndividualDetailsPersonalData _explicitNullValuePersonalData = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementEntityDetailIndividualDetails"/> and sets the default values.
@@ -46,7 +59,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementEntityDetailIndividualDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementEntityDetailIndividualDetails();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementEntityDetailIndividualDetails(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +82,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.IndividualDetailsName>("name", Name);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.IndividualDetailsPersonalData>("personalData", PersonalData);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

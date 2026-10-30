@@ -61,6 +61,8 @@ namespace Soenneker.Adyen.OpenApiClient.PaymentsAppServiceV1.Merchants.Item.Stor
                 { "403", global::Soenneker.Adyen.OpenApiClient.Models.PaymentsAppServiceV1DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Adyen.OpenApiClient.Models.PaymentsAppServiceV1DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Adyen.OpenApiClient.Models.PaymentsAppServiceV1DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.PaymentsAppResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.PaymentsAppResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

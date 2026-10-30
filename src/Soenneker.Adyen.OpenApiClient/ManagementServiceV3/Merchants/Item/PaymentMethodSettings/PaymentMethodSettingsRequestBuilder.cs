@@ -76,6 +76,8 @@ namespace Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Merchants.Item.Payme
                 { "422", global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3RestServiceError.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3RestServiceError.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3RestServiceError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -111,6 +113,8 @@ namespace Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Merchants.Item.Payme
                 { "422", global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3RestServiceError.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3RestServiceError.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3RestServiceError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3PaymentMethod>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3PaymentMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

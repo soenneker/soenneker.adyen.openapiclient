@@ -12,56 +12,81 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PaymentFailureNotificationContentComposed : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("errorFields") is { } nullNodeErrorFields && nullNodeErrorFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorFields = null;
+            if (parseNode.GetChildNode("errorMessage") is { } nullNodeErrorMessage && nullNodeErrorMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorMessage = null;
+            if (parseNode.GetChildNode("modificationMerchantReference") is { } nullNodeModificationMerchantReference && nullNodeModificationMerchantReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModificationMerchantReference = null;
+            if (parseNode.GetChildNode("modificationPspReference") is { } nullNodeModificationPspReference && nullNodeModificationPspReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModificationPspReference = null;
+            if (parseNode.GetChildNode("paymentMerchantReference") is { } nullNodePaymentMerchantReference && nullNodePaymentMerchantReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentMerchantReference = null;
+            if (parseNode.GetChildNode("paymentPspReference") is { } nullNodePaymentPspReference && nullNodePaymentPspReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentPspReference = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Missing or invalid fields that caused the payment error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6ErrorFieldType>? ErrorFields { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6ErrorFieldType>? ErrorFields { get => _explicitNullValueErrorFields; set { _explicitNullValueErrorFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errorFields"); else _explicitNullProperties?.Remove("errorFields"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6ErrorFieldType>? _explicitNullValueErrorFields = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6ErrorFieldType> ErrorFields { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6ErrorFieldType> ErrorFields { get => _explicitNullValueErrorFields; set { _explicitNullValueErrorFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errorFields"); else _explicitNullProperties?.Remove("errorFields"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6ErrorFieldType> _explicitNullValueErrorFields = default!;
 #endif
         /// <summary>The error message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentFailureNotificationContentErrorMessage? ErrorMessage { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentFailureNotificationContentErrorMessage? ErrorMessage { get => _explicitNullValueErrorMessage; set { _explicitNullValueErrorMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errorMessage"); else _explicitNullProperties?.Remove("errorMessage"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentFailureNotificationContentErrorMessage? _explicitNullValueErrorMessage = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentFailureNotificationContentErrorMessage ErrorMessage { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentFailureNotificationContentErrorMessage ErrorMessage { get => _explicitNullValueErrorMessage; set { _explicitNullValueErrorMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errorMessage"); else _explicitNullProperties?.Remove("errorMessage"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentFailureNotificationContentErrorMessage _explicitNullValueErrorMessage = default!;
 #endif
         /// <summary>The `reference` of the capture or refund.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModificationMerchantReference { get; set; }
+        public string? ModificationMerchantReference { get => _explicitNullValueModificationMerchantReference; set { _explicitNullValueModificationMerchantReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modificationMerchantReference"); else _explicitNullProperties?.Remove("modificationMerchantReference"); } }
+        private string? _explicitNullValueModificationMerchantReference = default!;
 #nullable restore
 #else
-        public string ModificationMerchantReference { get; set; }
+        public string ModificationMerchantReference { get => _explicitNullValueModificationMerchantReference; set { _explicitNullValueModificationMerchantReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modificationMerchantReference"); else _explicitNullProperties?.Remove("modificationMerchantReference"); } }
+        private string _explicitNullValueModificationMerchantReference = default!;
 #endif
         /// <summary>The `pspReference` of the capture or refund.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModificationPspReference { get; set; }
+        public string? ModificationPspReference { get => _explicitNullValueModificationPspReference; set { _explicitNullValueModificationPspReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modificationPspReference"); else _explicitNullProperties?.Remove("modificationPspReference"); } }
+        private string? _explicitNullValueModificationPspReference = default!;
 #nullable restore
 #else
-        public string ModificationPspReference { get; set; }
+        public string ModificationPspReference { get => _explicitNullValueModificationPspReference; set { _explicitNullValueModificationPspReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modificationPspReference"); else _explicitNullProperties?.Remove("modificationPspReference"); } }
+        private string _explicitNullValueModificationPspReference = default!;
 #endif
         /// <summary>The `reference` of the payment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaymentMerchantReference { get; set; }
+        public string? PaymentMerchantReference { get => _explicitNullValuePaymentMerchantReference; set { _explicitNullValuePaymentMerchantReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentMerchantReference"); else _explicitNullProperties?.Remove("paymentMerchantReference"); } }
+        private string? _explicitNullValuePaymentMerchantReference = default!;
 #nullable restore
 #else
-        public string PaymentMerchantReference { get; set; }
+        public string PaymentMerchantReference { get => _explicitNullValuePaymentMerchantReference; set { _explicitNullValuePaymentMerchantReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentMerchantReference"); else _explicitNullProperties?.Remove("paymentMerchantReference"); } }
+        private string _explicitNullValuePaymentMerchantReference = default!;
 #endif
         /// <summary>The `pspReference` of the payment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaymentPspReference { get; set; }
+        public string? PaymentPspReference { get => _explicitNullValuePaymentPspReference; set { _explicitNullValuePaymentPspReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentPspReference"); else _explicitNullProperties?.Remove("paymentPspReference"); } }
+        private string? _explicitNullValuePaymentPspReference = default!;
 #nullable restore
 #else
-        public string PaymentPspReference { get; set; }
+        public string PaymentPspReference { get => _explicitNullValuePaymentPspReference; set { _explicitNullValuePaymentPspReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentPspReference"); else _explicitNullProperties?.Remove("paymentPspReference"); } }
+        private string _explicitNullValuePaymentPspReference = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentFailureNotificationContentComposed"/> and sets the default values.
@@ -78,7 +103,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.PaymentFailureNotificationContentComposed CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.PaymentFailureNotificationContentComposed();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.PaymentFailureNotificationContentComposed(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -109,6 +134,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("modificationPspReference", ModificationPspReference);
             writer.WriteStringValue("paymentMerchantReference", PaymentMerchantReference);
             writer.WriteStringValue("paymentPspReference", PaymentPspReference);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

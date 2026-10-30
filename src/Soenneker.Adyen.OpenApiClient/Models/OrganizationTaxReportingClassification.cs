@@ -12,23 +12,39 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OrganizationTaxReportingClassification : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("businessType") is { } nullNodeBusinessType && nullNodeBusinessType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BusinessType = null;
+            if (parseNode.GetChildNode("financialInstitutionNumber") is { } nullNodeFinancialInstitutionNumber && nullNodeFinancialInstitutionNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FinancialInstitutionNumber = null;
+            if (parseNode.GetChildNode("mainSourceOfIncome") is { } nullNodeMainSourceOfIncome && nullNodeMainSourceOfIncome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MainSourceOfIncome = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The organization&apos;s business type.Possible values: **other**, **listedPublicCompany**, **subsidiaryOfListedPublicCompany**, **governmentalOrganization**, **internationalOrganization**, **financialInstitution**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TaxReportingClassificationBusinessType? BusinessType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TaxReportingClassificationBusinessType? BusinessType { get => _explicitNullValueBusinessType; set { _explicitNullValueBusinessType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("businessType"); else _explicitNullProperties?.Remove("businessType"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TaxReportingClassificationBusinessType? _explicitNullValueBusinessType = default!;
         /// <summary>The Global Intermediary Identification Number (GIIN) required for FATCA. Only required if the organization is a US financial institution and the `businessType` is **financialInstitution**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FinancialInstitutionNumber { get; set; }
+        public string? FinancialInstitutionNumber { get => _explicitNullValueFinancialInstitutionNumber; set { _explicitNullValueFinancialInstitutionNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("financialInstitutionNumber"); else _explicitNullProperties?.Remove("financialInstitutionNumber"); } }
+        private string? _explicitNullValueFinancialInstitutionNumber = default!;
 #nullable restore
 #else
-        public string FinancialInstitutionNumber { get; set; }
+        public string FinancialInstitutionNumber { get => _explicitNullValueFinancialInstitutionNumber; set { _explicitNullValueFinancialInstitutionNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("financialInstitutionNumber"); else _explicitNullProperties?.Remove("financialInstitutionNumber"); } }
+        private string _explicitNullValueFinancialInstitutionNumber = default!;
 #endif
         /// <summary>The organization&apos;s main source of income. Only required if `businessType` is **other**.Possible values: **businessOperation**, **realEstateSales**, **investmentInterestOrRoyalty**, **propertyRental**, **other**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TaxReportingClassificationMainSourceOfIncome? MainSourceOfIncome { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TaxReportingClassificationMainSourceOfIncome? MainSourceOfIncome { get => _explicitNullValueMainSourceOfIncome; set { _explicitNullValueMainSourceOfIncome = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mainSourceOfIncome"); else _explicitNullProperties?.Remove("mainSourceOfIncome"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TaxReportingClassificationMainSourceOfIncome? _explicitNullValueMainSourceOfIncome = default!;
         /// <summary>The tax reporting classification type.Possible values: **nonFinancialNonReportable**, **financialNonReportable**, **nonFinancialActive**, **nonFinancialPassive**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TaxReportingClassificationType? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TaxReportingClassificationType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TaxReportingClassificationType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.OrganizationTaxReportingClassification"/> and sets the default values.
         /// </summary>
@@ -44,7 +60,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.OrganizationTaxReportingClassification CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.OrganizationTaxReportingClassification();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.OrganizationTaxReportingClassification(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -71,6 +87,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("financialInstitutionNumber", FinancialInstitutionNumber);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TaxReportingClassificationMainSourceOfIncome>("mainSourceOfIncome", MainSourceOfIncome);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TaxReportingClassificationType>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

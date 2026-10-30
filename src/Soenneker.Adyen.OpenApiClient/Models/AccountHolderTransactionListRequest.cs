@@ -11,32 +11,48 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AccountHolderTransactionListRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("accountHolderCode") is { } nullNodeAccountHolderCode && nullNodeAccountHolderCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountHolderCode = null;
+            if (parseNode.GetChildNode("transactionListsPerAccount") is { } nullNodeTransactionListsPerAccount && nullNodeTransactionListsPerAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionListsPerAccount = null;
+            if (parseNode.GetChildNode("transactionStatuses") is { } nullNodeTransactionStatuses && nullNodeTransactionStatuses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionStatuses = null;
+        }
+
         /// <summary>The code of the account holder that owns the account(s) of which retrieve the transaction list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountHolderCode { get; set; }
+        public string? AccountHolderCode { get => _explicitNullValueAccountHolderCode; set { _explicitNullValueAccountHolderCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderCode"); else _explicitNullProperties?.Remove("accountHolderCode"); } }
+        private string? _explicitNullValueAccountHolderCode = default!;
 #nullable restore
 #else
-        public string AccountHolderCode { get; set; }
+        public string AccountHolderCode { get => _explicitNullValueAccountHolderCode; set { _explicitNullValueAccountHolderCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderCode"); else _explicitNullProperties?.Remove("accountHolderCode"); } }
+        private string _explicitNullValueAccountHolderCode = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A list of accounts to include in the transaction list. If left blank, the last fifty (50) transactions for all accounts of the account holder will be included.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.TransactionListForAccount>? TransactionListsPerAccount { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.TransactionListForAccount>? TransactionListsPerAccount { get => _explicitNullValueTransactionListsPerAccount; set { _explicitNullValueTransactionListsPerAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactionListsPerAccount"); else _explicitNullProperties?.Remove("transactionListsPerAccount"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.TransactionListForAccount>? _explicitNullValueTransactionListsPerAccount = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.TransactionListForAccount> TransactionListsPerAccount { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.TransactionListForAccount> TransactionListsPerAccount { get => _explicitNullValueTransactionListsPerAccount; set { _explicitNullValueTransactionListsPerAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactionListsPerAccount"); else _explicitNullProperties?.Remove("transactionListsPerAccount"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.TransactionListForAccount> _explicitNullValueTransactionListsPerAccount = default!;
 #endif
         /// <summary>A list of statuses to include in the transaction list. If left blank, all transactions will be included.&gt;Permitted values:&gt;* `PendingCredit` - a pending balance credit.&gt;* `CreditFailed` - a pending credit failure; the balance will not be credited.&gt;* `Credited` - a credited balance.&gt;* `PendingDebit` - a pending balance debit (e.g., a refund).&gt;* `CreditClosed` - a pending credit closed; the balance will not be credited.&gt;* `CreditSuspended` - a pending credit closed; the balance will not be credited.&gt;* `DebitFailed` - a pending debit failure; the balance will not be debited.&gt;* `Debited` - a debited balance (e.g., a refund).&gt;* `DebitReversedReceived` - a pending refund reversal.&gt;* `DebitedReversed` - a reversed refund.&gt;* `ChargebackReceived` - a received chargeback request.&gt;* `Chargeback` - a processed chargeback.&gt;* `ChargebackReversedReceived` - a pending chargeback reversal.&gt;* `ChargebackReversed` - a reversed chargeback.&gt;* `Converted` - converted.&gt;* `ManualCorrected` - manual booking/adjustment by Adyen.&gt;* `Payout` - a payout.&gt;* `PayoutReversed` - a reversed payout.&gt;* `PendingFundTransfer` - a pending transfer of funds from one account to another.&gt;* `FundTransfer` - a transfer of funds from one account to another.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderTransactionListRequestTransactionStatusesItem?>? TransactionStatuses { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderTransactionListRequestTransactionStatusesItem?>? TransactionStatuses { get => _explicitNullValueTransactionStatuses; set { _explicitNullValueTransactionStatuses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactionStatuses"); else _explicitNullProperties?.Remove("transactionStatuses"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderTransactionListRequestTransactionStatusesItem?>? _explicitNullValueTransactionStatuses = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderTransactionListRequestTransactionStatusesItem?> TransactionStatuses { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderTransactionListRequestTransactionStatusesItem?> TransactionStatuses { get => _explicitNullValueTransactionStatuses; set { _explicitNullValueTransactionStatuses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactionStatuses"); else _explicitNullProperties?.Remove("transactionStatuses"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderTransactionListRequestTransactionStatusesItem?> _explicitNullValueTransactionStatuses = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderTransactionListRequest"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderTransactionListRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderTransactionListRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderTransactionListRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("accountHolderCode", AccountHolderCode);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TransactionListForAccount>("transactionListsPerAccount", TransactionListsPerAccount);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderTransactionListRequestTransactionStatusesItem>("transactionStatuses", TransactionStatuses);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

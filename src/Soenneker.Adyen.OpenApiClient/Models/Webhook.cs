@@ -11,118 +11,180 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class Webhook : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("acceptsExpiredCertificate") is { } nullNodeAcceptsExpiredCertificate && nullNodeAcceptsExpiredCertificate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcceptsExpiredCertificate = null;
+            if (parseNode.GetChildNode("acceptsSelfSignedCertificate") is { } nullNodeAcceptsSelfSignedCertificate && nullNodeAcceptsSelfSignedCertificate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcceptsSelfSignedCertificate = null;
+            if (parseNode.GetChildNode("acceptsUntrustedRootCertificate") is { } nullNodeAcceptsUntrustedRootCertificate && nullNodeAcceptsUntrustedRootCertificate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcceptsUntrustedRootCertificate = null;
+            if (parseNode.GetChildNode("accountReference") is { } nullNodeAccountReference && nullNodeAccountReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountReference = null;
+            if (parseNode.GetChildNode("active") is { } nullNodeActive && nullNodeActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Active = null;
+            if (parseNode.GetChildNode("additionalSettings") is { } nullNodeAdditionalSettings && nullNodeAdditionalSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdditionalSettings = null;
+            if (parseNode.GetChildNode("certificateAlias") is { } nullNodeCertificateAlias && nullNodeCertificateAlias.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CertificateAlias = null;
+            if (parseNode.GetChildNode("communicationFormat") is { } nullNodeCommunicationFormat && nullNodeCommunicationFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CommunicationFormat = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("encryptionProtocol") is { } nullNodeEncryptionProtocol && nullNodeEncryptionProtocol.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EncryptionProtocol = null;
+            if (parseNode.GetChildNode("filterMerchantAccounts") is { } nullNodeFilterMerchantAccounts && nullNodeFilterMerchantAccounts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FilterMerchantAccounts = null;
+            if (parseNode.GetChildNode("filterMerchantAccountType") is { } nullNodeFilterMerchantAccountType && nullNodeFilterMerchantAccountType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FilterMerchantAccountType = null;
+            if (parseNode.GetChildNode("hasError") is { } nullNodeHasError && nullNodeHasError.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasError = null;
+            if (parseNode.GetChildNode("hasPassword") is { } nullNodeHasPassword && nullNodeHasPassword.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasPassword = null;
+            if (parseNode.GetChildNode("hmacKeyCheckValue") is { } nullNodeHmacKeyCheckValue && nullNodeHmacKeyCheckValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HmacKeyCheckValue = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("_links") is { } nullNodeLinks && nullNodeLinks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Links = null;
+            if (parseNode.GetChildNode("networkType") is { } nullNodeNetworkType && nullNodeNetworkType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NetworkType = null;
+            if (parseNode.GetChildNode("populateSoapActionHeader") is { } nullNodePopulateSoapActionHeader && nullNodePopulateSoapActionHeader.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PopulateSoapActionHeader = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+            if (parseNode.GetChildNode("username") is { } nullNodeUsername && nullNodeUsername.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Username = null;
+        }
+
         /// <summary>Indicates if expired SSL certificates are accepted. Default value: **false**.</summary>
-        public bool? AcceptsExpiredCertificate { get; set; }
+        public bool? AcceptsExpiredCertificate { get => _explicitNullValueAcceptsExpiredCertificate; set { _explicitNullValueAcceptsExpiredCertificate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acceptsExpiredCertificate"); else _explicitNullProperties?.Remove("acceptsExpiredCertificate"); } }
+        private bool? _explicitNullValueAcceptsExpiredCertificate = default!;
         /// <summary>Indicates if self-signed SSL certificates are accepted. Default value: **false**.</summary>
-        public bool? AcceptsSelfSignedCertificate { get; set; }
+        public bool? AcceptsSelfSignedCertificate { get => _explicitNullValueAcceptsSelfSignedCertificate; set { _explicitNullValueAcceptsSelfSignedCertificate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acceptsSelfSignedCertificate"); else _explicitNullProperties?.Remove("acceptsSelfSignedCertificate"); } }
+        private bool? _explicitNullValueAcceptsSelfSignedCertificate = default!;
         /// <summary>Indicates if untrusted SSL certificates are accepted. Default value: **false**.</summary>
-        public bool? AcceptsUntrustedRootCertificate { get; set; }
+        public bool? AcceptsUntrustedRootCertificate { get => _explicitNullValueAcceptsUntrustedRootCertificate; set { _explicitNullValueAcceptsUntrustedRootCertificate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acceptsUntrustedRootCertificate"); else _explicitNullProperties?.Remove("acceptsUntrustedRootCertificate"); } }
+        private bool? _explicitNullValueAcceptsUntrustedRootCertificate = default!;
         /// <summary>Reference to the account the webook is set on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountReference { get; set; }
+        public string? AccountReference { get => _explicitNullValueAccountReference; set { _explicitNullValueAccountReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountReference"); else _explicitNullProperties?.Remove("accountReference"); } }
+        private string? _explicitNullValueAccountReference = default!;
 #nullable restore
 #else
-        public string AccountReference { get; set; }
+        public string AccountReference { get => _explicitNullValueAccountReference; set { _explicitNullValueAccountReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountReference"); else _explicitNullProperties?.Remove("accountReference"); } }
+        private string _explicitNullValueAccountReference = default!;
 #endif
         /// <summary>Indicates if the webhook configuration is active. The field must be **true** for you to receive webhooks about events related an account.</summary>
-        public bool? Active { get; set; }
+        public bool? Active { get => _explicitNullValueActive; set { _explicitNullValueActive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active"); else _explicitNullProperties?.Remove("active"); } }
+        private bool? _explicitNullValueActive = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Additional shopper and transaction information to be included in your [standard webhooks](https://docs.adyen.com/development-resources/webhooks/webhook-types/#event-codes). Find out more about the available [additional settings](https://docs.adyen.com/development-resources/webhooks/additional-settings).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookAdditionalSettings? AdditionalSettings { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookAdditionalSettings? AdditionalSettings { get => _explicitNullValueAdditionalSettings; set { _explicitNullValueAdditionalSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additionalSettings"); else _explicitNullProperties?.Remove("additionalSettings"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.WebhookAdditionalSettings? _explicitNullValueAdditionalSettings = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookAdditionalSettings AdditionalSettings { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookAdditionalSettings AdditionalSettings { get => _explicitNullValueAdditionalSettings; set { _explicitNullValueAdditionalSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additionalSettings"); else _explicitNullProperties?.Remove("additionalSettings"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.WebhookAdditionalSettings _explicitNullValueAdditionalSettings = default!;
 #endif
         /// <summary>The alias of our SSL certificate. When you receive a notification from us, the alias from the HMAC signature will match this alias.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CertificateAlias { get; set; }
+        public string? CertificateAlias { get => _explicitNullValueCertificateAlias; set { _explicitNullValueCertificateAlias = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificateAlias"); else _explicitNullProperties?.Remove("certificateAlias"); } }
+        private string? _explicitNullValueCertificateAlias = default!;
 #nullable restore
 #else
-        public string CertificateAlias { get; set; }
+        public string CertificateAlias { get => _explicitNullValueCertificateAlias; set { _explicitNullValueCertificateAlias = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificateAlias"); else _explicitNullProperties?.Remove("certificateAlias"); } }
+        private string _explicitNullValueCertificateAlias = default!;
 #endif
         /// <summary>Format or protocol for receiving webhooks. Possible values:* **soap*** **http*** **json** </summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookCommunicationFormat? CommunicationFormat { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookCommunicationFormat? CommunicationFormat { get => _explicitNullValueCommunicationFormat; set { _explicitNullValueCommunicationFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("communicationFormat"); else _explicitNullProperties?.Remove("communicationFormat"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.WebhookCommunicationFormat? _explicitNullValueCommunicationFormat = default!;
         /// <summary>Your description for this webhook configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>SSL version to access the public webhook URL specified in the `url` field. Possible values:* **TLSv1.3*** **TLSv1.2*** **HTTP** - Only allowed on Test environment.If not specified, the webhook will use `sslVersion`: **TLSv1.2**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookEncryptionProtocol? EncryptionProtocol { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookEncryptionProtocol? EncryptionProtocol { get => _explicitNullValueEncryptionProtocol; set { _explicitNullValueEncryptionProtocol = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("encryptionProtocol"); else _explicitNullProperties?.Remove("encryptionProtocol"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.WebhookEncryptionProtocol? _explicitNullValueEncryptionProtocol = default!;
         /// <summary>A list of merchant account names that are included or excluded from receiving the webhook. Inclusion or exclusion is based on the value defined for `filterMerchantAccountType`.Required if `filterMerchantAccountType` is either:* **includeAccounts*** **excludeAccounts**Not needed for `filterMerchantAccountType`: **allAccounts**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? FilterMerchantAccounts { get; set; }
+        public List<string>? FilterMerchantAccounts { get => _explicitNullValueFilterMerchantAccounts; set { _explicitNullValueFilterMerchantAccounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filterMerchantAccounts"); else _explicitNullProperties?.Remove("filterMerchantAccounts"); } }
+        private List<string>? _explicitNullValueFilterMerchantAccounts = default!;
 #nullable restore
 #else
-        public List<string> FilterMerchantAccounts { get; set; }
+        public List<string> FilterMerchantAccounts { get => _explicitNullValueFilterMerchantAccounts; set { _explicitNullValueFilterMerchantAccounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filterMerchantAccounts"); else _explicitNullProperties?.Remove("filterMerchantAccounts"); } }
+        private List<string> _explicitNullValueFilterMerchantAccounts = default!;
 #endif
         /// <summary>Shows how merchant accounts are included in company-level webhooks. Possible values:* **includeAccounts*** **excludeAccounts*** **allAccounts**: Includes all merchant accounts, and does not require specifying `filterMerchantAccounts`.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookFilterMerchantAccountType? FilterMerchantAccountType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookFilterMerchantAccountType? FilterMerchantAccountType { get => _explicitNullValueFilterMerchantAccountType; set { _explicitNullValueFilterMerchantAccountType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filterMerchantAccountType"); else _explicitNullProperties?.Remove("filterMerchantAccountType"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.WebhookFilterMerchantAccountType? _explicitNullValueFilterMerchantAccountType = default!;
         /// <summary>Indicates if the webhook configuration has errors that need troubleshooting. If the value is **true**, troubleshoot the configuration using the [testing endpoint](https://docs.adyen.com/api-explorer/#/ManagementService/v1/post/companies/{companyId}/webhooks/{webhookid}/test).</summary>
-        public bool? HasError { get; set; }
+        public bool? HasError { get => _explicitNullValueHasError; set { _explicitNullValueHasError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasError"); else _explicitNullProperties?.Remove("hasError"); } }
+        private bool? _explicitNullValueHasError = default!;
         /// <summary>Indicates if the webhook is password protected.</summary>
-        public bool? HasPassword { get; set; }
+        public bool? HasPassword { get => _explicitNullValueHasPassword; set { _explicitNullValueHasPassword = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasPassword"); else _explicitNullProperties?.Remove("hasPassword"); } }
+        private bool? _explicitNullValueHasPassword = default!;
         /// <summary>The [checksum](https://en.wikipedia.org/wiki/Key_checksum_value) of the HMAC key generated for this webhook. You can use this value to uniquely identify the HMAC key configured for this webhook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HmacKeyCheckValue { get; set; }
+        public string? HmacKeyCheckValue { get => _explicitNullValueHmacKeyCheckValue; set { _explicitNullValueHmacKeyCheckValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hmacKeyCheckValue"); else _explicitNullProperties?.Remove("hmacKeyCheckValue"); } }
+        private string? _explicitNullValueHmacKeyCheckValue = default!;
 #nullable restore
 #else
-        public string HmacKeyCheckValue { get; set; }
+        public string HmacKeyCheckValue { get => _explicitNullValueHmacKeyCheckValue; set { _explicitNullValueHmacKeyCheckValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hmacKeyCheckValue"); else _explicitNullProperties?.Remove("hmacKeyCheckValue"); } }
+        private string _explicitNullValueHmacKeyCheckValue = default!;
 #endif
         /// <summary>Unique identifier for this webhook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>References to resources connected with this webhook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksComposed? Links { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksComposed? Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_links"); else _explicitNullProperties?.Remove("_links"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksComposed? _explicitNullValueLinks = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksComposed Links { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksComposed Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_links"); else _explicitNullProperties?.Remove("_links"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksComposed _explicitNullValueLinks = default!;
 #endif
         /// <summary>Network type for Terminal API details webhooks.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookNetworkType? NetworkType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookNetworkType? NetworkType { get => _explicitNullValueNetworkType; set { _explicitNullValueNetworkType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("networkType"); else _explicitNullProperties?.Remove("networkType"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.WebhookNetworkType? _explicitNullValueNetworkType = default!;
         /// <summary>Indicates if the SOAP action header needs to be populated. Default value: **false**.Only applies if `communicationFormat`: **soap**.</summary>
-        public bool? PopulateSoapActionHeader { get; set; }
+        public bool? PopulateSoapActionHeader { get => _explicitNullValuePopulateSoapActionHeader; set { _explicitNullValuePopulateSoapActionHeader = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("populateSoapActionHeader"); else _explicitNullProperties?.Remove("populateSoapActionHeader"); } }
+        private bool? _explicitNullValuePopulateSoapActionHeader = default!;
         /// <summary>The type of webhook. Possible values are:- **standard**- **account-settings-notification**- **banktransfer-notification**- **boletobancario-notification**- **directdebit-notification**- **ach-notification-of-change-notification**- **direct-debit-notice-of-change-notification**- **pending-notification**- **ideal-notification**- **ideal-pending-notification**- **report-notification**- **terminal-api-notification**- **terminal-settings**- **terminal-boarding**Find out more about [standard webhooks](https://docs.adyen.com/development-resources/webhooks/webhook-types/#event-codes) and [other types of webhooks](https://docs.adyen.com/development-resources/webhooks/webhook-types/#other-webhooks).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; set; }
+        public string? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private string? _explicitNullValueType = default!;
 #nullable restore
 #else
-        public string Type { get; set; }
+        public string Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private string _explicitNullValueType = default!;
 #endif
         /// <summary>Public URL where webhooks will be sent, for example **https://www.domain.com/webhook-endpoint**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get; set; }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get; set; }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>Username to access the webhook URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Username { get; set; }
+        public string? Username { get => _explicitNullValueUsername; set { _explicitNullValueUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("username"); else _explicitNullProperties?.Remove("username"); } }
+        private string? _explicitNullValueUsername = default!;
 #nullable restore
 #else
-        public string Username { get; set; }
+        public string Username { get => _explicitNullValueUsername; set { _explicitNullValueUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("username"); else _explicitNullProperties?.Remove("username"); } }
+        private string _explicitNullValueUsername = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.Webhook"/> and sets the default values.
@@ -139,7 +201,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.Webhook CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.Webhook();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.Webhook(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -202,6 +264,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("type", Type);
             writer.WriteStringValue("url", Url);
             writer.WriteStringValue("username", Username);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -57,6 +57,8 @@ namespace Soenneker.Adyen.OpenApiClient.PaymentsAppServiceV1.Merchants.Item.Paym
                 { "400", global::Soenneker.Adyen.OpenApiClient.Models.PaymentsAppServiceV1DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
                 { "401", global::Soenneker.Adyen.OpenApiClient.Models.PaymentsAppServiceV1DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Adyen.OpenApiClient.Models.PaymentsAppServiceV1DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<UntypedNode>(requestInfo, UntypedNode.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

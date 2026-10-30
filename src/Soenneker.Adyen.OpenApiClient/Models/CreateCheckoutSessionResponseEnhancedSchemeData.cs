@@ -12,56 +12,81 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreateCheckoutSessionResponseEnhancedSchemeData : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("airline") is { } nullNodeAirline && nullNodeAirline.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Airline = null;
+            if (parseNode.GetChildNode("carRental") is { } nullNodeCarRental && nullNodeCarRental.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CarRental = null;
+            if (parseNode.GetChildNode("healthcare") is { } nullNodeHealthcare && nullNodeHealthcare.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Healthcare = null;
+            if (parseNode.GetChildNode("levelTwoThree") is { } nullNodeLevelTwoThree && nullNodeLevelTwoThree.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LevelTwoThree = null;
+            if (parseNode.GetChildNode("lodging") is { } nullNodeLodging && nullNodeLodging.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Lodging = null;
+            if (parseNode.GetChildNode("temporaryServices") is { } nullNodeTemporaryServices && nullNodeTemporaryServices.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TemporaryServices = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>[Airline enhanced scheme data](https://docs.adyen.com/payment-methods/cards/enhanced-scheme-data/airline/) that may be required for processing the transaction and/or for interchange savings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeDataAirline? Airline { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeDataAirline? Airline { get => _explicitNullValueAirline; set { _explicitNullValueAirline = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("airline"); else _explicitNullProperties?.Remove("airline"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeDataAirline? _explicitNullValueAirline = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeDataAirline Airline { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeDataAirline Airline { get => _explicitNullValueAirline; set { _explicitNullValueAirline = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("airline"); else _explicitNullProperties?.Remove("airline"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeDataAirline _explicitNullValueAirline = default!;
 #endif
         /// <summary>[Car rental enhanced scheme data](https://docs.adyen.com/payment-methods/cards/enhanced-scheme-data/car-rental/) that may be required for processing the transaction and/or for interchange savings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeDataCarRental? CarRental { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeDataCarRental? CarRental { get => _explicitNullValueCarRental; set { _explicitNullValueCarRental = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("carRental"); else _explicitNullProperties?.Remove("carRental"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeDataCarRental? _explicitNullValueCarRental = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeDataCarRental CarRental { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeDataCarRental CarRental { get => _explicitNullValueCarRental; set { _explicitNullValueCarRental = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("carRental"); else _explicitNullProperties?.Remove("carRental"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeDataCarRental _explicitNullValueCarRental = default!;
 #endif
         /// <summary>Healthcare auto-substantiation amounts for FSA/HSA card transactions. The amounts are used to qualify for reduced interchange rates on healthcare-eligible cards.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeDataHealthcare? Healthcare { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeDataHealthcare? Healthcare { get => _explicitNullValueHealthcare; set { _explicitNullValueHealthcare = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("healthcare"); else _explicitNullProperties?.Remove("healthcare"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeDataHealthcare? _explicitNullValueHealthcare = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeDataHealthcare Healthcare { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeDataHealthcare Healthcare { get => _explicitNullValueHealthcare; set { _explicitNullValueHealthcare = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("healthcare"); else _explicitNullProperties?.Remove("healthcare"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeDataHealthcare _explicitNullValueHealthcare = default!;
 #endif
         /// <summary>[Level 2 and Level 3 enhanced scheme data](https://docs.adyen.com/payment-methods/cards/enhanced-scheme-data/l2-l3/) that may be required for processing the transaction and/or for interchange savings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeDataLevelTwoThree? LevelTwoThree { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeDataLevelTwoThree? LevelTwoThree { get => _explicitNullValueLevelTwoThree; set { _explicitNullValueLevelTwoThree = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("levelTwoThree"); else _explicitNullProperties?.Remove("levelTwoThree"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeDataLevelTwoThree? _explicitNullValueLevelTwoThree = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeDataLevelTwoThree LevelTwoThree { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeDataLevelTwoThree LevelTwoThree { get => _explicitNullValueLevelTwoThree; set { _explicitNullValueLevelTwoThree = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("levelTwoThree"); else _explicitNullProperties?.Remove("levelTwoThree"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeDataLevelTwoThree _explicitNullValueLevelTwoThree = default!;
 #endif
         /// <summary>[Lodging enhanced scheme data](https://docs.adyen.com/payment-methods/cards/enhanced-scheme-data/lodging/) that may be required for processing the transaction and/or for interchange savings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeDataLodging? Lodging { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeDataLodging? Lodging { get => _explicitNullValueLodging; set { _explicitNullValueLodging = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lodging"); else _explicitNullProperties?.Remove("lodging"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeDataLodging? _explicitNullValueLodging = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeDataLodging Lodging { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeDataLodging Lodging { get => _explicitNullValueLodging; set { _explicitNullValueLodging = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lodging"); else _explicitNullProperties?.Remove("lodging"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeDataLodging _explicitNullValueLodging = default!;
 #endif
         /// <summary>[Temporary services enhanced scheme data](https://docs.adyen.com/payment-methods/cards/enhanced-scheme-data/temporary-services/) that may be required for processing the transaction and/or for interchange savings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeDataTemporaryServices? TemporaryServices { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeDataTemporaryServices? TemporaryServices { get => _explicitNullValueTemporaryServices; set { _explicitNullValueTemporaryServices = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("temporaryServices"); else _explicitNullProperties?.Remove("temporaryServices"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeDataTemporaryServices? _explicitNullValueTemporaryServices = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeDataTemporaryServices TemporaryServices { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeDataTemporaryServices TemporaryServices { get => _explicitNullValueTemporaryServices; set { _explicitNullValueTemporaryServices = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("temporaryServices"); else _explicitNullProperties?.Remove("temporaryServices"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeDataTemporaryServices _explicitNullValueTemporaryServices = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CreateCheckoutSessionResponseEnhancedSchemeData"/> and sets the default values.
@@ -78,7 +103,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.CreateCheckoutSessionResponseEnhancedSchemeData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.CreateCheckoutSessionResponseEnhancedSchemeData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.CreateCheckoutSessionResponseEnhancedSchemeData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -109,6 +134,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeDataLevelTwoThree>("levelTwoThree", LevelTwoThree);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeDataLodging>("lodging", Lodging);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeDataTemporaryServices>("temporaryServices", TemporaryServices);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

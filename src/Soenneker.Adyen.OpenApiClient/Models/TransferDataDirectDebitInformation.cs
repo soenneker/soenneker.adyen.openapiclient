@@ -12,28 +12,45 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TransferDataDirectDebitInformation : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("dateOfSignature") is { } nullNodeDateOfSignature && nullNodeDateOfSignature.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateOfSignature = null;
+            if (parseNode.GetChildNode("dueDate") is { } nullNodeDueDate && nullNodeDueDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DueDate = null;
+            if (parseNode.GetChildNode("mandateId") is { } nullNodeMandateId && nullNodeMandateId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MandateId = null;
+            if (parseNode.GetChildNode("sequenceType") is { } nullNodeSequenceType && nullNodeSequenceType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SequenceType = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date when the direct debit mandate was accepted by your user, in [ISO-8601](https://www.w3.org/TR/NOTE-datetime) format.</summary>
-        public DateTimeOffset? DateOfSignature { get; set; }
+        public DateTimeOffset? DateOfSignature { get => _explicitNullValueDateOfSignature; set { _explicitNullValueDateOfSignature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateOfSignature"); else _explicitNullProperties?.Remove("dateOfSignature"); } }
+        private DateTimeOffset? _explicitNullValueDateOfSignature = default!;
         /// <summary>The date when the funds are deducted from your user&apos;s balance account.</summary>
-        public DateTimeOffset? DueDate { get; set; }
+        public DateTimeOffset? DueDate { get => _explicitNullValueDueDate; set { _explicitNullValueDueDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dueDate"); else _explicitNullProperties?.Remove("dueDate"); } }
+        private DateTimeOffset? _explicitNullValueDueDate = default!;
         /// <summary>Your unique identifier for the direct debit mandate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MandateId { get; set; }
+        public string? MandateId { get => _explicitNullValueMandateId; set { _explicitNullValueMandateId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mandateId"); else _explicitNullProperties?.Remove("mandateId"); } }
+        private string? _explicitNullValueMandateId = default!;
 #nullable restore
 #else
-        public string MandateId { get; set; }
+        public string MandateId { get => _explicitNullValueMandateId; set { _explicitNullValueMandateId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mandateId"); else _explicitNullProperties?.Remove("mandateId"); } }
+        private string _explicitNullValueMandateId = default!;
 #endif
         /// <summary>Identifies the direct debit transfer&apos;s type.Possible values: **OneOff**, **First**, **Recurring**, **Final**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SequenceType { get; set; }
+        public string? SequenceType { get => _explicitNullValueSequenceType; set { _explicitNullValueSequenceType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sequenceType"); else _explicitNullProperties?.Remove("sequenceType"); } }
+        private string? _explicitNullValueSequenceType = default!;
 #nullable restore
 #else
-        public string SequenceType { get; set; }
+        public string SequenceType { get => _explicitNullValueSequenceType; set { _explicitNullValueSequenceType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sequenceType"); else _explicitNullProperties?.Remove("sequenceType"); } }
+        private string _explicitNullValueSequenceType = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferDataDirectDebitInformation"/> and sets the default values.
@@ -50,7 +67,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.TransferDataDirectDebitInformation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.TransferDataDirectDebitInformation();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.TransferDataDirectDebitInformation(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,6 +94,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("dueDate", DueDate);
             writer.WriteStringValue("mandateId", MandateId);
             writer.WriteStringValue("sequenceType", SequenceType);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

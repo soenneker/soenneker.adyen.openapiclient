@@ -12,23 +12,39 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DisputeRequestFraudInfo : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("cardDoesNotBelongToCardholder") is { } nullNodeCardDoesNotBelongToCardholder && nullNodeCardDoesNotBelongToCardholder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardDoesNotBelongToCardholder = null;
+            if (parseNode.GetChildNode("cardWasCounterfeited") is { } nullNodeCardWasCounterfeited && nullNodeCardWasCounterfeited.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardWasCounterfeited = null;
+            if (parseNode.GetChildNode("descriptionOfIssue") is { } nullNodeDescriptionOfIssue && nullNodeDescriptionOfIssue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DescriptionOfIssue = null;
+            if (parseNode.GetChildNode("reportOnly") is { } nullNodeReportOnly && nullNodeReportOnly.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReportOnly = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The card is no longer in the cardholder&apos;s possession. Set to **true** if the card is lost or stolen.</summary>
-        public bool? CardDoesNotBelongToCardholder { get; set; }
+        public bool? CardDoesNotBelongToCardholder { get => _explicitNullValueCardDoesNotBelongToCardholder; set { _explicitNullValueCardDoesNotBelongToCardholder = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardDoesNotBelongToCardholder"); else _explicitNullProperties?.Remove("cardDoesNotBelongToCardholder"); } }
+        private bool? _explicitNullValueCardDoesNotBelongToCardholder = default!;
         /// <summary>The card was counterfeited.</summary>
-        public bool? CardWasCounterfeited { get; set; }
+        public bool? CardWasCounterfeited { get => _explicitNullValueCardWasCounterfeited; set { _explicitNullValueCardWasCounterfeited = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardWasCounterfeited"); else _explicitNullProperties?.Remove("cardWasCounterfeited"); } }
+        private bool? _explicitNullValueCardWasCounterfeited = default!;
         /// <summary>Your description of the issue for raising a dispute of `type` **fraud**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DescriptionOfIssue { get; set; }
+        public string? DescriptionOfIssue { get => _explicitNullValueDescriptionOfIssue; set { _explicitNullValueDescriptionOfIssue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("descriptionOfIssue"); else _explicitNullProperties?.Remove("descriptionOfIssue"); } }
+        private string? _explicitNullValueDescriptionOfIssue = default!;
 #nullable restore
 #else
-        public string DescriptionOfIssue { get; set; }
+        public string DescriptionOfIssue { get => _explicitNullValueDescriptionOfIssue; set { _explicitNullValueDescriptionOfIssue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("descriptionOfIssue"); else _explicitNullProperties?.Remove("descriptionOfIssue"); } }
+        private string _explicitNullValueDescriptionOfIssue = default!;
 #endif
         /// <summary>Set to **true** to report fraud to Adyen with no further action, such as a request for a chargeback or fee reversal. The default value is **false**.</summary>
-        public bool? ReportOnly { get; set; }
+        public bool? ReportOnly { get => _explicitNullValueReportOnly; set { _explicitNullValueReportOnly = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reportOnly"); else _explicitNullProperties?.Remove("reportOnly"); } }
+        private bool? _explicitNullValueReportOnly = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.DisputeRequestFraudInfo"/> and sets the default values.
         /// </summary>
@@ -44,7 +60,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.DisputeRequestFraudInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.DisputeRequestFraudInfo();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.DisputeRequestFraudInfo(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -71,6 +87,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteBoolValue("cardWasCounterfeited", CardWasCounterfeited);
             writer.WriteStringValue("descriptionOfIssue", DescriptionOfIssue);
             writer.WriteBoolValue("reportOnly", ReportOnly);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

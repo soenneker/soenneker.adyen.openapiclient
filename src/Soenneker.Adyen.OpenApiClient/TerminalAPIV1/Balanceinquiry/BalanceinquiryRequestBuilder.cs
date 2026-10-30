@@ -51,7 +51,7 @@ namespace Soenneker.Adyen.OpenApiClient.TerminalAPIV1.Balanceinquiry
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.BalanceInquiryResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.BalanceInquiryResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.BalanceInquiryResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.BalanceInquiryResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// It conveys Information related to the account for which a Balance Inquiry is requested.Content of the Balance Inquiry Request message.

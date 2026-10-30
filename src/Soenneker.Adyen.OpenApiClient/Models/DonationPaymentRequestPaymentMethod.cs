@@ -12,7 +12,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DonationPaymentRequestPaymentMethod : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ApplePayDonations"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -73,29 +78,38 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             var result = new global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestPaymentMethod();
             if("applepay".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ApplePayDonations = new global::Soenneker.Adyen.OpenApiClient.Models.ApplePayDonations();
+                
             }
             else if("card".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.CardDonations = new global::Soenneker.Adyen.OpenApiClient.Models.CardDonations();
+                
             }
             else if("googlepay".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.GooglePayDonations = new global::Soenneker.Adyen.OpenApiClient.Models.GooglePayDonations();
+                
             }
             else if("ideal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.IdealDonations = new global::Soenneker.Adyen.OpenApiClient.Models.IdealDonations();
+                
             }
             else if("paywithgoogle".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.PayWithGoogleDonations = new global::Soenneker.Adyen.OpenApiClient.Models.PayWithGoogleDonations();
+                
             }
             else if("sepadirectdebit".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.SepaDirectDebitDonations = new global::Soenneker.Adyen.OpenApiClient.Models.SepaDirectDebitDonations();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("applePayToken") != null && (parseNode.GetChildNode("fundingSource") == null || (parseNode.GetChildNode("fundingSource")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag1 && ("credit".Equals(optionalTag1.GetValue(), global::System.StringComparison.Ordinal) || "debit".Equals(optionalTag1.GetValue(), global::System.StringComparison.Ordinal) || "prepaid".Equals(optionalTag1.GetValue(), global::System.StringComparison.Ordinal)))) && (parseNode.GetChildNode("type") == null || (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag2 && ("applepay".Equals(optionalTag2.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("googlePayToken") != null && (parseNode.GetChildNode("fundingSource") == null || (parseNode.GetChildNode("fundingSource")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag1 && ("credit".Equals(optionalTag1.GetValue(), global::System.StringComparison.Ordinal) || "debit".Equals(optionalTag1.GetValue(), global::System.StringComparison.Ordinal) || "prepaid".Equals(optionalTag1.GetValue(), global::System.StringComparison.Ordinal)))) && (parseNode.GetChildNode("type") == null || (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag2 && ("googlepay".Equals(optionalTag2.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("googlePayToken") != null && (parseNode.GetChildNode("fundingSource") == null || (parseNode.GetChildNode("fundingSource")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag1 && ("credit".Equals(optionalTag1.GetValue(), global::System.StringComparison.Ordinal) || "debit".Equals(optionalTag1.GetValue(), global::System.StringComparison.Ordinal) || "prepaid".Equals(optionalTag1.GetValue(), global::System.StringComparison.Ordinal)))) && (parseNode.GetChildNode("type") == null || (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag2 && ("paywithgoogle".Equals(optionalTag2.GetValue(), global::System.StringComparison.Ordinal))))))();
+            if (result.ApplePayDonations == null && result.CardDonations == null && result.GooglePayDonations == null && result.IdealDonations == null && result.PayWithGoogleDonations == null && result.SepaDirectDebitDonations == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.ApplePayDonations = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.ApplePayDonations(), parseNode);
+            if (result.ApplePayDonations == null && result.CardDonations == null && result.GooglePayDonations == null && result.IdealDonations == null && result.PayWithGoogleDonations == null && result.SepaDirectDebitDonations == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2) result.GooglePayDonations = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.GooglePayDonations(), parseNode);
+            if (result.ApplePayDonations == null && result.CardDonations == null && result.GooglePayDonations == null && result.IdealDonations == null && result.PayWithGoogleDonations == null && result.SepaDirectDebitDonations == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1) result.PayWithGoogleDonations = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.PayWithGoogleDonations(), parseNode);
+            if (result.ApplePayDonations == null && result.CardDonations == null && result.GooglePayDonations == null && result.IdealDonations == null && result.PayWithGoogleDonations == null && result.SepaDirectDebitDonations == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -135,29 +149,44 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (ApplePayDonations == null && CardDonations == null && GooglePayDonations == null && IdealDonations == null && PayWithGoogleDonations == null && SepaDirectDebitDonations == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (ApplePayDonations != null && CardDonations == null && GooglePayDonations == null && IdealDonations == null && PayWithGoogleDonations == null && SepaDirectDebitDonations == null) { if (ApplePayDonations is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ApplePayDonations); return; }
+            if (CardDonations != null && ApplePayDonations == null && GooglePayDonations == null && IdealDonations == null && PayWithGoogleDonations == null && SepaDirectDebitDonations == null) { if (CardDonations is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CardDonations); return; }
+            if (GooglePayDonations != null && ApplePayDonations == null && CardDonations == null && IdealDonations == null && PayWithGoogleDonations == null && SepaDirectDebitDonations == null) { if (GooglePayDonations is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, GooglePayDonations); return; }
+            if (IdealDonations != null && ApplePayDonations == null && CardDonations == null && GooglePayDonations == null && PayWithGoogleDonations == null && SepaDirectDebitDonations == null) { if (IdealDonations is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, IdealDonations); return; }
+            if (PayWithGoogleDonations != null && ApplePayDonations == null && CardDonations == null && GooglePayDonations == null && IdealDonations == null && SepaDirectDebitDonations == null) { if (PayWithGoogleDonations is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, PayWithGoogleDonations); return; }
+            if (SepaDirectDebitDonations != null && ApplePayDonations == null && CardDonations == null && GooglePayDonations == null && IdealDonations == null && PayWithGoogleDonations == null) { if (SepaDirectDebitDonations is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, SepaDirectDebitDonations); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(ApplePayDonations != null)
             {
+                if (ApplePayDonations is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ApplePayDonations>(null, ApplePayDonations);
             }
             else if(CardDonations != null)
             {
+                if (CardDonations is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CardDonations>(null, CardDonations);
             }
             else if(GooglePayDonations != null)
             {
+                if (GooglePayDonations is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GooglePayDonations>(null, GooglePayDonations);
             }
             else if(IdealDonations != null)
             {
+                if (IdealDonations is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.IdealDonations>(null, IdealDonations);
             }
             else if(PayWithGoogleDonations != null)
             {
+                if (PayWithGoogleDonations is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayWithGoogleDonations>(null, PayWithGoogleDonations);
             }
             else if(SepaDirectDebitDonations != null)
             {
+                if (SepaDirectDebitDonations is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SepaDirectDebitDonations>(null, SepaDirectDebitDonations);
             }
         }

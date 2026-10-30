@@ -12,18 +12,30 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TransactionIdType : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("TimeStamp") is { } nullNodeTimeStamp && nullNodeTimeStamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeStamp = null;
+            if (parseNode.GetChildNode("TransactionID") is { } nullNodeTransactionID && nullNodeTransactionID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionID = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Date and time of a transaction for the Sale System, the POI System or the Acquirer. Ensures the uniqueness of a transaction and indicates the time when the event occurs in the EventNotification message.</summary>
-        public DateTimeOffset? TimeStamp { get; set; }
+        public DateTimeOffset? TimeStamp { get => _explicitNullValueTimeStamp; set { _explicitNullValueTimeStamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TimeStamp"); else _explicitNullProperties?.Remove("TimeStamp"); } }
+        private DateTimeOffset? _explicitNullValueTimeStamp = default!;
         /// <summary>Unique identification of a transaction to identify the transaction onthe Sale System (e.g. ticket number), or the POI System.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TransactionID { get; set; }
+        public string? TransactionID { get => _explicitNullValueTransactionID; set { _explicitNullValueTransactionID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TransactionID"); else _explicitNullProperties?.Remove("TransactionID"); } }
+        private string? _explicitNullValueTransactionID = default!;
 #nullable restore
 #else
-        public string TransactionID { get; set; }
+        public string TransactionID { get => _explicitNullValueTransactionID; set { _explicitNullValueTransactionID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TransactionID"); else _explicitNullProperties?.Remove("TransactionID"); } }
+        private string _explicitNullValueTransactionID = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType"/> and sets the default values.
@@ -40,7 +52,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,6 +75,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("TimeStamp", TimeStamp);
             writer.WriteStringValue("TransactionID", TransactionID);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,18 +12,30 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TerminalSettingsConnectivityMember1 : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("simcardStatus") is { } nullNodeSimcardStatus && nullNodeSimcardStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SimcardStatus = null;
+            if (parseNode.GetChildNode("terminalIPAddressURL") is { } nullNodeTerminalIPAddressURL && nullNodeTerminalIPAddressURL.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TerminalIPAddressURL = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates the status of the SIM card in the payment terminal. Can be updated and received only at terminal level, and only for models that support cellular connectivity.Possible values:* **ACTIVATED**: the SIM card is activated. Cellular connectivity may still need to be enabled on the terminal itself, in the **Network** settings.* **INVENTORY**: the SIM card is not activated. The terminal can&apos;t use cellular connectivity.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.ConnectivitySimcardStatus? SimcardStatus { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ConnectivitySimcardStatus? SimcardStatus { get => _explicitNullValueSimcardStatus; set { _explicitNullValueSimcardStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("simcardStatus"); else _explicitNullProperties?.Remove("simcardStatus"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ConnectivitySimcardStatus? _explicitNullValueSimcardStatus = default!;
         /// <summary>The list of local and public URLs to send notifications to when using local integrations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ConnectivityTerminalIpAddressUrl? TerminalIPAddressURL { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ConnectivityTerminalIpAddressUrl? TerminalIPAddressURL { get => _explicitNullValueTerminalIPAddressURL; set { _explicitNullValueTerminalIPAddressURL = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("terminalIPAddressURL"); else _explicitNullProperties?.Remove("terminalIPAddressURL"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ConnectivityTerminalIpAddressUrl? _explicitNullValueTerminalIPAddressURL = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ConnectivityTerminalIpAddressUrl TerminalIPAddressURL { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ConnectivityTerminalIpAddressUrl TerminalIPAddressURL { get => _explicitNullValueTerminalIPAddressURL; set { _explicitNullValueTerminalIPAddressURL = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("terminalIPAddressURL"); else _explicitNullProperties?.Remove("terminalIPAddressURL"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ConnectivityTerminalIpAddressUrl _explicitNullValueTerminalIPAddressURL = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsConnectivityMember1"/> and sets the default values.
@@ -40,7 +52,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsConnectivityMember1 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsConnectivityMember1();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsConnectivityMember1(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,6 +75,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ConnectivitySimcardStatus>("simcardStatus", SimcardStatus);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ConnectivityTerminalIpAddressUrl>("terminalIPAddressURL", TerminalIPAddressURL);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

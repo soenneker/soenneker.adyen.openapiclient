@@ -11,34 +11,52 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TestCardRangeCreationResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("cardNumberRangeEnd") is { } nullNodeCardNumberRangeEnd && nullNodeCardNumberRangeEnd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardNumberRangeEnd = null;
+            if (parseNode.GetChildNode("cardNumberRangeStart") is { } nullNodeCardNumberRangeStart && nullNodeCardNumberRangeStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardNumberRangeStart = null;
+            if (parseNode.GetChildNode("creationResultCode") is { } nullNodeCreationResultCode && nullNodeCreationResultCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreationResultCode = null;
+            if (parseNode.GetChildNode("message") is { } nullNodeMessage && nullNodeMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Message = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The last test card number in the generated test card range.Example: 5432 1234 1234 4321</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CardNumberRangeEnd { get; set; }
+        public string? CardNumberRangeEnd { get => _explicitNullValueCardNumberRangeEnd; set { _explicitNullValueCardNumberRangeEnd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardNumberRangeEnd"); else _explicitNullProperties?.Remove("cardNumberRangeEnd"); } }
+        private string? _explicitNullValueCardNumberRangeEnd = default!;
 #nullable restore
 #else
-        public string CardNumberRangeEnd { get; set; }
+        public string CardNumberRangeEnd { get => _explicitNullValueCardNumberRangeEnd; set { _explicitNullValueCardNumberRangeEnd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardNumberRangeEnd"); else _explicitNullProperties?.Remove("cardNumberRangeEnd"); } }
+        private string _explicitNullValueCardNumberRangeEnd = default!;
 #endif
         /// <summary>The first test card number in the generated test card range.Example: 5432 1234 1234 1234</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CardNumberRangeStart { get; set; }
+        public string? CardNumberRangeStart { get => _explicitNullValueCardNumberRangeStart; set { _explicitNullValueCardNumberRangeStart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardNumberRangeStart"); else _explicitNullProperties?.Remove("cardNumberRangeStart"); } }
+        private string? _explicitNullValueCardNumberRangeStart = default!;
 #nullable restore
 #else
-        public string CardNumberRangeStart { get; set; }
+        public string CardNumberRangeStart { get => _explicitNullValueCardNumberRangeStart; set { _explicitNullValueCardNumberRangeStart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardNumberRangeStart"); else _explicitNullProperties?.Remove("cardNumberRangeStart"); } }
+        private string _explicitNullValueCardNumberRangeStart = default!;
 #endif
         /// <summary>Notification message. It informs about the outcome of the operation. Possible values:* CREATED* ALREADY_EXISTS* ERROR</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TestCardRangeCreationResultCreationResultCode? CreationResultCode { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TestCardRangeCreationResultCreationResultCode? CreationResultCode { get => _explicitNullValueCreationResultCode; set { _explicitNullValueCreationResultCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creationResultCode"); else _explicitNullProperties?.Remove("creationResultCode"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TestCardRangeCreationResultCreationResultCode? _explicitNullValueCreationResultCode = default!;
         /// <summary>An optional information message about the result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Message { get; set; }
+        public string? Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
+        private string? _explicitNullValueMessage = default!;
 #nullable restore
 #else
-        public string Message { get; set; }
+        public string Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
+        private string _explicitNullValueMessage = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TestCardRangeCreationResult"/> and sets the default values.
@@ -55,7 +73,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.TestCardRangeCreationResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.TestCardRangeCreationResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.TestCardRangeCreationResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,6 +100,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("cardNumberRangeStart", CardNumberRangeStart);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TestCardRangeCreationResultCreationResultCode>("creationResultCode", CreationResultCode);
             writer.WriteStringValue("message", Message);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

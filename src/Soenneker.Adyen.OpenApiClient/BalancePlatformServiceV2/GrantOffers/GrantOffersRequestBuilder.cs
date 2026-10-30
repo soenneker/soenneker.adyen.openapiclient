@@ -76,6 +76,8 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.GrantOffers
                 { "403", global::Soenneker.Adyen.OpenApiClient.Models.RestServiceError.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Adyen.OpenApiClient.Models.RestServiceError.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Adyen.OpenApiClient.Models.RestServiceError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.GrantOffers>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.GrantOffers.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

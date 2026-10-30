@@ -11,32 +11,48 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UtmCoordinates : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("UTMEastward") is { } nullNodeUTMEastward && nullNodeUTMEastward.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UTMEastward = null;
+            if (parseNode.GetChildNode("UTMNorthward") is { } nullNodeUTMNorthward && nullNodeUTMNorthward.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UTMNorthward = null;
+            if (parseNode.GetChildNode("UTMZone") is { } nullNodeUTMZone && nullNodeUTMZone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UTMZone = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>X-coordinate of the Universal Transverse Mercator coordinate system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UTMEastward { get; set; }
+        public string? UTMEastward { get => _explicitNullValueUTMEastward; set { _explicitNullValueUTMEastward = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("UTMEastward"); else _explicitNullProperties?.Remove("UTMEastward"); } }
+        private string? _explicitNullValueUTMEastward = default!;
 #nullable restore
 #else
-        public string UTMEastward { get; set; }
+        public string UTMEastward { get => _explicitNullValueUTMEastward; set { _explicitNullValueUTMEastward = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("UTMEastward"); else _explicitNullProperties?.Remove("UTMEastward"); } }
+        private string _explicitNullValueUTMEastward = default!;
 #endif
         /// <summary>Y-coordinate of the Universal Transverse Mercator coordinate system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UTMNorthward { get; set; }
+        public string? UTMNorthward { get => _explicitNullValueUTMNorthward; set { _explicitNullValueUTMNorthward = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("UTMNorthward"); else _explicitNullProperties?.Remove("UTMNorthward"); } }
+        private string? _explicitNullValueUTMNorthward = default!;
 #nullable restore
 #else
-        public string UTMNorthward { get; set; }
+        public string UTMNorthward { get => _explicitNullValueUTMNorthward; set { _explicitNullValueUTMNorthward = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("UTMNorthward"); else _explicitNullProperties?.Remove("UTMNorthward"); } }
+        private string _explicitNullValueUTMNorthward = default!;
 #endif
         /// <summary>UTM grid zone combination of the longitude zone (1 to 60) and the latitude band (C to X, excluding I and O).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UTMZone { get; set; }
+        public string? UTMZone { get => _explicitNullValueUTMZone; set { _explicitNullValueUTMZone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("UTMZone"); else _explicitNullProperties?.Remove("UTMZone"); } }
+        private string? _explicitNullValueUTMZone = default!;
 #nullable restore
 #else
-        public string UTMZone { get; set; }
+        public string UTMZone { get => _explicitNullValueUTMZone; set { _explicitNullValueUTMZone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("UTMZone"); else _explicitNullProperties?.Remove("UTMZone"); } }
+        private string _explicitNullValueUTMZone = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.UtmCoordinates"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.UtmCoordinates CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.UtmCoordinates();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.UtmCoordinates(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("UTMEastward", UTMEastward);
             writer.WriteStringValue("UTMNorthward", UTMNorthward);
             writer.WriteStringValue("UTMZone", UTMZone);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

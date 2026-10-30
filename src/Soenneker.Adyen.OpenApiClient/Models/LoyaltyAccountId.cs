@@ -12,28 +12,45 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LoyaltyAccountId : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("EntryMode") is { } nullNodeEntryMode && nullNodeEntryMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntryMode = null;
+            if (parseNode.GetChildNode("IdentificationSupport") is { } nullNodeIdentificationSupport && nullNodeIdentificationSupport.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdentificationSupport = null;
+            if (parseNode.GetChildNode("IdentificationType") is { } nullNodeIdentificationType && nullNodeIdentificationType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdentificationType = null;
+            if (parseNode.GetChildNode("LoyaltyID") is { } nullNodeLoyaltyID && nullNodeLoyaltyID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoyaltyID = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The EntryMode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountIdEntryModeItem?>? EntryMode { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountIdEntryModeItem?>? EntryMode { get => _explicitNullValueEntryMode; set { _explicitNullValueEntryMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("EntryMode"); else _explicitNullProperties?.Remove("EntryMode"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountIdEntryModeItem?>? _explicitNullValueEntryMode = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountIdEntryModeItem?> EntryMode { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountIdEntryModeItem?> EntryMode { get => _explicitNullValueEntryMode; set { _explicitNullValueEntryMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("EntryMode"); else _explicitNullProperties?.Remove("EntryMode"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountIdEntryModeItem?> _explicitNullValueEntryMode = default!;
 #endif
         /// <summary>Support of the loyalty account identification. Allows knowing where and how you have found the loyalty account identification.Possible values:* **NoCard*** **LoyaltyCard*** **HybridCard*** **LinkedCard**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountIdIdentificationSupport? IdentificationSupport { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountIdIdentificationSupport? IdentificationSupport { get => _explicitNullValueIdentificationSupport; set { _explicitNullValueIdentificationSupport = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("IdentificationSupport"); else _explicitNullProperties?.Remove("IdentificationSupport"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountIdIdentificationSupport? _explicitNullValueIdentificationSupport = default!;
         /// <summary>Possible values:* **PAN*** **ISOTrack2*** **BarCode*** **AccountNumber*** **PhoneNumber**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountIdIdentificationType? IdentificationType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountIdIdentificationType? IdentificationType { get => _explicitNullValueIdentificationType; set { _explicitNullValueIdentificationType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("IdentificationType"); else _explicitNullProperties?.Remove("IdentificationType"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountIdIdentificationType? _explicitNullValueIdentificationType = default!;
         /// <summary>Loyalty account identification conforming to the IdentificationType.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LoyaltyID { get; set; }
+        public string? LoyaltyID { get => _explicitNullValueLoyaltyID; set { _explicitNullValueLoyaltyID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LoyaltyID"); else _explicitNullProperties?.Remove("LoyaltyID"); } }
+        private string? _explicitNullValueLoyaltyID = default!;
 #nullable restore
 #else
-        public string LoyaltyID { get; set; }
+        public string LoyaltyID { get => _explicitNullValueLoyaltyID; set { _explicitNullValueLoyaltyID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LoyaltyID"); else _explicitNullProperties?.Remove("LoyaltyID"); } }
+        private string _explicitNullValueLoyaltyID = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountId"/> and sets the default values.
@@ -50,7 +67,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountId CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountId();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountId(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,6 +94,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountIdIdentificationSupport>("IdentificationSupport", IdentificationSupport);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountIdIdentificationType>("IdentificationType", IdentificationType);
             writer.WriteStringValue("LoyaltyID", LoyaltyID);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,26 +11,41 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ErrorFieldType : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("errorCode") is { } nullNodeErrorCode && nullNodeErrorCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorCode = null;
+            if (parseNode.GetChildNode("errorDescription") is { } nullNodeErrorDescription && nullNodeErrorDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorDescription = null;
+            if (parseNode.GetChildNode("fieldType") is { } nullNodeFieldType && nullNodeFieldType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldType = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The validation error code.</summary>
-        public int? ErrorCode { get; set; }
+        public int? ErrorCode { get => _explicitNullValueErrorCode; set { _explicitNullValueErrorCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errorCode"); else _explicitNullProperties?.Remove("errorCode"); } }
+        private int? _explicitNullValueErrorCode = default!;
         /// <summary>A description of the validation error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ErrorDescription { get; set; }
+        public string? ErrorDescription { get => _explicitNullValueErrorDescription; set { _explicitNullValueErrorDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errorDescription"); else _explicitNullProperties?.Remove("errorDescription"); } }
+        private string? _explicitNullValueErrorDescription = default!;
 #nullable restore
 #else
-        public string ErrorDescription { get; set; }
+        public string ErrorDescription { get => _explicitNullValueErrorDescription; set { _explicitNullValueErrorDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errorDescription"); else _explicitNullProperties?.Remove("errorDescription"); } }
+        private string _explicitNullValueErrorDescription = default!;
 #endif
         /// <summary>The type of error field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ErrorFieldTypeFieldType? FieldType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ErrorFieldTypeFieldType? FieldType { get => _explicitNullValueFieldType; set { _explicitNullValueFieldType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fieldType"); else _explicitNullProperties?.Remove("fieldType"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ErrorFieldTypeFieldType? _explicitNullValueFieldType = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ErrorFieldTypeFieldType FieldType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ErrorFieldTypeFieldType FieldType { get => _explicitNullValueFieldType; set { _explicitNullValueFieldType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fieldType"); else _explicitNullProperties?.Remove("fieldType"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ErrorFieldTypeFieldType _explicitNullValueFieldType = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ErrorFieldType"/> and sets the default values.
@@ -47,7 +62,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.ErrorFieldType CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.ErrorFieldType();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.ErrorFieldType(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +87,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteIntValue("errorCode", ErrorCode);
             writer.WriteStringValue("errorDescription", ErrorDescription);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ErrorFieldTypeFieldType>("fieldType", FieldType);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

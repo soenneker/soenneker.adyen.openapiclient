@@ -11,29 +11,46 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class Gratuity : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("allowCustomAmount") is { } nullNodeAllowCustomAmount && nullNodeAllowCustomAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowCustomAmount = null;
+            if (parseNode.GetChildNode("currency") is { } nullNodeCurrency && nullNodeCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Currency = null;
+            if (parseNode.GetChildNode("predefinedTipEntries") is { } nullNodePredefinedTipEntries && nullNodePredefinedTipEntries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PredefinedTipEntries = null;
+            if (parseNode.GetChildNode("usePredefinedTipEntries") is { } nullNodeUsePredefinedTipEntries && nullNodeUsePredefinedTipEntries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsePredefinedTipEntries = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether one of the predefined tipping options is to let the shopper enter a custom tip. If **true**, only three of the other options defined in `predefinedTipEntries` are shown.</summary>
-        public bool? AllowCustomAmount { get; set; }
+        public bool? AllowCustomAmount { get => _explicitNullValueAllowCustomAmount; set { _explicitNullValueAllowCustomAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowCustomAmount"); else _explicitNullProperties?.Remove("allowCustomAmount"); } }
+        private bool? _explicitNullValueAllowCustomAmount = default!;
         /// <summary>The currency that the tipping settings apply to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Currency { get; set; }
+        public string? Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
+        private string? _explicitNullValueCurrency = default!;
 #nullable restore
 #else
-        public string Currency { get; set; }
+        public string Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
+        private string _explicitNullValueCurrency = default!;
 #endif
         /// <summary>Tipping options the shopper can choose from if `usePredefinedTipEntries` is **true**. The maximum number of predefined options is four, or three plus the option to enter a custom tip.The options can be a mix of:- A percentage of the transaction amount. Example: **5%**- A tip amount in [minor units](https://docs.adyen.com/development-resources/currency-codes). Example: **500** for a EUR 5 tip.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PredefinedTipEntries { get; set; }
+        public List<string>? PredefinedTipEntries { get => _explicitNullValuePredefinedTipEntries; set { _explicitNullValuePredefinedTipEntries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("predefinedTipEntries"); else _explicitNullProperties?.Remove("predefinedTipEntries"); } }
+        private List<string>? _explicitNullValuePredefinedTipEntries = default!;
 #nullable restore
 #else
-        public List<string> PredefinedTipEntries { get; set; }
+        public List<string> PredefinedTipEntries { get => _explicitNullValuePredefinedTipEntries; set { _explicitNullValuePredefinedTipEntries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("predefinedTipEntries"); else _explicitNullProperties?.Remove("predefinedTipEntries"); } }
+        private List<string> _explicitNullValuePredefinedTipEntries = default!;
 #endif
         /// <summary>Indicates whether the terminal shows a prompt to enter a tip (**false**), or predefined tipping options to choose from (**true**).</summary>
-        public bool? UsePredefinedTipEntries { get; set; }
+        public bool? UsePredefinedTipEntries { get => _explicitNullValueUsePredefinedTipEntries; set { _explicitNullValueUsePredefinedTipEntries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usePredefinedTipEntries"); else _explicitNullProperties?.Remove("usePredefinedTipEntries"); } }
+        private bool? _explicitNullValueUsePredefinedTipEntries = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.Gratuity"/> and sets the default values.
         /// </summary>
@@ -49,7 +66,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.Gratuity CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.Gratuity();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.Gratuity(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,6 +93,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("currency", Currency);
             writer.WriteCollectionOfPrimitiveValues<string>("predefinedTipEntries", PredefinedTipEntries);
             writer.WriteBoolValue("usePredefinedTipEntries", UsePredefinedTipEntries);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,56 +11,81 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CheckoutForwardResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("accountUpdate") is { } nullNodeAccountUpdate && nullNodeAccountUpdate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountUpdate = null;
+            if (parseNode.GetChildNode("merchantReference") is { } nullNodeMerchantReference && nullNodeMerchantReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantReference = null;
+            if (parseNode.GetChildNode("networkToken") is { } nullNodeNetworkToken && nullNodeNetworkToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NetworkToken = null;
+            if (parseNode.GetChildNode("pspReference") is { } nullNodePspReference && nullNodePspReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PspReference = null;
+            if (parseNode.GetChildNode("response") is { } nullNodeResponse && nullNodeResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Response = null;
+            if (parseNode.GetChildNode("storedPaymentMethodId") is { } nullNodeStoredPaymentMethodId && nullNodeStoredPaymentMethodId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StoredPaymentMethodId = null;
+        }
+
         /// <summary>Account update details for the forwarded request, including the result of the [Real Time Account Updater](https://docs.adyen.com/online-payments/account-updater/real-time-account-updater).Returning the result of the Real Time Account Updater is in [pilot phase](https://docs.adyen.com/online-payments/tokenization/forward-payment-details#handle-the-result), and not yet widely available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseAccountUpdate? AccountUpdate { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseAccountUpdate? AccountUpdate { get => _explicitNullValueAccountUpdate; set { _explicitNullValueAccountUpdate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountUpdate"); else _explicitNullProperties?.Remove("accountUpdate"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseAccountUpdate? _explicitNullValueAccountUpdate = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseAccountUpdate AccountUpdate { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseAccountUpdate AccountUpdate { get => _explicitNullValueAccountUpdate; set { _explicitNullValueAccountUpdate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountUpdate"); else _explicitNullProperties?.Remove("accountUpdate"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseAccountUpdate _explicitNullValueAccountUpdate = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Merchant defined payment reference.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MerchantReference { get; set; }
+        public string? MerchantReference { get => _explicitNullValueMerchantReference; set { _explicitNullValueMerchantReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantReference"); else _explicitNullProperties?.Remove("merchantReference"); } }
+        private string? _explicitNullValueMerchantReference = default!;
 #nullable restore
 #else
-        public string MerchantReference { get; set; }
+        public string MerchantReference { get => _explicitNullValueMerchantReference; set { _explicitNullValueMerchantReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantReference"); else _explicitNullProperties?.Remove("merchantReference"); } }
+        private string _explicitNullValueMerchantReference = default!;
 #endif
         /// <summary>Network token details for the forwarded request, including whether the Primary Account Number (PAN) was successfully swapped for a network token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseNetworkToken? NetworkToken { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseNetworkToken? NetworkToken { get => _explicitNullValueNetworkToken; set { _explicitNullValueNetworkToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("networkToken"); else _explicitNullProperties?.Remove("networkToken"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseNetworkToken? _explicitNullValueNetworkToken = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseNetworkToken NetworkToken { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseNetworkToken NetworkToken { get => _explicitNullValueNetworkToken; set { _explicitNullValueNetworkToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("networkToken"); else _explicitNullProperties?.Remove("networkToken"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseNetworkToken _explicitNullValueNetworkToken = default!;
 #endif
         /// <summary>Adyen&apos;s 16-character reference associated with the transaction/request. This value is globally unique. Use this reference when you communicate with us about this request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PspReference { get; set; }
+        public string? PspReference { get => _explicitNullValuePspReference; set { _explicitNullValuePspReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pspReference"); else _explicitNullProperties?.Remove("pspReference"); } }
+        private string? _explicitNullValuePspReference = default!;
 #nullable restore
 #else
-        public string PspReference { get; set; }
+        public string PspReference { get => _explicitNullValuePspReference; set { _explicitNullValuePspReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pspReference"); else _explicitNullProperties?.Remove("pspReference"); } }
+        private string _explicitNullValuePspReference = default!;
 #endif
         /// <summary>The details of the response Adyen received from the third party.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseResponse? Response { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseResponse? Response { get => _explicitNullValueResponse; set { _explicitNullValueResponse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response"); else _explicitNullProperties?.Remove("response"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseResponse? _explicitNullValueResponse = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseResponse Response { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseResponse Response { get => _explicitNullValueResponse; set { _explicitNullValueResponse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response"); else _explicitNullProperties?.Remove("response"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseResponse _explicitNullValueResponse = default!;
 #endif
         /// <summary>The unique identifier of the token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StoredPaymentMethodId { get; set; }
+        public string? StoredPaymentMethodId { get => _explicitNullValueStoredPaymentMethodId; set { _explicitNullValueStoredPaymentMethodId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storedPaymentMethodId"); else _explicitNullProperties?.Remove("storedPaymentMethodId"); } }
+        private string? _explicitNullValueStoredPaymentMethodId = default!;
 #nullable restore
 #else
-        public string StoredPaymentMethodId { get; set; }
+        public string StoredPaymentMethodId { get => _explicitNullValueStoredPaymentMethodId; set { _explicitNullValueStoredPaymentMethodId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storedPaymentMethodId"); else _explicitNullProperties?.Remove("storedPaymentMethodId"); } }
+        private string _explicitNullValueStoredPaymentMethodId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponse"/> and sets the default values.
@@ -77,7 +102,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -108,6 +133,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("pspReference", PspReference);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseResponse>("response", Response);
             writer.WriteStringValue("storedPaymentMethodId", StoredPaymentMethodId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

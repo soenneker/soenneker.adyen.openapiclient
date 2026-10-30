@@ -12,31 +12,50 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class StoreDetailRequestRecurring : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("contract") is { } nullNodeContract && nullNodeContract.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Contract = null;
+            if (parseNode.GetChildNode("recurringDetailName") is { } nullNodeRecurringDetailName && nullNodeRecurringDetailName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecurringDetailName = null;
+            if (parseNode.GetChildNode("recurringExpiry") is { } nullNodeRecurringExpiry && nullNodeRecurringExpiry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecurringExpiry = null;
+            if (parseNode.GetChildNode("recurringFrequency") is { } nullNodeRecurringFrequency && nullNodeRecurringFrequency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecurringFrequency = null;
+            if (parseNode.GetChildNode("tokenService") is { } nullNodeTokenService && nullNodeTokenService.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TokenService = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The type of recurring contract to be used.Possible values:* `ONECLICK` – Payment details can be used to initiate a one-click payment, where the shopper enters the [card security code (CVC/CVV)](https://docs.adyen.com/payments-fundamentals/payment-glossary#card-security-code-cvc-cvv-cid).* `RECURRING` – Payment details can be used without the card security code to initiate [card-not-present transactions](https://docs.adyen.com/payments-fundamentals/payment-glossary#card-not-present-cnp).* `ONECLICK,RECURRING` – Payment details can be used regardless of whether the shopper is on your site or not.* `PAYOUT` – Payment details can be used to [make a payout](https://docs.adyen.com/online-payments/online-payouts).* `EXTERNAL` - Use this when you store payment details and send the raw card number or network token directly in your API request.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutServiceV68RecurringContract? Contract { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutServiceV68RecurringContract? Contract { get => _explicitNullValueContract; set { _explicitNullValueContract = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contract"); else _explicitNullProperties?.Remove("contract"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PayoutServiceV68RecurringContract? _explicitNullValueContract = default!;
         /// <summary>A descriptive name for this detail.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RecurringDetailName { get; set; }
+        public string? RecurringDetailName { get => _explicitNullValueRecurringDetailName; set { _explicitNullValueRecurringDetailName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recurringDetailName"); else _explicitNullProperties?.Remove("recurringDetailName"); } }
+        private string? _explicitNullValueRecurringDetailName = default!;
 #nullable restore
 #else
-        public string RecurringDetailName { get; set; }
+        public string RecurringDetailName { get => _explicitNullValueRecurringDetailName; set { _explicitNullValueRecurringDetailName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recurringDetailName"); else _explicitNullProperties?.Remove("recurringDetailName"); } }
+        private string _explicitNullValueRecurringDetailName = default!;
 #endif
         /// <summary>Date after which no further authorisations shall be performed. Only for 3D Secure 2.</summary>
-        public DateTimeOffset? RecurringExpiry { get; set; }
+        public DateTimeOffset? RecurringExpiry { get => _explicitNullValueRecurringExpiry; set { _explicitNullValueRecurringExpiry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recurringExpiry"); else _explicitNullProperties?.Remove("recurringExpiry"); } }
+        private DateTimeOffset? _explicitNullValueRecurringExpiry = default!;
         /// <summary>Minimum number of days between authorisations. Only for 3D Secure 2.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RecurringFrequency { get; set; }
+        public string? RecurringFrequency { get => _explicitNullValueRecurringFrequency; set { _explicitNullValueRecurringFrequency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recurringFrequency"); else _explicitNullProperties?.Remove("recurringFrequency"); } }
+        private string? _explicitNullValueRecurringFrequency = default!;
 #nullable restore
 #else
-        public string RecurringFrequency { get; set; }
+        public string RecurringFrequency { get => _explicitNullValueRecurringFrequency; set { _explicitNullValueRecurringFrequency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recurringFrequency"); else _explicitNullProperties?.Remove("recurringFrequency"); } }
+        private string _explicitNullValueRecurringFrequency = default!;
 #endif
         /// <summary>The name of the token service.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutServiceV68RecurringTokenService? TokenService { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutServiceV68RecurringTokenService? TokenService { get => _explicitNullValueTokenService; set { _explicitNullValueTokenService = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tokenService"); else _explicitNullProperties?.Remove("tokenService"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PayoutServiceV68RecurringTokenService? _explicitNullValueTokenService = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.StoreDetailRequestRecurring"/> and sets the default values.
         /// </summary>
@@ -52,7 +71,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.StoreDetailRequestRecurring CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.StoreDetailRequestRecurring();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.StoreDetailRequestRecurring(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -81,6 +100,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("recurringExpiry", RecurringExpiry);
             writer.WriteStringValue("recurringFrequency", RecurringFrequency);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutServiceV68RecurringTokenService>("tokenService", TokenService);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

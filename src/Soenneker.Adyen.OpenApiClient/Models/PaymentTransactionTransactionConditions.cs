@@ -12,62 +12,93 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PaymentTransactionTransactionConditions : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("AcquirerID") is { } nullNodeAcquirerID && nullNodeAcquirerID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcquirerID = null;
+            if (parseNode.GetChildNode("AllowedLoyaltyBrand") is { } nullNodeAllowedLoyaltyBrand && nullNodeAllowedLoyaltyBrand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedLoyaltyBrand = null;
+            if (parseNode.GetChildNode("AllowedPaymentBrand") is { } nullNodeAllowedPaymentBrand && nullNodeAllowedPaymentBrand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedPaymentBrand = null;
+            if (parseNode.GetChildNode("CustomerLanguage") is { } nullNodeCustomerLanguage && nullNodeCustomerLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerLanguage = null;
+            if (parseNode.GetChildNode("DebitPreferredFlag") is { } nullNodeDebitPreferredFlag && nullNodeDebitPreferredFlag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DebitPreferredFlag = null;
+            if (parseNode.GetChildNode("ForceEntryMode") is { } nullNodeForceEntryMode && nullNodeForceEntryMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ForceEntryMode = null;
+            if (parseNode.GetChildNode("ForceOnlineFlag") is { } nullNodeForceOnlineFlag && nullNodeForceOnlineFlag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ForceOnlineFlag = null;
+            if (parseNode.GetChildNode("LoyaltyHandling") is { } nullNodeLoyaltyHandling && nullNodeLoyaltyHandling.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoyaltyHandling = null;
+            if (parseNode.GetChildNode("MerchantCategoryCode") is { } nullNodeMerchantCategoryCode && nullNodeMerchantCategoryCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantCategoryCode = null;
+        }
+
         /// <summary>Identification of the Acquirer.Restrict to these Acquirer if present.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? AcquirerID { get; set; }
+        public List<int?>? AcquirerID { get => _explicitNullValueAcquirerID; set { _explicitNullValueAcquirerID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AcquirerID"); else _explicitNullProperties?.Remove("AcquirerID"); } }
+        private List<int?>? _explicitNullValueAcquirerID = default!;
 #nullable restore
 #else
-        public List<int?> AcquirerID { get; set; }
+        public List<int?> AcquirerID { get => _explicitNullValueAcquirerID; set { _explicitNullValueAcquirerID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AcquirerID"); else _explicitNullProperties?.Remove("AcquirerID"); } }
+        private List<int?> _explicitNullValueAcquirerID = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Loyalty brands or programs allowed by the Sale System for the loyalty transaction.Restrict brand if data sent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AllowedLoyaltyBrand { get; set; }
+        public List<string>? AllowedLoyaltyBrand { get => _explicitNullValueAllowedLoyaltyBrand; set { _explicitNullValueAllowedLoyaltyBrand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AllowedLoyaltyBrand"); else _explicitNullProperties?.Remove("AllowedLoyaltyBrand"); } }
+        private List<string>? _explicitNullValueAllowedLoyaltyBrand = default!;
 #nullable restore
 #else
-        public List<string> AllowedLoyaltyBrand { get; set; }
+        public List<string> AllowedLoyaltyBrand { get => _explicitNullValueAllowedLoyaltyBrand; set { _explicitNullValueAllowedLoyaltyBrand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AllowedLoyaltyBrand"); else _explicitNullProperties?.Remove("AllowedLoyaltyBrand"); } }
+        private List<string> _explicitNullValueAllowedLoyaltyBrand = default!;
 #endif
         /// <summary>Payment brands accepted for this transaction.Card payment brands allowed by the Sale System for the payment transaction.Restrict brand if data sent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AllowedPaymentBrand { get; set; }
+        public List<string>? AllowedPaymentBrand { get => _explicitNullValueAllowedPaymentBrand; set { _explicitNullValueAllowedPaymentBrand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AllowedPaymentBrand"); else _explicitNullProperties?.Remove("AllowedPaymentBrand"); } }
+        private List<string>? _explicitNullValueAllowedPaymentBrand = default!;
 #nullable restore
 #else
-        public List<string> AllowedPaymentBrand { get; set; }
+        public List<string> AllowedPaymentBrand { get => _explicitNullValueAllowedPaymentBrand; set { _explicitNullValueAllowedPaymentBrand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AllowedPaymentBrand"); else _explicitNullProperties?.Remove("AllowedPaymentBrand"); } }
+        private List<string> _explicitNullValueAllowedPaymentBrand = default!;
 #endif
         /// <summary>The language used on the terminal screen or in text printed by the terminal.Typical use case is setting the language on unattended terminals. Format: two-character [ISO 639:2023](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomerLanguage { get; set; }
+        public string? CustomerLanguage { get => _explicitNullValueCustomerLanguage; set { _explicitNullValueCustomerLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CustomerLanguage"); else _explicitNullProperties?.Remove("CustomerLanguage"); } }
+        private string? _explicitNullValueCustomerLanguage = default!;
 #nullable restore
 #else
-        public string CustomerLanguage { get; set; }
+        public string CustomerLanguage { get => _explicitNullValueCustomerLanguage; set { _explicitNullValueCustomerLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CustomerLanguage"); else _explicitNullProperties?.Remove("CustomerLanguage"); } }
+        private string _explicitNullValueCustomerLanguage = default!;
 #endif
         /// <summary>The preferred type of payment is a debit transaction rather than a credit transaction.</summary>
-        public bool? DebitPreferredFlag { get; set; }
+        public bool? DebitPreferredFlag { get => _explicitNullValueDebitPreferredFlag; set { _explicitNullValueDebitPreferredFlag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DebitPreferredFlag"); else _explicitNullProperties?.Remove("DebitPreferredFlag"); } }
+        private bool? _explicitNullValueDebitPreferredFlag = default!;
         /// <summary>The ForceEntryMode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.TransactionConditionsForceEntryModeItem?>? ForceEntryMode { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.TransactionConditionsForceEntryModeItem?>? ForceEntryMode { get => _explicitNullValueForceEntryMode; set { _explicitNullValueForceEntryMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ForceEntryMode"); else _explicitNullProperties?.Remove("ForceEntryMode"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.TransactionConditionsForceEntryModeItem?>? _explicitNullValueForceEntryMode = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.TransactionConditionsForceEntryModeItem?> ForceEntryMode { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.TransactionConditionsForceEntryModeItem?> ForceEntryMode { get => _explicitNullValueForceEntryMode; set { _explicitNullValueForceEntryMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ForceEntryMode"); else _explicitNullProperties?.Remove("ForceEntryMode"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.TransactionConditionsForceEntryModeItem?> _explicitNullValueForceEntryMode = default!;
 #endif
         /// <summary>Indicates if the Cashier requires POI forces online access to the Acquirer.Go online if data sent.</summary>
-        public bool? ForceOnlineFlag { get; set; }
+        public bool? ForceOnlineFlag { get => _explicitNullValueForceOnlineFlag; set { _explicitNullValueForceOnlineFlag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ForceOnlineFlag"); else _explicitNullProperties?.Remove("ForceOnlineFlag"); } }
+        private bool? _explicitNullValueForceOnlineFlag = default!;
         /// <summary>Possible values:* **Forbidden*** **Processed*** **Allowed*** **Proposed*** **Required**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionConditionsLoyaltyHandling? LoyaltyHandling { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionConditionsLoyaltyHandling? LoyaltyHandling { get => _explicitNullValueLoyaltyHandling; set { _explicitNullValueLoyaltyHandling = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LoyaltyHandling"); else _explicitNullProperties?.Remove("LoyaltyHandling"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionConditionsLoyaltyHandling? _explicitNullValueLoyaltyHandling = default!;
         /// <summary>The code which identifies the category of the transaction (MCC).The payment implies a specific MCC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MerchantCategoryCode { get; set; }
+        public string? MerchantCategoryCode { get => _explicitNullValueMerchantCategoryCode; set { _explicitNullValueMerchantCategoryCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MerchantCategoryCode"); else _explicitNullProperties?.Remove("MerchantCategoryCode"); } }
+        private string? _explicitNullValueMerchantCategoryCode = default!;
 #nullable restore
 #else
-        public string MerchantCategoryCode { get; set; }
+        public string MerchantCategoryCode { get => _explicitNullValueMerchantCategoryCode; set { _explicitNullValueMerchantCategoryCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MerchantCategoryCode"); else _explicitNullProperties?.Remove("MerchantCategoryCode"); } }
+        private string _explicitNullValueMerchantCategoryCode = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentTransactionTransactionConditions"/> and sets the default values.
@@ -85,7 +116,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.PaymentTransactionTransactionConditions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.PaymentTransactionTransactionConditions();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.PaymentTransactionTransactionConditions(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -122,6 +153,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteBoolValue("ForceOnlineFlag", ForceOnlineFlag);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionConditionsLoyaltyHandling>("LoyaltyHandling", LoyaltyHandling);
             writer.WriteStringValue("MerchantCategoryCode", MerchantCategoryCode);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -63,6 +63,8 @@ namespace Soenneker.Adyen.OpenApiClient.DataProtectionServiceV1.RequestSubjectEr
                 { "403", global::Soenneker.Adyen.OpenApiClient.Models.DataProtectionServiceV1ServiceError.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Adyen.OpenApiClient.Models.DataProtectionServiceV1ServiceError.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Adyen.OpenApiClient.Models.DataProtectionServiceV1ServiceError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.SubjectErasureResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.SubjectErasureResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

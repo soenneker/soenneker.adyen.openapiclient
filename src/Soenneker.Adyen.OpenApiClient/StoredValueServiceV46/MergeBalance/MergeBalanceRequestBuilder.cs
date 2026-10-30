@@ -61,6 +61,8 @@ namespace Soenneker.Adyen.OpenApiClient.StoredValueServiceV46.MergeBalance
                 { "401", global::Soenneker.Adyen.OpenApiClient.Models.StoredValueServiceV46ServiceError.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Adyen.OpenApiClient.Models.StoredValueServiceV46ServiceError.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Adyen.OpenApiClient.Models.StoredValueServiceV46ServiceError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueBalanceMergeResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.StoredValueBalanceMergeResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

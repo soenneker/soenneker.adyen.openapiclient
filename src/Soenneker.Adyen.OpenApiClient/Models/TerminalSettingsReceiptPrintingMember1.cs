@@ -12,41 +12,80 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TerminalSettingsReceiptPrintingMember1 : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("merchantApproved") is { } nullNodeMerchantApproved && nullNodeMerchantApproved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantApproved = null;
+            if (parseNode.GetChildNode("merchantCancelled") is { } nullNodeMerchantCancelled && nullNodeMerchantCancelled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantCancelled = null;
+            if (parseNode.GetChildNode("merchantCaptureApproved") is { } nullNodeMerchantCaptureApproved && nullNodeMerchantCaptureApproved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantCaptureApproved = null;
+            if (parseNode.GetChildNode("merchantCaptureRefused") is { } nullNodeMerchantCaptureRefused && nullNodeMerchantCaptureRefused.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantCaptureRefused = null;
+            if (parseNode.GetChildNode("merchantRefundApproved") is { } nullNodeMerchantRefundApproved && nullNodeMerchantRefundApproved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantRefundApproved = null;
+            if (parseNode.GetChildNode("merchantRefundRefused") is { } nullNodeMerchantRefundRefused && nullNodeMerchantRefundRefused.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantRefundRefused = null;
+            if (parseNode.GetChildNode("merchantRefused") is { } nullNodeMerchantRefused && nullNodeMerchantRefused.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantRefused = null;
+            if (parseNode.GetChildNode("merchantVoid") is { } nullNodeMerchantVoid && nullNodeMerchantVoid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantVoid = null;
+            if (parseNode.GetChildNode("shopperApproved") is { } nullNodeShopperApproved && nullNodeShopperApproved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShopperApproved = null;
+            if (parseNode.GetChildNode("shopperCancelled") is { } nullNodeShopperCancelled && nullNodeShopperCancelled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShopperCancelled = null;
+            if (parseNode.GetChildNode("shopperCaptureApproved") is { } nullNodeShopperCaptureApproved && nullNodeShopperCaptureApproved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShopperCaptureApproved = null;
+            if (parseNode.GetChildNode("shopperCaptureRefused") is { } nullNodeShopperCaptureRefused && nullNodeShopperCaptureRefused.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShopperCaptureRefused = null;
+            if (parseNode.GetChildNode("shopperRefundApproved") is { } nullNodeShopperRefundApproved && nullNodeShopperRefundApproved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShopperRefundApproved = null;
+            if (parseNode.GetChildNode("shopperRefundRefused") is { } nullNodeShopperRefundRefused && nullNodeShopperRefundRefused.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShopperRefundRefused = null;
+            if (parseNode.GetChildNode("shopperRefused") is { } nullNodeShopperRefused && nullNodeShopperRefused.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShopperRefused = null;
+            if (parseNode.GetChildNode("shopperVoid") is { } nullNodeShopperVoid && nullNodeShopperVoid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShopperVoid = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Print a merchant receipt when the payment is approved.</summary>
-        public bool? MerchantApproved { get; set; }
+        public bool? MerchantApproved { get => _explicitNullValueMerchantApproved; set { _explicitNullValueMerchantApproved = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantApproved"); else _explicitNullProperties?.Remove("merchantApproved"); } }
+        private bool? _explicitNullValueMerchantApproved = default!;
         /// <summary>Print a merchant receipt when the transaction is cancelled.</summary>
-        public bool? MerchantCancelled { get; set; }
+        public bool? MerchantCancelled { get => _explicitNullValueMerchantCancelled; set { _explicitNullValueMerchantCancelled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantCancelled"); else _explicitNullProperties?.Remove("merchantCancelled"); } }
+        private bool? _explicitNullValueMerchantCancelled = default!;
         /// <summary>Print a merchant receipt when capturing the payment is approved.</summary>
-        public bool? MerchantCaptureApproved { get; set; }
+        public bool? MerchantCaptureApproved { get => _explicitNullValueMerchantCaptureApproved; set { _explicitNullValueMerchantCaptureApproved = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantCaptureApproved"); else _explicitNullProperties?.Remove("merchantCaptureApproved"); } }
+        private bool? _explicitNullValueMerchantCaptureApproved = default!;
         /// <summary>Print a merchant receipt when capturing the payment is refused.</summary>
-        public bool? MerchantCaptureRefused { get; set; }
+        public bool? MerchantCaptureRefused { get => _explicitNullValueMerchantCaptureRefused; set { _explicitNullValueMerchantCaptureRefused = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantCaptureRefused"); else _explicitNullProperties?.Remove("merchantCaptureRefused"); } }
+        private bool? _explicitNullValueMerchantCaptureRefused = default!;
         /// <summary>Print a merchant receipt when the refund is approved.</summary>
-        public bool? MerchantRefundApproved { get; set; }
+        public bool? MerchantRefundApproved { get => _explicitNullValueMerchantRefundApproved; set { _explicitNullValueMerchantRefundApproved = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantRefundApproved"); else _explicitNullProperties?.Remove("merchantRefundApproved"); } }
+        private bool? _explicitNullValueMerchantRefundApproved = default!;
         /// <summary>Print a merchant receipt when the refund is refused.</summary>
-        public bool? MerchantRefundRefused { get; set; }
+        public bool? MerchantRefundRefused { get => _explicitNullValueMerchantRefundRefused; set { _explicitNullValueMerchantRefundRefused = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantRefundRefused"); else _explicitNullProperties?.Remove("merchantRefundRefused"); } }
+        private bool? _explicitNullValueMerchantRefundRefused = default!;
         /// <summary>Print a merchant receipt when the payment is refused.</summary>
-        public bool? MerchantRefused { get; set; }
+        public bool? MerchantRefused { get => _explicitNullValueMerchantRefused; set { _explicitNullValueMerchantRefused = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantRefused"); else _explicitNullProperties?.Remove("merchantRefused"); } }
+        private bool? _explicitNullValueMerchantRefused = default!;
         /// <summary>Print a merchant receipt when a previous transaction is voided.</summary>
-        public bool? MerchantVoid { get; set; }
+        public bool? MerchantVoid { get => _explicitNullValueMerchantVoid; set { _explicitNullValueMerchantVoid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantVoid"); else _explicitNullProperties?.Remove("merchantVoid"); } }
+        private bool? _explicitNullValueMerchantVoid = default!;
         /// <summary>Print a shopper receipt when the payment is approved.</summary>
-        public bool? ShopperApproved { get; set; }
+        public bool? ShopperApproved { get => _explicitNullValueShopperApproved; set { _explicitNullValueShopperApproved = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shopperApproved"); else _explicitNullProperties?.Remove("shopperApproved"); } }
+        private bool? _explicitNullValueShopperApproved = default!;
         /// <summary>Print a shopper receipt when the transaction is cancelled.</summary>
-        public bool? ShopperCancelled { get; set; }
+        public bool? ShopperCancelled { get => _explicitNullValueShopperCancelled; set { _explicitNullValueShopperCancelled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shopperCancelled"); else _explicitNullProperties?.Remove("shopperCancelled"); } }
+        private bool? _explicitNullValueShopperCancelled = default!;
         /// <summary>Print a shopper receipt when capturing the payment is approved.</summary>
-        public bool? ShopperCaptureApproved { get; set; }
+        public bool? ShopperCaptureApproved { get => _explicitNullValueShopperCaptureApproved; set { _explicitNullValueShopperCaptureApproved = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shopperCaptureApproved"); else _explicitNullProperties?.Remove("shopperCaptureApproved"); } }
+        private bool? _explicitNullValueShopperCaptureApproved = default!;
         /// <summary>Print a shopper receipt when capturing the payment is refused.</summary>
-        public bool? ShopperCaptureRefused { get; set; }
+        public bool? ShopperCaptureRefused { get => _explicitNullValueShopperCaptureRefused; set { _explicitNullValueShopperCaptureRefused = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shopperCaptureRefused"); else _explicitNullProperties?.Remove("shopperCaptureRefused"); } }
+        private bool? _explicitNullValueShopperCaptureRefused = default!;
         /// <summary>Print a shopper receipt when the refund is approved.</summary>
-        public bool? ShopperRefundApproved { get; set; }
+        public bool? ShopperRefundApproved { get => _explicitNullValueShopperRefundApproved; set { _explicitNullValueShopperRefundApproved = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shopperRefundApproved"); else _explicitNullProperties?.Remove("shopperRefundApproved"); } }
+        private bool? _explicitNullValueShopperRefundApproved = default!;
         /// <summary>Print a shopper receipt when the refund is refused.</summary>
-        public bool? ShopperRefundRefused { get; set; }
+        public bool? ShopperRefundRefused { get => _explicitNullValueShopperRefundRefused; set { _explicitNullValueShopperRefundRefused = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shopperRefundRefused"); else _explicitNullProperties?.Remove("shopperRefundRefused"); } }
+        private bool? _explicitNullValueShopperRefundRefused = default!;
         /// <summary>Print a shopper receipt when the payment is refused.</summary>
-        public bool? ShopperRefused { get; set; }
+        public bool? ShopperRefused { get => _explicitNullValueShopperRefused; set { _explicitNullValueShopperRefused = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shopperRefused"); else _explicitNullProperties?.Remove("shopperRefused"); } }
+        private bool? _explicitNullValueShopperRefused = default!;
         /// <summary>Print a shopper receipt when a previous transaction is voided.</summary>
-        public bool? ShopperVoid { get; set; }
+        public bool? ShopperVoid { get => _explicitNullValueShopperVoid; set { _explicitNullValueShopperVoid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shopperVoid"); else _explicitNullProperties?.Remove("shopperVoid"); } }
+        private bool? _explicitNullValueShopperVoid = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptPrintingMember1"/> and sets the default values.
         /// </summary>
@@ -62,7 +101,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptPrintingMember1 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptPrintingMember1();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptPrintingMember1(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -113,6 +152,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteBoolValue("shopperRefundRefused", ShopperRefundRefused);
             writer.WriteBoolValue("shopperRefused", ShopperRefused);
             writer.WriteBoolValue("shopperVoid", ShopperVoid);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

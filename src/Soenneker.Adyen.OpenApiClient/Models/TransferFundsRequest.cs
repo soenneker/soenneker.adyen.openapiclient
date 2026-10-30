@@ -11,48 +11,70 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TransferFundsRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("amount") is { } nullNodeAmount && nullNodeAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Amount = null;
+            if (parseNode.GetChildNode("destinationAccountCode") is { } nullNodeDestinationAccountCode && nullNodeDestinationAccountCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DestinationAccountCode = null;
+            if (parseNode.GetChildNode("merchantReference") is { } nullNodeMerchantReference && nullNodeMerchantReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantReference = null;
+            if (parseNode.GetChildNode("sourceAccountCode") is { } nullNodeSourceAccountCode && nullNodeSourceAccountCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceAccountCode = null;
+            if (parseNode.GetChildNode("transferCode") is { } nullNodeTransferCode && nullNodeTransferCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferCode = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The amount to be transferred.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferFundsRequestAmount? Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferFundsRequestAmount? Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransferFundsRequestAmount? _explicitNullValueAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferFundsRequestAmount Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferFundsRequestAmount Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransferFundsRequestAmount _explicitNullValueAmount = default!;
 #endif
         /// <summary>The code of the account to which the funds are to be credited.&gt;The state of the Account Holder of this account must be Active.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DestinationAccountCode { get; set; }
+        public string? DestinationAccountCode { get => _explicitNullValueDestinationAccountCode; set { _explicitNullValueDestinationAccountCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destinationAccountCode"); else _explicitNullProperties?.Remove("destinationAccountCode"); } }
+        private string? _explicitNullValueDestinationAccountCode = default!;
 #nullable restore
 #else
-        public string DestinationAccountCode { get; set; }
+        public string DestinationAccountCode { get => _explicitNullValueDestinationAccountCode; set { _explicitNullValueDestinationAccountCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destinationAccountCode"); else _explicitNullProperties?.Remove("destinationAccountCode"); } }
+        private string _explicitNullValueDestinationAccountCode = default!;
 #endif
         /// <summary>A value that can be supplied at the discretion of the executing user in order to link multiple transactions to one another.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MerchantReference { get; set; }
+        public string? MerchantReference { get => _explicitNullValueMerchantReference; set { _explicitNullValueMerchantReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantReference"); else _explicitNullProperties?.Remove("merchantReference"); } }
+        private string? _explicitNullValueMerchantReference = default!;
 #nullable restore
 #else
-        public string MerchantReference { get; set; }
+        public string MerchantReference { get => _explicitNullValueMerchantReference; set { _explicitNullValueMerchantReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantReference"); else _explicitNullProperties?.Remove("merchantReference"); } }
+        private string _explicitNullValueMerchantReference = default!;
 #endif
         /// <summary>The code of the account from which the funds are to be debited.&gt;The state of the Account Holder of this account must be Active and allow payouts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceAccountCode { get; set; }
+        public string? SourceAccountCode { get => _explicitNullValueSourceAccountCode; set { _explicitNullValueSourceAccountCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceAccountCode"); else _explicitNullProperties?.Remove("sourceAccountCode"); } }
+        private string? _explicitNullValueSourceAccountCode = default!;
 #nullable restore
 #else
-        public string SourceAccountCode { get; set; }
+        public string SourceAccountCode { get => _explicitNullValueSourceAccountCode; set { _explicitNullValueSourceAccountCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceAccountCode"); else _explicitNullProperties?.Remove("sourceAccountCode"); } }
+        private string _explicitNullValueSourceAccountCode = default!;
 #endif
         /// <summary>The code related to the type of transfer being performed.&gt;The permitted codes differ for each platform account and are defined in their service level agreement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TransferCode { get; set; }
+        public string? TransferCode { get => _explicitNullValueTransferCode; set { _explicitNullValueTransferCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferCode"); else _explicitNullProperties?.Remove("transferCode"); } }
+        private string? _explicitNullValueTransferCode = default!;
 #nullable restore
 #else
-        public string TransferCode { get; set; }
+        public string TransferCode { get => _explicitNullValueTransferCode; set { _explicitNullValueTransferCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferCode"); else _explicitNullProperties?.Remove("transferCode"); } }
+        private string _explicitNullValueTransferCode = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferFundsRequest"/> and sets the default values.
@@ -69,7 +91,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.TransferFundsRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.TransferFundsRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.TransferFundsRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -98,6 +120,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("merchantReference", MerchantReference);
             writer.WriteStringValue("sourceAccountCode", SourceAccountCode);
             writer.WriteStringValue("transferCode", TransferCode);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

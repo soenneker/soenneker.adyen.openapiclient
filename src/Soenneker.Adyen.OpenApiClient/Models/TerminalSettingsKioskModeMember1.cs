@@ -12,24 +12,37 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TerminalSettingsKioskModeMember1 : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("allowedAppsInKioskMode") is { } nullNodeAllowedAppsInKioskMode && nullNodeAllowedAppsInKioskMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedAppsInKioskMode = null;
+            if (parseNode.GetChildNode("kioskAppOnStartup") is { } nullNodeKioskAppOnStartup && nullNodeKioskAppOnStartup.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KioskAppOnStartup = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>List of package names for apps allowed to run in kiosk mode.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AllowedAppsInKioskMode { get; set; }
+        public List<string>? AllowedAppsInKioskMode { get => _explicitNullValueAllowedAppsInKioskMode; set { _explicitNullValueAllowedAppsInKioskMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedAppsInKioskMode"); else _explicitNullProperties?.Remove("allowedAppsInKioskMode"); } }
+        private List<string>? _explicitNullValueAllowedAppsInKioskMode = default!;
 #nullable restore
 #else
-        public List<string> AllowedAppsInKioskMode { get; set; }
+        public List<string> AllowedAppsInKioskMode { get => _explicitNullValueAllowedAppsInKioskMode; set { _explicitNullValueAllowedAppsInKioskMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedAppsInKioskMode"); else _explicitNullProperties?.Remove("allowedAppsInKioskMode"); } }
+        private List<string> _explicitNullValueAllowedAppsInKioskMode = default!;
 #endif
         /// <summary>The package name of the app to launch on startup. This must be one of the apps included in `allowedAppsInKioskMode`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? KioskAppOnStartup { get; set; }
+        public string? KioskAppOnStartup { get => _explicitNullValueKioskAppOnStartup; set { _explicitNullValueKioskAppOnStartup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kioskAppOnStartup"); else _explicitNullProperties?.Remove("kioskAppOnStartup"); } }
+        private string? _explicitNullValueKioskAppOnStartup = default!;
 #nullable restore
 #else
-        public string KioskAppOnStartup { get; set; }
+        public string KioskAppOnStartup { get => _explicitNullValueKioskAppOnStartup; set { _explicitNullValueKioskAppOnStartup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kioskAppOnStartup"); else _explicitNullProperties?.Remove("kioskAppOnStartup"); } }
+        private string _explicitNullValueKioskAppOnStartup = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsKioskModeMember1"/> and sets the default values.
@@ -46,7 +59,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsKioskModeMember1 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsKioskModeMember1();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsKioskModeMember1(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +82,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("allowedAppsInKioskMode", AllowedAppsInKioskMode);
             writer.WriteStringValue("kioskAppOnStartup", KioskAppOnStartup);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,32 +11,48 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class MealVoucherFrResponseInfo : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("conecsId") is { } nullNodeConecsId && nullNodeConecsId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConecsId = null;
+            if (parseNode.GetChildNode("siret") is { } nullNodeSiret && nullNodeSiret.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Siret = null;
+            if (parseNode.GetChildNode("subTypes") is { } nullNodeSubTypes && nullNodeSubTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubTypes = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Meal Voucher conecsId.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConecsId { get; set; }
+        public string? ConecsId { get => _explicitNullValueConecsId; set { _explicitNullValueConecsId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conecsId"); else _explicitNullProperties?.Remove("conecsId"); } }
+        private string? _explicitNullValueConecsId = default!;
 #nullable restore
 #else
-        public string ConecsId { get; set; }
+        public string ConecsId { get => _explicitNullValueConecsId; set { _explicitNullValueConecsId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conecsId"); else _explicitNullProperties?.Remove("conecsId"); } }
+        private string _explicitNullValueConecsId = default!;
 #endif
         /// <summary>Meal Voucher siret.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Siret { get; set; }
+        public string? Siret { get => _explicitNullValueSiret; set { _explicitNullValueSiret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("siret"); else _explicitNullProperties?.Remove("siret"); } }
+        private string? _explicitNullValueSiret = default!;
 #nullable restore
 #else
-        public string Siret { get; set; }
+        public string Siret { get => _explicitNullValueSiret; set { _explicitNullValueSiret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("siret"); else _explicitNullProperties?.Remove("siret"); } }
+        private string _explicitNullValueSiret = default!;
 #endif
         /// <summary>The list of additional payment methods.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SubTypes { get; set; }
+        public List<string>? SubTypes { get => _explicitNullValueSubTypes; set { _explicitNullValueSubTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subTypes"); else _explicitNullProperties?.Remove("subTypes"); } }
+        private List<string>? _explicitNullValueSubTypes = default!;
 #nullable restore
 #else
-        public List<string> SubTypes { get; set; }
+        public List<string> SubTypes { get => _explicitNullValueSubTypes; set { _explicitNullValueSubTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subTypes"); else _explicitNullProperties?.Remove("subTypes"); } }
+        private List<string> _explicitNullValueSubTypes = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.MealVoucherFrResponseInfo"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.MealVoucherFrResponseInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.MealVoucherFrResponseInfo();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.MealVoucherFrResponseInfo(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("conecsId", ConecsId);
             writer.WriteStringValue("siret", Siret);
             writer.WriteCollectionOfPrimitiveValues<string>("subTypes", SubTypes);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

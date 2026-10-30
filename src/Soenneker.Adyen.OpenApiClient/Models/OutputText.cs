@@ -12,32 +12,58 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OutputText : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("Alignment") is { } nullNodeAlignment && nullNodeAlignment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Alignment = null;
+            if (parseNode.GetChildNode("CharacterHeight") is { } nullNodeCharacterHeight && nullNodeCharacterHeight.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CharacterHeight = null;
+            if (parseNode.GetChildNode("CharacterSet") is { } nullNodeCharacterSet && nullNodeCharacterSet.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CharacterSet = null;
+            if (parseNode.GetChildNode("CharacterStyle") is { } nullNodeCharacterStyle && nullNodeCharacterStyle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CharacterStyle = null;
+            if (parseNode.GetChildNode("CharacterWidth") is { } nullNodeCharacterWidth && nullNodeCharacterWidth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CharacterWidth = null;
+            if (parseNode.GetChildNode("EndOfLineFlag") is { } nullNodeEndOfLineFlag && nullNodeEndOfLineFlag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndOfLineFlag = null;
+            if (parseNode.GetChildNode("StartColumn") is { } nullNodeStartColumn && nullNodeStartColumn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartColumn = null;
+            if (parseNode.GetChildNode("StartRow") is { } nullNodeStartRow && nullNodeStartRow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartRow = null;
+            if (parseNode.GetChildNode("Text") is { } nullNodeText && nullNodeText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Text = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Possible values:* **Left*** **Right*** **Centred*** **Justified**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.OutputTextAlignment? Alignment { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.OutputTextAlignment? Alignment { get => _explicitNullValueAlignment; set { _explicitNullValueAlignment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Alignment"); else _explicitNullProperties?.Remove("Alignment"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.OutputTextAlignment? _explicitNullValueAlignment = default!;
         /// <summary>Possible values:* **SingleHeight*** **DoubleHeight*** **HalfHeight**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.OutputTextCharacterHeight? CharacterHeight { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.OutputTextCharacterHeight? CharacterHeight { get => _explicitNullValueCharacterHeight; set { _explicitNullValueCharacterHeight = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CharacterHeight"); else _explicitNullProperties?.Remove("CharacterHeight"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.OutputTextCharacterHeight? _explicitNullValueCharacterHeight = default!;
         /// <summary>Character height of the text string to display or print. Absence of this data element means the characters have normal height.</summary>
-        public int? CharacterSet { get; set; }
+        public int? CharacterSet { get => _explicitNullValueCharacterSet; set { _explicitNullValueCharacterSet = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CharacterSet"); else _explicitNullProperties?.Remove("CharacterSet"); } }
+        private int? _explicitNullValueCharacterSet = default!;
         /// <summary>Possible values:* **Normal*** **Bold*** **Italic*** **Underline**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.OutputTextCharacterStyle? CharacterStyle { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.OutputTextCharacterStyle? CharacterStyle { get => _explicitNullValueCharacterStyle; set { _explicitNullValueCharacterStyle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CharacterStyle"); else _explicitNullProperties?.Remove("CharacterStyle"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.OutputTextCharacterStyle? _explicitNullValueCharacterStyle = default!;
         /// <summary>Possible values:* **SingleWidth*** **DoubleWidth**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.OutputTextCharacterWidth? CharacterWidth { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.OutputTextCharacterWidth? CharacterWidth { get => _explicitNullValueCharacterWidth; set { _explicitNullValueCharacterWidth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CharacterWidth"); else _explicitNullProperties?.Remove("CharacterWidth"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.OutputTextCharacterWidth? _explicitNullValueCharacterWidth = default!;
         /// <summary>Indicates if the text is at the end of a line. Allows the display or the print of a new line and a carry-over return characters after the formatted text.</summary>
-        public bool? EndOfLineFlag { get; set; }
+        public bool? EndOfLineFlag { get => _explicitNullValueEndOfLineFlag; set { _explicitNullValueEndOfLineFlag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("EndOfLineFlag"); else _explicitNullProperties?.Remove("EndOfLineFlag"); } }
+        private bool? _explicitNullValueEndOfLineFlag = default!;
         /// <summary>Column where the text string has to be displayed or printed.</summary>
-        public int? StartColumn { get; set; }
+        public int? StartColumn { get => _explicitNullValueStartColumn; set { _explicitNullValueStartColumn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("StartColumn"); else _explicitNullProperties?.Remove("StartColumn"); } }
+        private int? _explicitNullValueStartColumn = default!;
         /// <summary>Row where the text string has to be displayed or printed.</summary>
-        public int? StartRow { get; set; }
+        public int? StartRow { get => _explicitNullValueStartRow; set { _explicitNullValueStartRow = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("StartRow"); else _explicitNullProperties?.Remove("StartRow"); } }
+        private int? _explicitNullValueStartRow = default!;
         /// <summary>Content of text message to display, print or play.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Text { get; set; }
+        public string? Text { get => _explicitNullValueText; set { _explicitNullValueText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Text"); else _explicitNullProperties?.Remove("Text"); } }
+        private string? _explicitNullValueText = default!;
 #nullable restore
 #else
-        public string Text { get; set; }
+        public string Text { get => _explicitNullValueText; set { _explicitNullValueText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Text"); else _explicitNullProperties?.Remove("Text"); } }
+        private string _explicitNullValueText = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.OutputText"/> and sets the default values.
@@ -55,7 +81,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.OutputText CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.OutputText();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.OutputText(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -92,6 +118,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteIntValue("StartColumn", StartColumn);
             writer.WriteIntValue("StartRow", StartRow);
             writer.WriteStringValue("Text", Text);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

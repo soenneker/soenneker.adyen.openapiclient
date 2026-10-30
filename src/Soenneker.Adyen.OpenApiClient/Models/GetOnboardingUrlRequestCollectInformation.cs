@@ -12,21 +12,40 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetOnboardingUrlRequestCollectInformation : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bankDetails") is { } nullNodeBankDetails && nullNodeBankDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankDetails = null;
+            if (parseNode.GetChildNode("businessDetails") is { } nullNodeBusinessDetails && nullNodeBusinessDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BusinessDetails = null;
+            if (parseNode.GetChildNode("individualDetails") is { } nullNodeIndividualDetails && nullNodeIndividualDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndividualDetails = null;
+            if (parseNode.GetChildNode("legalArrangementDetails") is { } nullNodeLegalArrangementDetails && nullNodeLegalArrangementDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LegalArrangementDetails = null;
+            if (parseNode.GetChildNode("pciQuestionnaire") is { } nullNodePciQuestionnaire && nullNodePciQuestionnaire.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PciQuestionnaire = null;
+            if (parseNode.GetChildNode("shareholderDetails") is { } nullNodeShareholderDetails && nullNodeShareholderDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShareholderDetails = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether [bank account details](https://docs.adyen.com/classic-platforms/verification-process/accepted-data-format/#bank-accounts) must be collected. Default is **true**.</summary>
-        public bool? BankDetails { get; set; }
+        public bool? BankDetails { get => _explicitNullValueBankDetails; set { _explicitNullValueBankDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankDetails"); else _explicitNullProperties?.Remove("bankDetails"); } }
+        private bool? _explicitNullValueBankDetails = default!;
         /// <summary>Indicates whether [business details](https://docs.adyen.com/classic-platforms/verification-process/accepted-data-format/#organizations) must be collected. Default is **true**.</summary>
-        public bool? BusinessDetails { get; set; }
+        public bool? BusinessDetails { get => _explicitNullValueBusinessDetails; set { _explicitNullValueBusinessDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("businessDetails"); else _explicitNullProperties?.Remove("businessDetails"); } }
+        private bool? _explicitNullValueBusinessDetails = default!;
         /// <summary>Indicates whether [individual details](https://docs.adyen.com/classic-platforms/verification-process/accepted-data-format/#individuals) must be collected. Default is **true**.</summary>
-        public bool? IndividualDetails { get; set; }
+        public bool? IndividualDetails { get => _explicitNullValueIndividualDetails; set { _explicitNullValueIndividualDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("individualDetails"); else _explicitNullProperties?.Remove("individualDetails"); } }
+        private bool? _explicitNullValueIndividualDetails = default!;
         /// <summary>Indicates whether [legal arrangement details](https://docs.adyen.com/classic-platforms/verification-checks/legal-arrangements) must be collected. Default is **true**.</summary>
-        public bool? LegalArrangementDetails { get; set; }
+        public bool? LegalArrangementDetails { get => _explicitNullValueLegalArrangementDetails; set { _explicitNullValueLegalArrangementDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalArrangementDetails"); else _explicitNullProperties?.Remove("legalArrangementDetails"); } }
+        private bool? _explicitNullValueLegalArrangementDetails = default!;
         /// <summary>Indicates whether answers to a [PCI questionnaire](https://docs.adyen.com/classic-platforms/platforms-for-partners#onboard-partner-platform) must be collected. Applies only to partner platforms. Default is **true**.</summary>
-        public bool? PciQuestionnaire { get; set; }
+        public bool? PciQuestionnaire { get => _explicitNullValuePciQuestionnaire; set { _explicitNullValuePciQuestionnaire = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pciQuestionnaire"); else _explicitNullProperties?.Remove("pciQuestionnaire"); } }
+        private bool? _explicitNullValuePciQuestionnaire = default!;
         /// <summary>Indicates whether [shareholder details](https://docs.adyen.com/classic-platforms/verification-process/accepted-data-format/#individuals) must be collected. Defaults to **true**.</summary>
-        public bool? ShareholderDetails { get; set; }
+        public bool? ShareholderDetails { get => _explicitNullValueShareholderDetails; set { _explicitNullValueShareholderDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shareholderDetails"); else _explicitNullProperties?.Remove("shareholderDetails"); } }
+        private bool? _explicitNullValueShareholderDetails = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.GetOnboardingUrlRequestCollectInformation"/> and sets the default values.
         /// </summary>
@@ -42,7 +61,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.GetOnboardingUrlRequestCollectInformation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.GetOnboardingUrlRequestCollectInformation();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.GetOnboardingUrlRequestCollectInformation(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,6 +92,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteBoolValue("legalArrangementDetails", LegalArrangementDetails);
             writer.WriteBoolValue("pciQuestionnaire", PciQuestionnaire);
             writer.WriteBoolValue("shareholderDetails", ShareholderDetails);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,24 +12,37 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PaymentMethodSetupInfoAfterpayTouch : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("supportEmail") is { } nullNodeSupportEmail && nullNodeSupportEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportEmail = null;
+            if (parseNode.GetChildNode("supportUrl") is { } nullNodeSupportUrl && nullNodeSupportUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportUrl = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Support Email</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SupportEmail { get; set; }
+        public string? SupportEmail { get => _explicitNullValueSupportEmail; set { _explicitNullValueSupportEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supportEmail"); else _explicitNullProperties?.Remove("supportEmail"); } }
+        private string? _explicitNullValueSupportEmail = default!;
 #nullable restore
 #else
-        public string SupportEmail { get; set; }
+        public string SupportEmail { get => _explicitNullValueSupportEmail; set { _explicitNullValueSupportEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supportEmail"); else _explicitNullProperties?.Remove("supportEmail"); } }
+        private string _explicitNullValueSupportEmail = default!;
 #endif
         /// <summary>Support Url</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SupportUrl { get; set; }
+        public string? SupportUrl { get => _explicitNullValueSupportUrl; set { _explicitNullValueSupportUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supportUrl"); else _explicitNullProperties?.Remove("supportUrl"); } }
+        private string? _explicitNullValueSupportUrl = default!;
 #nullable restore
 #else
-        public string SupportUrl { get; set; }
+        public string SupportUrl { get => _explicitNullValueSupportUrl; set { _explicitNullValueSupportUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supportUrl"); else _explicitNullProperties?.Remove("supportUrl"); } }
+        private string _explicitNullValueSupportUrl = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodSetupInfoAfterpayTouch"/> and sets the default values.
@@ -46,7 +59,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodSetupInfoAfterpayTouch CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodSetupInfoAfterpayTouch();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodSetupInfoAfterpayTouch(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +82,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("supportEmail", SupportEmail);
             writer.WriteStringValue("supportUrl", SupportUrl);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

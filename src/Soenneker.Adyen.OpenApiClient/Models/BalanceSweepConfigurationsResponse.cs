@@ -11,20 +11,34 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class BalanceSweepConfigurationsResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("hasNext") is { } nullNodeHasNext && nullNodeHasNext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasNext = null;
+            if (parseNode.GetChildNode("hasPrevious") is { } nullNodeHasPrevious && nullNodeHasPrevious.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasPrevious = null;
+            if (parseNode.GetChildNode("sweeps") is { } nullNodeSweeps && nullNodeSweeps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sweeps = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether there are more items on the next page.</summary>
-        public bool? HasNext { get; set; }
+        public bool? HasNext { get => _explicitNullValueHasNext; set { _explicitNullValueHasNext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasNext"); else _explicitNullProperties?.Remove("hasNext"); } }
+        private bool? _explicitNullValueHasNext = default!;
         /// <summary>Indicates whether there are more items on the previous page.</summary>
-        public bool? HasPrevious { get; set; }
+        public bool? HasPrevious { get => _explicitNullValueHasPrevious; set { _explicitNullValueHasPrevious = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasPrevious"); else _explicitNullProperties?.Remove("hasPrevious"); } }
+        private bool? _explicitNullValueHasPrevious = default!;
         /// <summary>List of sweeps associated with the balance account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2>? Sweeps { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2>? Sweeps { get => _explicitNullValueSweeps; set { _explicitNullValueSweeps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sweeps"); else _explicitNullProperties?.Remove("sweeps"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2>? _explicitNullValueSweeps = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2> Sweeps { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2> Sweeps { get => _explicitNullValueSweeps; set { _explicitNullValueSweeps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sweeps"); else _explicitNullProperties?.Remove("sweeps"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2> _explicitNullValueSweeps = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalanceSweepConfigurationsResponse"/> and sets the default values.
@@ -41,7 +55,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.BalanceSweepConfigurationsResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.BalanceSweepConfigurationsResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.BalanceSweepConfigurationsResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -66,6 +80,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteBoolValue("hasNext", HasNext);
             writer.WriteBoolValue("hasPrevious", HasPrevious);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2>("sweeps", Sweeps);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,29 +11,46 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class MarketPayNotificationServiceV6KycCheckStatusData : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("requiredFields") is { } nullNodeRequiredFields && nullNodeRequiredFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequiredFields = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("summary") is { } nullNodeSummary && nullNodeSummary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Summary = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A list of the fields required for execution of the check.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RequiredFields { get; set; }
+        public List<string>? RequiredFields { get => _explicitNullValueRequiredFields; set { _explicitNullValueRequiredFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requiredFields"); else _explicitNullProperties?.Remove("requiredFields"); } }
+        private List<string>? _explicitNullValueRequiredFields = default!;
 #nullable restore
 #else
-        public List<string> RequiredFields { get; set; }
+        public List<string> RequiredFields { get => _explicitNullValueRequiredFields; set { _explicitNullValueRequiredFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requiredFields"); else _explicitNullProperties?.Remove("requiredFields"); } }
+        private List<string> _explicitNullValueRequiredFields = default!;
 #endif
         /// <summary>The status of the check.Possible values: **AWAITING_DATA** , **DATA_PROVIDED**, **FAILED**, **INVALID_DATA**, **PASSED**, **PENDING**, **RETRY_LIMIT_REACHED**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6KycCheckStatusDataStatus? Status { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6KycCheckStatusDataStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6KycCheckStatusDataStatus? _explicitNullValueStatus = default!;
         /// <summary>The summary property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6KycCheckSummary? Summary { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6KycCheckSummary? Summary { get => _explicitNullValueSummary; set { _explicitNullValueSummary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summary"); else _explicitNullProperties?.Remove("summary"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6KycCheckSummary? _explicitNullValueSummary = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6KycCheckSummary Summary { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6KycCheckSummary Summary { get => _explicitNullValueSummary; set { _explicitNullValueSummary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summary"); else _explicitNullProperties?.Remove("summary"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6KycCheckSummary _explicitNullValueSummary = default!;
 #endif
         /// <summary>The type of check.Possible values: * **BANK_ACCOUNT_VERIFICATION**: Used in v5 and earlier. Replaced by **PAYOUT_METHOD_VERIFICATION** in v6 and later. * **COMPANY_VERIFICATION**  * **CARD_VERIFICATION*** **IDENTITY_VERIFICATION*** **LEGAL_ARRANGEMENT_VERIFICATION*** **NONPROFIT_VERIFICATION** * **PASSPORT_VERIFICATION*** **PAYOUT_METHOD_VERIFICATION**: Used in v6 and later.* **PCI_VERIFICATION**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6KycCheckStatusDataType? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6KycCheckStatusDataType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6KycCheckStatusDataType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6KycCheckStatusData"/> and sets the default values.
         /// </summary>
@@ -49,7 +66,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6KycCheckStatusData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6KycCheckStatusData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6KycCheckStatusData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,6 +93,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6KycCheckStatusDataStatus>("status", Status);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6KycCheckSummary>("summary", Summary);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6KycCheckStatusDataType>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

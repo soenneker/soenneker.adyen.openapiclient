@@ -11,49 +11,76 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PixPayByBankRiskSignals : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("confidenceScore") is { } nullNodeConfidenceScore && nullNodeConfidenceScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfidenceScore = null;
+            if (parseNode.GetChildNode("elapsedTimeSinceBoot") is { } nullNodeElapsedTimeSinceBoot && nullNodeElapsedTimeSinceBoot.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ElapsedTimeSinceBoot = null;
+            if (parseNode.GetChildNode("isRootedDevice") is { } nullNodeIsRootedDevice && nullNodeIsRootedDevice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsRootedDevice = null;
+            if (parseNode.GetChildNode("language") is { } nullNodeLanguage && nullNodeLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Language = null;
+            if (parseNode.GetChildNode("osVersion") is { } nullNodeOsVersion && nullNodeOsVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OsVersion = null;
+            if (parseNode.GetChildNode("screenBrightness") is { } nullNodeScreenBrightness && nullNodeScreenBrightness.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScreenBrightness = null;
+            if (parseNode.GetChildNode("screenDimensions") is { } nullNodeScreenDimensions && nullNodeScreenDimensions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScreenDimensions = null;
+            if (parseNode.GetChildNode("userTimeZoneOffset") is { } nullNodeUserTimeZoneOffset && nullNodeUserTimeZoneOffset.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserTimeZoneOffset = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The confidenceScore property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ConfidenceScore? ConfidenceScore { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ConfidenceScore? ConfidenceScore { get => _explicitNullValueConfidenceScore; set { _explicitNullValueConfidenceScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("confidenceScore"); else _explicitNullProperties?.Remove("confidenceScore"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ConfidenceScore? _explicitNullValueConfidenceScore = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ConfidenceScore ConfidenceScore { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ConfidenceScore ConfidenceScore { get => _explicitNullValueConfidenceScore; set { _explicitNullValueConfidenceScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("confidenceScore"); else _explicitNullProperties?.Remove("confidenceScore"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ConfidenceScore _explicitNullValueConfidenceScore = default!;
 #endif
         /// <summary>The elapsedTimeSinceBoot property</summary>
-        public long? ElapsedTimeSinceBoot { get; set; }
+        public long? ElapsedTimeSinceBoot { get => _explicitNullValueElapsedTimeSinceBoot; set { _explicitNullValueElapsedTimeSinceBoot = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("elapsedTimeSinceBoot"); else _explicitNullProperties?.Remove("elapsedTimeSinceBoot"); } }
+        private long? _explicitNullValueElapsedTimeSinceBoot = default!;
         /// <summary>The isRootedDevice property</summary>
-        public bool? IsRootedDevice { get; set; }
+        public bool? IsRootedDevice { get => _explicitNullValueIsRootedDevice; set { _explicitNullValueIsRootedDevice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isRootedDevice"); else _explicitNullProperties?.Remove("isRootedDevice"); } }
+        private bool? _explicitNullValueIsRootedDevice = default!;
         /// <summary>The language property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Language { get; set; }
+        public string? Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
+        private string? _explicitNullValueLanguage = default!;
 #nullable restore
 #else
-        public string Language { get; set; }
+        public string Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
+        private string _explicitNullValueLanguage = default!;
 #endif
         /// <summary>The osVersion property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OsVersion { get; set; }
+        public string? OsVersion { get => _explicitNullValueOsVersion; set { _explicitNullValueOsVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("osVersion"); else _explicitNullProperties?.Remove("osVersion"); } }
+        private string? _explicitNullValueOsVersion = default!;
 #nullable restore
 #else
-        public string OsVersion { get; set; }
+        public string OsVersion { get => _explicitNullValueOsVersion; set { _explicitNullValueOsVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("osVersion"); else _explicitNullProperties?.Remove("osVersion"); } }
+        private string _explicitNullValueOsVersion = default!;
 #endif
         /// <summary>The screenBrightness property</summary>
-        public int? ScreenBrightness { get; set; }
+        public int? ScreenBrightness { get => _explicitNullValueScreenBrightness; set { _explicitNullValueScreenBrightness = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screenBrightness"); else _explicitNullProperties?.Remove("screenBrightness"); } }
+        private int? _explicitNullValueScreenBrightness = default!;
         /// <summary>The screenDimensions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ScreenDimensions? ScreenDimensions { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ScreenDimensions? ScreenDimensions { get => _explicitNullValueScreenDimensions; set { _explicitNullValueScreenDimensions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screenDimensions"); else _explicitNullProperties?.Remove("screenDimensions"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ScreenDimensions? _explicitNullValueScreenDimensions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ScreenDimensions ScreenDimensions { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ScreenDimensions ScreenDimensions { get => _explicitNullValueScreenDimensions; set { _explicitNullValueScreenDimensions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screenDimensions"); else _explicitNullProperties?.Remove("screenDimensions"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ScreenDimensions _explicitNullValueScreenDimensions = default!;
 #endif
         /// <summary>The userTimeZoneOffset property</summary>
-        public int? UserTimeZoneOffset { get; set; }
+        public int? UserTimeZoneOffset { get => _explicitNullValueUserTimeZoneOffset; set { _explicitNullValueUserTimeZoneOffset = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userTimeZoneOffset"); else _explicitNullProperties?.Remove("userTimeZoneOffset"); } }
+        private int? _explicitNullValueUserTimeZoneOffset = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PixPayByBankRiskSignals"/> and sets the default values.
         /// </summary>
@@ -69,7 +96,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.PixPayByBankRiskSignals CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.PixPayByBankRiskSignals();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.PixPayByBankRiskSignals(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -104,6 +131,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteIntValue("screenBrightness", ScreenBrightness);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScreenDimensions>("screenDimensions", ScreenDimensions);
             writer.WriteIntValue("userTimeZoneOffset", UserTimeZoneOffset);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

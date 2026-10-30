@@ -11,61 +11,95 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class BalanceAccountConfigurationUpdate : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("frequency") is { } nullNodeFrequency && nullNodeFrequency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Frequency = null;
+            if (parseNode.GetChildNode("frequencyValue") is { } nullNodeFrequencyValue && nullNodeFrequencyValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FrequencyValue = null;
+            if (parseNode.GetChildNode("maxPayoutAmount") is { } nullNodeMaxPayoutAmount && nullNodeMaxPayoutAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxPayoutAmount = null;
+            if (parseNode.GetChildNode("minPayoutAmount") is { } nullNodeMinPayoutAmount && nullNodeMinPayoutAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinPayoutAmount = null;
+            if (parseNode.GetChildNode("reference") is { } nullNodeReference && nullNodeReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reference = null;
+            if (parseNode.GetChildNode("referenceForBeneficiary") is { } nullNodeReferenceForBeneficiary && nullNodeReferenceForBeneficiary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferenceForBeneficiary = null;
+            if (parseNode.GetChildNode("retainedAmount") is { } nullNodeRetainedAmount && nullNodeRetainedAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RetainedAmount = null;
+            if (parseNode.GetChildNode("salesDayClosingTime") is { } nullNodeSalesDayClosingTime && nullNodeSalesDayClosingTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SalesDayClosingTime = null;
+            if (parseNode.GetChildNode("transferInstrumentId") is { } nullNodeTransferInstrumentId && nullNodeTransferInstrumentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferInstrumentId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The description used for all payouts initiated by this payout schedule.Maximum length: 140 characters. If your description is longer, it may be truncated.Default value: The `defaultDescription` from the balance platform schedule that you are applying.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>Specifies whether the payout schedule is enabled immediately after it is created.</summary>
-        public bool? Enabled { get; set; }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        private bool? _explicitNullValueEnabled = default!;
         /// <summary>The frequency of payouts initiated by this payout schedule.Possible values:* daily* weekdays* weekly* monthlyDefault value: The `defaultFrequency` from the balance platform schedule that you are applying.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountConfigurationUpdateFrequency? Frequency { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountConfigurationUpdateFrequency? Frequency { get => _explicitNullValueFrequency; set { _explicitNullValueFrequency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("frequency"); else _explicitNullProperties?.Remove("frequency"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountConfigurationUpdateFrequency? _explicitNullValueFrequency = default!;
         /// <summary>The date of the month or day of the week when payouts are initiated. Allowed only if `frequency` is **monthly** or **weekly**.Possible values if `frequency` is **monthly**: **[1 - 31]**.* If your specified date happens on a weekend, the payout is initiated on the next business day.* If your specified date (**29**, **30**, or **31**) does not exist in a month, the payout is initiated on the last day of that month.Possible values if `frequency` is **weekly**: **[1 - 5]**.Default value: The `defaultFrequencyValue` from the balance platform schedule that you are applying.</summary>
-        public int? FrequencyValue { get; set; }
+        public int? FrequencyValue { get => _explicitNullValueFrequencyValue; set { _explicitNullValueFrequencyValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("frequencyValue"); else _explicitNullProperties?.Remove("frequencyValue"); } }
+        private int? _explicitNullValueFrequencyValue = default!;
         /// <summary>The maximum amount that can be paid out from balance accounts that use this payout schedule.Default value: **0**</summary>
-        public long? MaxPayoutAmount { get; set; }
+        public long? MaxPayoutAmount { get => _explicitNullValueMaxPayoutAmount; set { _explicitNullValueMaxPayoutAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxPayoutAmount"); else _explicitNullProperties?.Remove("maxPayoutAmount"); } }
+        private long? _explicitNullValueMaxPayoutAmount = default!;
         /// <summary>The minimum amount that can be paid out from balance accounts that use this payout schedule.Default value: **0**</summary>
-        public long? MinPayoutAmount { get; set; }
+        public long? MinPayoutAmount { get => _explicitNullValueMinPayoutAmount; set { _explicitNullValueMinPayoutAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minPayoutAmount"); else _explicitNullProperties?.Remove("minPayoutAmount"); } }
+        private long? _explicitNullValueMinPayoutAmount = default!;
         /// <summary>The merchant reference that will be shown only in the schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Reference { get; set; }
+        public string? Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
+        private string? _explicitNullValueReference = default!;
 #nullable restore
 #else
-        public string Reference { get; set; }
+        public string Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
+        private string _explicitNullValueReference = default!;
 #endif
         /// <summary>The reference for beneficiary used for all payouts initiated by this payout schedule. This reference is sent to the recipient of the transfer and is included in all webhooks related to the payout.Supported characters: **a-z**, **A-Z**, **0-9**, **-** and space. Spaces might be replaced with **-** if the recipient bank or payment infrastructure does not allow spaces.Default value: The `defaultReferenceForBeneficiary` from the balance platform schedule that you are applying.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReferenceForBeneficiary { get; set; }
+        public string? ReferenceForBeneficiary { get => _explicitNullValueReferenceForBeneficiary; set { _explicitNullValueReferenceForBeneficiary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenceForBeneficiary"); else _explicitNullProperties?.Remove("referenceForBeneficiary"); } }
+        private string? _explicitNullValueReferenceForBeneficiary = default!;
 #nullable restore
 #else
-        public string ReferenceForBeneficiary { get; set; }
+        public string ReferenceForBeneficiary { get => _explicitNullValueReferenceForBeneficiary; set { _explicitNullValueReferenceForBeneficiary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenceForBeneficiary"); else _explicitNullProperties?.Remove("referenceForBeneficiary"); } }
+        private string _explicitNullValueReferenceForBeneficiary = default!;
 #endif
         /// <summary>The amount of funds that must remain available in the balance account after an execution of the payout schedule. If the funds in the balance account are less than the retained amount, the execution is not initiated.Default value: **0**</summary>
-        public long? RetainedAmount { get; set; }
+        public long? RetainedAmount { get => _explicitNullValueRetainedAmount; set { _explicitNullValueRetainedAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retainedAmount"); else _explicitNullProperties?.Remove("retainedAmount"); } }
+        private long? _explicitNullValueRetainedAmount = default!;
         /// <summary>The time of day when the sales day is closed in balance account time zone. The sales day closing time can be between 00:00 to 07:00.Format: **HH:mm:ss**</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SalesDayClosingTime { get; set; }
+        public string? SalesDayClosingTime { get => _explicitNullValueSalesDayClosingTime; set { _explicitNullValueSalesDayClosingTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("salesDayClosingTime"); else _explicitNullProperties?.Remove("salesDayClosingTime"); } }
+        private string? _explicitNullValueSalesDayClosingTime = default!;
 #nullable restore
 #else
-        public string SalesDayClosingTime { get; set; }
+        public string SalesDayClosingTime { get => _explicitNullValueSalesDayClosingTime; set { _explicitNullValueSalesDayClosingTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("salesDayClosingTime"); else _explicitNullProperties?.Remove("salesDayClosingTime"); } }
+        private string _explicitNullValueSalesDayClosingTime = default!;
 #endif
         /// <summary>The unique identifier of the transfer instrument to which the funds are paid out.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TransferInstrumentId { get; set; }
+        public string? TransferInstrumentId { get => _explicitNullValueTransferInstrumentId; set { _explicitNullValueTransferInstrumentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferInstrumentId"); else _explicitNullProperties?.Remove("transferInstrumentId"); } }
+        private string? _explicitNullValueTransferInstrumentId = default!;
 #nullable restore
 #else
-        public string TransferInstrumentId { get; set; }
+        public string TransferInstrumentId { get => _explicitNullValueTransferInstrumentId; set { _explicitNullValueTransferInstrumentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferInstrumentId"); else _explicitNullProperties?.Remove("transferInstrumentId"); } }
+        private string _explicitNullValueTransferInstrumentId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountConfigurationUpdate"/> and sets the default values.
@@ -82,7 +116,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountConfigurationUpdate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountConfigurationUpdate();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountConfigurationUpdate(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -123,6 +157,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteLongValue("retainedAmount", RetainedAmount);
             writer.WriteStringValue("salesDayClosingTime", SalesDayClosingTime);
             writer.WriteStringValue("transferInstrumentId", TransferInstrumentId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

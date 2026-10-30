@@ -62,7 +62,7 @@ namespace Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.StoredPaymentMethods
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.ListStoredPaymentMethodsResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.ListStoredPaymentMethodsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.ListStoredPaymentMethodsResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.ListStoredPaymentMethodsResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a token to store the shopper&apos;s payment details. This token can be used for the shopper&apos;s future payments.To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):* API tokenise payment details
@@ -82,7 +82,7 @@ namespace Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.StoredPaymentMethods
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.StoredPaymentMethodResource>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.StoredPaymentMethodResource.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.StoredPaymentMethodResource>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.StoredPaymentMethodResource.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Lists the tokens for stored payment details for the shopper identified in the path, if there are any available. The token ID can be used with payment requests for the shopper&apos;s payment. A summary of the stored details is included.To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):* API tokenise payment details

@@ -11,24 +11,37 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class MarketPayNotificationServiceV6KycUltimateParentCompanyCheckResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("checks") is { } nullNodeChecks && nullNodeChecks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Checks = null;
+            if (parseNode.GetChildNode("ultimateParentCompanyCode") is { } nullNodeUltimateParentCompanyCode && nullNodeUltimateParentCompanyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UltimateParentCompanyCode = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A list of the checks and their statuses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6KycCheckStatusData>? Checks { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6KycCheckStatusData>? Checks { get => _explicitNullValueChecks; set { _explicitNullValueChecks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checks"); else _explicitNullProperties?.Remove("checks"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6KycCheckStatusData>? _explicitNullValueChecks = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6KycCheckStatusData> Checks { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6KycCheckStatusData> Checks { get => _explicitNullValueChecks; set { _explicitNullValueChecks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checks"); else _explicitNullProperties?.Remove("checks"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6KycCheckStatusData> _explicitNullValueChecks = default!;
 #endif
         /// <summary>The code of the Ultimate Parent Company to which the check applies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UltimateParentCompanyCode { get; set; }
+        public string? UltimateParentCompanyCode { get => _explicitNullValueUltimateParentCompanyCode; set { _explicitNullValueUltimateParentCompanyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ultimateParentCompanyCode"); else _explicitNullProperties?.Remove("ultimateParentCompanyCode"); } }
+        private string? _explicitNullValueUltimateParentCompanyCode = default!;
 #nullable restore
 #else
-        public string UltimateParentCompanyCode { get; set; }
+        public string UltimateParentCompanyCode { get => _explicitNullValueUltimateParentCompanyCode; set { _explicitNullValueUltimateParentCompanyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ultimateParentCompanyCode"); else _explicitNullProperties?.Remove("ultimateParentCompanyCode"); } }
+        private string _explicitNullValueUltimateParentCompanyCode = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6KycUltimateParentCompanyCheckResult"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6KycUltimateParentCompanyCheckResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6KycUltimateParentCompanyCheckResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6KycUltimateParentCompanyCheckResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6KycCheckStatusData>("checks", Checks);
             writer.WriteStringValue("ultimateParentCompanyCode", UltimateParentCompanyCode);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

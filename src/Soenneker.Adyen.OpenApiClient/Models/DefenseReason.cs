@@ -11,27 +11,42 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class DefenseReason : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("defenseDocumentTypes") is { } nullNodeDefenseDocumentTypes && nullNodeDefenseDocumentTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefenseDocumentTypes = null;
+            if (parseNode.GetChildNode("defenseReasonCode") is { } nullNodeDefenseReasonCode && nullNodeDefenseReasonCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefenseReasonCode = null;
+            if (parseNode.GetChildNode("satisfied") is { } nullNodeSatisfied && nullNodeSatisfied.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Satisfied = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Array of defense document types for a specific defense reason. Indicates the document types that you can submit to the schemes to defend this dispute, and whether they are required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.DefenseDocumentType>? DefenseDocumentTypes { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.DefenseDocumentType>? DefenseDocumentTypes { get => _explicitNullValueDefenseDocumentTypes; set { _explicitNullValueDefenseDocumentTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defenseDocumentTypes"); else _explicitNullProperties?.Remove("defenseDocumentTypes"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.DefenseDocumentType>? _explicitNullValueDefenseDocumentTypes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.DefenseDocumentType> DefenseDocumentTypes { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.DefenseDocumentType> DefenseDocumentTypes { get => _explicitNullValueDefenseDocumentTypes; set { _explicitNullValueDefenseDocumentTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defenseDocumentTypes"); else _explicitNullProperties?.Remove("defenseDocumentTypes"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.DefenseDocumentType> _explicitNullValueDefenseDocumentTypes = default!;
 #endif
         /// <summary>The defense reason code that was selected to defend this dispute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefenseReasonCode { get; set; }
+        public string? DefenseReasonCode { get => _explicitNullValueDefenseReasonCode; set { _explicitNullValueDefenseReasonCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defenseReasonCode"); else _explicitNullProperties?.Remove("defenseReasonCode"); } }
+        private string? _explicitNullValueDefenseReasonCode = default!;
 #nullable restore
 #else
-        public string DefenseReasonCode { get; set; }
+        public string DefenseReasonCode { get => _explicitNullValueDefenseReasonCode; set { _explicitNullValueDefenseReasonCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defenseReasonCode"); else _explicitNullProperties?.Remove("defenseReasonCode"); } }
+        private string _explicitNullValueDefenseReasonCode = default!;
 #endif
         /// <summary>Indicates if sufficient defense material has been supplied.</summary>
-        public bool? Satisfied { get; set; }
+        public bool? Satisfied { get => _explicitNullValueSatisfied; set { _explicitNullValueSatisfied = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("satisfied"); else _explicitNullProperties?.Remove("satisfied"); } }
+        private bool? _explicitNullValueSatisfied = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.DefenseReason"/> and sets the default values.
         /// </summary>
@@ -47,7 +62,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.DefenseReason CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.DefenseReason();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.DefenseReason(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +87,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.DefenseDocumentType>("defenseDocumentTypes", DefenseDocumentTypes);
             writer.WriteStringValue("defenseReasonCode", DefenseReasonCode);
             writer.WriteBoolValue("satisfied", Satisfied);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

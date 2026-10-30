@@ -51,7 +51,7 @@ namespace Soenneker.Adyen.OpenApiClient.TerminalAPIV1.Gettotals
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.GetTotalsResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.GetTotalsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.GetTotalsResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.GetTotalsResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// It conveys information from the Sale System related to the scope and the format of the totals to be computed by the POI System.Content of the Get Totals Request message.

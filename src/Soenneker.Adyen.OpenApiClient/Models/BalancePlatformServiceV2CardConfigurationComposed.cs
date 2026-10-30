@@ -12,128 +12,180 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BalancePlatformServiceV2CardConfigurationComposed : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("activation") is { } nullNodeActivation && nullNodeActivation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Activation = null;
+            if (parseNode.GetChildNode("activationUrl") is { } nullNodeActivationUrl && nullNodeActivationUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActivationUrl = null;
+            if (parseNode.GetChildNode("bulkAddress") is { } nullNodeBulkAddress && nullNodeBulkAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BulkAddress = null;
+            if (parseNode.GetChildNode("cardImageId") is { } nullNodeCardImageId && nullNodeCardImageId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardImageId = null;
+            if (parseNode.GetChildNode("carrier") is { } nullNodeCarrier && nullNodeCarrier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Carrier = null;
+            if (parseNode.GetChildNode("carrierImageId") is { } nullNodeCarrierImageId && nullNodeCarrierImageId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CarrierImageId = null;
+            if (parseNode.GetChildNode("configurationProfileId") is { } nullNodeConfigurationProfileId && nullNodeConfigurationProfileId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfigurationProfileId = null;
+            if (parseNode.GetChildNode("currency") is { } nullNodeCurrency && nullNodeCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Currency = null;
+            if (parseNode.GetChildNode("envelope") is { } nullNodeEnvelope && nullNodeEnvelope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Envelope = null;
+            if (parseNode.GetChildNode("insert") is { } nullNodeInsert && nullNodeInsert.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Insert = null;
+            if (parseNode.GetChildNode("language") is { } nullNodeLanguage && nullNodeLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Language = null;
+            if (parseNode.GetChildNode("logoImageId") is { } nullNodeLogoImageId && nullNodeLogoImageId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LogoImageId = null;
+            if (parseNode.GetChildNode("pinMailer") is { } nullNodePinMailer && nullNodePinMailer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PinMailer = null;
+            if (parseNode.GetChildNode("printLine") is { } nullNodePrintLine && nullNodePrintLine.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrintLine = null;
+            if (parseNode.GetChildNode("shipmentMethod") is { } nullNodeShipmentMethod && nullNodeShipmentMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShipmentMethod = null;
+        }
+
         /// <summary>The activation label attached to the card that contains the activation instructions.This field overrides the activation label design ID defined in the card configuration profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Activation { get; set; }
+        public string? Activation { get => _explicitNullValueActivation; set { _explicitNullValueActivation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activation"); else _explicitNullProperties?.Remove("activation"); } }
+        private string? _explicitNullValueActivation = default!;
 #nullable restore
 #else
-        public string Activation { get; set; }
+        public string Activation { get => _explicitNullValueActivation; set { _explicitNullValueActivation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activation"); else _explicitNullProperties?.Remove("activation"); } }
+        private string _explicitNullValueActivation = default!;
 #endif
         /// <summary>Your app&apos;s URL, if you want to activate cards through your app. For example, **my-app://ref1236a7d**. A QR code is created based on this URL, and is included in the carrier. Before you use this field, reach out to your Adyen contact to set up the QR code process. Maximum length: 255 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ActivationUrl { get; set; }
+        public string? ActivationUrl { get => _explicitNullValueActivationUrl; set { _explicitNullValueActivationUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activationUrl"); else _explicitNullProperties?.Remove("activationUrl"); } }
+        private string? _explicitNullValueActivationUrl = default!;
 #nullable restore
 #else
-        public string ActivationUrl { get; set; }
+        public string ActivationUrl { get => _explicitNullValueActivationUrl; set { _explicitNullValueActivationUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activationUrl"); else _explicitNullProperties?.Remove("activationUrl"); } }
+        private string _explicitNullValueActivationUrl = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Overrides the shipment bulk address defined in the card configuration profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CardConfigurationBulkAddress? BulkAddress { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CardConfigurationBulkAddress? BulkAddress { get => _explicitNullValueBulkAddress; set { _explicitNullValueBulkAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bulkAddress"); else _explicitNullProperties?.Remove("bulkAddress"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CardConfigurationBulkAddress? _explicitNullValueBulkAddress = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CardConfigurationBulkAddress BulkAddress { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CardConfigurationBulkAddress BulkAddress { get => _explicitNullValueBulkAddress; set { _explicitNullValueBulkAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bulkAddress"); else _explicitNullProperties?.Remove("bulkAddress"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CardConfigurationBulkAddress _explicitNullValueBulkAddress = default!;
 #endif
         /// <summary>The unique identifier of the card image. This image is printed on the full front of the card.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CardImageId { get; set; }
+        public string? CardImageId { get => _explicitNullValueCardImageId; set { _explicitNullValueCardImageId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardImageId"); else _explicitNullProperties?.Remove("cardImageId"); } }
+        private string? _explicitNullValueCardImageId = default!;
 #nullable restore
 #else
-        public string CardImageId { get; set; }
+        public string CardImageId { get => _explicitNullValueCardImageId; set { _explicitNullValueCardImageId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardImageId"); else _explicitNullProperties?.Remove("cardImageId"); } }
+        private string _explicitNullValueCardImageId = default!;
 #endif
         /// <summary>The letter or packaging to which the card is attached.This field overrides the carrier design ID defined in the card configuration profile. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Carrier { get; set; }
+        public string? Carrier { get => _explicitNullValueCarrier; set { _explicitNullValueCarrier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("carrier"); else _explicitNullProperties?.Remove("carrier"); } }
+        private string? _explicitNullValueCarrier = default!;
 #nullable restore
 #else
-        public string Carrier { get; set; }
+        public string Carrier { get => _explicitNullValueCarrier; set { _explicitNullValueCarrier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("carrier"); else _explicitNullProperties?.Remove("carrier"); } }
+        private string _explicitNullValueCarrier = default!;
 #endif
         /// <summary>The unique identifier of the carrier image. This image is printed on the letter to which the card is attached.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CarrierImageId { get; set; }
+        public string? CarrierImageId { get => _explicitNullValueCarrierImageId; set { _explicitNullValueCarrierImageId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("carrierImageId"); else _explicitNullProperties?.Remove("carrierImageId"); } }
+        private string? _explicitNullValueCarrierImageId = default!;
 #nullable restore
 #else
-        public string CarrierImageId { get; set; }
+        public string CarrierImageId { get => _explicitNullValueCarrierImageId; set { _explicitNullValueCarrierImageId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("carrierImageId"); else _explicitNullProperties?.Remove("carrierImageId"); } }
+        private string _explicitNullValueCarrierImageId = default!;
 #endif
         /// <summary>The unique identifier of the card configuration profile that contains the settings that are applied to the card. For example, the envelope and PIN mailer designs or the logistics company handling the shipment.You can override some of the existing settings in the configuration profile by providing the corresponding fields in the `configuration` object. For example, send the `shipmentMethod` to override the logistics company defined in the card configuration profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConfigurationProfileId { get; set; }
+        public string? ConfigurationProfileId { get => _explicitNullValueConfigurationProfileId; set { _explicitNullValueConfigurationProfileId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configurationProfileId"); else _explicitNullProperties?.Remove("configurationProfileId"); } }
+        private string? _explicitNullValueConfigurationProfileId = default!;
 #nullable restore
 #else
-        public string ConfigurationProfileId { get; set; }
+        public string ConfigurationProfileId { get => _explicitNullValueConfigurationProfileId; set { _explicitNullValueConfigurationProfileId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configurationProfileId"); else _explicitNullProperties?.Remove("configurationProfileId"); } }
+        private string _explicitNullValueConfigurationProfileId = default!;
 #endif
         /// <summary>The three-letter [ISO-4217](https://en.wikipedia.org/wiki/ISO_4217) currency code of the card. For example, **EUR**.This field overrides the existing currency setting on the card configuration profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Currency { get; set; }
+        public string? Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
+        private string? _explicitNullValueCurrency = default!;
 #nullable restore
 #else
-        public string Currency { get; set; }
+        public string Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
+        private string _explicitNullValueCurrency = default!;
 #endif
         /// <summary>Overrides the envelope design ID defined in the card configuration profile. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Envelope { get; set; }
+        public string? Envelope { get => _explicitNullValueEnvelope; set { _explicitNullValueEnvelope = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("envelope"); else _explicitNullProperties?.Remove("envelope"); } }
+        private string? _explicitNullValueEnvelope = default!;
 #nullable restore
 #else
-        public string Envelope { get; set; }
+        public string Envelope { get => _explicitNullValueEnvelope; set { _explicitNullValueEnvelope = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("envelope"); else _explicitNullProperties?.Remove("envelope"); } }
+        private string _explicitNullValueEnvelope = default!;
 #endif
         /// <summary>Any additional material, such as marketing material, that is shipped together with the card.This field overrides the insert design ID defined in the card configuration profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Insert { get; set; }
+        public string? Insert { get => _explicitNullValueInsert; set { _explicitNullValueInsert = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("insert"); else _explicitNullProperties?.Remove("insert"); } }
+        private string? _explicitNullValueInsert = default!;
 #nullable restore
 #else
-        public string Insert { get; set; }
+        public string Insert { get => _explicitNullValueInsert; set { _explicitNullValueInsert = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("insert"); else _explicitNullProperties?.Remove("insert"); } }
+        private string _explicitNullValueInsert = default!;
 #endif
         /// <summary>The two-letter [ISO-639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language code of the card. For example, **en**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Language { get; set; }
+        public string? Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
+        private string? _explicitNullValueLanguage = default!;
 #nullable restore
 #else
-        public string Language { get; set; }
+        public string Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
+        private string _explicitNullValueLanguage = default!;
 #endif
         /// <summary>The unique identifier of the logo image. This image is printed on the partial front of the card, for example, a logo on the upper right corner.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LogoImageId { get; set; }
+        public string? LogoImageId { get => _explicitNullValueLogoImageId; set { _explicitNullValueLogoImageId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logoImageId"); else _explicitNullProperties?.Remove("logoImageId"); } }
+        private string? _explicitNullValueLogoImageId = default!;
 #nullable restore
 #else
-        public string LogoImageId { get; set; }
+        public string LogoImageId { get => _explicitNullValueLogoImageId; set { _explicitNullValueLogoImageId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logoImageId"); else _explicitNullProperties?.Remove("logoImageId"); } }
+        private string _explicitNullValueLogoImageId = default!;
 #endif
         /// <summary>The letter on which the PIN of the card is printed.This field overrides the PIN mailer design ID defined in the card configuration profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PinMailer { get; set; }
+        public string? PinMailer { get => _explicitNullValuePinMailer; set { _explicitNullValuePinMailer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pinMailer"); else _explicitNullProperties?.Remove("pinMailer"); } }
+        private string? _explicitNullValuePinMailer = default!;
 #nullable restore
 #else
-        public string PinMailer { get; set; }
+        public string PinMailer { get => _explicitNullValuePinMailer; set { _explicitNullValuePinMailer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pinMailer"); else _explicitNullProperties?.Remove("pinMailer"); } }
+        private string _explicitNullValuePinMailer = default!;
 #endif
         /// <summary>Print Line.Text printed on the physical card below the cardholder name. You provide the value, which can be up to 26 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrintLine { get; set; }
+        public string? PrintLine { get => _explicitNullValuePrintLine; set { _explicitNullValuePrintLine = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("printLine"); else _explicitNullProperties?.Remove("printLine"); } }
+        private string? _explicitNullValuePrintLine = default!;
 #nullable restore
 #else
-        public string PrintLine { get; set; }
+        public string PrintLine { get => _explicitNullValuePrintLine; set { _explicitNullValuePrintLine = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("printLine"); else _explicitNullProperties?.Remove("printLine"); } }
+        private string _explicitNullValuePrintLine = default!;
 #endif
         /// <summary>The logistics company that ships the card.This field overrides the logistics company defined in the card configuration profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ShipmentMethod { get; set; }
+        public string? ShipmentMethod { get => _explicitNullValueShipmentMethod; set { _explicitNullValueShipmentMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shipmentMethod"); else _explicitNullProperties?.Remove("shipmentMethod"); } }
+        private string? _explicitNullValueShipmentMethod = default!;
 #nullable restore
 #else
-        public string ShipmentMethod { get; set; }
+        public string ShipmentMethod { get => _explicitNullValueShipmentMethod; set { _explicitNullValueShipmentMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shipmentMethod"); else _explicitNullProperties?.Remove("shipmentMethod"); } }
+        private string _explicitNullValueShipmentMethod = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CardConfigurationComposed"/> and sets the default values.
@@ -150,7 +202,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CardConfigurationComposed CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CardConfigurationComposed();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CardConfigurationComposed(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -199,6 +251,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("pinMailer", PinMailer);
             writer.WriteStringValue("printLine", PrintLine);
             writer.WriteStringValue("shipmentMethod", ShipmentMethod);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

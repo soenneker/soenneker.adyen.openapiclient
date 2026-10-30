@@ -11,24 +11,37 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ClientCertificateRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("apiCredential") is { } nullNodeApiCredential && nullNodeApiCredential.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiCredential = null;
+            if (parseNode.GetChildNode("certificateSigningRequest") is { } nullNodeCertificateSigningRequest && nullNodeCertificateSigningRequest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CertificateSigningRequest = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The API Credential that you want to use this certificate with, in the format &apos;ws_*@Company.*&apos;.NOTE: You must assign the DN on that specified API credential with the one from the generated client certificate. Accomplish this either through the Customer Area API Credential page or the PATCH endpoint for apiCredentials</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApiCredential { get; set; }
+        public string? ApiCredential { get => _explicitNullValueApiCredential; set { _explicitNullValueApiCredential = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("apiCredential"); else _explicitNullProperties?.Remove("apiCredential"); } }
+        private string? _explicitNullValueApiCredential = default!;
 #nullable restore
 #else
-        public string ApiCredential { get; set; }
+        public string ApiCredential { get => _explicitNullValueApiCredential; set { _explicitNullValueApiCredential = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("apiCredential"); else _explicitNullProperties?.Remove("apiCredential"); } }
+        private string _explicitNullValueApiCredential = default!;
 #endif
         /// <summary>Certificate signing request. Must be a Base64-encoded DER string. Only the public key is enrolled; see the enroll operation for subject handling.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CertificateSigningRequest { get; set; }
+        public string? CertificateSigningRequest { get => _explicitNullValueCertificateSigningRequest; set { _explicitNullValueCertificateSigningRequest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificateSigningRequest"); else _explicitNullProperties?.Remove("certificateSigningRequest"); } }
+        private string? _explicitNullValueCertificateSigningRequest = default!;
 #nullable restore
 #else
-        public string CertificateSigningRequest { get; set; }
+        public string CertificateSigningRequest { get => _explicitNullValueCertificateSigningRequest; set { _explicitNullValueCertificateSigningRequest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificateSigningRequest"); else _explicitNullProperties?.Remove("certificateSigningRequest"); } }
+        private string _explicitNullValueCertificateSigningRequest = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ClientCertificateRequest"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.ClientCertificateRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.ClientCertificateRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.ClientCertificateRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("apiCredential", ApiCredential);
             writer.WriteStringValue("certificateSigningRequest", CertificateSigningRequest);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

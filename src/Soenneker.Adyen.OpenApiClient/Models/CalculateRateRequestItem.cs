@@ -12,29 +12,46 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CalculateRateRequestItem : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("exchangeSide") is { } nullNodeExchangeSide && nullNodeExchangeSide.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExchangeSide = null;
+            if (parseNode.GetChildNode("sourceAmount") is { } nullNodeSourceAmount && nullNodeSourceAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceAmount = null;
+            if (parseNode.GetChildNode("targetCurrency") is { } nullNodeTargetCurrency && nullNodeTargetCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetCurrency = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The operation performed on the source amount. Possible values:* **buy*** **sell**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CalculateRateRequestItemExchangeSide? ExchangeSide { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CalculateRateRequestItemExchangeSide? ExchangeSide { get => _explicitNullValueExchangeSide; set { _explicitNullValueExchangeSide = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exchangeSide"); else _explicitNullProperties?.Remove("exchangeSide"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.CalculateRateRequestItemExchangeSide? _explicitNullValueExchangeSide = default!;
         /// <summary>An object specifying the currency and value for which you want to perform an exchange calculation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CalculateRateRequestItemSourceAmount? SourceAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CalculateRateRequestItemSourceAmount? SourceAmount { get => _explicitNullValueSourceAmount; set { _explicitNullValueSourceAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceAmount"); else _explicitNullProperties?.Remove("sourceAmount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.CalculateRateRequestItemSourceAmount? _explicitNullValueSourceAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CalculateRateRequestItemSourceAmount SourceAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CalculateRateRequestItemSourceAmount SourceAmount { get => _explicitNullValueSourceAmount; set { _explicitNullValueSourceAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceAmount"); else _explicitNullProperties?.Remove("sourceAmount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.CalculateRateRequestItemSourceAmount _explicitNullValueSourceAmount = default!;
 #endif
         /// <summary>The currency to which you want to convert the source amount.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetCurrency { get; set; }
+        public string? TargetCurrency { get => _explicitNullValueTargetCurrency; set { _explicitNullValueTargetCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetCurrency"); else _explicitNullProperties?.Remove("targetCurrency"); } }
+        private string? _explicitNullValueTargetCurrency = default!;
 #nullable restore
 #else
-        public string TargetCurrency { get; set; }
+        public string TargetCurrency { get => _explicitNullValueTargetCurrency; set { _explicitNullValueTargetCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetCurrency"); else _explicitNullProperties?.Remove("targetCurrency"); } }
+        private string _explicitNullValueTargetCurrency = default!;
 #endif
         /// <summary>The type of transaction. Possible values:* **splitPayment**: for payments* **splitRefund**: for refunds</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CalculateRateRequestItemType? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CalculateRateRequestItemType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.CalculateRateRequestItemType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CalculateRateRequestItem"/> and sets the default values.
         /// </summary>
@@ -50,7 +67,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.CalculateRateRequestItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.CalculateRateRequestItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.CalculateRateRequestItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,6 +94,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CalculateRateRequestItemSourceAmount>("sourceAmount", SourceAmount);
             writer.WriteStringValue("targetCurrency", TargetCurrency);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CalculateRateRequestItemType>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

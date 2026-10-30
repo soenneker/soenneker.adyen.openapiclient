@@ -68,6 +68,8 @@ namespace Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.Campa
                 { "422", global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -103,6 +105,8 @@ namespace Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.Campa
                 { "422", global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DonationCampaign>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DonationCampaign.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

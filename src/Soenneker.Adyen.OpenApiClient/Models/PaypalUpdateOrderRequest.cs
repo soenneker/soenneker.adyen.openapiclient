@@ -11,80 +11,114 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PaypalUpdateOrderRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("amount") is { } nullNodeAmount && nullNodeAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Amount = null;
+            if (parseNode.GetChildNode("deliveryAddress") is { } nullNodeDeliveryAddress && nullNodeDeliveryAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeliveryAddress = null;
+            if (parseNode.GetChildNode("deliveryMethods") is { } nullNodeDeliveryMethods && nullNodeDeliveryMethods.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeliveryMethods = null;
+            if (parseNode.GetChildNode("discountAmount") is { } nullNodeDiscountAmount && nullNodeDiscountAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DiscountAmount = null;
+            if (parseNode.GetChildNode("paymentData") is { } nullNodePaymentData && nullNodePaymentData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentData = null;
+            if (parseNode.GetChildNode("pspReference") is { } nullNodePspReference && nullNodePspReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PspReference = null;
+            if (parseNode.GetChildNode("sessionId") is { } nullNodeSessionId && nullNodeSessionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SessionId = null;
+            if (parseNode.GetChildNode("shippingAmount") is { } nullNodeShippingAmount && nullNodeShippingAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShippingAmount = null;
+            if (parseNode.GetChildNode("taxTotal") is { } nullNodeTaxTotal && nullNodeTaxTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxTotal = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The updated final payment amount. This amount is the item total plus the shipping costs of the selected `deliveryMethod`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaypalUpdateOrderRequestAmount? Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaypalUpdateOrderRequestAmount? Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaypalUpdateOrderRequestAmount? _explicitNullValueAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaypalUpdateOrderRequestAmount Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaypalUpdateOrderRequestAmount Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaypalUpdateOrderRequestAmount _explicitNullValueAmount = default!;
 #endif
         /// <summary>The delivery address for this order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaypalUpdateOrderRequestDeliveryAddress? DeliveryAddress { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaypalUpdateOrderRequestDeliveryAddress? DeliveryAddress { get => _explicitNullValueDeliveryAddress; set { _explicitNullValueDeliveryAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deliveryAddress"); else _explicitNullProperties?.Remove("deliveryAddress"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaypalUpdateOrderRequestDeliveryAddress? _explicitNullValueDeliveryAddress = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaypalUpdateOrderRequestDeliveryAddress DeliveryAddress { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaypalUpdateOrderRequestDeliveryAddress DeliveryAddress { get => _explicitNullValueDeliveryAddress; set { _explicitNullValueDeliveryAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deliveryAddress"); else _explicitNullProperties?.Remove("deliveryAddress"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaypalUpdateOrderRequestDeliveryAddress _explicitNullValueDeliveryAddress = default!;
 #endif
         /// <summary>The list of new delivery methods and the cost of each.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.DeliveryMethod>? DeliveryMethods { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.DeliveryMethod>? DeliveryMethods { get => _explicitNullValueDeliveryMethods; set { _explicitNullValueDeliveryMethods = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deliveryMethods"); else _explicitNullProperties?.Remove("deliveryMethods"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.DeliveryMethod>? _explicitNullValueDeliveryMethods = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.DeliveryMethod> DeliveryMethods { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.DeliveryMethod> DeliveryMethods { get => _explicitNullValueDeliveryMethods; set { _explicitNullValueDeliveryMethods = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deliveryMethods"); else _explicitNullProperties?.Remove("deliveryMethods"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.DeliveryMethod> _explicitNullValueDeliveryMethods = default!;
 #endif
         /// <summary>The discount amount for this order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaypalUpdateOrderRequestDiscountAmount? DiscountAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaypalUpdateOrderRequestDiscountAmount? DiscountAmount { get => _explicitNullValueDiscountAmount; set { _explicitNullValueDiscountAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discountAmount"); else _explicitNullProperties?.Remove("discountAmount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaypalUpdateOrderRequestDiscountAmount? _explicitNullValueDiscountAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaypalUpdateOrderRequestDiscountAmount DiscountAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaypalUpdateOrderRequestDiscountAmount DiscountAmount { get => _explicitNullValueDiscountAmount; set { _explicitNullValueDiscountAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discountAmount"); else _explicitNullProperties?.Remove("discountAmount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaypalUpdateOrderRequestDiscountAmount _explicitNullValueDiscountAmount = default!;
 #endif
         /// <summary>The `paymentData` from the client side. This value changes every time you make a `/paypal/updateOrder` request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaymentData { get; set; }
+        public string? PaymentData { get => _explicitNullValuePaymentData; set { _explicitNullValuePaymentData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentData"); else _explicitNullProperties?.Remove("paymentData"); } }
+        private string? _explicitNullValuePaymentData = default!;
 #nullable restore
 #else
-        public string PaymentData { get; set; }
+        public string PaymentData { get => _explicitNullValuePaymentData; set { _explicitNullValuePaymentData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentData"); else _explicitNullProperties?.Remove("paymentData"); } }
+        private string _explicitNullValuePaymentData = default!;
 #endif
         /// <summary>The original `pspReference` from the `/payments` response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PspReference { get; set; }
+        public string? PspReference { get => _explicitNullValuePspReference; set { _explicitNullValuePspReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pspReference"); else _explicitNullProperties?.Remove("pspReference"); } }
+        private string? _explicitNullValuePspReference = default!;
 #nullable restore
 #else
-        public string PspReference { get; set; }
+        public string PspReference { get => _explicitNullValuePspReference; set { _explicitNullValuePspReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pspReference"); else _explicitNullProperties?.Remove("pspReference"); } }
+        private string _explicitNullValuePspReference = default!;
 #endif
         /// <summary>The original `sessionId` from the `/sessions` response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SessionId { get; set; }
+        public string? SessionId { get => _explicitNullValueSessionId; set { _explicitNullValueSessionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessionId"); else _explicitNullProperties?.Remove("sessionId"); } }
+        private string? _explicitNullValueSessionId = default!;
 #nullable restore
 #else
-        public string SessionId { get; set; }
+        public string SessionId { get => _explicitNullValueSessionId; set { _explicitNullValueSessionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessionId"); else _explicitNullProperties?.Remove("sessionId"); } }
+        private string _explicitNullValueSessionId = default!;
 #endif
         /// <summary>The shipping amount for this order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaypalUpdateOrderRequestShippingAmount? ShippingAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaypalUpdateOrderRequestShippingAmount? ShippingAmount { get => _explicitNullValueShippingAmount; set { _explicitNullValueShippingAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shippingAmount"); else _explicitNullProperties?.Remove("shippingAmount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaypalUpdateOrderRequestShippingAmount? _explicitNullValueShippingAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaypalUpdateOrderRequestShippingAmount ShippingAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaypalUpdateOrderRequestShippingAmount ShippingAmount { get => _explicitNullValueShippingAmount; set { _explicitNullValueShippingAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shippingAmount"); else _explicitNullProperties?.Remove("shippingAmount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaypalUpdateOrderRequestShippingAmount _explicitNullValueShippingAmount = default!;
 #endif
         /// <summary>Total tax amount from the order. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaypalUpdateOrderRequestTaxTotal? TaxTotal { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaypalUpdateOrderRequestTaxTotal? TaxTotal { get => _explicitNullValueTaxTotal; set { _explicitNullValueTaxTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxTotal"); else _explicitNullProperties?.Remove("taxTotal"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaypalUpdateOrderRequestTaxTotal? _explicitNullValueTaxTotal = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaypalUpdateOrderRequestTaxTotal TaxTotal { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaypalUpdateOrderRequestTaxTotal TaxTotal { get => _explicitNullValueTaxTotal; set { _explicitNullValueTaxTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxTotal"); else _explicitNullProperties?.Remove("taxTotal"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaypalUpdateOrderRequestTaxTotal _explicitNullValueTaxTotal = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaypalUpdateOrderRequest"/> and sets the default values.
@@ -101,7 +135,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.PaypalUpdateOrderRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.PaypalUpdateOrderRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.PaypalUpdateOrderRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -138,6 +172,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("sessionId", SessionId);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaypalUpdateOrderRequestShippingAmount>("shippingAmount", ShippingAmount);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaypalUpdateOrderRequestTaxTotal>("taxTotal", TaxTotal);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -63,6 +63,7 @@ namespace Soenneker.Adyen.OpenApiClient.PaymentServiceV68
             get => new global::Soenneker.Adyen.OpenApiClient.PaymentServiceV68.Capture.CaptureRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The donate property</summary>
+        [Obsolete("")]
         public global::Soenneker.Adyen.OpenApiClient.PaymentServiceV68.Donate.DonateRequestBuilder Donate
         {
             get => new global::Soenneker.Adyen.OpenApiClient.PaymentServiceV68.Donate.DonateRequestBuilder(PathParameters, RequestAdapter);

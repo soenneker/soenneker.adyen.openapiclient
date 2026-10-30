@@ -11,66 +11,96 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TestNotificationConfigurationResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("errorMessages") is { } nullNodeErrorMessages && nullNodeErrorMessages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorMessages = null;
+            if (parseNode.GetChildNode("eventTypes") is { } nullNodeEventTypes && nullNodeEventTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventTypes = null;
+            if (parseNode.GetChildNode("exchangeMessages") is { } nullNodeExchangeMessages && nullNodeExchangeMessages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExchangeMessages = null;
+            if (parseNode.GetChildNode("invalidFields") is { } nullNodeInvalidFields && nullNodeInvalidFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InvalidFields = null;
+            if (parseNode.GetChildNode("notificationId") is { } nullNodeNotificationId && nullNodeNotificationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotificationId = null;
+            if (parseNode.GetChildNode("okMessages") is { } nullNodeOkMessages && nullNodeOkMessages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OkMessages = null;
+            if (parseNode.GetChildNode("pspReference") is { } nullNodePspReference && nullNodePspReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PspReference = null;
+            if (parseNode.GetChildNode("resultCode") is { } nullNodeResultCode && nullNodeResultCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResultCode = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Any error messages encountered.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ErrorMessages { get; set; }
+        public List<string>? ErrorMessages { get => _explicitNullValueErrorMessages; set { _explicitNullValueErrorMessages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errorMessages"); else _explicitNullProperties?.Remove("errorMessages"); } }
+        private List<string>? _explicitNullValueErrorMessages = default!;
 #nullable restore
 #else
-        public List<string> ErrorMessages { get; set; }
+        public List<string> ErrorMessages { get => _explicitNullValueErrorMessages; set { _explicitNullValueErrorMessages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errorMessages"); else _explicitNullProperties?.Remove("errorMessages"); } }
+        private List<string> _explicitNullValueErrorMessages = default!;
 #endif
         /// <summary>The event types that were tested.&gt;Permitted values: `ACCOUNT_HOLDER_CREATED`, `ACCOUNT_CREATED`, `ACCOUNT_UPDATED`, `ACCOUNT_HOLDER_UPDATED`, `ACCOUNT_HOLDER_STATUS_CHANGE`, `ACCOUNT_HOLDER_STORE_STATUS_CHANGE` `ACCOUNT_HOLDER_VERIFICATION`, `ACCOUNT_HOLDER_LIMIT_REACHED`, `ACCOUNT_HOLDER_PAYOUT`, `PAYMENT_FAILURE`, `SCHEDULED_REFUNDS`, `REPORT_AVAILABLE`, `TRANSFER_FUNDS`, `BENEFICIARY_SETUP`, `COMPENSATE_NEGATIVE_BALANCE`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.TestNotificationConfigurationResponseEventTypesItem?>? EventTypes { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.TestNotificationConfigurationResponseEventTypesItem?>? EventTypes { get => _explicitNullValueEventTypes; set { _explicitNullValueEventTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventTypes"); else _explicitNullProperties?.Remove("eventTypes"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.TestNotificationConfigurationResponseEventTypesItem?>? _explicitNullValueEventTypes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.TestNotificationConfigurationResponseEventTypesItem?> EventTypes { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.TestNotificationConfigurationResponseEventTypesItem?> EventTypes { get => _explicitNullValueEventTypes; set { _explicitNullValueEventTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventTypes"); else _explicitNullProperties?.Remove("eventTypes"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.TestNotificationConfigurationResponseEventTypesItem?> _explicitNullValueEventTypes = default!;
 #endif
         /// <summary>The notification message and related response messages.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.ExchangeMessage>? ExchangeMessages { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.ExchangeMessage>? ExchangeMessages { get => _explicitNullValueExchangeMessages; set { _explicitNullValueExchangeMessages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exchangeMessages"); else _explicitNullProperties?.Remove("exchangeMessages"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.ExchangeMessage>? _explicitNullValueExchangeMessages = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.ExchangeMessage> ExchangeMessages { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.ExchangeMessage> ExchangeMessages { get => _explicitNullValueExchangeMessages; set { _explicitNullValueExchangeMessages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exchangeMessages"); else _explicitNullProperties?.Remove("exchangeMessages"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.ExchangeMessage> _explicitNullValueExchangeMessages = default!;
 #endif
         /// <summary>Contains field validation errors that would prevent requests from being processed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.NotificationConfigurationServiceV6ErrorFieldType>? InvalidFields { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.NotificationConfigurationServiceV6ErrorFieldType>? InvalidFields { get => _explicitNullValueInvalidFields; set { _explicitNullValueInvalidFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invalidFields"); else _explicitNullProperties?.Remove("invalidFields"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.NotificationConfigurationServiceV6ErrorFieldType>? _explicitNullValueInvalidFields = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.NotificationConfigurationServiceV6ErrorFieldType> InvalidFields { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.NotificationConfigurationServiceV6ErrorFieldType> InvalidFields { get => _explicitNullValueInvalidFields; set { _explicitNullValueInvalidFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invalidFields"); else _explicitNullProperties?.Remove("invalidFields"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.NotificationConfigurationServiceV6ErrorFieldType> _explicitNullValueInvalidFields = default!;
 #endif
         /// <summary>The ID of the notification subscription configuration.</summary>
-        public long? NotificationId { get; set; }
+        public long? NotificationId { get => _explicitNullValueNotificationId; set { _explicitNullValueNotificationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationId"); else _explicitNullProperties?.Remove("notificationId"); } }
+        private long? _explicitNullValueNotificationId = default!;
         /// <summary>A list of messages describing the testing steps.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? OkMessages { get; set; }
+        public List<string>? OkMessages { get => _explicitNullValueOkMessages; set { _explicitNullValueOkMessages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("okMessages"); else _explicitNullProperties?.Remove("okMessages"); } }
+        private List<string>? _explicitNullValueOkMessages = default!;
 #nullable restore
 #else
-        public List<string> OkMessages { get; set; }
+        public List<string> OkMessages { get => _explicitNullValueOkMessages; set { _explicitNullValueOkMessages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("okMessages"); else _explicitNullProperties?.Remove("okMessages"); } }
+        private List<string> _explicitNullValueOkMessages = default!;
 #endif
         /// <summary>The reference of a request. Can be used to uniquely identify the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PspReference { get; set; }
+        public string? PspReference { get => _explicitNullValuePspReference; set { _explicitNullValuePspReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pspReference"); else _explicitNullProperties?.Remove("pspReference"); } }
+        private string? _explicitNullValuePspReference = default!;
 #nullable restore
 #else
-        public string PspReference { get; set; }
+        public string PspReference { get => _explicitNullValuePspReference; set { _explicitNullValuePspReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pspReference"); else _explicitNullProperties?.Remove("pspReference"); } }
+        private string _explicitNullValuePspReference = default!;
 #endif
         /// <summary>The result code.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResultCode { get; set; }
+        public string? ResultCode { get => _explicitNullValueResultCode; set { _explicitNullValueResultCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resultCode"); else _explicitNullProperties?.Remove("resultCode"); } }
+        private string? _explicitNullValueResultCode = default!;
 #nullable restore
 #else
-        public string ResultCode { get; set; }
+        public string ResultCode { get => _explicitNullValueResultCode; set { _explicitNullValueResultCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resultCode"); else _explicitNullProperties?.Remove("resultCode"); } }
+        private string _explicitNullValueResultCode = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TestNotificationConfigurationResponse"/> and sets the default values.
@@ -87,7 +117,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.TestNotificationConfigurationResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.TestNotificationConfigurationResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.TestNotificationConfigurationResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -122,6 +152,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("okMessages", OkMessages);
             writer.WriteStringValue("pspReference", PspReference);
             writer.WriteStringValue("resultCode", ResultCode);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

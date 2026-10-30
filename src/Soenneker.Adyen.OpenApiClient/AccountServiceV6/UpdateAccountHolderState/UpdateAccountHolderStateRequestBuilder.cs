@@ -63,6 +63,8 @@ namespace Soenneker.Adyen.OpenApiClient.AccountServiceV6.UpdateAccountHolderStat
                 { "403", global::Soenneker.Adyen.OpenApiClient.Models.ServiceError.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Adyen.OpenApiClient.Models.ServiceError.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Adyen.OpenApiClient.Models.ServiceError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.GetAccountHolderStatusResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.GetAccountHolderStatusResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

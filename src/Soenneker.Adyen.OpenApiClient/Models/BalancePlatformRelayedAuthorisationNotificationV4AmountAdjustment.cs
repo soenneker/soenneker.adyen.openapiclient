@@ -11,44 +11,67 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class BalancePlatformRelayedAuthorisationNotificationV4AmountAdjustment : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("amount") is { } nullNodeAmount && nullNodeAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Amount = null;
+            if (parseNode.GetChildNode("amountAdjustmentType") is { } nullNodeAmountAdjustmentType && nullNodeAmountAdjustmentType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AmountAdjustmentType = null;
+            if (parseNode.GetChildNode("basepoints") is { } nullNodeBasepoints && nullNodeBasepoints.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Basepoints = null;
+            if (parseNode.GetChildNode("fixedAmount") is { } nullNodeFixedAmount && nullNodeFixedAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FixedAmount = null;
+            if (parseNode.GetChildNode("floorAmount") is { } nullNodeFloorAmount && nullNodeFloorAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FloorAmount = null;
+            if (parseNode.GetChildNode("limitAmount") is { } nullNodeLimitAmount && nullNodeLimitAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LimitAmount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The adjustment amount.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4AmountAdjustmentAmount? Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4AmountAdjustmentAmount? Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4AmountAdjustmentAmount? _explicitNullValueAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4AmountAdjustmentAmount Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4AmountAdjustmentAmount Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4AmountAdjustmentAmount _explicitNullValueAmount = default!;
 #endif
         /// <summary>The type of markup that is applied to an authorised payment.Possible values: **exchange**, **forexMarkup**, **authHoldReserve**, **atmMarkup**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4AmountAdjustmentAmountAdjustmentType? AmountAdjustmentType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4AmountAdjustmentAmountAdjustmentType? AmountAdjustmentType { get => _explicitNullValueAmountAdjustmentType; set { _explicitNullValueAmountAdjustmentType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amountAdjustmentType"); else _explicitNullProperties?.Remove("amountAdjustmentType"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4AmountAdjustmentAmountAdjustmentType? _explicitNullValueAmountAdjustmentType = default!;
         /// <summary>The basepoints associated with the applied markup.</summary>
-        public int? Basepoints { get; set; }
+        public int? Basepoints { get => _explicitNullValueBasepoints; set { _explicitNullValueBasepoints = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("basepoints"); else _explicitNullProperties?.Remove("basepoints"); } }
+        private int? _explicitNullValueBasepoints = default!;
         /// <summary>The specific amount of the adjustment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4AmountAdjustmentFixedAmount? FixedAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4AmountAdjustmentFixedAmount? FixedAmount { get => _explicitNullValueFixedAmount; set { _explicitNullValueFixedAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fixedAmount"); else _explicitNullProperties?.Remove("fixedAmount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4AmountAdjustmentFixedAmount? _explicitNullValueFixedAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4AmountAdjustmentFixedAmount FixedAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4AmountAdjustmentFixedAmount FixedAmount { get => _explicitNullValueFixedAmount; set { _explicitNullValueFixedAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fixedAmount"); else _explicitNullProperties?.Remove("fixedAmount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4AmountAdjustmentFixedAmount _explicitNullValueFixedAmount = default!;
 #endif
         /// <summary>The minimum amount of the adjustment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4AmountAdjustmentFloorAmount? FloorAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4AmountAdjustmentFloorAmount? FloorAmount { get => _explicitNullValueFloorAmount; set { _explicitNullValueFloorAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("floorAmount"); else _explicitNullProperties?.Remove("floorAmount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4AmountAdjustmentFloorAmount? _explicitNullValueFloorAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4AmountAdjustmentFloorAmount FloorAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4AmountAdjustmentFloorAmount FloorAmount { get => _explicitNullValueFloorAmount; set { _explicitNullValueFloorAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("floorAmount"); else _explicitNullProperties?.Remove("floorAmount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4AmountAdjustmentFloorAmount _explicitNullValueFloorAmount = default!;
 #endif
         /// <summary>The maximum amount of the adjustment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4AmountAdjustmentLimitAmount? LimitAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4AmountAdjustmentLimitAmount? LimitAmount { get => _explicitNullValueLimitAmount; set { _explicitNullValueLimitAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limitAmount"); else _explicitNullProperties?.Remove("limitAmount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4AmountAdjustmentLimitAmount? _explicitNullValueLimitAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4AmountAdjustmentLimitAmount LimitAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4AmountAdjustmentLimitAmount LimitAmount { get => _explicitNullValueLimitAmount; set { _explicitNullValueLimitAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limitAmount"); else _explicitNullProperties?.Remove("limitAmount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4AmountAdjustmentLimitAmount _explicitNullValueLimitAmount = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4AmountAdjustment"/> and sets the default values.
@@ -65,7 +88,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4AmountAdjustment CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4AmountAdjustment();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4AmountAdjustment(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -96,6 +119,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4AmountAdjustmentFixedAmount>("fixedAmount", FixedAmount);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4AmountAdjustmentFloorAmount>("floorAmount", FloorAmount);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4AmountAdjustmentLimitAmount>("limitAmount", LimitAmount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

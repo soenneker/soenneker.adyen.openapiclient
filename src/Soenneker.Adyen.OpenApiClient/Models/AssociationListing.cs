@@ -11,41 +11,65 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AssociationListing : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("createdAt") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("entityId") is { } nullNodeEntityId && nullNodeEntityId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntityId = null;
+            if (parseNode.GetChildNode("entityType") is { } nullNodeEntityType && nullNodeEntityType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntityType = null;
+            if (parseNode.GetChildNode("scaDeviceId") is { } nullNodeScaDeviceId && nullNodeScaDeviceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScaDeviceId = null;
+            if (parseNode.GetChildNode("scaDeviceName") is { } nullNodeScaDeviceName && nullNodeScaDeviceName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScaDeviceName = null;
+            if (parseNode.GetChildNode("scaDeviceType") is { } nullNodeScaDeviceType && nullNodeScaDeviceType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScaDeviceType = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date and time when the association was created.</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
+        private DateTimeOffset? _explicitNullValueCreatedAt = default!;
         /// <summary>The unique identifier of the entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EntityId { get; set; }
+        public string? EntityId { get => _explicitNullValueEntityId; set { _explicitNullValueEntityId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entityId"); else _explicitNullProperties?.Remove("entityId"); } }
+        private string? _explicitNullValueEntityId = default!;
 #nullable restore
 #else
-        public string EntityId { get; set; }
+        public string EntityId { get => _explicitNullValueEntityId; set { _explicitNullValueEntityId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entityId"); else _explicitNullProperties?.Remove("entityId"); } }
+        private string _explicitNullValueEntityId = default!;
 #endif
         /// <summary>The type of the entity. Possible values: **accountHolder**, **legalEntity** or **paymentInstrument**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AssociationListingEntityType? EntityType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AssociationListingEntityType? EntityType { get => _explicitNullValueEntityType; set { _explicitNullValueEntityType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entityType"); else _explicitNullProperties?.Remove("entityType"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.AssociationListingEntityType? _explicitNullValueEntityType = default!;
         /// <summary>The unique identifier of the SCA device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ScaDeviceId { get; set; }
+        public string? ScaDeviceId { get => _explicitNullValueScaDeviceId; set { _explicitNullValueScaDeviceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scaDeviceId"); else _explicitNullProperties?.Remove("scaDeviceId"); } }
+        private string? _explicitNullValueScaDeviceId = default!;
 #nullable restore
 #else
-        public string ScaDeviceId { get; set; }
+        public string ScaDeviceId { get => _explicitNullValueScaDeviceId; set { _explicitNullValueScaDeviceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scaDeviceId"); else _explicitNullProperties?.Remove("scaDeviceId"); } }
+        private string _explicitNullValueScaDeviceId = default!;
 #endif
         /// <summary>The human-readable name for the SCA device that was registered.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ScaDeviceName { get; set; }
+        public string? ScaDeviceName { get => _explicitNullValueScaDeviceName; set { _explicitNullValueScaDeviceName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scaDeviceName"); else _explicitNullProperties?.Remove("scaDeviceName"); } }
+        private string? _explicitNullValueScaDeviceName = default!;
 #nullable restore
 #else
-        public string ScaDeviceName { get; set; }
+        public string ScaDeviceName { get => _explicitNullValueScaDeviceName; set { _explicitNullValueScaDeviceName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scaDeviceName"); else _explicitNullProperties?.Remove("scaDeviceName"); } }
+        private string _explicitNullValueScaDeviceName = default!;
 #endif
         /// <summary>The type of the device.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AssociationListingScaDeviceType? ScaDeviceType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AssociationListingScaDeviceType? ScaDeviceType { get => _explicitNullValueScaDeviceType; set { _explicitNullValueScaDeviceType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scaDeviceType"); else _explicitNullProperties?.Remove("scaDeviceType"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.AssociationListingScaDeviceType? _explicitNullValueScaDeviceType = default!;
         /// <summary>The status of the association. Possible values: **active** or **pendingApproval**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AssociationListingStatus? Status { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AssociationListingStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.AssociationListingStatus? _explicitNullValueStatus = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AssociationListing"/> and sets the default values.
         /// </summary>
@@ -61,7 +85,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.AssociationListing CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.AssociationListing();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.AssociationListing(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,6 +118,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("scaDeviceName", ScaDeviceName);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AssociationListingScaDeviceType>("scaDeviceType", ScaDeviceType);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AssociationListingStatus>("status", Status);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

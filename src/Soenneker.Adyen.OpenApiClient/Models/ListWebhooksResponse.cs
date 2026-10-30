@@ -11,37 +11,57 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ListWebhooksResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("accountReference") is { } nullNodeAccountReference && nullNodeAccountReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountReference = null;
+            if (parseNode.GetChildNode("data") is { } nullNodeData && nullNodeData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Data = null;
+            if (parseNode.GetChildNode("itemsTotal") is { } nullNodeItemsTotal && nullNodeItemsTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ItemsTotal = null;
+            if (parseNode.GetChildNode("_links") is { } nullNodeLinks && nullNodeLinks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Links = null;
+            if (parseNode.GetChildNode("pagesTotal") is { } nullNodePagesTotal && nullNodePagesTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PagesTotal = null;
+        }
+
         /// <summary>Reference to the account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountReference { get; set; }
+        public string? AccountReference { get => _explicitNullValueAccountReference; set { _explicitNullValueAccountReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountReference"); else _explicitNullProperties?.Remove("accountReference"); } }
+        private string? _explicitNullValueAccountReference = default!;
 #nullable restore
 #else
-        public string AccountReference { get; set; }
+        public string AccountReference { get => _explicitNullValueAccountReference; set { _explicitNullValueAccountReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountReference"); else _explicitNullProperties?.Remove("accountReference"); } }
+        private string _explicitNullValueAccountReference = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The list of webhooks configured for this account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.Webhook>? Data { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.Webhook>? Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.Webhook>? _explicitNullValueData = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.Webhook> Data { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.Webhook> Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.Webhook> _explicitNullValueData = default!;
 #endif
         /// <summary>Total number of items.</summary>
-        public int? ItemsTotal { get; set; }
+        public int? ItemsTotal { get => _explicitNullValueItemsTotal; set { _explicitNullValueItemsTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("itemsTotal"); else _explicitNullProperties?.Remove("itemsTotal"); } }
+        private int? _explicitNullValueItemsTotal = default!;
         /// <summary>Pagination references.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ListWebhooksResponseLinks? Links { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ListWebhooksResponseLinks? Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_links"); else _explicitNullProperties?.Remove("_links"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ListWebhooksResponseLinks? _explicitNullValueLinks = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ListWebhooksResponseLinks Links { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ListWebhooksResponseLinks Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_links"); else _explicitNullProperties?.Remove("_links"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ListWebhooksResponseLinks _explicitNullValueLinks = default!;
 #endif
         /// <summary>Total number of pages.</summary>
-        public int? PagesTotal { get; set; }
+        public int? PagesTotal { get => _explicitNullValuePagesTotal; set { _explicitNullValuePagesTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pagesTotal"); else _explicitNullProperties?.Remove("pagesTotal"); } }
+        private int? _explicitNullValuePagesTotal = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ListWebhooksResponse"/> and sets the default values.
         /// </summary>
@@ -57,7 +77,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.ListWebhooksResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.ListWebhooksResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.ListWebhooksResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -86,6 +106,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteIntValue("itemsTotal", ItemsTotal);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ListWebhooksResponseLinks>("_links", Links);
             writer.WriteIntValue("pagesTotal", PagesTotal);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

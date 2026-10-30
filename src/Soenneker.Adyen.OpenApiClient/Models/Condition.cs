@@ -11,15 +11,28 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class Condition : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("balanceType") is { } nullNodeBalanceType && nullNodeBalanceType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalanceType = null;
+            if (parseNode.GetChildNode("conditionType") is { } nullNodeConditionType && nullNodeConditionType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConditionType = null;
+            if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Define the type of balance about which you want to get notified. Possible values:* **available**: the balance available for use.* **balance**: the sum of transactions that have already been settled.* **pending**: the sum of transactions that will be settled in the future.* **reserved**: the balance currently held in reserve.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.ConditionBalanceType? BalanceType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ConditionBalanceType? BalanceType { get => _explicitNullValueBalanceType; set { _explicitNullValueBalanceType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceType"); else _explicitNullProperties?.Remove("balanceType"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ConditionBalanceType? _explicitNullValueBalanceType = default!;
         /// <summary>Define when you want to get notified about a balance change. Possible values:* **greaterThan**: the balance in the account(s) exceeds the specified `value`.* **greaterThanOrEqual**: the balance in the account(s) reaches or exceeds the specified `value`.* **lessThan**: the balance in the account(s) drops below the specified `value`.* **lessThanOrEqual**: the balance in the account(s) reaches to drops below the specified `value`.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.ConditionConditionType? ConditionType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ConditionConditionType? ConditionType { get => _explicitNullValueConditionType; set { _explicitNullValueConditionType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conditionType"); else _explicitNullProperties?.Remove("conditionType"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ConditionConditionType? _explicitNullValueConditionType = default!;
         /// <summary>The value limit in the specified balance type and currency, in minor units.</summary>
-        public long? Value { get; set; }
+        public long? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private long? _explicitNullValueValue = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.Condition"/> and sets the default values.
         /// </summary>
@@ -35,7 +48,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.Condition CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.Condition();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.Condition(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -60,6 +73,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ConditionBalanceType>("balanceType", BalanceType);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ConditionConditionType>("conditionType", ConditionType);
             writer.WriteLongValue("value", Value);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

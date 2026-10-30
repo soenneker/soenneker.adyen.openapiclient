@@ -64,6 +64,8 @@ namespace Soenneker.Adyen.OpenApiClient.TfmAPIServiceV1.GetStoresUnderAccount
                 { "403", global::Soenneker.Adyen.OpenApiClient.Models.TfmApiServiceV1ServiceError.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Adyen.OpenApiClient.Models.TfmApiServiceV1ServiceError.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Adyen.OpenApiClient.Models.TfmApiServiceV1ServiceError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.GetStoresUnderAccountResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.GetStoresUnderAccountResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

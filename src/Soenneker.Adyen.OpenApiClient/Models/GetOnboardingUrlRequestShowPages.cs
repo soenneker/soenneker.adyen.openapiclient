@@ -12,27 +12,52 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetOnboardingUrlRequestShowPages : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bankDetailsSummaryPage") is { } nullNodeBankDetailsSummaryPage && nullNodeBankDetailsSummaryPage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankDetailsSummaryPage = null;
+            if (parseNode.GetChildNode("bankVerificationPage") is { } nullNodeBankVerificationPage && nullNodeBankVerificationPage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankVerificationPage = null;
+            if (parseNode.GetChildNode("businessDetailsSummaryPage") is { } nullNodeBusinessDetailsSummaryPage && nullNodeBusinessDetailsSummaryPage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BusinessDetailsSummaryPage = null;
+            if (parseNode.GetChildNode("checksOverviewPage") is { } nullNodeChecksOverviewPage && nullNodeChecksOverviewPage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChecksOverviewPage = null;
+            if (parseNode.GetChildNode("individualDetailsSummaryPage") is { } nullNodeIndividualDetailsSummaryPage && nullNodeIndividualDetailsSummaryPage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndividualDetailsSummaryPage = null;
+            if (parseNode.GetChildNode("legalArrangementsDetailsSummaryPage") is { } nullNodeLegalArrangementsDetailsSummaryPage && nullNodeLegalArrangementsDetailsSummaryPage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LegalArrangementsDetailsSummaryPage = null;
+            if (parseNode.GetChildNode("manualBankAccountPage") is { } nullNodeManualBankAccountPage && nullNodeManualBankAccountPage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ManualBankAccountPage = null;
+            if (parseNode.GetChildNode("shareholderDetailsSummaryPage") is { } nullNodeShareholderDetailsSummaryPage && nullNodeShareholderDetailsSummaryPage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShareholderDetailsSummaryPage = null;
+            if (parseNode.GetChildNode("welcomePage") is { } nullNodeWelcomePage && nullNodeWelcomePage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WelcomePage = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether the page with bank account details must be shown. Defaults to **true**.</summary>
-        public bool? BankDetailsSummaryPage { get; set; }
+        public bool? BankDetailsSummaryPage { get => _explicitNullValueBankDetailsSummaryPage; set { _explicitNullValueBankDetailsSummaryPage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankDetailsSummaryPage"); else _explicitNullProperties?.Remove("bankDetailsSummaryPage"); } }
+        private bool? _explicitNullValueBankDetailsSummaryPage = default!;
         /// <summary>Indicates whether the bank check instant verification&apos; details must be shown. Defaults to **true**.</summary>
-        public bool? BankVerificationPage { get; set; }
+        public bool? BankVerificationPage { get => _explicitNullValueBankVerificationPage; set { _explicitNullValueBankVerificationPage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankVerificationPage"); else _explicitNullProperties?.Remove("bankVerificationPage"); } }
+        private bool? _explicitNullValueBankVerificationPage = default!;
         /// <summary>Indicates whether the page with the company&apos;s or organization&apos;s details must be shown. Defaults to **true**.</summary>
-        public bool? BusinessDetailsSummaryPage { get; set; }
+        public bool? BusinessDetailsSummaryPage { get => _explicitNullValueBusinessDetailsSummaryPage; set { _explicitNullValueBusinessDetailsSummaryPage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("businessDetailsSummaryPage"); else _explicitNullProperties?.Remove("businessDetailsSummaryPage"); } }
+        private bool? _explicitNullValueBusinessDetailsSummaryPage = default!;
         /// <summary>Indicates whether the checks overview page must be shown. Defaults to **false**.</summary>
-        public bool? ChecksOverviewPage { get; set; }
+        public bool? ChecksOverviewPage { get => _explicitNullValueChecksOverviewPage; set { _explicitNullValueChecksOverviewPage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checksOverviewPage"); else _explicitNullProperties?.Remove("checksOverviewPage"); } }
+        private bool? _explicitNullValueChecksOverviewPage = default!;
         /// <summary>Indicates whether the page with the individual&apos;s details must be shown. Defaults to **true**.</summary>
-        public bool? IndividualDetailsSummaryPage { get; set; }
+        public bool? IndividualDetailsSummaryPage { get => _explicitNullValueIndividualDetailsSummaryPage; set { _explicitNullValueIndividualDetailsSummaryPage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("individualDetailsSummaryPage"); else _explicitNullProperties?.Remove("individualDetailsSummaryPage"); } }
+        private bool? _explicitNullValueIndividualDetailsSummaryPage = default!;
         /// <summary>Indicates whether the page with the legal arrangements&apos; details must be shown. Defaults to **true**.</summary>
-        public bool? LegalArrangementsDetailsSummaryPage { get; set; }
+        public bool? LegalArrangementsDetailsSummaryPage { get => _explicitNullValueLegalArrangementsDetailsSummaryPage; set { _explicitNullValueLegalArrangementsDetailsSummaryPage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalArrangementsDetailsSummaryPage"); else _explicitNullProperties?.Remove("legalArrangementsDetailsSummaryPage"); } }
+        private bool? _explicitNullValueLegalArrangementsDetailsSummaryPage = default!;
         /// <summary>Indicates whether the page to manually add bank account&apos; details must be shown. Defaults to **true**.</summary>
-        public bool? ManualBankAccountPage { get; set; }
+        public bool? ManualBankAccountPage { get => _explicitNullValueManualBankAccountPage; set { _explicitNullValueManualBankAccountPage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("manualBankAccountPage"); else _explicitNullProperties?.Remove("manualBankAccountPage"); } }
+        private bool? _explicitNullValueManualBankAccountPage = default!;
         /// <summary>Indicates whether the page with the shareholders&apos; details must be shown. Defaults to **true**.</summary>
-        public bool? ShareholderDetailsSummaryPage { get; set; }
+        public bool? ShareholderDetailsSummaryPage { get => _explicitNullValueShareholderDetailsSummaryPage; set { _explicitNullValueShareholderDetailsSummaryPage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shareholderDetailsSummaryPage"); else _explicitNullProperties?.Remove("shareholderDetailsSummaryPage"); } }
+        private bool? _explicitNullValueShareholderDetailsSummaryPage = default!;
         /// <summary>Indicates whether the welcome page must be shown. Defaults to **false**.</summary>
-        public bool? WelcomePage { get; set; }
+        public bool? WelcomePage { get => _explicitNullValueWelcomePage; set { _explicitNullValueWelcomePage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("welcomePage"); else _explicitNullProperties?.Remove("welcomePage"); } }
+        private bool? _explicitNullValueWelcomePage = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.GetOnboardingUrlRequestShowPages"/> and sets the default values.
         /// </summary>
@@ -48,7 +73,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.GetOnboardingUrlRequestShowPages CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.GetOnboardingUrlRequestShowPages();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.GetOnboardingUrlRequestShowPages(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -85,6 +110,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteBoolValue("manualBankAccountPage", ManualBankAccountPage);
             writer.WriteBoolValue("shareholderDetailsSummaryPage", ShareholderDetailsSummaryPage);
             writer.WriteBoolValue("welcomePage", WelcomePage);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,43 +11,64 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TransferServiceV4BrLocalAccountIdentification : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("accountNumber") is { } nullNodeAccountNumber && nullNodeAccountNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountNumber = null;
+            if (parseNode.GetChildNode("bankCode") is { } nullNodeBankCode && nullNodeBankCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankCode = null;
+            if (parseNode.GetChildNode("branchNumber") is { } nullNodeBranchNumber && nullNodeBranchNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BranchNumber = null;
+            if (parseNode.GetChildNode("ispb") is { } nullNodeIspb && nullNodeIspb.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ispb = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>The bank account number, without separators or whitespace.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountNumber { get; set; }
+        public string? AccountNumber { get => _explicitNullValueAccountNumber; set { _explicitNullValueAccountNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountNumber"); else _explicitNullProperties?.Remove("accountNumber"); } }
+        private string? _explicitNullValueAccountNumber = default!;
 #nullable restore
 #else
-        public string AccountNumber { get; set; }
+        public string AccountNumber { get => _explicitNullValueAccountNumber; set { _explicitNullValueAccountNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountNumber"); else _explicitNullProperties?.Remove("accountNumber"); } }
+        private string _explicitNullValueAccountNumber = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The 3-digit bank code, with leading zeros.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BankCode { get; set; }
+        public string? BankCode { get => _explicitNullValueBankCode; set { _explicitNullValueBankCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankCode"); else _explicitNullProperties?.Remove("bankCode"); } }
+        private string? _explicitNullValueBankCode = default!;
 #nullable restore
 #else
-        public string BankCode { get; set; }
+        public string BankCode { get => _explicitNullValueBankCode; set { _explicitNullValueBankCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankCode"); else _explicitNullProperties?.Remove("bankCode"); } }
+        private string _explicitNullValueBankCode = default!;
 #endif
         /// <summary>The bank account branch number, without separators or whitespace.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BranchNumber { get; set; }
+        public string? BranchNumber { get => _explicitNullValueBranchNumber; set { _explicitNullValueBranchNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branchNumber"); else _explicitNullProperties?.Remove("branchNumber"); } }
+        private string? _explicitNullValueBranchNumber = default!;
 #nullable restore
 #else
-        public string BranchNumber { get; set; }
+        public string BranchNumber { get => _explicitNullValueBranchNumber; set { _explicitNullValueBranchNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branchNumber"); else _explicitNullProperties?.Remove("branchNumber"); } }
+        private string _explicitNullValueBranchNumber = default!;
 #endif
         /// <summary>The 8-digit ISPB, with leading zeros.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Ispb { get; set; }
+        public string? Ispb { get => _explicitNullValueIspb; set { _explicitNullValueIspb = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ispb"); else _explicitNullProperties?.Remove("ispb"); } }
+        private string? _explicitNullValueIspb = default!;
 #nullable restore
 #else
-        public string Ispb { get; set; }
+        public string Ispb { get => _explicitNullValueIspb; set { _explicitNullValueIspb = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ispb"); else _explicitNullProperties?.Remove("ispb"); } }
+        private string _explicitNullValueIspb = default!;
 #endif
         /// <summary>**brLocal**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4BrLocalType? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4BrLocalType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4BrLocalType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4BrLocalAccountIdentification"/> and sets the default values.
         /// </summary>
@@ -63,7 +84,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4BrLocalAccountIdentification CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4BrLocalAccountIdentification();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4BrLocalAccountIdentification(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -92,6 +113,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("branchNumber", BranchNumber);
             writer.WriteStringValue("ispb", Ispb);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4BrLocalType>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

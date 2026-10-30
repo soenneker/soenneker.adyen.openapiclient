@@ -58,6 +58,8 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.ScaAssociations
                 { "401", global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -87,6 +89,8 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.ScaAssociations
                 { "401", global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.ListAssociationsResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.ListAssociationsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -116,6 +120,8 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.ScaAssociations
                 { "401", global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.ApproveAssociationResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.ApproveAssociationResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

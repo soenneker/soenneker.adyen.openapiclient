@@ -12,132 +12,188 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AccountHolderPayoutNotificationContentComposed : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("accountCode") is { } nullNodeAccountCode && nullNodeAccountCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountCode = null;
+            if (parseNode.GetChildNode("accountHolderCode") is { } nullNodeAccountHolderCode && nullNodeAccountHolderCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountHolderCode = null;
+            if (parseNode.GetChildNode("amounts") is { } nullNodeAmounts && nullNodeAmounts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Amounts = null;
+            if (parseNode.GetChildNode("bankAccountDetail") is { } nullNodeBankAccountDetail && nullNodeBankAccountDetail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankAccountDetail = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("estimatedArrivalDate") is { } nullNodeEstimatedArrivalDate && nullNodeEstimatedArrivalDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EstimatedArrivalDate = null;
+            if (parseNode.GetChildNode("invalidFields") is { } nullNodeInvalidFields && nullNodeInvalidFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InvalidFields = null;
+            if (parseNode.GetChildNode("merchantReference") is { } nullNodeMerchantReference && nullNodeMerchantReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantReference = null;
+            if (parseNode.GetChildNode("originalPspReference") is { } nullNodeOriginalPspReference && nullNodeOriginalPspReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginalPspReference = null;
+            if (parseNode.GetChildNode("payoutAccountCountry") is { } nullNodePayoutAccountCountry && nullNodePayoutAccountCountry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayoutAccountCountry = null;
+            if (parseNode.GetChildNode("payoutAccountNumber") is { } nullNodePayoutAccountNumber && nullNodePayoutAccountNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayoutAccountNumber = null;
+            if (parseNode.GetChildNode("payoutBalanceAccountId") is { } nullNodePayoutBalanceAccountId && nullNodePayoutBalanceAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayoutBalanceAccountId = null;
+            if (parseNode.GetChildNode("payoutBankName") is { } nullNodePayoutBankName && nullNodePayoutBankName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayoutBankName = null;
+            if (parseNode.GetChildNode("payoutBranchCode") is { } nullNodePayoutBranchCode && nullNodePayoutBranchCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayoutBranchCode = null;
+            if (parseNode.GetChildNode("payoutReference") is { } nullNodePayoutReference && nullNodePayoutReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayoutReference = null;
+            if (parseNode.GetChildNode("payoutSpeed") is { } nullNodePayoutSpeed && nullNodePayoutSpeed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayoutSpeed = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+        }
+
         /// <summary>The code of the account from which the payout was made.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountCode { get; set; }
+        public string? AccountCode { get => _explicitNullValueAccountCode; set { _explicitNullValueAccountCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountCode"); else _explicitNullProperties?.Remove("accountCode"); } }
+        private string? _explicitNullValueAccountCode = default!;
 #nullable restore
 #else
-        public string AccountCode { get; set; }
+        public string AccountCode { get => _explicitNullValueAccountCode; set { _explicitNullValueAccountCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountCode"); else _explicitNullProperties?.Remove("accountCode"); } }
+        private string _explicitNullValueAccountCode = default!;
 #endif
         /// <summary>The code of the Account Holder to which the payout was made.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountHolderCode { get; set; }
+        public string? AccountHolderCode { get => _explicitNullValueAccountHolderCode; set { _explicitNullValueAccountHolderCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderCode"); else _explicitNullProperties?.Remove("accountHolderCode"); } }
+        private string? _explicitNullValueAccountHolderCode = default!;
 #nullable restore
 #else
-        public string AccountHolderCode { get; set; }
+        public string AccountHolderCode { get => _explicitNullValueAccountHolderCode; set { _explicitNullValueAccountHolderCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderCode"); else _explicitNullProperties?.Remove("accountHolderCode"); } }
+        private string _explicitNullValueAccountHolderCode = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The payout amounts (per currency).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6Amount>? Amounts { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6Amount>? Amounts { get => _explicitNullValueAmounts; set { _explicitNullValueAmounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amounts"); else _explicitNullProperties?.Remove("amounts"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6Amount>? _explicitNullValueAmounts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6Amount> Amounts { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6Amount> Amounts { get => _explicitNullValueAmounts; set { _explicitNullValueAmounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amounts"); else _explicitNullProperties?.Remove("amounts"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6Amount> _explicitNullValueAmounts = default!;
 #endif
         /// <summary>Details of the Bank Account to which the payout was made.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderPayoutNotificationContentBankAccountDetail? BankAccountDetail { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderPayoutNotificationContentBankAccountDetail? BankAccountDetail { get => _explicitNullValueBankAccountDetail; set { _explicitNullValueBankAccountDetail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankAccountDetail"); else _explicitNullProperties?.Remove("bankAccountDetail"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderPayoutNotificationContentBankAccountDetail? _explicitNullValueBankAccountDetail = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderPayoutNotificationContentBankAccountDetail BankAccountDetail { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderPayoutNotificationContentBankAccountDetail BankAccountDetail { get => _explicitNullValueBankAccountDetail; set { _explicitNullValueBankAccountDetail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankAccountDetail"); else _explicitNullProperties?.Remove("bankAccountDetail"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderPayoutNotificationContentBankAccountDetail _explicitNullValueBankAccountDetail = default!;
 #endif
         /// <summary>A description of the payout.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>The estimated date of arrival.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderPayoutNotificationContentEstimatedArrivalDate? EstimatedArrivalDate { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderPayoutNotificationContentEstimatedArrivalDate? EstimatedArrivalDate { get => _explicitNullValueEstimatedArrivalDate; set { _explicitNullValueEstimatedArrivalDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("estimatedArrivalDate"); else _explicitNullProperties?.Remove("estimatedArrivalDate"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderPayoutNotificationContentEstimatedArrivalDate? _explicitNullValueEstimatedArrivalDate = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderPayoutNotificationContentEstimatedArrivalDate EstimatedArrivalDate { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderPayoutNotificationContentEstimatedArrivalDate EstimatedArrivalDate { get => _explicitNullValueEstimatedArrivalDate; set { _explicitNullValueEstimatedArrivalDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("estimatedArrivalDate"); else _explicitNullProperties?.Remove("estimatedArrivalDate"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderPayoutNotificationContentEstimatedArrivalDate _explicitNullValueEstimatedArrivalDate = default!;
 #endif
         /// <summary>Invalid fields list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6ErrorFieldType>? InvalidFields { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6ErrorFieldType>? InvalidFields { get => _explicitNullValueInvalidFields; set { _explicitNullValueInvalidFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invalidFields"); else _explicitNullProperties?.Remove("invalidFields"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6ErrorFieldType>? _explicitNullValueInvalidFields = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6ErrorFieldType> InvalidFields { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6ErrorFieldType> InvalidFields { get => _explicitNullValueInvalidFields; set { _explicitNullValueInvalidFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invalidFields"); else _explicitNullProperties?.Remove("invalidFields"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6ErrorFieldType> _explicitNullValueInvalidFields = default!;
 #endif
         /// <summary>The merchant reference.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MerchantReference { get; set; }
+        public string? MerchantReference { get => _explicitNullValueMerchantReference; set { _explicitNullValueMerchantReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantReference"); else _explicitNullProperties?.Remove("merchantReference"); } }
+        private string? _explicitNullValueMerchantReference = default!;
 #nullable restore
 #else
-        public string MerchantReference { get; set; }
+        public string MerchantReference { get => _explicitNullValueMerchantReference; set { _explicitNullValueMerchantReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantReference"); else _explicitNullProperties?.Remove("merchantReference"); } }
+        private string _explicitNullValueMerchantReference = default!;
 #endif
         /// <summary>The PSP reference of the original payout.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OriginalPspReference { get; set; }
+        public string? OriginalPspReference { get => _explicitNullValueOriginalPspReference; set { _explicitNullValueOriginalPspReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originalPspReference"); else _explicitNullProperties?.Remove("originalPspReference"); } }
+        private string? _explicitNullValueOriginalPspReference = default!;
 #nullable restore
 #else
-        public string OriginalPspReference { get; set; }
+        public string OriginalPspReference { get => _explicitNullValueOriginalPspReference; set { _explicitNullValueOriginalPspReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originalPspReference"); else _explicitNullProperties?.Remove("originalPspReference"); } }
+        private string _explicitNullValueOriginalPspReference = default!;
 #endif
         /// <summary>The country code of the bank from which the payout was initiated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PayoutAccountCountry { get; set; }
+        public string? PayoutAccountCountry { get => _explicitNullValuePayoutAccountCountry; set { _explicitNullValuePayoutAccountCountry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payoutAccountCountry"); else _explicitNullProperties?.Remove("payoutAccountCountry"); } }
+        private string? _explicitNullValuePayoutAccountCountry = default!;
 #nullable restore
 #else
-        public string PayoutAccountCountry { get; set; }
+        public string PayoutAccountCountry { get => _explicitNullValuePayoutAccountCountry; set { _explicitNullValuePayoutAccountCountry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payoutAccountCountry"); else _explicitNullProperties?.Remove("payoutAccountCountry"); } }
+        private string _explicitNullValuePayoutAccountCountry = default!;
 #endif
         /// <summary>The account number of the bank from which the payout was initiated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PayoutAccountNumber { get; set; }
+        public string? PayoutAccountNumber { get => _explicitNullValuePayoutAccountNumber; set { _explicitNullValuePayoutAccountNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payoutAccountNumber"); else _explicitNullProperties?.Remove("payoutAccountNumber"); } }
+        private string? _explicitNullValuePayoutAccountNumber = default!;
 #nullable restore
 #else
-        public string PayoutAccountNumber { get; set; }
+        public string PayoutAccountNumber { get => _explicitNullValuePayoutAccountNumber; set { _explicitNullValuePayoutAccountNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payoutAccountNumber"); else _explicitNullProperties?.Remove("payoutAccountNumber"); } }
+        private string _explicitNullValuePayoutAccountNumber = default!;
 #endif
         /// <summary>The balance account id to which payment was made</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PayoutBalanceAccountId { get; set; }
+        public string? PayoutBalanceAccountId { get => _explicitNullValuePayoutBalanceAccountId; set { _explicitNullValuePayoutBalanceAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payoutBalanceAccountId"); else _explicitNullProperties?.Remove("payoutBalanceAccountId"); } }
+        private string? _explicitNullValuePayoutBalanceAccountId = default!;
 #nullable restore
 #else
-        public string PayoutBalanceAccountId { get; set; }
+        public string PayoutBalanceAccountId { get => _explicitNullValuePayoutBalanceAccountId; set { _explicitNullValuePayoutBalanceAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payoutBalanceAccountId"); else _explicitNullProperties?.Remove("payoutBalanceAccountId"); } }
+        private string _explicitNullValuePayoutBalanceAccountId = default!;
 #endif
         /// <summary>The name of the bank the payout from which the payout was initiated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PayoutBankName { get; set; }
+        public string? PayoutBankName { get => _explicitNullValuePayoutBankName; set { _explicitNullValuePayoutBankName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payoutBankName"); else _explicitNullProperties?.Remove("payoutBankName"); } }
+        private string? _explicitNullValuePayoutBankName = default!;
 #nullable restore
 #else
-        public string PayoutBankName { get; set; }
+        public string PayoutBankName { get => _explicitNullValuePayoutBankName; set { _explicitNullValuePayoutBankName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payoutBankName"); else _explicitNullProperties?.Remove("payoutBankName"); } }
+        private string _explicitNullValuePayoutBankName = default!;
 #endif
         /// <summary>The branch code of the bank from which the payout was initiated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PayoutBranchCode { get; set; }
+        public string? PayoutBranchCode { get => _explicitNullValuePayoutBranchCode; set { _explicitNullValuePayoutBranchCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payoutBranchCode"); else _explicitNullProperties?.Remove("payoutBranchCode"); } }
+        private string? _explicitNullValuePayoutBranchCode = default!;
 #nullable restore
 #else
-        public string PayoutBranchCode { get; set; }
+        public string PayoutBranchCode { get => _explicitNullValuePayoutBranchCode; set { _explicitNullValuePayoutBranchCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payoutBranchCode"); else _explicitNullProperties?.Remove("payoutBranchCode"); } }
+        private string _explicitNullValuePayoutBranchCode = default!;
 #endif
         /// <summary>The unique payout identifier.</summary>
-        public long? PayoutReference { get; set; }
+        public long? PayoutReference { get => _explicitNullValuePayoutReference; set { _explicitNullValuePayoutReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payoutReference"); else _explicitNullProperties?.Remove("payoutReference"); } }
+        private long? _explicitNullValuePayoutReference = default!;
         /// <summary>Speed with which payouts for this account are processed. Permitted values: `STANDARD`, `SAME_DAY`.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderPayoutNotificationContentPayoutSpeed? PayoutSpeed { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderPayoutNotificationContentPayoutSpeed? PayoutSpeed { get => _explicitNullValuePayoutSpeed; set { _explicitNullValuePayoutSpeed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payoutSpeed"); else _explicitNullProperties?.Remove("payoutSpeed"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderPayoutNotificationContentPayoutSpeed? _explicitNullValuePayoutSpeed = default!;
         /// <summary>The payout status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderPayoutNotificationContentStatus? Status { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderPayoutNotificationContentStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderPayoutNotificationContentStatus? _explicitNullValueStatus = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderPayoutNotificationContentStatus Status { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderPayoutNotificationContentStatus Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderPayoutNotificationContentStatus _explicitNullValueStatus = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderPayoutNotificationContentComposed"/> and sets the default values.
@@ -154,7 +210,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderPayoutNotificationContentComposed CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderPayoutNotificationContentComposed();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderPayoutNotificationContentComposed(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -207,6 +263,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteLongValue("payoutReference", PayoutReference);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderPayoutNotificationContentPayoutSpeed>("payoutSpeed", PayoutSpeed);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderPayoutNotificationContentStatus>("status", Status);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

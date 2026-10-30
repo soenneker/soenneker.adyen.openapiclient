@@ -63,6 +63,8 @@ namespace Soenneker.Adyen.OpenApiClient.RaiseDisputesServiceV4.Disputes.Item
                 { "401", global::Soenneker.Adyen.OpenApiClient.Models.RaiseDisputesServiceV4DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Adyen.OpenApiClient.Models.RaiseDisputesServiceV4DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Adyen.OpenApiClient.Models.RaiseDisputesServiceV4DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.DisputeResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.DisputeResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -92,6 +94,8 @@ namespace Soenneker.Adyen.OpenApiClient.RaiseDisputesServiceV4.Disputes.Item
                 { "401", global::Soenneker.Adyen.OpenApiClient.Models.RaiseDisputesServiceV4DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Adyen.OpenApiClient.Models.RaiseDisputesServiceV4DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Adyen.OpenApiClient.Models.RaiseDisputesServiceV4DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.DisputeResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.DisputeResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -13,61 +13,110 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DisputeRequestCancelledInfo : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("attemptedToReturn") is { } nullNodeAttemptedToReturn && nullNodeAttemptedToReturn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttemptedToReturn = null;
+            if (parseNode.GetChildNode("certificationGuaranteedReservation") is { } nullNodeCertificationGuaranteedReservation && nullNodeCertificationGuaranteedReservation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CertificationGuaranteedReservation = null;
+            if (parseNode.GetChildNode("dateOfAttemptedReturn") is { } nullNodeDateOfAttemptedReturn && nullNodeDateOfAttemptedReturn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateOfAttemptedReturn = null;
+            if (parseNode.GetChildNode("dateOfCancellation") is { } nullNodeDateOfCancellation && nullNodeDateOfCancellation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateOfCancellation = null;
+            if (parseNode.GetChildNode("dateOfReturn") is { } nullNodeDateOfReturn && nullNodeDateOfReturn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateOfReturn = null;
+            if (parseNode.GetChildNode("dateOfService") is { } nullNodeDateOfService && nullNodeDateOfService.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateOfService = null;
+            if (parseNode.GetChildNode("dateReturnReceived") is { } nullNodeDateReturnReceived && nullNodeDateReturnReceived.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateReturnReceived = null;
+            if (parseNode.GetChildNode("descriptionOfIssue") is { } nullNodeDescriptionOfIssue && nullNodeDescriptionOfIssue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DescriptionOfIssue = null;
+            if (parseNode.GetChildNode("didCardholderCancelBeforeShipment") is { } nullNodeDidCardholderCancelBeforeShipment && nullNodeDidCardholderCancelBeforeShipment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DidCardholderCancelBeforeShipment = null;
+            if (parseNode.GetChildNode("didCardholderReceiveGoods") is { } nullNodeDidCardholderReceiveGoods && nullNodeDidCardholderReceiveGoods.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DidCardholderReceiveGoods = null;
+            if (parseNode.GetChildNode("didCardholderReturn") is { } nullNodeDidCardholderReturn && nullNodeDidCardholderReturn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DidCardholderReturn = null;
+            if (parseNode.GetChildNode("goodsOrServices") is { } nullNodeGoodsOrServices && nullNodeGoodsOrServices.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GoodsOrServices = null;
+            if (parseNode.GetChildNode("lastExpectedDate") is { } nullNodeLastExpectedDate && nullNodeLastExpectedDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastExpectedDate = null;
+            if (parseNode.GetChildNode("merchantRefuseAdvise") is { } nullNodeMerchantRefuseAdvise && nullNodeMerchantRefuseAdvise.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantRefuseAdvise = null;
+            if (parseNode.GetChildNode("returnMethod") is { } nullNodeReturnMethod && nullNodeReturnMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReturnMethod = null;
+            if (parseNode.GetChildNode("serviceType") is { } nullNodeServiceType && nullNodeServiceType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceType = null;
+            if (parseNode.GetChildNode("shippingTrackingNumber") is { } nullNodeShippingTrackingNumber && nullNodeShippingTrackingNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShippingTrackingNumber = null;
+            if (parseNode.GetChildNode("timeshareDate") is { } nullNodeTimeshareDate && nullNodeTimeshareDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeshareDate = null;
+            if (parseNode.GetChildNode("wasCancellationPolicyProvided") is { } nullNodeWasCancellationPolicyProvided && nullNodeWasCancellationPolicyProvided.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WasCancellationPolicyProvided = null;
+            if (parseNode.GetChildNode("whoCancelled") is { } nullNodeWhoCancelled && nullNodeWhoCancelled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WhoCancelled = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates if the cardholder attempted to return the merchandise but was unable to.Possible values: **true**, **false**.Required if the value of `didCardholderReturn` is **false**.If the value of this parameter is **true**, provide information in `descriptionOfIssue` about how the cardholder attempted to return the goods, and what they did with the goods (for example, destroyed them).</summary>
-        public bool? AttemptedToReturn { get; set; }
+        public bool? AttemptedToReturn { get => _explicitNullValueAttemptedToReturn; set { _explicitNullValueAttemptedToReturn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attemptedToReturn"); else _explicitNullProperties?.Remove("attemptedToReturn"); } }
+        private bool? _explicitNullValueAttemptedToReturn = default!;
         /// <summary>The certification code for the guaranteed reservation.Required if the value of `serviceType` is **guaranteedReservation** (a guaranteed reservation).Possible values: * **GR**: The cardholder properly cancelled the guaranteed reservation. * **RC**: The cardholder attempted to cancel within 24 hours of delivery of the reservation confirmation. * **AR**: The merchant billed a &quot;no-show transaction&quot; for more than one day&apos;s accommodation or rental.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CancelledInfoCertificationGuaranteedReservation? CertificationGuaranteedReservation { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CancelledInfoCertificationGuaranteedReservation? CertificationGuaranteedReservation { get => _explicitNullValueCertificationGuaranteedReservation; set { _explicitNullValueCertificationGuaranteedReservation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificationGuaranteedReservation"); else _explicitNullProperties?.Remove("certificationGuaranteedReservation"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.CancelledInfoCertificationGuaranteedReservation? _explicitNullValueCertificationGuaranteedReservation = default!;
         /// <summary>The date, in **YYYY-MM-DD** format, when the cardholder attempted to return the goods they purchased.Required if the value of `attemptedToReturn` is **true**.</summary>
-        public Date? DateOfAttemptedReturn { get; set; }
+        public Date? DateOfAttemptedReturn { get => _explicitNullValueDateOfAttemptedReturn; set { _explicitNullValueDateOfAttemptedReturn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateOfAttemptedReturn"); else _explicitNullProperties?.Remove("dateOfAttemptedReturn"); } }
+        private Date? _explicitNullValueDateOfAttemptedReturn = default!;
         /// <summary>The date, in **YYYY-MM-DD** format, when the purchase was cancelled.Required if the value of `certificationGuaranteedReservation` is **GR** or **RC**, or if the value of `didCardholderCancelBeforeShipment` is **true**.</summary>
-        public Date? DateOfCancellation { get; set; }
+        public Date? DateOfCancellation { get => _explicitNullValueDateOfCancellation; set { _explicitNullValueDateOfCancellation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateOfCancellation"); else _explicitNullProperties?.Remove("dateOfCancellation"); } }
+        private Date? _explicitNullValueDateOfCancellation = default!;
         /// <summary>The date, in **YYYY-MM-DD** format, that the cardholder shipped or handed back the merchandise.Required if the value of `didCardholderReturn` is **true**.</summary>
-        public Date? DateOfReturn { get; set; }
+        public Date? DateOfReturn { get => _explicitNullValueDateOfReturn; set { _explicitNullValueDateOfReturn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateOfReturn"); else _explicitNullProperties?.Remove("dateOfReturn"); } }
+        private Date? _explicitNullValueDateOfReturn = default!;
         /// <summary>The date, in **YYYY-MM-DD** format, that the service was scheduled to take place.Required if the value of `serviceType` is **other** (any other type of service) or **guaranteedReservation** (a guaranteed reservation).</summary>
-        public Date? DateOfService { get; set; }
+        public Date? DateOfService { get => _explicitNullValueDateOfService; set { _explicitNullValueDateOfService = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateOfService"); else _explicitNullProperties?.Remove("dateOfService"); } }
+        private Date? _explicitNullValueDateOfService = default!;
         /// <summary>The date, in **YYYY-MM-DD** format, that the merchant received the returned merchandise.Required if the value of `didCardholderReturn` is **true**.</summary>
-        public Date? DateReturnReceived { get; set; }
+        public Date? DateReturnReceived { get => _explicitNullValueDateReturnReceived; set { _explicitNullValueDateReturnReceived = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateReturnReceived"); else _explicitNullProperties?.Remove("dateReturnReceived"); } }
+        private Date? _explicitNullValueDateReturnReceived = default!;
         /// <summary>Your description of the issue for raising a dispute of `type` **cancelled**. Make sure the cardholder provides information that covers the following: * A description of the goods or services purchased, and why they are cancelling the purchase. * If the goods or services were cancelled before shipment: A description of how the cardholder attempted to cancel the goods or services. * If the cardholder attempted to return the goods: A description of how the cardholder attempted to return the goods, and what they did with the goods (for example, destroyed them). * If the cardholder attempted to return the goods in a way other than through direct return shipment or face-to-face return at a merchant, how they attempted to return the goods.Not required if the value of `goodsOrServices` is **services**, the value of `serviceType` is **timeshare** or **guaranteedReservation**, and the value of `didCardholderCancelBeforeShipment` is **false**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DescriptionOfIssue { get; set; }
+        public string? DescriptionOfIssue { get => _explicitNullValueDescriptionOfIssue; set { _explicitNullValueDescriptionOfIssue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("descriptionOfIssue"); else _explicitNullProperties?.Remove("descriptionOfIssue"); } }
+        private string? _explicitNullValueDescriptionOfIssue = default!;
 #nullable restore
 #else
-        public string DescriptionOfIssue { get; set; }
+        public string DescriptionOfIssue { get => _explicitNullValueDescriptionOfIssue; set { _explicitNullValueDescriptionOfIssue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("descriptionOfIssue"); else _explicitNullProperties?.Remove("descriptionOfIssue"); } }
+        private string _explicitNullValueDescriptionOfIssue = default!;
 #endif
         /// <summary>Indicates if the cardholder cancelled the purchase before the goods were shipped.Possible values: **true**, **false**.If the value of this parameter is **true**, provide information in `descriptionOfIssue` about how the cardholder attempted to cancel the goods or services.</summary>
-        public bool? DidCardholderCancelBeforeShipment { get; set; }
+        public bool? DidCardholderCancelBeforeShipment { get => _explicitNullValueDidCardholderCancelBeforeShipment; set { _explicitNullValueDidCardholderCancelBeforeShipment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("didCardholderCancelBeforeShipment"); else _explicitNullProperties?.Remove("didCardholderCancelBeforeShipment"); } }
+        private bool? _explicitNullValueDidCardholderCancelBeforeShipment = default!;
         /// <summary>Indicates if the cardholder received the merchandise.Possible values: **true**, **false**.Required if the value of `goodsOrServices` is **goods**.</summary>
-        public bool? DidCardholderReceiveGoods { get; set; }
+        public bool? DidCardholderReceiveGoods { get => _explicitNullValueDidCardholderReceiveGoods; set { _explicitNullValueDidCardholderReceiveGoods = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("didCardholderReceiveGoods"); else _explicitNullProperties?.Remove("didCardholderReceiveGoods"); } }
+        private bool? _explicitNullValueDidCardholderReceiveGoods = default!;
         /// <summary>Indicates if the cardholder returned the merchandise to the merchant.Possible values: **true**, **false**.Required if the value of `didCardholderReceiveGoods` is **true**.</summary>
-        public bool? DidCardholderReturn { get; set; }
+        public bool? DidCardholderReturn { get => _explicitNullValueDidCardholderReturn; set { _explicitNullValueDidCardholderReturn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("didCardholderReturn"); else _explicitNullProperties?.Remove("didCardholderReturn"); } }
+        private bool? _explicitNullValueDidCardholderReturn = default!;
         /// <summary>The type of purchase being disputed.Possible values: **goods**, **services**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CancelledInfoGoodsOrServices? GoodsOrServices { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CancelledInfoGoodsOrServices? GoodsOrServices { get => _explicitNullValueGoodsOrServices; set { _explicitNullValueGoodsOrServices = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("goodsOrServices"); else _explicitNullProperties?.Remove("goodsOrServices"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.CancelledInfoGoodsOrServices? _explicitNullValueGoodsOrServices = default!;
         /// <summary>The date, in **YYYY-MM-DD** format, that the merchant promised delivery.Required if the value of `goodsOrServices` is **goods**.</summary>
-        public Date? LastExpectedDate { get; set; }
+        public Date? LastExpectedDate { get => _explicitNullValueLastExpectedDate; set { _explicitNullValueLastExpectedDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastExpectedDate"); else _explicitNullProperties?.Remove("lastExpectedDate"); } }
+        private Date? _explicitNullValueLastExpectedDate = default!;
         /// <summary>The reason the merchant gave for refusing the return.Required if the value of `attemptedToReturn` is **true**.Possible values: * **MRRA**: The merchant refused to provide return authorization. * **MRRM**: The merchant refused to accept returned merchandise. * **MICNRM**: The merchant informed cardholder not to return the merchandise.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CancelledInfoMerchantRefuseAdvise? MerchantRefuseAdvise { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CancelledInfoMerchantRefuseAdvise? MerchantRefuseAdvise { get => _explicitNullValueMerchantRefuseAdvise; set { _explicitNullValueMerchantRefuseAdvise = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantRefuseAdvise"); else _explicitNullProperties?.Remove("merchantRefuseAdvise"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.CancelledInfoMerchantRefuseAdvise? _explicitNullValueMerchantRefuseAdvise = default!;
         /// <summary>The method used to return the merchandise.Required if the value of `didCardholderReturn` is **true**.Possible values: **faceToFace**, **fedEx**, **dhl**, **ups**, **postalService**, **other**.If the value of this parameter is **other**, or if the cardholder attempted a return but did not complete it, provide information in `descriptionOfIssue` about how the cardholder attempted to return the goods or services.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CancelledInfoReturnMethod? ReturnMethod { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CancelledInfoReturnMethod? ReturnMethod { get => _explicitNullValueReturnMethod; set { _explicitNullValueReturnMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("returnMethod"); else _explicitNullProperties?.Remove("returnMethod"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.CancelledInfoReturnMethod? _explicitNullValueReturnMethod = default!;
         /// <summary>The type of service purchased.Required if the value of `goodsOrServices` is **services**.Possible values: * **timeshare**: A reservation for a timeshare. * **guaranteedReservation**: A guaranteed reservation (for example, a hotel or a car rental booking). * **other**: Any other type of service.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CancelledInfoServiceType? ServiceType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CancelledInfoServiceType? ServiceType { get => _explicitNullValueServiceType; set { _explicitNullValueServiceType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serviceType"); else _explicitNullProperties?.Remove("serviceType"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.CancelledInfoServiceType? _explicitNullValueServiceType = default!;
         /// <summary>The tracking number for the shipment used to return the merchandise.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ShippingTrackingNumber { get; set; }
+        public string? ShippingTrackingNumber { get => _explicitNullValueShippingTrackingNumber; set { _explicitNullValueShippingTrackingNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shippingTrackingNumber"); else _explicitNullProperties?.Remove("shippingTrackingNumber"); } }
+        private string? _explicitNullValueShippingTrackingNumber = default!;
 #nullable restore
 #else
-        public string ShippingTrackingNumber { get; set; }
+        public string ShippingTrackingNumber { get => _explicitNullValueShippingTrackingNumber; set { _explicitNullValueShippingTrackingNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shippingTrackingNumber"); else _explicitNullProperties?.Remove("shippingTrackingNumber"); } }
+        private string _explicitNullValueShippingTrackingNumber = default!;
 #endif
         /// <summary>The date, in **YYYY-MM-DD** format, associated with the timeshare purchase.Required if the value of `serviceType` is **timeshare**.</summary>
-        public Date? TimeshareDate { get; set; }
+        public Date? TimeshareDate { get => _explicitNullValueTimeshareDate; set { _explicitNullValueTimeshareDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeshareDate"); else _explicitNullProperties?.Remove("timeshareDate"); } }
+        private Date? _explicitNullValueTimeshareDate = default!;
         /// <summary>Indicates if the merchant provided the cardholder with a cancellation policy.Possible values: **true**, **false**.Required if the value of `didCardholderReceiveGoods` is **false**, the value of `didCardholderCancelBeforeShipment` is **true**, or the value of `serviceType` is **guaranteedReservation**.</summary>
-        public bool? WasCancellationPolicyProvided { get; set; }
+        public bool? WasCancellationPolicyProvided { get => _explicitNullValueWasCancellationPolicyProvided; set { _explicitNullValueWasCancellationPolicyProvided = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wasCancellationPolicyProvided"); else _explicitNullProperties?.Remove("wasCancellationPolicyProvided"); } }
+        private bool? _explicitNullValueWasCancellationPolicyProvided = default!;
         /// <summary>The party that initiated the cancellation of the purchase.Required if the value of `serviceType` is **timeshare** (a timeshare) or **other** (any other type of service), or if the value of `didCardholderReceiveGoods` is **false**.Possible values: **merchant**, **cardholder**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CancelledInfoWhoCancelled? WhoCancelled { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CancelledInfoWhoCancelled? WhoCancelled { get => _explicitNullValueWhoCancelled; set { _explicitNullValueWhoCancelled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("whoCancelled"); else _explicitNullProperties?.Remove("whoCancelled"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.CancelledInfoWhoCancelled? _explicitNullValueWhoCancelled = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.DisputeRequestCancelledInfo"/> and sets the default values.
         /// </summary>
@@ -83,7 +132,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.DisputeRequestCancelledInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.DisputeRequestCancelledInfo();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.DisputeRequestCancelledInfo(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -142,6 +191,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteDateValue("timeshareDate", TimeshareDate);
             writer.WriteBoolValue("wasCancellationPolicyProvided", WasCancellationPolicyProvided);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CancelledInfoWhoCancelled>("whoCancelled", WhoCancelled);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

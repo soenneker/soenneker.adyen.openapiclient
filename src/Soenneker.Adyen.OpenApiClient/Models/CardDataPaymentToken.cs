@@ -12,20 +12,34 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CardDataPaymentToken : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("ExpiryDateTime") is { } nullNodeExpiryDateTime && nullNodeExpiryDateTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiryDateTime = null;
+            if (parseNode.GetChildNode("TokenRequestedType") is { } nullNodeTokenRequestedType && nullNodeTokenRequestedType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TokenRequestedType = null;
+            if (parseNode.GetChildNode("TokenValue") is { } nullNodeTokenValue && nullNodeTokenValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TokenValue = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Expiry date and time. Limits the validity of a payment token.</summary>
-        public DateTimeOffset? ExpiryDateTime { get; set; }
+        public DateTimeOffset? ExpiryDateTime { get => _explicitNullValueExpiryDateTime; set { _explicitNullValueExpiryDateTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ExpiryDateTime"); else _explicitNullProperties?.Remove("ExpiryDateTime"); } }
+        private DateTimeOffset? _explicitNullValueExpiryDateTime = default!;
         /// <summary>Type of token replacing the PAN of a payment card to identify the payment mean of the customer. It allows, for a merchant, to use a token for a transaction only or for a longer period.Possible values:* **Transaction*** **Customer**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentTokenTokenRequestedType? TokenRequestedType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentTokenTokenRequestedType? TokenRequestedType { get => _explicitNullValueTokenRequestedType; set { _explicitNullValueTokenRequestedType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TokenRequestedType"); else _explicitNullProperties?.Remove("TokenRequestedType"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentTokenTokenRequestedType? _explicitNullValueTokenRequestedType = default!;
         /// <summary>Payment token replacing the PAN of the payment card to identify the payment mean of the customer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TokenValue { get; set; }
+        public string? TokenValue { get => _explicitNullValueTokenValue; set { _explicitNullValueTokenValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TokenValue"); else _explicitNullProperties?.Remove("TokenValue"); } }
+        private string? _explicitNullValueTokenValue = default!;
 #nullable restore
 #else
-        public string TokenValue { get; set; }
+        public string TokenValue { get => _explicitNullValueTokenValue; set { _explicitNullValueTokenValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TokenValue"); else _explicitNullProperties?.Remove("TokenValue"); } }
+        private string _explicitNullValueTokenValue = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CardDataPaymentToken"/> and sets the default values.
@@ -42,7 +56,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.CardDataPaymentToken CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.CardDataPaymentToken();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.CardDataPaymentToken(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,6 +81,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("ExpiryDateTime", ExpiryDateTime);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentTokenTokenRequestedType>("TokenRequestedType", TokenRequestedType);
             writer.WriteStringValue("TokenValue", TokenValue);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

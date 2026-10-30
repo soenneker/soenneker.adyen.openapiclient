@@ -13,41 +13,65 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EnhancedSchemeDataTemporaryServices : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("employeeName") is { } nullNodeEmployeeName && nullNodeEmployeeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmployeeName = null;
+            if (parseNode.GetChildNode("endDate") is { } nullNodeEndDate && nullNodeEndDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndDate = null;
+            if (parseNode.GetChildNode("hourRate") is { } nullNodeHourRate && nullNodeHourRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HourRate = null;
+            if (parseNode.GetChildNode("hoursWorked") is { } nullNodeHoursWorked && nullNodeHoursWorked.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HoursWorked = null;
+            if (parseNode.GetChildNode("jobDescription") is { } nullNodeJobDescription && nullNodeJobDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobDescription = null;
+            if (parseNode.GetChildNode("serviceRequestor") is { } nullNodeServiceRequestor && nullNodeServiceRequestor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceRequestor = null;
+            if (parseNode.GetChildNode("startDate") is { } nullNodeStartDate && nullNodeStartDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartDate = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The name or ID of the person working in a temporary capacity.* Format: ASCII* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `enhancedSchemeData.employeeName`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EmployeeName { get; set; }
+        public string? EmployeeName { get => _explicitNullValueEmployeeName; set { _explicitNullValueEmployeeName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employeeName"); else _explicitNullProperties?.Remove("employeeName"); } }
+        private string? _explicitNullValueEmployeeName = default!;
 #nullable restore
 #else
-        public string EmployeeName { get; set; }
+        public string EmployeeName { get => _explicitNullValueEmployeeName; set { _explicitNullValueEmployeeName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employeeName"); else _explicitNullProperties?.Remove("employeeName"); } }
+        private string _explicitNullValueEmployeeName = default!;
 #endif
         /// <summary>The billing period end date.* Format [ISO 8601](https://www.w3.org/TR/NOTE-datetime): yyyy-MM-dd* **additionalData key:** `enhancedSchemeData.tempWeekEnding`</summary>
-        public Date? EndDate { get; set; }
+        public Date? EndDate { get => _explicitNullValueEndDate; set { _explicitNullValueEndDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endDate"); else _explicitNullProperties?.Remove("endDate"); } }
+        private Date? _explicitNullValueEndDate = default!;
         /// <summary>The hourly rate for the temporary services, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000* **additionalData key:** `enhancedSchemeData.regularHoursRate`</summary>
-        public int? HourRate { get; set; }
+        public int? HourRate { get => _explicitNullValueHourRate; set { _explicitNullValueHourRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hourRate"); else _explicitNullProperties?.Remove("hourRate"); } }
+        private int? _explicitNullValueHourRate = default!;
         /// <summary>The number of hours worked during the billing period.* Format: Numeric* **additionalData key:** `enhancedSchemeData.regularHoursWorked`</summary>
-        public int? HoursWorked { get; set; }
+        public int? HoursWorked { get => _explicitNullValueHoursWorked; set { _explicitNullValueHoursWorked = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hoursWorked"); else _explicitNullProperties?.Remove("hoursWorked"); } }
+        private int? _explicitNullValueHoursWorked = default!;
         /// <summary>The job description of the person working in a temporary capacity.* Format: ASCII* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `enhancedSchemeData.jobDescription`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JobDescription { get; set; }
+        public string? JobDescription { get => _explicitNullValueJobDescription; set { _explicitNullValueJobDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobDescription"); else _explicitNullProperties?.Remove("jobDescription"); } }
+        private string? _explicitNullValueJobDescription = default!;
 #nullable restore
 #else
-        public string JobDescription { get; set; }
+        public string JobDescription { get => _explicitNullValueJobDescription; set { _explicitNullValueJobDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobDescription"); else _explicitNullProperties?.Remove("jobDescription"); } }
+        private string _explicitNullValueJobDescription = default!;
 #endif
         /// <summary>The name of the person requesting the temporary services.* Format: ASCII* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `enhancedSchemeData.requestName`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServiceRequestor { get; set; }
+        public string? ServiceRequestor { get => _explicitNullValueServiceRequestor; set { _explicitNullValueServiceRequestor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serviceRequestor"); else _explicitNullProperties?.Remove("serviceRequestor"); } }
+        private string? _explicitNullValueServiceRequestor = default!;
 #nullable restore
 #else
-        public string ServiceRequestor { get; set; }
+        public string ServiceRequestor { get => _explicitNullValueServiceRequestor; set { _explicitNullValueServiceRequestor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serviceRequestor"); else _explicitNullProperties?.Remove("serviceRequestor"); } }
+        private string _explicitNullValueServiceRequestor = default!;
 #endif
         /// <summary>The billing period start date.* Format [ISO 8601](https://www.w3.org/TR/NOTE-datetime): yyyy-MM-dd* **additionalData key:** `enhancedSchemeData.tempStartDate`</summary>
-        public Date? StartDate { get; set; }
+        public Date? StartDate { get => _explicitNullValueStartDate; set { _explicitNullValueStartDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startDate"); else _explicitNullProperties?.Remove("startDate"); } }
+        private Date? _explicitNullValueStartDate = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeDataTemporaryServices"/> and sets the default values.
         /// </summary>
@@ -63,7 +87,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeDataTemporaryServices CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeDataTemporaryServices();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeDataTemporaryServices(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -96,6 +120,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("jobDescription", JobDescription);
             writer.WriteStringValue("serviceRequestor", ServiceRequestor);
             writer.WriteDateValue("startDate", StartDate);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -13,89 +13,131 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TerminalApiV1PaymentResponsePaymentResult : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("AmountsResp") is { } nullNodeAmountsResp && nullNodeAmountsResp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AmountsResp = null;
+            if (parseNode.GetChildNode("AuthenticationMethod") is { } nullNodeAuthenticationMethod && nullNodeAuthenticationMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthenticationMethod = null;
+            if (parseNode.GetChildNode("CapturedSignature") is { } nullNodeCapturedSignature && nullNodeCapturedSignature.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CapturedSignature = null;
+            if (parseNode.GetChildNode("CurrencyConversion") is { } nullNodeCurrencyConversion && nullNodeCurrencyConversion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrencyConversion = null;
+            if (parseNode.GetChildNode("CustomerLanguage") is { } nullNodeCustomerLanguage && nullNodeCustomerLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerLanguage = null;
+            if (parseNode.GetChildNode("Instalment") is { } nullNodeInstalment && nullNodeInstalment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Instalment = null;
+            if (parseNode.GetChildNode("MerchantOverrideFlag") is { } nullNodeMerchantOverrideFlag && nullNodeMerchantOverrideFlag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantOverrideFlag = null;
+            if (parseNode.GetChildNode("OnlineFlag") is { } nullNodeOnlineFlag && nullNodeOnlineFlag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnlineFlag = null;
+            if (parseNode.GetChildNode("PaymentAcquirerData") is { } nullNodePaymentAcquirerData && nullNodePaymentAcquirerData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentAcquirerData = null;
+            if (parseNode.GetChildNode("PaymentInstrumentData") is { } nullNodePaymentInstrumentData && nullNodePaymentInstrumentData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentInstrumentData = null;
+            if (parseNode.GetChildNode("PaymentType") is { } nullNodePaymentType && nullNodePaymentType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentType = null;
+            if (parseNode.GetChildNode("ProtectedSignature") is { } nullNodeProtectedSignature && nullNodeProtectedSignature.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProtectedSignature = null;
+            if (parseNode.GetChildNode("ValidityDate") is { } nullNodeValidityDate && nullNodeValidityDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidityDate = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Various amounts related to the payment response from the POI System. Amounts approved by the POI and the Acquirer for the payment and loyalty transaction, containing:  * The authorised amount to be paid.  * The amount of the rebates.  * The amount of financial fees.  * The cash back part of the requested amount for a payment with cash back.  * The tip part of the requested amount for a payment with tip.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultAmountsResp? AmountsResp { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultAmountsResp? AmountsResp { get => _explicitNullValueAmountsResp; set { _explicitNullValueAmountsResp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AmountsResp"); else _explicitNullProperties?.Remove("AmountsResp"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultAmountsResp? _explicitNullValueAmountsResp = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultAmountsResp AmountsResp { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultAmountsResp AmountsResp { get => _explicitNullValueAmountsResp; set { _explicitNullValueAmountsResp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AmountsResp"); else _explicitNullProperties?.Remove("AmountsResp"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultAmountsResp _explicitNullValueAmountsResp = default!;
 #endif
         /// <summary>Method for customer authentication. Allows the Sale System informed about customer authentication for the payment transaction.Possible values:* **Bypass*** **ManualVerification*** **MerchantAuthentication*** **OfflinePIN*** **OnlinePIN*** **PaperSignature*** **SecureCertificate*** **SecureNoCertificate*** **SecuredChannel*** **SignatureCapture*** **UnknownMethod**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResultAuthenticationMethodItem?>? AuthenticationMethod { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResultAuthenticationMethodItem?>? AuthenticationMethod { get => _explicitNullValueAuthenticationMethod; set { _explicitNullValueAuthenticationMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AuthenticationMethod"); else _explicitNullProperties?.Remove("AuthenticationMethod"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResultAuthenticationMethodItem?>? _explicitNullValueAuthenticationMethod = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResultAuthenticationMethodItem?> AuthenticationMethod { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResultAuthenticationMethodItem?> AuthenticationMethod { get => _explicitNullValueAuthenticationMethod; set { _explicitNullValueAuthenticationMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AuthenticationMethod"); else _explicitNullProperties?.Remove("AuthenticationMethod"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResultAuthenticationMethodItem?> _explicitNullValueAuthenticationMethod = default!;
 #endif
         /// <summary>Numeric value of a handwritten signature. Contains the value of a handwritten signature, e.g. the signature of a cardholder on the merchant payment receipt. Only one format of the signature is allowed:  * The size of the pad area where the signature is written, given with the maximum abscissa and ordinate values.  * The sequence of coordinates where the pen changes direction or lift.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultCapturedSignature? CapturedSignature { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultCapturedSignature? CapturedSignature { get => _explicitNullValueCapturedSignature; set { _explicitNullValueCapturedSignature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CapturedSignature"); else _explicitNullProperties?.Remove("CapturedSignature"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultCapturedSignature? _explicitNullValueCapturedSignature = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultCapturedSignature CapturedSignature { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultCapturedSignature CapturedSignature { get => _explicitNullValueCapturedSignature; set { _explicitNullValueCapturedSignature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CapturedSignature"); else _explicitNullProperties?.Remove("CapturedSignature"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultCapturedSignature _explicitNullValueCapturedSignature = default!;
 #endif
         /// <summary>Information related to a currency conversion. A currency conversion occurred in the payment, and the merchant needs to know information related to this conversion (e.g. to print on the sale receipt).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.CurrencyConversion>? CurrencyConversion { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.CurrencyConversion>? CurrencyConversion { get => _explicitNullValueCurrencyConversion; set { _explicitNullValueCurrencyConversion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CurrencyConversion"); else _explicitNullProperties?.Remove("CurrencyConversion"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.CurrencyConversion>? _explicitNullValueCurrencyConversion = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.CurrencyConversion> CurrencyConversion { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.CurrencyConversion> CurrencyConversion { get => _explicitNullValueCurrencyConversion; set { _explicitNullValueCurrencyConversion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CurrencyConversion"); else _explicitNullProperties?.Remove("CurrencyConversion"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.CurrencyConversion> _explicitNullValueCurrencyConversion = default!;
 #endif
         /// <summary>The language of the customer that was used on the terminal screen or in text printed by the terminal. Format: two-character [ISO 639:2023](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomerLanguage { get; set; }
+        public string? CustomerLanguage { get => _explicitNullValueCustomerLanguage; set { _explicitNullValueCustomerLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CustomerLanguage"); else _explicitNullProperties?.Remove("CustomerLanguage"); } }
+        private string? _explicitNullValueCustomerLanguage = default!;
 #nullable restore
 #else
-        public string CustomerLanguage { get; set; }
+        public string CustomerLanguage { get => _explicitNullValueCustomerLanguage; set { _explicitNullValueCustomerLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CustomerLanguage"); else _explicitNullProperties?.Remove("CustomerLanguage"); } }
+        private string _explicitNullValueCustomerLanguage = default!;
 #endif
         /// <summary>Information related an instalment transaction. To request an instalment to the issuer, or to make individual instalments of a payment transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultInstalment? Instalment { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultInstalment? Instalment { get => _explicitNullValueInstalment; set { _explicitNullValueInstalment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Instalment"); else _explicitNullProperties?.Remove("Instalment"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultInstalment? _explicitNullValueInstalment = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultInstalment Instalment { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultInstalment Instalment { get => _explicitNullValueInstalment; set { _explicitNullValueInstalment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Instalment"); else _explicitNullProperties?.Remove("Instalment"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultInstalment _explicitNullValueInstalment = default!;
 #endif
         /// <summary>Indicates that the Merchant forced the result of the payment to successful. Allows the Sale System to be sure that the payment has been forced.</summary>
-        public bool? MerchantOverrideFlag { get; set; }
+        public bool? MerchantOverrideFlag { get => _explicitNullValueMerchantOverrideFlag; set { _explicitNullValueMerchantOverrideFlag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MerchantOverrideFlag"); else _explicitNullProperties?.Remove("MerchantOverrideFlag"); } }
+        private bool? _explicitNullValueMerchantOverrideFlag = default!;
         /// <summary>Indicate that the payment transaction processing has required the approval of a host. Allows the Sale System to know if the payment was online or offline.</summary>
-        public bool? OnlineFlag { get; set; }
+        public bool? OnlineFlag { get => _explicitNullValueOnlineFlag; set { _explicitNullValueOnlineFlag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OnlineFlag"); else _explicitNullProperties?.Remove("OnlineFlag"); } }
+        private bool? _explicitNullValueOnlineFlag = default!;
         /// <summary>Data related to the response from the payment Acquirer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultPaymentAcquirerData? PaymentAcquirerData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultPaymentAcquirerData? PaymentAcquirerData { get => _explicitNullValuePaymentAcquirerData; set { _explicitNullValuePaymentAcquirerData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PaymentAcquirerData"); else _explicitNullProperties?.Remove("PaymentAcquirerData"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultPaymentAcquirerData? _explicitNullValuePaymentAcquirerData = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultPaymentAcquirerData PaymentAcquirerData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultPaymentAcquirerData PaymentAcquirerData { get => _explicitNullValuePaymentAcquirerData; set { _explicitNullValuePaymentAcquirerData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PaymentAcquirerData"); else _explicitNullProperties?.Remove("PaymentAcquirerData"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultPaymentAcquirerData _explicitNullValuePaymentAcquirerData = default!;
 #endif
         /// <summary>Data related to the instrument of payment for the transaction.Sent in the result of the payment transaction. For a card, it could also be sent in the `CardAcquisition` response, to be processed by the Sale System.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultPaymentInstrumentData? PaymentInstrumentData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultPaymentInstrumentData? PaymentInstrumentData { get => _explicitNullValuePaymentInstrumentData; set { _explicitNullValuePaymentInstrumentData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PaymentInstrumentData"); else _explicitNullProperties?.Remove("PaymentInstrumentData"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultPaymentInstrumentData? _explicitNullValuePaymentInstrumentData = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultPaymentInstrumentData PaymentInstrumentData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultPaymentInstrumentData PaymentInstrumentData { get => _explicitNullValuePaymentInstrumentData; set { _explicitNullValuePaymentInstrumentData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PaymentInstrumentData"); else _explicitNullProperties?.Remove("PaymentInstrumentData"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultPaymentInstrumentData _explicitNullValuePaymentInstrumentData = default!;
 #endif
         /// <summary>Possible values:* **Normal*** **Refund*** **OneTimeReservation*** **FirstReservation*** **UpdateReservation*** **Completion*** **CashAdvance*** **CashDeposit*** **Recurring*** **Instalment*** **IssuerInstalment*** **PaidOut**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultPaymentType? PaymentType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultPaymentType? PaymentType { get => _explicitNullValuePaymentType; set { _explicitNullValuePaymentType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PaymentType"); else _explicitNullProperties?.Remove("PaymentType"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultPaymentType? _explicitNullValuePaymentType = default!;
         /// <summary>Numeric value of a handwritten signature. Contains the value of a handwritten signature, e.g. the signature of a cardholder on the merchant payment receipt. The format before encryption is the encoded data structure CapturedSignature. The data structure before encryption includes the start and end tags for an XML encoding, the identifier and length bytes for an ASN.1 encoding, and the complete member ProtectedSignature for a JSON encoding.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProtectedSignature { get; set; }
+        public string? ProtectedSignature { get => _explicitNullValueProtectedSignature; set { _explicitNullValueProtectedSignature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ProtectedSignature"); else _explicitNullProperties?.Remove("ProtectedSignature"); } }
+        private string? _explicitNullValueProtectedSignature = default!;
 #nullable restore
 #else
-        public string ProtectedSignature { get; set; }
+        public string ProtectedSignature { get => _explicitNullValueProtectedSignature; set { _explicitNullValueProtectedSignature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ProtectedSignature"); else _explicitNullProperties?.Remove("ProtectedSignature"); } }
+        private string _explicitNullValueProtectedSignature = default!;
 #endif
         /// <summary>End of the validity period for the reservation, for the first reservation, and the reservation updates as well.</summary>
-        public Date? ValidityDate { get; set; }
+        public Date? ValidityDate { get => _explicitNullValueValidityDate; set { _explicitNullValueValidityDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ValidityDate"); else _explicitNullProperties?.Remove("ValidityDate"); } }
+        private Date? _explicitNullValueValidityDate = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResponsePaymentResult"/> and sets the default values.
         /// </summary>
@@ -113,7 +155,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResponsePaymentResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResponsePaymentResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResponsePaymentResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -158,6 +200,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultPaymentType>("PaymentType", PaymentType);
             writer.WriteStringValue("ProtectedSignature", ProtectedSignature);
             writer.WriteDateValue("ValidityDate", ValidityDate);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

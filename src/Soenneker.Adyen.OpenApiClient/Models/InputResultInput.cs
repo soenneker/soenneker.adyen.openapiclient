@@ -12,40 +12,64 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InputResultInput : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("ConfirmedFlag") is { } nullNodeConfirmedFlag && nullNodeConfirmedFlag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfirmedFlag = null;
+            if (parseNode.GetChildNode("DigitInput") is { } nullNodeDigitInput && nullNodeDigitInput.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DigitInput = null;
+            if (parseNode.GetChildNode("FunctionKey") is { } nullNodeFunctionKey && nullNodeFunctionKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FunctionKey = null;
+            if (parseNode.GetChildNode("InputCommand") is { } nullNodeInputCommand && nullNodeInputCommand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InputCommand = null;
+            if (parseNode.GetChildNode("MenuEntryNumber") is { } nullNodeMenuEntryNumber && nullNodeMenuEntryNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MenuEntryNumber = null;
+            if (parseNode.GetChildNode("Password") is { } nullNodePassword && nullNodePassword.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Password = null;
+            if (parseNode.GetChildNode("TextInput") is { } nullNodeTextInput && nullNodeTextInput.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TextInput = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates te response of the user from the `GetConfirmation` input command.</summary>
-        public bool? ConfirmedFlag { get; set; }
+        public bool? ConfirmedFlag { get => _explicitNullValueConfirmedFlag; set { _explicitNullValueConfirmedFlag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ConfirmedFlag"); else _explicitNullProperties?.Remove("ConfirmedFlag"); } }
+        private bool? _explicitNullValueConfirmedFlag = default!;
         /// <summary>The digits typed by the Customer on the POI or by the Cashier on the Sale Terminal.</summary>
-        public int? DigitInput { get; set; }
+        public int? DigitInput { get => _explicitNullValueDigitInput; set { _explicitNullValueDigitInput = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DigitInput"); else _explicitNullProperties?.Remove("DigitInput"); } }
+        private int? _explicitNullValueDigitInput = default!;
         /// <summary>The number of the function key which is typed by the Customer on the POI or the Cashier on the Sale Terminal.</summary>
-        public int? FunctionKey { get; set; }
+        public int? FunctionKey { get => _explicitNullValueFunctionKey; set { _explicitNullValueFunctionKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("FunctionKey"); else _explicitNullProperties?.Remove("FunctionKey"); } }
+        private int? _explicitNullValueFunctionKey = default!;
         /// <summary>Possible values:* **GetAnyKey*** **GetConfirmation*** **SiteManager*** **TextString*** **DigitString*** **DecimalString*** **GetFunctionKey*** **GetMenuEntry*** **Password**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.InputInputCommand? InputCommand { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.InputInputCommand? InputCommand { get => _explicitNullValueInputCommand; set { _explicitNullValueInputCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("InputCommand"); else _explicitNullProperties?.Remove("InputCommand"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.InputInputCommand? _explicitNullValueInputCommand = default!;
         /// <summary>The index of the menu item (from 1 to n) which is selected by the Cashier on the Sale Terminal. The value -1 indicates that the immediate upper level of the menu is requested. The value 0 indicates that the root of the menu is requested.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? MenuEntryNumber { get; set; }
+        public List<int?>? MenuEntryNumber { get => _explicitNullValueMenuEntryNumber; set { _explicitNullValueMenuEntryNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MenuEntryNumber"); else _explicitNullProperties?.Remove("MenuEntryNumber"); } }
+        private List<int?>? _explicitNullValueMenuEntryNumber = default!;
 #nullable restore
 #else
-        public List<int?> MenuEntryNumber { get; set; }
+        public List<int?> MenuEntryNumber { get => _explicitNullValueMenuEntryNumber; set { _explicitNullValueMenuEntryNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MenuEntryNumber"); else _explicitNullProperties?.Remove("MenuEntryNumber"); } }
+        private List<int?> _explicitNullValueMenuEntryNumber = default!;
 #endif
         /// <summary>The text password typed by the Customer on the POI or by the Cashier on the Sale Terminal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Password { get; set; }
+        public string? Password { get => _explicitNullValuePassword; set { _explicitNullValuePassword = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Password"); else _explicitNullProperties?.Remove("Password"); } }
+        private string? _explicitNullValuePassword = default!;
 #nullable restore
 #else
-        public string Password { get; set; }
+        public string Password { get => _explicitNullValuePassword; set { _explicitNullValuePassword = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Password"); else _explicitNullProperties?.Remove("Password"); } }
+        private string _explicitNullValuePassword = default!;
 #endif
         /// <summary>The text typed by the Customer on the POI or by the Cashier on the Sale Terminal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TextInput { get; set; }
+        public string? TextInput { get => _explicitNullValueTextInput; set { _explicitNullValueTextInput = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TextInput"); else _explicitNullProperties?.Remove("TextInput"); } }
+        private string? _explicitNullValueTextInput = default!;
 #nullable restore
 #else
-        public string TextInput { get; set; }
+        public string TextInput { get => _explicitNullValueTextInput; set { _explicitNullValueTextInput = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TextInput"); else _explicitNullProperties?.Remove("TextInput"); } }
+        private string _explicitNullValueTextInput = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.InputResultInput"/> and sets the default values.
@@ -62,7 +86,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.InputResultInput CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.InputResultInput();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.InputResultInput(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -95,6 +119,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<int?>("MenuEntryNumber", MenuEntryNumber);
             writer.WriteStringValue("Password", Password);
             writer.WriteStringValue("TextInput", TextInput);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

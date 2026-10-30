@@ -11,53 +11,79 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ScheduleTerminalActionsResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("actionDetails") is { } nullNodeActionDetails && nullNodeActionDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActionDetails = null;
+            if (parseNode.GetChildNode("items") is { } nullNodeItems && nullNodeItems.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Items = null;
+            if (parseNode.GetChildNode("scheduledAt") is { } nullNodeScheduledAt && nullNodeScheduledAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScheduledAt = null;
+            if (parseNode.GetChildNode("storeId") is { } nullNodeStoreId && nullNodeStoreId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StoreId = null;
+            if (parseNode.GetChildNode("terminalsWithErrors") is { } nullNodeTerminalsWithErrors && nullNodeTerminalsWithErrors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TerminalsWithErrors = null;
+            if (parseNode.GetChildNode("totalErrors") is { } nullNodeTotalErrors && nullNodeTotalErrors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalErrors = null;
+            if (parseNode.GetChildNode("totalScheduled") is { } nullNodeTotalScheduled && nullNodeTotalScheduled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalScheduled = null;
+        }
+
         /// <summary>Information about the action to take.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseActionDetails? ActionDetails { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseActionDetails? ActionDetails { get => _explicitNullValueActionDetails; set { _explicitNullValueActionDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actionDetails"); else _explicitNullProperties?.Remove("actionDetails"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseActionDetails? _explicitNullValueActionDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseActionDetails ActionDetails { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseActionDetails ActionDetails { get => _explicitNullValueActionDetails; set { _explicitNullValueActionDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actionDetails"); else _explicitNullProperties?.Remove("actionDetails"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseActionDetails _explicitNullValueActionDetails = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A list containing a terminal ID and an action ID for each terminal that the action was scheduled for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.TerminalActionScheduleDetail>? Items { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.TerminalActionScheduleDetail>? Items { get => _explicitNullValueItems; set { _explicitNullValueItems = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("items"); else _explicitNullProperties?.Remove("items"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.TerminalActionScheduleDetail>? _explicitNullValueItems = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.TerminalActionScheduleDetail> Items { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.TerminalActionScheduleDetail> Items { get => _explicitNullValueItems; set { _explicitNullValueItems = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("items"); else _explicitNullProperties?.Remove("items"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.TerminalActionScheduleDetail> _explicitNullValueItems = default!;
 #endif
         /// <summary>The date and time when the action should happen. Format: [RFC 3339](https://www.rfc-editor.org/rfc/rfc3339), but without the **Z** before the time offset. For example, **2021-11-15T12:16:21+0100** The action is sent with the first [maintenance call](https://docs.adyen.com/point-of-sale/automating-terminal-management/terminal-actions-api#when-actions-take-effect) after the specified date and time in the time zone of the terminal. An empty value causes the action to be sent as soon as possible: at the next maintenance call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ScheduledAt { get; set; }
+        public string? ScheduledAt { get => _explicitNullValueScheduledAt; set { _explicitNullValueScheduledAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduledAt"); else _explicitNullProperties?.Remove("scheduledAt"); } }
+        private string? _explicitNullValueScheduledAt = default!;
 #nullable restore
 #else
-        public string ScheduledAt { get; set; }
+        public string ScheduledAt { get => _explicitNullValueScheduledAt; set { _explicitNullValueScheduledAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduledAt"); else _explicitNullProperties?.Remove("scheduledAt"); } }
+        private string _explicitNullValueScheduledAt = default!;
 #endif
         /// <summary>The unique ID of the [store](https://docs.adyen.com/api-explorer/#/ManagementService/latest/get/stores). If present, all terminals in the `terminalIds` list must be assigned to this store.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StoreId { get; set; }
+        public string? StoreId { get => _explicitNullValueStoreId; set { _explicitNullValueStoreId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storeId"); else _explicitNullProperties?.Remove("storeId"); } }
+        private string? _explicitNullValueStoreId = default!;
 #nullable restore
 #else
-        public string StoreId { get; set; }
+        public string StoreId { get => _explicitNullValueStoreId; set { _explicitNullValueStoreId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storeId"); else _explicitNullProperties?.Remove("storeId"); } }
+        private string _explicitNullValueStoreId = default!;
 #endif
         /// <summary>The validation errors that occurred in the list of terminals, and for each error the IDs of the terminals that the error applies to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseTerminalsWithErrorsProperty2? TerminalsWithErrors { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseTerminalsWithErrorsProperty2? TerminalsWithErrors { get => _explicitNullValueTerminalsWithErrors; set { _explicitNullValueTerminalsWithErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("terminalsWithErrors"); else _explicitNullProperties?.Remove("terminalsWithErrors"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseTerminalsWithErrorsProperty2? _explicitNullValueTerminalsWithErrors = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseTerminalsWithErrorsProperty2 TerminalsWithErrors { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseTerminalsWithErrorsProperty2 TerminalsWithErrors { get => _explicitNullValueTerminalsWithErrors; set { _explicitNullValueTerminalsWithErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("terminalsWithErrors"); else _explicitNullProperties?.Remove("terminalsWithErrors"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseTerminalsWithErrorsProperty2 _explicitNullValueTerminalsWithErrors = default!;
 #endif
         /// <summary>The number of terminals for which scheduling the action failed.</summary>
-        public int? TotalErrors { get; set; }
+        public int? TotalErrors { get => _explicitNullValueTotalErrors; set { _explicitNullValueTotalErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalErrors"); else _explicitNullProperties?.Remove("totalErrors"); } }
+        private int? _explicitNullValueTotalErrors = default!;
         /// <summary>The number of terminals for which the action was successfully scheduled. This doesn&apos;t mean the action has happened yet.</summary>
-        public int? TotalScheduled { get; set; }
+        public int? TotalScheduled { get => _explicitNullValueTotalScheduled; set { _explicitNullValueTotalScheduled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalScheduled"); else _explicitNullProperties?.Remove("totalScheduled"); } }
+        private int? _explicitNullValueTotalScheduled = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponse"/> and sets the default values.
         /// </summary>
@@ -73,7 +99,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -106,6 +132,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseTerminalsWithErrorsProperty2>("terminalsWithErrors", TerminalsWithErrors);
             writer.WriteIntValue("totalErrors", TotalErrors);
             writer.WriteIntValue("totalScheduled", TotalScheduled);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

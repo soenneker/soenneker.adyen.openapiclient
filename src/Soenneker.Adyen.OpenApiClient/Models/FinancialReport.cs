@@ -11,56 +11,81 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class FinancialReport : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("annualTurnover") is { } nullNodeAnnualTurnover && nullNodeAnnualTurnover.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AnnualTurnover = null;
+            if (parseNode.GetChildNode("balanceSheetTotal") is { } nullNodeBalanceSheetTotal && nullNodeBalanceSheetTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalanceSheetTotal = null;
+            if (parseNode.GetChildNode("currencyOfFinancialData") is { } nullNodeCurrencyOfFinancialData && nullNodeCurrencyOfFinancialData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrencyOfFinancialData = null;
+            if (parseNode.GetChildNode("dateOfFinancialData") is { } nullNodeDateOfFinancialData && nullNodeDateOfFinancialData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateOfFinancialData = null;
+            if (parseNode.GetChildNode("employeeCount") is { } nullNodeEmployeeCount && nullNodeEmployeeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmployeeCount = null;
+            if (parseNode.GetChildNode("netAssets") is { } nullNodeNetAssets && nullNodeNetAssets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NetAssets = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The annual turnover of the business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AnnualTurnover { get; set; }
+        public string? AnnualTurnover { get => _explicitNullValueAnnualTurnover; set { _explicitNullValueAnnualTurnover = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("annualTurnover"); else _explicitNullProperties?.Remove("annualTurnover"); } }
+        private string? _explicitNullValueAnnualTurnover = default!;
 #nullable restore
 #else
-        public string AnnualTurnover { get; set; }
+        public string AnnualTurnover { get => _explicitNullValueAnnualTurnover; set { _explicitNullValueAnnualTurnover = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("annualTurnover"); else _explicitNullProperties?.Remove("annualTurnover"); } }
+        private string _explicitNullValueAnnualTurnover = default!;
 #endif
         /// <summary>The balance sheet total of the business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BalanceSheetTotal { get; set; }
+        public string? BalanceSheetTotal { get => _explicitNullValueBalanceSheetTotal; set { _explicitNullValueBalanceSheetTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceSheetTotal"); else _explicitNullProperties?.Remove("balanceSheetTotal"); } }
+        private string? _explicitNullValueBalanceSheetTotal = default!;
 #nullable restore
 #else
-        public string BalanceSheetTotal { get; set; }
+        public string BalanceSheetTotal { get => _explicitNullValueBalanceSheetTotal; set { _explicitNullValueBalanceSheetTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceSheetTotal"); else _explicitNullProperties?.Remove("balanceSheetTotal"); } }
+        private string _explicitNullValueBalanceSheetTotal = default!;
 #endif
         /// <summary>The currency used for the financial data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CurrencyOfFinancialData { get; set; }
+        public string? CurrencyOfFinancialData { get => _explicitNullValueCurrencyOfFinancialData; set { _explicitNullValueCurrencyOfFinancialData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currencyOfFinancialData"); else _explicitNullProperties?.Remove("currencyOfFinancialData"); } }
+        private string? _explicitNullValueCurrencyOfFinancialData = default!;
 #nullable restore
 #else
-        public string CurrencyOfFinancialData { get; set; }
+        public string CurrencyOfFinancialData { get => _explicitNullValueCurrencyOfFinancialData; set { _explicitNullValueCurrencyOfFinancialData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currencyOfFinancialData"); else _explicitNullProperties?.Remove("currencyOfFinancialData"); } }
+        private string _explicitNullValueCurrencyOfFinancialData = default!;
 #endif
         /// <summary>The date the financial data were provided, in YYYY-MM-DD format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DateOfFinancialData { get; set; }
+        public string? DateOfFinancialData { get => _explicitNullValueDateOfFinancialData; set { _explicitNullValueDateOfFinancialData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateOfFinancialData"); else _explicitNullProperties?.Remove("dateOfFinancialData"); } }
+        private string? _explicitNullValueDateOfFinancialData = default!;
 #nullable restore
 #else
-        public string DateOfFinancialData { get; set; }
+        public string DateOfFinancialData { get => _explicitNullValueDateOfFinancialData; set { _explicitNullValueDateOfFinancialData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateOfFinancialData"); else _explicitNullProperties?.Remove("dateOfFinancialData"); } }
+        private string _explicitNullValueDateOfFinancialData = default!;
 #endif
         /// <summary>The number of employees of the business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EmployeeCount { get; set; }
+        public string? EmployeeCount { get => _explicitNullValueEmployeeCount; set { _explicitNullValueEmployeeCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employeeCount"); else _explicitNullProperties?.Remove("employeeCount"); } }
+        private string? _explicitNullValueEmployeeCount = default!;
 #nullable restore
 #else
-        public string EmployeeCount { get; set; }
+        public string EmployeeCount { get => _explicitNullValueEmployeeCount; set { _explicitNullValueEmployeeCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employeeCount"); else _explicitNullProperties?.Remove("employeeCount"); } }
+        private string _explicitNullValueEmployeeCount = default!;
 #endif
         /// <summary>The net assets of the business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NetAssets { get; set; }
+        public string? NetAssets { get => _explicitNullValueNetAssets; set { _explicitNullValueNetAssets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("netAssets"); else _explicitNullProperties?.Remove("netAssets"); } }
+        private string? _explicitNullValueNetAssets = default!;
 #nullable restore
 #else
-        public string NetAssets { get; set; }
+        public string NetAssets { get => _explicitNullValueNetAssets; set { _explicitNullValueNetAssets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("netAssets"); else _explicitNullProperties?.Remove("netAssets"); } }
+        private string _explicitNullValueNetAssets = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.FinancialReport"/> and sets the default values.
@@ -77,7 +102,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.FinancialReport CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.FinancialReport();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.FinancialReport(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -108,6 +133,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("dateOfFinancialData", DateOfFinancialData);
             writer.WriteStringValue("employeeCount", EmployeeCount);
             writer.WriteStringValue("netAssets", NetAssets);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

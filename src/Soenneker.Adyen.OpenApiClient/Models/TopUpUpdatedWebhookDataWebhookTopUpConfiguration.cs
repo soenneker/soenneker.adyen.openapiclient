@@ -12,82 +12,118 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TopUpUpdatedWebhookDataWebhookTopUpConfiguration : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("counterparty") is { } nullNodeCounterparty && nullNodeCounterparty.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Counterparty = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("disabledReason") is { } nullNodeDisabledReason && nullNodeDisabledReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisabledReason = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("mandate") is { } nullNodeMandate && nullNodeMandate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mandate = null;
+            if (parseNode.GetChildNode("reasonDetail") is { } nullNodeReasonDetail && nullNodeReasonDetail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReasonDetail = null;
+            if (parseNode.GetChildNode("referenceForBeneficiary") is { } nullNodeReferenceForBeneficiary && nullNodeReferenceForBeneficiary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferenceForBeneficiary = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("topUpAmount") is { } nullNodeTopUpAmount && nullNodeTopUpAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TopUpAmount = null;
+            if (parseNode.GetChildNode("trigger") is { } nullNodeTrigger && nullNodeTrigger.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Trigger = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The source of the funds.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpConfigurationUpdatedCounterparty? Counterparty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpConfigurationUpdatedCounterparty? Counterparty { get => _explicitNullValueCounterparty; set { _explicitNullValueCounterparty = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("counterparty"); else _explicitNullProperties?.Remove("counterparty"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpConfigurationUpdatedCounterparty? _explicitNullValueCounterparty = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpConfigurationUpdatedCounterparty Counterparty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpConfigurationUpdatedCounterparty Counterparty { get => _explicitNullValueCounterparty; set { _explicitNullValueCounterparty = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("counterparty"); else _explicitNullProperties?.Remove("counterparty"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpConfigurationUpdatedCounterparty _explicitNullValueCounterparty = default!;
 #endif
         /// <summary>The message that is used in the top-up transfer&apos;s description body with a maximum length of 140 characters.If the message is longer after replacing placeholders, the message is cut off at 140 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>A machine-readable code identifying the reason the system deactivated the top-up configuration. This field is only populated when the status is `inactive`.Possible values:* **transferInstrumentDoesNotExist*** **directDebitNotSupported*** **accountHierarchyNotActive*** **mandateNotFound*** **mandateNotActive*** **directDebitAmountThresholdExceeded*** **topUpNotSupported*** **routeNotFound*** **counterpartyAccountBlocked*** **counterpartyAccountInvalid*** **unknown**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisabledReason { get; set; }
+        public string? DisabledReason { get => _explicitNullValueDisabledReason; set { _explicitNullValueDisabledReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disabledReason"); else _explicitNullProperties?.Remove("disabledReason"); } }
+        private string? _explicitNullValueDisabledReason = default!;
 #nullable restore
 #else
-        public string DisabledReason { get; set; }
+        public string DisabledReason { get => _explicitNullValueDisabledReason; set { _explicitNullValueDisabledReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disabledReason"); else _explicitNullProperties?.Remove("disabledReason"); } }
+        private string _explicitNullValueDisabledReason = default!;
 #endif
         /// <summary>The unique identifier of the recurring top-up configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The mandate associated with the recurring top-up.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpConfigurationUpdatedMandate? Mandate { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpConfigurationUpdatedMandate? Mandate { get => _explicitNullValueMandate; set { _explicitNullValueMandate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mandate"); else _explicitNullProperties?.Remove("mandate"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpConfigurationUpdatedMandate? _explicitNullValueMandate = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpConfigurationUpdatedMandate Mandate { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpConfigurationUpdatedMandate Mandate { get => _explicitNullValueMandate; set { _explicitNullValueMandate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mandate"); else _explicitNullProperties?.Remove("mandate"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpConfigurationUpdatedMandate _explicitNullValueMandate = default!;
 #endif
         /// <summary>A human-readable description providing the specific reason or context for why the configuration was disabled. This field is only populated when the status is `inactive`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReasonDetail { get; set; }
+        public string? ReasonDetail { get => _explicitNullValueReasonDetail; set { _explicitNullValueReasonDetail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reasonDetail"); else _explicitNullProperties?.Remove("reasonDetail"); } }
+        private string? _explicitNullValueReasonDetail = default!;
 #nullable restore
 #else
-        public string ReasonDetail { get; set; }
+        public string ReasonDetail { get => _explicitNullValueReasonDetail; set { _explicitNullValueReasonDetail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reasonDetail"); else _explicitNullProperties?.Remove("reasonDetail"); } }
+        private string _explicitNullValueReasonDetail = default!;
 #endif
         /// <summary> A reference that is sent to the recipient. This reference is also sent in all webhooks related to the transfer, so you can use it to track statuses for both parties involved in the funds movement. Supported characters: **a-z**, **A-Z**, **0-9**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReferenceForBeneficiary { get; set; }
+        public string? ReferenceForBeneficiary { get => _explicitNullValueReferenceForBeneficiary; set { _explicitNullValueReferenceForBeneficiary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenceForBeneficiary"); else _explicitNullProperties?.Remove("referenceForBeneficiary"); } }
+        private string? _explicitNullValueReferenceForBeneficiary = default!;
 #nullable restore
 #else
-        public string ReferenceForBeneficiary { get; set; }
+        public string ReferenceForBeneficiary { get => _explicitNullValueReferenceForBeneficiary; set { _explicitNullValueReferenceForBeneficiary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenceForBeneficiary"); else _explicitNullProperties?.Remove("referenceForBeneficiary"); } }
+        private string _explicitNullValueReferenceForBeneficiary = default!;
 #endif
         /// <summary>The status of the top-up configuration.Possible values:  * **active**: the top-up is enabled and funds are pulled in. * **inactive**: the top-up is disabled and cannot be triggered. </summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpConfigurationUpdatedStatus? Status { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpConfigurationUpdatedStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpConfigurationUpdatedStatus? _explicitNullValueStatus = default!;
         /// <summary>The amount of the top-up. This can be a fixed amount or a target amount.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpConfigurationUpdatedTopUpAmount? TopUpAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpConfigurationUpdatedTopUpAmount? TopUpAmount { get => _explicitNullValueTopUpAmount; set { _explicitNullValueTopUpAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("topUpAmount"); else _explicitNullProperties?.Remove("topUpAmount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpConfigurationUpdatedTopUpAmount? _explicitNullValueTopUpAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpConfigurationUpdatedTopUpAmount TopUpAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpConfigurationUpdatedTopUpAmount TopUpAmount { get => _explicitNullValueTopUpAmount; set { _explicitNullValueTopUpAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("topUpAmount"); else _explicitNullProperties?.Remove("topUpAmount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpConfigurationUpdatedTopUpAmount _explicitNullValueTopUpAmount = default!;
 #endif
         /// <summary>The condition that triggers the top-up. This can be a recurring schedule or a minimum balance threshold.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpConfigurationUpdatedTrigger? Trigger { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpConfigurationUpdatedTrigger? Trigger { get => _explicitNullValueTrigger; set { _explicitNullValueTrigger = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trigger"); else _explicitNullProperties?.Remove("trigger"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpConfigurationUpdatedTrigger? _explicitNullValueTrigger = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpConfigurationUpdatedTrigger Trigger { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpConfigurationUpdatedTrigger Trigger { get => _explicitNullValueTrigger; set { _explicitNullValueTrigger = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trigger"); else _explicitNullProperties?.Remove("trigger"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpConfigurationUpdatedTrigger _explicitNullValueTrigger = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TopUpUpdatedWebhookDataWebhookTopUpConfiguration"/> and sets the default values.
@@ -104,7 +140,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.TopUpUpdatedWebhookDataWebhookTopUpConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.TopUpUpdatedWebhookDataWebhookTopUpConfiguration();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.TopUpUpdatedWebhookDataWebhookTopUpConfiguration(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -143,6 +179,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpConfigurationUpdatedStatus>("status", Status);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpConfigurationUpdatedTopUpAmount>("topUpAmount", TopUpAmount);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpConfigurationUpdatedTrigger>("trigger", Trigger);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

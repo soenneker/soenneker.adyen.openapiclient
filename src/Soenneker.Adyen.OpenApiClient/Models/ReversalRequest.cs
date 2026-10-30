@@ -12,28 +12,45 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReversalRequest : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("OriginalPOITransaction") is { } nullNodeOriginalPOITransaction && nullNodeOriginalPOITransaction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginalPOITransaction = null;
+            if (parseNode.GetChildNode("ReversalReason") is { } nullNodeReversalReason && nullNodeReversalReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReversalReason = null;
+            if (parseNode.GetChildNode("ReversedAmount") is { } nullNodeReversedAmount && nullNodeReversedAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReversedAmount = null;
+            if (parseNode.GetChildNode("SaleData") is { } nullNodeSaleData && nullNodeSaleData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SaleData = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Identification of a previous POI transaction.In the Payment Request message, it allows using the card of a previous CardAcquisition or Payment request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.OriginalPoiTransaction? OriginalPOITransaction { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.OriginalPoiTransaction? OriginalPOITransaction { get => _explicitNullValueOriginalPOITransaction; set { _explicitNullValueOriginalPOITransaction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OriginalPOITransaction"); else _explicitNullProperties?.Remove("OriginalPOITransaction"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.OriginalPoiTransaction? _explicitNullValueOriginalPOITransaction = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.OriginalPoiTransaction OriginalPOITransaction { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.OriginalPoiTransaction OriginalPOITransaction { get => _explicitNullValueOriginalPOITransaction; set { _explicitNullValueOriginalPOITransaction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OriginalPOITransaction"); else _explicitNullProperties?.Remove("OriginalPOITransaction"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.OriginalPoiTransaction _explicitNullValueOriginalPOITransaction = default!;
 #endif
         /// <summary>Reason of the payment or loyalty reversal.Possible values:* **CustCancel*** **MerchantCancel*** **Malfunction*** **Unable2Compl**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.ReversalRequestReversalReason? ReversalReason { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ReversalRequestReversalReason? ReversalReason { get => _explicitNullValueReversalReason; set { _explicitNullValueReversalReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ReversalReason"); else _explicitNullProperties?.Remove("ReversalReason"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ReversalRequestReversalReason? _explicitNullValueReversalReason = default!;
         /// <summary>Amount of the payment or loyalty to reverse.ReversedAmount is implicitly equal to the AuthorizedAmount if absent.</summary>
-        public double? ReversedAmount { get; set; }
+        public double? ReversedAmount { get => _explicitNullValueReversedAmount; set { _explicitNullValueReversedAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ReversedAmount"); else _explicitNullProperties?.Remove("ReversedAmount"); } }
+        private double? _explicitNullValueReversedAmount = default!;
         /// <summary>Data associated with the Sale System, with a particular value during the processing of the payment by the POI, including the cards acquisition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ReversalRequestSaleData? SaleData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ReversalRequestSaleData? SaleData { get => _explicitNullValueSaleData; set { _explicitNullValueSaleData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SaleData"); else _explicitNullProperties?.Remove("SaleData"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ReversalRequestSaleData? _explicitNullValueSaleData = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ReversalRequestSaleData SaleData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ReversalRequestSaleData SaleData { get => _explicitNullValueSaleData; set { _explicitNullValueSaleData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SaleData"); else _explicitNullProperties?.Remove("SaleData"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ReversalRequestSaleData _explicitNullValueSaleData = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ReversalRequest"/> and sets the default values.
@@ -50,7 +67,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.ReversalRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.ReversalRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.ReversalRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,6 +94,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ReversalRequestReversalReason>("ReversalReason", ReversalReason);
             writer.WriteDoubleValue("ReversedAmount", ReversedAmount);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ReversalRequestSaleData>("SaleData", SaleData);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

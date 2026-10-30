@@ -12,15 +12,28 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TerminalSettingsPayAtTableMember1 : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("authenticationMethod") is { } nullNodeAuthenticationMethod && nullNodeAuthenticationMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthenticationMethod = null;
+            if (parseNode.GetChildNode("enablePayAtTable") is { } nullNodeEnablePayAtTable && nullNodeEnablePayAtTable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnablePayAtTable = null;
+            if (parseNode.GetChildNode("paymentInstrument") is { } nullNodePaymentInstrument && nullNodePaymentInstrument.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentInstrument = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Allowed authentication methods: Magswipe, Manual Entry.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayAtTableAuthenticationMethod? AuthenticationMethod { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayAtTableAuthenticationMethod? AuthenticationMethod { get => _explicitNullValueAuthenticationMethod; set { _explicitNullValueAuthenticationMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticationMethod"); else _explicitNullProperties?.Remove("authenticationMethod"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PayAtTableAuthenticationMethod? _explicitNullValueAuthenticationMethod = default!;
         /// <summary>Enable Pay at table.</summary>
-        public bool? EnablePayAtTable { get; set; }
+        public bool? EnablePayAtTable { get => _explicitNullValueEnablePayAtTable; set { _explicitNullValueEnablePayAtTable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enablePayAtTable"); else _explicitNullProperties?.Remove("enablePayAtTable"); } }
+        private bool? _explicitNullValueEnablePayAtTable = default!;
         /// <summary>Sets the allowed payment instrument for Pay at table transactions.  Can be: **cash** or **card**. If not set, the terminal presents both options.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayAtTablePaymentInstrument? PaymentInstrument { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayAtTablePaymentInstrument? PaymentInstrument { get => _explicitNullValuePaymentInstrument; set { _explicitNullValuePaymentInstrument = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentInstrument"); else _explicitNullProperties?.Remove("paymentInstrument"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PayAtTablePaymentInstrument? _explicitNullValuePaymentInstrument = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPayAtTableMember1"/> and sets the default values.
         /// </summary>
@@ -36,7 +49,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPayAtTableMember1 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPayAtTableMember1();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPayAtTableMember1(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -61,6 +74,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayAtTableAuthenticationMethod>("authenticationMethod", AuthenticationMethod);
             writer.WriteBoolValue("enablePayAtTable", EnablePayAtTable);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayAtTablePaymentInstrument>("paymentInstrument", PaymentInstrument);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

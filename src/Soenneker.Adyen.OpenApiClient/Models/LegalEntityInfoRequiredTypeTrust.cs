@@ -12,104 +12,152 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LegalEntityInfoRequiredTypeTrust : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("countryOfGoverningLaw") is { } nullNodeCountryOfGoverningLaw && nullNodeCountryOfGoverningLaw.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CountryOfGoverningLaw = null;
+            if (parseNode.GetChildNode("dateOfIncorporation") is { } nullNodeDateOfIncorporation && nullNodeDateOfIncorporation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateOfIncorporation = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("doingBusinessAs") is { } nullNodeDoingBusinessAs && nullNodeDoingBusinessAs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DoingBusinessAs = null;
+            if (parseNode.GetChildNode("doingBusinessAsAbsent") is { } nullNodeDoingBusinessAsAbsent && nullNodeDoingBusinessAsAbsent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DoingBusinessAsAbsent = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("principalPlaceOfBusiness") is { } nullNodePrincipalPlaceOfBusiness && nullNodePrincipalPlaceOfBusiness.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrincipalPlaceOfBusiness = null;
+            if (parseNode.GetChildNode("registeredAddress") is { } nullNodeRegisteredAddress && nullNodeRegisteredAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegisteredAddress = null;
+            if (parseNode.GetChildNode("registrationNumber") is { } nullNodeRegistrationNumber && nullNodeRegistrationNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegistrationNumber = null;
+            if (parseNode.GetChildNode("residentialAddressIndicator") is { } nullNodeResidentialAddressIndicator && nullNodeResidentialAddressIndicator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResidentialAddressIndicator = null;
+            if (parseNode.GetChildNode("taxInformation") is { } nullNodeTaxInformation && nullNodeTaxInformation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxInformation = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("undefinedBeneficiaryInfo") is { } nullNodeUndefinedBeneficiaryInfo && nullNodeUndefinedBeneficiaryInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UndefinedBeneficiaryInfo = null;
+            if (parseNode.GetChildNode("vatAbsenceReason") is { } nullNodeVatAbsenceReason && nullNodeVatAbsenceReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VatAbsenceReason = null;
+            if (parseNode.GetChildNode("vatNumber") is { } nullNodeVatNumber && nullNodeVatNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VatNumber = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The two-character [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code of the governing country.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CountryOfGoverningLaw { get; set; }
+        public string? CountryOfGoverningLaw { get => _explicitNullValueCountryOfGoverningLaw; set { _explicitNullValueCountryOfGoverningLaw = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("countryOfGoverningLaw"); else _explicitNullProperties?.Remove("countryOfGoverningLaw"); } }
+        private string? _explicitNullValueCountryOfGoverningLaw = default!;
 #nullable restore
 #else
-        public string CountryOfGoverningLaw { get; set; }
+        public string CountryOfGoverningLaw { get => _explicitNullValueCountryOfGoverningLaw; set { _explicitNullValueCountryOfGoverningLaw = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("countryOfGoverningLaw"); else _explicitNullProperties?.Remove("countryOfGoverningLaw"); } }
+        private string _explicitNullValueCountryOfGoverningLaw = default!;
 #endif
         /// <summary>The date when the legal arrangement was incorporated in YYYY-MM-DD format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DateOfIncorporation { get; set; }
+        public string? DateOfIncorporation { get => _explicitNullValueDateOfIncorporation; set { _explicitNullValueDateOfIncorporation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateOfIncorporation"); else _explicitNullProperties?.Remove("dateOfIncorporation"); } }
+        private string? _explicitNullValueDateOfIncorporation = default!;
 #nullable restore
 #else
-        public string DateOfIncorporation { get; set; }
+        public string DateOfIncorporation { get => _explicitNullValueDateOfIncorporation; set { _explicitNullValueDateOfIncorporation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateOfIncorporation"); else _explicitNullProperties?.Remove("dateOfIncorporation"); } }
+        private string _explicitNullValueDateOfIncorporation = default!;
 #endif
         /// <summary>A short description about the trust. Only applicable for charitable trusts in New Zealand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>The registered name, if different from the `name`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DoingBusinessAs { get; set; }
+        public string? DoingBusinessAs { get => _explicitNullValueDoingBusinessAs; set { _explicitNullValueDoingBusinessAs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("doingBusinessAs"); else _explicitNullProperties?.Remove("doingBusinessAs"); } }
+        private string? _explicitNullValueDoingBusinessAs = default!;
 #nullable restore
 #else
-        public string DoingBusinessAs { get; set; }
+        public string DoingBusinessAs { get => _explicitNullValueDoingBusinessAs; set { _explicitNullValueDoingBusinessAs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("doingBusinessAs"); else _explicitNullProperties?.Remove("doingBusinessAs"); } }
+        private string _explicitNullValueDoingBusinessAs = default!;
 #endif
         /// <summary>Set this to **true** if the legal arrangement does not have a `Doing business as` name.</summary>
-        public bool? DoingBusinessAsAbsent { get; set; }
+        public bool? DoingBusinessAsAbsent { get => _explicitNullValueDoingBusinessAsAbsent; set { _explicitNullValueDoingBusinessAsAbsent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("doingBusinessAsAbsent"); else _explicitNullProperties?.Remove("doingBusinessAsAbsent"); } }
+        private bool? _explicitNullValueDoingBusinessAsAbsent = default!;
         /// <summary>The legal name. Must be at least 3 characters.Only the following special characters are allowed: **,**, **-**, **—**, **.**, **;**, **:**, **&amp;**, **?**, **@**, **(**, **)**, **&quot;**, **&apos;**, **!**, **\**, **+**, **/**. Accents and non-Latin scripts are allowed.The field cannot contain emojis, only one repeated character (unless two characters long), only symbols, only numbers, only spaces, or **fictitious names** such as **John Doe** or **N/A**.For more information, see [validations on fields](https://docs.adyen.com/platforms/onboard-users/onboarding-versions/onboarding-v4/#validations).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The business address. Required if the principal place of business is different from the `registeredAddress`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TrustPrincipalPlaceOfBusiness? PrincipalPlaceOfBusiness { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TrustPrincipalPlaceOfBusiness? PrincipalPlaceOfBusiness { get => _explicitNullValuePrincipalPlaceOfBusiness; set { _explicitNullValuePrincipalPlaceOfBusiness = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("principalPlaceOfBusiness"); else _explicitNullProperties?.Remove("principalPlaceOfBusiness"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TrustPrincipalPlaceOfBusiness? _explicitNullValuePrincipalPlaceOfBusiness = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TrustPrincipalPlaceOfBusiness PrincipalPlaceOfBusiness { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TrustPrincipalPlaceOfBusiness PrincipalPlaceOfBusiness { get => _explicitNullValuePrincipalPlaceOfBusiness; set { _explicitNullValuePrincipalPlaceOfBusiness = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("principalPlaceOfBusiness"); else _explicitNullProperties?.Remove("principalPlaceOfBusiness"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TrustPrincipalPlaceOfBusiness _explicitNullValuePrincipalPlaceOfBusiness = default!;
 #endif
         /// <summary>The address registered at the registrar, such as the Chamber of Commerce. If you use a PO box, you must also provide a `principalPlaceOfBusiness`. The principal place of business cannot be a PO box.Address fields cannot contain emojis, only one repeated character (unless two characters long), only symbols, only numbers, only spaces, or **fictitious values** such as **John Doe** or **N/A**. All parts of the address must be different. For example, Spain, Spain, Spain is not allowed.For more information, see [validations on fields](https://docs.adyen.com/platforms/onboard-users/onboarding-versions/onboarding-v4/#validations).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TrustRegisteredAddress? RegisteredAddress { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TrustRegisteredAddress? RegisteredAddress { get => _explicitNullValueRegisteredAddress; set { _explicitNullValueRegisteredAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registeredAddress"); else _explicitNullProperties?.Remove("registeredAddress"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TrustRegisteredAddress? _explicitNullValueRegisteredAddress = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TrustRegisteredAddress RegisteredAddress { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TrustRegisteredAddress RegisteredAddress { get => _explicitNullValueRegisteredAddress; set { _explicitNullValueRegisteredAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registeredAddress"); else _explicitNullProperties?.Remove("registeredAddress"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TrustRegisteredAddress _explicitNullValueRegisteredAddress = default!;
 #endif
         /// <summary>The registration number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RegistrationNumber { get; set; }
+        public string? RegistrationNumber { get => _explicitNullValueRegistrationNumber; set { _explicitNullValueRegistrationNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registrationNumber"); else _explicitNullProperties?.Remove("registrationNumber"); } }
+        private string? _explicitNullValueRegistrationNumber = default!;
 #nullable restore
 #else
-        public string RegistrationNumber { get; set; }
+        public string RegistrationNumber { get => _explicitNullValueRegistrationNumber; set { _explicitNullValueRegistrationNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registrationNumber"); else _explicitNullProperties?.Remove("registrationNumber"); } }
+        private string _explicitNullValueRegistrationNumber = default!;
 #endif
         /// <summary>Indicates if the `registeredAddress` is a place of residence, instead of a business address.Set to **true** if the address is a place of residence. The default value is **false**.</summary>
-        public bool? ResidentialAddressIndicator { get; set; }
+        public bool? ResidentialAddressIndicator { get => _explicitNullValueResidentialAddressIndicator; set { _explicitNullValueResidentialAddressIndicator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("residentialAddressIndicator"); else _explicitNullProperties?.Remove("residentialAddressIndicator"); } }
+        private bool? _explicitNullValueResidentialAddressIndicator = default!;
         /// <summary>The tax information of the entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.TaxInformation>? TaxInformation { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.TaxInformation>? TaxInformation { get => _explicitNullValueTaxInformation; set { _explicitNullValueTaxInformation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxInformation"); else _explicitNullProperties?.Remove("taxInformation"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.TaxInformation>? _explicitNullValueTaxInformation = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.TaxInformation> TaxInformation { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.TaxInformation> TaxInformation { get => _explicitNullValueTaxInformation; set { _explicitNullValueTaxInformation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxInformation"); else _explicitNullProperties?.Remove("taxInformation"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.TaxInformation> _explicitNullValueTaxInformation = default!;
 #endif
         /// <summary>Type of trust.See possible values for trusts in [Australia](https://docs.adyen.com/platforms/verification-requirements/?tab=trust_3_4#trust-types-in-australia) and [New Zealand](https://docs.adyen.com/platforms/verification-requirements/?tab=trust_3_4#trust-types-in-new-zealand).</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TrustType? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TrustType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TrustType? _explicitNullValueType = default!;
         /// <summary>The undefined beneficiary information of the entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.UndefinedBeneficiary>? UndefinedBeneficiaryInfo { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.UndefinedBeneficiary>? UndefinedBeneficiaryInfo { get => _explicitNullValueUndefinedBeneficiaryInfo; set { _explicitNullValueUndefinedBeneficiaryInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("undefinedBeneficiaryInfo"); else _explicitNullProperties?.Remove("undefinedBeneficiaryInfo"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.UndefinedBeneficiary>? _explicitNullValueUndefinedBeneficiaryInfo = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.UndefinedBeneficiary> UndefinedBeneficiaryInfo { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.UndefinedBeneficiary> UndefinedBeneficiaryInfo { get => _explicitNullValueUndefinedBeneficiaryInfo; set { _explicitNullValueUndefinedBeneficiaryInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("undefinedBeneficiaryInfo"); else _explicitNullProperties?.Remove("undefinedBeneficiaryInfo"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.UndefinedBeneficiary> _explicitNullValueUndefinedBeneficiaryInfo = default!;
 #endif
         /// <summary>The reason for not providing a VAT number.Possible values: **industryExemption**, **belowTaxThreshold**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TrustVatAbsenceReason? VatAbsenceReason { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TrustVatAbsenceReason? VatAbsenceReason { get => _explicitNullValueVatAbsenceReason; set { _explicitNullValueVatAbsenceReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vatAbsenceReason"); else _explicitNullProperties?.Remove("vatAbsenceReason"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TrustVatAbsenceReason? _explicitNullValueVatAbsenceReason = default!;
         /// <summary>The VAT number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VatNumber { get; set; }
+        public string? VatNumber { get => _explicitNullValueVatNumber; set { _explicitNullValueVatNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vatNumber"); else _explicitNullProperties?.Remove("vatNumber"); } }
+        private string? _explicitNullValueVatNumber = default!;
 #nullable restore
 #else
-        public string VatNumber { get; set; }
+        public string VatNumber { get => _explicitNullValueVatNumber; set { _explicitNullValueVatNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vatNumber"); else _explicitNullProperties?.Remove("vatNumber"); } }
+        private string _explicitNullValueVatNumber = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityInfoRequiredTypeTrust"/> and sets the default values.
@@ -126,7 +174,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityInfoRequiredTypeTrust CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityInfoRequiredTypeTrust();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityInfoRequiredTypeTrust(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -175,6 +223,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.UndefinedBeneficiary>("undefinedBeneficiaryInfo", UndefinedBeneficiaryInfo);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TrustVatAbsenceReason>("vatAbsenceReason", VatAbsenceReason);
             writer.WriteStringValue("vatNumber", VatNumber);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

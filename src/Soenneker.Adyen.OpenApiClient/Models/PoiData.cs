@@ -12,18 +12,30 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PoiData : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("POIReconciliationID") is { } nullNodePOIReconciliationID && nullNodePOIReconciliationID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) POIReconciliationID = null;
+            if (parseNode.GetChildNode("POITransactionID") is { } nullNodePOITransactionID && nullNodePOITransactionID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) POITransactionID = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Identification of the reconciliation period between Sale and POI.If Result is Success.</summary>
-        public int? POIReconciliationID { get; set; }
+        public int? POIReconciliationID { get => _explicitNullValuePOIReconciliationID; set { _explicitNullValuePOIReconciliationID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("POIReconciliationID"); else _explicitNullProperties?.Remove("POIReconciliationID"); } }
+        private int? _explicitNullValuePOIReconciliationID = default!;
         /// <summary>Identification of a transaction for the Sale System or the POI System.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType? POITransactionID { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType? POITransactionID { get => _explicitNullValuePOITransactionID; set { _explicitNullValuePOITransactionID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("POITransactionID"); else _explicitNullProperties?.Remove("POITransactionID"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType? _explicitNullValuePOITransactionID = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType POITransactionID { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType POITransactionID { get => _explicitNullValuePOITransactionID; set { _explicitNullValuePOITransactionID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("POITransactionID"); else _explicitNullProperties?.Remove("POITransactionID"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType _explicitNullValuePOITransactionID = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PoiData"/> and sets the default values.
@@ -40,7 +52,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.PoiData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.PoiData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.PoiData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,6 +75,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("POIReconciliationID", POIReconciliationID);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType>("POITransactionID", POITransactionID);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

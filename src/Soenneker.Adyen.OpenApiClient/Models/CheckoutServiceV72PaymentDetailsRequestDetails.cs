@@ -12,168 +12,235 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CheckoutServiceV72PaymentDetailsRequestDetails : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("authorization_token") is { } nullNodeAuthorizationToken && nullNodeAuthorizationToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthorizationToken = null;
+            if (parseNode.GetChildNode("billingToken") is { } nullNodeBillingToken && nullNodeBillingToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingToken = null;
+            if (parseNode.GetChildNode("cupsecureplus.smscode") is { } nullNodeCupsecureplusSmscode && nullNodeCupsecureplusSmscode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CupsecureplusSmscode = null;
+            if (parseNode.GetChildNode("facilitatorAccessToken") is { } nullNodeFacilitatorAccessToken && nullNodeFacilitatorAccessToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FacilitatorAccessToken = null;
+            if (parseNode.GetChildNode("MD") is { } nullNodeMD && nullNodeMD.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MD = null;
+            if (parseNode.GetChildNode("oneTimePasscode") is { } nullNodeOneTimePasscode && nullNodeOneTimePasscode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OneTimePasscode = null;
+            if (parseNode.GetChildNode("orderID") is { } nullNodeOrderID && nullNodeOrderID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrderID = null;
+            if (parseNode.GetChildNode("PaReq") is { } nullNodePaReq && nullNodePaReq.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaReq = null;
+            if (parseNode.GetChildNode("PaRes") is { } nullNodePaRes && nullNodePaRes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaRes = null;
+            if (parseNode.GetChildNode("payerID") is { } nullNodePayerID && nullNodePayerID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayerID = null;
+            if (parseNode.GetChildNode("payload") is { } nullNodePayload && nullNodePayload.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Payload = null;
+            if (parseNode.GetChildNode("paymentID") is { } nullNodePaymentID && nullNodePaymentID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentID = null;
+            if (parseNode.GetChildNode("paymentStatus") is { } nullNodePaymentStatus && nullNodePaymentStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentStatus = null;
+            if (parseNode.GetChildNode("redirectResult") is { } nullNodeRedirectResult && nullNodeRedirectResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RedirectResult = null;
+            if (parseNode.GetChildNode("resultCode") is { } nullNodeResultCode && nullNodeResultCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResultCode = null;
+            if (parseNode.GetChildNode("returnUrlQueryString") is { } nullNodeReturnUrlQueryString && nullNodeReturnUrlQueryString.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReturnUrlQueryString = null;
+            if (parseNode.GetChildNode("threeds2.challengeResult") is { } nullNodeThreeds2ChallengeResult && nullNodeThreeds2ChallengeResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Threeds2ChallengeResult = null;
+            if (parseNode.GetChildNode("threeds2.fingerprint") is { } nullNodeThreeds2Fingerprint && nullNodeThreeds2Fingerprint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Threeds2Fingerprint = null;
+            if (parseNode.GetChildNode("threeDSResult") is { } nullNodeThreeDSResult && nullNodeThreeDSResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDSResult = null;
+            if (parseNode.GetChildNode("vaultToken") is { } nullNodeVaultToken && nullNodeVaultToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VaultToken = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The authorization_token property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AuthorizationToken { get; set; }
+        public string? AuthorizationToken { get => _explicitNullValueAuthorizationToken; set { _explicitNullValueAuthorizationToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorization_token"); else _explicitNullProperties?.Remove("authorization_token"); } }
+        private string? _explicitNullValueAuthorizationToken = default!;
 #nullable restore
 #else
-        public string AuthorizationToken { get; set; }
+        public string AuthorizationToken { get => _explicitNullValueAuthorizationToken; set { _explicitNullValueAuthorizationToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorization_token"); else _explicitNullProperties?.Remove("authorization_token"); } }
+        private string _explicitNullValueAuthorizationToken = default!;
 #endif
         /// <summary>PayPal-generated token for recurring payments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BillingToken { get; set; }
+        public string? BillingToken { get => _explicitNullValueBillingToken; set { _explicitNullValueBillingToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingToken"); else _explicitNullProperties?.Remove("billingToken"); } }
+        private string? _explicitNullValueBillingToken = default!;
 #nullable restore
 #else
-        public string BillingToken { get; set; }
+        public string BillingToken { get => _explicitNullValueBillingToken; set { _explicitNullValueBillingToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingToken"); else _explicitNullProperties?.Remove("billingToken"); } }
+        private string _explicitNullValueBillingToken = default!;
 #endif
         /// <summary>The SMS verification code collected from the shopper.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CupsecureplusSmscode { get; set; }
+        public string? CupsecureplusSmscode { get => _explicitNullValueCupsecureplusSmscode; set { _explicitNullValueCupsecureplusSmscode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cupsecureplus.smscode"); else _explicitNullProperties?.Remove("cupsecureplus.smscode"); } }
+        private string? _explicitNullValueCupsecureplusSmscode = default!;
 #nullable restore
 #else
-        public string CupsecureplusSmscode { get; set; }
+        public string CupsecureplusSmscode { get => _explicitNullValueCupsecureplusSmscode; set { _explicitNullValueCupsecureplusSmscode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cupsecureplus.smscode"); else _explicitNullProperties?.Remove("cupsecureplus.smscode"); } }
+        private string _explicitNullValueCupsecureplusSmscode = default!;
 #endif
         /// <summary>PayPal-generated third party access token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FacilitatorAccessToken { get; set; }
+        public string? FacilitatorAccessToken { get => _explicitNullValueFacilitatorAccessToken; set { _explicitNullValueFacilitatorAccessToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facilitatorAccessToken"); else _explicitNullProperties?.Remove("facilitatorAccessToken"); } }
+        private string? _explicitNullValueFacilitatorAccessToken = default!;
 #nullable restore
 #else
-        public string FacilitatorAccessToken { get; set; }
+        public string FacilitatorAccessToken { get => _explicitNullValueFacilitatorAccessToken; set { _explicitNullValueFacilitatorAccessToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facilitatorAccessToken"); else _explicitNullProperties?.Remove("facilitatorAccessToken"); } }
+        private string _explicitNullValueFacilitatorAccessToken = default!;
 #endif
         /// <summary>A payment session identifier returned by the card issuer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MD { get; set; }
+        public string? MD { get => _explicitNullValueMD; set { _explicitNullValueMD = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MD"); else _explicitNullProperties?.Remove("MD"); } }
+        private string? _explicitNullValueMD = default!;
 #nullable restore
 #else
-        public string MD { get; set; }
+        public string MD { get => _explicitNullValueMD; set { _explicitNullValueMD = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MD"); else _explicitNullProperties?.Remove("MD"); } }
+        private string _explicitNullValueMD = default!;
 #endif
         /// <summary>A random number sent to the mobile phone number of the shopper to verify the payment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OneTimePasscode { get; set; }
+        public string? OneTimePasscode { get => _explicitNullValueOneTimePasscode; set { _explicitNullValueOneTimePasscode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oneTimePasscode"); else _explicitNullProperties?.Remove("oneTimePasscode"); } }
+        private string? _explicitNullValueOneTimePasscode = default!;
 #nullable restore
 #else
-        public string OneTimePasscode { get; set; }
+        public string OneTimePasscode { get => _explicitNullValueOneTimePasscode; set { _explicitNullValueOneTimePasscode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oneTimePasscode"); else _explicitNullProperties?.Remove("oneTimePasscode"); } }
+        private string _explicitNullValueOneTimePasscode = default!;
 #endif
         /// <summary>PayPal-assigned ID for the order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OrderID { get; set; }
+        public string? OrderID { get => _explicitNullValueOrderID; set { _explicitNullValueOrderID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orderID"); else _explicitNullProperties?.Remove("orderID"); } }
+        private string? _explicitNullValueOrderID = default!;
 #nullable restore
 #else
-        public string OrderID { get; set; }
+        public string OrderID { get => _explicitNullValueOrderID; set { _explicitNullValueOrderID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orderID"); else _explicitNullProperties?.Remove("orderID"); } }
+        private string _explicitNullValueOrderID = default!;
 #endif
         /// <summary>(3D) Payment Authentication Request data for the card issuer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaReq { get; set; }
+        public string? PaReq { get => _explicitNullValuePaReq; set { _explicitNullValuePaReq = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PaReq"); else _explicitNullProperties?.Remove("PaReq"); } }
+        private string? _explicitNullValuePaReq = default!;
 #nullable restore
 #else
-        public string PaReq { get; set; }
+        public string PaReq { get => _explicitNullValuePaReq; set { _explicitNullValuePaReq = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PaReq"); else _explicitNullProperties?.Remove("PaReq"); } }
+        private string _explicitNullValuePaReq = default!;
 #endif
         /// <summary>(3D) Payment Authentication Response data by the card issuer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaRes { get; set; }
+        public string? PaRes { get => _explicitNullValuePaRes; set { _explicitNullValuePaRes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PaRes"); else _explicitNullProperties?.Remove("PaRes"); } }
+        private string? _explicitNullValuePaRes = default!;
 #nullable restore
 #else
-        public string PaRes { get; set; }
+        public string PaRes { get => _explicitNullValuePaRes; set { _explicitNullValuePaRes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PaRes"); else _explicitNullProperties?.Remove("PaRes"); } }
+        private string _explicitNullValuePaRes = default!;
 #endif
         /// <summary>PayPal-assigned ID for the payer (shopper).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PayerID { get; set; }
+        public string? PayerID { get => _explicitNullValuePayerID; set { _explicitNullValuePayerID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payerID"); else _explicitNullProperties?.Remove("payerID"); } }
+        private string? _explicitNullValuePayerID = default!;
 #nullable restore
 #else
-        public string PayerID { get; set; }
+        public string PayerID { get => _explicitNullValuePayerID; set { _explicitNullValuePayerID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payerID"); else _explicitNullProperties?.Remove("payerID"); } }
+        private string _explicitNullValuePayerID = default!;
 #endif
         /// <summary>Payload appended to the `returnURL` as a result of the redirect.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Payload { get; set; }
+        public string? Payload { get => _explicitNullValuePayload; set { _explicitNullValuePayload = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payload"); else _explicitNullProperties?.Remove("payload"); } }
+        private string? _explicitNullValuePayload = default!;
 #nullable restore
 #else
-        public string Payload { get; set; }
+        public string Payload { get => _explicitNullValuePayload; set { _explicitNullValuePayload = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payload"); else _explicitNullProperties?.Remove("payload"); } }
+        private string _explicitNullValuePayload = default!;
 #endif
         /// <summary>PayPal-generated ID for the payment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaymentID { get; set; }
+        public string? PaymentID { get => _explicitNullValuePaymentID; set { _explicitNullValuePaymentID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentID"); else _explicitNullProperties?.Remove("paymentID"); } }
+        private string? _explicitNullValuePaymentID = default!;
 #nullable restore
 #else
-        public string PaymentID { get; set; }
+        public string PaymentID { get => _explicitNullValuePaymentID; set { _explicitNullValuePaymentID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentID"); else _explicitNullProperties?.Remove("paymentID"); } }
+        private string _explicitNullValuePaymentID = default!;
 #endif
         /// <summary>Value passed from the WeChat MiniProgram `wx.requestPayment` **complete** callback. Possible values: any value starting with `requestPayment:`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaymentStatus { get; set; }
+        public string? PaymentStatus { get => _explicitNullValuePaymentStatus; set { _explicitNullValuePaymentStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentStatus"); else _explicitNullProperties?.Remove("paymentStatus"); } }
+        private string? _explicitNullValuePaymentStatus = default!;
 #nullable restore
 #else
-        public string PaymentStatus { get; set; }
+        public string PaymentStatus { get => _explicitNullValuePaymentStatus; set { _explicitNullValuePaymentStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentStatus"); else _explicitNullProperties?.Remove("paymentStatus"); } }
+        private string _explicitNullValuePaymentStatus = default!;
 #endif
         /// <summary>The result of the redirect as appended to the `returnURL`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RedirectResult { get; set; }
+        public string? RedirectResult { get => _explicitNullValueRedirectResult; set { _explicitNullValueRedirectResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redirectResult"); else _explicitNullProperties?.Remove("redirectResult"); } }
+        private string? _explicitNullValueRedirectResult = default!;
 #nullable restore
 #else
-        public string RedirectResult { get; set; }
+        public string RedirectResult { get => _explicitNullValueRedirectResult; set { _explicitNullValueRedirectResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redirectResult"); else _explicitNullProperties?.Remove("redirectResult"); } }
+        private string _explicitNullValueRedirectResult = default!;
 #endif
         /// <summary>Value you received from the WeChat Pay SDK.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResultCode { get; set; }
+        public string? ResultCode { get => _explicitNullValueResultCode; set { _explicitNullValueResultCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resultCode"); else _explicitNullProperties?.Remove("resultCode"); } }
+        private string? _explicitNullValueResultCode = default!;
 #nullable restore
 #else
-        public string ResultCode { get; set; }
+        public string ResultCode { get => _explicitNullValueResultCode; set { _explicitNullValueResultCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resultCode"); else _explicitNullProperties?.Remove("resultCode"); } }
+        private string _explicitNullValueResultCode = default!;
 #endif
         /// <summary>The query string as appended to the `returnURL` when using direct issuer links .</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReturnUrlQueryString { get; set; }
+        public string? ReturnUrlQueryString { get => _explicitNullValueReturnUrlQueryString; set { _explicitNullValueReturnUrlQueryString = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("returnUrlQueryString"); else _explicitNullProperties?.Remove("returnUrlQueryString"); } }
+        private string? _explicitNullValueReturnUrlQueryString = default!;
 #nullable restore
 #else
-        public string ReturnUrlQueryString { get; set; }
+        public string ReturnUrlQueryString { get => _explicitNullValueReturnUrlQueryString; set { _explicitNullValueReturnUrlQueryString = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("returnUrlQueryString"); else _explicitNullProperties?.Remove("returnUrlQueryString"); } }
+        private string _explicitNullValueReturnUrlQueryString = default!;
 #endif
         /// <summary>Base64-encoded string returned by the Component after the challenge flow. It contains the following parameter: `transStatus`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Threeds2ChallengeResult { get; set; }
+        public string? Threeds2ChallengeResult { get => _explicitNullValueThreeds2ChallengeResult; set { _explicitNullValueThreeds2ChallengeResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeds2.challengeResult"); else _explicitNullProperties?.Remove("threeds2.challengeResult"); } }
+        private string? _explicitNullValueThreeds2ChallengeResult = default!;
 #nullable restore
 #else
-        public string Threeds2ChallengeResult { get; set; }
+        public string Threeds2ChallengeResult { get => _explicitNullValueThreeds2ChallengeResult; set { _explicitNullValueThreeds2ChallengeResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeds2.challengeResult"); else _explicitNullProperties?.Remove("threeds2.challengeResult"); } }
+        private string _explicitNullValueThreeds2ChallengeResult = default!;
 #endif
         /// <summary>Base64-encoded string returned by the Component after the challenge flow. It contains the following parameter: `threeDSCompInd`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Threeds2Fingerprint { get; set; }
+        public string? Threeds2Fingerprint { get => _explicitNullValueThreeds2Fingerprint; set { _explicitNullValueThreeds2Fingerprint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeds2.fingerprint"); else _explicitNullProperties?.Remove("threeds2.fingerprint"); } }
+        private string? _explicitNullValueThreeds2Fingerprint = default!;
 #nullable restore
 #else
-        public string Threeds2Fingerprint { get; set; }
+        public string Threeds2Fingerprint { get => _explicitNullValueThreeds2Fingerprint; set { _explicitNullValueThreeds2Fingerprint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeds2.fingerprint"); else _explicitNullProperties?.Remove("threeds2.fingerprint"); } }
+        private string _explicitNullValueThreeds2Fingerprint = default!;
 #endif
         /// <summary>Base64-encoded string returned by the Component after the challenge flow. It contains the following parameters: `transStatus`, `authorisationToken`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ThreeDSResult { get; set; }
+        public string? ThreeDSResult { get => _explicitNullValueThreeDSResult; set { _explicitNullValueThreeDSResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSResult"); else _explicitNullProperties?.Remove("threeDSResult"); } }
+        private string? _explicitNullValueThreeDSResult = default!;
 #nullable restore
 #else
-        public string ThreeDSResult { get; set; }
+        public string ThreeDSResult { get => _explicitNullValueThreeDSResult; set { _explicitNullValueThreeDSResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSResult"); else _explicitNullProperties?.Remove("threeDSResult"); } }
+        private string _explicitNullValueThreeDSResult = default!;
 #endif
         /// <summary>PayPalv2-generated token for recurring payments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VaultToken { get; set; }
+        public string? VaultToken { get => _explicitNullValueVaultToken; set { _explicitNullValueVaultToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vaultToken"); else _explicitNullProperties?.Remove("vaultToken"); } }
+        private string? _explicitNullValueVaultToken = default!;
 #nullable restore
 #else
-        public string VaultToken { get; set; }
+        public string VaultToken { get => _explicitNullValueVaultToken; set { _explicitNullValueVaultToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vaultToken"); else _explicitNullProperties?.Remove("vaultToken"); } }
+        private string _explicitNullValueVaultToken = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentDetailsRequestDetails"/> and sets the default values.
@@ -190,7 +257,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentDetailsRequestDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentDetailsRequestDetails();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentDetailsRequestDetails(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -249,6 +316,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("threeds2.fingerprint", Threeds2Fingerprint);
             writer.WriteStringValue("threeDSResult", ThreeDSResult);
             writer.WriteStringValue("vaultToken", VaultToken);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

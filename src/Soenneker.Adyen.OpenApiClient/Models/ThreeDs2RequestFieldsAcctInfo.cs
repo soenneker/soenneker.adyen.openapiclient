@@ -12,94 +12,142 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ThreeDs2RequestFieldsAcctInfo : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("chAccAgeInd") is { } nullNodeChAccAgeInd && nullNodeChAccAgeInd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChAccAgeInd = null;
+            if (parseNode.GetChildNode("chAccChange") is { } nullNodeChAccChange && nullNodeChAccChange.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChAccChange = null;
+            if (parseNode.GetChildNode("chAccChangeInd") is { } nullNodeChAccChangeInd && nullNodeChAccChangeInd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChAccChangeInd = null;
+            if (parseNode.GetChildNode("chAccPwChange") is { } nullNodeChAccPwChange && nullNodeChAccPwChange.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChAccPwChange = null;
+            if (parseNode.GetChildNode("chAccPwChangeInd") is { } nullNodeChAccPwChangeInd && nullNodeChAccPwChangeInd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChAccPwChangeInd = null;
+            if (parseNode.GetChildNode("chAccString") is { } nullNodeChAccString && nullNodeChAccString.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChAccString = null;
+            if (parseNode.GetChildNode("nbPurchaseAccount") is { } nullNodeNbPurchaseAccount && nullNodeNbPurchaseAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NbPurchaseAccount = null;
+            if (parseNode.GetChildNode("paymentAccAge") is { } nullNodePaymentAccAge && nullNodePaymentAccAge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentAccAge = null;
+            if (parseNode.GetChildNode("paymentAccInd") is { } nullNodePaymentAccInd && nullNodePaymentAccInd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentAccInd = null;
+            if (parseNode.GetChildNode("provisionAttemptsDay") is { } nullNodeProvisionAttemptsDay && nullNodeProvisionAttemptsDay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProvisionAttemptsDay = null;
+            if (parseNode.GetChildNode("shipAddressUsage") is { } nullNodeShipAddressUsage && nullNodeShipAddressUsage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShipAddressUsage = null;
+            if (parseNode.GetChildNode("shipAddressUsageInd") is { } nullNodeShipAddressUsageInd && nullNodeShipAddressUsageInd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShipAddressUsageInd = null;
+            if (parseNode.GetChildNode("shipNameIndicator") is { } nullNodeShipNameIndicator && nullNodeShipNameIndicator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShipNameIndicator = null;
+            if (parseNode.GetChildNode("suspiciousAccActivity") is { } nullNodeSuspiciousAccActivity && nullNodeSuspiciousAccActivity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SuspiciousAccActivity = null;
+            if (parseNode.GetChildNode("txnActivityDay") is { } nullNodeTxnActivityDay && nullNodeTxnActivityDay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TxnActivityDay = null;
+            if (parseNode.GetChildNode("txnActivityYear") is { } nullNodeTxnActivityYear && nullNodeTxnActivityYear.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TxnActivityYear = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Length of time that the cardholder has had the account with the 3DS Requestor. Allowed values:* **01** — No account* **02** — Created during this transaction* **03** — Less than 30 days* **04** — 30–60 days* **05** — More than 60 days</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AcctInfoChAccAgeInd? ChAccAgeInd { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AcctInfoChAccAgeInd? ChAccAgeInd { get => _explicitNullValueChAccAgeInd; set { _explicitNullValueChAccAgeInd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chAccAgeInd"); else _explicitNullProperties?.Remove("chAccAgeInd"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.AcctInfoChAccAgeInd? _explicitNullValueChAccAgeInd = default!;
         /// <summary>Date that the cardholder’s account with the 3DS Requestor was last changed, including Billing or Shipping address, new payment account, or new user(s) added. Format: **YYYYMMDD**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ChAccChange { get; set; }
+        public string? ChAccChange { get => _explicitNullValueChAccChange; set { _explicitNullValueChAccChange = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chAccChange"); else _explicitNullProperties?.Remove("chAccChange"); } }
+        private string? _explicitNullValueChAccChange = default!;
 #nullable restore
 #else
-        public string ChAccChange { get; set; }
+        public string ChAccChange { get => _explicitNullValueChAccChange; set { _explicitNullValueChAccChange = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chAccChange"); else _explicitNullProperties?.Remove("chAccChange"); } }
+        private string _explicitNullValueChAccChange = default!;
 #endif
         /// <summary>Length of time since the cardholder’s account information with the 3DS Requestor was last changed, including Billing or Shipping address, new payment account, or new user(s) added. Allowed values:* **01** — Changed during this transaction* **02** — Less than 30 days* **03** — 30–60 days* **04** — More than 60 days</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AcctInfoChAccChangeInd? ChAccChangeInd { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AcctInfoChAccChangeInd? ChAccChangeInd { get => _explicitNullValueChAccChangeInd; set { _explicitNullValueChAccChangeInd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chAccChangeInd"); else _explicitNullProperties?.Remove("chAccChangeInd"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.AcctInfoChAccChangeInd? _explicitNullValueChAccChangeInd = default!;
         /// <summary>Date that cardholder’s account with the 3DS Requestor had a password change or account reset. Format: **YYYYMMDD**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ChAccPwChange { get; set; }
+        public string? ChAccPwChange { get => _explicitNullValueChAccPwChange; set { _explicitNullValueChAccPwChange = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chAccPwChange"); else _explicitNullProperties?.Remove("chAccPwChange"); } }
+        private string? _explicitNullValueChAccPwChange = default!;
 #nullable restore
 #else
-        public string ChAccPwChange { get; set; }
+        public string ChAccPwChange { get => _explicitNullValueChAccPwChange; set { _explicitNullValueChAccPwChange = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chAccPwChange"); else _explicitNullProperties?.Remove("chAccPwChange"); } }
+        private string _explicitNullValueChAccPwChange = default!;
 #endif
         /// <summary>Indicates the length of time since the cardholder’s account with the 3DS Requestor had a password change or account reset. Allowed values:* **01** — No change* **02** — Changed during this transaction* **03** — Less than 30 days* **04** — 30–60 days* **05** — More than 60 days</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AcctInfoChAccPwChangeInd? ChAccPwChangeInd { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AcctInfoChAccPwChangeInd? ChAccPwChangeInd { get => _explicitNullValueChAccPwChangeInd; set { _explicitNullValueChAccPwChangeInd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chAccPwChangeInd"); else _explicitNullProperties?.Remove("chAccPwChangeInd"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.AcctInfoChAccPwChangeInd? _explicitNullValueChAccPwChangeInd = default!;
         /// <summary>Date that the cardholder opened the account with the 3DS Requestor. Format: **YYYYMMDD**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ChAccString { get; set; }
+        public string? ChAccString { get => _explicitNullValueChAccString; set { _explicitNullValueChAccString = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chAccString"); else _explicitNullProperties?.Remove("chAccString"); } }
+        private string? _explicitNullValueChAccString = default!;
 #nullable restore
 #else
-        public string ChAccString { get; set; }
+        public string ChAccString { get => _explicitNullValueChAccString; set { _explicitNullValueChAccString = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chAccString"); else _explicitNullProperties?.Remove("chAccString"); } }
+        private string _explicitNullValueChAccString = default!;
 #endif
         /// <summary>Number of purchases with this cardholder account during the previous six months. Max length: 4 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NbPurchaseAccount { get; set; }
+        public string? NbPurchaseAccount { get => _explicitNullValueNbPurchaseAccount; set { _explicitNullValueNbPurchaseAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nbPurchaseAccount"); else _explicitNullProperties?.Remove("nbPurchaseAccount"); } }
+        private string? _explicitNullValueNbPurchaseAccount = default!;
 #nullable restore
 #else
-        public string NbPurchaseAccount { get; set; }
+        public string NbPurchaseAccount { get => _explicitNullValueNbPurchaseAccount; set { _explicitNullValueNbPurchaseAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nbPurchaseAccount"); else _explicitNullProperties?.Remove("nbPurchaseAccount"); } }
+        private string _explicitNullValueNbPurchaseAccount = default!;
 #endif
         /// <summary>String that the payment account was enrolled in the cardholder’s account with the 3DS Requestor. Format: **YYYYMMDD**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaymentAccAge { get; set; }
+        public string? PaymentAccAge { get => _explicitNullValuePaymentAccAge; set { _explicitNullValuePaymentAccAge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentAccAge"); else _explicitNullProperties?.Remove("paymentAccAge"); } }
+        private string? _explicitNullValuePaymentAccAge = default!;
 #nullable restore
 #else
-        public string PaymentAccAge { get; set; }
+        public string PaymentAccAge { get => _explicitNullValuePaymentAccAge; set { _explicitNullValuePaymentAccAge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentAccAge"); else _explicitNullProperties?.Remove("paymentAccAge"); } }
+        private string _explicitNullValuePaymentAccAge = default!;
 #endif
         /// <summary>Indicates the length of time that the payment account was enrolled in the cardholder’s account with the 3DS Requestor. Allowed values:* **01** — No account (guest checkout)* **02** — During this transaction* **03** — Less than 30 days* **04** — 30–60 days* **05** — More than 60 days</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AcctInfoPaymentAccInd? PaymentAccInd { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AcctInfoPaymentAccInd? PaymentAccInd { get => _explicitNullValuePaymentAccInd; set { _explicitNullValuePaymentAccInd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentAccInd"); else _explicitNullProperties?.Remove("paymentAccInd"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.AcctInfoPaymentAccInd? _explicitNullValuePaymentAccInd = default!;
         /// <summary>Number of Add Card attempts in the last 24 hours. Max length: 3 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProvisionAttemptsDay { get; set; }
+        public string? ProvisionAttemptsDay { get => _explicitNullValueProvisionAttemptsDay; set { _explicitNullValueProvisionAttemptsDay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provisionAttemptsDay"); else _explicitNullProperties?.Remove("provisionAttemptsDay"); } }
+        private string? _explicitNullValueProvisionAttemptsDay = default!;
 #nullable restore
 #else
-        public string ProvisionAttemptsDay { get; set; }
+        public string ProvisionAttemptsDay { get => _explicitNullValueProvisionAttemptsDay; set { _explicitNullValueProvisionAttemptsDay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provisionAttemptsDay"); else _explicitNullProperties?.Remove("provisionAttemptsDay"); } }
+        private string _explicitNullValueProvisionAttemptsDay = default!;
 #endif
         /// <summary>String when the shipping address used for this transaction was first used with the 3DS Requestor. Format: **YYYYMMDD**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ShipAddressUsage { get; set; }
+        public string? ShipAddressUsage { get => _explicitNullValueShipAddressUsage; set { _explicitNullValueShipAddressUsage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shipAddressUsage"); else _explicitNullProperties?.Remove("shipAddressUsage"); } }
+        private string? _explicitNullValueShipAddressUsage = default!;
 #nullable restore
 #else
-        public string ShipAddressUsage { get; set; }
+        public string ShipAddressUsage { get => _explicitNullValueShipAddressUsage; set { _explicitNullValueShipAddressUsage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shipAddressUsage"); else _explicitNullProperties?.Remove("shipAddressUsage"); } }
+        private string _explicitNullValueShipAddressUsage = default!;
 #endif
         /// <summary>Indicates when the shipping address used for this transaction was first used with the 3DS Requestor. Allowed values:* **01** — This transaction* **02** — Less than 30 days* **03** — 30–60 days* **04** — More than 60 days</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AcctInfoShipAddressUsageInd? ShipAddressUsageInd { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AcctInfoShipAddressUsageInd? ShipAddressUsageInd { get => _explicitNullValueShipAddressUsageInd; set { _explicitNullValueShipAddressUsageInd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shipAddressUsageInd"); else _explicitNullProperties?.Remove("shipAddressUsageInd"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.AcctInfoShipAddressUsageInd? _explicitNullValueShipAddressUsageInd = default!;
         /// <summary>Indicates if the Cardholder Name on the account is identical to the shipping Name used for this transaction. Allowed values:* **01** — Account Name identical to shipping Name* **02** — Account Name different to shipping Name</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AcctInfoShipNameIndicator? ShipNameIndicator { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AcctInfoShipNameIndicator? ShipNameIndicator { get => _explicitNullValueShipNameIndicator; set { _explicitNullValueShipNameIndicator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shipNameIndicator"); else _explicitNullProperties?.Remove("shipNameIndicator"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.AcctInfoShipNameIndicator? _explicitNullValueShipNameIndicator = default!;
         /// <summary>Indicates whether the 3DS Requestor has experienced suspicious activity (including previous fraud) on the cardholder account. Allowed values:* **01** — No suspicious activity has been observed* **02** — Suspicious activity has been observed</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AcctInfoSuspiciousAccActivity? SuspiciousAccActivity { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AcctInfoSuspiciousAccActivity? SuspiciousAccActivity { get => _explicitNullValueSuspiciousAccActivity; set { _explicitNullValueSuspiciousAccActivity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suspiciousAccActivity"); else _explicitNullProperties?.Remove("suspiciousAccActivity"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.AcctInfoSuspiciousAccActivity? _explicitNullValueSuspiciousAccActivity = default!;
         /// <summary>Number of transactions (successful and abandoned) for this cardholder account with the 3DS Requestor across all payment accounts in the previous 24 hours. Max length: 3 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TxnActivityDay { get; set; }
+        public string? TxnActivityDay { get => _explicitNullValueTxnActivityDay; set { _explicitNullValueTxnActivityDay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("txnActivityDay"); else _explicitNullProperties?.Remove("txnActivityDay"); } }
+        private string? _explicitNullValueTxnActivityDay = default!;
 #nullable restore
 #else
-        public string TxnActivityDay { get; set; }
+        public string TxnActivityDay { get => _explicitNullValueTxnActivityDay; set { _explicitNullValueTxnActivityDay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("txnActivityDay"); else _explicitNullProperties?.Remove("txnActivityDay"); } }
+        private string _explicitNullValueTxnActivityDay = default!;
 #endif
         /// <summary>Number of transactions (successful and abandoned) for this cardholder account with the 3DS Requestor across all payment accounts in the previous year. Max length: 3 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TxnActivityYear { get; set; }
+        public string? TxnActivityYear { get => _explicitNullValueTxnActivityYear; set { _explicitNullValueTxnActivityYear = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("txnActivityYear"); else _explicitNullProperties?.Remove("txnActivityYear"); } }
+        private string? _explicitNullValueTxnActivityYear = default!;
 #nullable restore
 #else
-        public string TxnActivityYear { get; set; }
+        public string TxnActivityYear { get => _explicitNullValueTxnActivityYear; set { _explicitNullValueTxnActivityYear = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("txnActivityYear"); else _explicitNullProperties?.Remove("txnActivityYear"); } }
+        private string _explicitNullValueTxnActivityYear = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFieldsAcctInfo"/> and sets the default values.
@@ -116,7 +164,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFieldsAcctInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFieldsAcctInfo();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFieldsAcctInfo(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -167,6 +215,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AcctInfoSuspiciousAccActivity>("suspiciousAccActivity", SuspiciousAccActivity);
             writer.WriteStringValue("txnActivityDay", TxnActivityDay);
             writer.WriteStringValue("txnActivityYear", TxnActivityYear);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

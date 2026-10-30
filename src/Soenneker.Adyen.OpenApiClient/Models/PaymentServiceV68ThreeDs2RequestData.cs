@@ -11,268 +11,383 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PaymentServiceV68ThreeDs2RequestData : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("acctInfo") is { } nullNodeAcctInfo && nullNodeAcctInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcctInfo = null;
+            if (parseNode.GetChildNode("acctType") is { } nullNodeAcctType && nullNodeAcctType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcctType = null;
+            if (parseNode.GetChildNode("acquirerBIN") is { } nullNodeAcquirerBIN && nullNodeAcquirerBIN.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcquirerBIN = null;
+            if (parseNode.GetChildNode("acquirerMerchantID") is { } nullNodeAcquirerMerchantID && nullNodeAcquirerMerchantID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcquirerMerchantID = null;
+            if (parseNode.GetChildNode("addrMatch") is { } nullNodeAddrMatch && nullNodeAddrMatch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddrMatch = null;
+            if (parseNode.GetChildNode("authenticationOnly") is { } nullNodeAuthenticationOnly && nullNodeAuthenticationOnly.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthenticationOnly = null;
+            if (parseNode.GetChildNode("challengeIndicator") is { } nullNodeChallengeIndicator && nullNodeChallengeIndicator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChallengeIndicator = null;
+            if (parseNode.GetChildNode("deviceChannel") is { } nullNodeDeviceChannel && nullNodeDeviceChannel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeviceChannel = null;
+            if (parseNode.GetChildNode("deviceRenderOptions") is { } nullNodeDeviceRenderOptions && nullNodeDeviceRenderOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeviceRenderOptions = null;
+            if (parseNode.GetChildNode("homePhone") is { } nullNodeHomePhone && nullNodeHomePhone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HomePhone = null;
+            if (parseNode.GetChildNode("mcc") is { } nullNodeMcc && nullNodeMcc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mcc = null;
+            if (parseNode.GetChildNode("merchantName") is { } nullNodeMerchantName && nullNodeMerchantName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantName = null;
+            if (parseNode.GetChildNode("messageVersion") is { } nullNodeMessageVersion && nullNodeMessageVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageVersion = null;
+            if (parseNode.GetChildNode("mobilePhone") is { } nullNodeMobilePhone && nullNodeMobilePhone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MobilePhone = null;
+            if (parseNode.GetChildNode("notificationURL") is { } nullNodeNotificationURL && nullNodeNotificationURL.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotificationURL = null;
+            if (parseNode.GetChildNode("paymentAuthenticationUseCase") is { } nullNodePaymentAuthenticationUseCase && nullNodePaymentAuthenticationUseCase.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentAuthenticationUseCase = null;
+            if (parseNode.GetChildNode("payTokenInd") is { } nullNodePayTokenInd && nullNodePayTokenInd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayTokenInd = null;
+            if (parseNode.GetChildNode("purchaseInstalData") is { } nullNodePurchaseInstalData && nullNodePurchaseInstalData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PurchaseInstalData = null;
+            if (parseNode.GetChildNode("recurringExpiry") is { } nullNodeRecurringExpiry && nullNodeRecurringExpiry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecurringExpiry = null;
+            if (parseNode.GetChildNode("recurringFrequency") is { } nullNodeRecurringFrequency && nullNodeRecurringFrequency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecurringFrequency = null;
+            if (parseNode.GetChildNode("sdkAppID") is { } nullNodeSdkAppID && nullNodeSdkAppID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SdkAppID = null;
+            if (parseNode.GetChildNode("sdkEncData") is { } nullNodeSdkEncData && nullNodeSdkEncData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SdkEncData = null;
+            if (parseNode.GetChildNode("sdkEphemPubKey") is { } nullNodeSdkEphemPubKey && nullNodeSdkEphemPubKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SdkEphemPubKey = null;
+            if (parseNode.GetChildNode("sdkMaxTimeout") is { } nullNodeSdkMaxTimeout && nullNodeSdkMaxTimeout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SdkMaxTimeout = null;
+            if (parseNode.GetChildNode("sdkReferenceNumber") is { } nullNodeSdkReferenceNumber && nullNodeSdkReferenceNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SdkReferenceNumber = null;
+            if (parseNode.GetChildNode("sdkTransID") is { } nullNodeSdkTransID && nullNodeSdkTransID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SdkTransID = null;
+            if (parseNode.GetChildNode("sdkVersion") is { } nullNodeSdkVersion && nullNodeSdkVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SdkVersion = null;
+            if (parseNode.GetChildNode("threeDSCompInd") is { } nullNodeThreeDSCompInd && nullNodeThreeDSCompInd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDSCompInd = null;
+            if (parseNode.GetChildNode("threeDSRequestorAuthenticationInd") is { } nullNodeThreeDSRequestorAuthenticationInd && nullNodeThreeDSRequestorAuthenticationInd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDSRequestorAuthenticationInd = null;
+            if (parseNode.GetChildNode("threeDSRequestorAuthenticationInfo") is { } nullNodeThreeDSRequestorAuthenticationInfo && nullNodeThreeDSRequestorAuthenticationInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDSRequestorAuthenticationInfo = null;
+            if (parseNode.GetChildNode("threeDSRequestorChallengeInd") is { } nullNodeThreeDSRequestorChallengeInd && nullNodeThreeDSRequestorChallengeInd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDSRequestorChallengeInd = null;
+            if (parseNode.GetChildNode("threeDSRequestorID") is { } nullNodeThreeDSRequestorID && nullNodeThreeDSRequestorID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDSRequestorID = null;
+            if (parseNode.GetChildNode("threeDSRequestorName") is { } nullNodeThreeDSRequestorName && nullNodeThreeDSRequestorName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDSRequestorName = null;
+            if (parseNode.GetChildNode("threeDSRequestorPriorAuthenticationInfo") is { } nullNodeThreeDSRequestorPriorAuthenticationInfo && nullNodeThreeDSRequestorPriorAuthenticationInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDSRequestorPriorAuthenticationInfo = null;
+            if (parseNode.GetChildNode("threeDSRequestorURL") is { } nullNodeThreeDSRequestorURL && nullNodeThreeDSRequestorURL.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDSRequestorURL = null;
+            if (parseNode.GetChildNode("transactionType") is { } nullNodeTransactionType && nullNodeTransactionType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionType = null;
+            if (parseNode.GetChildNode("transType") is { } nullNodeTransType && nullNodeTransType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransType = null;
+            if (parseNode.GetChildNode("whiteListStatus") is { } nullNodeWhiteListStatus && nullNodeWhiteListStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WhiteListStatus = null;
+            if (parseNode.GetChildNode("workPhone") is { } nullNodeWorkPhone && nullNodeWorkPhone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkPhone = null;
+        }
+
         /// <summary>Additional information about the cardholder’s account provided by the 3DS Requestor.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataAcctInfo? AcctInfo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataAcctInfo? AcctInfo { get => _explicitNullValueAcctInfo; set { _explicitNullValueAcctInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acctInfo"); else _explicitNullProperties?.Remove("acctInfo"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataAcctInfo? _explicitNullValueAcctInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataAcctInfo AcctInfo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataAcctInfo AcctInfo { get => _explicitNullValueAcctInfo; set { _explicitNullValueAcctInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acctInfo"); else _explicitNullProperties?.Remove("acctInfo"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataAcctInfo _explicitNullValueAcctInfo = default!;
 #endif
         /// <summary>Indicates the type of account. For example, for a multi-account card product. Length: 2 characters. Allowed values:* **01** — Not applicable* **02** — Credit* **03** — Debit</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataAcctType? AcctType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataAcctType? AcctType { get => _explicitNullValueAcctType; set { _explicitNullValueAcctType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acctType"); else _explicitNullProperties?.Remove("acctType"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataAcctType? _explicitNullValueAcctType = default!;
         /// <summary>Required for [authentication-only integration](https://docs.adyen.com/online-payments/3d-secure/other-3ds-flows/authentication-only). The acquiring BIN enrolled for 3D Secure 2. This string should match the value that you will use in the authorisation. Use 123456 on the Test platform.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AcquirerBIN { get; set; }
+        public string? AcquirerBIN { get => _explicitNullValueAcquirerBIN; set { _explicitNullValueAcquirerBIN = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acquirerBIN"); else _explicitNullProperties?.Remove("acquirerBIN"); } }
+        private string? _explicitNullValueAcquirerBIN = default!;
 #nullable restore
 #else
-        public string AcquirerBIN { get; set; }
+        public string AcquirerBIN { get => _explicitNullValueAcquirerBIN; set { _explicitNullValueAcquirerBIN = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acquirerBIN"); else _explicitNullProperties?.Remove("acquirerBIN"); } }
+        private string _explicitNullValueAcquirerBIN = default!;
 #endif
         /// <summary>Required for [authentication-only integration](https://docs.adyen.com/online-payments/3d-secure/other-3ds-flows/authentication-only). The merchantId that is enrolled for 3D Secure 2 by the merchant&apos;s acquirer. This string should match the value that you will use in the authorisation. Use 123456 on the Test platform.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AcquirerMerchantID { get; set; }
+        public string? AcquirerMerchantID { get => _explicitNullValueAcquirerMerchantID; set { _explicitNullValueAcquirerMerchantID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acquirerMerchantID"); else _explicitNullProperties?.Remove("acquirerMerchantID"); } }
+        private string? _explicitNullValueAcquirerMerchantID = default!;
 #nullable restore
 #else
-        public string AcquirerMerchantID { get; set; }
+        public string AcquirerMerchantID { get => _explicitNullValueAcquirerMerchantID; set { _explicitNullValueAcquirerMerchantID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acquirerMerchantID"); else _explicitNullProperties?.Remove("acquirerMerchantID"); } }
+        private string _explicitNullValueAcquirerMerchantID = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether the cardholder shipping address and cardholder billing address are the same. Allowed values:* **Y** — Shipping address matches billing address.* **N** — Shipping address does not match billing address.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataAddrMatch? AddrMatch { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataAddrMatch? AddrMatch { get => _explicitNullValueAddrMatch; set { _explicitNullValueAddrMatch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("addrMatch"); else _explicitNullProperties?.Remove("addrMatch"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataAddrMatch? _explicitNullValueAddrMatch = default!;
         /// <summary>If set to true, you will only perform the [3D Secure 2 authentication](https://docs.adyen.com/online-payments/3d-secure/other-3ds-flows/authentication-only), and not the payment authorisation.</summary>
         [Obsolete("")]
-        public bool? AuthenticationOnly { get; set; }
+        public bool? AuthenticationOnly { get => _explicitNullValueAuthenticationOnly; set { _explicitNullValueAuthenticationOnly = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticationOnly"); else _explicitNullProperties?.Remove("authenticationOnly"); } }
+        private bool? _explicitNullValueAuthenticationOnly = default!;
         /// <summary>Possibility to specify a preference for receiving a challenge from the issuer.Allowed values:* `noPreference`* `requestNoChallenge`* `requestChallenge`* `requestChallengeAsMandate`</summary>
         [Obsolete("")]
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataChallengeIndicator? ChallengeIndicator { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataChallengeIndicator? ChallengeIndicator { get => _explicitNullValueChallengeIndicator; set { _explicitNullValueChallengeIndicator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("challengeIndicator"); else _explicitNullProperties?.Remove("challengeIndicator"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataChallengeIndicator? _explicitNullValueChallengeIndicator = default!;
         /// <summary>The environment of the shopper.Allowed values:* `app`* `browser`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceChannel { get; set; }
+        public string? DeviceChannel { get => _explicitNullValueDeviceChannel; set { _explicitNullValueDeviceChannel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deviceChannel"); else _explicitNullProperties?.Remove("deviceChannel"); } }
+        private string? _explicitNullValueDeviceChannel = default!;
 #nullable restore
 #else
-        public string DeviceChannel { get; set; }
+        public string DeviceChannel { get => _explicitNullValueDeviceChannel; set { _explicitNullValueDeviceChannel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deviceChannel"); else _explicitNullProperties?.Remove("deviceChannel"); } }
+        private string _explicitNullValueDeviceChannel = default!;
 #endif
         /// <summary>Display options for the 3D Secure 2 SDK.Optional and only for `deviceChannel` **app**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataDeviceRenderOptions? DeviceRenderOptions { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataDeviceRenderOptions? DeviceRenderOptions { get => _explicitNullValueDeviceRenderOptions; set { _explicitNullValueDeviceRenderOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deviceRenderOptions"); else _explicitNullProperties?.Remove("deviceRenderOptions"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataDeviceRenderOptions? _explicitNullValueDeviceRenderOptions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataDeviceRenderOptions DeviceRenderOptions { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataDeviceRenderOptions DeviceRenderOptions { get => _explicitNullValueDeviceRenderOptions; set { _explicitNullValueDeviceRenderOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deviceRenderOptions"); else _explicitNullProperties?.Remove("deviceRenderOptions"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataDeviceRenderOptions _explicitNullValueDeviceRenderOptions = default!;
 #endif
         /// <summary>The home phone number provided by the cardholder. The phone number must consist of a country code, followed by the number. If the value you provide does not follow the guidelines, we do not submit it for authentication.&gt; Required for Visa and JCB transactions that require 3D Secure 2 authentication, if you did not include the `shopperEmail`, and did not send the shopper&apos;s phone number in `telephoneNumber`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataHomePhone? HomePhone { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataHomePhone? HomePhone { get => _explicitNullValueHomePhone; set { _explicitNullValueHomePhone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("homePhone"); else _explicitNullProperties?.Remove("homePhone"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataHomePhone? _explicitNullValueHomePhone = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataHomePhone HomePhone { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataHomePhone HomePhone { get => _explicitNullValueHomePhone; set { _explicitNullValueHomePhone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("homePhone"); else _explicitNullProperties?.Remove("homePhone"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataHomePhone _explicitNullValueHomePhone = default!;
 #endif
         /// <summary>Required for merchants that have been enrolled for 3D Secure 2 by another party than Adyen, mostly [authentication-only integrations](https://docs.adyen.com/online-payments/3d-secure/other-3ds-flows/authentication-only). The `mcc` is a four-digit code with which the previously given `acquirerMerchantID` is registered at the scheme.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Mcc { get; set; }
+        public string? Mcc { get => _explicitNullValueMcc; set { _explicitNullValueMcc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mcc"); else _explicitNullProperties?.Remove("mcc"); } }
+        private string? _explicitNullValueMcc = default!;
 #nullable restore
 #else
-        public string Mcc { get; set; }
+        public string Mcc { get => _explicitNullValueMcc; set { _explicitNullValueMcc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mcc"); else _explicitNullProperties?.Remove("mcc"); } }
+        private string _explicitNullValueMcc = default!;
 #endif
         /// <summary>Required for [authentication-only integration](https://docs.adyen.com/online-payments/3d-secure/other-3ds-flows/authentication-only). The merchant name that the issuer presents to the shopper if they get a challenge. We recommend to use the same value that you will use in the authorization. Maximum length is 40 characters.&gt; Optional for a [full 3D Secure 2 integration](https://docs.adyen.com/online-payments/3d-secure/native-3ds2/api-integration). Use this field if you are enrolled for 3D Secure 2 with us and want to override the merchant name already configured on your account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MerchantName { get; set; }
+        public string? MerchantName { get => _explicitNullValueMerchantName; set { _explicitNullValueMerchantName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantName"); else _explicitNullProperties?.Remove("merchantName"); } }
+        private string? _explicitNullValueMerchantName = default!;
 #nullable restore
 #else
-        public string MerchantName { get; set; }
+        public string MerchantName { get => _explicitNullValueMerchantName; set { _explicitNullValueMerchantName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantName"); else _explicitNullProperties?.Remove("merchantName"); } }
+        private string _explicitNullValueMerchantName = default!;
 #endif
         /// <summary>The `messageVersion` value indicating the 3D Secure 2 protocol version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MessageVersion { get; set; }
+        public string? MessageVersion { get => _explicitNullValueMessageVersion; set { _explicitNullValueMessageVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messageVersion"); else _explicitNullProperties?.Remove("messageVersion"); } }
+        private string? _explicitNullValueMessageVersion = default!;
 #nullable restore
 #else
-        public string MessageVersion { get; set; }
+        public string MessageVersion { get => _explicitNullValueMessageVersion; set { _explicitNullValueMessageVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messageVersion"); else _explicitNullProperties?.Remove("messageVersion"); } }
+        private string _explicitNullValueMessageVersion = default!;
 #endif
         /// <summary>The mobile phone number provided by the cardholder. The phone number must consist of a country code, followed by the number. If the value you provide does not follow the guidelines, we do not submit it for authentication.&gt; Required for Visa and JCB transactions that require 3D Secure 2 authentication, if you did not include the `shopperEmail`, and did not send the shopper&apos;s phone number in `telephoneNumber`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataMobilePhone? MobilePhone { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataMobilePhone? MobilePhone { get => _explicitNullValueMobilePhone; set { _explicitNullValueMobilePhone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mobilePhone"); else _explicitNullProperties?.Remove("mobilePhone"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataMobilePhone? _explicitNullValueMobilePhone = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataMobilePhone MobilePhone { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataMobilePhone MobilePhone { get => _explicitNullValueMobilePhone; set { _explicitNullValueMobilePhone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mobilePhone"); else _explicitNullProperties?.Remove("mobilePhone"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataMobilePhone _explicitNullValueMobilePhone = default!;
 #endif
         /// <summary>URL to where the issuer should send the `CRes`. Required if you are not using components for `channel` **Web** or if you are using classic integration `deviceChannel` **browser**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NotificationURL { get; set; }
+        public string? NotificationURL { get => _explicitNullValueNotificationURL; set { _explicitNullValueNotificationURL = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationURL"); else _explicitNullProperties?.Remove("notificationURL"); } }
+        private string? _explicitNullValueNotificationURL = default!;
 #nullable restore
 #else
-        public string NotificationURL { get; set; }
+        public string NotificationURL { get => _explicitNullValueNotificationURL; set { _explicitNullValueNotificationURL = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationURL"); else _explicitNullProperties?.Remove("notificationURL"); } }
+        private string _explicitNullValueNotificationURL = default!;
 #endif
         /// <summary>Indicates the type of payment for which an authentication is requested (message extension)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaymentAuthenticationUseCase { get; set; }
+        public string? PaymentAuthenticationUseCase { get => _explicitNullValuePaymentAuthenticationUseCase; set { _explicitNullValuePaymentAuthenticationUseCase = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentAuthenticationUseCase"); else _explicitNullProperties?.Remove("paymentAuthenticationUseCase"); } }
+        private string? _explicitNullValuePaymentAuthenticationUseCase = default!;
 #nullable restore
 #else
-        public string PaymentAuthenticationUseCase { get; set; }
+        public string PaymentAuthenticationUseCase { get => _explicitNullValuePaymentAuthenticationUseCase; set { _explicitNullValuePaymentAuthenticationUseCase = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentAuthenticationUseCase"); else _explicitNullProperties?.Remove("paymentAuthenticationUseCase"); } }
+        private string _explicitNullValuePaymentAuthenticationUseCase = default!;
 #endif
         /// <summary>Value **true** indicates that the transaction was de-tokenised prior to being received by the ACS.</summary>
-        public bool? PayTokenInd { get; set; }
+        public bool? PayTokenInd { get => _explicitNullValuePayTokenInd; set { _explicitNullValuePayTokenInd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payTokenInd"); else _explicitNullProperties?.Remove("payTokenInd"); } }
+        private bool? _explicitNullValuePayTokenInd = default!;
         /// <summary>Indicates the maximum number of authorisations permitted for instalment payments. Length: 1–3 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PurchaseInstalData { get; set; }
+        public string? PurchaseInstalData { get => _explicitNullValuePurchaseInstalData; set { _explicitNullValuePurchaseInstalData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purchaseInstalData"); else _explicitNullProperties?.Remove("purchaseInstalData"); } }
+        private string? _explicitNullValuePurchaseInstalData = default!;
 #nullable restore
 #else
-        public string PurchaseInstalData { get; set; }
+        public string PurchaseInstalData { get => _explicitNullValuePurchaseInstalData; set { _explicitNullValuePurchaseInstalData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purchaseInstalData"); else _explicitNullProperties?.Remove("purchaseInstalData"); } }
+        private string _explicitNullValuePurchaseInstalData = default!;
 #endif
         /// <summary>Date after which no further authorisations shall be performed. Format: YYYYMMDD</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RecurringExpiry { get; set; }
+        public string? RecurringExpiry { get => _explicitNullValueRecurringExpiry; set { _explicitNullValueRecurringExpiry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recurringExpiry"); else _explicitNullProperties?.Remove("recurringExpiry"); } }
+        private string? _explicitNullValueRecurringExpiry = default!;
 #nullable restore
 #else
-        public string RecurringExpiry { get; set; }
+        public string RecurringExpiry { get => _explicitNullValueRecurringExpiry; set { _explicitNullValueRecurringExpiry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recurringExpiry"); else _explicitNullProperties?.Remove("recurringExpiry"); } }
+        private string _explicitNullValueRecurringExpiry = default!;
 #endif
         /// <summary>Indicates the minimum number of days between authorisations. Maximum length: 4 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RecurringFrequency { get; set; }
+        public string? RecurringFrequency { get => _explicitNullValueRecurringFrequency; set { _explicitNullValueRecurringFrequency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recurringFrequency"); else _explicitNullProperties?.Remove("recurringFrequency"); } }
+        private string? _explicitNullValueRecurringFrequency = default!;
 #nullable restore
 #else
-        public string RecurringFrequency { get; set; }
+        public string RecurringFrequency { get => _explicitNullValueRecurringFrequency; set { _explicitNullValueRecurringFrequency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recurringFrequency"); else _explicitNullProperties?.Remove("recurringFrequency"); } }
+        private string _explicitNullValueRecurringFrequency = default!;
 #endif
         /// <summary>The `sdkAppID` value as received from the 3D Secure 2 SDK.Required for `deviceChannel` set to **app**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SdkAppID { get; set; }
+        public string? SdkAppID { get => _explicitNullValueSdkAppID; set { _explicitNullValueSdkAppID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdkAppID"); else _explicitNullProperties?.Remove("sdkAppID"); } }
+        private string? _explicitNullValueSdkAppID = default!;
 #nullable restore
 #else
-        public string SdkAppID { get; set; }
+        public string SdkAppID { get => _explicitNullValueSdkAppID; set { _explicitNullValueSdkAppID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdkAppID"); else _explicitNullProperties?.Remove("sdkAppID"); } }
+        private string _explicitNullValueSdkAppID = default!;
 #endif
         /// <summary>The `sdkEncData` value as received from the 3D Secure 2 SDK.Required for `deviceChannel` set to **app**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SdkEncData { get; set; }
+        public string? SdkEncData { get => _explicitNullValueSdkEncData; set { _explicitNullValueSdkEncData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdkEncData"); else _explicitNullProperties?.Remove("sdkEncData"); } }
+        private string? _explicitNullValueSdkEncData = default!;
 #nullable restore
 #else
-        public string SdkEncData { get; set; }
+        public string SdkEncData { get => _explicitNullValueSdkEncData; set { _explicitNullValueSdkEncData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdkEncData"); else _explicitNullProperties?.Remove("sdkEncData"); } }
+        private string _explicitNullValueSdkEncData = default!;
 #endif
         /// <summary>The sdkEphemPubKey property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68SdkEphemPubKey? SdkEphemPubKey { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68SdkEphemPubKey? SdkEphemPubKey { get => _explicitNullValueSdkEphemPubKey; set { _explicitNullValueSdkEphemPubKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdkEphemPubKey"); else _explicitNullProperties?.Remove("sdkEphemPubKey"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68SdkEphemPubKey? _explicitNullValueSdkEphemPubKey = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68SdkEphemPubKey SdkEphemPubKey { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68SdkEphemPubKey SdkEphemPubKey { get => _explicitNullValueSdkEphemPubKey; set { _explicitNullValueSdkEphemPubKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdkEphemPubKey"); else _explicitNullProperties?.Remove("sdkEphemPubKey"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68SdkEphemPubKey _explicitNullValueSdkEphemPubKey = default!;
 #endif
         /// <summary>The maximum amount of time in minutes for the 3D Secure 2 authentication process.Optional and only for `deviceChannel` set to **app**. Defaults to **60** minutes.</summary>
-        public int? SdkMaxTimeout { get; set; }
+        public int? SdkMaxTimeout { get => _explicitNullValueSdkMaxTimeout; set { _explicitNullValueSdkMaxTimeout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdkMaxTimeout"); else _explicitNullProperties?.Remove("sdkMaxTimeout"); } }
+        private int? _explicitNullValueSdkMaxTimeout = default!;
         /// <summary>The `sdkReferenceNumber` value as received from the 3D Secure 2 SDK.Only for `deviceChannel` set to **app**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SdkReferenceNumber { get; set; }
+        public string? SdkReferenceNumber { get => _explicitNullValueSdkReferenceNumber; set { _explicitNullValueSdkReferenceNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdkReferenceNumber"); else _explicitNullProperties?.Remove("sdkReferenceNumber"); } }
+        private string? _explicitNullValueSdkReferenceNumber = default!;
 #nullable restore
 #else
-        public string SdkReferenceNumber { get; set; }
+        public string SdkReferenceNumber { get => _explicitNullValueSdkReferenceNumber; set { _explicitNullValueSdkReferenceNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdkReferenceNumber"); else _explicitNullProperties?.Remove("sdkReferenceNumber"); } }
+        private string _explicitNullValueSdkReferenceNumber = default!;
 #endif
         /// <summary>The `sdkTransID` value as received from the 3D Secure 2 SDK.Only for `deviceChannel` set to **app**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SdkTransID { get; set; }
+        public string? SdkTransID { get => _explicitNullValueSdkTransID; set { _explicitNullValueSdkTransID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdkTransID"); else _explicitNullProperties?.Remove("sdkTransID"); } }
+        private string? _explicitNullValueSdkTransID = default!;
 #nullable restore
 #else
-        public string SdkTransID { get; set; }
+        public string SdkTransID { get => _explicitNullValueSdkTransID; set { _explicitNullValueSdkTransID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdkTransID"); else _explicitNullProperties?.Remove("sdkTransID"); } }
+        private string _explicitNullValueSdkTransID = default!;
 #endif
         /// <summary>Version of the 3D Secure 2 mobile SDK. Only for `deviceChannel` set to **app**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SdkVersion { get; set; }
+        public string? SdkVersion { get => _explicitNullValueSdkVersion; set { _explicitNullValueSdkVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdkVersion"); else _explicitNullProperties?.Remove("sdkVersion"); } }
+        private string? _explicitNullValueSdkVersion = default!;
 #nullable restore
 #else
-        public string SdkVersion { get; set; }
+        public string SdkVersion { get => _explicitNullValueSdkVersion; set { _explicitNullValueSdkVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdkVersion"); else _explicitNullProperties?.Remove("sdkVersion"); } }
+        private string _explicitNullValueSdkVersion = default!;
 #endif
         /// <summary>Completion indicator for the device fingerprinting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ThreeDSCompInd { get; set; }
+        public string? ThreeDSCompInd { get => _explicitNullValueThreeDSCompInd; set { _explicitNullValueThreeDSCompInd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSCompInd"); else _explicitNullProperties?.Remove("threeDSCompInd"); } }
+        private string? _explicitNullValueThreeDSCompInd = default!;
 #nullable restore
 #else
-        public string ThreeDSCompInd { get; set; }
+        public string ThreeDSCompInd { get => _explicitNullValueThreeDSCompInd; set { _explicitNullValueThreeDSCompInd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSCompInd"); else _explicitNullProperties?.Remove("threeDSCompInd"); } }
+        private string _explicitNullValueThreeDSCompInd = default!;
 #endif
         /// <summary>Indicates the type of Authentication request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ThreeDSRequestorAuthenticationInd { get; set; }
+        public string? ThreeDSRequestorAuthenticationInd { get => _explicitNullValueThreeDSRequestorAuthenticationInd; set { _explicitNullValueThreeDSRequestorAuthenticationInd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSRequestorAuthenticationInd"); else _explicitNullProperties?.Remove("threeDSRequestorAuthenticationInd"); } }
+        private string? _explicitNullValueThreeDSRequestorAuthenticationInd = default!;
 #nullable restore
 #else
-        public string ThreeDSRequestorAuthenticationInd { get; set; }
+        public string ThreeDSRequestorAuthenticationInd { get => _explicitNullValueThreeDSRequestorAuthenticationInd; set { _explicitNullValueThreeDSRequestorAuthenticationInd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSRequestorAuthenticationInd"); else _explicitNullProperties?.Remove("threeDSRequestorAuthenticationInd"); } }
+        private string _explicitNullValueThreeDSRequestorAuthenticationInd = default!;
 #endif
         /// <summary>The threeDSRequestorAuthenticationInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDsRequestorAuthenticationInfo? ThreeDSRequestorAuthenticationInfo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDsRequestorAuthenticationInfo? ThreeDSRequestorAuthenticationInfo { get => _explicitNullValueThreeDSRequestorAuthenticationInfo; set { _explicitNullValueThreeDSRequestorAuthenticationInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSRequestorAuthenticationInfo"); else _explicitNullProperties?.Remove("threeDSRequestorAuthenticationInfo"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDsRequestorAuthenticationInfo? _explicitNullValueThreeDSRequestorAuthenticationInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDsRequestorAuthenticationInfo ThreeDSRequestorAuthenticationInfo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDsRequestorAuthenticationInfo ThreeDSRequestorAuthenticationInfo { get => _explicitNullValueThreeDSRequestorAuthenticationInfo; set { _explicitNullValueThreeDSRequestorAuthenticationInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSRequestorAuthenticationInfo"); else _explicitNullProperties?.Remove("threeDSRequestorAuthenticationInfo"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDsRequestorAuthenticationInfo _explicitNullValueThreeDSRequestorAuthenticationInfo = default!;
 #endif
         /// <summary>Indicates whether a challenge is requested for this transaction. Possible values:* **01** — No preference* **02** — No challenge requested* **03** — Challenge requested (3DS Requestor preference)* **04** — Challenge requested (Mandate)* **05** — No challenge (transactional risk analysis is already performed)* **06** — Data Only</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataThreeDsRequestorChallengeInd? ThreeDSRequestorChallengeInd { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataThreeDsRequestorChallengeInd? ThreeDSRequestorChallengeInd { get => _explicitNullValueThreeDSRequestorChallengeInd; set { _explicitNullValueThreeDSRequestorChallengeInd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSRequestorChallengeInd"); else _explicitNullProperties?.Remove("threeDSRequestorChallengeInd"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataThreeDsRequestorChallengeInd? _explicitNullValueThreeDSRequestorChallengeInd = default!;
         /// <summary>Required for [authentication-only integration](https://docs.adyen.com/online-payments/3d-secure/other-3ds-flows/authentication-only) for Visa. Unique 3D Secure requestor identifier assigned by the Directory Server when you enrol for 3D Secure 2.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ThreeDSRequestorID { get; set; }
+        public string? ThreeDSRequestorID { get => _explicitNullValueThreeDSRequestorID; set { _explicitNullValueThreeDSRequestorID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSRequestorID"); else _explicitNullProperties?.Remove("threeDSRequestorID"); } }
+        private string? _explicitNullValueThreeDSRequestorID = default!;
 #nullable restore
 #else
-        public string ThreeDSRequestorID { get; set; }
+        public string ThreeDSRequestorID { get => _explicitNullValueThreeDSRequestorID; set { _explicitNullValueThreeDSRequestorID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSRequestorID"); else _explicitNullProperties?.Remove("threeDSRequestorID"); } }
+        private string _explicitNullValueThreeDSRequestorID = default!;
 #endif
         /// <summary>Required for [authentication-only integration](https://docs.adyen.com/online-payments/3d-secure/other-3ds-flows/authentication-only) for Visa. Unique 3D Secure requestor name assigned by the Directory Server when you enrol for 3D Secure 2.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ThreeDSRequestorName { get; set; }
+        public string? ThreeDSRequestorName { get => _explicitNullValueThreeDSRequestorName; set { _explicitNullValueThreeDSRequestorName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSRequestorName"); else _explicitNullProperties?.Remove("threeDSRequestorName"); } }
+        private string? _explicitNullValueThreeDSRequestorName = default!;
 #nullable restore
 #else
-        public string ThreeDSRequestorName { get; set; }
+        public string ThreeDSRequestorName { get => _explicitNullValueThreeDSRequestorName; set { _explicitNullValueThreeDSRequestorName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSRequestorName"); else _explicitNullProperties?.Remove("threeDSRequestorName"); } }
+        private string _explicitNullValueThreeDSRequestorName = default!;
 #endif
         /// <summary>The threeDSRequestorPriorAuthenticationInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDsRequestorPriorAuthenticationInfo? ThreeDSRequestorPriorAuthenticationInfo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDsRequestorPriorAuthenticationInfo? ThreeDSRequestorPriorAuthenticationInfo { get => _explicitNullValueThreeDSRequestorPriorAuthenticationInfo; set { _explicitNullValueThreeDSRequestorPriorAuthenticationInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSRequestorPriorAuthenticationInfo"); else _explicitNullProperties?.Remove("threeDSRequestorPriorAuthenticationInfo"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDsRequestorPriorAuthenticationInfo? _explicitNullValueThreeDSRequestorPriorAuthenticationInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDsRequestorPriorAuthenticationInfo ThreeDSRequestorPriorAuthenticationInfo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDsRequestorPriorAuthenticationInfo ThreeDSRequestorPriorAuthenticationInfo { get => _explicitNullValueThreeDSRequestorPriorAuthenticationInfo; set { _explicitNullValueThreeDSRequestorPriorAuthenticationInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSRequestorPriorAuthenticationInfo"); else _explicitNullProperties?.Remove("threeDSRequestorPriorAuthenticationInfo"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDsRequestorPriorAuthenticationInfo _explicitNullValueThreeDSRequestorPriorAuthenticationInfo = default!;
 #endif
         /// <summary>URL of the (customer service) website that will be shown to the shopper in case of technical errors during the 3D Secure 2 process.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ThreeDSRequestorURL { get; set; }
+        public string? ThreeDSRequestorURL { get => _explicitNullValueThreeDSRequestorURL; set { _explicitNullValueThreeDSRequestorURL = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSRequestorURL"); else _explicitNullProperties?.Remove("threeDSRequestorURL"); } }
+        private string? _explicitNullValueThreeDSRequestorURL = default!;
 #nullable restore
 #else
-        public string ThreeDSRequestorURL { get; set; }
+        public string ThreeDSRequestorURL { get => _explicitNullValueThreeDSRequestorURL; set { _explicitNullValueThreeDSRequestorURL = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSRequestorURL"); else _explicitNullProperties?.Remove("threeDSRequestorURL"); } }
+        private string _explicitNullValueThreeDSRequestorURL = default!;
 #endif
         /// <summary>Identify the type of the transaction being authenticated.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataTransactionType? TransactionType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataTransactionType? TransactionType { get => _explicitNullValueTransactionType; set { _explicitNullValueTransactionType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactionType"); else _explicitNullProperties?.Remove("transactionType"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataTransactionType? _explicitNullValueTransactionType = default!;
         /// <summary>Identifies the type of transaction being authenticated. Length: 2 characters. Allowed values:* **01** — Goods/Service Purchase* **03** — Check Acceptance* **10** — Account Funding* **11** — Quasi-Cash Transaction* **28** — Prepaid Activation and Load</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataTransType? TransType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataTransType? TransType { get => _explicitNullValueTransType; set { _explicitNullValueTransType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transType"); else _explicitNullProperties?.Remove("transType"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataTransType? _explicitNullValueTransType = default!;
         /// <summary>The `whiteListStatus` value returned from a previous 3D Secure 2 transaction, only applicable for 3D Secure 2 protocol version 2.2.0.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WhiteListStatus { get; set; }
+        public string? WhiteListStatus { get => _explicitNullValueWhiteListStatus; set { _explicitNullValueWhiteListStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("whiteListStatus"); else _explicitNullProperties?.Remove("whiteListStatus"); } }
+        private string? _explicitNullValueWhiteListStatus = default!;
 #nullable restore
 #else
-        public string WhiteListStatus { get; set; }
+        public string WhiteListStatus { get => _explicitNullValueWhiteListStatus; set { _explicitNullValueWhiteListStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("whiteListStatus"); else _explicitNullProperties?.Remove("whiteListStatus"); } }
+        private string _explicitNullValueWhiteListStatus = default!;
 #endif
         /// <summary>The work phone number provided by the cardholder. The phone number must consist of a country code, followed by the number. If the value you provide does not follow the guidelines, we do not submit it for authentication.&gt; Required for Visa and JCB transactions that require 3D Secure 2 authentication, if you did not include the `shopperEmail`, and did not send the shopper&apos;s phone number in `telephoneNumber`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataWorkPhone? WorkPhone { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataWorkPhone? WorkPhone { get => _explicitNullValueWorkPhone; set { _explicitNullValueWorkPhone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workPhone"); else _explicitNullProperties?.Remove("workPhone"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataWorkPhone? _explicitNullValueWorkPhone = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataWorkPhone WorkPhone { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataWorkPhone WorkPhone { get => _explicitNullValueWorkPhone; set { _explicitNullValueWorkPhone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workPhone"); else _explicitNullProperties?.Remove("workPhone"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataWorkPhone _explicitNullValueWorkPhone = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestData"/> and sets the default values.
@@ -291,7 +406,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -388,6 +503,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataTransType>("transType", TransType);
             writer.WriteStringValue("whiteListStatus", WhiteListStatus);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataWorkPhone>("workPhone", WorkPhone);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

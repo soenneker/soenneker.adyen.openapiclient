@@ -12,59 +12,86 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PaymentInstrumentDataCheckData : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("AccountNumber") is { } nullNodeAccountNumber && nullNodeAccountNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountNumber = null;
+            if (parseNode.GetChildNode("BankID") is { } nullNodeBankID && nullNodeBankID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankID = null;
+            if (parseNode.GetChildNode("CheckCardNumber") is { } nullNodeCheckCardNumber && nullNodeCheckCardNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CheckCardNumber = null;
+            if (parseNode.GetChildNode("CheckNumber") is { } nullNodeCheckNumber && nullNodeCheckNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CheckNumber = null;
+            if (parseNode.GetChildNode("Country") is { } nullNodeCountry && nullNodeCountry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Country = null;
+            if (parseNode.GetChildNode("TrackData") is { } nullNodeTrackData && nullNodeTrackData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrackData = null;
+            if (parseNode.GetChildNode("TypeCode") is { } nullNodeTypeCode && nullNodeTypeCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TypeCode = null;
+        }
+
         /// <summary>Identification of the customer account.Mandatory if TrackData absent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountNumber { get; set; }
+        public string? AccountNumber { get => _explicitNullValueAccountNumber; set { _explicitNullValueAccountNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AccountNumber"); else _explicitNullProperties?.Remove("AccountNumber"); } }
+        private string? _explicitNullValueAccountNumber = default!;
 #nullable restore
 #else
-        public string AccountNumber { get; set; }
+        public string AccountNumber { get => _explicitNullValueAccountNumber; set { _explicitNullValueAccountNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AccountNumber"); else _explicitNullProperties?.Remove("AccountNumber"); } }
+        private string _explicitNullValueAccountNumber = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Identification of the bank.Mandatory if TrackData absent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BankID { get; set; }
+        public string? BankID { get => _explicitNullValueBankID; set { _explicitNullValueBankID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("BankID"); else _explicitNullProperties?.Remove("BankID"); } }
+        private string? _explicitNullValueBankID = default!;
 #nullable restore
 #else
-        public string BankID { get; set; }
+        public string BankID { get => _explicitNullValueBankID; set { _explicitNullValueBankID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("BankID"); else _explicitNullProperties?.Remove("BankID"); } }
+        private string _explicitNullValueBankID = default!;
 #endif
         /// <summary>Check guarantee card number.If provided by the customer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CheckCardNumber { get; set; }
+        public string? CheckCardNumber { get => _explicitNullValueCheckCardNumber; set { _explicitNullValueCheckCardNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CheckCardNumber"); else _explicitNullProperties?.Remove("CheckCardNumber"); } }
+        private string? _explicitNullValueCheckCardNumber = default!;
 #nullable restore
 #else
-        public string CheckCardNumber { get; set; }
+        public string CheckCardNumber { get => _explicitNullValueCheckCardNumber; set { _explicitNullValueCheckCardNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CheckCardNumber"); else _explicitNullProperties?.Remove("CheckCardNumber"); } }
+        private string _explicitNullValueCheckCardNumber = default!;
 #endif
         /// <summary>Identification of the bank check.Mandatory if TrackData absent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CheckNumber { get; set; }
+        public string? CheckNumber { get => _explicitNullValueCheckNumber; set { _explicitNullValueCheckNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CheckNumber"); else _explicitNullProperties?.Remove("CheckNumber"); } }
+        private string? _explicitNullValueCheckNumber = default!;
 #nullable restore
 #else
-        public string CheckNumber { get; set; }
+        public string CheckNumber { get => _explicitNullValueCheckNumber; set { _explicitNullValueCheckNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CheckNumber"); else _explicitNullProperties?.Remove("CheckNumber"); } }
+        private string _explicitNullValueCheckNumber = default!;
 #endif
         /// <summary>Country of the bank check.Absent if country of the Sale system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Country { get; set; }
+        public string? Country { get => _explicitNullValueCountry; set { _explicitNullValueCountry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Country"); else _explicitNullProperties?.Remove("Country"); } }
+        private string? _explicitNullValueCountry = default!;
 #nullable restore
 #else
-        public string Country { get; set; }
+        public string Country { get => _explicitNullValueCountry; set { _explicitNullValueCountry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Country"); else _explicitNullProperties?.Remove("Country"); } }
+        private string _explicitNullValueCountry = default!;
 #endif
         /// <summary>Magnetic track or magnetic ink characters line.Mandatory if CheckNumber absent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckDataTrackData? TrackData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckDataTrackData? TrackData { get => _explicitNullValueTrackData; set { _explicitNullValueTrackData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TrackData"); else _explicitNullProperties?.Remove("TrackData"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.CheckDataTrackData? _explicitNullValueTrackData = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckDataTrackData TrackData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckDataTrackData TrackData { get => _explicitNullValueTrackData; set { _explicitNullValueTrackData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TrackData"); else _explicitNullProperties?.Remove("TrackData"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.CheckDataTrackData _explicitNullValueTrackData = default!;
 #endif
         /// <summary>Possible values:* **Personal*** **Company**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckDataTypeCode? TypeCode { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckDataTypeCode? TypeCode { get => _explicitNullValueTypeCode; set { _explicitNullValueTypeCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TypeCode"); else _explicitNullProperties?.Remove("TypeCode"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.CheckDataTypeCode? _explicitNullValueTypeCode = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentDataCheckData"/> and sets the default values.
         /// </summary>
@@ -80,7 +107,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentDataCheckData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentDataCheckData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentDataCheckData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -113,6 +140,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("Country", Country);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckDataTrackData>("TrackData", TrackData);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckDataTypeCode>("TypeCode", TypeCode);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -49,7 +49,7 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.AccountHolders.
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.TaxFormSummaryResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.TaxFormSummaryResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.TaxFormSummaryResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.TaxFormSummaryResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a summary of all tax forms for an account holder.

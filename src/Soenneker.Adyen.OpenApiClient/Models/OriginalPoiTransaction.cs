@@ -12,54 +12,82 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OriginalPoiTransaction : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("AcquirerID") is { } nullNodeAcquirerID && nullNodeAcquirerID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcquirerID = null;
+            if (parseNode.GetChildNode("AmountValue") is { } nullNodeAmountValue && nullNodeAmountValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AmountValue = null;
+            if (parseNode.GetChildNode("ApprovalCode") is { } nullNodeApprovalCode && nullNodeApprovalCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApprovalCode = null;
+            if (parseNode.GetChildNode("HostTransactionID") is { } nullNodeHostTransactionID && nullNodeHostTransactionID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HostTransactionID = null;
+            if (parseNode.GetChildNode("POIID") is { } nullNodePOIID && nullNodePOIID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) POIID = null;
+            if (parseNode.GetChildNode("POITransactionID") is { } nullNodePOITransactionID && nullNodePOITransactionID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) POITransactionID = null;
+            if (parseNode.GetChildNode("ReuseCardDataFlag") is { } nullNodeReuseCardDataFlag && nullNodeReuseCardDataFlag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReuseCardDataFlag = null;
+            if (parseNode.GetChildNode("SaleID") is { } nullNodeSaleID && nullNodeSaleID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SaleID = null;
+        }
+
         /// <summary>Identification of the Acquirer.Restrict to the Acquirer if present.</summary>
-        public int? AcquirerID { get; set; }
+        public int? AcquirerID { get => _explicitNullValueAcquirerID; set { _explicitNullValueAcquirerID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AcquirerID"); else _explicitNullProperties?.Remove("AcquirerID"); } }
+        private int? _explicitNullValueAcquirerID = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Value of an amount.</summary>
-        public double? AmountValue { get; set; }
+        public double? AmountValue { get => _explicitNullValueAmountValue; set { _explicitNullValueAmountValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AmountValue"); else _explicitNullProperties?.Remove("AmountValue"); } }
+        private double? _explicitNullValueAmountValue = default!;
         /// <summary>Code assigned to a transaction approval by the Acquirer.If referral.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApprovalCode { get; set; }
+        public string? ApprovalCode { get => _explicitNullValueApprovalCode; set { _explicitNullValueApprovalCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ApprovalCode"); else _explicitNullProperties?.Remove("ApprovalCode"); } }
+        private string? _explicitNullValueApprovalCode = default!;
 #nullable restore
 #else
-        public string ApprovalCode { get; set; }
+        public string ApprovalCode { get => _explicitNullValueApprovalCode; set { _explicitNullValueApprovalCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ApprovalCode"); else _explicitNullProperties?.Remove("ApprovalCode"); } }
+        private string _explicitNullValueApprovalCode = default!;
 #endif
         /// <summary>Identification of a transaction for the Sale System or the POI System.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType? HostTransactionID { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType? HostTransactionID { get => _explicitNullValueHostTransactionID; set { _explicitNullValueHostTransactionID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("HostTransactionID"); else _explicitNullProperties?.Remove("HostTransactionID"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType? _explicitNullValueHostTransactionID = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType HostTransactionID { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType HostTransactionID { get => _explicitNullValueHostTransactionID; set { _explicitNullValueHostTransactionID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("HostTransactionID"); else _explicitNullProperties?.Remove("HostTransactionID"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType _explicitNullValueHostTransactionID = default!;
 #endif
         /// <summary>Identification of a payment terminal for the NEXO SaletoPOI protocol.If original transaction is coming from another POI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? POIID { get; set; }
+        public string? POIID { get => _explicitNullValuePOIID; set { _explicitNullValuePOIID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("POIID"); else _explicitNullProperties?.Remove("POIID"); } }
+        private string? _explicitNullValuePOIID = default!;
 #nullable restore
 #else
-        public string POIID { get; set; }
+        public string POIID { get => _explicitNullValuePOIID; set { _explicitNullValuePOIID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("POIID"); else _explicitNullProperties?.Remove("POIID"); } }
+        private string _explicitNullValuePOIID = default!;
 #endif
         /// <summary>Identification of a transaction for the Sale System or the POI System.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType? POITransactionID { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType? POITransactionID { get => _explicitNullValuePOITransactionID; set { _explicitNullValuePOITransactionID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("POITransactionID"); else _explicitNullProperties?.Remove("POITransactionID"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType? _explicitNullValuePOITransactionID = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType POITransactionID { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType POITransactionID { get => _explicitNullValuePOITransactionID; set { _explicitNullValuePOITransactionID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("POITransactionID"); else _explicitNullProperties?.Remove("POITransactionID"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType _explicitNullValuePOITransactionID = default!;
 #endif
         /// <summary>Indicates if the card data has to be retrieved from a previous transaction.</summary>
-        public bool? ReuseCardDataFlag { get; set; }
+        public bool? ReuseCardDataFlag { get => _explicitNullValueReuseCardDataFlag; set { _explicitNullValueReuseCardDataFlag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ReuseCardDataFlag"); else _explicitNullProperties?.Remove("ReuseCardDataFlag"); } }
+        private bool? _explicitNullValueReuseCardDataFlag = default!;
         /// <summary>Identification of a Sale System for the NEXO SaletoPOI protocol.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SaleID { get; set; }
+        public string? SaleID { get => _explicitNullValueSaleID; set { _explicitNullValueSaleID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SaleID"); else _explicitNullProperties?.Remove("SaleID"); } }
+        private string? _explicitNullValueSaleID = default!;
 #nullable restore
 #else
-        public string SaleID { get; set; }
+        public string SaleID { get => _explicitNullValueSaleID; set { _explicitNullValueSaleID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SaleID"); else _explicitNullProperties?.Remove("SaleID"); } }
+        private string _explicitNullValueSaleID = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.OriginalPoiTransaction"/> and sets the default values.
@@ -77,7 +105,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.OriginalPoiTransaction CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.OriginalPoiTransaction();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.OriginalPoiTransaction(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -112,6 +140,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType>("POITransactionID", POITransactionID);
             writer.WriteBoolValue("ReuseCardDataFlag", ReuseCardDataFlag);
             writer.WriteStringValue("SaleID", SaleID);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

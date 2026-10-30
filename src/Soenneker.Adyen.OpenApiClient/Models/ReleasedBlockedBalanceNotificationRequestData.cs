@@ -12,67 +12,98 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReleasedBlockedBalanceNotificationRequestData : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("accountHolder") is { } nullNodeAccountHolder && nullNodeAccountHolder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountHolder = null;
+            if (parseNode.GetChildNode("amount") is { } nullNodeAmount && nullNodeAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Amount = null;
+            if (parseNode.GetChildNode("balanceAccount") is { } nullNodeBalanceAccount && nullNodeBalanceAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalanceAccount = null;
+            if (parseNode.GetChildNode("balancePlatform") is { } nullNodeBalancePlatform && nullNodeBalancePlatform.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalancePlatform = null;
+            if (parseNode.GetChildNode("batchReference") is { } nullNodeBatchReference && nullNodeBatchReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BatchReference = null;
+            if (parseNode.GetChildNode("blockedBalanceAfter") is { } nullNodeBlockedBalanceAfter && nullNodeBlockedBalanceAfter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlockedBalanceAfter = null;
+            if (parseNode.GetChildNode("blockedBalanceBefore") is { } nullNodeBlockedBalanceBefore && nullNodeBlockedBalanceBefore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlockedBalanceBefore = null;
+            if (parseNode.GetChildNode("creationDate") is { } nullNodeCreationDate && nullNodeCreationDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreationDate = null;
+            if (parseNode.GetChildNode("valueDate") is { } nullNodeValueDate && nullNodeValueDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValueDate = null;
+        }
+
         /// <summary>Contains information about the account holder associated with the `balanceAccount`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ReleaseBlockedBalanceNotificationDataAccountHolder? AccountHolder { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ReleaseBlockedBalanceNotificationDataAccountHolder? AccountHolder { get => _explicitNullValueAccountHolder; set { _explicitNullValueAccountHolder = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolder"); else _explicitNullProperties?.Remove("accountHolder"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ReleaseBlockedBalanceNotificationDataAccountHolder? _explicitNullValueAccountHolder = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ReleaseBlockedBalanceNotificationDataAccountHolder AccountHolder { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ReleaseBlockedBalanceNotificationDataAccountHolder AccountHolder { get => _explicitNullValueAccountHolder; set { _explicitNullValueAccountHolder = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolder"); else _explicitNullProperties?.Remove("accountHolder"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ReleaseBlockedBalanceNotificationDataAccountHolder _explicitNullValueAccountHolder = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The amount released.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ReleaseBlockedBalanceNotificationDataAmount? Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ReleaseBlockedBalanceNotificationDataAmount? Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ReleaseBlockedBalanceNotificationDataAmount? _explicitNullValueAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ReleaseBlockedBalanceNotificationDataAmount Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ReleaseBlockedBalanceNotificationDataAmount Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ReleaseBlockedBalanceNotificationDataAmount _explicitNullValueAmount = default!;
 #endif
         /// <summary>Contains information about the associated balance account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ReleaseBlockedBalanceNotificationDataBalanceAccount? BalanceAccount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ReleaseBlockedBalanceNotificationDataBalanceAccount? BalanceAccount { get => _explicitNullValueBalanceAccount; set { _explicitNullValueBalanceAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceAccount"); else _explicitNullProperties?.Remove("balanceAccount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ReleaseBlockedBalanceNotificationDataBalanceAccount? _explicitNullValueBalanceAccount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ReleaseBlockedBalanceNotificationDataBalanceAccount BalanceAccount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ReleaseBlockedBalanceNotificationDataBalanceAccount BalanceAccount { get => _explicitNullValueBalanceAccount; set { _explicitNullValueBalanceAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceAccount"); else _explicitNullProperties?.Remove("balanceAccount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ReleaseBlockedBalanceNotificationDataBalanceAccount _explicitNullValueBalanceAccount = default!;
 #endif
         /// <summary>The unique identifier of the balance platform.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BalancePlatform { get; set; }
+        public string? BalancePlatform { get => _explicitNullValueBalancePlatform; set { _explicitNullValueBalancePlatform = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balancePlatform"); else _explicitNullProperties?.Remove("balancePlatform"); } }
+        private string? _explicitNullValueBalancePlatform = default!;
 #nullable restore
 #else
-        public string BalancePlatform { get; set; }
+        public string BalancePlatform { get => _explicitNullValueBalancePlatform; set { _explicitNullValueBalancePlatform = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balancePlatform"); else _explicitNullProperties?.Remove("balancePlatform"); } }
+        private string _explicitNullValueBalancePlatform = default!;
 #endif
         /// <summary>The reference of the batch that was released.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BatchReference { get; set; }
+        public string? BatchReference { get => _explicitNullValueBatchReference; set { _explicitNullValueBatchReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("batchReference"); else _explicitNullProperties?.Remove("batchReference"); } }
+        private string? _explicitNullValueBatchReference = default!;
 #nullable restore
 #else
-        public string BatchReference { get; set; }
+        public string BatchReference { get => _explicitNullValueBatchReference; set { _explicitNullValueBatchReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("batchReference"); else _explicitNullProperties?.Remove("batchReference"); } }
+        private string _explicitNullValueBatchReference = default!;
 #endif
         /// <summary>The new blocked balance after the funds were released.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ReleaseBlockedBalanceNotificationDataBlockedBalanceAfter? BlockedBalanceAfter { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ReleaseBlockedBalanceNotificationDataBlockedBalanceAfter? BlockedBalanceAfter { get => _explicitNullValueBlockedBalanceAfter; set { _explicitNullValueBlockedBalanceAfter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blockedBalanceAfter"); else _explicitNullProperties?.Remove("blockedBalanceAfter"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ReleaseBlockedBalanceNotificationDataBlockedBalanceAfter? _explicitNullValueBlockedBalanceAfter = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ReleaseBlockedBalanceNotificationDataBlockedBalanceAfter BlockedBalanceAfter { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ReleaseBlockedBalanceNotificationDataBlockedBalanceAfter BlockedBalanceAfter { get => _explicitNullValueBlockedBalanceAfter; set { _explicitNullValueBlockedBalanceAfter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blockedBalanceAfter"); else _explicitNullProperties?.Remove("blockedBalanceAfter"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ReleaseBlockedBalanceNotificationDataBlockedBalanceAfter _explicitNullValueBlockedBalanceAfter = default!;
 #endif
         /// <summary>The blocked balance before the funds were released.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ReleaseBlockedBalanceNotificationDataBlockedBalanceBefore? BlockedBalanceBefore { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ReleaseBlockedBalanceNotificationDataBlockedBalanceBefore? BlockedBalanceBefore { get => _explicitNullValueBlockedBalanceBefore; set { _explicitNullValueBlockedBalanceBefore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blockedBalanceBefore"); else _explicitNullProperties?.Remove("blockedBalanceBefore"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ReleaseBlockedBalanceNotificationDataBlockedBalanceBefore? _explicitNullValueBlockedBalanceBefore = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ReleaseBlockedBalanceNotificationDataBlockedBalanceBefore BlockedBalanceBefore { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ReleaseBlockedBalanceNotificationDataBlockedBalanceBefore BlockedBalanceBefore { get => _explicitNullValueBlockedBalanceBefore; set { _explicitNullValueBlockedBalanceBefore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blockedBalanceBefore"); else _explicitNullProperties?.Remove("blockedBalanceBefore"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ReleaseBlockedBalanceNotificationDataBlockedBalanceBefore _explicitNullValueBlockedBalanceBefore = default!;
 #endif
         /// <summary>The date and time when the event was triggered, in ISO 8601 extended format. For example, **2025-03-19T10:15:30+01:00**.</summary>
-        public DateTimeOffset? CreationDate { get; set; }
+        public DateTimeOffset? CreationDate { get => _explicitNullValueCreationDate; set { _explicitNullValueCreationDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creationDate"); else _explicitNullProperties?.Remove("creationDate"); } }
+        private DateTimeOffset? _explicitNullValueCreationDate = default!;
         /// <summary>The ID of the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -82,7 +113,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Id { get; private set; }
 #endif
         /// <summary>The date and time when the amount was released, in ISO 8601 extended format. For example, **2025-03-19T10:15:30+01:00**.</summary>
-        public DateTimeOffset? ValueDate { get; set; }
+        public DateTimeOffset? ValueDate { get => _explicitNullValueValueDate; set { _explicitNullValueValueDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valueDate"); else _explicitNullProperties?.Remove("valueDate"); } }
+        private DateTimeOffset? _explicitNullValueValueDate = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ReleasedBlockedBalanceNotificationRequestData"/> and sets the default values.
         /// </summary>
@@ -98,7 +130,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.ReleasedBlockedBalanceNotificationRequestData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.ReleasedBlockedBalanceNotificationRequestData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.ReleasedBlockedBalanceNotificationRequestData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -136,6 +168,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ReleaseBlockedBalanceNotificationDataBlockedBalanceBefore>("blockedBalanceBefore", BlockedBalanceBefore);
             writer.WriteDateTimeOffsetValue("creationDate", CreationDate);
             writer.WriteDateTimeOffsetValue("valueDate", ValueDate);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

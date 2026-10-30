@@ -59,6 +59,8 @@ namespace Soenneker.Adyen.OpenApiClient.ForeignExchangeServiceV1.Rates.Calculate
                 { "401", global::Soenneker.Adyen.OpenApiClient.Models.ForeignExchangeServiceV1DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Adyen.OpenApiClient.Models.ForeignExchangeServiceV1DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Adyen.OpenApiClient.Models.ForeignExchangeServiceV1DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.CalculateRateResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.CalculateRateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

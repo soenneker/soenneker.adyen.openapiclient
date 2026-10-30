@@ -12,44 +12,72 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PaymentMethodsRequestBrowserInfo : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("acceptHeader") is { } nullNodeAcceptHeader && nullNodeAcceptHeader.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcceptHeader = null;
+            if (parseNode.GetChildNode("colorDepth") is { } nullNodeColorDepth && nullNodeColorDepth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ColorDepth = null;
+            if (parseNode.GetChildNode("javaEnabled") is { } nullNodeJavaEnabled && nullNodeJavaEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JavaEnabled = null;
+            if (parseNode.GetChildNode("javaScriptEnabled") is { } nullNodeJavaScriptEnabled && nullNodeJavaScriptEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JavaScriptEnabled = null;
+            if (parseNode.GetChildNode("language") is { } nullNodeLanguage && nullNodeLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Language = null;
+            if (parseNode.GetChildNode("screenHeight") is { } nullNodeScreenHeight && nullNodeScreenHeight.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScreenHeight = null;
+            if (parseNode.GetChildNode("screenWidth") is { } nullNodeScreenWidth && nullNodeScreenWidth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScreenWidth = null;
+            if (parseNode.GetChildNode("timeZoneOffset") is { } nullNodeTimeZoneOffset && nullNodeTimeZoneOffset.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeZoneOffset = null;
+            if (parseNode.GetChildNode("userAgent") is { } nullNodeUserAgent && nullNodeUserAgent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserAgent = null;
+        }
+
         /// <summary>The accept header value of the shopper&apos;s browser.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AcceptHeader { get; set; }
+        public string? AcceptHeader { get => _explicitNullValueAcceptHeader; set { _explicitNullValueAcceptHeader = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acceptHeader"); else _explicitNullProperties?.Remove("acceptHeader"); } }
+        private string? _explicitNullValueAcceptHeader = default!;
 #nullable restore
 #else
-        public string AcceptHeader { get; set; }
+        public string AcceptHeader { get => _explicitNullValueAcceptHeader; set { _explicitNullValueAcceptHeader = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acceptHeader"); else _explicitNullProperties?.Remove("acceptHeader"); } }
+        private string _explicitNullValueAcceptHeader = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The color depth of the shopper&apos;s browser in bits per pixel. This should be obtained by using the browser&apos;s `screen.colorDepth` property. Accepted values: 1, 4, 8, 15, 16, 24, 30, 32 or 48 bit color depth.</summary>
-        public int? ColorDepth { get; set; }
+        public int? ColorDepth { get => _explicitNullValueColorDepth; set { _explicitNullValueColorDepth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("colorDepth"); else _explicitNullProperties?.Remove("colorDepth"); } }
+        private int? _explicitNullValueColorDepth = default!;
         /// <summary>Boolean value indicating if the shopper&apos;s browser is able to execute Java.</summary>
-        public bool? JavaEnabled { get; set; }
+        public bool? JavaEnabled { get => _explicitNullValueJavaEnabled; set { _explicitNullValueJavaEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("javaEnabled"); else _explicitNullProperties?.Remove("javaEnabled"); } }
+        private bool? _explicitNullValueJavaEnabled = default!;
         /// <summary>Boolean value indicating if the shopper&apos;s browser is able to execute JavaScript. A default &apos;true&apos; value is assumed if the field is not present.</summary>
-        public bool? JavaScriptEnabled { get; set; }
+        public bool? JavaScriptEnabled { get => _explicitNullValueJavaScriptEnabled; set { _explicitNullValueJavaScriptEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("javaScriptEnabled"); else _explicitNullProperties?.Remove("javaScriptEnabled"); } }
+        private bool? _explicitNullValueJavaScriptEnabled = default!;
         /// <summary>The `navigator.language` value of the shopper&apos;s browser (as defined in IETF BCP 47).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Language { get; set; }
+        public string? Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
+        private string? _explicitNullValueLanguage = default!;
 #nullable restore
 #else
-        public string Language { get; set; }
+        public string Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
+        private string _explicitNullValueLanguage = default!;
 #endif
         /// <summary>The total height of the shopper&apos;s device screen in pixels.</summary>
-        public int? ScreenHeight { get; set; }
+        public int? ScreenHeight { get => _explicitNullValueScreenHeight; set { _explicitNullValueScreenHeight = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screenHeight"); else _explicitNullProperties?.Remove("screenHeight"); } }
+        private int? _explicitNullValueScreenHeight = default!;
         /// <summary>The total width of the shopper&apos;s device screen in pixels.</summary>
-        public int? ScreenWidth { get; set; }
+        public int? ScreenWidth { get => _explicitNullValueScreenWidth; set { _explicitNullValueScreenWidth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screenWidth"); else _explicitNullProperties?.Remove("screenWidth"); } }
+        private int? _explicitNullValueScreenWidth = default!;
         /// <summary>Time difference between UTC time and the shopper&apos;s browser local time, in minutes.</summary>
-        public int? TimeZoneOffset { get; set; }
+        public int? TimeZoneOffset { get => _explicitNullValueTimeZoneOffset; set { _explicitNullValueTimeZoneOffset = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeZoneOffset"); else _explicitNullProperties?.Remove("timeZoneOffset"); } }
+        private int? _explicitNullValueTimeZoneOffset = default!;
         /// <summary>The user agent value of the shopper&apos;s browser.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserAgent { get; set; }
+        public string? UserAgent { get => _explicitNullValueUserAgent; set { _explicitNullValueUserAgent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userAgent"); else _explicitNullProperties?.Remove("userAgent"); } }
+        private string? _explicitNullValueUserAgent = default!;
 #nullable restore
 #else
-        public string UserAgent { get; set; }
+        public string UserAgent { get => _explicitNullValueUserAgent; set { _explicitNullValueUserAgent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userAgent"); else _explicitNullProperties?.Remove("userAgent"); } }
+        private string _explicitNullValueUserAgent = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodsRequestBrowserInfo"/> and sets the default values.
@@ -67,7 +95,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodsRequestBrowserInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodsRequestBrowserInfo();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodsRequestBrowserInfo(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -104,6 +132,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteIntValue("screenWidth", ScreenWidth);
             writer.WriteIntValue("timeZoneOffset", TimeZoneOffset);
             writer.WriteStringValue("userAgent", UserAgent);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

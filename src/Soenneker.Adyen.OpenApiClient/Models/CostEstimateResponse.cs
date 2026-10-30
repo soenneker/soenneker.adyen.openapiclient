@@ -11,40 +11,59 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CostEstimateResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("cardBin") is { } nullNodeCardBin && nullNodeCardBin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardBin = null;
+            if (parseNode.GetChildNode("costEstimateAmount") is { } nullNodeCostEstimateAmount && nullNodeCostEstimateAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CostEstimateAmount = null;
+            if (parseNode.GetChildNode("costEstimateReference") is { } nullNodeCostEstimateReference && nullNodeCostEstimateReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CostEstimateReference = null;
+            if (parseNode.GetChildNode("resultCode") is { } nullNodeResultCode && nullNodeResultCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResultCode = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Card BIN details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateResponseCardBin? CardBin { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateResponseCardBin? CardBin { get => _explicitNullValueCardBin; set { _explicitNullValueCardBin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardBin"); else _explicitNullProperties?.Remove("cardBin"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateResponseCardBin? _explicitNullValueCardBin = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateResponseCardBin CardBin { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateResponseCardBin CardBin { get => _explicitNullValueCardBin; set { _explicitNullValueCardBin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardBin"); else _explicitNullProperties?.Remove("cardBin"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateResponseCardBin _explicitNullValueCardBin = default!;
 #endif
         /// <summary>The estimated cost (scheme fee + interchange) in the settlement currency. If the settlement currency cannot be determined, the fee in EUR is returned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateResponseCostEstimateAmount? CostEstimateAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateResponseCostEstimateAmount? CostEstimateAmount { get => _explicitNullValueCostEstimateAmount; set { _explicitNullValueCostEstimateAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("costEstimateAmount"); else _explicitNullProperties?.Remove("costEstimateAmount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateResponseCostEstimateAmount? _explicitNullValueCostEstimateAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateResponseCostEstimateAmount CostEstimateAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateResponseCostEstimateAmount CostEstimateAmount { get => _explicitNullValueCostEstimateAmount; set { _explicitNullValueCostEstimateAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("costEstimateAmount"); else _explicitNullProperties?.Remove("costEstimateAmount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateResponseCostEstimateAmount _explicitNullValueCostEstimateAmount = default!;
 #endif
         /// <summary>Adyen&apos;s 16-character reference associated with the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CostEstimateReference { get; set; }
+        public string? CostEstimateReference { get => _explicitNullValueCostEstimateReference; set { _explicitNullValueCostEstimateReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("costEstimateReference"); else _explicitNullProperties?.Remove("costEstimateReference"); } }
+        private string? _explicitNullValueCostEstimateReference = default!;
 #nullable restore
 #else
-        public string CostEstimateReference { get; set; }
+        public string CostEstimateReference { get => _explicitNullValueCostEstimateReference; set { _explicitNullValueCostEstimateReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("costEstimateReference"); else _explicitNullProperties?.Remove("costEstimateReference"); } }
+        private string _explicitNullValueCostEstimateReference = default!;
 #endif
         /// <summary>The result of the cost estimation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResultCode { get; set; }
+        public string? ResultCode { get => _explicitNullValueResultCode; set { _explicitNullValueResultCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resultCode"); else _explicitNullProperties?.Remove("resultCode"); } }
+        private string? _explicitNullValueResultCode = default!;
 #nullable restore
 #else
-        public string ResultCode { get; set; }
+        public string ResultCode { get => _explicitNullValueResultCode; set { _explicitNullValueResultCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resultCode"); else _explicitNullProperties?.Remove("resultCode"); } }
+        private string _explicitNullValueResultCode = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateResponse"/> and sets the default values.
@@ -61,7 +80,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +107,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateResponseCostEstimateAmount>("costEstimateAmount", CostEstimateAmount);
             writer.WriteStringValue("costEstimateReference", CostEstimateReference);
             writer.WriteStringValue("resultCode", ResultCode);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

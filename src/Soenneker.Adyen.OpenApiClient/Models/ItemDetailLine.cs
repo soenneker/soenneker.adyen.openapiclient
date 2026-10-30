@@ -11,49 +11,76 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ItemDetailLine : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("commodityCode") is { } nullNodeCommodityCode && nullNodeCommodityCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CommodityCode = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("discountAmount") is { } nullNodeDiscountAmount && nullNodeDiscountAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DiscountAmount = null;
+            if (parseNode.GetChildNode("productCode") is { } nullNodeProductCode && nullNodeProductCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProductCode = null;
+            if (parseNode.GetChildNode("quantity") is { } nullNodeQuantity && nullNodeQuantity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Quantity = null;
+            if (parseNode.GetChildNode("totalAmount") is { } nullNodeTotalAmount && nullNodeTotalAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalAmount = null;
+            if (parseNode.GetChildNode("unitOfMeasure") is { } nullNodeUnitOfMeasure && nullNodeUnitOfMeasure.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnitOfMeasure = null;
+            if (parseNode.GetChildNode("unitPrice") is { } nullNodeUnitPrice && nullNodeUnitPrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnitPrice = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The code that identifies the item in a standardized commodity coding scheme. There are different commodity coding schemes:* [UNSPSC commodity codes](https://www.ungm.org/public/unspsc)* [HS commodity codes](https://www.wcoomd.org/en/topics/nomenclature/overview.aspx)* [NAICS commodity codes](https://www.census.gov/naics/)* [NAPCS commodity codes](https://www.census.gov/naics/napcs/)* Encoding: ASCII* Max length: 12 characters* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `enhancedSchemeData.itemDetailLine[N].commodityCode`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CommodityCode { get; set; }
+        public string? CommodityCode { get => _explicitNullValueCommodityCode; set { _explicitNullValueCommodityCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commodityCode"); else _explicitNullProperties?.Remove("commodityCode"); } }
+        private string? _explicitNullValueCommodityCode = default!;
 #nullable restore
 #else
-        public string CommodityCode { get; set; }
+        public string CommodityCode { get => _explicitNullValueCommodityCode; set { _explicitNullValueCommodityCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commodityCode"); else _explicitNullProperties?.Remove("commodityCode"); } }
+        private string _explicitNullValueCommodityCode = default!;
 #endif
         /// <summary>A description of the item, that provides details about the purchase. For Visa transactions with level 3 ESD, the description must not be the same or very similar to your merchant name, or, consist only of common words like &quot;product&quot;, or &quot;service&quot;.* Encoding: ASCII* Max length: 26 characters* Must not be a single character.* Must not be blank.* Must not be all special characters.* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `enhancedSchemeData.itemDetailLine[N].description`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>The discount amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000* **additionalData key:** `enhancedSchemeData.itemDetailLine[N].discountAmount`</summary>
-        public long? DiscountAmount { get; set; }
+        public long? DiscountAmount { get => _explicitNullValueDiscountAmount; set { _explicitNullValueDiscountAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discountAmount"); else _explicitNullProperties?.Remove("discountAmount"); } }
+        private long? _explicitNullValueDiscountAmount = default!;
         /// <summary>The product code. Must be a unique product code associated with the item or service. This can be your unique code for the item, or the manufacturer&apos;s product code. * Encoding: ASCII.* Max length: 12 characters* **additionalData key:** `enhancedSchemeData.itemDetailLine[N].productCode`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProductCode { get; set; }
+        public string? ProductCode { get => _explicitNullValueProductCode; set { _explicitNullValueProductCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("productCode"); else _explicitNullProperties?.Remove("productCode"); } }
+        private string? _explicitNullValueProductCode = default!;
 #nullable restore
 #else
-        public string ProductCode { get; set; }
+        public string ProductCode { get => _explicitNullValueProductCode; set { _explicitNullValueProductCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("productCode"); else _explicitNullProperties?.Remove("productCode"); } }
+        private string _explicitNullValueProductCode = default!;
 #endif
         /// <summary>The number of items. Must be an integer greater than zero.* Encoding: Numeric* Max value: 9999* **additionalData key:** `enhancedSchemeData.itemDetailLine[N].quantity`</summary>
-        public long? Quantity { get; set; }
+        public long? Quantity { get => _explicitNullValueQuantity; set { _explicitNullValueQuantity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quantity"); else _explicitNullProperties?.Remove("quantity"); } }
+        private long? _explicitNullValueQuantity = default!;
         /// <summary>The total amount for the line item, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000See [Amount requirements for level 2/3 ESD](https://docs.adyen.com//payment-methods/cards/enhanced-scheme-data/l2-l3#amount-requirements) to learn more about how to calculate the line item total.* **additionalData key:** `enhancedSchemeData.itemDetailLine[N].totalAmount`</summary>
-        public long? TotalAmount { get; set; }
+        public long? TotalAmount { get => _explicitNullValueTotalAmount; set { _explicitNullValueTotalAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalAmount"); else _explicitNullProperties?.Remove("totalAmount"); } }
+        private long? _explicitNullValueTotalAmount = default!;
         /// <summary>The unit of measurement for an item.* Encoding: ASCII* Max length: 3 characters* **additionalData key:** `enhancedSchemeData.itemDetailLine[N].unitOfMeasure`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UnitOfMeasure { get; set; }
+        public string? UnitOfMeasure { get => _explicitNullValueUnitOfMeasure; set { _explicitNullValueUnitOfMeasure = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unitOfMeasure"); else _explicitNullProperties?.Remove("unitOfMeasure"); } }
+        private string? _explicitNullValueUnitOfMeasure = default!;
 #nullable restore
 #else
-        public string UnitOfMeasure { get; set; }
+        public string UnitOfMeasure { get => _explicitNullValueUnitOfMeasure; set { _explicitNullValueUnitOfMeasure = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unitOfMeasure"); else _explicitNullProperties?.Remove("unitOfMeasure"); } }
+        private string _explicitNullValueUnitOfMeasure = default!;
 #endif
         /// <summary>The unit price, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000* **additionalData key:** `enhancedSchemeData.itemDetailLine[N].unitPrice`</summary>
-        public long? UnitPrice { get; set; }
+        public long? UnitPrice { get => _explicitNullValueUnitPrice; set { _explicitNullValueUnitPrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unitPrice"); else _explicitNullProperties?.Remove("unitPrice"); } }
+        private long? _explicitNullValueUnitPrice = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ItemDetailLine"/> and sets the default values.
         /// </summary>
@@ -69,7 +96,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.ItemDetailLine CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.ItemDetailLine();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.ItemDetailLine(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -104,6 +131,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteLongValue("totalAmount", TotalAmount);
             writer.WriteStringValue("unitOfMeasure", UnitOfMeasure);
             writer.WriteLongValue("unitPrice", UnitPrice);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

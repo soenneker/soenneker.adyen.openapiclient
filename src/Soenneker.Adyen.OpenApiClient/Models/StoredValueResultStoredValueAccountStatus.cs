@@ -12,18 +12,30 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class StoredValueResultStoredValueAccountStatus : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("CurrentBalance") is { } nullNodeCurrentBalance && nullNodeCurrentBalance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentBalance = null;
+            if (parseNode.GetChildNode("StoredValueAccountID") is { } nullNodeStoredValueAccountID && nullNodeStoredValueAccountID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StoredValueAccountID = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>If relevant and known.</summary>
-        public double? CurrentBalance { get; set; }
+        public double? CurrentBalance { get => _explicitNullValueCurrentBalance; set { _explicitNullValueCurrentBalance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CurrentBalance"); else _explicitNullProperties?.Remove("CurrentBalance"); } }
+        private double? _explicitNullValueCurrentBalance = default!;
         /// <summary>Identification of the stored value account or the stored value card and the associated product sold by the Sale System for stored value requests.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountId? StoredValueAccountID { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountId? StoredValueAccountID { get => _explicitNullValueStoredValueAccountID; set { _explicitNullValueStoredValueAccountID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("StoredValueAccountID"); else _explicitNullProperties?.Remove("StoredValueAccountID"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountId? _explicitNullValueStoredValueAccountID = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountId StoredValueAccountID { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountId StoredValueAccountID { get => _explicitNullValueStoredValueAccountID; set { _explicitNullValueStoredValueAccountID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("StoredValueAccountID"); else _explicitNullProperties?.Remove("StoredValueAccountID"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountId _explicitNullValueStoredValueAccountID = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.StoredValueResultStoredValueAccountStatus"/> and sets the default values.
@@ -40,7 +52,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.StoredValueResultStoredValueAccountStatus CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.StoredValueResultStoredValueAccountStatus();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.StoredValueResultStoredValueAccountStatus(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,6 +75,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("CurrentBalance", CurrentBalance);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountId>("StoredValueAccountID", StoredValueAccountID);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

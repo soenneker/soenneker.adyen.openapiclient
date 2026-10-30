@@ -11,34 +11,61 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class BalancePlatformServiceV2SweepConfigurationV2 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("category") is { } nullNodeCategory && nullNodeCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Category = null;
+            if (parseNode.GetChildNode("counterparty") is { } nullNodeCounterparty && nullNodeCounterparty.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Counterparty = null;
+            if (parseNode.GetChildNode("currency") is { } nullNodeCurrency && nullNodeCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Currency = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("priorities") is { } nullNodePriorities && nullNodePriorities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Priorities = null;
+            if (parseNode.GetChildNode("reference") is { } nullNodeReference && nullNodeReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reference = null;
+            if (parseNode.GetChildNode("referenceForBeneficiary") is { } nullNodeReferenceForBeneficiary && nullNodeReferenceForBeneficiary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferenceForBeneficiary = null;
+            if (parseNode.GetChildNode("schedule") is { } nullNodeSchedule && nullNodeSchedule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Schedule = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("sweepAmount") is { } nullNodeSweepAmount && nullNodeSweepAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SweepAmount = null;
+            if (parseNode.GetChildNode("targetAmount") is { } nullNodeTargetAmount && nullNodeTargetAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetAmount = null;
+            if (parseNode.GetChildNode("triggerAmount") is { } nullNodeTriggerAmount && nullNodeTriggerAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TriggerAmount = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The type of transfer that results from the sweep.Possible values: - **bank**: Sweep to a [transfer instrument](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/transferInstruments__resParam_id).- **internal**: Transfer to another [balance account](https://docs.adyen.com/api-explorer/#/balanceplatform/latest/post/balanceAccounts__resParam_id) within your platform.Required when setting `priorities`.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2Category? Category { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2Category? Category { get => _explicitNullValueCategory; set { _explicitNullValueCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category"); else _explicitNullProperties?.Remove("category"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2Category? _explicitNullValueCategory = default!;
         /// <summary>The destination or the source of the funds, depending on the sweep `type`.Either a `balanceAccountId`, `transferInstrumentId`, or `merchantAccount` is required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2Counterparty? Counterparty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2Counterparty? Counterparty { get => _explicitNullValueCounterparty; set { _explicitNullValueCounterparty = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("counterparty"); else _explicitNullProperties?.Remove("counterparty"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2Counterparty? _explicitNullValueCounterparty = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2Counterparty Counterparty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2Counterparty Counterparty { get => _explicitNullValueCounterparty; set { _explicitNullValueCounterparty = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("counterparty"); else _explicitNullProperties?.Remove("counterparty"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2Counterparty _explicitNullValueCounterparty = default!;
 #endif
         /// <summary>The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes) in uppercase. For example, **EUR**.The sweep currency must match any of the [balances currencies](https://docs.adyen.com/api-explorer/#/balanceplatform/latest/get/balanceAccounts/{id}__resParam_balances).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Currency { get; set; }
+        public string? Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
+        private string? _explicitNullValueCurrency = default!;
 #nullable restore
 #else
-        public string Currency { get; set; }
+        public string Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
+        private string _explicitNullValueCurrency = default!;
 #endif
         /// <summary>The message that will be used in the sweep transfer&apos;s description body with a maximum length of 140 characters.If the message is longer after replacing placeholders, the message will be cut off at 140 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>The unique identifier of the sweep.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -51,10 +78,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The list of priorities for the bank transfer. This sets the speed at which the transfer is sent and the fees that you have to pay. You can provide multiple priorities, ordered by your preference. Adyen will try to pay out using the priorities in the given order. If the first priority is not currently supported or enabled for your platform, the system will try the next one, and so on.The request will be accepted as long as **at least one** of the provided priorities is valid (i.e., supported by Adyen and activated for your platform). For example, if you provide `[&quot;wire&quot;,&quot;regular&quot;]`, and `wire` is not supported but `regular` is, the request will still be accepted and processed.Possible values:* **regular**: For normal, low-value transactions.* **fast**: A faster way to transfer funds, but the fees are higher. Recommended for high-priority, low-value transactions.* **wire**: The fastest way to transfer funds, but this has the highest fees. Recommended for high-priority, high-value transactions.* **instant**: For instant funds transfers within the United States and in [SEPA locations](https://www.ecb.europa.eu/paym/integration/retail/sepa/html/index.en.html).* **crossBorder**: For high-value transfers to a recipient in a different country.* **internal**: For transfers to an Adyen-issued business bank account (by bank account number/IBAN).Set `category` to **bank**. For more details, see optional priorities setup for [marketplaces](https://docs.adyen.com/marketplaces/payout-to-users/scheduled-payouts#optional-priorities-setup) or [platforms](https://docs.adyen.com/platforms/payout-to-users/scheduled-payouts#optional-priorities-setup).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2PrioritiesItem?>? Priorities { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2PrioritiesItem?>? Priorities { get => _explicitNullValuePriorities; set { _explicitNullValuePriorities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("priorities"); else _explicitNullProperties?.Remove("priorities"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2PrioritiesItem?>? _explicitNullValuePriorities = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2PrioritiesItem?> Priorities { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2PrioritiesItem?> Priorities { get => _explicitNullValuePriorities; set { _explicitNullValuePriorities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("priorities"); else _explicitNullProperties?.Remove("priorities"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2PrioritiesItem?> _explicitNullValuePriorities = default!;
 #endif
         /// <summary>The reason for disabling the sweep.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2Reason? Reason { get; private set; }
@@ -69,55 +98,69 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Your reference for the sweep configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Reference { get; set; }
+        public string? Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
+        private string? _explicitNullValueReference = default!;
 #nullable restore
 #else
-        public string Reference { get; set; }
+        public string Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
+        private string _explicitNullValueReference = default!;
 #endif
         /// <summary>The reference sent to or received from the counterparty. Only alphanumeric characters are allowed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReferenceForBeneficiary { get; set; }
+        public string? ReferenceForBeneficiary { get => _explicitNullValueReferenceForBeneficiary; set { _explicitNullValueReferenceForBeneficiary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenceForBeneficiary"); else _explicitNullProperties?.Remove("referenceForBeneficiary"); } }
+        private string? _explicitNullValueReferenceForBeneficiary = default!;
 #nullable restore
 #else
-        public string ReferenceForBeneficiary { get; set; }
+        public string ReferenceForBeneficiary { get => _explicitNullValueReferenceForBeneficiary; set { _explicitNullValueReferenceForBeneficiary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenceForBeneficiary"); else _explicitNullProperties?.Remove("referenceForBeneficiary"); } }
+        private string _explicitNullValueReferenceForBeneficiary = default!;
 #endif
         /// <summary>The schedule when the `triggerAmount` is evaluated. If the balance meets the threshold, funds are pushed out of or pulled in to the balance account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2Schedule? Schedule { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2Schedule? Schedule { get => _explicitNullValueSchedule; set { _explicitNullValueSchedule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule"); else _explicitNullProperties?.Remove("schedule"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2Schedule? _explicitNullValueSchedule = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2Schedule Schedule { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2Schedule Schedule { get => _explicitNullValueSchedule; set { _explicitNullValueSchedule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule"); else _explicitNullProperties?.Remove("schedule"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2Schedule _explicitNullValueSchedule = default!;
 #endif
         /// <summary>The status of the sweep. If not provided, by default, this is set to **active**.Possible values:  * **active**:  the sweep is enabled and funds will be pulled in or pushed out based on the defined configuration.  * **inactive**: the sweep is disabled and cannot be triggered. </summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2Status? Status { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2Status? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2Status? _explicitNullValueStatus = default!;
         /// <summary>The amount that must be pushed out or pulled in. You can configure either `sweepAmount` or `targetAmount`, not both.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2SweepAmount? SweepAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2SweepAmount? SweepAmount { get => _explicitNullValueSweepAmount; set { _explicitNullValueSweepAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sweepAmount"); else _explicitNullProperties?.Remove("sweepAmount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2SweepAmount? _explicitNullValueSweepAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2SweepAmount SweepAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2SweepAmount SweepAmount { get => _explicitNullValueSweepAmount; set { _explicitNullValueSweepAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sweepAmount"); else _explicitNullProperties?.Remove("sweepAmount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2SweepAmount _explicitNullValueSweepAmount = default!;
 #endif
         /// <summary>The amount that must be available in the balance account after the sweep. You can configure either `sweepAmount` or `targetAmount`, not both.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2TargetAmount? TargetAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2TargetAmount? TargetAmount { get => _explicitNullValueTargetAmount; set { _explicitNullValueTargetAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetAmount"); else _explicitNullProperties?.Remove("targetAmount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2TargetAmount? _explicitNullValueTargetAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2TargetAmount TargetAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2TargetAmount TargetAmount { get => _explicitNullValueTargetAmount; set { _explicitNullValueTargetAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetAmount"); else _explicitNullProperties?.Remove("targetAmount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2TargetAmount _explicitNullValueTargetAmount = default!;
 #endif
         /// <summary>The threshold amount that triggers the sweep. If not provided, by default, the amount is set to zero. The `triggerAmount` is evaluated according to the specified `schedule.type`.* For `type` **pull**, if the balance is less than or equal to the `triggerAmount`, funds are pulled in to the balance account.* For `type` **push**, if the balance is more than or equal to the `triggerAmount`, funds are pushed out of the balance account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2TriggerAmount? TriggerAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2TriggerAmount? TriggerAmount { get => _explicitNullValueTriggerAmount; set { _explicitNullValueTriggerAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("triggerAmount"); else _explicitNullProperties?.Remove("triggerAmount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2TriggerAmount? _explicitNullValueTriggerAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2TriggerAmount TriggerAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2TriggerAmount TriggerAmount { get => _explicitNullValueTriggerAmount; set { _explicitNullValueTriggerAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("triggerAmount"); else _explicitNullProperties?.Remove("triggerAmount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2TriggerAmount _explicitNullValueTriggerAmount = default!;
 #endif
         /// <summary>The direction of sweep, whether pushing out or pulling in funds to the balance account. If not provided, by default, this is set to **push**.Possible values: * **push**: _push out funds_ to a destination balance account or transfer instrument. * **pull**: _pull in funds_ from a source merchant account, transfer instrument, or balance account.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2Type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2Type? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2Type? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2"/> and sets the default values.
         /// </summary>
@@ -133,7 +176,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -181,6 +224,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2TargetAmount>("targetAmount", TargetAmount);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2TriggerAmount>("triggerAmount", TriggerAmount);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepConfigurationV2Type>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

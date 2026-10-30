@@ -72,6 +72,8 @@ namespace Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Merchants.Item.Termi
                 { "404", global::Soenneker.Adyen.OpenApiClient.Models.DeleteMerchantsMerchantIdTerminalThemesId404Response.CreateFromDiscriminatorValue },
                 { "409", global::Soenneker.Adyen.OpenApiClient.Models.DeleteMerchantsMerchantIdTerminalThemesId409Response.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Adyen.OpenApiClient.Models.DeleteMerchantsMerchantIdTerminalThemesId500Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -103,6 +105,8 @@ namespace Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Merchants.Item.Termi
                 { "403", global::Soenneker.Adyen.OpenApiClient.Models.GetMerchantsMerchantIdTerminalThemesId403Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Adyen.OpenApiClient.Models.GetMerchantsMerchantIdTerminalThemesId404Response.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Adyen.OpenApiClient.Models.GetMerchantsMerchantIdTerminalThemesId500Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.ThemeWithAssetDetails>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.ThemeWithAssetDetails.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -138,6 +142,8 @@ namespace Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Merchants.Item.Termi
                 { "404", global::Soenneker.Adyen.OpenApiClient.Models.PatchMerchantsMerchantIdTerminalThemesId404Response.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Adyen.OpenApiClient.Models.PatchMerchantsMerchantIdTerminalThemesId422Response.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Adyen.OpenApiClient.Models.PatchMerchantsMerchantIdTerminalThemesId500Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.UpdateThemeResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.UpdateThemeResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

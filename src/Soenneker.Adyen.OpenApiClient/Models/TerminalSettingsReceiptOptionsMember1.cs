@@ -12,42 +12,63 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TerminalSettingsReceiptOptionsMember1 : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("headerLine1") is { } nullNodeHeaderLine1 && nullNodeHeaderLine1.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeaderLine1 = null;
+            if (parseNode.GetChildNode("headerLine2") is { } nullNodeHeaderLine2 && nullNodeHeaderLine2.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeaderLine2 = null;
+            if (parseNode.GetChildNode("logo") is { } nullNodeLogo && nullNodeLogo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Logo = null;
+            if (parseNode.GetChildNode("promptBeforePrinting") is { } nullNodePromptBeforePrinting && nullNodePromptBeforePrinting.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PromptBeforePrinting = null;
+            if (parseNode.GetChildNode("qrCodeData") is { } nullNodeQrCodeData && nullNodeQrCodeData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QrCodeData = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The text of the first header line to be shown on the receipt.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HeaderLine1 { get; set; }
+        public string? HeaderLine1 { get => _explicitNullValueHeaderLine1; set { _explicitNullValueHeaderLine1 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headerLine1"); else _explicitNullProperties?.Remove("headerLine1"); } }
+        private string? _explicitNullValueHeaderLine1 = default!;
 #nullable restore
 #else
-        public string HeaderLine1 { get; set; }
+        public string HeaderLine1 { get => _explicitNullValueHeaderLine1; set { _explicitNullValueHeaderLine1 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headerLine1"); else _explicitNullProperties?.Remove("headerLine1"); } }
+        private string _explicitNullValueHeaderLine1 = default!;
 #endif
         /// <summary>The text of the second header line to be shown on the receipt.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HeaderLine2 { get; set; }
+        public string? HeaderLine2 { get => _explicitNullValueHeaderLine2; set { _explicitNullValueHeaderLine2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headerLine2"); else _explicitNullProperties?.Remove("headerLine2"); } }
+        private string? _explicitNullValueHeaderLine2 = default!;
 #nullable restore
 #else
-        public string HeaderLine2 { get; set; }
+        public string HeaderLine2 { get => _explicitNullValueHeaderLine2; set { _explicitNullValueHeaderLine2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headerLine2"); else _explicitNullProperties?.Remove("headerLine2"); } }
+        private string _explicitNullValueHeaderLine2 = default!;
 #endif
         /// <summary>The receipt logo converted to a Base64-encoded string. The image must be a .bmp file of &lt; 256 KB, dimensions 240 (H) x 384 (W) px.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Logo { get; set; }
+        public string? Logo { get => _explicitNullValueLogo; set { _explicitNullValueLogo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logo"); else _explicitNullProperties?.Remove("logo"); } }
+        private string? _explicitNullValueLogo = default!;
 #nullable restore
 #else
-        public string Logo { get; set; }
+        public string Logo { get => _explicitNullValueLogo; set { _explicitNullValueLogo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logo"); else _explicitNullProperties?.Remove("logo"); } }
+        private string _explicitNullValueLogo = default!;
 #endif
         /// <summary>Indicates whether a screen appears asking if you want to print the shopper receipt.</summary>
-        public bool? PromptBeforePrinting { get; set; }
+        public bool? PromptBeforePrinting { get => _explicitNullValuePromptBeforePrinting; set { _explicitNullValuePromptBeforePrinting = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("promptBeforePrinting"); else _explicitNullProperties?.Remove("promptBeforePrinting"); } }
+        private bool? _explicitNullValuePromptBeforePrinting = default!;
         /// <summary>Data to print on the receipt as a QR code. This can include static text and the following variables:- `${merchantreference}`: the merchant reference of the transaction.- `${pspreference}`: the PSP reference of the transaction. For example, **http://www.example.com/order/${pspreference}/${merchantreference}**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? QrCodeData { get; set; }
+        public string? QrCodeData { get => _explicitNullValueQrCodeData; set { _explicitNullValueQrCodeData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qrCodeData"); else _explicitNullProperties?.Remove("qrCodeData"); } }
+        private string? _explicitNullValueQrCodeData = default!;
 #nullable restore
 #else
-        public string QrCodeData { get; set; }
+        public string QrCodeData { get => _explicitNullValueQrCodeData; set { _explicitNullValueQrCodeData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qrCodeData"); else _explicitNullProperties?.Remove("qrCodeData"); } }
+        private string _explicitNullValueQrCodeData = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptOptionsMember1"/> and sets the default values.
@@ -64,7 +85,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptOptionsMember1 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptOptionsMember1();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptOptionsMember1(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -93,6 +114,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("logo", Logo);
             writer.WriteBoolValue("promptBeforePrinting", PromptBeforePrinting);
             writer.WriteStringValue("qrCodeData", QrCodeData);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

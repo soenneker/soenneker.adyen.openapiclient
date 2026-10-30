@@ -68,6 +68,8 @@ namespace Soenneker.Adyen.OpenApiClient.CapitalServiceV1.Grants.Item.Disbursemen
             {
                 { "404", global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.Disbursements>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.Disbursements.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -11,26 +11,41 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PaymentServiceV68ThreeDsRequestorAuthenticationInfo : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("threeDSReqAuthData") is { } nullNodeThreeDSReqAuthData && nullNodeThreeDSReqAuthData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDSReqAuthData = null;
+            if (parseNode.GetChildNode("threeDSReqAuthMethod") is { } nullNodeThreeDSReqAuthMethod && nullNodeThreeDSReqAuthMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDSReqAuthMethod = null;
+            if (parseNode.GetChildNode("threeDSReqAuthTimestamp") is { } nullNodeThreeDSReqAuthTimestamp && nullNodeThreeDSReqAuthTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDSReqAuthTimestamp = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Data that documents and supports a specific authentication process. Maximum length: 2048 bytes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ThreeDSReqAuthData { get; set; }
+        public string? ThreeDSReqAuthData { get => _explicitNullValueThreeDSReqAuthData; set { _explicitNullValueThreeDSReqAuthData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSReqAuthData"); else _explicitNullProperties?.Remove("threeDSReqAuthData"); } }
+        private string? _explicitNullValueThreeDSReqAuthData = default!;
 #nullable restore
 #else
-        public string ThreeDSReqAuthData { get; set; }
+        public string ThreeDSReqAuthData { get => _explicitNullValueThreeDSReqAuthData; set { _explicitNullValueThreeDSReqAuthData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSReqAuthData"); else _explicitNullProperties?.Remove("threeDSReqAuthData"); } }
+        private string _explicitNullValueThreeDSReqAuthData = default!;
 #endif
         /// <summary>Mechanism used by the Cardholder to authenticate to the 3DS Requestor. Allowed values:* **01** — No 3DS Requestor authentication occurred (for example, cardholder “logged in” as guest).* **02** — Login to the cardholder account at the 3DS Requestor system using 3DS Requestor’s own credentials.* **03** — Login to the cardholder account at the 3DS Requestor system using federated ID.* **04** — Login to the cardholder account at the 3DS Requestor system using issuer credentials.* **05** — Login to the cardholder account at the 3DS Requestor system using third-party authentication.* **06** — Login to the cardholder account at the 3DS Requestor system using FIDO Authenticator.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDsRequestorAuthenticationInfoThreeDsReqAuthMethod? ThreeDSReqAuthMethod { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDsRequestorAuthenticationInfoThreeDsReqAuthMethod? ThreeDSReqAuthMethod { get => _explicitNullValueThreeDSReqAuthMethod; set { _explicitNullValueThreeDSReqAuthMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSReqAuthMethod"); else _explicitNullProperties?.Remove("threeDSReqAuthMethod"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDsRequestorAuthenticationInfoThreeDsReqAuthMethod? _explicitNullValueThreeDSReqAuthMethod = default!;
         /// <summary>Date and time in UTC of the cardholder authentication. Format: YYYYMMDDHHMM</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ThreeDSReqAuthTimestamp { get; set; }
+        public string? ThreeDSReqAuthTimestamp { get => _explicitNullValueThreeDSReqAuthTimestamp; set { _explicitNullValueThreeDSReqAuthTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSReqAuthTimestamp"); else _explicitNullProperties?.Remove("threeDSReqAuthTimestamp"); } }
+        private string? _explicitNullValueThreeDSReqAuthTimestamp = default!;
 #nullable restore
 #else
-        public string ThreeDSReqAuthTimestamp { get; set; }
+        public string ThreeDSReqAuthTimestamp { get => _explicitNullValueThreeDSReqAuthTimestamp; set { _explicitNullValueThreeDSReqAuthTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSReqAuthTimestamp"); else _explicitNullProperties?.Remove("threeDSReqAuthTimestamp"); } }
+        private string _explicitNullValueThreeDSReqAuthTimestamp = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDsRequestorAuthenticationInfo"/> and sets the default values.
@@ -47,7 +62,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDsRequestorAuthenticationInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDsRequestorAuthenticationInfo();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDsRequestorAuthenticationInfo(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +87,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("threeDSReqAuthData", ThreeDSReqAuthData);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDsRequestorAuthenticationInfoThreeDsReqAuthMethod>("threeDSReqAuthMethod", ThreeDSReqAuthMethod);
             writer.WriteStringValue("threeDSReqAuthTimestamp", ThreeDSReqAuthTimestamp);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

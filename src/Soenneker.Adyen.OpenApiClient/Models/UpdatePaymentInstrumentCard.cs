@@ -12,90 +12,131 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UpdatePaymentInstrumentCard : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("authentication") is { } nullNodeAuthentication && nullNodeAuthentication.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Authentication = null;
+            if (parseNode.GetChildNode("bin") is { } nullNodeBin && nullNodeBin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bin = null;
+            if (parseNode.GetChildNode("brand") is { } nullNodeBrand && nullNodeBrand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Brand = null;
+            if (parseNode.GetChildNode("brandVariant") is { } nullNodeBrandVariant && nullNodeBrandVariant.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BrandVariant = null;
+            if (parseNode.GetChildNode("cardholderName") is { } nullNodeCardholderName && nullNodeCardholderName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardholderName = null;
+            if (parseNode.GetChildNode("configuration") is { } nullNodeConfiguration && nullNodeConfiguration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Configuration = null;
+            if (parseNode.GetChildNode("cvc") is { } nullNodeCvc && nullNodeCvc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cvc = null;
+            if (parseNode.GetChildNode("deliveryContact") is { } nullNodeDeliveryContact && nullNodeDeliveryContact.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeliveryContact = null;
+            if (parseNode.GetChildNode("expiration") is { } nullNodeExpiration && nullNodeExpiration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Expiration = null;
+            if (parseNode.GetChildNode("formFactor") is { } nullNodeFormFactor && nullNodeFormFactor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FormFactor = null;
+            if (parseNode.GetChildNode("lastFour") is { } nullNodeLastFour && nullNodeLastFour.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastFour = null;
+            if (parseNode.GetChildNode("threeDSecure") is { } nullNodeThreeDSecure && nullNodeThreeDSecure.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDSecure = null;
+            if (parseNode.GetChildNode("usage") is { } nullNodeUsage && nullNodeUsage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Usage = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Contains the card user&apos;s password and mobile phone number. This is required when you issue cards that can be used to make online payments within the EEA and the UK, or can be added to digital wallets. Refer to [3D Secure and digital wallets](https://docs.adyen.com/issuing/3d-secure-and-wallets) for more information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CardAuthentication? Authentication { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CardAuthentication? Authentication { get => _explicitNullValueAuthentication; set { _explicitNullValueAuthentication = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authentication"); else _explicitNullProperties?.Remove("authentication"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CardAuthentication? _explicitNullValueAuthentication = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CardAuthentication Authentication { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CardAuthentication Authentication { get => _explicitNullValueAuthentication; set { _explicitNullValueAuthentication = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authentication"); else _explicitNullProperties?.Remove("authentication"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CardAuthentication _explicitNullValueAuthentication = default!;
 #endif
         /// <summary>The bank identification number (BIN) of the card number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Bin { get; set; }
+        public string? Bin { get => _explicitNullValueBin; set { _explicitNullValueBin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bin"); else _explicitNullProperties?.Remove("bin"); } }
+        private string? _explicitNullValueBin = default!;
 #nullable restore
 #else
-        public string Bin { get; set; }
+        public string Bin { get => _explicitNullValueBin; set { _explicitNullValueBin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bin"); else _explicitNullProperties?.Remove("bin"); } }
+        private string _explicitNullValueBin = default!;
 #endif
         /// <summary>The brand of the physical or the virtual card.Possible values: **visa**, **mc**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Brand { get; set; }
+        public string? Brand { get => _explicitNullValueBrand; set { _explicitNullValueBrand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("brand"); else _explicitNullProperties?.Remove("brand"); } }
+        private string? _explicitNullValueBrand = default!;
 #nullable restore
 #else
-        public string Brand { get; set; }
+        public string Brand { get => _explicitNullValueBrand; set { _explicitNullValueBrand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("brand"); else _explicitNullProperties?.Remove("brand"); } }
+        private string _explicitNullValueBrand = default!;
 #endif
         /// <summary>The brand variant of the physical or the virtual card. For example, **visadebit** or **mcprepaid**.&gt;Reach out to your Adyen contact to get the values relevant for your integration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BrandVariant { get; set; }
+        public string? BrandVariant { get => _explicitNullValueBrandVariant; set { _explicitNullValueBrandVariant = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("brandVariant"); else _explicitNullProperties?.Remove("brandVariant"); } }
+        private string? _explicitNullValueBrandVariant = default!;
 #nullable restore
 #else
-        public string BrandVariant { get; set; }
+        public string BrandVariant { get => _explicitNullValueBrandVariant; set { _explicitNullValueBrandVariant = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("brandVariant"); else _explicitNullProperties?.Remove("brandVariant"); } }
+        private string _explicitNullValueBrandVariant = default!;
 #endif
         /// <summary>The name of the cardholder. Maximum length: 26 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CardholderName { get; set; }
+        public string? CardholderName { get => _explicitNullValueCardholderName; set { _explicitNullValueCardholderName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardholderName"); else _explicitNullProperties?.Remove("cardholderName"); } }
+        private string? _explicitNullValueCardholderName = default!;
 #nullable restore
 #else
-        public string CardholderName { get; set; }
+        public string CardholderName { get => _explicitNullValueCardholderName; set { _explicitNullValueCardholderName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardholderName"); else _explicitNullProperties?.Remove("cardholderName"); } }
+        private string _explicitNullValueCardholderName = default!;
 #endif
         /// <summary>Contains information about the configuration profile for your cards. The configuration profile consists of settings required when creating a physical or a virtual card. You identify a configuration profile with its `configurationProfileId`.When you provide this field in a request, you can override the settings of an existing configuration profile.Reach out to your Adyen contact to get the values that you can send in this object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CardConfigurationComposed? Configuration { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CardConfigurationComposed? Configuration { get => _explicitNullValueConfiguration; set { _explicitNullValueConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configuration"); else _explicitNullProperties?.Remove("configuration"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CardConfigurationComposed? _explicitNullValueConfiguration = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CardConfigurationComposed Configuration { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CardConfigurationComposed Configuration { get => _explicitNullValueConfiguration; set { _explicitNullValueConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configuration"); else _explicitNullProperties?.Remove("configuration"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CardConfigurationComposed _explicitNullValueConfiguration = default!;
 #endif
         /// <summary>The CVC2 value of the card.&gt; The CVC2 is not sent by default. This is only returned in the `POST` response for single-use virtual cards.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Cvc { get; set; }
+        public string? Cvc { get => _explicitNullValueCvc; set { _explicitNullValueCvc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cvc"); else _explicitNullProperties?.Remove("cvc"); } }
+        private string? _explicitNullValueCvc = default!;
 #nullable restore
 #else
-        public string Cvc { get; set; }
+        public string Cvc { get => _explicitNullValueCvc; set { _explicitNullValueCvc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cvc"); else _explicitNullProperties?.Remove("cvc"); } }
+        private string _explicitNullValueCvc = default!;
 #endif
         /// <summary>The delivery contact (name and address) for physical card delivery.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CardDeliveryContact? DeliveryContact { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CardDeliveryContact? DeliveryContact { get => _explicitNullValueDeliveryContact; set { _explicitNullValueDeliveryContact = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deliveryContact"); else _explicitNullProperties?.Remove("deliveryContact"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CardDeliveryContact? _explicitNullValueDeliveryContact = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CardDeliveryContact DeliveryContact { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CardDeliveryContact DeliveryContact { get => _explicitNullValueDeliveryContact; set { _explicitNullValueDeliveryContact = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deliveryContact"); else _explicitNullProperties?.Remove("deliveryContact"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CardDeliveryContact _explicitNullValueDeliveryContact = default!;
 #endif
         /// <summary>The expiration date of the card.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CardExpiration? Expiration { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CardExpiration? Expiration { get => _explicitNullValueExpiration; set { _explicitNullValueExpiration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiration"); else _explicitNullProperties?.Remove("expiration"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CardExpiration? _explicitNullValueExpiration = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CardExpiration Expiration { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CardExpiration Expiration { get => _explicitNullValueExpiration; set { _explicitNullValueExpiration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiration"); else _explicitNullProperties?.Remove("expiration"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CardExpiration _explicitNullValueExpiration = default!;
 #endif
         /// <summary>The form factor of the card.Possible values: **virtual**, **physical**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CardFormFactor? FormFactor { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CardFormFactor? FormFactor { get => _explicitNullValueFormFactor; set { _explicitNullValueFormFactor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("formFactor"); else _explicitNullProperties?.Remove("formFactor"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CardFormFactor? _explicitNullValueFormFactor = default!;
         /// <summary>Last last four digits of the card number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastFour { get; set; }
+        public string? LastFour { get => _explicitNullValueLastFour; set { _explicitNullValueLastFour = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastFour"); else _explicitNullProperties?.Remove("lastFour"); } }
+        private string? _explicitNullValueLastFour = default!;
 #nullable restore
 #else
-        public string LastFour { get; set; }
+        public string LastFour { get => _explicitNullValueLastFour; set { _explicitNullValueLastFour = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastFour"); else _explicitNullProperties?.Remove("lastFour"); } }
+        private string _explicitNullValueLastFour = default!;
 #endif
         /// <summary>The primary account number (PAN) of the card.&gt; The PAN is masked by default and returned only for single-use virtual cards.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -108,18 +149,22 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The 3DS configuration of the physical or the virtual card. Possible values: **fullySupported**, **secureCorporate**.&gt; Reach out to your Adyen contact to get the values relevant for your integration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ThreeDSecure { get; set; }
+        public string? ThreeDSecure { get => _explicitNullValueThreeDSecure; set { _explicitNullValueThreeDSecure = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSecure"); else _explicitNullProperties?.Remove("threeDSecure"); } }
+        private string? _explicitNullValueThreeDSecure = default!;
 #nullable restore
 #else
-        public string ThreeDSecure { get; set; }
+        public string ThreeDSecure { get => _explicitNullValueThreeDSecure; set { _explicitNullValueThreeDSecure = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSecure"); else _explicitNullProperties?.Remove("threeDSecure"); } }
+        private string _explicitNullValueThreeDSecure = default!;
 #endif
         /// <summary>Specifies how many times the card can be used. Possible values: **singleUse**, **multiUse**.&gt; Reach out to your Adyen contact to determine the value relevant for your integration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Usage { get; set; }
+        public string? Usage { get => _explicitNullValueUsage; set { _explicitNullValueUsage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usage"); else _explicitNullProperties?.Remove("usage"); } }
+        private string? _explicitNullValueUsage = default!;
 #nullable restore
 #else
-        public string Usage { get; set; }
+        public string Usage { get => _explicitNullValueUsage; set { _explicitNullValueUsage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usage"); else _explicitNullProperties?.Remove("usage"); } }
+        private string _explicitNullValueUsage = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.UpdatePaymentInstrumentCard"/> and sets the default values.
@@ -136,7 +181,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.UpdatePaymentInstrumentCard CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.UpdatePaymentInstrumentCard();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.UpdatePaymentInstrumentCard(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -182,6 +227,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("lastFour", LastFour);
             writer.WriteStringValue("threeDSecure", ThreeDSecure);
             writer.WriteStringValue("usage", Usage);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

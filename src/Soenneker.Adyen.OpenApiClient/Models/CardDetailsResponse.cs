@@ -11,34 +11,52 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CardDetailsResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("brands") is { } nullNodeBrands && nullNodeBrands.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Brands = null;
+            if (parseNode.GetChildNode("fundingSource") is { } nullNodeFundingSource && nullNodeFundingSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FundingSource = null;
+            if (parseNode.GetChildNode("isCardCommercial") is { } nullNodeIsCardCommercial && nullNodeIsCardCommercial.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsCardCommercial = null;
+            if (parseNode.GetChildNode("issuingCountryCode") is { } nullNodeIssuingCountryCode && nullNodeIssuingCountryCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssuingCountryCode = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The list of brands identified for the card.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.CardBrandDetails>? Brands { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.CardBrandDetails>? Brands { get => _explicitNullValueBrands; set { _explicitNullValueBrands = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("brands"); else _explicitNullProperties?.Remove("brands"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.CardBrandDetails>? _explicitNullValueBrands = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.CardBrandDetails> Brands { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.CardBrandDetails> Brands { get => _explicitNullValueBrands; set { _explicitNullValueBrands = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("brands"); else _explicitNullProperties?.Remove("brands"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.CardBrandDetails> _explicitNullValueBrands = default!;
 #endif
         /// <summary>The funding source of the card, for example **DEBIT**, **CREDIT**, or **PREPAID**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FundingSource { get; set; }
+        public string? FundingSource { get => _explicitNullValueFundingSource; set { _explicitNullValueFundingSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fundingSource"); else _explicitNullProperties?.Remove("fundingSource"); } }
+        private string? _explicitNullValueFundingSource = default!;
 #nullable restore
 #else
-        public string FundingSource { get; set; }
+        public string FundingSource { get => _explicitNullValueFundingSource; set { _explicitNullValueFundingSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fundingSource"); else _explicitNullProperties?.Remove("fundingSource"); } }
+        private string _explicitNullValueFundingSource = default!;
 #endif
         /// <summary>Indicates if this is a commercial card or a consumer card. If **true**, it is a commercial card. If **false**, it is a consumer card.</summary>
-        public bool? IsCardCommercial { get; set; }
+        public bool? IsCardCommercial { get => _explicitNullValueIsCardCommercial; set { _explicitNullValueIsCardCommercial = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isCardCommercial"); else _explicitNullProperties?.Remove("isCardCommercial"); } }
+        private bool? _explicitNullValueIsCardCommercial = default!;
         /// <summary>The two-letter country code  of the country where the card was issued.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IssuingCountryCode { get; set; }
+        public string? IssuingCountryCode { get => _explicitNullValueIssuingCountryCode; set { _explicitNullValueIssuingCountryCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuingCountryCode"); else _explicitNullProperties?.Remove("issuingCountryCode"); } }
+        private string? _explicitNullValueIssuingCountryCode = default!;
 #nullable restore
 #else
-        public string IssuingCountryCode { get; set; }
+        public string IssuingCountryCode { get => _explicitNullValueIssuingCountryCode; set { _explicitNullValueIssuingCountryCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuingCountryCode"); else _explicitNullProperties?.Remove("issuingCountryCode"); } }
+        private string _explicitNullValueIssuingCountryCode = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CardDetailsResponse"/> and sets the default values.
@@ -55,7 +73,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.CardDetailsResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.CardDetailsResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.CardDetailsResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,6 +100,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("fundingSource", FundingSource);
             writer.WriteBoolValue("isCardCommercial", IsCardCommercial);
             writer.WriteStringValue("issuingCountryCode", IssuingCountryCode);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

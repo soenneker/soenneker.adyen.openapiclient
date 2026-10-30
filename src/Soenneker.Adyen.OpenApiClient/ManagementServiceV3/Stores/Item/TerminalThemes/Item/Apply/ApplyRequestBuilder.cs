@@ -59,6 +59,8 @@ namespace Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Stores.Item.Terminal
                 { "403", global::Soenneker.Adyen.OpenApiClient.Models.PostStoresStoreIdTerminalThemesIdApply403Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Adyen.OpenApiClient.Models.PostStoresStoreIdTerminalThemesIdApply404Response.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Adyen.OpenApiClient.Models.PostStoresStoreIdTerminalThemesIdApply500Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }

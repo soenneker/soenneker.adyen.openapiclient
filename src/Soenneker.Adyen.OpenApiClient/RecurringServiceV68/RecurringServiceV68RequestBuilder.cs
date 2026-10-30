@@ -21,6 +21,7 @@ namespace Soenneker.Adyen.OpenApiClient.RecurringServiceV68
     public partial class RecurringServiceV68RequestBuilder : BaseRequestBuilder
     {
         /// <summary>The createPermit property</summary>
+        [Obsolete("")]
         public global::Soenneker.Adyen.OpenApiClient.RecurringServiceV68.CreatePermit.CreatePermitRequestBuilder CreatePermit
         {
             get => new global::Soenneker.Adyen.OpenApiClient.RecurringServiceV68.CreatePermit.CreatePermitRequestBuilder(PathParameters, RequestAdapter);
@@ -31,6 +32,7 @@ namespace Soenneker.Adyen.OpenApiClient.RecurringServiceV68
             get => new global::Soenneker.Adyen.OpenApiClient.RecurringServiceV68.Disable.DisableRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The disablePermit property</summary>
+        [Obsolete("")]
         public global::Soenneker.Adyen.OpenApiClient.RecurringServiceV68.DisablePermit.DisablePermitRequestBuilder DisablePermit
         {
             get => new global::Soenneker.Adyen.OpenApiClient.RecurringServiceV68.DisablePermit.DisablePermitRequestBuilder(PathParameters, RequestAdapter);

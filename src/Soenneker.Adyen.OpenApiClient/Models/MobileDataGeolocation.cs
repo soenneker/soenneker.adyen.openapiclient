@@ -12,24 +12,37 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MobileDataGeolocation : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("GeographicCoordinates") is { } nullNodeGeographicCoordinates && nullNodeGeographicCoordinates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GeographicCoordinates = null;
+            if (parseNode.GetChildNode("UTMCoordinates") is { } nullNodeUTMCoordinates && nullNodeUTMCoordinates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UTMCoordinates = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The GeographicCoordinates property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.GeographicCoordinates? GeographicCoordinates { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.GeographicCoordinates? GeographicCoordinates { get => _explicitNullValueGeographicCoordinates; set { _explicitNullValueGeographicCoordinates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("GeographicCoordinates"); else _explicitNullProperties?.Remove("GeographicCoordinates"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.GeographicCoordinates? _explicitNullValueGeographicCoordinates = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.GeographicCoordinates GeographicCoordinates { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.GeographicCoordinates GeographicCoordinates { get => _explicitNullValueGeographicCoordinates; set { _explicitNullValueGeographicCoordinates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("GeographicCoordinates"); else _explicitNullProperties?.Remove("GeographicCoordinates"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.GeographicCoordinates _explicitNullValueGeographicCoordinates = default!;
 #endif
         /// <summary>The UTMCoordinates property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.UtmCoordinates? UTMCoordinates { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.UtmCoordinates? UTMCoordinates { get => _explicitNullValueUTMCoordinates; set { _explicitNullValueUTMCoordinates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("UTMCoordinates"); else _explicitNullProperties?.Remove("UTMCoordinates"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.UtmCoordinates? _explicitNullValueUTMCoordinates = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.UtmCoordinates UTMCoordinates { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.UtmCoordinates UTMCoordinates { get => _explicitNullValueUTMCoordinates; set { _explicitNullValueUTMCoordinates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("UTMCoordinates"); else _explicitNullProperties?.Remove("UTMCoordinates"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.UtmCoordinates _explicitNullValueUTMCoordinates = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.MobileDataGeolocation"/> and sets the default values.
@@ -46,7 +59,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.MobileDataGeolocation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.MobileDataGeolocation();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.MobileDataGeolocation(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +82,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GeographicCoordinates>("GeographicCoordinates", GeographicCoordinates);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.UtmCoordinates>("UTMCoordinates", UTMCoordinates);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

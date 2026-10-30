@@ -11,30 +11,51 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class SplitConfigurationRule : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("cardRegion") is { } nullNodeCardRegion && nullNodeCardRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardRegion = null;
+            if (parseNode.GetChildNode("cardUsageType") is { } nullNodeCardUsageType && nullNodeCardUsageType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardUsageType = null;
+            if (parseNode.GetChildNode("currency") is { } nullNodeCurrency && nullNodeCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Currency = null;
+            if (parseNode.GetChildNode("fundingSource") is { } nullNodeFundingSource && nullNodeFundingSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FundingSource = null;
+            if (parseNode.GetChildNode("paymentMethod") is { } nullNodePaymentMethod && nullNodePaymentMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentMethod = null;
+            if (parseNode.GetChildNode("shopperInteraction") is { } nullNodeShopperInteraction && nullNodeShopperInteraction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShopperInteraction = null;
+            if (parseNode.GetChildNode("splitLogic") is { } nullNodeSplitLogic && nullNodeSplitLogic.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SplitLogic = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The card region condition that determines whether the [split logic](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/(merchantId)/splitConfigurations#request-rules-splitLogic) applies to the transaction.Possible values:* **domestic**: The card issuer and the store where the transaction is processed are registered in the same country.* **international**: The card issuer and the store where the transaction is processed are registered in different countries or regions. Includes all **interRegional** and **intraRegional** transactions.* **interRegional**: The card issuer and the store where the transaction is processed are registered in different regions.* **intraRegional**: The card issuer and the store where the transaction is processed are registered in different countries, but in the same region.* **intraEEA**: The card issuer and the store where the transaction is processed are registered in different countries, but in the European Economic Area (EEA).* **ANY**: Applies to all transactions, regardless of the processing and issuing country/region.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationRuleCardRegion? CardRegion { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationRuleCardRegion? CardRegion { get => _explicitNullValueCardRegion; set { _explicitNullValueCardRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardRegion"); else _explicitNullProperties?.Remove("cardRegion"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationRuleCardRegion? _explicitNullValueCardRegion = default!;
         /// <summary>The card usage type condition that determines whether the split logic applies to commercial cards, consumer cards, or all cards.* **ANY** (default): The split logic applies to all cards, regardless of its usage type.* **commercial**: The split logic applies to commercial cards only.* **consumer**: The split logic applies to consumer cards only.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationRuleCardUsageType? CardUsageType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationRuleCardUsageType? CardUsageType { get => _explicitNullValueCardUsageType; set { _explicitNullValueCardUsageType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardUsageType"); else _explicitNullProperties?.Remove("cardUsageType"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationRuleCardUsageType? _explicitNullValueCardUsageType = default!;
         /// <summary>The currency condition that defines whether the split logic applies.Its value must be a three-character [ISO currency code](https://en.wikipedia.org/wiki/ISO_4217).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Currency { get; set; }
+        public string? Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
+        private string? _explicitNullValueCurrency = default!;
 #nullable restore
 #else
-        public string Currency { get; set; }
+        public string Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
+        private string _explicitNullValueCurrency = default!;
 #endif
         /// <summary>The funding source of the payment method.Possible values:* **credit*** **debit*** **prepaid*** **deferred_debit*** **charged*** **ANY**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationRuleFundingSource? FundingSource { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationRuleFundingSource? FundingSource { get => _explicitNullValueFundingSource; set { _explicitNullValueFundingSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fundingSource"); else _explicitNullProperties?.Remove("fundingSource"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationRuleFundingSource? _explicitNullValueFundingSource = default!;
         /// <summary>The payment method condition that defines whether the split logic applies.Possible values:* [Payment method variant](https://docs.adyen.com/development-resources/paymentmethodvariant): Apply the split logic for a specific payment method.* **ANY**: Apply the split logic for all available payment methods.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaymentMethod { get; set; }
+        public string? PaymentMethod { get => _explicitNullValuePaymentMethod; set { _explicitNullValuePaymentMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentMethod"); else _explicitNullProperties?.Remove("paymentMethod"); } }
+        private string? _explicitNullValuePaymentMethod = default!;
 #nullable restore
 #else
-        public string PaymentMethod { get; set; }
+        public string PaymentMethod { get => _explicitNullValuePaymentMethod; set { _explicitNullValuePaymentMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentMethod"); else _explicitNullProperties?.Remove("paymentMethod"); } }
+        private string _explicitNullValuePaymentMethod = default!;
 #endif
         /// <summary>The unique identifier of the split configuration rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -45,14 +66,17 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string RuleId { get; private set; }
 #endif
         /// <summary>The sales channel condition that defines whether the split logic applies.Possible values:* **Ecommerce**: Online transactions where the cardholder is present.* **ContAuth**: Card on file and/or subscription transactions, where the cardholder is known to the merchant (returning customer).* **Moto**: Mail-order and telephone-order transactions where the customer is in contact with the merchant via email or telephone.* **POS**: Point-of-sale transactions where the customer is physically present to make a payment using a secure payment terminal.* **ANY**: All sales channels.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationRuleShopperInteraction? ShopperInteraction { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationRuleShopperInteraction? ShopperInteraction { get => _explicitNullValueShopperInteraction; set { _explicitNullValueShopperInteraction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shopperInteraction"); else _explicitNullProperties?.Remove("shopperInteraction"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationRuleShopperInteraction? _explicitNullValueShopperInteraction = default!;
         /// <summary>Contains the split logic that is applied if the rule conditions are met.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationRuleSplitLogic? SplitLogic { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationRuleSplitLogic? SplitLogic { get => _explicitNullValueSplitLogic; set { _explicitNullValueSplitLogic = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("splitLogic"); else _explicitNullProperties?.Remove("splitLogic"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationRuleSplitLogic? _explicitNullValueSplitLogic = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationRuleSplitLogic SplitLogic { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationRuleSplitLogic SplitLogic { get => _explicitNullValueSplitLogic; set { _explicitNullValueSplitLogic = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("splitLogic"); else _explicitNullProperties?.Remove("splitLogic"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationRuleSplitLogic _explicitNullValueSplitLogic = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationRule"/> and sets the default values.
@@ -69,7 +93,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationRule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationRule();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationRule(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -103,6 +127,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("paymentMethod", PaymentMethod);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationRuleShopperInteraction>("shopperInteraction", ShopperInteraction);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationRuleSplitLogic>("splitLogic", SplitLogic);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

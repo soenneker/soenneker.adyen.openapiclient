@@ -12,13 +12,24 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CheckoutForwardRequestOptionsNetworkToken : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("includeCryptogram") is { } nullNodeIncludeCryptogram && nullNodeIncludeCryptogram.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeCryptogram = null;
+            if (parseNode.GetChildNode("useNetworkToken") is { } nullNodeUseNetworkToken && nullNodeUseNetworkToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UseNetworkToken = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Set to **true** to enable forwarding network token cryptograms.</summary>
-        public bool? IncludeCryptogram { get; set; }
+        public bool? IncludeCryptogram { get => _explicitNullValueIncludeCryptogram; set { _explicitNullValueIncludeCryptogram = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("includeCryptogram"); else _explicitNullProperties?.Remove("includeCryptogram"); } }
+        private bool? _explicitNullValueIncludeCryptogram = default!;
         /// <summary>Set to **true** to forward the network token for a card.</summary>
-        public bool? UseNetworkToken { get; set; }
+        public bool? UseNetworkToken { get => _explicitNullValueUseNetworkToken; set { _explicitNullValueUseNetworkToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("useNetworkToken"); else _explicitNullProperties?.Remove("useNetworkToken"); } }
+        private bool? _explicitNullValueUseNetworkToken = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestOptionsNetworkToken"/> and sets the default values.
         /// </summary>
@@ -34,7 +45,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestOptionsNetworkToken CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestOptionsNetworkToken();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestOptionsNetworkToken(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -57,6 +68,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("includeCryptogram", IncludeCryptogram);
             writer.WriteBoolValue("useNetworkToken", UseNetworkToken);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

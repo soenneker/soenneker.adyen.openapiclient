@@ -11,43 +11,69 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CardOrder : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("beginDate") is { } nullNodeBeginDate && nullNodeBeginDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BeginDate = null;
+            if (parseNode.GetChildNode("cardManufacturingProfileId") is { } nullNodeCardManufacturingProfileId && nullNodeCardManufacturingProfileId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardManufacturingProfileId = null;
+            if (parseNode.GetChildNode("closedDate") is { } nullNodeClosedDate && nullNodeClosedDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClosedDate = null;
+            if (parseNode.GetChildNode("endDate") is { } nullNodeEndDate && nullNodeEndDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndDate = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("lockDate") is { } nullNodeLockDate && nullNodeLockDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LockDate = null;
+            if (parseNode.GetChildNode("serviceCenter") is { } nullNodeServiceCenter && nullNodeServiceCenter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceCenter = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date when the card order is created.</summary>
-        public DateTimeOffset? BeginDate { get; set; }
+        public DateTimeOffset? BeginDate { get => _explicitNullValueBeginDate; set { _explicitNullValueBeginDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("beginDate"); else _explicitNullProperties?.Remove("beginDate"); } }
+        private DateTimeOffset? _explicitNullValueBeginDate = default!;
         /// <summary>The unique identifier of the card manufacturer profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CardManufacturingProfileId { get; set; }
+        public string? CardManufacturingProfileId { get => _explicitNullValueCardManufacturingProfileId; set { _explicitNullValueCardManufacturingProfileId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardManufacturingProfileId"); else _explicitNullProperties?.Remove("cardManufacturingProfileId"); } }
+        private string? _explicitNullValueCardManufacturingProfileId = default!;
 #nullable restore
 #else
-        public string CardManufacturingProfileId { get; set; }
+        public string CardManufacturingProfileId { get => _explicitNullValueCardManufacturingProfileId; set { _explicitNullValueCardManufacturingProfileId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardManufacturingProfileId"); else _explicitNullProperties?.Remove("cardManufacturingProfileId"); } }
+        private string _explicitNullValueCardManufacturingProfileId = default!;
 #endif
         /// <summary>The date when the card order processing ends.</summary>
-        public DateTimeOffset? ClosedDate { get; set; }
+        public DateTimeOffset? ClosedDate { get => _explicitNullValueClosedDate; set { _explicitNullValueClosedDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("closedDate"); else _explicitNullProperties?.Remove("closedDate"); } }
+        private DateTimeOffset? _explicitNullValueClosedDate = default!;
         /// <summary>The date when you manually closed the card order.Card orders are automatically closed by the end of the day it was created. If you manually closed it beforehand, the closing date is shown as the `endDate`.</summary>
-        public DateTimeOffset? EndDate { get; set; }
+        public DateTimeOffset? EndDate { get => _explicitNullValueEndDate; set { _explicitNullValueEndDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endDate"); else _explicitNullProperties?.Remove("endDate"); } }
+        private DateTimeOffset? _explicitNullValueEndDate = default!;
         /// <summary>The unique identifier of the card order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The date when the card order processing begins.</summary>
-        public DateTimeOffset? LockDate { get; set; }
+        public DateTimeOffset? LockDate { get => _explicitNullValueLockDate; set { _explicitNullValueLockDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lockDate"); else _explicitNullProperties?.Remove("lockDate"); } }
+        private DateTimeOffset? _explicitNullValueLockDate = default!;
         /// <summary>The service center.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServiceCenter { get; set; }
+        public string? ServiceCenter { get => _explicitNullValueServiceCenter; set { _explicitNullValueServiceCenter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serviceCenter"); else _explicitNullProperties?.Remove("serviceCenter"); } }
+        private string? _explicitNullValueServiceCenter = default!;
 #nullable restore
 #else
-        public string ServiceCenter { get; set; }
+        public string ServiceCenter { get => _explicitNullValueServiceCenter; set { _explicitNullValueServiceCenter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serviceCenter"); else _explicitNullProperties?.Remove("serviceCenter"); } }
+        private string _explicitNullValueServiceCenter = default!;
 #endif
         /// <summary>The status of the card order.Possible values: **Open**, **Closed**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CardOrderStatus? Status { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CardOrderStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.CardOrderStatus? _explicitNullValueStatus = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CardOrder"/> and sets the default values.
         /// </summary>
@@ -63,7 +89,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.CardOrder CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.CardOrder();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.CardOrder(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -98,6 +124,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("lockDate", LockDate);
             writer.WriteStringValue("serviceCenter", ServiceCenter);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CardOrderStatus>("status", Status);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,114 +11,172 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class BalancePlatformConfiguration : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("automaticApplication") is { } nullNodeAutomaticApplication && nullNodeAutomaticApplication.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutomaticApplication = null;
+            if (parseNode.GetChildNode("balancePlatformId") is { } nullNodeBalancePlatformId && nullNodeBalancePlatformId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalancePlatformId = null;
+            if (parseNode.GetChildNode("countryCode") is { } nullNodeCountryCode && nullNodeCountryCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CountryCode = null;
+            if (parseNode.GetChildNode("createdAt") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("currency") is { } nullNodeCurrency && nullNodeCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Currency = null;
+            if (parseNode.GetChildNode("defaultDescription") is { } nullNodeDefaultDescription && nullNodeDefaultDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultDescription = null;
+            if (parseNode.GetChildNode("defaultFrequency") is { } nullNodeDefaultFrequency && nullNodeDefaultFrequency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultFrequency = null;
+            if (parseNode.GetChildNode("defaultFrequencyValue") is { } nullNodeDefaultFrequencyValue && nullNodeDefaultFrequencyValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultFrequencyValue = null;
+            if (parseNode.GetChildNode("defaultReference") is { } nullNodeDefaultReference && nullNodeDefaultReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultReference = null;
+            if (parseNode.GetChildNode("defaultReferenceForBeneficiary") is { } nullNodeDefaultReferenceForBeneficiary && nullNodeDefaultReferenceForBeneficiary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultReferenceForBeneficiary = null;
+            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("maxPayoutAmount") is { } nullNodeMaxPayoutAmount && nullNodeMaxPayoutAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxPayoutAmount = null;
+            if (parseNode.GetChildNode("minPayoutAmount") is { } nullNodeMinPayoutAmount && nullNodeMinPayoutAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinPayoutAmount = null;
+            if (parseNode.GetChildNode("payoutScheduleDescription") is { } nullNodePayoutScheduleDescription && nullNodePayoutScheduleDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayoutScheduleDescription = null;
+            if (parseNode.GetChildNode("retainedAmount") is { } nullNodeRetainedAmount && nullNodeRetainedAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RetainedAmount = null;
+            if (parseNode.GetChildNode("updatedAt") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
+            if (parseNode.GetChildNode("userSettlementDelay") is { } nullNodeUserSettlementDelay && nullNodeUserSettlementDelay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserSettlementDelay = null;
+            if (parseNode.GetChildNode("userSettlementTime") is { } nullNodeUserSettlementTime && nullNodeUserSettlementTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserSettlementTime = null;
+            if (parseNode.GetChildNode("userSettlementTimeZone") is { } nullNodeUserSettlementTimeZone && nullNodeUserSettlementTimeZone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserSettlementTimeZone = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specifies whether this payout schedule is automatically applied to new balance accounts.</summary>
-        public bool? AutomaticApplication { get; set; }
+        public bool? AutomaticApplication { get => _explicitNullValueAutomaticApplication; set { _explicitNullValueAutomaticApplication = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("automaticApplication"); else _explicitNullProperties?.Remove("automaticApplication"); } }
+        private bool? _explicitNullValueAutomaticApplication = default!;
         /// <summary>The balance platform to which the payout schedule applies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BalancePlatformId { get; set; }
+        public string? BalancePlatformId { get => _explicitNullValueBalancePlatformId; set { _explicitNullValueBalancePlatformId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balancePlatformId"); else _explicitNullProperties?.Remove("balancePlatformId"); } }
+        private string? _explicitNullValueBalancePlatformId = default!;
 #nullable restore
 #else
-        public string BalancePlatformId { get; set; }
+        public string BalancePlatformId { get => _explicitNullValueBalancePlatformId; set { _explicitNullValueBalancePlatformId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balancePlatformId"); else _explicitNullProperties?.Remove("balancePlatformId"); } }
+        private string _explicitNullValueBalancePlatformId = default!;
 #endif
         /// <summary>The two-letter [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) code of the country to which the payout schedule applies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CountryCode { get; set; }
+        public string? CountryCode { get => _explicitNullValueCountryCode; set { _explicitNullValueCountryCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("countryCode"); else _explicitNullProperties?.Remove("countryCode"); } }
+        private string? _explicitNullValueCountryCode = default!;
 #nullable restore
 #else
-        public string CountryCode { get; set; }
+        public string CountryCode { get => _explicitNullValueCountryCode; set { _explicitNullValueCountryCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("countryCode"); else _explicitNullProperties?.Remove("countryCode"); } }
+        private string _explicitNullValueCountryCode = default!;
 #endif
         /// <summary>The date when the payout schedule was created.</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
+        private DateTimeOffset? _explicitNullValueCreatedAt = default!;
         /// <summary>The three-character [ISO code](https://docs.adyen.com/development-resources/currency-codes) of the currency used for the payout schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Currency { get; set; }
+        public string? Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
+        private string? _explicitNullValueCurrency = default!;
 #nullable restore
 #else
-        public string Currency { get; set; }
+        public string Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
+        private string _explicitNullValueCurrency = default!;
 #endif
         /// <summary>The default description for payouts initiated by this payout schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultDescription { get; set; }
+        public string? DefaultDescription { get => _explicitNullValueDefaultDescription; set { _explicitNullValueDefaultDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultDescription"); else _explicitNullProperties?.Remove("defaultDescription"); } }
+        private string? _explicitNullValueDefaultDescription = default!;
 #nullable restore
 #else
-        public string DefaultDescription { get; set; }
+        public string DefaultDescription { get => _explicitNullValueDefaultDescription; set { _explicitNullValueDefaultDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultDescription"); else _explicitNullProperties?.Remove("defaultDescription"); } }
+        private string _explicitNullValueDefaultDescription = default!;
 #endif
         /// <summary>The defaultFrequency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultFrequency { get; set; }
+        public string? DefaultFrequency { get => _explicitNullValueDefaultFrequency; set { _explicitNullValueDefaultFrequency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultFrequency"); else _explicitNullProperties?.Remove("defaultFrequency"); } }
+        private string? _explicitNullValueDefaultFrequency = default!;
 #nullable restore
 #else
-        public string DefaultFrequency { get; set; }
+        public string DefaultFrequency { get => _explicitNullValueDefaultFrequency; set { _explicitNullValueDefaultFrequency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultFrequency"); else _explicitNullProperties?.Remove("defaultFrequency"); } }
+        private string _explicitNullValueDefaultFrequency = default!;
 #endif
         /// <summary>The default value for date of the month or day of the week when payouts are initiated. Allowed only if `defaultFrequency` is **monthly** or **weekly**.Possible values if `defaultFrequency` is **monthly**: **[1 - 31]**.* If your specified date happens on a weekend, the payout is initiated on the next business day.* If your specified date (**29**, **30**, or **31**) does not exist in a month, the payout is initiated  on the last day of that month.Possible values if `defaultFrequency` is **weekly**: **[1 - 5]**.</summary>
-        public int? DefaultFrequencyValue { get; set; }
+        public int? DefaultFrequencyValue { get => _explicitNullValueDefaultFrequencyValue; set { _explicitNullValueDefaultFrequencyValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultFrequencyValue"); else _explicitNullProperties?.Remove("defaultFrequencyValue"); } }
+        private int? _explicitNullValueDefaultFrequencyValue = default!;
         /// <summary>Your internal default reference for the payout schedule.When the payout schedule is applied to a balance account, this reference is also used for that payout schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultReference { get; set; }
+        public string? DefaultReference { get => _explicitNullValueDefaultReference; set { _explicitNullValueDefaultReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultReference"); else _explicitNullProperties?.Remove("defaultReference"); } }
+        private string? _explicitNullValueDefaultReference = default!;
 #nullable restore
 #else
-        public string DefaultReference { get; set; }
+        public string DefaultReference { get => _explicitNullValueDefaultReference; set { _explicitNullValueDefaultReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultReference"); else _explicitNullProperties?.Remove("defaultReference"); } }
+        private string _explicitNullValueDefaultReference = default!;
 #endif
         /// <summary>The default reference for beneficiary for payouts initiated by this payout schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultReferenceForBeneficiary { get; set; }
+        public string? DefaultReferenceForBeneficiary { get => _explicitNullValueDefaultReferenceForBeneficiary; set { _explicitNullValueDefaultReferenceForBeneficiary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultReferenceForBeneficiary"); else _explicitNullProperties?.Remove("defaultReferenceForBeneficiary"); } }
+        private string? _explicitNullValueDefaultReferenceForBeneficiary = default!;
 #nullable restore
 #else
-        public string DefaultReferenceForBeneficiary { get; set; }
+        public string DefaultReferenceForBeneficiary { get => _explicitNullValueDefaultReferenceForBeneficiary; set { _explicitNullValueDefaultReferenceForBeneficiary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultReferenceForBeneficiary"); else _explicitNullProperties?.Remove("defaultReferenceForBeneficiary"); } }
+        private string _explicitNullValueDefaultReferenceForBeneficiary = default!;
 #endif
         /// <summary>Specifies whether the payout schedule is enabled immediately after it is created.</summary>
-        public bool? Enabled { get; set; }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        private bool? _explicitNullValueEnabled = default!;
         /// <summary>The unique identifier of the payout schedule for your balance platform.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The maximum amount that can be paid out from balance accounts that use this payout schedule.Default value: **0**, which means that there is no maximum limit.</summary>
-        public long? MaxPayoutAmount { get; set; }
+        public long? MaxPayoutAmount { get => _explicitNullValueMaxPayoutAmount; set { _explicitNullValueMaxPayoutAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxPayoutAmount"); else _explicitNullProperties?.Remove("maxPayoutAmount"); } }
+        private long? _explicitNullValueMaxPayoutAmount = default!;
         /// <summary>The minimum amount that can be paid out from balance accounts that use this payout schedule.Default value: **0**.</summary>
-        public long? MinPayoutAmount { get; set; }
+        public long? MinPayoutAmount { get => _explicitNullValueMinPayoutAmount; set { _explicitNullValueMinPayoutAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minPayoutAmount"); else _explicitNullProperties?.Remove("minPayoutAmount"); } }
+        private long? _explicitNullValueMinPayoutAmount = default!;
         /// <summary>The type of payout schedule. This type indicates how fast funds are paid out to your user.Possible values:- **Standard**: The funds arrive in your user&apos;s transfer instrument two days after the funds are settled.- **Accelerated**: The funds arrive to your user&apos;s transfer instrument the day after the funds are settled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PayoutScheduleDescription { get; set; }
+        public string? PayoutScheduleDescription { get => _explicitNullValuePayoutScheduleDescription; set { _explicitNullValuePayoutScheduleDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payoutScheduleDescription"); else _explicitNullProperties?.Remove("payoutScheduleDescription"); } }
+        private string? _explicitNullValuePayoutScheduleDescription = default!;
 #nullable restore
 #else
-        public string PayoutScheduleDescription { get; set; }
+        public string PayoutScheduleDescription { get => _explicitNullValuePayoutScheduleDescription; set { _explicitNullValuePayoutScheduleDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payoutScheduleDescription"); else _explicitNullProperties?.Remove("payoutScheduleDescription"); } }
+        private string _explicitNullValuePayoutScheduleDescription = default!;
 #endif
         /// <summary>The amount of funds that must remain available in a balance account after an execution of the payout schedule. If the funds in the balance account are less than the retained amount, the execution is not initiated.Default value: **0**</summary>
-        public long? RetainedAmount { get; set; }
+        public long? RetainedAmount { get => _explicitNullValueRetainedAmount; set { _explicitNullValueRetainedAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retainedAmount"); else _explicitNullProperties?.Remove("retainedAmount"); } }
+        private long? _explicitNullValueRetainedAmount = default!;
         /// <summary>The date when the payout schedule was updated.</summary>
-        public DateTimeOffset? UpdatedAt { get; set; }
+        public DateTimeOffset? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updatedAt"); else _explicitNullProperties?.Remove("updatedAt"); } }
+        private DateTimeOffset? _explicitNullValueUpdatedAt = default!;
         /// <summary>The default [settlement delay](https://docs.adyen.com/platforms/settle-funds/#settlement-delay) for this payout schedule.</summary>
-        public int? UserSettlementDelay { get; set; }
+        public int? UserSettlementDelay { get => _explicitNullValueUserSettlementDelay; set { _explicitNullValueUserSettlementDelay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userSettlementDelay"); else _explicitNullProperties?.Remove("userSettlementDelay"); } }
+        private int? _explicitNullValueUserSettlementDelay = default!;
         /// <summary>The time when the payout funds are settled in your user&apos;s transfer instrument. For example, 11:30:00.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserSettlementTime { get; set; }
+        public string? UserSettlementTime { get => _explicitNullValueUserSettlementTime; set { _explicitNullValueUserSettlementTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userSettlementTime"); else _explicitNullProperties?.Remove("userSettlementTime"); } }
+        private string? _explicitNullValueUserSettlementTime = default!;
 #nullable restore
 #else
-        public string UserSettlementTime { get; set; }
+        public string UserSettlementTime { get => _explicitNullValueUserSettlementTime; set { _explicitNullValueUserSettlementTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userSettlementTime"); else _explicitNullProperties?.Remove("userSettlementTime"); } }
+        private string _explicitNullValueUserSettlementTime = default!;
 #endif
         /// <summary>The timezone of the `userSettlementTime`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserSettlementTimeZone { get; set; }
+        public string? UserSettlementTimeZone { get => _explicitNullValueUserSettlementTimeZone; set { _explicitNullValueUserSettlementTimeZone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userSettlementTimeZone"); else _explicitNullProperties?.Remove("userSettlementTimeZone"); } }
+        private string? _explicitNullValueUserSettlementTimeZone = default!;
 #nullable restore
 #else
-        public string UserSettlementTimeZone { get; set; }
+        public string UserSettlementTimeZone { get => _explicitNullValueUserSettlementTimeZone; set { _explicitNullValueUserSettlementTimeZone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userSettlementTimeZone"); else _explicitNullProperties?.Remove("userSettlementTimeZone"); } }
+        private string _explicitNullValueUserSettlementTimeZone = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfiguration"/> and sets the default values.
@@ -135,7 +193,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfiguration();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfiguration(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -194,6 +252,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteIntValue("userSettlementDelay", UserSettlementDelay);
             writer.WriteStringValue("userSettlementTime", UserSettlementTime);
             writer.WriteStringValue("userSettlementTimeZone", UserSettlementTimeZone);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

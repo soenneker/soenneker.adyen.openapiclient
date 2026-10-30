@@ -12,43 +12,64 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReversalResponse : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("OriginalPOITransaction") is { } nullNodeOriginalPOITransaction && nullNodeOriginalPOITransaction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginalPOITransaction = null;
+            if (parseNode.GetChildNode("PaymentReceipt") is { } nullNodePaymentReceipt && nullNodePaymentReceipt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentReceipt = null;
+            if (parseNode.GetChildNode("POIData") is { } nullNodePOIData && nullNodePOIData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) POIData = null;
+            if (parseNode.GetChildNode("Response") is { } nullNodeResponse && nullNodeResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Response = null;
+            if (parseNode.GetChildNode("ReversedAmount") is { } nullNodeReversedAmount && nullNodeReversedAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReversedAmount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Identification of a previous POI transaction.In the Payment Request message, it allows using the card of a previous CardAcquisition or Payment request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.OriginalPoiTransaction? OriginalPOITransaction { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.OriginalPoiTransaction? OriginalPOITransaction { get => _explicitNullValueOriginalPOITransaction; set { _explicitNullValueOriginalPOITransaction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OriginalPOITransaction"); else _explicitNullProperties?.Remove("OriginalPOITransaction"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.OriginalPoiTransaction? _explicitNullValueOriginalPOITransaction = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.OriginalPoiTransaction OriginalPOITransaction { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.OriginalPoiTransaction OriginalPOITransaction { get => _explicitNullValueOriginalPOITransaction; set { _explicitNullValueOriginalPOITransaction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OriginalPOITransaction"); else _explicitNullProperties?.Remove("OriginalPOITransaction"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.OriginalPoiTransaction _explicitNullValueOriginalPOITransaction = default!;
 #endif
         /// <summary>The PaymentReceipt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.PaymentReceipt>? PaymentReceipt { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.PaymentReceipt>? PaymentReceipt { get => _explicitNullValuePaymentReceipt; set { _explicitNullValuePaymentReceipt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PaymentReceipt"); else _explicitNullProperties?.Remove("PaymentReceipt"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.PaymentReceipt>? _explicitNullValuePaymentReceipt = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.PaymentReceipt> PaymentReceipt { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.PaymentReceipt> PaymentReceipt { get => _explicitNullValuePaymentReceipt; set { _explicitNullValuePaymentReceipt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PaymentReceipt"); else _explicitNullProperties?.Remove("PaymentReceipt"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.PaymentReceipt> _explicitNullValuePaymentReceipt = default!;
 #endif
         /// <summary>Data related to the POI System.In the Message Response, identification of the POI transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PoiData? POIData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PoiData? POIData { get => _explicitNullValuePOIData; set { _explicitNullValuePOIData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("POIData"); else _explicitNullProperties?.Remove("POIData"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PoiData? _explicitNullValuePOIData = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PoiData POIData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PoiData POIData { get => _explicitNullValuePOIData; set { _explicitNullValuePOIData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("POIData"); else _explicitNullProperties?.Remove("POIData"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PoiData _explicitNullValuePOIData = default!;
 #endif
         /// <summary>Result of a message request processing.If Result is Success, `ErrorCondition` is absent or not used in the processing of the message. In the other cases, the `ErrorCondition` has to be present and can refine the processing of the message response. `AdditionalResponse` gives more information about the success or the failure of the message request processing, for logging without real time involvements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue? Response { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue? Response { get => _explicitNullValueResponse; set { _explicitNullValueResponse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Response"); else _explicitNullProperties?.Remove("Response"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue? _explicitNullValueResponse = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue Response { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue Response { get => _explicitNullValueResponse; set { _explicitNullValueResponse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Response"); else _explicitNullProperties?.Remove("Response"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue _explicitNullValueResponse = default!;
 #endif
         /// <summary>Amount of the payment or loyalty to reverse.Copy.</summary>
-        public double? ReversedAmount { get; set; }
+        public double? ReversedAmount { get => _explicitNullValueReversedAmount; set { _explicitNullValueReversedAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ReversedAmount"); else _explicitNullProperties?.Remove("ReversedAmount"); } }
+        private double? _explicitNullValueReversedAmount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ReversalResponse"/> and sets the default values.
         /// </summary>
@@ -64,7 +85,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.ReversalResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.ReversalResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.ReversalResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -93,6 +114,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PoiData>("POIData", POIData);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue>("Response", Response);
             writer.WriteDoubleValue("ReversedAmount", ReversedAmount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

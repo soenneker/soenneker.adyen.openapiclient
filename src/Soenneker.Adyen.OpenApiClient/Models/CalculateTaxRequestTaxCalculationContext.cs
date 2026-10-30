@@ -12,26 +12,41 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CalculateTaxRequestTaxCalculationContext : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("calculationType") is { } nullNodeCalculationType && nullNodeCalculationType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CalculationType = null;
+            if (parseNode.GetChildNode("lrs") is { } nullNodeLrs && nullNodeLrs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Lrs = null;
+            if (parseNode.GetChildNode("taxCountryCode") is { } nullNodeTaxCountryCode && nullNodeTaxCountryCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxCountryCode = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The type of calculation requested. Initially only LRS_TCS is supported.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationContextCalculationType? CalculationType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationContextCalculationType? CalculationType { get => _explicitNullValueCalculationType; set { _explicitNullValueCalculationType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("calculationType"); else _explicitNullProperties?.Remove("calculationType"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationContextCalculationType? _explicitNullValueCalculationType = default!;
         /// <summary>India-specific LRS declarations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationContextLrs? Lrs { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationContextLrs? Lrs { get => _explicitNullValueLrs; set { _explicitNullValueLrs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lrs"); else _explicitNullProperties?.Remove("lrs"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationContextLrs? _explicitNullValueLrs = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationContextLrs Lrs { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationContextLrs Lrs { get => _explicitNullValueLrs; set { _explicitNullValueLrs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lrs"); else _explicitNullProperties?.Remove("lrs"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationContextLrs _explicitNullValueLrs = default!;
 #endif
         /// <summary>The country governing tax processing. Initially only IN is supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TaxCountryCode { get; set; }
+        public string? TaxCountryCode { get => _explicitNullValueTaxCountryCode; set { _explicitNullValueTaxCountryCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxCountryCode"); else _explicitNullProperties?.Remove("taxCountryCode"); } }
+        private string? _explicitNullValueTaxCountryCode = default!;
 #nullable restore
 #else
-        public string TaxCountryCode { get; set; }
+        public string TaxCountryCode { get => _explicitNullValueTaxCountryCode; set { _explicitNullValueTaxCountryCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxCountryCode"); else _explicitNullProperties?.Remove("taxCountryCode"); } }
+        private string _explicitNullValueTaxCountryCode = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CalculateTaxRequestTaxCalculationContext"/> and sets the default values.
@@ -48,7 +63,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.CalculateTaxRequestTaxCalculationContext CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.CalculateTaxRequestTaxCalculationContext();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.CalculateTaxRequestTaxCalculationContext(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,6 +88,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationContextCalculationType>("calculationType", CalculationType);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationContextLrs>("lrs", Lrs);
             writer.WriteStringValue("taxCountryCode", TaxCountryCode);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

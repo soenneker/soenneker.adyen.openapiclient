@@ -70,6 +70,8 @@ namespace Soenneker.Adyen.OpenApiClient.TransactionServiceV4.Disputes.Item.Attac
                 { "401", global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeAttachment>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeAttachment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
@@ -100,6 +102,8 @@ namespace Soenneker.Adyen.OpenApiClient.TransactionServiceV4.Disputes.Item.Attac
                 { "401", global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4AttachDocumentResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4AttachDocumentResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

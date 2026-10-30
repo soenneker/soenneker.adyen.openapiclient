@@ -12,28 +12,45 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReconciliationResponse : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("POIReconciliationID") is { } nullNodePOIReconciliationID && nullNodePOIReconciliationID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) POIReconciliationID = null;
+            if (parseNode.GetChildNode("ReconciliationType") is { } nullNodeReconciliationType && nullNodeReconciliationType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReconciliationType = null;
+            if (parseNode.GetChildNode("Response") is { } nullNodeResponse && nullNodeResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Response = null;
+            if (parseNode.GetChildNode("TransactionTotals") is { } nullNodeTransactionTotals && nullNodeTransactionTotals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionTotals = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Identification of the reconciliation period between Sale and POI.Absent if ReconciliationType is `AcquirerReconciliation`.</summary>
-        public int? POIReconciliationID { get; set; }
+        public int? POIReconciliationID { get => _explicitNullValuePOIReconciliationID; set { _explicitNullValuePOIReconciliationID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("POIReconciliationID"); else _explicitNullProperties?.Remove("POIReconciliationID"); } }
+        private int? _explicitNullValuePOIReconciliationID = default!;
         /// <summary>Possible values:* **SaleReconciliation*** **AcquirerSynchronisation*** **AcquirerReconciliation*** **PreviousReconciliation**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.ReconciliationResponseReconciliationType? ReconciliationType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ReconciliationResponseReconciliationType? ReconciliationType { get => _explicitNullValueReconciliationType; set { _explicitNullValueReconciliationType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ReconciliationType"); else _explicitNullProperties?.Remove("ReconciliationType"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ReconciliationResponseReconciliationType? _explicitNullValueReconciliationType = default!;
         /// <summary>Result of a message request processing.If Result is Success, `ErrorCondition` is absent or not used in the processing of the message. In the other cases, the `ErrorCondition` has to be present and can refine the processing of the message response. `AdditionalResponse` gives more information about the success or the failure of the message request processing, for logging without real time involvements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue? Response { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue? Response { get => _explicitNullValueResponse; set { _explicitNullValueResponse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Response"); else _explicitNullProperties?.Remove("Response"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue? _explicitNullValueResponse = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue Response { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue Response { get => _explicitNullValueResponse; set { _explicitNullValueResponse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Response"); else _explicitNullProperties?.Remove("Response"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue _explicitNullValueResponse = default!;
 #endif
         /// <summary>Result of the Sale to POI Reconciliation processing.If `Response.Result` is Success.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.TransactionTotals>? TransactionTotals { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.TransactionTotals>? TransactionTotals { get => _explicitNullValueTransactionTotals; set { _explicitNullValueTransactionTotals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TransactionTotals"); else _explicitNullProperties?.Remove("TransactionTotals"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.TransactionTotals>? _explicitNullValueTransactionTotals = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.TransactionTotals> TransactionTotals { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.TransactionTotals> TransactionTotals { get => _explicitNullValueTransactionTotals; set { _explicitNullValueTransactionTotals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TransactionTotals"); else _explicitNullProperties?.Remove("TransactionTotals"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.TransactionTotals> _explicitNullValueTransactionTotals = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ReconciliationResponse"/> and sets the default values.
@@ -50,7 +67,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.ReconciliationResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.ReconciliationResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.ReconciliationResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,6 +94,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ReconciliationResponseReconciliationType>("ReconciliationType", ReconciliationType);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue>("Response", Response);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TransactionTotals>("TransactionTotals", TransactionTotals);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

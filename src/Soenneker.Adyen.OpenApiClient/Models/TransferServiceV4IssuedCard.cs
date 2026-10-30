@@ -11,64 +11,97 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TransferServiceV4IssuedCard : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("authorisationType") is { } nullNodeAuthorisationType && nullNodeAuthorisationType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthorisationType = null;
+            if (parseNode.GetChildNode("networkVariant") is { } nullNodeNetworkVariant && nullNodeNetworkVariant.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NetworkVariant = null;
+            if (parseNode.GetChildNode("panEntryMode") is { } nullNodePanEntryMode && nullNodePanEntryMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PanEntryMode = null;
+            if (parseNode.GetChildNode("processingType") is { } nullNodeProcessingType && nullNodeProcessingType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProcessingType = null;
+            if (parseNode.GetChildNode("relayedAuthorisationData") is { } nullNodeRelayedAuthorisationData && nullNodeRelayedAuthorisationData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RelayedAuthorisationData = null;
+            if (parseNode.GetChildNode("schemeTraceId") is { } nullNodeSchemeTraceId && nullNodeSchemeTraceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SchemeTraceId = null;
+            if (parseNode.GetChildNode("schemeUniqueTransactionId") is { } nullNodeSchemeUniqueTransactionId && nullNodeSchemeUniqueTransactionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SchemeUniqueTransactionId = null;
+            if (parseNode.GetChildNode("threeDSecure") is { } nullNodeThreeDSecure && nullNodeThreeDSecure.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDSecure = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("validationFacts") is { } nullNodeValidationFacts && nullNodeValidationFacts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidationFacts = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The authorisation type. For example, **defaultAuthorisation**, **preAuthorisation**, **finalAuthorisation**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AuthorisationType { get; set; }
+        public string? AuthorisationType { get => _explicitNullValueAuthorisationType; set { _explicitNullValueAuthorisationType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorisationType"); else _explicitNullProperties?.Remove("authorisationType"); } }
+        private string? _explicitNullValueAuthorisationType = default!;
 #nullable restore
 #else
-        public string AuthorisationType { get; set; }
+        public string AuthorisationType { get => _explicitNullValueAuthorisationType; set { _explicitNullValueAuthorisationType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorisationType"); else _explicitNullProperties?.Remove("authorisationType"); } }
+        private string _explicitNullValueAuthorisationType = default!;
 #endif
         /// <summary>The card variant associated with the payment network used to route or process the transaction. For single-network cards, this matches the `brandVariant`. For US dual-network cards routed over an alternate network, this value reflects the specific tier or sub-type under that processing network.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCardNetworkVariant? NetworkVariant { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCardNetworkVariant? NetworkVariant { get => _explicitNullValueNetworkVariant; set { _explicitNullValueNetworkVariant = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("networkVariant"); else _explicitNullProperties?.Remove("networkVariant"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCardNetworkVariant? _explicitNullValueNetworkVariant = default!;
         /// <summary>Indicates the method used for entering the PAN to initiate a transaction.Possible values: **manual**, **chip**, **magstripe**, **contactless**, **cof**, **ecommerce**, **token**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCardPanEntryMode? PanEntryMode { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCardPanEntryMode? PanEntryMode { get => _explicitNullValuePanEntryMode; set { _explicitNullValuePanEntryMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("panEntryMode"); else _explicitNullProperties?.Remove("panEntryMode"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCardPanEntryMode? _explicitNullValuePanEntryMode = default!;
         /// <summary>Contains information about how the payment was processed.Possible values: **atmWithdraw**, **balanceInquiry**, **ecommerce**, **moto**, **pos**, **purchaseWithCashback**, **recurring**, **token**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCardProcessingType? ProcessingType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCardProcessingType? ProcessingType { get => _explicitNullValueProcessingType; set { _explicitNullValueProcessingType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processingType"); else _explicitNullProperties?.Remove("processingType"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCardProcessingType? _explicitNullValueProcessingType = default!;
         /// <summary>If you are using relayed authorisation, this object contains information from the relayed authorisation response from your server.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCardRelayedAuthorisationData? RelayedAuthorisationData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCardRelayedAuthorisationData? RelayedAuthorisationData { get => _explicitNullValueRelayedAuthorisationData; set { _explicitNullValueRelayedAuthorisationData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relayedAuthorisationData"); else _explicitNullProperties?.Remove("relayedAuthorisationData"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCardRelayedAuthorisationData? _explicitNullValueRelayedAuthorisationData = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCardRelayedAuthorisationData RelayedAuthorisationData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCardRelayedAuthorisationData RelayedAuthorisationData { get => _explicitNullValueRelayedAuthorisationData; set { _explicitNullValueRelayedAuthorisationData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relayedAuthorisationData"); else _explicitNullProperties?.Remove("relayedAuthorisationData"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCardRelayedAuthorisationData _explicitNullValueRelayedAuthorisationData = default!;
 #endif
         /// <summary>The identifier of the original payment. This ID is provided by the scheme and can be alphanumeric or numeric, depending on the scheme. The `schemeTraceID` should refer to an original `schemeUniqueTransactionID` provided in an earlier payment (not necessarily processed by Adyen). A `schemeTraceId` is typically available for authorization adjustments or recurring payments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SchemeTraceId { get; set; }
+        public string? SchemeTraceId { get => _explicitNullValueSchemeTraceId; set { _explicitNullValueSchemeTraceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schemeTraceId"); else _explicitNullProperties?.Remove("schemeTraceId"); } }
+        private string? _explicitNullValueSchemeTraceId = default!;
 #nullable restore
 #else
-        public string SchemeTraceId { get; set; }
+        public string SchemeTraceId { get => _explicitNullValueSchemeTraceId; set { _explicitNullValueSchemeTraceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schemeTraceId"); else _explicitNullProperties?.Remove("schemeTraceId"); } }
+        private string _explicitNullValueSchemeTraceId = default!;
 #endif
         /// <summary>The unique identifier created by the scheme. This ID can be alphanumeric or numeric depending on the scheme.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SchemeUniqueTransactionId { get; set; }
+        public string? SchemeUniqueTransactionId { get => _explicitNullValueSchemeUniqueTransactionId; set { _explicitNullValueSchemeUniqueTransactionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schemeUniqueTransactionId"); else _explicitNullProperties?.Remove("schemeUniqueTransactionId"); } }
+        private string? _explicitNullValueSchemeUniqueTransactionId = default!;
 #nullable restore
 #else
-        public string SchemeUniqueTransactionId { get; set; }
+        public string SchemeUniqueTransactionId { get => _explicitNullValueSchemeUniqueTransactionId; set { _explicitNullValueSchemeUniqueTransactionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schemeUniqueTransactionId"); else _explicitNullProperties?.Remove("schemeUniqueTransactionId"); } }
+        private string _explicitNullValueSchemeUniqueTransactionId = default!;
 #endif
         /// <summary>The data of the result from the 3DS authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCardThreeDSecure? ThreeDSecure { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCardThreeDSecure? ThreeDSecure { get => _explicitNullValueThreeDSecure; set { _explicitNullValueThreeDSecure = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSecure"); else _explicitNullProperties?.Remove("threeDSecure"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCardThreeDSecure? _explicitNullValueThreeDSecure = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCardThreeDSecure ThreeDSecure { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCardThreeDSecure ThreeDSecure { get => _explicitNullValueThreeDSecure; set { _explicitNullValueThreeDSecure = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSecure"); else _explicitNullProperties?.Remove("threeDSecure"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCardThreeDSecure _explicitNullValueThreeDSecure = default!;
 #endif
         /// <summary>**issuedCard**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCardType? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCardType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCardType? _explicitNullValueType = default!;
         /// <summary>The evaluation of the validation facts. See [validation checks](https://docs.adyen.com/issuing/validation-checks) for more information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferNotificationValidationFact>? ValidationFacts { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferNotificationValidationFact>? ValidationFacts { get => _explicitNullValueValidationFacts; set { _explicitNullValueValidationFacts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validationFacts"); else _explicitNullProperties?.Remove("validationFacts"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferNotificationValidationFact>? _explicitNullValueValidationFacts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferNotificationValidationFact> ValidationFacts { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferNotificationValidationFact> ValidationFacts { get => _explicitNullValueValidationFacts; set { _explicitNullValueValidationFacts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validationFacts"); else _explicitNullProperties?.Remove("validationFacts"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferNotificationValidationFact> _explicitNullValueValidationFacts = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCard"/> and sets the default values.
@@ -85,7 +118,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCard CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCard();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCard(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -124,6 +157,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCardThreeDSecure>("threeDSecure", ThreeDSecure);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCardType>("type", Type);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferNotificationValidationFact>("validationFacts", ValidationFacts);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

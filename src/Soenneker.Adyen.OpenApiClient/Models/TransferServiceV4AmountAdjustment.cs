@@ -11,21 +11,35 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TransferServiceV4AmountAdjustment : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("amount") is { } nullNodeAmount && nullNodeAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Amount = null;
+            if (parseNode.GetChildNode("amountAdjustmentType") is { } nullNodeAmountAdjustmentType && nullNodeAmountAdjustmentType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AmountAdjustmentType = null;
+            if (parseNode.GetChildNode("basepoints") is { } nullNodeBasepoints && nullNodeBasepoints.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Basepoints = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The adjustment amount.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4AmountAdjustmentAmount? Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4AmountAdjustmentAmount? Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4AmountAdjustmentAmount? _explicitNullValueAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4AmountAdjustmentAmount Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4AmountAdjustmentAmount Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4AmountAdjustmentAmount _explicitNullValueAmount = default!;
 #endif
         /// <summary>The type of markup that is applied to an authorised payment.Possible values: **exchange**, **forexMarkup**, **authHoldReserve**, **atmMarkup**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4AmountAdjustmentAmountAdjustmentType? AmountAdjustmentType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4AmountAdjustmentAmountAdjustmentType? AmountAdjustmentType { get => _explicitNullValueAmountAdjustmentType; set { _explicitNullValueAmountAdjustmentType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amountAdjustmentType"); else _explicitNullProperties?.Remove("amountAdjustmentType"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4AmountAdjustmentAmountAdjustmentType? _explicitNullValueAmountAdjustmentType = default!;
         /// <summary>The basepoints associated with the applied markup.</summary>
-        public int? Basepoints { get; set; }
+        public int? Basepoints { get => _explicitNullValueBasepoints; set { _explicitNullValueBasepoints = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("basepoints"); else _explicitNullProperties?.Remove("basepoints"); } }
+        private int? _explicitNullValueBasepoints = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4AmountAdjustment"/> and sets the default values.
         /// </summary>
@@ -41,7 +55,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4AmountAdjustment CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4AmountAdjustment();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4AmountAdjustment(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -66,6 +80,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4AmountAdjustmentAmount>("amount", Amount);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4AmountAdjustmentAmountAdjustmentType>("amountAdjustmentType", AmountAdjustmentType);
             writer.WriteIntValue("basepoints", Basepoints);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

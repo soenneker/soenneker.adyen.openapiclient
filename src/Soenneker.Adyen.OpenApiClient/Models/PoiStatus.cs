@@ -12,23 +12,44 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PoiStatus : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("CardReaderOKFlag") is { } nullNodeCardReaderOKFlag && nullNodeCardReaderOKFlag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardReaderOKFlag = null;
+            if (parseNode.GetChildNode("CommunicationOKFlag") is { } nullNodeCommunicationOKFlag && nullNodeCommunicationOKFlag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CommunicationOKFlag = null;
+            if (parseNode.GetChildNode("FraudPreventionFlag") is { } nullNodeFraudPreventionFlag && nullNodeFraudPreventionFlag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FraudPreventionFlag = null;
+            if (parseNode.GetChildNode("GlobalStatus") is { } nullNodeGlobalStatus && nullNodeGlobalStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GlobalStatus = null;
+            if (parseNode.GetChildNode("PEDOKFlag") is { } nullNodePEDOKFlag && nullNodePEDOKFlag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PEDOKFlag = null;
+            if (parseNode.GetChildNode("PrinterStatus") is { } nullNodePrinterStatus && nullNodePrinterStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrinterStatus = null;
+            if (parseNode.GetChildNode("SecurityOKFlag") is { } nullNodeSecurityOKFlag && nullNodeSecurityOKFlag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecurityOKFlag = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates if the card readers are working and usable.If card reader device present.</summary>
-        public bool? CardReaderOKFlag { get; set; }
+        public bool? CardReaderOKFlag { get => _explicitNullValueCardReaderOKFlag; set { _explicitNullValueCardReaderOKFlag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CardReaderOKFlag"); else _explicitNullProperties?.Remove("CardReaderOKFlag"); } }
+        private bool? _explicitNullValueCardReaderOKFlag = default!;
         /// <summary>Indicates if the communication infrastructure is working and usable.If communication infrastructure present.</summary>
-        public bool? CommunicationOKFlag { get; set; }
+        public bool? CommunicationOKFlag { get => _explicitNullValueCommunicationOKFlag; set { _explicitNullValueCommunicationOKFlag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CommunicationOKFlag"); else _explicitNullProperties?.Remove("CommunicationOKFlag"); } }
+        private bool? _explicitNullValueCommunicationOKFlag = default!;
         /// <summary>Indicates a suspicion of fraud by the POI System.Could be set to True by the POI system to notify to the Sale system and the Cashier that a suspicion of fraud had been detected on the POI as an unexpected reboot of the POI.</summary>
-        public bool? FraudPreventionFlag { get; set; }
+        public bool? FraudPreventionFlag { get => _explicitNullValueFraudPreventionFlag; set { _explicitNullValueFraudPreventionFlag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("FraudPreventionFlag"); else _explicitNullProperties?.Remove("FraudPreventionFlag"); } }
+        private bool? _explicitNullValueFraudPreventionFlag = default!;
         /// <summary>Possible values:* **OK*** **Busy*** **Maintenance*** **Unreachable**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PoiStatusGlobalStatus? GlobalStatus { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PoiStatusGlobalStatus? GlobalStatus { get => _explicitNullValueGlobalStatus; set { _explicitNullValueGlobalStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("GlobalStatus"); else _explicitNullProperties?.Remove("GlobalStatus"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PoiStatusGlobalStatus? _explicitNullValueGlobalStatus = default!;
         /// <summary>Indicates if the PED is working and usable.If PED present.</summary>
-        public bool? PEDOKFlag { get; set; }
+        public bool? PEDOKFlag { get => _explicitNullValuePEDOKFlag; set { _explicitNullValuePEDOKFlag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PEDOKFlag"); else _explicitNullProperties?.Remove("PEDOKFlag"); } }
+        private bool? _explicitNullValuePEDOKFlag = default!;
         /// <summary>Indicates if the printer is working and usable.Possible values:* **OK*** **PaperLow*** **NoPaper*** **PaperJam*** **OutOfOrder**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PoiStatusPrinterStatus? PrinterStatus { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PoiStatusPrinterStatus? PrinterStatus { get => _explicitNullValuePrinterStatus; set { _explicitNullValuePrinterStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PrinterStatus"); else _explicitNullProperties?.Remove("PrinterStatus"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PoiStatusPrinterStatus? _explicitNullValuePrinterStatus = default!;
         /// <summary>Indicates if the security module of the POI is working and usable.If security module present.</summary>
-        public bool? SecurityOKFlag { get; set; }
+        public bool? SecurityOKFlag { get => _explicitNullValueSecurityOKFlag; set { _explicitNullValueSecurityOKFlag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SecurityOKFlag"); else _explicitNullProperties?.Remove("SecurityOKFlag"); } }
+        private bool? _explicitNullValueSecurityOKFlag = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PoiStatus"/> and sets the default values.
         /// </summary>
@@ -44,7 +65,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.PoiStatus CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.PoiStatus();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.PoiStatus(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,6 +98,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteBoolValue("PEDOKFlag", PEDOKFlag);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PoiStatusPrinterStatus>("PrinterStatus", PrinterStatus);
             writer.WriteBoolValue("SecurityOKFlag", SecurityOKFlag);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

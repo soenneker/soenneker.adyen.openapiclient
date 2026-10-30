@@ -12,40 +12,59 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TerminalConnectivityComposed : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bluetooth") is { } nullNodeBluetooth && nullNodeBluetooth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bluetooth = null;
+            if (parseNode.GetChildNode("cellular") is { } nullNodeCellular && nullNodeCellular.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cellular = null;
+            if (parseNode.GetChildNode("ethernet") is { } nullNodeEthernet && nullNodeEthernet.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ethernet = null;
+            if (parseNode.GetChildNode("wifi") is { } nullNodeWifi && nullNodeWifi.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Wifi = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The bluetooth property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityBluetooth? Bluetooth { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityBluetooth? Bluetooth { get => _explicitNullValueBluetooth; set { _explicitNullValueBluetooth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bluetooth"); else _explicitNullProperties?.Remove("bluetooth"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityBluetooth? _explicitNullValueBluetooth = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityBluetooth Bluetooth { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityBluetooth Bluetooth { get => _explicitNullValueBluetooth; set { _explicitNullValueBluetooth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bluetooth"); else _explicitNullProperties?.Remove("bluetooth"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityBluetooth _explicitNullValueBluetooth = default!;
 #endif
         /// <summary>The cellular property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityCellular? Cellular { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityCellular? Cellular { get => _explicitNullValueCellular; set { _explicitNullValueCellular = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cellular"); else _explicitNullProperties?.Remove("cellular"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityCellular? _explicitNullValueCellular = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityCellular Cellular { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityCellular Cellular { get => _explicitNullValueCellular; set { _explicitNullValueCellular = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cellular"); else _explicitNullProperties?.Remove("cellular"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityCellular _explicitNullValueCellular = default!;
 #endif
         /// <summary>The ethernet property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityEthernet? Ethernet { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityEthernet? Ethernet { get => _explicitNullValueEthernet; set { _explicitNullValueEthernet = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ethernet"); else _explicitNullProperties?.Remove("ethernet"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityEthernet? _explicitNullValueEthernet = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityEthernet Ethernet { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityEthernet Ethernet { get => _explicitNullValueEthernet; set { _explicitNullValueEthernet = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ethernet"); else _explicitNullProperties?.Remove("ethernet"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityEthernet _explicitNullValueEthernet = default!;
 #endif
         /// <summary>The wifi property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityWifi? Wifi { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityWifi? Wifi { get => _explicitNullValueWifi; set { _explicitNullValueWifi = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wifi"); else _explicitNullProperties?.Remove("wifi"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityWifi? _explicitNullValueWifi = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityWifi Wifi { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityWifi Wifi { get => _explicitNullValueWifi; set { _explicitNullValueWifi = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wifi"); else _explicitNullProperties?.Remove("wifi"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityWifi _explicitNullValueWifi = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityComposed"/> and sets the default values.
@@ -62,7 +81,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityComposed CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityComposed();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityComposed(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -89,6 +108,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityCellular>("cellular", Cellular);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityEthernet>("ethernet", Ethernet);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityWifi>("wifi", Wifi);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

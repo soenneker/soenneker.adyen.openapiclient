@@ -61,6 +61,8 @@ namespace Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.Andro
                 { "403", global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3RestServiceError.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3RestServiceError.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3RestServiceError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.AndroidCertificatesResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.AndroidCertificatesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -92,6 +94,8 @@ namespace Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.Andro
                 { "403", global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3RestServiceError.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3RestServiceError.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3RestServiceError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.UploadAndroidCertificateResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.UploadAndroidCertificateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

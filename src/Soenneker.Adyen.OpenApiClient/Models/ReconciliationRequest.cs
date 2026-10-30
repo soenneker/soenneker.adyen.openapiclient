@@ -12,21 +12,35 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReconciliationRequest : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("AcquirerID") is { } nullNodeAcquirerID && nullNodeAcquirerID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcquirerID = null;
+            if (parseNode.GetChildNode("POIReconciliationID") is { } nullNodePOIReconciliationID && nullNodePOIReconciliationID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) POIReconciliationID = null;
+            if (parseNode.GetChildNode("ReconciliationType") is { } nullNodeReconciliationType && nullNodeReconciliationType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReconciliationType = null;
+        }
+
         /// <summary>Identification of the Acquirer.Could be present only if ReconciliationType is AcquirerReconciliation or AcquirerSynchronisation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? AcquirerID { get; set; }
+        public List<int?>? AcquirerID { get => _explicitNullValueAcquirerID; set { _explicitNullValueAcquirerID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AcquirerID"); else _explicitNullProperties?.Remove("AcquirerID"); } }
+        private List<int?>? _explicitNullValueAcquirerID = default!;
 #nullable restore
 #else
-        public List<int?> AcquirerID { get; set; }
+        public List<int?> AcquirerID { get => _explicitNullValueAcquirerID; set { _explicitNullValueAcquirerID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AcquirerID"); else _explicitNullProperties?.Remove("AcquirerID"); } }
+        private List<int?> _explicitNullValueAcquirerID = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Identification of the reconciliation period between Sale and POI.Absent if ReconciliationType is not PreviousReconciliation.</summary>
-        public int? POIReconciliationID { get; set; }
+        public int? POIReconciliationID { get => _explicitNullValuePOIReconciliationID; set { _explicitNullValuePOIReconciliationID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("POIReconciliationID"); else _explicitNullProperties?.Remove("POIReconciliationID"); } }
+        private int? _explicitNullValuePOIReconciliationID = default!;
         /// <summary>Possible values:* **SaleReconciliation*** **AcquirerSynchronisation*** **AcquirerReconciliation*** **PreviousReconciliation**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.ReconciliationRequestReconciliationType? ReconciliationType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ReconciliationRequestReconciliationType? ReconciliationType { get => _explicitNullValueReconciliationType; set { _explicitNullValueReconciliationType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ReconciliationType"); else _explicitNullProperties?.Remove("ReconciliationType"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ReconciliationRequestReconciliationType? _explicitNullValueReconciliationType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ReconciliationRequest"/> and sets the default values.
         /// </summary>
@@ -42,7 +56,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.ReconciliationRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.ReconciliationRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.ReconciliationRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,6 +81,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<int?>("AcquirerID", AcquirerID);
             writer.WriteIntValue("POIReconciliationID", POIReconciliationID);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ReconciliationRequestReconciliationType>("ReconciliationType", ReconciliationType);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

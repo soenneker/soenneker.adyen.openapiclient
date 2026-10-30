@@ -11,91 +11,130 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PayoutResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("additionalData") is { } nullNodeAdditionalDataProperty && nullNodeAdditionalDataProperty.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdditionalDataProperty = null;
+            if (parseNode.GetChildNode("authCode") is { } nullNodeAuthCode && nullNodeAuthCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthCode = null;
+            if (parseNode.GetChildNode("dccAmount") is { } nullNodeDccAmount && nullNodeDccAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DccAmount = null;
+            if (parseNode.GetChildNode("dccSignature") is { } nullNodeDccSignature && nullNodeDccSignature.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DccSignature = null;
+            if (parseNode.GetChildNode("fraudResult") is { } nullNodeFraudResult && nullNodeFraudResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FraudResult = null;
+            if (parseNode.GetChildNode("issuerUrl") is { } nullNodeIssuerUrl && nullNodeIssuerUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssuerUrl = null;
+            if (parseNode.GetChildNode("md") is { } nullNodeMd && nullNodeMd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Md = null;
+            if (parseNode.GetChildNode("paRequest") is { } nullNodePaRequest && nullNodePaRequest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaRequest = null;
+            if (parseNode.GetChildNode("pspReference") is { } nullNodePspReference && nullNodePspReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PspReference = null;
+            if (parseNode.GetChildNode("refusalReason") is { } nullNodeRefusalReason && nullNodeRefusalReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RefusalReason = null;
+            if (parseNode.GetChildNode("resultCode") is { } nullNodeResultCode && nullNodeResultCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResultCode = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Contains additional information about the payment. Some data fields are included only if you select them first: Go to **Customer Area** &gt; **Developers** &gt; **Additional data**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutResponseAdditionalDataProperty2? AdditionalDataProperty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutResponseAdditionalDataProperty2? AdditionalDataProperty { get => _explicitNullValueAdditionalDataProperty; set { _explicitNullValueAdditionalDataProperty = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additionalData"); else _explicitNullProperties?.Remove("additionalData"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PayoutResponseAdditionalDataProperty2? _explicitNullValueAdditionalDataProperty = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutResponseAdditionalDataProperty2 AdditionalDataProperty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutResponseAdditionalDataProperty2 AdditionalDataProperty { get => _explicitNullValueAdditionalDataProperty; set { _explicitNullValueAdditionalDataProperty = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additionalData"); else _explicitNullProperties?.Remove("additionalData"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PayoutResponseAdditionalDataProperty2 _explicitNullValueAdditionalDataProperty = default!;
 #endif
         /// <summary>Authorisation code:* When the payment is authorised successfully, this field holds the authorisation code for the payment.* When the payment is not authorised, this field is empty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AuthCode { get; set; }
+        public string? AuthCode { get => _explicitNullValueAuthCode; set { _explicitNullValueAuthCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authCode"); else _explicitNullProperties?.Remove("authCode"); } }
+        private string? _explicitNullValueAuthCode = default!;
 #nullable restore
 #else
-        public string AuthCode { get; set; }
+        public string AuthCode { get => _explicitNullValueAuthCode; set { _explicitNullValueAuthCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authCode"); else _explicitNullProperties?.Remove("authCode"); } }
+        private string _explicitNullValueAuthCode = default!;
 #endif
         /// <summary>Includes the currency of the conversion and the value of the transaction.&gt; This value only applies if you have implemented Dynamic Currency Conversion. For more information, [contact Support](https://www.adyen.help/hc/en-us/requests/new).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutResponseDccAmount? DccAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutResponseDccAmount? DccAmount { get => _explicitNullValueDccAmount; set { _explicitNullValueDccAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dccAmount"); else _explicitNullProperties?.Remove("dccAmount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PayoutResponseDccAmount? _explicitNullValueDccAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutResponseDccAmount DccAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutResponseDccAmount DccAmount { get => _explicitNullValueDccAmount; set { _explicitNullValueDccAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dccAmount"); else _explicitNullProperties?.Remove("dccAmount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PayoutResponseDccAmount _explicitNullValueDccAmount = default!;
 #endif
         /// <summary>Cryptographic signature used to verify `dccQuote`.&gt; This value only applies if you have implemented Dynamic Currency Conversion. For more information, [contact Support](https://www.adyen.help/hc/en-us/requests/new).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DccSignature { get; set; }
+        public string? DccSignature { get => _explicitNullValueDccSignature; set { _explicitNullValueDccSignature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dccSignature"); else _explicitNullProperties?.Remove("dccSignature"); } }
+        private string? _explicitNullValueDccSignature = default!;
 #nullable restore
 #else
-        public string DccSignature { get; set; }
+        public string DccSignature { get => _explicitNullValueDccSignature; set { _explicitNullValueDccSignature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dccSignature"); else _explicitNullProperties?.Remove("dccSignature"); } }
+        private string _explicitNullValueDccSignature = default!;
 #endif
         /// <summary>The fraud result properties of the payment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutResponseFraudResult? FraudResult { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutResponseFraudResult? FraudResult { get => _explicitNullValueFraudResult; set { _explicitNullValueFraudResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fraudResult"); else _explicitNullProperties?.Remove("fraudResult"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PayoutResponseFraudResult? _explicitNullValueFraudResult = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutResponseFraudResult FraudResult { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutResponseFraudResult FraudResult { get => _explicitNullValueFraudResult; set { _explicitNullValueFraudResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fraudResult"); else _explicitNullProperties?.Remove("fraudResult"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PayoutResponseFraudResult _explicitNullValueFraudResult = default!;
 #endif
         /// <summary>The URL to direct the shopper to.&gt; In case of SecurePlus, do not redirect a shopper to this URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IssuerUrl { get; set; }
+        public string? IssuerUrl { get => _explicitNullValueIssuerUrl; set { _explicitNullValueIssuerUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuerUrl"); else _explicitNullProperties?.Remove("issuerUrl"); } }
+        private string? _explicitNullValueIssuerUrl = default!;
 #nullable restore
 #else
-        public string IssuerUrl { get; set; }
+        public string IssuerUrl { get => _explicitNullValueIssuerUrl; set { _explicitNullValueIssuerUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuerUrl"); else _explicitNullProperties?.Remove("issuerUrl"); } }
+        private string _explicitNullValueIssuerUrl = default!;
 #endif
         /// <summary>The payment session.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Md { get; set; }
+        public string? Md { get => _explicitNullValueMd; set { _explicitNullValueMd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("md"); else _explicitNullProperties?.Remove("md"); } }
+        private string? _explicitNullValueMd = default!;
 #nullable restore
 #else
-        public string Md { get; set; }
+        public string Md { get => _explicitNullValueMd; set { _explicitNullValueMd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("md"); else _explicitNullProperties?.Remove("md"); } }
+        private string _explicitNullValueMd = default!;
 #endif
         /// <summary>The 3D request data for the issuer.If the value is **CUPSecurePlus-CollectSMSVerificationCode**, collect an SMS code from the shopper and pass it in the `/authorise3D` request. For more information, see [3D Secure](https://docs.adyen.com/classic-integration/3d-secure).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaRequest { get; set; }
+        public string? PaRequest { get => _explicitNullValuePaRequest; set { _explicitNullValuePaRequest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paRequest"); else _explicitNullProperties?.Remove("paRequest"); } }
+        private string? _explicitNullValuePaRequest = default!;
 #nullable restore
 #else
-        public string PaRequest { get; set; }
+        public string PaRequest { get => _explicitNullValuePaRequest; set { _explicitNullValuePaRequest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paRequest"); else _explicitNullProperties?.Remove("paRequest"); } }
+        private string _explicitNullValuePaRequest = default!;
 #endif
         /// <summary>Adyen&apos;s 16-character reference associated with the transaction/request. This value is globally unique; quote it when communicating with us about this request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PspReference { get; set; }
+        public string? PspReference { get => _explicitNullValuePspReference; set { _explicitNullValuePspReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pspReference"); else _explicitNullProperties?.Remove("pspReference"); } }
+        private string? _explicitNullValuePspReference = default!;
 #nullable restore
 #else
-        public string PspReference { get; set; }
+        public string PspReference { get => _explicitNullValuePspReference; set { _explicitNullValuePspReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pspReference"); else _explicitNullProperties?.Remove("pspReference"); } }
+        private string _explicitNullValuePspReference = default!;
 #endif
         /// <summary>If the payment&apos;s authorisation is refused or an error occurs during authorisation, this field holds Adyen&apos;s mapped reason for the refusal or a description of the error. When a transaction fails, the authorisation response includes `resultCode` and `refusalReason` values.For more information, see [Refusal reasons](https://docs.adyen.com/development-resources/refusal-reasons).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RefusalReason { get; set; }
+        public string? RefusalReason { get => _explicitNullValueRefusalReason; set { _explicitNullValueRefusalReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("refusalReason"); else _explicitNullProperties?.Remove("refusalReason"); } }
+        private string? _explicitNullValueRefusalReason = default!;
 #nullable restore
 #else
-        public string RefusalReason { get; set; }
+        public string RefusalReason { get => _explicitNullValueRefusalReason; set { _explicitNullValueRefusalReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("refusalReason"); else _explicitNullProperties?.Remove("refusalReason"); } }
+        private string _explicitNullValueRefusalReason = default!;
 #endif
         /// <summary>The result of the payment. For more information, see [Result codes](https://docs.adyen.com/online-payments/payment-result-codes).Possible values:* **AuthenticationFinished** – The payment has been successfully authenticated with 3D Secure 2. Returned for 3D Secure 2 authentication-only transactions.* **AuthenticationNotRequired** – The transaction does not require 3D Secure authentication. Returned for [standalone authentication-only integrations](https://docs.adyen.com/online-payments/3d-secure/other-3ds-flows/authentication-only).* **Authorised** – The payment was successfully authorised. This state serves as an indicator to proceed with the delivery of goods and services. This is a final state.* **Cancelled** – Indicates the payment has been cancelled (either by the shopper or the merchant) before processing was completed. This is a final state.* **ChallengeShopper** – The issuer requires further shopper interaction before the payment can be authenticated. Returned for 3D Secure 2 transactions.* **Error** – There was an error when the payment was being processed. The reason is given in the `refusalReason` field. This is a final state.* **IdentifyShopper** – The issuer requires the shopper&apos;s device fingerprint before the payment can be authenticated. Returned for 3D Secure 2 transactions.* **PartiallyAuthorised** – The payment has been authorised for a partial amount.This happens for card payments when the merchant supports Partial Authorisations and the cardholder has insufficient funds.* **Pending** – Indicates that it is not possible to obtain the final status of the payment. This can happen if the systems providing final status information for the payment are unavailable, or if the shopper needs to take further action to complete the payment.* **PresentToShopper** – Indicates that the response contains additional information that you need to present to a shopper, so that they can use it to complete a payment.* **Received** – Indicates the payment has successfully been received by Adyen, and will be processed. This is the initial state for all payments.* **RedirectShopper** – Indicates the shopper should be redirected to an external web page or app to complete the authorisation.* **Refused** – Indicates the payment was refused. The reason is given in the `refusalReason` field. This is a final state.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutResponseResultCode? ResultCode { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutResponseResultCode? ResultCode { get => _explicitNullValueResultCode; set { _explicitNullValueResultCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resultCode"); else _explicitNullProperties?.Remove("resultCode"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PayoutResponseResultCode? _explicitNullValueResultCode = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PayoutResponse"/> and sets the default values.
         /// </summary>
@@ -111,7 +150,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.PayoutResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.PayoutResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.PayoutResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -152,6 +191,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("pspReference", PspReference);
             writer.WriteStringValue("refusalReason", RefusalReason);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutResponseResultCode>("resultCode", ResultCode);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,24 +12,37 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BalanceInquiryRequest : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("LoyaltyAccountReq") is { } nullNodeLoyaltyAccountReq && nullNodeLoyaltyAccountReq.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoyaltyAccountReq = null;
+            if (parseNode.GetChildNode("PaymentAccountReq") is { } nullNodePaymentAccountReq && nullNodePaymentAccountReq.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentAccountReq = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Data related to a requested Loyalty program or account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceInquiryRequestLoyaltyAccountReq? LoyaltyAccountReq { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceInquiryRequestLoyaltyAccountReq? LoyaltyAccountReq { get => _explicitNullValueLoyaltyAccountReq; set { _explicitNullValueLoyaltyAccountReq = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LoyaltyAccountReq"); else _explicitNullProperties?.Remove("LoyaltyAccountReq"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalanceInquiryRequestLoyaltyAccountReq? _explicitNullValueLoyaltyAccountReq = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceInquiryRequestLoyaltyAccountReq LoyaltyAccountReq { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceInquiryRequestLoyaltyAccountReq LoyaltyAccountReq { get => _explicitNullValueLoyaltyAccountReq; set { _explicitNullValueLoyaltyAccountReq = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LoyaltyAccountReq"); else _explicitNullProperties?.Remove("LoyaltyAccountReq"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalanceInquiryRequestLoyaltyAccountReq _explicitNullValueLoyaltyAccountReq = default!;
 #endif
         /// <summary>Data related to the account pointed by the payment card.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceInquiryRequestPaymentAccountReq? PaymentAccountReq { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceInquiryRequestPaymentAccountReq? PaymentAccountReq { get => _explicitNullValuePaymentAccountReq; set { _explicitNullValuePaymentAccountReq = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PaymentAccountReq"); else _explicitNullProperties?.Remove("PaymentAccountReq"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalanceInquiryRequestPaymentAccountReq? _explicitNullValuePaymentAccountReq = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceInquiryRequestPaymentAccountReq PaymentAccountReq { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceInquiryRequestPaymentAccountReq PaymentAccountReq { get => _explicitNullValuePaymentAccountReq; set { _explicitNullValuePaymentAccountReq = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PaymentAccountReq"); else _explicitNullProperties?.Remove("PaymentAccountReq"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalanceInquiryRequestPaymentAccountReq _explicitNullValuePaymentAccountReq = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalanceInquiryRequest"/> and sets the default values.
@@ -46,7 +59,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.BalanceInquiryRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.BalanceInquiryRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.BalanceInquiryRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +82,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceInquiryRequestLoyaltyAccountReq>("LoyaltyAccountReq", LoyaltyAccountReq);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceInquiryRequestPaymentAccountReq>("PaymentAccountReq", PaymentAccountReq);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

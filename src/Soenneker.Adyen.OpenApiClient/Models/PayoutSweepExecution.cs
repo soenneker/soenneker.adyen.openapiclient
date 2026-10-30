@@ -11,29 +11,46 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PayoutSweepExecution : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("result") is { } nullNodeResult && nullNodeResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Result = null;
+            if (parseNode.GetChildNode("resultDetails") is { } nullNodeResultDetails && nullNodeResultDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResultDetails = null;
+            if (parseNode.GetChildNode("triggeredAt") is { } nullNodeTriggeredAt && nullNodeTriggeredAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TriggeredAt = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The unique identifier of the sweep execution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The outcome of the sweep execution.Possible results:- **succeeded**: The sweep payout was completed successfully.- **failed**: The sweep payout was not completed due to an error.- **skipped**: The sweep payout was not triggered as expected.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutSweepExecutionResult? Result { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutSweepExecutionResult? Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PayoutSweepExecutionResult? _explicitNullValueResult = default!;
         /// <summary>Details about the outcome of the sweep execution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutSweepExecutionResultDetails? ResultDetails { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutSweepExecutionResultDetails? ResultDetails { get => _explicitNullValueResultDetails; set { _explicitNullValueResultDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resultDetails"); else _explicitNullProperties?.Remove("resultDetails"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PayoutSweepExecutionResultDetails? _explicitNullValueResultDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutSweepExecutionResultDetails ResultDetails { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutSweepExecutionResultDetails ResultDetails { get => _explicitNullValueResultDetails; set { _explicitNullValueResultDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resultDetails"); else _explicitNullProperties?.Remove("resultDetails"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PayoutSweepExecutionResultDetails _explicitNullValueResultDetails = default!;
 #endif
         /// <summary>The timestamp of when the execution was triggered.</summary>
-        public DateTimeOffset? TriggeredAt { get; set; }
+        public DateTimeOffset? TriggeredAt { get => _explicitNullValueTriggeredAt; set { _explicitNullValueTriggeredAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("triggeredAt"); else _explicitNullProperties?.Remove("triggeredAt"); } }
+        private DateTimeOffset? _explicitNullValueTriggeredAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PayoutSweepExecution"/> and sets the default values.
         /// </summary>
@@ -49,7 +66,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.PayoutSweepExecution CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.PayoutSweepExecution();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.PayoutSweepExecution(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,6 +93,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutSweepExecutionResult>("result", Result);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutSweepExecutionResultDetails>("resultDetails", ResultDetails);
             writer.WriteDateTimeOffsetValue("triggeredAt", TriggeredAt);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

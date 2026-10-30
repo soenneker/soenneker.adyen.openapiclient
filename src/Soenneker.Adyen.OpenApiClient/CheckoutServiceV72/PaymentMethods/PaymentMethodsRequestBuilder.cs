@@ -69,6 +69,8 @@ namespace Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.PaymentMethods
                 { "403", global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72ServiceError.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72ServiceError.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72ServiceError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodsResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "D86DF86912AA8040CE24A2E6E6A138379291CE93CCE5DAA151BFA73B3922FE61AF5511685846CAE655E2217ACB0A460EA9DE80C00F46BD0B311408A96D16D0BA",
+  "descriptionHash": "5E37D53EB466883ADE61ECC64D3D6892E747C8800524E511846BA4B4B2EFDCE3B98B36EED3AC2F796360656ECF3AA17464835F9C162C5D48F5B65B5F173D7798",
   "descriptionLocation": "../../fixed.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.36.1",
+  "kiotaVersion": "1.37.0",
   "clientClassName": "AdyenOpenApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Soenneker.Adyen.OpenApiClient",

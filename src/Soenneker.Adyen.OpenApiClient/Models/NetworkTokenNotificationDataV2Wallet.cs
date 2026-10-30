@@ -12,57 +12,82 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class NetworkTokenNotificationDataV2Wallet : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("accountScore") is { } nullNodeAccountScore && nullNodeAccountScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountScore = null;
+            if (parseNode.GetChildNode("device") is { } nullNodeDevice && nullNodeDevice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Device = null;
+            if (parseNode.GetChildNode("deviceScore") is { } nullNodeDeviceScore && nullNodeDeviceScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeviceScore = null;
+            if (parseNode.GetChildNode("provisioningMethod") is { } nullNodeProvisioningMethod && nullNodeProvisioningMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProvisioningMethod = null;
+            if (parseNode.GetChildNode("recommendationReasons") is { } nullNodeRecommendationReasons && nullNodeRecommendationReasons.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecommendationReasons = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>The confidence score of the wallet account, calculated by the wallet provider.A high score means that account is considered trustworthy. A low score means that the account is considered suspicious.Possible values: **1** to **5**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountScore { get; set; }
+        public string? AccountScore { get => _explicitNullValueAccountScore; set { _explicitNullValueAccountScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountScore"); else _explicitNullProperties?.Remove("accountScore"); } }
+        private string? _explicitNullValueAccountScore = default!;
 #nullable restore
 #else
-        public string AccountScore { get; set; }
+        public string AccountScore { get => _explicitNullValueAccountScore; set { _explicitNullValueAccountScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountScore"); else _explicitNullProperties?.Remove("accountScore"); } }
+        private string _explicitNullValueAccountScore = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Contains information about the device used for provisioning the network token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.WalletDevice? Device { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WalletDevice? Device { get => _explicitNullValueDevice; set { _explicitNullValueDevice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("device"); else _explicitNullProperties?.Remove("device"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.WalletDevice? _explicitNullValueDevice = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.WalletDevice Device { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WalletDevice Device { get => _explicitNullValueDevice; set { _explicitNullValueDevice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("device"); else _explicitNullProperties?.Remove("device"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.WalletDevice _explicitNullValueDevice = default!;
 #endif
         /// <summary>The confidence score of the device, calculated by the wallet provider.A high score means that device is considered trustworthy. A low score means that the device is considered suspicious.Possible values: **1** to **5**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceScore { get; set; }
+        public string? DeviceScore { get => _explicitNullValueDeviceScore; set { _explicitNullValueDeviceScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deviceScore"); else _explicitNullProperties?.Remove("deviceScore"); } }
+        private string? _explicitNullValueDeviceScore = default!;
 #nullable restore
 #else
-        public string DeviceScore { get; set; }
+        public string DeviceScore { get => _explicitNullValueDeviceScore; set { _explicitNullValueDeviceScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deviceScore"); else _explicitNullProperties?.Remove("deviceScore"); } }
+        private string _explicitNullValueDeviceScore = default!;
 #endif
         /// <summary>The method used for provisioning the network token.Possible values: **push**, **manual**, **cof**, **unknown**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProvisioningMethod { get; set; }
+        public string? ProvisioningMethod { get => _explicitNullValueProvisioningMethod; set { _explicitNullValueProvisioningMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provisioningMethod"); else _explicitNullProperties?.Remove("provisioningMethod"); } }
+        private string? _explicitNullValueProvisioningMethod = default!;
 #nullable restore
 #else
-        public string ProvisioningMethod { get; set; }
+        public string ProvisioningMethod { get => _explicitNullValueProvisioningMethod; set { _explicitNullValueProvisioningMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provisioningMethod"); else _explicitNullProperties?.Remove("provisioningMethod"); } }
+        private string _explicitNullValueProvisioningMethod = default!;
 #endif
         /// <summary>A list of risk indicators triggered at the time of provisioning the network token.Some example values of risk indicators are:* **accountTooNewSinceLaunch*** **tooManyRecentAttempts*** **lowDeviceScore*** **lowAccountScore**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.WalletRecommendationReasonsItem?>? RecommendationReasons { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.WalletRecommendationReasonsItem?>? RecommendationReasons { get => _explicitNullValueRecommendationReasons; set { _explicitNullValueRecommendationReasons = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recommendationReasons"); else _explicitNullProperties?.Remove("recommendationReasons"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.WalletRecommendationReasonsItem?>? _explicitNullValueRecommendationReasons = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.WalletRecommendationReasonsItem?> RecommendationReasons { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.WalletRecommendationReasonsItem?> RecommendationReasons { get => _explicitNullValueRecommendationReasons; set { _explicitNullValueRecommendationReasons = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recommendationReasons"); else _explicitNullProperties?.Remove("recommendationReasons"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.WalletRecommendationReasonsItem?> _explicitNullValueRecommendationReasons = default!;
 #endif
         /// <summary>The type of wallet that the network token is associated with.Possible values: **applePay**, **googlePay**, **garminPay**.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; set; }
+        public string? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private string? _explicitNullValueType = default!;
 #nullable restore
 #else
-        public string Type { get; set; }
+        public string Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private string _explicitNullValueType = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.NetworkTokenNotificationDataV2Wallet"/> and sets the default values.
@@ -79,7 +104,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.NetworkTokenNotificationDataV2Wallet CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.NetworkTokenNotificationDataV2Wallet();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.NetworkTokenNotificationDataV2Wallet(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -110,6 +135,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("provisioningMethod", ProvisioningMethod);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.WalletRecommendationReasonsItem>("recommendationReasons", RecommendationReasons);
             writer.WriteStringValue("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

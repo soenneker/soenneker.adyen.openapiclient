@@ -12,21 +12,35 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ResponseValue : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("AdditionalResponse") is { } nullNodeAdditionalResponse && nullNodeAdditionalResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdditionalResponse = null;
+            if (parseNode.GetChildNode("ErrorCondition") is { } nullNodeErrorCondition && nullNodeErrorCondition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorCondition = null;
+            if (parseNode.GetChildNode("Result") is { } nullNodeResult && nullNodeResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Result = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Additional information related to processing status of a message request.If present, the POI logs it for further examination.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AdditionalResponse { get; set; }
+        public string? AdditionalResponse { get => _explicitNullValueAdditionalResponse; set { _explicitNullValueAdditionalResponse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AdditionalResponse"); else _explicitNullProperties?.Remove("AdditionalResponse"); } }
+        private string? _explicitNullValueAdditionalResponse = default!;
 #nullable restore
 #else
-        public string AdditionalResponse { get; set; }
+        public string AdditionalResponse { get => _explicitNullValueAdditionalResponse; set { _explicitNullValueAdditionalResponse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AdditionalResponse"); else _explicitNullProperties?.Remove("AdditionalResponse"); } }
+        private string _explicitNullValueAdditionalResponse = default!;
 #endif
         /// <summary>Possible values:* **Aborted*** **Busy*** **Cancel*** **DeviceOut*** **InsertedCard*** **InProgress*** **LoggedOut*** **MessageFormat*** **NotAllowed*** **NotFound*** **PaymentRestriction*** **Refusal*** **UnavailableDevice*** **UnavailableService*** **InvalidCard*** **UnreachableHost*** **WrongPIN**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.ResponseValueErrorCondition? ErrorCondition { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ResponseValueErrorCondition? ErrorCondition { get => _explicitNullValueErrorCondition; set { _explicitNullValueErrorCondition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ErrorCondition"); else _explicitNullProperties?.Remove("ErrorCondition"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ResponseValueErrorCondition? _explicitNullValueErrorCondition = default!;
         /// <summary>Possible values:* **Success*** **Failure*** **Partial**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1ResultValue? Result { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1ResultValue? Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Result"); else _explicitNullProperties?.Remove("Result"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1ResultValue? _explicitNullValueResult = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue"/> and sets the default values.
         /// </summary>
@@ -42,7 +56,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,6 +81,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("AdditionalResponse", AdditionalResponse);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ResponseValueErrorCondition>("ErrorCondition", ErrorCondition);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1ResultValue>("Result", Result);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

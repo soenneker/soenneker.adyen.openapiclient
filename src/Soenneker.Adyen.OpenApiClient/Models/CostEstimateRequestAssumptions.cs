@@ -12,15 +12,28 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CostEstimateRequestAssumptions : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("assume3DSecureAuthenticated") is { } nullNodeAssume3DSecureAuthenticated && nullNodeAssume3DSecureAuthenticated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Assume3DSecureAuthenticated = null;
+            if (parseNode.GetChildNode("assumeLevel3Data") is { } nullNodeAssumeLevel3Data && nullNodeAssumeLevel3Data.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssumeLevel3Data = null;
+            if (parseNode.GetChildNode("installments") is { } nullNodeInstallments && nullNodeInstallments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Installments = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>If true, the cardholder is expected to successfully authorise via 3D Secure.</summary>
-        public bool? Assume3DSecureAuthenticated { get; set; }
+        public bool? Assume3DSecureAuthenticated { get => _explicitNullValueAssume3DSecureAuthenticated; set { _explicitNullValueAssume3DSecureAuthenticated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assume3DSecureAuthenticated"); else _explicitNullProperties?.Remove("assume3DSecureAuthenticated"); } }
+        private bool? _explicitNullValueAssume3DSecureAuthenticated = default!;
         /// <summary>If true, the transaction is expected to have valid Level 3 data.</summary>
-        public bool? AssumeLevel3Data { get; set; }
+        public bool? AssumeLevel3Data { get => _explicitNullValueAssumeLevel3Data; set { _explicitNullValueAssumeLevel3Data = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assumeLevel3Data"); else _explicitNullProperties?.Remove("assumeLevel3Data"); } }
+        private bool? _explicitNullValueAssumeLevel3Data = default!;
         /// <summary>If not zero, the number of installments.</summary>
-        public int? Installments { get; set; }
+        public int? Installments { get => _explicitNullValueInstallments; set { _explicitNullValueInstallments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("installments"); else _explicitNullProperties?.Remove("installments"); } }
+        private int? _explicitNullValueInstallments = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateRequestAssumptions"/> and sets the default values.
         /// </summary>
@@ -36,7 +49,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateRequestAssumptions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateRequestAssumptions();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateRequestAssumptions(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -61,6 +74,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteBoolValue("assume3DSecureAuthenticated", Assume3DSecureAuthenticated);
             writer.WriteBoolValue("assumeLevel3Data", AssumeLevel3Data);
             writer.WriteIntValue("installments", Installments);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,24 +11,37 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PciSigningRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("pciTemplateReferences") is { } nullNodePciTemplateReferences && nullNodePciTemplateReferences.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PciTemplateReferences = null;
+            if (parseNode.GetChildNode("signedBy") is { } nullNodeSignedBy && nullNodeSignedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SignedBy = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The array of Adyen-generated unique identifiers for the questionnaires.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PciTemplateReferences { get; set; }
+        public List<string>? PciTemplateReferences { get => _explicitNullValuePciTemplateReferences; set { _explicitNullValuePciTemplateReferences = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pciTemplateReferences"); else _explicitNullProperties?.Remove("pciTemplateReferences"); } }
+        private List<string>? _explicitNullValuePciTemplateReferences = default!;
 #nullable restore
 #else
-        public List<string> PciTemplateReferences { get; set; }
+        public List<string> PciTemplateReferences { get => _explicitNullValuePciTemplateReferences; set { _explicitNullValuePciTemplateReferences = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pciTemplateReferences"); else _explicitNullProperties?.Remove("pciTemplateReferences"); } }
+        private List<string> _explicitNullValuePciTemplateReferences = default!;
 #endif
         /// <summary>The [legal entity ID](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/legalEntities__resParam_id) of the individual who signs the PCI questionnaire.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SignedBy { get; set; }
+        public string? SignedBy { get => _explicitNullValueSignedBy; set { _explicitNullValueSignedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signedBy"); else _explicitNullProperties?.Remove("signedBy"); } }
+        private string? _explicitNullValueSignedBy = default!;
 #nullable restore
 #else
-        public string SignedBy { get; set; }
+        public string SignedBy { get => _explicitNullValueSignedBy; set { _explicitNullValueSignedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signedBy"); else _explicitNullProperties?.Remove("signedBy"); } }
+        private string _explicitNullValueSignedBy = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PciSigningRequest"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.PciSigningRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.PciSigningRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.PciSigningRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("pciTemplateReferences", PciTemplateReferences);
             writer.WriteStringValue("signedBy", SignedBy);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

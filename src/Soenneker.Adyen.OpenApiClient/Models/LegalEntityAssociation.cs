@@ -11,7 +11,20 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class LegalEntityAssociation : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("jobTitle") is { } nullNodeJobTitle && nullNodeJobTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobTitle = null;
+            if (parseNode.GetChildNode("legalEntityId") is { } nullNodeLegalEntityId && nullNodeLegalEntityId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LegalEntityId = null;
+            if (parseNode.GetChildNode("nominee") is { } nullNodeNominee && nullNodeNominee.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Nominee = null;
+            if (parseNode.GetChildNode("relationship") is { } nullNodeRelationship && nullNodeRelationship.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Relationship = null;
+            if (parseNode.GetChildNode("settlorExemptionReason") is { } nullNodeSettlorExemptionReason && nullNodeSettlorExemptionReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SettlorExemptionReason = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The unique identifier of another legal entity with which the `legalEntityId` is associated. When the `legalEntityId` is associated to legal entities other than the current one, the response returns all the associations.</summary>
@@ -33,18 +46,22 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The individual&apos;s job title if the `type` is **uboThroughControl** or **signatory**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JobTitle { get; set; }
+        public string? JobTitle { get => _explicitNullValueJobTitle; set { _explicitNullValueJobTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobTitle"); else _explicitNullProperties?.Remove("jobTitle"); } }
+        private string? _explicitNullValueJobTitle = default!;
 #nullable restore
 #else
-        public string JobTitle { get; set; }
+        public string JobTitle { get => _explicitNullValueJobTitle; set { _explicitNullValueJobTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobTitle"); else _explicitNullProperties?.Remove("jobTitle"); } }
+        private string _explicitNullValueJobTitle = default!;
 #endif
         /// <summary>The unique identifier of the associated [legal entity](https://docs.adyen.com/api-explorer/legalentity/latest/post/legalEntities#responses-200-id).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LegalEntityId { get; set; }
+        public string? LegalEntityId { get => _explicitNullValueLegalEntityId; set { _explicitNullValueLegalEntityId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalEntityId"); else _explicitNullProperties?.Remove("legalEntityId"); } }
+        private string? _explicitNullValueLegalEntityId = default!;
 #nullable restore
 #else
-        public string LegalEntityId { get; set; }
+        public string LegalEntityId { get => _explicitNullValueLegalEntityId; set { _explicitNullValueLegalEntityId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalEntityId"); else _explicitNullProperties?.Remove("legalEntityId"); } }
+        private string _explicitNullValueLegalEntityId = default!;
 #endif
         /// <summary>The name of the associated [legal entity](https://docs.adyen.com/api-explorer/legalentity/latest/post/legalEntities#responses-200-id).- For **individual**, `name.firstName` and `name.lastName`.- For **organization**, `legalName`.- For **soleProprietorship**, `name`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,25 +72,31 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Name { get; private set; }
 #endif
         /// <summary>Default value: **false**Set to **true** if the entity association `type` **director**, **secondaryPartner** or **shareholder** is also a nominee. Only applicable to New Zealand.</summary>
-        public bool? Nominee { get; set; }
+        public bool? Nominee { get => _explicitNullValueNominee; set { _explicitNullValueNominee = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nominee"); else _explicitNullProperties?.Remove("nominee"); } }
+        private bool? _explicitNullValueNominee = default!;
         /// <summary>The individual&apos;s relationship to a legal representative if the `type` is **legalRepresentative**. Possible values: **parent**, **guardian**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Relationship { get; set; }
+        public string? Relationship { get => _explicitNullValueRelationship; set { _explicitNullValueRelationship = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relationship"); else _explicitNullProperties?.Remove("relationship"); } }
+        private string? _explicitNullValueRelationship = default!;
 #nullable restore
 #else
-        public string Relationship { get; set; }
+        public string Relationship { get => _explicitNullValueRelationship; set { _explicitNullValueRelationship = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relationship"); else _explicitNullProperties?.Remove("relationship"); } }
+        private string _explicitNullValueRelationship = default!;
 #endif
         /// <summary>Defines the KYC exemption reason for a settlor associated with a trust. Only applicable to trusts in Australia.For example, **professionalServiceProvider**, **deceased**, or **contributionBelowThreshold**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SettlorExemptionReason { get; set; }
+        public List<string>? SettlorExemptionReason { get => _explicitNullValueSettlorExemptionReason; set { _explicitNullValueSettlorExemptionReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("settlorExemptionReason"); else _explicitNullProperties?.Remove("settlorExemptionReason"); } }
+        private List<string>? _explicitNullValueSettlorExemptionReason = default!;
 #nullable restore
 #else
-        public List<string> SettlorExemptionReason { get; set; }
+        public List<string> SettlorExemptionReason { get => _explicitNullValueSettlorExemptionReason; set { _explicitNullValueSettlorExemptionReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("settlorExemptionReason"); else _explicitNullProperties?.Remove("settlorExemptionReason"); } }
+        private List<string> _explicitNullValueSettlorExemptionReason = default!;
 #endif
         /// <summary>Defines the relationship of the legal entity to the current legal entity.Possible value for individuals: **legalRepresentative**.Possible values for organizations: **director**, **signatory**, **trustOwnership**, **uboThroughOwnership**, **uboThroughControl**, **ultimateParentCompany**, or **immediateParentCompany**.Possible values for sole proprietorships: **soleProprietorship**.Possible value for trusts: **trust**.Possible values for trust members: **definedBeneficiary**, **protector**, **secondaryTrustee**, **settlor**, **uboThroughControl**, or **uboThroughOwnership**.Possible value for unincorporated partnership: **unincorporatedPartnership**.Possible values for unincorporated partnership members: **secondaryPartner**, **uboThroughControl**, **uboThroughOwnership**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityAssociationType? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityAssociationType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityAssociationType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityAssociation"/> and sets the default values.
         /// </summary>
@@ -89,7 +112,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityAssociation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityAssociation();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityAssociation(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -123,6 +146,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("relationship", Relationship);
             writer.WriteCollectionOfPrimitiveValues<string>("settlorExemptionReason", SettlorExemptionReason);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityAssociationType>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

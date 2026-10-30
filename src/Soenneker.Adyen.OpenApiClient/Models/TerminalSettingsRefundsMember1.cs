@@ -12,24 +12,37 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TerminalSettingsRefundsMember1 : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("referenced") is { } nullNodeReferenced && nullNodeReferenced.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Referenced = null;
+            if (parseNode.GetChildNode("unreferenced") is { } nullNodeUnreferenced && nullNodeUnreferenced.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Unreferenced = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Settings for referenced refunds.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.RefundsReferenced? Referenced { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RefundsReferenced? Referenced { get => _explicitNullValueReferenced; set { _explicitNullValueReferenced = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenced"); else _explicitNullProperties?.Remove("referenced"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.RefundsReferenced? _explicitNullValueReferenced = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.RefundsReferenced Referenced { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RefundsReferenced Referenced { get => _explicitNullValueReferenced; set { _explicitNullValueReferenced = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenced"); else _explicitNullProperties?.Remove("referenced"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.RefundsReferenced _explicitNullValueReferenced = default!;
 #endif
         /// <summary>Settings for unreferenced refunds.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.RefundsUnreferenced? Unreferenced { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RefundsUnreferenced? Unreferenced { get => _explicitNullValueUnreferenced; set { _explicitNullValueUnreferenced = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unreferenced"); else _explicitNullProperties?.Remove("unreferenced"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.RefundsUnreferenced? _explicitNullValueUnreferenced = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.RefundsUnreferenced Unreferenced { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RefundsUnreferenced Unreferenced { get => _explicitNullValueUnreferenced; set { _explicitNullValueUnreferenced = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unreferenced"); else _explicitNullProperties?.Remove("unreferenced"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.RefundsUnreferenced _explicitNullValueUnreferenced = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsRefundsMember1"/> and sets the default values.
@@ -46,7 +59,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsRefundsMember1 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsRefundsMember1();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsRefundsMember1(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +82,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RefundsReferenced>("referenced", Referenced);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RefundsUnreferenced>("unreferenced", Unreferenced);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

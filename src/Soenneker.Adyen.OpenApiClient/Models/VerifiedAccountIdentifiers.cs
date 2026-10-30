@@ -12,56 +12,81 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class VerifiedAccountIdentifiers : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("ach") is { } nullNodeAch && nullNodeAch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ach = null;
+            if (parseNode.GetChildNode("bacs") is { } nullNodeBacs && nullNodeBacs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bacs = null;
+            if (parseNode.GetChildNode("bsb") is { } nullNodeBsb && nullNodeBsb.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bsb = null;
+            if (parseNode.GetChildNode("eft") is { } nullNodeEft && nullNodeEft.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Eft = null;
+            if (parseNode.GetChildNode("iban") is { } nullNodeIban && nullNodeIban.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Iban = null;
+            if (parseNode.GetChildNode("rix") is { } nullNodeRix && nullNodeRix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rix = null;
+        }
+
         /// <summary>The ach property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AchAccountIdentifier? Ach { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AchAccountIdentifier? Ach { get => _explicitNullValueAch; set { _explicitNullValueAch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ach"); else _explicitNullProperties?.Remove("ach"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.AchAccountIdentifier? _explicitNullValueAch = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AchAccountIdentifier Ach { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AchAccountIdentifier Ach { get => _explicitNullValueAch; set { _explicitNullValueAch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ach"); else _explicitNullProperties?.Remove("ach"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.AchAccountIdentifier _explicitNullValueAch = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The bacs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BacsAccountIdentifier? Bacs { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BacsAccountIdentifier? Bacs { get => _explicitNullValueBacs; set { _explicitNullValueBacs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bacs"); else _explicitNullProperties?.Remove("bacs"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BacsAccountIdentifier? _explicitNullValueBacs = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BacsAccountIdentifier Bacs { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BacsAccountIdentifier Bacs { get => _explicitNullValueBacs; set { _explicitNullValueBacs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bacs"); else _explicitNullProperties?.Remove("bacs"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BacsAccountIdentifier _explicitNullValueBacs = default!;
 #endif
         /// <summary>The bsb property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BsbAccountIdentifier? Bsb { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BsbAccountIdentifier? Bsb { get => _explicitNullValueBsb; set { _explicitNullValueBsb = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bsb"); else _explicitNullProperties?.Remove("bsb"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BsbAccountIdentifier? _explicitNullValueBsb = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BsbAccountIdentifier Bsb { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BsbAccountIdentifier Bsb { get => _explicitNullValueBsb; set { _explicitNullValueBsb = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bsb"); else _explicitNullProperties?.Remove("bsb"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BsbAccountIdentifier _explicitNullValueBsb = default!;
 #endif
         /// <summary>The eft property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.EftAccountIdentifier? Eft { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.EftAccountIdentifier? Eft { get => _explicitNullValueEft; set { _explicitNullValueEft = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eft"); else _explicitNullProperties?.Remove("eft"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.EftAccountIdentifier? _explicitNullValueEft = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.EftAccountIdentifier Eft { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.EftAccountIdentifier Eft { get => _explicitNullValueEft; set { _explicitNullValueEft = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eft"); else _explicitNullProperties?.Remove("eft"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.EftAccountIdentifier _explicitNullValueEft = default!;
 #endif
         /// <summary>The iban property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.IbanAccountIdentifier? Iban { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.IbanAccountIdentifier? Iban { get => _explicitNullValueIban; set { _explicitNullValueIban = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iban"); else _explicitNullProperties?.Remove("iban"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.IbanAccountIdentifier? _explicitNullValueIban = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.IbanAccountIdentifier Iban { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.IbanAccountIdentifier Iban { get => _explicitNullValueIban; set { _explicitNullValueIban = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iban"); else _explicitNullProperties?.Remove("iban"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.IbanAccountIdentifier _explicitNullValueIban = default!;
 #endif
         /// <summary>The rix property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.RixAccountIdentifier? Rix { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RixAccountIdentifier? Rix { get => _explicitNullValueRix; set { _explicitNullValueRix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rix"); else _explicitNullProperties?.Remove("rix"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.RixAccountIdentifier? _explicitNullValueRix = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.RixAccountIdentifier Rix { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RixAccountIdentifier Rix { get => _explicitNullValueRix; set { _explicitNullValueRix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rix"); else _explicitNullProperties?.Remove("rix"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.RixAccountIdentifier _explicitNullValueRix = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.VerifiedAccountIdentifiers"/> and sets the default values.
@@ -78,7 +103,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.VerifiedAccountIdentifiers CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.VerifiedAccountIdentifiers();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.VerifiedAccountIdentifiers(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -109,6 +134,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.EftAccountIdentifier>("eft", Eft);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.IbanAccountIdentifier>("iban", Iban);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RixAccountIdentifier>("rix", Rix);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

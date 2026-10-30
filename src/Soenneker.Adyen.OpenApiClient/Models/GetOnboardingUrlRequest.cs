@@ -11,66 +11,96 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetOnboardingUrlRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("accountHolderCode") is { } nullNodeAccountHolderCode && nullNodeAccountHolderCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountHolderCode = null;
+            if (parseNode.GetChildNode("collectInformation") is { } nullNodeCollectInformation && nullNodeCollectInformation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CollectInformation = null;
+            if (parseNode.GetChildNode("editMode") is { } nullNodeEditMode && nullNodeEditMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EditMode = null;
+            if (parseNode.GetChildNode("mobileOAuthCallbackUrl") is { } nullNodeMobileOAuthCallbackUrl && nullNodeMobileOAuthCallbackUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MobileOAuthCallbackUrl = null;
+            if (parseNode.GetChildNode("platformName") is { } nullNodePlatformName && nullNodePlatformName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlatformName = null;
+            if (parseNode.GetChildNode("returnUrl") is { } nullNodeReturnUrl && nullNodeReturnUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReturnUrl = null;
+            if (parseNode.GetChildNode("shopperLocale") is { } nullNodeShopperLocale && nullNodeShopperLocale.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShopperLocale = null;
+            if (parseNode.GetChildNode("showPages") is { } nullNodeShowPages && nullNodeShowPages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShowPages = null;
+        }
+
         /// <summary>The account holder code you provided when you created the account holder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountHolderCode { get; set; }
+        public string? AccountHolderCode { get => _explicitNullValueAccountHolderCode; set { _explicitNullValueAccountHolderCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderCode"); else _explicitNullProperties?.Remove("accountHolderCode"); } }
+        private string? _explicitNullValueAccountHolderCode = default!;
 #nullable restore
 #else
-        public string AccountHolderCode { get; set; }
+        public string AccountHolderCode { get => _explicitNullValueAccountHolderCode; set { _explicitNullValueAccountHolderCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderCode"); else _explicitNullProperties?.Remove("accountHolderCode"); } }
+        private string _explicitNullValueAccountHolderCode = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Contains indicators whether the page should only collect information for specific [KYC checks](https://docs.adyen.com/classic-platforms/verification-checks). By default, the page collects information for all KYC checks that apply to the [legal entity type](https://docs.adyen.com/classic-platforms/account-holders-and-accounts#legal-entity-types).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.GetOnboardingUrlRequestCollectInformation? CollectInformation { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.GetOnboardingUrlRequestCollectInformation? CollectInformation { get => _explicitNullValueCollectInformation; set { _explicitNullValueCollectInformation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("collectInformation"); else _explicitNullProperties?.Remove("collectInformation"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.GetOnboardingUrlRequestCollectInformation? _explicitNullValueCollectInformation = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.GetOnboardingUrlRequestCollectInformation CollectInformation { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.GetOnboardingUrlRequestCollectInformation CollectInformation { get => _explicitNullValueCollectInformation; set { _explicitNullValueCollectInformation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("collectInformation"); else _explicitNullProperties?.Remove("collectInformation"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.GetOnboardingUrlRequestCollectInformation _explicitNullValueCollectInformation = default!;
 #endif
         /// <summary>Indicates if editing checks is allowed even if all the checks have passed.</summary>
-        public bool? EditMode { get; set; }
+        public bool? EditMode { get => _explicitNullValueEditMode; set { _explicitNullValueEditMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("editMode"); else _explicitNullProperties?.Remove("editMode"); } }
+        private bool? _explicitNullValueEditMode = default!;
         /// <summary>The URL to which the account holder is redirected after completing an OAuth authentication with a bank through Trustly/PayMyBank.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MobileOAuthCallbackUrl { get; set; }
+        public string? MobileOAuthCallbackUrl { get => _explicitNullValueMobileOAuthCallbackUrl; set { _explicitNullValueMobileOAuthCallbackUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mobileOAuthCallbackUrl"); else _explicitNullProperties?.Remove("mobileOAuthCallbackUrl"); } }
+        private string? _explicitNullValueMobileOAuthCallbackUrl = default!;
 #nullable restore
 #else
-        public string MobileOAuthCallbackUrl { get; set; }
+        public string MobileOAuthCallbackUrl { get => _explicitNullValueMobileOAuthCallbackUrl; set { _explicitNullValueMobileOAuthCallbackUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mobileOAuthCallbackUrl"); else _explicitNullProperties?.Remove("mobileOAuthCallbackUrl"); } }
+        private string _explicitNullValueMobileOAuthCallbackUrl = default!;
 #endif
         /// <summary>The platform name which will show up in the welcome page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PlatformName { get; set; }
+        public string? PlatformName { get => _explicitNullValuePlatformName; set { _explicitNullValuePlatformName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platformName"); else _explicitNullProperties?.Remove("platformName"); } }
+        private string? _explicitNullValuePlatformName = default!;
 #nullable restore
 #else
-        public string PlatformName { get; set; }
+        public string PlatformName { get => _explicitNullValuePlatformName; set { _explicitNullValuePlatformName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platformName"); else _explicitNullProperties?.Remove("platformName"); } }
+        private string _explicitNullValuePlatformName = default!;
 #endif
         /// <summary>The URL where the account holder will be redirected back to after they complete the onboarding, or if their session times out. Maximum length of 500 characters. If you don&apos;t provide this, the account holder will be redirected back to the default return URL configured in your platform account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReturnUrl { get; set; }
+        public string? ReturnUrl { get => _explicitNullValueReturnUrl; set { _explicitNullValueReturnUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("returnUrl"); else _explicitNullProperties?.Remove("returnUrl"); } }
+        private string? _explicitNullValueReturnUrl = default!;
 #nullable restore
 #else
-        public string ReturnUrl { get; set; }
+        public string ReturnUrl { get => _explicitNullValueReturnUrl; set { _explicitNullValueReturnUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("returnUrl"); else _explicitNullProperties?.Remove("returnUrl"); } }
+        private string _explicitNullValueReturnUrl = default!;
 #endif
         /// <summary>The language to be used in the page, specified by a combination of a language and country code. For example, **pt-BR**. If not specified in the request or if the language is not supported, the page uses the browser language. If the browser language is not supported, the page uses **en-US** by default.For a list of supported languages, refer to [Change the page language](https://docs.adyen.com/classic-platforms/hosted-onboarding-page/customize-experience#change-page-language).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ShopperLocale { get; set; }
+        public string? ShopperLocale { get => _explicitNullValueShopperLocale; set { _explicitNullValueShopperLocale = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shopperLocale"); else _explicitNullProperties?.Remove("shopperLocale"); } }
+        private string? _explicitNullValueShopperLocale = default!;
 #nullable restore
 #else
-        public string ShopperLocale { get; set; }
+        public string ShopperLocale { get => _explicitNullValueShopperLocale; set { _explicitNullValueShopperLocale = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shopperLocale"); else _explicitNullProperties?.Remove("shopperLocale"); } }
+        private string _explicitNullValueShopperLocale = default!;
 #endif
         /// <summary>Contains indicators whether specific pages must be shown to the account holder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.GetOnboardingUrlRequestShowPages? ShowPages { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.GetOnboardingUrlRequestShowPages? ShowPages { get => _explicitNullValueShowPages; set { _explicitNullValueShowPages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("showPages"); else _explicitNullProperties?.Remove("showPages"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.GetOnboardingUrlRequestShowPages? _explicitNullValueShowPages = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.GetOnboardingUrlRequestShowPages ShowPages { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.GetOnboardingUrlRequestShowPages ShowPages { get => _explicitNullValueShowPages; set { _explicitNullValueShowPages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("showPages"); else _explicitNullProperties?.Remove("showPages"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.GetOnboardingUrlRequestShowPages _explicitNullValueShowPages = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.GetOnboardingUrlRequest"/> and sets the default values.
@@ -87,7 +117,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.GetOnboardingUrlRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.GetOnboardingUrlRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.GetOnboardingUrlRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -122,6 +152,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("returnUrl", ReturnUrl);
             writer.WriteStringValue("shopperLocale", ShopperLocale);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GetOnboardingUrlRequestShowPages>("showPages", ShowPages);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,21 +12,35 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TransactionServiceV4DisputeResponseOtherInfo : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("descriptionOfIssue") is { } nullNodeDescriptionOfIssue && nullNodeDescriptionOfIssue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DescriptionOfIssue = null;
+            if (parseNode.GetChildNode("subType") is { } nullNodeSubType && nullNodeSubType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubType = null;
+            if (parseNode.GetChildNode("whatWasPurchased") is { } nullNodeWhatWasPurchased && nullNodeWhatWasPurchased.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WhatWasPurchased = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Your description of the issue for raising a dispute of `type` **other**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DescriptionOfIssue { get; set; }
+        public string? DescriptionOfIssue { get => _explicitNullValueDescriptionOfIssue; set { _explicitNullValueDescriptionOfIssue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("descriptionOfIssue"); else _explicitNullProperties?.Remove("descriptionOfIssue"); } }
+        private string? _explicitNullValueDescriptionOfIssue = default!;
 #nullable restore
 #else
-        public string DescriptionOfIssue { get; set; }
+        public string DescriptionOfIssue { get => _explicitNullValueDescriptionOfIssue; set { _explicitNullValueDescriptionOfIssue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("descriptionOfIssue"); else _explicitNullProperties?.Remove("descriptionOfIssue"); } }
+        private string _explicitNullValueDescriptionOfIssue = default!;
 #endif
         /// <summary>The specific category of **other** dispute that you are raising.Possible values: **atmDispute**, **cancelledGoodsServices**, **cancelledRecurring**, **counterfeit**, **creditNotProcessed**, **notAsDescribed**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4OtherInfoSubType? SubType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4OtherInfoSubType? SubType { get => _explicitNullValueSubType; set { _explicitNullValueSubType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subType"); else _explicitNullProperties?.Remove("subType"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4OtherInfoSubType? _explicitNullValueSubType = default!;
         /// <summary>The type of product that you purchased.Possible values: **goods**, **services**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4OtherInfoWhatWasPurchased? WhatWasPurchased { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4OtherInfoWhatWasPurchased? WhatWasPurchased { get => _explicitNullValueWhatWasPurchased; set { _explicitNullValueWhatWasPurchased = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("whatWasPurchased"); else _explicitNullProperties?.Remove("whatWasPurchased"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4OtherInfoWhatWasPurchased? _explicitNullValueWhatWasPurchased = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeResponseOtherInfo"/> and sets the default values.
         /// </summary>
@@ -42,7 +56,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeResponseOtherInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeResponseOtherInfo();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeResponseOtherInfo(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,6 +81,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("descriptionOfIssue", DescriptionOfIssue);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4OtherInfoSubType>("subType", SubType);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4OtherInfoWhatWasPurchased>("whatWasPurchased", WhatWasPurchased);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

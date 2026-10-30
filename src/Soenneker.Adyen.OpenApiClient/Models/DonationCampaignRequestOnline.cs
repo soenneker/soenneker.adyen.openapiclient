@@ -12,34 +12,52 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DonationCampaignRequestOnline : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("defaultAmount") is { } nullNodeDefaultAmount && nullNodeDefaultAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultAmount = null;
+            if (parseNode.GetChildNode("donationType") is { } nullNodeDonationType && nullNodeDonationType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DonationType = null;
+            if (parseNode.GetChildNode("merchantAccounts") is { } nullNodeMerchantAccounts && nullNodeMerchantAccounts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantAccounts = null;
+            if (parseNode.GetChildNode("storeIds") is { } nullNodeStoreIds && nullNodeStoreIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StoreIds = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The default amount for donations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.OnlineDonationSettingsDefaultAmount? DefaultAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.OnlineDonationSettingsDefaultAmount? DefaultAmount { get => _explicitNullValueDefaultAmount; set { _explicitNullValueDefaultAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultAmount"); else _explicitNullProperties?.Remove("defaultAmount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.OnlineDonationSettingsDefaultAmount? _explicitNullValueDefaultAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.OnlineDonationSettingsDefaultAmount DefaultAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.OnlineDonationSettingsDefaultAmount DefaultAmount { get => _explicitNullValueDefaultAmount; set { _explicitNullValueDefaultAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultAmount"); else _explicitNullProperties?.Remove("defaultAmount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.OnlineDonationSettingsDefaultAmount _explicitNullValueDefaultAmount = default!;
 #endif
         /// <summary>The type of donation to collect from the shopper. Possible values: - **roundup**: Round up the transaction amount.- **fixedAmounts**: Choose a fixed amount.- **fixedAmountsRoundup**: Round up, or choose a fixed amount.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.OnlineDonationSettingsDonationType? DonationType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.OnlineDonationSettingsDonationType? DonationType { get => _explicitNullValueDonationType; set { _explicitNullValueDonationType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("donationType"); else _explicitNullProperties?.Remove("donationType"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.OnlineDonationSettingsDonationType? _explicitNullValueDonationType = default!;
         /// <summary>The merchant accounts for this sales channel that are associated with the donation campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MerchantAccounts { get; set; }
+        public List<string>? MerchantAccounts { get => _explicitNullValueMerchantAccounts; set { _explicitNullValueMerchantAccounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantAccounts"); else _explicitNullProperties?.Remove("merchantAccounts"); } }
+        private List<string>? _explicitNullValueMerchantAccounts = default!;
 #nullable restore
 #else
-        public List<string> MerchantAccounts { get; set; }
+        public List<string> MerchantAccounts { get => _explicitNullValueMerchantAccounts; set { _explicitNullValueMerchantAccounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantAccounts"); else _explicitNullProperties?.Remove("merchantAccounts"); } }
+        private List<string> _explicitNullValueMerchantAccounts = default!;
 #endif
         /// <summary>The Adyen-generated unique identifiers of stores for this sales channel that are associated with the donation campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? StoreIds { get; set; }
+        public List<string>? StoreIds { get => _explicitNullValueStoreIds; set { _explicitNullValueStoreIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storeIds"); else _explicitNullProperties?.Remove("storeIds"); } }
+        private List<string>? _explicitNullValueStoreIds = default!;
 #nullable restore
 #else
-        public List<string> StoreIds { get; set; }
+        public List<string> StoreIds { get => _explicitNullValueStoreIds; set { _explicitNullValueStoreIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storeIds"); else _explicitNullProperties?.Remove("storeIds"); } }
+        private List<string> _explicitNullValueStoreIds = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.DonationCampaignRequestOnline"/> and sets the default values.
@@ -56,7 +74,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.DonationCampaignRequestOnline CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.DonationCampaignRequestOnline();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.DonationCampaignRequestOnline(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,6 +101,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.OnlineDonationSettingsDonationType>("donationType", DonationType);
             writer.WriteCollectionOfPrimitiveValues<string>("merchantAccounts", MerchantAccounts);
             writer.WriteCollectionOfPrimitiveValues<string>("storeIds", StoreIds);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

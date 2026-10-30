@@ -67,6 +67,8 @@ namespace Soenneker.Adyen.OpenApiClient.TransferServiceV4.Cashouts
                 { "422", global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.CashOut>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.CashOut.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

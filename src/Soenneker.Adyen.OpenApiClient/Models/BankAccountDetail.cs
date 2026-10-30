@@ -11,211 +11,295 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class BankAccountDetail : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("accountNumber") is { } nullNodeAccountNumber && nullNodeAccountNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountNumber = null;
+            if (parseNode.GetChildNode("accountType") is { } nullNodeAccountType && nullNodeAccountType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountType = null;
+            if (parseNode.GetChildNode("bankAccountName") is { } nullNodeBankAccountName && nullNodeBankAccountName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankAccountName = null;
+            if (parseNode.GetChildNode("bankAccountReference") is { } nullNodeBankAccountReference && nullNodeBankAccountReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankAccountReference = null;
+            if (parseNode.GetChildNode("bankAccountUUID") is { } nullNodeBankAccountUUID && nullNodeBankAccountUUID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankAccountUUID = null;
+            if (parseNode.GetChildNode("bankBicSwift") is { } nullNodeBankBicSwift && nullNodeBankBicSwift.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankBicSwift = null;
+            if (parseNode.GetChildNode("bankCity") is { } nullNodeBankCity && nullNodeBankCity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankCity = null;
+            if (parseNode.GetChildNode("bankCode") is { } nullNodeBankCode && nullNodeBankCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankCode = null;
+            if (parseNode.GetChildNode("bankName") is { } nullNodeBankName && nullNodeBankName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankName = null;
+            if (parseNode.GetChildNode("branchCode") is { } nullNodeBranchCode && nullNodeBranchCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BranchCode = null;
+            if (parseNode.GetChildNode("checkCode") is { } nullNodeCheckCode && nullNodeCheckCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CheckCode = null;
+            if (parseNode.GetChildNode("countryCode") is { } nullNodeCountryCode && nullNodeCountryCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CountryCode = null;
+            if (parseNode.GetChildNode("currencyCode") is { } nullNodeCurrencyCode && nullNodeCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrencyCode = null;
+            if (parseNode.GetChildNode("iban") is { } nullNodeIban && nullNodeIban.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Iban = null;
+            if (parseNode.GetChildNode("ownerCity") is { } nullNodeOwnerCity && nullNodeOwnerCity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OwnerCity = null;
+            if (parseNode.GetChildNode("ownerCountryCode") is { } nullNodeOwnerCountryCode && nullNodeOwnerCountryCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OwnerCountryCode = null;
+            if (parseNode.GetChildNode("ownerDateOfBirth") is { } nullNodeOwnerDateOfBirth && nullNodeOwnerDateOfBirth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OwnerDateOfBirth = null;
+            if (parseNode.GetChildNode("ownerHouseNumberOrName") is { } nullNodeOwnerHouseNumberOrName && nullNodeOwnerHouseNumberOrName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OwnerHouseNumberOrName = null;
+            if (parseNode.GetChildNode("ownerName") is { } nullNodeOwnerName && nullNodeOwnerName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OwnerName = null;
+            if (parseNode.GetChildNode("ownerNationality") is { } nullNodeOwnerNationality && nullNodeOwnerNationality.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OwnerNationality = null;
+            if (parseNode.GetChildNode("ownerPostalCode") is { } nullNodeOwnerPostalCode && nullNodeOwnerPostalCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OwnerPostalCode = null;
+            if (parseNode.GetChildNode("ownerState") is { } nullNodeOwnerState && nullNodeOwnerState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OwnerState = null;
+            if (parseNode.GetChildNode("ownerStreet") is { } nullNodeOwnerStreet && nullNodeOwnerStreet.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OwnerStreet = null;
+            if (parseNode.GetChildNode("primaryAccount") is { } nullNodePrimaryAccount && nullNodePrimaryAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrimaryAccount = null;
+            if (parseNode.GetChildNode("taxId") is { } nullNodeTaxId && nullNodeTaxId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxId = null;
+            if (parseNode.GetChildNode("urlForVerification") is { } nullNodeUrlForVerification && nullNodeUrlForVerification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrlForVerification = null;
+        }
+
         /// <summary>The bank account number (without separators).&gt;Refer to [Required information](https://docs.adyen.com/classic-platforms/verification-process/required-information) for details on field requirements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountNumber { get; set; }
+        public string? AccountNumber { get => _explicitNullValueAccountNumber; set { _explicitNullValueAccountNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountNumber"); else _explicitNullProperties?.Remove("accountNumber"); } }
+        private string? _explicitNullValueAccountNumber = default!;
 #nullable restore
 #else
-        public string AccountNumber { get; set; }
+        public string AccountNumber { get => _explicitNullValueAccountNumber; set { _explicitNullValueAccountNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountNumber"); else _explicitNullProperties?.Remove("accountNumber"); } }
+        private string _explicitNullValueAccountNumber = default!;
 #endif
         /// <summary>The type of bank account.Only applicable to bank accounts held in the USA.The permitted values are: `checking`, `savings`.&gt;Refer to [Required information](https://docs.adyen.com/classic-platforms/verification-process/required-information) for details on field requirements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountType { get; set; }
+        public string? AccountType { get => _explicitNullValueAccountType; set { _explicitNullValueAccountType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountType"); else _explicitNullProperties?.Remove("accountType"); } }
+        private string? _explicitNullValueAccountType = default!;
 #nullable restore
 #else
-        public string AccountType { get; set; }
+        public string AccountType { get => _explicitNullValueAccountType; set { _explicitNullValueAccountType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountType"); else _explicitNullProperties?.Remove("accountType"); } }
+        private string _explicitNullValueAccountType = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The name of the bank account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BankAccountName { get; set; }
+        public string? BankAccountName { get => _explicitNullValueBankAccountName; set { _explicitNullValueBankAccountName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankAccountName"); else _explicitNullProperties?.Remove("bankAccountName"); } }
+        private string? _explicitNullValueBankAccountName = default!;
 #nullable restore
 #else
-        public string BankAccountName { get; set; }
+        public string BankAccountName { get => _explicitNullValueBankAccountName; set { _explicitNullValueBankAccountName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankAccountName"); else _explicitNullProperties?.Remove("bankAccountName"); } }
+        private string _explicitNullValueBankAccountName = default!;
 #endif
         /// <summary>Merchant reference to the bank account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BankAccountReference { get; set; }
+        public string? BankAccountReference { get => _explicitNullValueBankAccountReference; set { _explicitNullValueBankAccountReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankAccountReference"); else _explicitNullProperties?.Remove("bankAccountReference"); } }
+        private string? _explicitNullValueBankAccountReference = default!;
 #nullable restore
 #else
-        public string BankAccountReference { get; set; }
+        public string BankAccountReference { get => _explicitNullValueBankAccountReference; set { _explicitNullValueBankAccountReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankAccountReference"); else _explicitNullProperties?.Remove("bankAccountReference"); } }
+        private string _explicitNullValueBankAccountReference = default!;
 #endif
         /// <summary>The unique identifier (UUID) of the Bank Account.&gt;If, during an account holder create or update request, this field is left blank (but other fields provided), a new Bank Account will be created with a procedurally-generated UUID.&gt;If, during an account holder create request, a UUID is provided, the creation of the Bank Account will fail while the creation of the account holder will continue.&gt;If, during an account holder update request, a UUID that is not correlated with an existing Bank Account is provided, the update of the account holder will fail.&gt;If, during an account holder update request, a UUID that is correlated with an existing Bank Account is provided, the existing Bank Account will be updated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BankAccountUUID { get; set; }
+        public string? BankAccountUUID { get => _explicitNullValueBankAccountUUID; set { _explicitNullValueBankAccountUUID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankAccountUUID"); else _explicitNullProperties?.Remove("bankAccountUUID"); } }
+        private string? _explicitNullValueBankAccountUUID = default!;
 #nullable restore
 #else
-        public string BankAccountUUID { get; set; }
+        public string BankAccountUUID { get => _explicitNullValueBankAccountUUID; set { _explicitNullValueBankAccountUUID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankAccountUUID"); else _explicitNullProperties?.Remove("bankAccountUUID"); } }
+        private string _explicitNullValueBankAccountUUID = default!;
 #endif
         /// <summary>The bank identifier code.&gt;Refer to [Required information](https://docs.adyen.com/classic-platforms/verification-process/required-information) for details on field requirements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BankBicSwift { get; set; }
+        public string? BankBicSwift { get => _explicitNullValueBankBicSwift; set { _explicitNullValueBankBicSwift = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankBicSwift"); else _explicitNullProperties?.Remove("bankBicSwift"); } }
+        private string? _explicitNullValueBankBicSwift = default!;
 #nullable restore
 #else
-        public string BankBicSwift { get; set; }
+        public string BankBicSwift { get => _explicitNullValueBankBicSwift; set { _explicitNullValueBankBicSwift = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankBicSwift"); else _explicitNullProperties?.Remove("bankBicSwift"); } }
+        private string _explicitNullValueBankBicSwift = default!;
 #endif
         /// <summary>The city in which the bank branch is located.&gt;Refer to [Required information](https://docs.adyen.com/classic-platforms/verification-process/required-information) for details on field requirements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BankCity { get; set; }
+        public string? BankCity { get => _explicitNullValueBankCity; set { _explicitNullValueBankCity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankCity"); else _explicitNullProperties?.Remove("bankCity"); } }
+        private string? _explicitNullValueBankCity = default!;
 #nullable restore
 #else
-        public string BankCity { get; set; }
+        public string BankCity { get => _explicitNullValueBankCity; set { _explicitNullValueBankCity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankCity"); else _explicitNullProperties?.Remove("bankCity"); } }
+        private string _explicitNullValueBankCity = default!;
 #endif
         /// <summary>The bank code of the banking institution with which the bank account is registered.&gt;Refer to [Required information](https://docs.adyen.com/classic-platforms/verification-process/required-information) for details on field requirements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BankCode { get; set; }
+        public string? BankCode { get => _explicitNullValueBankCode; set { _explicitNullValueBankCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankCode"); else _explicitNullProperties?.Remove("bankCode"); } }
+        private string? _explicitNullValueBankCode = default!;
 #nullable restore
 #else
-        public string BankCode { get; set; }
+        public string BankCode { get => _explicitNullValueBankCode; set { _explicitNullValueBankCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankCode"); else _explicitNullProperties?.Remove("bankCode"); } }
+        private string _explicitNullValueBankCode = default!;
 #endif
         /// <summary>The name of the banking institution with which the bank account is held.&gt;Refer to [Required information](https://docs.adyen.com/classic-platforms/verification-process/required-information) for details on field requirements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BankName { get; set; }
+        public string? BankName { get => _explicitNullValueBankName; set { _explicitNullValueBankName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankName"); else _explicitNullProperties?.Remove("bankName"); } }
+        private string? _explicitNullValueBankName = default!;
 #nullable restore
 #else
-        public string BankName { get; set; }
+        public string BankName { get => _explicitNullValueBankName; set { _explicitNullValueBankName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankName"); else _explicitNullProperties?.Remove("bankName"); } }
+        private string _explicitNullValueBankName = default!;
 #endif
         /// <summary>The branch code of the branch under which the bank account is registered. The value to be specified in this parameter depends on the country of the bank account:* United States - Routing number* United Kingdom - Sort code* Germany - Bankleitzahl&gt;Refer to [Required information](https://docs.adyen.com/classic-platforms/verification-process/required-information) for details on field requirements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BranchCode { get; set; }
+        public string? BranchCode { get => _explicitNullValueBranchCode; set { _explicitNullValueBranchCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branchCode"); else _explicitNullProperties?.Remove("branchCode"); } }
+        private string? _explicitNullValueBranchCode = default!;
 #nullable restore
 #else
-        public string BranchCode { get; set; }
+        public string BranchCode { get => _explicitNullValueBranchCode; set { _explicitNullValueBranchCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branchCode"); else _explicitNullProperties?.Remove("branchCode"); } }
+        private string _explicitNullValueBranchCode = default!;
 #endif
         /// <summary>The check code of the bank account.&gt;Refer to [Required information](https://docs.adyen.com/classic-platforms/verification-process/required-information) for details on field requirements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CheckCode { get; set; }
+        public string? CheckCode { get => _explicitNullValueCheckCode; set { _explicitNullValueCheckCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checkCode"); else _explicitNullProperties?.Remove("checkCode"); } }
+        private string? _explicitNullValueCheckCode = default!;
 #nullable restore
 #else
-        public string CheckCode { get; set; }
+        public string CheckCode { get => _explicitNullValueCheckCode; set { _explicitNullValueCheckCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checkCode"); else _explicitNullProperties?.Remove("checkCode"); } }
+        private string _explicitNullValueCheckCode = default!;
 #endif
         /// <summary>The two-letter country code in which the bank account is registered.&gt;The permitted country codes are defined in ISO-3166-1 alpha-2 (e.g. &apos;NL&apos;).&gt;Refer to [Required information](https://docs.adyen.com/classic-platforms/verification-process/required-information) for details on field requirements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CountryCode { get; set; }
+        public string? CountryCode { get => _explicitNullValueCountryCode; set { _explicitNullValueCountryCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("countryCode"); else _explicitNullProperties?.Remove("countryCode"); } }
+        private string? _explicitNullValueCountryCode = default!;
 #nullable restore
 #else
-        public string CountryCode { get; set; }
+        public string CountryCode { get => _explicitNullValueCountryCode; set { _explicitNullValueCountryCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("countryCode"); else _explicitNullProperties?.Remove("countryCode"); } }
+        private string _explicitNullValueCountryCode = default!;
 #endif
         /// <summary>The currency in which the bank account deals.&gt;The permitted currency codes are defined in ISO-4217 (e.g. &apos;EUR&apos;).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CurrencyCode { get; set; }
+        public string? CurrencyCode { get => _explicitNullValueCurrencyCode; set { _explicitNullValueCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currencyCode"); else _explicitNullProperties?.Remove("currencyCode"); } }
+        private string? _explicitNullValueCurrencyCode = default!;
 #nullable restore
 #else
-        public string CurrencyCode { get; set; }
+        public string CurrencyCode { get => _explicitNullValueCurrencyCode; set { _explicitNullValueCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currencyCode"); else _explicitNullProperties?.Remove("currencyCode"); } }
+        private string _explicitNullValueCurrencyCode = default!;
 #endif
         /// <summary>The international bank account number.&gt;The IBAN standard is defined in ISO-13616.&gt;Refer to [Required information](https://docs.adyen.com/classic-platforms/verification-process/required-information) for details on field requirements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Iban { get; set; }
+        public string? Iban { get => _explicitNullValueIban; set { _explicitNullValueIban = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iban"); else _explicitNullProperties?.Remove("iban"); } }
+        private string? _explicitNullValueIban = default!;
 #nullable restore
 #else
-        public string Iban { get; set; }
+        public string Iban { get => _explicitNullValueIban; set { _explicitNullValueIban = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iban"); else _explicitNullProperties?.Remove("iban"); } }
+        private string _explicitNullValueIban = default!;
 #endif
         /// <summary>The city of residence of the bank account owner.&gt;Refer to [Required information](https://docs.adyen.com/classic-platforms/verification-process/required-information) for details on field requirements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OwnerCity { get; set; }
+        public string? OwnerCity { get => _explicitNullValueOwnerCity; set { _explicitNullValueOwnerCity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownerCity"); else _explicitNullProperties?.Remove("ownerCity"); } }
+        private string? _explicitNullValueOwnerCity = default!;
 #nullable restore
 #else
-        public string OwnerCity { get; set; }
+        public string OwnerCity { get => _explicitNullValueOwnerCity; set { _explicitNullValueOwnerCity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownerCity"); else _explicitNullProperties?.Remove("ownerCity"); } }
+        private string _explicitNullValueOwnerCity = default!;
 #endif
         /// <summary>The country code of the country of residence of the bank account owner.&gt;The permitted country codes are defined in ISO-3166-1 alpha-2 (e.g. &apos;NL&apos;).&gt;Refer to [Required information](https://docs.adyen.com/classic-platforms/verification-process/required-information) for details on field requirements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OwnerCountryCode { get; set; }
+        public string? OwnerCountryCode { get => _explicitNullValueOwnerCountryCode; set { _explicitNullValueOwnerCountryCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownerCountryCode"); else _explicitNullProperties?.Remove("ownerCountryCode"); } }
+        private string? _explicitNullValueOwnerCountryCode = default!;
 #nullable restore
 #else
-        public string OwnerCountryCode { get; set; }
+        public string OwnerCountryCode { get => _explicitNullValueOwnerCountryCode; set { _explicitNullValueOwnerCountryCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownerCountryCode"); else _explicitNullProperties?.Remove("ownerCountryCode"); } }
+        private string _explicitNullValueOwnerCountryCode = default!;
 #endif
         /// <summary>The date of birth of the bank account owner.The date should be in ISO-8601 format yyyy-mm-dd (e.g. 2000-01-31).</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OwnerDateOfBirth { get; set; }
+        public string? OwnerDateOfBirth { get => _explicitNullValueOwnerDateOfBirth; set { _explicitNullValueOwnerDateOfBirth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownerDateOfBirth"); else _explicitNullProperties?.Remove("ownerDateOfBirth"); } }
+        private string? _explicitNullValueOwnerDateOfBirth = default!;
 #nullable restore
 #else
-        public string OwnerDateOfBirth { get; set; }
+        public string OwnerDateOfBirth { get => _explicitNullValueOwnerDateOfBirth; set { _explicitNullValueOwnerDateOfBirth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownerDateOfBirth"); else _explicitNullProperties?.Remove("ownerDateOfBirth"); } }
+        private string _explicitNullValueOwnerDateOfBirth = default!;
 #endif
         /// <summary>The house name or number of the residence of the bank account owner.&gt;Refer to [Required information](https://docs.adyen.com/classic-platforms/verification-process/required-information) for details on field requirements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OwnerHouseNumberOrName { get; set; }
+        public string? OwnerHouseNumberOrName { get => _explicitNullValueOwnerHouseNumberOrName; set { _explicitNullValueOwnerHouseNumberOrName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownerHouseNumberOrName"); else _explicitNullProperties?.Remove("ownerHouseNumberOrName"); } }
+        private string? _explicitNullValueOwnerHouseNumberOrName = default!;
 #nullable restore
 #else
-        public string OwnerHouseNumberOrName { get; set; }
+        public string OwnerHouseNumberOrName { get => _explicitNullValueOwnerHouseNumberOrName; set { _explicitNullValueOwnerHouseNumberOrName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownerHouseNumberOrName"); else _explicitNullProperties?.Remove("ownerHouseNumberOrName"); } }
+        private string _explicitNullValueOwnerHouseNumberOrName = default!;
 #endif
         /// <summary>The name of the bank account owner.&gt;Refer to [Required information](https://docs.adyen.com/classic-platforms/verification-process/required-information) for details on field requirements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OwnerName { get; set; }
+        public string? OwnerName { get => _explicitNullValueOwnerName; set { _explicitNullValueOwnerName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownerName"); else _explicitNullProperties?.Remove("ownerName"); } }
+        private string? _explicitNullValueOwnerName = default!;
 #nullable restore
 #else
-        public string OwnerName { get; set; }
+        public string OwnerName { get => _explicitNullValueOwnerName; set { _explicitNullValueOwnerName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownerName"); else _explicitNullProperties?.Remove("ownerName"); } }
+        private string _explicitNullValueOwnerName = default!;
 #endif
         /// <summary>The country code of the country of nationality of the bank account owner.&gt;The permitted country codes are defined in ISO-3166-1 alpha-2 (e.g. &apos;NL&apos;).&gt;Refer to [Required information](https://docs.adyen.com/classic-platforms/verification-process/required-information) for details on field requirements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OwnerNationality { get; set; }
+        public string? OwnerNationality { get => _explicitNullValueOwnerNationality; set { _explicitNullValueOwnerNationality = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownerNationality"); else _explicitNullProperties?.Remove("ownerNationality"); } }
+        private string? _explicitNullValueOwnerNationality = default!;
 #nullable restore
 #else
-        public string OwnerNationality { get; set; }
+        public string OwnerNationality { get => _explicitNullValueOwnerNationality; set { _explicitNullValueOwnerNationality = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownerNationality"); else _explicitNullProperties?.Remove("ownerNationality"); } }
+        private string _explicitNullValueOwnerNationality = default!;
 #endif
         /// <summary>The postal code of the residence of the bank account owner.&gt;Refer to [Required information](https://docs.adyen.com/classic-platforms/verification-process/required-information) for details on field requirements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OwnerPostalCode { get; set; }
+        public string? OwnerPostalCode { get => _explicitNullValueOwnerPostalCode; set { _explicitNullValueOwnerPostalCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownerPostalCode"); else _explicitNullProperties?.Remove("ownerPostalCode"); } }
+        private string? _explicitNullValueOwnerPostalCode = default!;
 #nullable restore
 #else
-        public string OwnerPostalCode { get; set; }
+        public string OwnerPostalCode { get => _explicitNullValueOwnerPostalCode; set { _explicitNullValueOwnerPostalCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownerPostalCode"); else _explicitNullProperties?.Remove("ownerPostalCode"); } }
+        private string _explicitNullValueOwnerPostalCode = default!;
 #endif
         /// <summary>The state of residence of the bank account owner.&gt;Refer to [Required information](https://docs.adyen.com/classic-platforms/verification-process/required-information) for details on field requirements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OwnerState { get; set; }
+        public string? OwnerState { get => _explicitNullValueOwnerState; set { _explicitNullValueOwnerState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownerState"); else _explicitNullProperties?.Remove("ownerState"); } }
+        private string? _explicitNullValueOwnerState = default!;
 #nullable restore
 #else
-        public string OwnerState { get; set; }
+        public string OwnerState { get => _explicitNullValueOwnerState; set { _explicitNullValueOwnerState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownerState"); else _explicitNullProperties?.Remove("ownerState"); } }
+        private string _explicitNullValueOwnerState = default!;
 #endif
         /// <summary>The street name of the residence of the bank account owner.&gt;Refer to [Required information](https://docs.adyen.com/classic-platforms/verification-process/required-information) for details on field requirements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OwnerStreet { get; set; }
+        public string? OwnerStreet { get => _explicitNullValueOwnerStreet; set { _explicitNullValueOwnerStreet = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownerStreet"); else _explicitNullProperties?.Remove("ownerStreet"); } }
+        private string? _explicitNullValueOwnerStreet = default!;
 #nullable restore
 #else
-        public string OwnerStreet { get; set; }
+        public string OwnerStreet { get => _explicitNullValueOwnerStreet; set { _explicitNullValueOwnerStreet = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownerStreet"); else _explicitNullProperties?.Remove("ownerStreet"); } }
+        private string _explicitNullValueOwnerStreet = default!;
 #endif
         /// <summary>If set to true, the bank account is a primary account.</summary>
-        public bool? PrimaryAccount { get; set; }
+        public bool? PrimaryAccount { get => _explicitNullValuePrimaryAccount; set { _explicitNullValuePrimaryAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primaryAccount"); else _explicitNullProperties?.Remove("primaryAccount"); } }
+        private bool? _explicitNullValuePrimaryAccount = default!;
         /// <summary>The tax ID number.&gt;Refer to [Required information](https://docs.adyen.com/classic-platforms/verification-process/required-information) for details on field requirements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TaxId { get; set; }
+        public string? TaxId { get => _explicitNullValueTaxId; set { _explicitNullValueTaxId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxId"); else _explicitNullProperties?.Remove("taxId"); } }
+        private string? _explicitNullValueTaxId = default!;
 #nullable restore
 #else
-        public string TaxId { get; set; }
+        public string TaxId { get => _explicitNullValueTaxId; set { _explicitNullValueTaxId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxId"); else _explicitNullProperties?.Remove("taxId"); } }
+        private string _explicitNullValueTaxId = default!;
 #endif
         /// <summary>The URL to be used for bank account verification.This may be generated on bank account creation.&gt;Refer to [Required information](https://docs.adyen.com/classic-platforms/verification-process/required-information) for details on field requirements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UrlForVerification { get; set; }
+        public string? UrlForVerification { get => _explicitNullValueUrlForVerification; set { _explicitNullValueUrlForVerification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urlForVerification"); else _explicitNullProperties?.Remove("urlForVerification"); } }
+        private string? _explicitNullValueUrlForVerification = default!;
 #nullable restore
 #else
-        public string UrlForVerification { get; set; }
+        public string UrlForVerification { get => _explicitNullValueUrlForVerification; set { _explicitNullValueUrlForVerification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urlForVerification"); else _explicitNullProperties?.Remove("urlForVerification"); } }
+        private string _explicitNullValueUrlForVerification = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BankAccountDetail"/> and sets the default values.
@@ -232,7 +316,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.BankAccountDetail CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.BankAccountDetail();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.BankAccountDetail(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -303,6 +387,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteBoolValue("primaryAccount", PrimaryAccount);
             writer.WriteStringValue("taxId", TaxId);
             writer.WriteStringValue("urlForVerification", UrlForVerification);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

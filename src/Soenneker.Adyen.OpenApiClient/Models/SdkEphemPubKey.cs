@@ -11,40 +11,59 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class SdkEphemPubKey : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("crv") is { } nullNodeCrv && nullNodeCrv.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Crv = null;
+            if (parseNode.GetChildNode("kty") is { } nullNodeKty && nullNodeKty.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kty = null;
+            if (parseNode.GetChildNode("x") is { } nullNodeX && nullNodeX.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) X = null;
+            if (parseNode.GetChildNode("y") is { } nullNodeY && nullNodeY.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Y = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The `crv` value as received from the 3D Secure 2 SDK.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Crv { get; set; }
+        public string? Crv { get => _explicitNullValueCrv; set { _explicitNullValueCrv = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("crv"); else _explicitNullProperties?.Remove("crv"); } }
+        private string? _explicitNullValueCrv = default!;
 #nullable restore
 #else
-        public string Crv { get; set; }
+        public string Crv { get => _explicitNullValueCrv; set { _explicitNullValueCrv = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("crv"); else _explicitNullProperties?.Remove("crv"); } }
+        private string _explicitNullValueCrv = default!;
 #endif
         /// <summary>The `kty` value as received from the 3D Secure 2 SDK.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Kty { get; set; }
+        public string? Kty { get => _explicitNullValueKty; set { _explicitNullValueKty = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kty"); else _explicitNullProperties?.Remove("kty"); } }
+        private string? _explicitNullValueKty = default!;
 #nullable restore
 #else
-        public string Kty { get; set; }
+        public string Kty { get => _explicitNullValueKty; set { _explicitNullValueKty = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kty"); else _explicitNullProperties?.Remove("kty"); } }
+        private string _explicitNullValueKty = default!;
 #endif
         /// <summary>The `x` value as received from the 3D Secure 2 SDK.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? X { get; set; }
+        public string? X { get => _explicitNullValueX; set { _explicitNullValueX = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("x"); else _explicitNullProperties?.Remove("x"); } }
+        private string? _explicitNullValueX = default!;
 #nullable restore
 #else
-        public string X { get; set; }
+        public string X { get => _explicitNullValueX; set { _explicitNullValueX = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("x"); else _explicitNullProperties?.Remove("x"); } }
+        private string _explicitNullValueX = default!;
 #endif
         /// <summary>The `y` value as received from the 3D Secure 2 SDK.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Y { get; set; }
+        public string? Y { get => _explicitNullValueY; set { _explicitNullValueY = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("y"); else _explicitNullProperties?.Remove("y"); } }
+        private string? _explicitNullValueY = default!;
 #nullable restore
 #else
-        public string Y { get; set; }
+        public string Y { get => _explicitNullValueY; set { _explicitNullValueY = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("y"); else _explicitNullProperties?.Remove("y"); } }
+        private string _explicitNullValueY = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.SdkEphemPubKey"/> and sets the default values.
@@ -61,7 +80,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.SdkEphemPubKey CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.SdkEphemPubKey();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.SdkEphemPubKey(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +107,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("kty", Kty);
             writer.WriteStringValue("x", X);
             writer.WriteStringValue("y", Y);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

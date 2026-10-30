@@ -12,7 +12,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TransferServiceV4TransferViewCategoryData : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4BankCategoryData"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,21 +62,24 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             var result = new global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferViewCategoryData();
             if("bank".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.TransferServiceV4BankCategoryData = new global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4BankCategoryData();
+                
             }
             else if("internal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.TransferServiceV4InternalCategoryData = new global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InternalCategoryData();
+                
             }
             else if("issuedCard".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.TransferServiceV4IssuedCard = new global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCard();
+                
             }
             else if("platformPayment".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.TransferServiceV4PlatformPayment = new global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4PlatformPayment();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            if (result.TransferServiceV4BankCategoryData == null && result.TransferServiceV4InternalCategoryData == null && result.TransferServiceV4IssuedCard == null && result.TransferServiceV4PlatformPayment == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -103,21 +111,32 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (TransferServiceV4BankCategoryData == null && TransferServiceV4InternalCategoryData == null && TransferServiceV4IssuedCard == null && TransferServiceV4PlatformPayment == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (TransferServiceV4BankCategoryData != null && TransferServiceV4InternalCategoryData == null && TransferServiceV4IssuedCard == null && TransferServiceV4PlatformPayment == null) { if (TransferServiceV4BankCategoryData is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TransferServiceV4BankCategoryData); return; }
+            if (TransferServiceV4InternalCategoryData != null && TransferServiceV4BankCategoryData == null && TransferServiceV4IssuedCard == null && TransferServiceV4PlatformPayment == null) { if (TransferServiceV4InternalCategoryData is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TransferServiceV4InternalCategoryData); return; }
+            if (TransferServiceV4IssuedCard != null && TransferServiceV4BankCategoryData == null && TransferServiceV4InternalCategoryData == null && TransferServiceV4PlatformPayment == null) { if (TransferServiceV4IssuedCard is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TransferServiceV4IssuedCard); return; }
+            if (TransferServiceV4PlatformPayment != null && TransferServiceV4BankCategoryData == null && TransferServiceV4InternalCategoryData == null && TransferServiceV4IssuedCard == null) { if (TransferServiceV4PlatformPayment is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TransferServiceV4PlatformPayment); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(TransferServiceV4BankCategoryData != null)
             {
+                if (TransferServiceV4BankCategoryData is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4BankCategoryData>(null, TransferServiceV4BankCategoryData);
             }
             else if(TransferServiceV4InternalCategoryData != null)
             {
+                if (TransferServiceV4InternalCategoryData is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InternalCategoryData>(null, TransferServiceV4InternalCategoryData);
             }
             else if(TransferServiceV4IssuedCard != null)
             {
+                if (TransferServiceV4IssuedCard is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCard>(null, TransferServiceV4IssuedCard);
             }
             else if(TransferServiceV4PlatformPayment != null)
             {
+                if (TransferServiceV4PlatformPayment is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4PlatformPayment>(null, TransferServiceV4PlatformPayment);
             }
         }

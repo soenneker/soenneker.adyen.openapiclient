@@ -11,37 +11,57 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ThreeDsAvailabilityResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("binDetails") is { } nullNodeBinDetails && nullNodeBinDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BinDetails = null;
+            if (parseNode.GetChildNode("dsPublicKeys") is { } nullNodeDsPublicKeys && nullNodeDsPublicKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DsPublicKeys = null;
+            if (parseNode.GetChildNode("threeDS1Supported") is { } nullNodeThreeDS1Supported && nullNodeThreeDS1Supported.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDS1Supported = null;
+            if (parseNode.GetChildNode("threeDS2CardRangeDetails") is { } nullNodeThreeDS2CardRangeDetails && nullNodeThreeDS2CardRangeDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDS2CardRangeDetails = null;
+            if (parseNode.GetChildNode("threeDS2supported") is { } nullNodeThreeDS2supported && nullNodeThreeDS2supported.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDS2supported = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Bin Group Details</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsAvailabilityResponseBinDetails? BinDetails { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsAvailabilityResponseBinDetails? BinDetails { get => _explicitNullValueBinDetails; set { _explicitNullValueBinDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("binDetails"); else _explicitNullProperties?.Remove("binDetails"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsAvailabilityResponseBinDetails? _explicitNullValueBinDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsAvailabilityResponseBinDetails BinDetails { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsAvailabilityResponseBinDetails BinDetails { get => _explicitNullValueBinDetails; set { _explicitNullValueBinDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("binDetails"); else _explicitNullProperties?.Remove("binDetails"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsAvailabilityResponseBinDetails _explicitNullValueBinDetails = default!;
 #endif
         /// <summary>List of Directory Server (DS) public keys.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.DsPublicKeyDetail>? DsPublicKeys { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.DsPublicKeyDetail>? DsPublicKeys { get => _explicitNullValueDsPublicKeys; set { _explicitNullValueDsPublicKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dsPublicKeys"); else _explicitNullProperties?.Remove("dsPublicKeys"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.DsPublicKeyDetail>? _explicitNullValueDsPublicKeys = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.DsPublicKeyDetail> DsPublicKeys { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.DsPublicKeyDetail> DsPublicKeys { get => _explicitNullValueDsPublicKeys; set { _explicitNullValueDsPublicKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dsPublicKeys"); else _explicitNullProperties?.Remove("dsPublicKeys"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.DsPublicKeyDetail> _explicitNullValueDsPublicKeys = default!;
 #endif
         /// <summary>Indicator if 3D Secure 1 is supported.</summary>
-        public bool? ThreeDS1Supported { get; set; }
+        public bool? ThreeDS1Supported { get => _explicitNullValueThreeDS1Supported; set { _explicitNullValueThreeDS1Supported = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDS1Supported"); else _explicitNullProperties?.Remove("threeDS1Supported"); } }
+        private bool? _explicitNullValueThreeDS1Supported = default!;
         /// <summary>List of brand and card range pairs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2CardRangeDetail>? ThreeDS2CardRangeDetails { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2CardRangeDetail>? ThreeDS2CardRangeDetails { get => _explicitNullValueThreeDS2CardRangeDetails; set { _explicitNullValueThreeDS2CardRangeDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDS2CardRangeDetails"); else _explicitNullProperties?.Remove("threeDS2CardRangeDetails"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2CardRangeDetail>? _explicitNullValueThreeDS2CardRangeDetails = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2CardRangeDetail> ThreeDS2CardRangeDetails { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2CardRangeDetail> ThreeDS2CardRangeDetails { get => _explicitNullValueThreeDS2CardRangeDetails; set { _explicitNullValueThreeDS2CardRangeDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDS2CardRangeDetails"); else _explicitNullProperties?.Remove("threeDS2CardRangeDetails"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2CardRangeDetail> _explicitNullValueThreeDS2CardRangeDetails = default!;
 #endif
         /// <summary>Indicator if 3D Secure 2 is supported.</summary>
-        public bool? ThreeDS2supported { get; set; }
+        public bool? ThreeDS2supported { get => _explicitNullValueThreeDS2supported; set { _explicitNullValueThreeDS2supported = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDS2supported"); else _explicitNullProperties?.Remove("threeDS2supported"); } }
+        private bool? _explicitNullValueThreeDS2supported = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsAvailabilityResponse"/> and sets the default values.
         /// </summary>
@@ -57,7 +77,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsAvailabilityResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsAvailabilityResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsAvailabilityResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -86,6 +106,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteBoolValue("threeDS1Supported", ThreeDS1Supported);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2CardRangeDetail>("threeDS2CardRangeDetails", ThreeDS2CardRangeDetails);
             writer.WriteBoolValue("threeDS2supported", ThreeDS2supported);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

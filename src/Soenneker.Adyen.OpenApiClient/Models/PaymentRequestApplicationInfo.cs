@@ -12,56 +12,81 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PaymentRequestApplicationInfo : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("adyenLibrary") is { } nullNodeAdyenLibrary && nullNodeAdyenLibrary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdyenLibrary = null;
+            if (parseNode.GetChildNode("adyenPaymentSource") is { } nullNodeAdyenPaymentSource && nullNodeAdyenPaymentSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdyenPaymentSource = null;
+            if (parseNode.GetChildNode("externalPlatform") is { } nullNodeExternalPlatform && nullNodeExternalPlatform.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalPlatform = null;
+            if (parseNode.GetChildNode("merchantApplication") is { } nullNodeMerchantApplication && nullNodeMerchantApplication.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantApplication = null;
+            if (parseNode.GetChildNode("merchantDevice") is { } nullNodeMerchantDevice && nullNodeMerchantDevice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantDevice = null;
+            if (parseNode.GetChildNode("shopperInteractionDevice") is { } nullNodeShopperInteractionDevice && nullNodeShopperInteractionDevice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShopperInteractionDevice = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Adyen-developed software, such as libraries and plugins, used to interact with the Adyen API. For example, Magento plugin, Java API library, etc.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfoAdyenLibrary? AdyenLibrary { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfoAdyenLibrary? AdyenLibrary { get => _explicitNullValueAdyenLibrary; set { _explicitNullValueAdyenLibrary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("adyenLibrary"); else _explicitNullProperties?.Remove("adyenLibrary"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfoAdyenLibrary? _explicitNullValueAdyenLibrary = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfoAdyenLibrary AdyenLibrary { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfoAdyenLibrary AdyenLibrary { get => _explicitNullValueAdyenLibrary; set { _explicitNullValueAdyenLibrary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("adyenLibrary"); else _explicitNullProperties?.Remove("adyenLibrary"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfoAdyenLibrary _explicitNullValueAdyenLibrary = default!;
 #endif
         /// <summary>Adyen-developed software to get payment details. For example, Checkout SDK, Secured Fields SDK, etc.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfoAdyenPaymentSource? AdyenPaymentSource { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfoAdyenPaymentSource? AdyenPaymentSource { get => _explicitNullValueAdyenPaymentSource; set { _explicitNullValueAdyenPaymentSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("adyenPaymentSource"); else _explicitNullProperties?.Remove("adyenPaymentSource"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfoAdyenPaymentSource? _explicitNullValueAdyenPaymentSource = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfoAdyenPaymentSource AdyenPaymentSource { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfoAdyenPaymentSource AdyenPaymentSource { get => _explicitNullValueAdyenPaymentSource; set { _explicitNullValueAdyenPaymentSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("adyenPaymentSource"); else _explicitNullProperties?.Remove("adyenPaymentSource"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfoAdyenPaymentSource _explicitNullValueAdyenPaymentSource = default!;
 #endif
         /// <summary>Third-party developed platform used to initiate payment requests. For example, Magento, Zuora, etc.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfoExternalPlatform? ExternalPlatform { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfoExternalPlatform? ExternalPlatform { get => _explicitNullValueExternalPlatform; set { _explicitNullValueExternalPlatform = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalPlatform"); else _explicitNullProperties?.Remove("externalPlatform"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfoExternalPlatform? _explicitNullValueExternalPlatform = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfoExternalPlatform ExternalPlatform { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfoExternalPlatform ExternalPlatform { get => _explicitNullValueExternalPlatform; set { _explicitNullValueExternalPlatform = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalPlatform"); else _explicitNullProperties?.Remove("externalPlatform"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfoExternalPlatform _explicitNullValueExternalPlatform = default!;
 #endif
         /// <summary>Merchant developed software, such as cashier application, used to interact with the Adyen API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfoMerchantApplication? MerchantApplication { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfoMerchantApplication? MerchantApplication { get => _explicitNullValueMerchantApplication; set { _explicitNullValueMerchantApplication = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantApplication"); else _explicitNullProperties?.Remove("merchantApplication"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfoMerchantApplication? _explicitNullValueMerchantApplication = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfoMerchantApplication MerchantApplication { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfoMerchantApplication MerchantApplication { get => _explicitNullValueMerchantApplication; set { _explicitNullValueMerchantApplication = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantApplication"); else _explicitNullProperties?.Remove("merchantApplication"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfoMerchantApplication _explicitNullValueMerchantApplication = default!;
 #endif
         /// <summary>Merchant device information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfoMerchantDevice? MerchantDevice { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfoMerchantDevice? MerchantDevice { get => _explicitNullValueMerchantDevice; set { _explicitNullValueMerchantDevice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantDevice"); else _explicitNullProperties?.Remove("merchantDevice"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfoMerchantDevice? _explicitNullValueMerchantDevice = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfoMerchantDevice MerchantDevice { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfoMerchantDevice MerchantDevice { get => _explicitNullValueMerchantDevice; set { _explicitNullValueMerchantDevice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantDevice"); else _explicitNullProperties?.Remove("merchantDevice"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfoMerchantDevice _explicitNullValueMerchantDevice = default!;
 #endif
         /// <summary>Shopper interaction device, such as terminal, mobile device or web browser, to initiate payment requests.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfoShopperInteractionDevice? ShopperInteractionDevice { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfoShopperInteractionDevice? ShopperInteractionDevice { get => _explicitNullValueShopperInteractionDevice; set { _explicitNullValueShopperInteractionDevice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shopperInteractionDevice"); else _explicitNullProperties?.Remove("shopperInteractionDevice"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfoShopperInteractionDevice? _explicitNullValueShopperInteractionDevice = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfoShopperInteractionDevice ShopperInteractionDevice { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfoShopperInteractionDevice ShopperInteractionDevice { get => _explicitNullValueShopperInteractionDevice; set { _explicitNullValueShopperInteractionDevice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shopperInteractionDevice"); else _explicitNullProperties?.Remove("shopperInteractionDevice"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfoShopperInteractionDevice _explicitNullValueShopperInteractionDevice = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestApplicationInfo"/> and sets the default values.
@@ -78,7 +103,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestApplicationInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestApplicationInfo();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestApplicationInfo(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -109,6 +134,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfoMerchantApplication>("merchantApplication", MerchantApplication);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfoMerchantDevice>("merchantDevice", MerchantDevice);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfoShopperInteractionDevice>("shopperInteractionDevice", ShopperInteractionDevice);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

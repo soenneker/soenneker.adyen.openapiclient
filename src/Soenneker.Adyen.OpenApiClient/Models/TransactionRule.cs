@@ -11,101 +11,150 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TransactionRule : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("aggregationLevel") is { } nullNodeAggregationLevel && nullNodeAggregationLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AggregationLevel = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("endDate") is { } nullNodeEndDate && nullNodeEndDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndDate = null;
+            if (parseNode.GetChildNode("entityKey") is { } nullNodeEntityKey && nullNodeEntityKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntityKey = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("interval") is { } nullNodeInterval && nullNodeInterval.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Interval = null;
+            if (parseNode.GetChildNode("outcomeType") is { } nullNodeOutcomeType && nullNodeOutcomeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutcomeType = null;
+            if (parseNode.GetChildNode("overridesRule") is { } nullNodeOverridesRule && nullNodeOverridesRule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OverridesRule = null;
+            if (parseNode.GetChildNode("purpose") is { } nullNodePurpose && nullNodePurpose.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Purpose = null;
+            if (parseNode.GetChildNode("reference") is { } nullNodeReference && nullNodeReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reference = null;
+            if (parseNode.GetChildNode("requestType") is { } nullNodeRequestType && nullNodeRequestType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestType = null;
+            if (parseNode.GetChildNode("ruleRestrictions") is { } nullNodeRuleRestrictions && nullNodeRuleRestrictions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RuleRestrictions = null;
+            if (parseNode.GetChildNode("score") is { } nullNodeScore && nullNodeScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Score = null;
+            if (parseNode.GetChildNode("startDate") is { } nullNodeStartDate && nullNodeStartDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartDate = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The level at which data must be accumulated, used in rules with `type` **velocity** or **maxUsage**. The level must be the [same or lower in hierarchy](https://docs.adyen.com/issuing/transaction-rules#accumulate-data) than the `entityKey`.If not provided, by default, the rule will accumulate data at the **paymentInstrument** level.Possible values: **paymentInstrument**, **paymentInstrumentGroup**, **balanceAccount**, **accountHolder**, **balancePlatform**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AggregationLevel { get; set; }
+        public string? AggregationLevel { get => _explicitNullValueAggregationLevel; set { _explicitNullValueAggregationLevel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aggregationLevel"); else _explicitNullProperties?.Remove("aggregationLevel"); } }
+        private string? _explicitNullValueAggregationLevel = default!;
 #nullable restore
 #else
-        public string AggregationLevel { get; set; }
+        public string AggregationLevel { get => _explicitNullValueAggregationLevel; set { _explicitNullValueAggregationLevel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aggregationLevel"); else _explicitNullProperties?.Remove("aggregationLevel"); } }
+        private string _explicitNullValueAggregationLevel = default!;
 #endif
         /// <summary>Your description for the transaction rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>The date when the rule will stop being evaluated, in ISO 8601 extended offset date-time format. For example, **2025-03-19T10:15:30+01:00**.If not provided, the rule will be evaluated until the rule status is set to **inactive**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EndDate { get; set; }
+        public string? EndDate { get => _explicitNullValueEndDate; set { _explicitNullValueEndDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endDate"); else _explicitNullProperties?.Remove("endDate"); } }
+        private string? _explicitNullValueEndDate = default!;
 #nullable restore
 #else
-        public string EndDate { get; set; }
+        public string EndDate { get => _explicitNullValueEndDate; set { _explicitNullValueEndDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endDate"); else _explicitNullProperties?.Remove("endDate"); } }
+        private string _explicitNullValueEndDate = default!;
 #endif
         /// <summary>The type and unique identifier of the resource to which the rule applies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleEntityKeyComposed? EntityKey { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleEntityKeyComposed? EntityKey { get => _explicitNullValueEntityKey; set { _explicitNullValueEntityKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entityKey"); else _explicitNullProperties?.Remove("entityKey"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleEntityKeyComposed? _explicitNullValueEntityKey = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleEntityKeyComposed EntityKey { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleEntityKeyComposed EntityKey { get => _explicitNullValueEntityKey; set { _explicitNullValueEntityKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entityKey"); else _explicitNullProperties?.Remove("entityKey"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleEntityKeyComposed _explicitNullValueEntityKey = default!;
 #endif
         /// <summary>The unique identifier of the transaction rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The [time interval](https://docs.adyen.com/issuing/transaction-rules#time-intervals) when the rule conditions apply.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleIntervalComposed? Interval { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleIntervalComposed? Interval { get => _explicitNullValueInterval; set { _explicitNullValueInterval = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interval"); else _explicitNullProperties?.Remove("interval"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleIntervalComposed? _explicitNullValueInterval = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleIntervalComposed Interval { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleIntervalComposed Interval { get => _explicitNullValueInterval; set { _explicitNullValueInterval = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interval"); else _explicitNullProperties?.Remove("interval"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleIntervalComposed _explicitNullValueInterval = default!;
 #endif
         /// <summary>The [outcome](https://docs.adyen.com/issuing/transaction-rules#outcome) that will be applied when a transaction meets the conditions of the rule.Possible values:* **hardBlock** (default): the transaction is declined.* **scoreBased**: the transaction is assigned the `score` you specified. Adyen calculates the total score and if it exceeds 100, the transaction is declined. This value is not allowed when `requestType` is **bankTransfer**.* **enforceSCA**: your user is prompted to verify their identity using [3D Secure authentication](https://docs.adyen.com/issuing/3d-secure/). If the authentication fails or times out, the transaction is declined. This value is only allowed when `requestType` is **authentication**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleOutcomeType? OutcomeType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleOutcomeType? OutcomeType { get => _explicitNullValueOutcomeType; set { _explicitNullValueOutcomeType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outcomeType"); else _explicitNullProperties?.Remove("outcomeType"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleOutcomeType? _explicitNullValueOutcomeType = default!;
         /// <summary>The `id` of the transaction rule you want to override or skip for the specified `entityKey`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OverridesRule { get; set; }
+        public string? OverridesRule { get => _explicitNullValueOverridesRule; set { _explicitNullValueOverridesRule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("overridesRule"); else _explicitNullProperties?.Remove("overridesRule"); } }
+        private string? _explicitNullValueOverridesRule = default!;
 #nullable restore
 #else
-        public string OverridesRule { get; set; }
+        public string OverridesRule { get => _explicitNullValueOverridesRule; set { _explicitNullValueOverridesRule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("overridesRule"); else _explicitNullProperties?.Remove("overridesRule"); } }
+        private string _explicitNullValueOverridesRule = default!;
 #endif
         /// <summary>Specifies the reason for creating the rule.Possible values:* **fraud**: the rule is created to regulate fraudulent activity.* **policy**: the rule is created to ensure that the transaction adheres to your business&apos; policies. For example, if your business has policies about the Merchant Category Codes (MCCs) allowed on a transaction, you can create a rule to block transactions that have specific MCCs.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRulePurpose? Purpose { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRulePurpose? Purpose { get => _explicitNullValuePurpose; set { _explicitNullValuePurpose = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purpose"); else _explicitNullProperties?.Remove("purpose"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRulePurpose? _explicitNullValuePurpose = default!;
         /// <summary>Your reference for the transaction rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Reference { get; set; }
+        public string? Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
+        private string? _explicitNullValueReference = default!;
 #nullable restore
 #else
-        public string Reference { get; set; }
+        public string Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
+        private string _explicitNullValueReference = default!;
 #endif
         /// <summary>Indicates the type of request to which the rule applies. If not provided, by default, this is set to **authorization**.Possible values: **authorization**, **authentication**, **tokenization**, **bankTransfer**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRequestType? RequestType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRequestType? RequestType { get => _explicitNullValueRequestType; set { _explicitNullValueRequestType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requestType"); else _explicitNullProperties?.Remove("requestType"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRequestType? _explicitNullValueRequestType = default!;
         /// <summary>Contains one or more objects that define the [rule conditions](https://docs.adyen.com/issuing/transaction-rules#conditions). Each object must have a value and an operation which determines how the values must be evaluated.For example, a `countries` object can have a list of country codes **[&quot;US&quot;, &quot;CA&quot;]** in the `value` field and **anyMatch** in the `operation` field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRuleRestrictions? RuleRestrictions { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRuleRestrictions? RuleRestrictions { get => _explicitNullValueRuleRestrictions; set { _explicitNullValueRuleRestrictions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ruleRestrictions"); else _explicitNullProperties?.Remove("ruleRestrictions"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRuleRestrictions? _explicitNullValueRuleRestrictions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRuleRestrictions RuleRestrictions { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRuleRestrictions RuleRestrictions { get => _explicitNullValueRuleRestrictions; set { _explicitNullValueRuleRestrictions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ruleRestrictions"); else _explicitNullProperties?.Remove("ruleRestrictions"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRuleRestrictions _explicitNullValueRuleRestrictions = default!;
 #endif
         /// <summary>A positive or negative score applied to the transaction if it meets the conditions of the rule. Required when `outcomeType` is **scoreBased**.  The value must be between **-100** and **100**.</summary>
-        public int? Score { get; set; }
+        public int? Score { get => _explicitNullValueScore; set { _explicitNullValueScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("score"); else _explicitNullProperties?.Remove("score"); } }
+        private int? _explicitNullValueScore = default!;
         /// <summary>The date when the rule will start to be evaluated, in ISO 8601 extended offset date-time format. For example, **2025-03-19T10:15:30+01:00**.If not provided when creating a transaction rule, the `startDate` is set to the date when the rule status is set to **active**. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StartDate { get; set; }
+        public string? StartDate { get => _explicitNullValueStartDate; set { _explicitNullValueStartDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startDate"); else _explicitNullProperties?.Remove("startDate"); } }
+        private string? _explicitNullValueStartDate = default!;
 #nullable restore
 #else
-        public string StartDate { get; set; }
+        public string StartDate { get => _explicitNullValueStartDate; set { _explicitNullValueStartDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startDate"); else _explicitNullProperties?.Remove("startDate"); } }
+        private string _explicitNullValueStartDate = default!;
 #endif
         /// <summary>The status of the transaction rule. If you provide a `startDate` in the request, the rule is automatically created with an **active** status. Possible values: **active**, **inactive**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleStatus? Status { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleStatus? _explicitNullValueStatus = default!;
         /// <summary>The [type of rule](https://docs.adyen.com/issuing/transaction-rules#rule-types), which defines if a rule blocks transactions based on individual characteristics or accumulates data.Possible values: * **blockList**: decline a transaction when the conditions are met. * **maxUsage**: add the amount or number of transactions for the lifetime of a payment instrument, and then decline a transaction when the specified limits are met. * **velocity**: add the amount or number of transactions based on a specified time interval, and then decline a transaction when the specified limits are met. * **bypass**: bypass or skip a rule for the specified `entityKey`. Transactions processed to that entity are no longer evaluated by the bypassed rule.  You must provide the `id` of the rule to bypass in `overridesRule` and leave the `ruleRestrictions` object empty.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleType? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransactionRule"/> and sets the default values.
         /// </summary>
@@ -121,7 +170,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.TransactionRule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.TransactionRule();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.TransactionRule(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -172,6 +221,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("startDate", StartDate);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleStatus>("status", Status);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleType>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

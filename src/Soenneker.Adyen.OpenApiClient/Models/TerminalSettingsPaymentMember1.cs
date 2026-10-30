@@ -12,24 +12,37 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TerminalSettingsPaymentMember1 : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("contactlessCurrency") is { } nullNodeContactlessCurrency && nullNodeContactlessCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContactlessCurrency = null;
+            if (parseNode.GetChildNode("hideMinorUnitsInCurrencies") is { } nullNodeHideMinorUnitsInCurrencies && nullNodeHideMinorUnitsInCurrencies.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HideMinorUnitsInCurrencies = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The default currency for contactless payments on the payment terminal, in three-letter [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) currency code format.Contact Adyen before you update this setting for the first time. To enable you to change the contactless currency, we first need to check if you meet the compliance requirements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContactlessCurrency { get; set; }
+        public string? ContactlessCurrency { get => _explicitNullValueContactlessCurrency; set { _explicitNullValueContactlessCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contactlessCurrency"); else _explicitNullProperties?.Remove("contactlessCurrency"); } }
+        private string? _explicitNullValueContactlessCurrency = default!;
 #nullable restore
 #else
-        public string ContactlessCurrency { get; set; }
+        public string ContactlessCurrency { get => _explicitNullValueContactlessCurrency; set { _explicitNullValueContactlessCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contactlessCurrency"); else _explicitNullProperties?.Remove("contactlessCurrency"); } }
+        private string _explicitNullValueContactlessCurrency = default!;
 #endif
         /// <summary>Hides the minor units for the listed [ISO currency codes](https://en.wikipedia.org/wiki/ISO_4217).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? HideMinorUnitsInCurrencies { get; set; }
+        public List<string>? HideMinorUnitsInCurrencies { get => _explicitNullValueHideMinorUnitsInCurrencies; set { _explicitNullValueHideMinorUnitsInCurrencies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hideMinorUnitsInCurrencies"); else _explicitNullProperties?.Remove("hideMinorUnitsInCurrencies"); } }
+        private List<string>? _explicitNullValueHideMinorUnitsInCurrencies = default!;
 #nullable restore
 #else
-        public List<string> HideMinorUnitsInCurrencies { get; set; }
+        public List<string> HideMinorUnitsInCurrencies { get => _explicitNullValueHideMinorUnitsInCurrencies; set { _explicitNullValueHideMinorUnitsInCurrencies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hideMinorUnitsInCurrencies"); else _explicitNullProperties?.Remove("hideMinorUnitsInCurrencies"); } }
+        private List<string> _explicitNullValueHideMinorUnitsInCurrencies = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPaymentMember1"/> and sets the default values.
@@ -46,7 +59,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPaymentMember1 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPaymentMember1();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPaymentMember1(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +82,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("contactlessCurrency", ContactlessCurrency);
             writer.WriteCollectionOfPrimitiveValues<string>("hideMinorUnitsInCurrencies", HideMinorUnitsInCurrencies);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

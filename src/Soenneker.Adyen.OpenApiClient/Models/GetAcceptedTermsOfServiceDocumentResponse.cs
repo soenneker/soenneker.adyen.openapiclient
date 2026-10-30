@@ -11,35 +11,53 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetAcceptedTermsOfServiceDocumentResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("document") is { } nullNodeDocument && nullNodeDocument.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Document = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("termsOfServiceAcceptanceReference") is { } nullNodeTermsOfServiceAcceptanceReference && nullNodeTermsOfServiceAcceptanceReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TermsOfServiceAcceptanceReference = null;
+            if (parseNode.GetChildNode("termsOfServiceDocumentFormat") is { } nullNodeTermsOfServiceDocumentFormat && nullNodeTermsOfServiceDocumentFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TermsOfServiceDocumentFormat = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The accepted Terms of Service document in the requested format represented as a Base64-encoded bytes array.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? Document { get; set; }
+        public byte[]? Document { get => _explicitNullValueDocument; set { _explicitNullValueDocument = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document"); else _explicitNullProperties?.Remove("document"); } }
+        private byte[]? _explicitNullValueDocument = default!;
 #nullable restore
 #else
-        public byte[] Document { get; set; }
+        public byte[] Document { get => _explicitNullValueDocument; set { _explicitNullValueDocument = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document"); else _explicitNullProperties?.Remove("document"); } }
+        private byte[] _explicitNullValueDocument = default!;
 #endif
         /// <summary>The unique identifier of the legal entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>An Adyen-generated reference for the accepted Terms of Service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TermsOfServiceAcceptanceReference { get; set; }
+        public string? TermsOfServiceAcceptanceReference { get => _explicitNullValueTermsOfServiceAcceptanceReference; set { _explicitNullValueTermsOfServiceAcceptanceReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("termsOfServiceAcceptanceReference"); else _explicitNullProperties?.Remove("termsOfServiceAcceptanceReference"); } }
+        private string? _explicitNullValueTermsOfServiceAcceptanceReference = default!;
 #nullable restore
 #else
-        public string TermsOfServiceAcceptanceReference { get; set; }
+        public string TermsOfServiceAcceptanceReference { get => _explicitNullValueTermsOfServiceAcceptanceReference; set { _explicitNullValueTermsOfServiceAcceptanceReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("termsOfServiceAcceptanceReference"); else _explicitNullProperties?.Remove("termsOfServiceAcceptanceReference"); } }
+        private string _explicitNullValueTermsOfServiceAcceptanceReference = default!;
 #endif
         /// <summary>The format of the Terms of Service document.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.GetAcceptedTermsOfServiceDocumentResponseTermsOfServiceDocumentFormat? TermsOfServiceDocumentFormat { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.GetAcceptedTermsOfServiceDocumentResponseTermsOfServiceDocumentFormat? TermsOfServiceDocumentFormat { get => _explicitNullValueTermsOfServiceDocumentFormat; set { _explicitNullValueTermsOfServiceDocumentFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("termsOfServiceDocumentFormat"); else _explicitNullProperties?.Remove("termsOfServiceDocumentFormat"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.GetAcceptedTermsOfServiceDocumentResponseTermsOfServiceDocumentFormat? _explicitNullValueTermsOfServiceDocumentFormat = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.GetAcceptedTermsOfServiceDocumentResponse"/> and sets the default values.
         /// </summary>
@@ -55,7 +73,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.GetAcceptedTermsOfServiceDocumentResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.GetAcceptedTermsOfServiceDocumentResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.GetAcceptedTermsOfServiceDocumentResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,6 +100,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("termsOfServiceAcceptanceReference", TermsOfServiceAcceptanceReference);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.GetAcceptedTermsOfServiceDocumentResponseTermsOfServiceDocumentFormat>("termsOfServiceDocumentFormat", TermsOfServiceDocumentFormat);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

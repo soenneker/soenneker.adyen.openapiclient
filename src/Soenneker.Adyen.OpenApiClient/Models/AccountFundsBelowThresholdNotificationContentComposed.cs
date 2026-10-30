@@ -12,48 +12,70 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AccountFundsBelowThresholdNotificationContentComposed : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("accountCode") is { } nullNodeAccountCode && nullNodeAccountCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountCode = null;
+            if (parseNode.GetChildNode("balanceDate") is { } nullNodeBalanceDate && nullNodeBalanceDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalanceDate = null;
+            if (parseNode.GetChildNode("currentFunds") is { } nullNodeCurrentFunds && nullNodeCurrentFunds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentFunds = null;
+            if (parseNode.GetChildNode("fundThreshold") is { } nullNodeFundThreshold && nullNodeFundThreshold.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FundThreshold = null;
+            if (parseNode.GetChildNode("merchantAccountCode") is { } nullNodeMerchantAccountCode && nullNodeMerchantAccountCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantAccountCode = null;
+        }
+
         /// <summary>The code of the account with funds under threshold</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountCode { get; set; }
+        public string? AccountCode { get => _explicitNullValueAccountCode; set { _explicitNullValueAccountCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountCode"); else _explicitNullProperties?.Remove("accountCode"); } }
+        private string? _explicitNullValueAccountCode = default!;
 #nullable restore
 #else
-        public string AccountCode { get; set; }
+        public string AccountCode { get => _explicitNullValueAccountCode; set { _explicitNullValueAccountCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountCode"); else _explicitNullProperties?.Remove("accountCode"); } }
+        private string _explicitNullValueAccountCode = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date of the funds were found to be below threshold.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountFundsBelowThresholdNotificationContentBalanceDate? BalanceDate { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountFundsBelowThresholdNotificationContentBalanceDate? BalanceDate { get => _explicitNullValueBalanceDate; set { _explicitNullValueBalanceDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceDate"); else _explicitNullProperties?.Remove("balanceDate"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.AccountFundsBelowThresholdNotificationContentBalanceDate? _explicitNullValueBalanceDate = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountFundsBelowThresholdNotificationContentBalanceDate BalanceDate { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountFundsBelowThresholdNotificationContentBalanceDate BalanceDate { get => _explicitNullValueBalanceDate; set { _explicitNullValueBalanceDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceDate"); else _explicitNullProperties?.Remove("balanceDate"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.AccountFundsBelowThresholdNotificationContentBalanceDate _explicitNullValueBalanceDate = default!;
 #endif
         /// <summary>The current funds in the liable account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountFundsBelowThresholdNotificationContentCurrentFunds? CurrentFunds { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountFundsBelowThresholdNotificationContentCurrentFunds? CurrentFunds { get => _explicitNullValueCurrentFunds; set { _explicitNullValueCurrentFunds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currentFunds"); else _explicitNullProperties?.Remove("currentFunds"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.AccountFundsBelowThresholdNotificationContentCurrentFunds? _explicitNullValueCurrentFunds = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountFundsBelowThresholdNotificationContentCurrentFunds CurrentFunds { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountFundsBelowThresholdNotificationContentCurrentFunds CurrentFunds { get => _explicitNullValueCurrentFunds; set { _explicitNullValueCurrentFunds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currentFunds"); else _explicitNullProperties?.Remove("currentFunds"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.AccountFundsBelowThresholdNotificationContentCurrentFunds _explicitNullValueCurrentFunds = default!;
 #endif
         /// <summary>The configured fund threshold for the liable account</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountFundsBelowThresholdNotificationContentFundThreshold? FundThreshold { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountFundsBelowThresholdNotificationContentFundThreshold? FundThreshold { get => _explicitNullValueFundThreshold; set { _explicitNullValueFundThreshold = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fundThreshold"); else _explicitNullProperties?.Remove("fundThreshold"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.AccountFundsBelowThresholdNotificationContentFundThreshold? _explicitNullValueFundThreshold = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountFundsBelowThresholdNotificationContentFundThreshold FundThreshold { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountFundsBelowThresholdNotificationContentFundThreshold FundThreshold { get => _explicitNullValueFundThreshold; set { _explicitNullValueFundThreshold = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fundThreshold"); else _explicitNullProperties?.Remove("fundThreshold"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.AccountFundsBelowThresholdNotificationContentFundThreshold _explicitNullValueFundThreshold = default!;
 #endif
         /// <summary>The code of the merchant account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MerchantAccountCode { get; set; }
+        public string? MerchantAccountCode { get => _explicitNullValueMerchantAccountCode; set { _explicitNullValueMerchantAccountCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantAccountCode"); else _explicitNullProperties?.Remove("merchantAccountCode"); } }
+        private string? _explicitNullValueMerchantAccountCode = default!;
 #nullable restore
 #else
-        public string MerchantAccountCode { get; set; }
+        public string MerchantAccountCode { get => _explicitNullValueMerchantAccountCode; set { _explicitNullValueMerchantAccountCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantAccountCode"); else _explicitNullProperties?.Remove("merchantAccountCode"); } }
+        private string _explicitNullValueMerchantAccountCode = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AccountFundsBelowThresholdNotificationContentComposed"/> and sets the default values.
@@ -70,7 +92,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.AccountFundsBelowThresholdNotificationContentComposed CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.AccountFundsBelowThresholdNotificationContentComposed();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.AccountFundsBelowThresholdNotificationContentComposed(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -99,6 +121,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountFundsBelowThresholdNotificationContentCurrentFunds>("currentFunds", CurrentFunds);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountFundsBelowThresholdNotificationContentFundThreshold>("fundThreshold", FundThreshold);
             writer.WriteStringValue("merchantAccountCode", MerchantAccountCode);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

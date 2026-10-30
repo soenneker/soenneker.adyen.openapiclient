@@ -12,39 +12,61 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TransactionRuleIntervalComposed : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("dayOfMonth") is { } nullNodeDayOfMonth && nullNodeDayOfMonth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DayOfMonth = null;
+            if (parseNode.GetChildNode("dayOfWeek") is { } nullNodeDayOfWeek && nullNodeDayOfWeek.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DayOfWeek = null;
+            if (parseNode.GetChildNode("duration") is { } nullNodeDuration && nullNodeDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Duration = null;
+            if (parseNode.GetChildNode("timeOfDay") is { } nullNodeTimeOfDay && nullNodeTimeOfDay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeOfDay = null;
+            if (parseNode.GetChildNode("timeZone") is { } nullNodeTimeZone && nullNodeTimeZone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeZone = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The day of month, used when the `duration.unit` is **months**. If not provided, by default, this is set to **1**, the first day of the month.</summary>
-        public int? DayOfMonth { get; set; }
+        public int? DayOfMonth { get => _explicitNullValueDayOfMonth; set { _explicitNullValueDayOfMonth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dayOfMonth"); else _explicitNullProperties?.Remove("dayOfMonth"); } }
+        private int? _explicitNullValueDayOfMonth = default!;
         /// <summary>The day of week, used when the `duration.unit` is **weeks**. If not provided, by default, this is set to **monday**.Possible values: **sunday**, **monday**, **tuesday**, **wednesday**, **thursday**, **friday**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleIntervalDayOfWeek? DayOfWeek { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleIntervalDayOfWeek? DayOfWeek { get => _explicitNullValueDayOfWeek; set { _explicitNullValueDayOfWeek = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dayOfWeek"); else _explicitNullProperties?.Remove("dayOfWeek"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleIntervalDayOfWeek? _explicitNullValueDayOfWeek = default!;
         /// <summary>The duration, which you can specify in hours, days, weeks, or months. The maximum duration is 90 days or an equivalent in other units. Required when the `type` is **rolling** or **sliding**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleIntervalDuration? Duration { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleIntervalDuration? Duration { get => _explicitNullValueDuration; set { _explicitNullValueDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration"); else _explicitNullProperties?.Remove("duration"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleIntervalDuration? _explicitNullValueDuration = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleIntervalDuration Duration { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleIntervalDuration Duration { get => _explicitNullValueDuration; set { _explicitNullValueDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration"); else _explicitNullProperties?.Remove("duration"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleIntervalDuration _explicitNullValueDuration = default!;
 #endif
         /// <summary>The time of day, in **hh:mm:ss** format, used when the `duration.unit` is **hours**. If not provided, by default, this is set to **00:00:00**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TimeOfDay { get; set; }
+        public string? TimeOfDay { get => _explicitNullValueTimeOfDay; set { _explicitNullValueTimeOfDay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeOfDay"); else _explicitNullProperties?.Remove("timeOfDay"); } }
+        private string? _explicitNullValueTimeOfDay = default!;
 #nullable restore
 #else
-        public string TimeOfDay { get; set; }
+        public string TimeOfDay { get => _explicitNullValueTimeOfDay; set { _explicitNullValueTimeOfDay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeOfDay"); else _explicitNullProperties?.Remove("timeOfDay"); } }
+        private string _explicitNullValueTimeOfDay = default!;
 #endif
         /// <summary>The [time zone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). For example, **Europe/Amsterdam**. By default, this is set to **UTC**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TimeZone { get; set; }
+        public string? TimeZone { get => _explicitNullValueTimeZone; set { _explicitNullValueTimeZone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeZone"); else _explicitNullProperties?.Remove("timeZone"); } }
+        private string? _explicitNullValueTimeZone = default!;
 #nullable restore
 #else
-        public string TimeZone { get; set; }
+        public string TimeZone { get => _explicitNullValueTimeZone; set { _explicitNullValueTimeZone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeZone"); else _explicitNullProperties?.Remove("timeZone"); } }
+        private string _explicitNullValueTimeZone = default!;
 #endif
         /// <summary>The [type of interval](https://docs.adyen.com/issuing/transaction-rules#time-intervals) during which the rule conditions and limits apply, and how often counters are reset.Possible values:  * **perTransaction**: conditions are evaluated and the counters are reset for every transaction. * **daily**: the counters are reset daily at 00:00:00 CET. * **weekly**: the counters are reset every Monday at 00:00:00 CET.  * **monthly**: the counters reset every first day of the month at 00:00:00 CET.  * **lifetime**: conditions are applied to the lifetime of the payment instrument. * **rolling**: conditions are applied and the counters are reset based on a `duration`. If the reset date and time are not provided, Adyen applies the default reset time similar to fixed intervals. For example, if the duration is every two weeks, the counter resets every third Monday at 00:00:00 CET. * **sliding**: conditions are applied and the counters are reset based on the current time and a `duration` that you specify.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleIntervalType? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleIntervalType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleIntervalType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleIntervalComposed"/> and sets the default values.
         /// </summary>
@@ -60,7 +82,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleIntervalComposed CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleIntervalComposed();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleIntervalComposed(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -91,6 +113,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("timeOfDay", TimeOfDay);
             writer.WriteStringValue("timeZone", TimeZone);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleIntervalType>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

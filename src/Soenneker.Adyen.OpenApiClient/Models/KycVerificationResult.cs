@@ -11,64 +11,92 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class KycVerificationResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("accountHolder") is { } nullNodeAccountHolder && nullNodeAccountHolder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountHolder = null;
+            if (parseNode.GetChildNode("legalArrangements") is { } nullNodeLegalArrangements && nullNodeLegalArrangements.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LegalArrangements = null;
+            if (parseNode.GetChildNode("legalArrangementsEntities") is { } nullNodeLegalArrangementsEntities && nullNodeLegalArrangementsEntities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LegalArrangementsEntities = null;
+            if (parseNode.GetChildNode("payoutMethods") is { } nullNodePayoutMethods && nullNodePayoutMethods.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayoutMethods = null;
+            if (parseNode.GetChildNode("shareholders") is { } nullNodeShareholders && nullNodeShareholders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Shareholders = null;
+            if (parseNode.GetChildNode("signatories") is { } nullNodeSignatories && nullNodeSignatories.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Signatories = null;
+            if (parseNode.GetChildNode("ultimateParentCompany") is { } nullNodeUltimateParentCompany && nullNodeUltimateParentCompany.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UltimateParentCompany = null;
+        }
+
         /// <summary>The accountHolder property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.KycCheckResult? AccountHolder { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.KycCheckResult? AccountHolder { get => _explicitNullValueAccountHolder; set { _explicitNullValueAccountHolder = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolder"); else _explicitNullProperties?.Remove("accountHolder"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.KycCheckResult? _explicitNullValueAccountHolder = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.KycCheckResult AccountHolder { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.KycCheckResult AccountHolder { get => _explicitNullValueAccountHolder; set { _explicitNullValueAccountHolder = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolder"); else _explicitNullProperties?.Remove("accountHolder"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.KycCheckResult _explicitNullValueAccountHolder = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The results of the checks on the legal arrangements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.KycLegalArrangementCheckResult>? LegalArrangements { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.KycLegalArrangementCheckResult>? LegalArrangements { get => _explicitNullValueLegalArrangements; set { _explicitNullValueLegalArrangements = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalArrangements"); else _explicitNullProperties?.Remove("legalArrangements"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.KycLegalArrangementCheckResult>? _explicitNullValueLegalArrangements = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.KycLegalArrangementCheckResult> LegalArrangements { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.KycLegalArrangementCheckResult> LegalArrangements { get => _explicitNullValueLegalArrangements; set { _explicitNullValueLegalArrangements = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalArrangements"); else _explicitNullProperties?.Remove("legalArrangements"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.KycLegalArrangementCheckResult> _explicitNullValueLegalArrangements = default!;
 #endif
         /// <summary>The results of the checks on the legal arrangement entities.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.KycLegalArrangementEntityCheckResult>? LegalArrangementsEntities { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.KycLegalArrangementEntityCheckResult>? LegalArrangementsEntities { get => _explicitNullValueLegalArrangementsEntities; set { _explicitNullValueLegalArrangementsEntities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalArrangementsEntities"); else _explicitNullProperties?.Remove("legalArrangementsEntities"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.KycLegalArrangementEntityCheckResult>? _explicitNullValueLegalArrangementsEntities = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.KycLegalArrangementEntityCheckResult> LegalArrangementsEntities { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.KycLegalArrangementEntityCheckResult> LegalArrangementsEntities { get => _explicitNullValueLegalArrangementsEntities; set { _explicitNullValueLegalArrangementsEntities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalArrangementsEntities"); else _explicitNullProperties?.Remove("legalArrangementsEntities"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.KycLegalArrangementEntityCheckResult> _explicitNullValueLegalArrangementsEntities = default!;
 #endif
         /// <summary>The results of the checks on the payout methods.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.KycPayoutMethodCheckResult>? PayoutMethods { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.KycPayoutMethodCheckResult>? PayoutMethods { get => _explicitNullValuePayoutMethods; set { _explicitNullValuePayoutMethods = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payoutMethods"); else _explicitNullProperties?.Remove("payoutMethods"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.KycPayoutMethodCheckResult>? _explicitNullValuePayoutMethods = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.KycPayoutMethodCheckResult> PayoutMethods { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.KycPayoutMethodCheckResult> PayoutMethods { get => _explicitNullValuePayoutMethods; set { _explicitNullValuePayoutMethods = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payoutMethods"); else _explicitNullProperties?.Remove("payoutMethods"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.KycPayoutMethodCheckResult> _explicitNullValuePayoutMethods = default!;
 #endif
         /// <summary>The results of the checks on the shareholders.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.KycShareholderCheckResult>? Shareholders { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.KycShareholderCheckResult>? Shareholders { get => _explicitNullValueShareholders; set { _explicitNullValueShareholders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shareholders"); else _explicitNullProperties?.Remove("shareholders"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.KycShareholderCheckResult>? _explicitNullValueShareholders = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.KycShareholderCheckResult> Shareholders { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.KycShareholderCheckResult> Shareholders { get => _explicitNullValueShareholders; set { _explicitNullValueShareholders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shareholders"); else _explicitNullProperties?.Remove("shareholders"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.KycShareholderCheckResult> _explicitNullValueShareholders = default!;
 #endif
         /// <summary>The results of the checks on the signatories.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.KycSignatoryCheckResult>? Signatories { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.KycSignatoryCheckResult>? Signatories { get => _explicitNullValueSignatories; set { _explicitNullValueSignatories = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signatories"); else _explicitNullProperties?.Remove("signatories"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.KycSignatoryCheckResult>? _explicitNullValueSignatories = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.KycSignatoryCheckResult> Signatories { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.KycSignatoryCheckResult> Signatories { get => _explicitNullValueSignatories; set { _explicitNullValueSignatories = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signatories"); else _explicitNullProperties?.Remove("signatories"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.KycSignatoryCheckResult> _explicitNullValueSignatories = default!;
 #endif
         /// <summary>The result of the check on the Ultimate Parent Company.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.KycUltimateParentCompanyCheckResult>? UltimateParentCompany { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.KycUltimateParentCompanyCheckResult>? UltimateParentCompany { get => _explicitNullValueUltimateParentCompany; set { _explicitNullValueUltimateParentCompany = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ultimateParentCompany"); else _explicitNullProperties?.Remove("ultimateParentCompany"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.KycUltimateParentCompanyCheckResult>? _explicitNullValueUltimateParentCompany = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.KycUltimateParentCompanyCheckResult> UltimateParentCompany { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.KycUltimateParentCompanyCheckResult> UltimateParentCompany { get => _explicitNullValueUltimateParentCompany; set { _explicitNullValueUltimateParentCompany = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ultimateParentCompany"); else _explicitNullProperties?.Remove("ultimateParentCompany"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.KycUltimateParentCompanyCheckResult> _explicitNullValueUltimateParentCompany = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.KycVerificationResult"/> and sets the default values.
@@ -85,7 +113,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.KycVerificationResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.KycVerificationResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.KycVerificationResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -118,6 +146,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.KycShareholderCheckResult>("shareholders", Shareholders);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.KycSignatoryCheckResult>("signatories", Signatories);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.KycUltimateParentCompanyCheckResult>("ultimateParentCompany", UltimateParentCompany);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

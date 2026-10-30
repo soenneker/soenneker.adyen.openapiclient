@@ -63,6 +63,8 @@ namespace Soenneker.Adyen.OpenApiClient.RecurringServiceV68.Disable
                 { "403", global::Soenneker.Adyen.OpenApiClient.Models.RecurringServiceV68ServiceError.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Adyen.OpenApiClient.Models.RecurringServiceV68ServiceError.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Adyen.OpenApiClient.Models.RecurringServiceV68ServiceError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.DisableResult>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.DisableResult.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

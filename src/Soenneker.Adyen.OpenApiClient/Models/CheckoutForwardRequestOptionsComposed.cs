@@ -12,38 +12,60 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CheckoutForwardRequestOptionsComposed : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("accountUpdate") is { } nullNodeAccountUpdate && nullNodeAccountUpdate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountUpdate = null;
+            if (parseNode.GetChildNode("dryRun") is { } nullNodeDryRun && nullNodeDryRun.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DryRun = null;
+            if (parseNode.GetChildNode("networkToken") is { } nullNodeNetworkToken && nullNodeNetworkToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NetworkToken = null;
+            if (parseNode.GetChildNode("networkTxReferencePaths") is { } nullNodeNetworkTxReferencePaths && nullNodeNetworkTxReferencePaths.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NetworkTxReferencePaths = null;
+            if (parseNode.GetChildNode("tokenize") is { } nullNodeTokenize && nullNodeTokenize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tokenize = null;
+            if (parseNode.GetChildNode("transactionLinkIdPaths") is { } nullNodeTransactionLinkIdPaths && nullNodeTransactionLinkIdPaths.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionLinkIdPaths = null;
+        }
+
         /// <summary>Set to **true** to check if the account tied to the card has been updated.</summary>
-        public bool? AccountUpdate { get; set; }
+        public bool? AccountUpdate { get => _explicitNullValueAccountUpdate; set { _explicitNullValueAccountUpdate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountUpdate"); else _explicitNullProperties?.Remove("accountUpdate"); } }
+        private bool? _explicitNullValueAccountUpdate = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Set to **true** to receive a copy of the request Adyen is making to the third party in the response. Any sensitive information will be masked in the response you receive. This functionality is only available in the test environment.</summary>
-        public bool? DryRun { get; set; }
+        public bool? DryRun { get => _explicitNullValueDryRun; set { _explicitNullValueDryRun = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dryRun"); else _explicitNullProperties?.Remove("dryRun"); } }
+        private bool? _explicitNullValueDryRun = default!;
         /// <summary>The object that contains the details for forwarding a network token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestOptionsNetworkToken? NetworkToken { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestOptionsNetworkToken? NetworkToken { get => _explicitNullValueNetworkToken; set { _explicitNullValueNetworkToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("networkToken"); else _explicitNullProperties?.Remove("networkToken"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestOptionsNetworkToken? _explicitNullValueNetworkToken = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestOptionsNetworkToken NetworkToken { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestOptionsNetworkToken NetworkToken { get => _explicitNullValueNetworkToken; set { _explicitNullValueNetworkToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("networkToken"); else _explicitNullProperties?.Remove("networkToken"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestOptionsNetworkToken _explicitNullValueNetworkToken = default!;
 #endif
         /// <summary>Only include when `tokenize` is set to **true**.&lt;br&gt;&lt;br&gt;A list of addresses to possible location(s) of the `networkTxReference` that will be returned in the third party response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? NetworkTxReferencePaths { get; set; }
+        public List<string>? NetworkTxReferencePaths { get => _explicitNullValueNetworkTxReferencePaths; set { _explicitNullValueNetworkTxReferencePaths = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("networkTxReferencePaths"); else _explicitNullProperties?.Remove("networkTxReferencePaths"); } }
+        private List<string>? _explicitNullValueNetworkTxReferencePaths = default!;
 #nullable restore
 #else
-        public List<string> NetworkTxReferencePaths { get; set; }
+        public List<string> NetworkTxReferencePaths { get => _explicitNullValueNetworkTxReferencePaths; set { _explicitNullValueNetworkTxReferencePaths = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("networkTxReferencePaths"); else _explicitNullProperties?.Remove("networkTxReferencePaths"); } }
+        private List<string> _explicitNullValueNetworkTxReferencePaths = default!;
 #endif
         /// <summary>Set to **true** to [tokenize](https://docs.adyen.com/online-payments/tokenization) the payment details.</summary>
-        public bool? Tokenize { get; set; }
+        public bool? Tokenize { get => _explicitNullValueTokenize; set { _explicitNullValueTokenize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tokenize"); else _explicitNullProperties?.Remove("tokenize"); } }
+        private bool? _explicitNullValueTokenize = default!;
         /// <summary>Only include when `tokenize` is set to **true**.&lt;br&gt;&lt;br&gt;A list of addresses to possible location(s) of the `transactionLinkId` that will be returned in the third party response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TransactionLinkIdPaths { get; set; }
+        public List<string>? TransactionLinkIdPaths { get => _explicitNullValueTransactionLinkIdPaths; set { _explicitNullValueTransactionLinkIdPaths = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactionLinkIdPaths"); else _explicitNullProperties?.Remove("transactionLinkIdPaths"); } }
+        private List<string>? _explicitNullValueTransactionLinkIdPaths = default!;
 #nullable restore
 #else
-        public List<string> TransactionLinkIdPaths { get; set; }
+        public List<string> TransactionLinkIdPaths { get => _explicitNullValueTransactionLinkIdPaths; set { _explicitNullValueTransactionLinkIdPaths = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactionLinkIdPaths"); else _explicitNullProperties?.Remove("transactionLinkIdPaths"); } }
+        private List<string> _explicitNullValueTransactionLinkIdPaths = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestOptionsComposed"/> and sets the default values.
@@ -60,7 +82,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestOptionsComposed CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestOptionsComposed();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestOptionsComposed(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -91,6 +113,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("networkTxReferencePaths", NetworkTxReferencePaths);
             writer.WriteBoolValue("tokenize", Tokenize);
             writer.WriteCollectionOfPrimitiveValues<string>("transactionLinkIdPaths", TransactionLinkIdPaths);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

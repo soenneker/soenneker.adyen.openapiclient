@@ -72,6 +72,7 @@ namespace Soenneker.Adyen.OpenApiClient.CheckoutServiceV72
             get => new global::Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.Orders.OrdersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The originKeys property</summary>
+        [Obsolete("")]
         public global::Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.OriginKeys.OriginKeysRequestBuilder OriginKeys
         {
             get => new global::Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.OriginKeys.OriginKeysRequestBuilder(PathParameters, RequestAdapter);

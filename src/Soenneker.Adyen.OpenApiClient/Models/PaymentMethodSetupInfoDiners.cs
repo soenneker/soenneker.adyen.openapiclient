@@ -12,28 +12,45 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PaymentMethodSetupInfoDiners : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("midNumber") is { } nullNodeMidNumber && nullNodeMidNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MidNumber = null;
+            if (parseNode.GetChildNode("reuseMidNumber") is { } nullNodeReuseMidNumber && nullNodeReuseMidNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReuseMidNumber = null;
+            if (parseNode.GetChildNode("serviceLevel") is { } nullNodeServiceLevel && nullNodeServiceLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceLevel = null;
+            if (parseNode.GetChildNode("transactionDescription") is { } nullNodeTransactionDescription && nullNodeTransactionDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionDescription = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>MID (Merchant ID) number. Required for merchants operating in Japan.Format: 14 numeric characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MidNumber { get; set; }
+        public string? MidNumber { get => _explicitNullValueMidNumber; set { _explicitNullValueMidNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("midNumber"); else _explicitNullProperties?.Remove("midNumber"); } }
+        private string? _explicitNullValueMidNumber = default!;
 #nullable restore
 #else
-        public string MidNumber { get; set; }
+        public string MidNumber { get => _explicitNullValueMidNumber; set { _explicitNullValueMidNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("midNumber"); else _explicitNullProperties?.Remove("midNumber"); } }
+        private string _explicitNullValueMidNumber = default!;
 #endif
         /// <summary>Indicates whether the JCB Merchant ID is reused from a previously configured JCB payment method.The default value is **false**.For merchants operating in Japan, this field is required and must be set to **true**.</summary>
-        public bool? ReuseMidNumber { get; set; }
+        public bool? ReuseMidNumber { get => _explicitNullValueReuseMidNumber; set { _explicitNullValueReuseMidNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reuseMidNumber"); else _explicitNullProperties?.Remove("reuseMidNumber"); } }
+        private bool? _explicitNullValueReuseMidNumber = default!;
         /// <summary>Specifies the service level (settlement type) of this payment method. Required for merchants operating in Japan. Possible values: * **noContract**: Adyen holds the contract with JCB. * **gatewayContract**: JCB receives the settlement and handles disputes, then pays out to you or your sub-merchant directly.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.DinersInfoServiceLevel? ServiceLevel { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DinersInfoServiceLevel? ServiceLevel { get => _explicitNullValueServiceLevel; set { _explicitNullValueServiceLevel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serviceLevel"); else _explicitNullProperties?.Remove("serviceLevel"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.DinersInfoServiceLevel? _explicitNullValueServiceLevel = default!;
         /// <summary>Information regarding the transaction description.&gt; You cannot configure the transaction description in the test environment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.DinersInfoTransactionDescription? TransactionDescription { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DinersInfoTransactionDescription? TransactionDescription { get => _explicitNullValueTransactionDescription; set { _explicitNullValueTransactionDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactionDescription"); else _explicitNullProperties?.Remove("transactionDescription"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.DinersInfoTransactionDescription? _explicitNullValueTransactionDescription = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.DinersInfoTransactionDescription TransactionDescription { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DinersInfoTransactionDescription TransactionDescription { get => _explicitNullValueTransactionDescription; set { _explicitNullValueTransactionDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactionDescription"); else _explicitNullProperties?.Remove("transactionDescription"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.DinersInfoTransactionDescription _explicitNullValueTransactionDescription = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodSetupInfoDiners"/> and sets the default values.
@@ -51,7 +68,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodSetupInfoDiners CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodSetupInfoDiners();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodSetupInfoDiners(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +95,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteBoolValue("reuseMidNumber", ReuseMidNumber);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DinersInfoServiceLevel>("serviceLevel", ServiceLevel);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DinersInfoTransactionDescription>("transactionDescription", TransactionDescription);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -63,6 +63,8 @@ namespace Soenneker.Adyen.OpenApiClient.PaymentServiceV68.TechnicalCancel
                 { "403", global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ServiceError.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ServiceError.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ServiceError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.ModificationResult>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.ModificationResult.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

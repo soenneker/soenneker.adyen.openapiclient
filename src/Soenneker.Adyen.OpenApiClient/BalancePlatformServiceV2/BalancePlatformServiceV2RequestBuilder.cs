@@ -58,6 +58,7 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2
             get => new global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.GrantAccounts.GrantAccountsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The grantOffers property</summary>
+        [Obsolete("")]
         public global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.GrantOffers.GrantOffersRequestBuilder GrantOffers
         {
             get => new global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.GrantOffers.GrantOffersRequestBuilder(PathParameters, RequestAdapter);

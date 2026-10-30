@@ -57,6 +57,8 @@ namespace Soenneker.Adyen.OpenApiClient.BalanceControlServiceV2.BalanceOverview.
                 { "401", global::Soenneker.Adyen.OpenApiClient.Models.BalanceControlServiceV2DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Adyen.OpenApiClient.Models.BalanceControlServiceV2DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Adyen.OpenApiClient.Models.BalanceControlServiceV2DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.CompanyBalances>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.CompanyBalances.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

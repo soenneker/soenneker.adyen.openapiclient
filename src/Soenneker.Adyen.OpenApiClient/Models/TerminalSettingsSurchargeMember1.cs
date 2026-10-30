@@ -12,24 +12,40 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TerminalSettingsSurchargeMember1 : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("askConfirmation") is { } nullNodeAskConfirmation && nullNodeAskConfirmation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AskConfirmation = null;
+            if (parseNode.GetChildNode("configurations") is { } nullNodeConfigurations && nullNodeConfigurations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Configurations = null;
+            if (parseNode.GetChildNode("disclosureOnPresentCard") is { } nullNodeDisclosureOnPresentCard && nullNodeDisclosureOnPresentCard.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisclosureOnPresentCard = null;
+            if (parseNode.GetChildNode("excludeGratuityFromSurcharge") is { } nullNodeExcludeGratuityFromSurcharge && nullNodeExcludeGratuityFromSurcharge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludeGratuityFromSurcharge = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Show the surcharge details on the terminal, so the shopper can confirm.</summary>
-        public bool? AskConfirmation { get; set; }
+        public bool? AskConfirmation { get => _explicitNullValueAskConfirmation; set { _explicitNullValueAskConfirmation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("askConfirmation"); else _explicitNullProperties?.Remove("askConfirmation"); } }
+        private bool? _explicitNullValueAskConfirmation = default!;
         /// <summary>Surcharge fees or percentages for specific cards, funding sources (credit or debit), and currencies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.Configuration>? Configurations { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.Configuration>? Configurations { get => _explicitNullValueConfigurations; set { _explicitNullValueConfigurations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configurations"); else _explicitNullProperties?.Remove("configurations"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.Configuration>? _explicitNullValueConfigurations = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.Configuration> Configurations { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.Configuration> Configurations { get => _explicitNullValueConfigurations; set { _explicitNullValueConfigurations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configurations"); else _explicitNullProperties?.Remove("configurations"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.Configuration> _explicitNullValueConfigurations = default!;
 #endif
         /// <summary>Show the maximum surcharge rate to the shopper on the present card screen before they tap.</summary>
         [Obsolete("")]
-        public bool? DisclosureOnPresentCard { get; set; }
+        public bool? DisclosureOnPresentCard { get => _explicitNullValueDisclosureOnPresentCard; set { _explicitNullValueDisclosureOnPresentCard = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disclosureOnPresentCard"); else _explicitNullProperties?.Remove("disclosureOnPresentCard"); } }
+        private bool? _explicitNullValueDisclosureOnPresentCard = default!;
         /// <summary>Exclude the tip amount from the surcharge calculation.</summary>
-        public bool? ExcludeGratuityFromSurcharge { get; set; }
+        public bool? ExcludeGratuityFromSurcharge { get => _explicitNullValueExcludeGratuityFromSurcharge; set { _explicitNullValueExcludeGratuityFromSurcharge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excludeGratuityFromSurcharge"); else _explicitNullProperties?.Remove("excludeGratuityFromSurcharge"); } }
+        private bool? _explicitNullValueExcludeGratuityFromSurcharge = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSurchargeMember1"/> and sets the default values.
         /// </summary>
@@ -45,7 +61,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSurchargeMember1 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSurchargeMember1();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSurchargeMember1(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +88,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Configuration>("configurations", Configurations);
             writer.WriteBoolValue("disclosureOnPresentCard", DisclosureOnPresentCard);
             writer.WriteBoolValue("excludeGratuityFromSurcharge", ExcludeGratuityFromSurcharge);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

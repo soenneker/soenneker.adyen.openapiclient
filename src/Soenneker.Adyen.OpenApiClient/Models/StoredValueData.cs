@@ -12,49 +12,76 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class StoredValueData : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("Currency") is { } nullNodeCurrency && nullNodeCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Currency = null;
+            if (parseNode.GetChildNode("EanUpc") is { } nullNodeEanUpc && nullNodeEanUpc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EanUpc = null;
+            if (parseNode.GetChildNode("ItemAmount") is { } nullNodeItemAmount && nullNodeItemAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ItemAmount = null;
+            if (parseNode.GetChildNode("OriginalPOITransaction") is { } nullNodeOriginalPOITransaction && nullNodeOriginalPOITransaction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginalPOITransaction = null;
+            if (parseNode.GetChildNode("ProductCode") is { } nullNodeProductCode && nullNodeProductCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProductCode = null;
+            if (parseNode.GetChildNode("StoredValueAccountID") is { } nullNodeStoredValueAccountID && nullNodeStoredValueAccountID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StoredValueAccountID = null;
+            if (parseNode.GetChildNode("StoredValueProvider") is { } nullNodeStoredValueProvider && nullNodeStoredValueProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StoredValueProvider = null;
+            if (parseNode.GetChildNode("StoredValueTransactionType") is { } nullNodeStoredValueTransactionType && nullNodeStoredValueTransactionType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StoredValueTransactionType = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Currency of a monetary amount.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Currency { get; set; }
+        public string? Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Currency"); else _explicitNullProperties?.Remove("Currency"); } }
+        private string? _explicitNullValueCurrency = default!;
 #nullable restore
 #else
-        public string Currency { get; set; }
+        public string Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Currency"); else _explicitNullProperties?.Remove("Currency"); } }
+        private string _explicitNullValueCurrency = default!;
 #endif
         /// <summary>Standard product code of item purchased with the transaction.</summary>
-        public int? EanUpc { get; set; }
+        public int? EanUpc { get => _explicitNullValueEanUpc; set { _explicitNullValueEanUpc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("EanUpc"); else _explicitNullProperties?.Remove("EanUpc"); } }
+        private int? _explicitNullValueEanUpc = default!;
         /// <summary>Total amount of the item line.</summary>
-        public double? ItemAmount { get; set; }
+        public double? ItemAmount { get => _explicitNullValueItemAmount; set { _explicitNullValueItemAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ItemAmount"); else _explicitNullProperties?.Remove("ItemAmount"); } }
+        private double? _explicitNullValueItemAmount = default!;
         /// <summary>Identification of a previous POI transaction.In the Payment Request message, it allows using the card of a previous CardAcquisition or Payment request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.OriginalPoiTransaction? OriginalPOITransaction { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.OriginalPoiTransaction? OriginalPOITransaction { get => _explicitNullValueOriginalPOITransaction; set { _explicitNullValueOriginalPOITransaction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OriginalPOITransaction"); else _explicitNullProperties?.Remove("OriginalPOITransaction"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.OriginalPoiTransaction? _explicitNullValueOriginalPOITransaction = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.OriginalPoiTransaction OriginalPOITransaction { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.OriginalPoiTransaction OriginalPOITransaction { get => _explicitNullValueOriginalPOITransaction; set { _explicitNullValueOriginalPOITransaction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OriginalPOITransaction"); else _explicitNullProperties?.Remove("OriginalPOITransaction"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.OriginalPoiTransaction _explicitNullValueOriginalPOITransaction = default!;
 #endif
         /// <summary>Product code of item purchased with the transaction.</summary>
-        public int? ProductCode { get; set; }
+        public int? ProductCode { get => _explicitNullValueProductCode; set { _explicitNullValueProductCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ProductCode"); else _explicitNullProperties?.Remove("ProductCode"); } }
+        private int? _explicitNullValueProductCode = default!;
         /// <summary>Identification of the stored value account or the stored value card and the associated product sold by the Sale System for stored value requests.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountId? StoredValueAccountID { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountId? StoredValueAccountID { get => _explicitNullValueStoredValueAccountID; set { _explicitNullValueStoredValueAccountID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("StoredValueAccountID"); else _explicitNullProperties?.Remove("StoredValueAccountID"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountId? _explicitNullValueStoredValueAccountID = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountId StoredValueAccountID { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountId StoredValueAccountID { get => _explicitNullValueStoredValueAccountID; set { _explicitNullValueStoredValueAccountID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("StoredValueAccountID"); else _explicitNullProperties?.Remove("StoredValueAccountID"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountId _explicitNullValueStoredValueAccountID = default!;
 #endif
         /// <summary>Identification of the provider of the stored value account load/reload.If more than one provider to manage on the POI, and StoredValueAccountID absent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StoredValueProvider { get; set; }
+        public string? StoredValueProvider { get => _explicitNullValueStoredValueProvider; set { _explicitNullValueStoredValueProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("StoredValueProvider"); else _explicitNullProperties?.Remove("StoredValueProvider"); } }
+        private string? _explicitNullValueStoredValueProvider = default!;
 #nullable restore
 #else
-        public string StoredValueProvider { get; set; }
+        public string StoredValueProvider { get => _explicitNullValueStoredValueProvider; set { _explicitNullValueStoredValueProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("StoredValueProvider"); else _explicitNullProperties?.Remove("StoredValueProvider"); } }
+        private string _explicitNullValueStoredValueProvider = default!;
 #endif
         /// <summary>Possible values:* **Reserve*** **Activate*** **Load*** **Unload*** **Reverse*** **Duplicate**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueDataStoredValueTransactionType? StoredValueTransactionType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueDataStoredValueTransactionType? StoredValueTransactionType { get => _explicitNullValueStoredValueTransactionType; set { _explicitNullValueStoredValueTransactionType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("StoredValueTransactionType"); else _explicitNullProperties?.Remove("StoredValueTransactionType"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.StoredValueDataStoredValueTransactionType? _explicitNullValueStoredValueTransactionType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.StoredValueData"/> and sets the default values.
         /// </summary>
@@ -70,7 +97,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.StoredValueData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.StoredValueData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.StoredValueData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -105,6 +132,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountId>("StoredValueAccountID", StoredValueAccountID);
             writer.WriteStringValue("StoredValueProvider", StoredValueProvider);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueDataStoredValueTransactionType>("StoredValueTransactionType", StoredValueTransactionType);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

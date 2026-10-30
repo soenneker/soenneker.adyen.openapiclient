@@ -11,42 +11,68 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class InPersonDonationSettingsUpdate : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("defaultAmount") is { } nullNodeDefaultAmount && nullNodeDefaultAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultAmount = null;
+            if (parseNode.GetChildNode("displayTextField") is { } nullNodeDisplayTextField && nullNodeDisplayTextField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayTextField = null;
+            if (parseNode.GetChildNode("donationFlow") is { } nullNodeDonationFlow && nullNodeDonationFlow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DonationFlow = null;
+            if (parseNode.GetChildNode("donationType") is { } nullNodeDonationType && nullNodeDonationType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DonationType = null;
+            if (parseNode.GetChildNode("merchantAccounts") is { } nullNodeMerchantAccounts && nullNodeMerchantAccounts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantAccounts = null;
+            if (parseNode.GetChildNode("presentCardTimeoutMs") is { } nullNodePresentCardTimeoutMs && nullNodePresentCardTimeoutMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PresentCardTimeoutMs = null;
+            if (parseNode.GetChildNode("promptTimeoutMs") is { } nullNodePromptTimeoutMs && nullNodePromptTimeoutMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PromptTimeoutMs = null;
+            if (parseNode.GetChildNode("storeIds") is { } nullNodeStoreIds && nullNodeStoreIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StoreIds = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The default amount for donations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.DonationAmountUpdate? DefaultAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DonationAmountUpdate? DefaultAmount { get => _explicitNullValueDefaultAmount; set { _explicitNullValueDefaultAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultAmount"); else _explicitNullProperties?.Remove("defaultAmount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.DonationAmountUpdate? _explicitNullValueDefaultAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.DonationAmountUpdate DefaultAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DonationAmountUpdate DefaultAmount { get => _explicitNullValueDefaultAmount; set { _explicitNullValueDefaultAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultAmount"); else _explicitNullProperties?.Remove("defaultAmount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.DonationAmountUpdate _explicitNullValueDefaultAmount = default!;
 #endif
         /// <summary>The text shown on the payment terminal, either the name or the cause of the nonprofit organization.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettingsUpdateDisplayTextField? DisplayTextField { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettingsUpdateDisplayTextField? DisplayTextField { get => _explicitNullValueDisplayTextField; set { _explicitNullValueDisplayTextField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("displayTextField"); else _explicitNullProperties?.Remove("displayTextField"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettingsUpdateDisplayTextField? _explicitNullValueDisplayTextField = default!;
         /// <summary>The interaction flow for in-person donations. Possible values: - **oneStep**: The shopper presents their payment method for the payment and the donation in one go, after the donation. - **twoStep**: The shopper presents their payment method twice: after the payment and after the donation.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettingsUpdateDonationFlow? DonationFlow { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettingsUpdateDonationFlow? DonationFlow { get => _explicitNullValueDonationFlow; set { _explicitNullValueDonationFlow = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("donationFlow"); else _explicitNullProperties?.Remove("donationFlow"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettingsUpdateDonationFlow? _explicitNullValueDonationFlow = default!;
         /// <summary>The type of donation to collect from the shopper. Possible values: - **roundup**: Round up the transaction amount.- **fixedAmounts**: Choose a fixed amount.- **fixedAmountsRoundup**: Round up, or choose a fixed amount.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.DonationType? DonationType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DonationType? DonationType { get => _explicitNullValueDonationType; set { _explicitNullValueDonationType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("donationType"); else _explicitNullProperties?.Remove("donationType"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.DonationType? _explicitNullValueDonationType = default!;
         /// <summary>The merchant accounts for this sales channel that are associated with the donation campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MerchantAccounts { get; set; }
+        public List<string>? MerchantAccounts { get => _explicitNullValueMerchantAccounts; set { _explicitNullValueMerchantAccounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantAccounts"); else _explicitNullProperties?.Remove("merchantAccounts"); } }
+        private List<string>? _explicitNullValueMerchantAccounts = default!;
 #nullable restore
 #else
-        public List<string> MerchantAccounts { get; set; }
+        public List<string> MerchantAccounts { get => _explicitNullValueMerchantAccounts; set { _explicitNullValueMerchantAccounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantAccounts"); else _explicitNullProperties?.Remove("merchantAccounts"); } }
+        private List<string> _explicitNullValueMerchantAccounts = default!;
 #endif
         /// <summary>Required if `donationFlow` is set to **twoStep**. The time, in milliseconds, that the terminal waits for the shopper to present their card. Defaults to **10000** (10 seconds). Range: 5000 to 15000.</summary>
-        public long? PresentCardTimeoutMs { get; set; }
+        public long? PresentCardTimeoutMs { get => _explicitNullValuePresentCardTimeoutMs; set { _explicitNullValuePresentCardTimeoutMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("presentCardTimeoutMs"); else _explicitNullProperties?.Remove("presentCardTimeoutMs"); } }
+        private long? _explicitNullValuePresentCardTimeoutMs = default!;
         /// <summary>The time, in milliseconds, that the terminal waits for the shopper to make a selection on the donation screen. Defaults to **10000** (10 seconds). Range: 5000 to 15000.</summary>
-        public long? PromptTimeoutMs { get; set; }
+        public long? PromptTimeoutMs { get => _explicitNullValuePromptTimeoutMs; set { _explicitNullValuePromptTimeoutMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("promptTimeoutMs"); else _explicitNullProperties?.Remove("promptTimeoutMs"); } }
+        private long? _explicitNullValuePromptTimeoutMs = default!;
         /// <summary>The Adyen-generated unique identifiers of stores for this sales channel that are associated with the donation campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? StoreIds { get; set; }
+        public List<string>? StoreIds { get => _explicitNullValueStoreIds; set { _explicitNullValueStoreIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storeIds"); else _explicitNullProperties?.Remove("storeIds"); } }
+        private List<string>? _explicitNullValueStoreIds = default!;
 #nullable restore
 #else
-        public List<string> StoreIds { get; set; }
+        public List<string> StoreIds { get => _explicitNullValueStoreIds; set { _explicitNullValueStoreIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storeIds"); else _explicitNullProperties?.Remove("storeIds"); } }
+        private List<string> _explicitNullValueStoreIds = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettingsUpdate"/> and sets the default values.
@@ -63,7 +89,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettingsUpdate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettingsUpdate();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettingsUpdate(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -98,6 +124,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteLongValue("presentCardTimeoutMs", PresentCardTimeoutMs);
             writer.WriteLongValue("promptTimeoutMs", PromptTimeoutMs);
             writer.WriteCollectionOfPrimitiveValues<string>("storeIds", StoreIds);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

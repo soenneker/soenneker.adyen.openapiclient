@@ -12,28 +12,45 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ManagementServiceV3PaymentMethodKlarna : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("autoCapture") is { } nullNodeAutoCapture && nullNodeAutoCapture.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoCapture = null;
+            if (parseNode.GetChildNode("disputeEmail") is { } nullNodeDisputeEmail && nullNodeDisputeEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisputeEmail = null;
+            if (parseNode.GetChildNode("region") is { } nullNodeRegion && nullNodeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Region = null;
+            if (parseNode.GetChildNode("supportEmail") is { } nullNodeSupportEmail && nullNodeSupportEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportEmail = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates the status of [Automatic capture](https://docs.adyen.com/online-payments/capture#automatic-capture).</summary>
-        public bool? AutoCapture { get; set; }
+        public bool? AutoCapture { get => _explicitNullValueAutoCapture; set { _explicitNullValueAutoCapture = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autoCapture"); else _explicitNullProperties?.Remove("autoCapture"); } }
+        private bool? _explicitNullValueAutoCapture = default!;
         /// <summary>The email address for disputes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisputeEmail { get; set; }
+        public string? DisputeEmail { get => _explicitNullValueDisputeEmail; set { _explicitNullValueDisputeEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disputeEmail"); else _explicitNullProperties?.Remove("disputeEmail"); } }
+        private string? _explicitNullValueDisputeEmail = default!;
 #nullable restore
 #else
-        public string DisputeEmail { get; set; }
+        public string DisputeEmail { get => _explicitNullValueDisputeEmail; set { _explicitNullValueDisputeEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disputeEmail"); else _explicitNullProperties?.Remove("disputeEmail"); } }
+        private string _explicitNullValueDisputeEmail = default!;
 #endif
         /// <summary>The region of operation.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.KlarnaResponseInfoRegion? Region { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.KlarnaResponseInfoRegion? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.KlarnaResponseInfoRegion? _explicitNullValueRegion = default!;
         /// <summary>The email address of merchant support.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SupportEmail { get; set; }
+        public string? SupportEmail { get => _explicitNullValueSupportEmail; set { _explicitNullValueSupportEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supportEmail"); else _explicitNullProperties?.Remove("supportEmail"); } }
+        private string? _explicitNullValueSupportEmail = default!;
 #nullable restore
 #else
-        public string SupportEmail { get; set; }
+        public string SupportEmail { get => _explicitNullValueSupportEmail; set { _explicitNullValueSupportEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supportEmail"); else _explicitNullProperties?.Remove("supportEmail"); } }
+        private string _explicitNullValueSupportEmail = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3PaymentMethodKlarna"/> and sets the default values.
@@ -50,7 +67,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3PaymentMethodKlarna CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3PaymentMethodKlarna();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3PaymentMethodKlarna(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,6 +94,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("disputeEmail", DisputeEmail);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.KlarnaResponseInfoRegion>("region", Region);
             writer.WriteStringValue("supportEmail", SupportEmail);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

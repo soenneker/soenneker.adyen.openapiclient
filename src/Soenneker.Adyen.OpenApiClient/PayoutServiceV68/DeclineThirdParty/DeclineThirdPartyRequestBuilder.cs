@@ -63,6 +63,8 @@ namespace Soenneker.Adyen.OpenApiClient.PayoutServiceV68.DeclineThirdParty
                 { "403", global::Soenneker.Adyen.OpenApiClient.Models.PayoutServiceV68ServiceError.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Adyen.OpenApiClient.Models.PayoutServiceV68ServiceError.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Adyen.OpenApiClient.Models.PayoutServiceV68ServiceError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.ModifyResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.ModifyResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

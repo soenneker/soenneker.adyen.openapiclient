@@ -11,27 +11,42 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TerminalConnectivityCellular : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("iccid") is { } nullNodeIccid && nullNodeIccid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Iccid = null;
+            if (parseNode.GetChildNode("iccid2") is { } nullNodeIccid2 && nullNodeIccid2.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Iccid2 = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The integrated circuit card identifier (ICCID) of the primary SIM card in the terminal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Iccid { get; set; }
+        public string? Iccid { get => _explicitNullValueIccid; set { _explicitNullValueIccid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iccid"); else _explicitNullProperties?.Remove("iccid"); } }
+        private string? _explicitNullValueIccid = default!;
 #nullable restore
 #else
-        public string Iccid { get; set; }
+        public string Iccid { get => _explicitNullValueIccid; set { _explicitNullValueIccid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iccid"); else _explicitNullProperties?.Remove("iccid"); } }
+        private string _explicitNullValueIccid = default!;
 #endif
         /// <summary>The integrated circuit card identifier (ICCID) of the secondary SIM card in the terminal, typically used for a [third-party SIM card](https://docs.adyen.com/point-of-sale/design-your-integration/network-and-connectivity/cellular-failover/#using-a-third-party-sim-card).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Iccid2 { get; set; }
+        public string? Iccid2 { get => _explicitNullValueIccid2; set { _explicitNullValueIccid2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iccid2"); else _explicitNullProperties?.Remove("iccid2"); } }
+        private string? _explicitNullValueIccid2 = default!;
 #nullable restore
 #else
-        public string Iccid2 { get; set; }
+        public string Iccid2 { get => _explicitNullValueIccid2; set { _explicitNullValueIccid2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iccid2"); else _explicitNullProperties?.Remove("iccid2"); } }
+        private string _explicitNullValueIccid2 = default!;
 #endif
         /// <summary>On a terminal that supports 3G or 4G connectivity, indicates the status of the primary SIM card in the terminal.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityCellularStatus? Status { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityCellularStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityCellularStatus? _explicitNullValueStatus = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityCellular"/> and sets the default values.
         /// </summary>
@@ -47,7 +62,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityCellular CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityCellular();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityCellular(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +87,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("iccid", Iccid);
             writer.WriteStringValue("iccid2", Iccid2);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityCellularStatus>("status", Status);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

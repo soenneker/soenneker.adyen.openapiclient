@@ -11,36 +11,56 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PaymentMethodResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("data") is { } nullNodeData && nullNodeData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Data = null;
+            if (parseNode.GetChildNode("itemsTotal") is { } nullNodeItemsTotal && nullNodeItemsTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ItemsTotal = null;
+            if (parseNode.GetChildNode("_links") is { } nullNodeLinks && nullNodeLinks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Links = null;
+            if (parseNode.GetChildNode("pagesTotal") is { } nullNodePagesTotal && nullNodePagesTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PagesTotal = null;
+            if (parseNode.GetChildNode("typesWithErrors") is { } nullNodeTypesWithErrors && nullNodeTypesWithErrors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TypesWithErrors = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The list of supported payment methods and their details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3PaymentMethod>? Data { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3PaymentMethod>? Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3PaymentMethod>? _explicitNullValueData = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3PaymentMethod> Data { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3PaymentMethod> Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3PaymentMethod> _explicitNullValueData = default!;
 #endif
         /// <summary>Total number of items.</summary>
-        public int? ItemsTotal { get; set; }
+        public int? ItemsTotal { get => _explicitNullValueItemsTotal; set { _explicitNullValueItemsTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("itemsTotal"); else _explicitNullProperties?.Remove("itemsTotal"); } }
+        private int? _explicitNullValueItemsTotal = default!;
         /// <summary>Pagination references.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodResponseLinks? Links { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodResponseLinks? Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_links"); else _explicitNullProperties?.Remove("_links"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodResponseLinks? _explicitNullValueLinks = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodResponseLinks Links { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodResponseLinks Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_links"); else _explicitNullProperties?.Remove("_links"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodResponseLinks _explicitNullValueLinks = default!;
 #endif
         /// <summary>Total number of pages.</summary>
-        public int? PagesTotal { get; set; }
+        public int? PagesTotal { get => _explicitNullValuePagesTotal; set { _explicitNullValuePagesTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pagesTotal"); else _explicitNullProperties?.Remove("pagesTotal"); } }
+        private int? _explicitNullValuePagesTotal = default!;
         /// <summary>The payment method types that were not successfully requested and their corresponding errors.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodResponseTypesWithErrorsItem?>? TypesWithErrors { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodResponseTypesWithErrorsItem?>? TypesWithErrors { get => _explicitNullValueTypesWithErrors; set { _explicitNullValueTypesWithErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("typesWithErrors"); else _explicitNullProperties?.Remove("typesWithErrors"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodResponseTypesWithErrorsItem?>? _explicitNullValueTypesWithErrors = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodResponseTypesWithErrorsItem?> TypesWithErrors { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodResponseTypesWithErrorsItem?> TypesWithErrors { get => _explicitNullValueTypesWithErrors; set { _explicitNullValueTypesWithErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("typesWithErrors"); else _explicitNullProperties?.Remove("typesWithErrors"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodResponseTypesWithErrorsItem?> _explicitNullValueTypesWithErrors = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodResponse"/> and sets the default values.
@@ -57,7 +77,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -86,6 +106,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodResponseLinks>("_links", Links);
             writer.WriteIntValue("pagesTotal", PagesTotal);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodResponseTypesWithErrorsItem>("typesWithErrors", TypesWithErrors);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

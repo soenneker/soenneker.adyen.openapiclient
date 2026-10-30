@@ -59,6 +59,8 @@ namespace Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.Clien
                 { "403", global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.CertificateSearchResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.CertificateSearchResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -94,6 +96,8 @@ namespace Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.Clien
                 { "422", global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.ClientCertificateWithChain>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.ClientCertificateWithChain.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

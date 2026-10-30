@@ -12,57 +12,99 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SplitConfigurationRuleSplitLogic : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("acquiringFees") is { } nullNodeAcquiringFees && nullNodeAcquiringFees.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcquiringFees = null;
+            if (parseNode.GetChildNode("additionalCommission") is { } nullNodeAdditionalCommission && nullNodeAdditionalCommission.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdditionalCommission = null;
+            if (parseNode.GetChildNode("adyenCommission") is { } nullNodeAdyenCommission && nullNodeAdyenCommission.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdyenCommission = null;
+            if (parseNode.GetChildNode("adyenFees") is { } nullNodeAdyenFees && nullNodeAdyenFees.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdyenFees = null;
+            if (parseNode.GetChildNode("adyenMarkup") is { } nullNodeAdyenMarkup && nullNodeAdyenMarkup.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdyenMarkup = null;
+            if (parseNode.GetChildNode("chargeback") is { } nullNodeChargeback && nullNodeChargeback.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Chargeback = null;
+            if (parseNode.GetChildNode("chargebackCostAllocation") is { } nullNodeChargebackCostAllocation && nullNodeChargebackCostAllocation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChargebackCostAllocation = null;
+            if (parseNode.GetChildNode("commission") is { } nullNodeCommission && nullNodeCommission.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Commission = null;
+            if (parseNode.GetChildNode("dcc") is { } nullNodeDcc && nullNodeDcc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dcc = null;
+            if (parseNode.GetChildNode("interchange") is { } nullNodeInterchange && nullNodeInterchange.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Interchange = null;
+            if (parseNode.GetChildNode("paymentFee") is { } nullNodePaymentFee && nullNodePaymentFee.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentFee = null;
+            if (parseNode.GetChildNode("refund") is { } nullNodeRefund && nullNodeRefund.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Refund = null;
+            if (parseNode.GetChildNode("refundCostAllocation") is { } nullNodeRefundCostAllocation && nullNodeRefundCostAllocation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RefundCostAllocation = null;
+            if (parseNode.GetChildNode("remainder") is { } nullNodeRemainder && nullNodeRemainder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Remainder = null;
+            if (parseNode.GetChildNode("schemeFee") is { } nullNodeSchemeFee && nullNodeSchemeFee.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SchemeFee = null;
+            if (parseNode.GetChildNode("surcharge") is { } nullNodeSurcharge && nullNodeSurcharge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Surcharge = null;
+            if (parseNode.GetChildNode("tip") is { } nullNodeTip && nullNodeTip.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tip = null;
+        }
+
         /// <summary>Deducts the acquiring fees (the aggregated amount of interchange and scheme fee) from the specified balance account.Possible values: **deductFromLiableAccount**, **deductFromOneBalanceAccount**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicAcquiringFees? AcquiringFees { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicAcquiringFees? AcquiringFees { get => _explicitNullValueAcquiringFees; set { _explicitNullValueAcquiringFees = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acquiringFees"); else _explicitNullProperties?.Remove("acquiringFees"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicAcquiringFees? _explicitNullValueAcquiringFees = default!;
         /// <summary>Defines whether to book an additional commission for payments to your user&apos;s balance account. The commission amount can be defined as a fixed amount (specified in minor units), a percentage (specified in basis points), or both.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicAdditionalCommission? AdditionalCommission { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicAdditionalCommission? AdditionalCommission { get => _explicitNullValueAdditionalCommission; set { _explicitNullValueAdditionalCommission = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additionalCommission"); else _explicitNullProperties?.Remove("additionalCommission"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicAdditionalCommission? _explicitNullValueAdditionalCommission = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicAdditionalCommission AdditionalCommission { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicAdditionalCommission AdditionalCommission { get => _explicitNullValueAdditionalCommission; set { _explicitNullValueAdditionalCommission = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additionalCommission"); else _explicitNullProperties?.Remove("additionalCommission"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicAdditionalCommission _explicitNullValueAdditionalCommission = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Deducts the transaction fee due to Adyen under [blended rates](https://www.adyen.com/knowledge-hub/guides/payments-training-guide/get-the-best-from-your-card-processing) from the specified balance account.Possible values: **deductFromLiableAccount**, **deductFromOneBalanceAccount**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicAdyenCommission? AdyenCommission { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicAdyenCommission? AdyenCommission { get => _explicitNullValueAdyenCommission; set { _explicitNullValueAdyenCommission = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("adyenCommission"); else _explicitNullProperties?.Remove("adyenCommission"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicAdyenCommission? _explicitNullValueAdyenCommission = default!;
         /// <summary>Deducts the fees due to Adyen (markup or commission) from the specified balance account.Possible values: **deductFromLiableAccount**, **deductFromOneBalanceAccount**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicAdyenFees? AdyenFees { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicAdyenFees? AdyenFees { get => _explicitNullValueAdyenFees; set { _explicitNullValueAdyenFees = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("adyenFees"); else _explicitNullProperties?.Remove("adyenFees"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicAdyenFees? _explicitNullValueAdyenFees = default!;
         /// <summary>Deducts the transaction fee due to Adyen under [Interchange ++ pricing](https://www.adyen.com/what-is-interchange) from the specified balance account.Possible values: **deductFromLiableAccount**, **deductFromOneBalanceAccount**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicAdyenMarkup? AdyenMarkup { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicAdyenMarkup? AdyenMarkup { get => _explicitNullValueAdyenMarkup; set { _explicitNullValueAdyenMarkup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("adyenMarkup"); else _explicitNullProperties?.Remove("adyenMarkup"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicAdyenMarkup? _explicitNullValueAdyenMarkup = default!;
         /// <summary>Specifies how and from which balance account(s) to deduct the chargeback amount.Possible values: **deductFromLiableAccount**, **deductFromOneBalanceAccount**, **deductAccordingToSplitRatio**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicChargeback? Chargeback { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicChargeback? Chargeback { get => _explicitNullValueChargeback; set { _explicitNullValueChargeback = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chargeback"); else _explicitNullProperties?.Remove("chargeback"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicChargeback? _explicitNullValueChargeback = default!;
         /// <summary>Deducts the chargeback costs from the specified balance account.Possible values: **deductFromLiableAccount**, **deductFromOneBalanceAccount**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicChargebackCostAllocation? ChargebackCostAllocation { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicChargebackCostAllocation? ChargebackCostAllocation { get => _explicitNullValueChargebackCostAllocation; set { _explicitNullValueChargebackCostAllocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chargebackCostAllocation"); else _explicitNullProperties?.Remove("chargebackCostAllocation"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicChargebackCostAllocation? _explicitNullValueChargebackCostAllocation = default!;
         /// <summary>Defines your platform&apos;s commission for the processed payments as a fixed amount (specified in minor units), a percentage (specified in basis points), or both. The commission is booked to your platform&apos;s liable balance account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicCommission? Commission { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicCommission? Commission { get => _explicitNullValueCommission; set { _explicitNullValueCommission = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commission"); else _explicitNullProperties?.Remove("commission"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicCommission? _explicitNullValueCommission = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicCommission Commission { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicCommission Commission { get => _explicitNullValueCommission; set { _explicitNullValueCommission = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commission"); else _explicitNullProperties?.Remove("commission"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicCommission _explicitNullValueCommission = default!;
 #endif
         /// <summary>Defines the logic for booking the markup paid by the customer for Dynamic Currency Conversion (DCC).&gt; This field is in pilot phase, and not yet available for all platforms.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicDcc? Dcc { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicDcc? Dcc { get => _explicitNullValueDcc; set { _explicitNullValueDcc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dcc"); else _explicitNullProperties?.Remove("dcc"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicDcc? _explicitNullValueDcc = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicDcc Dcc { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicDcc Dcc { get => _explicitNullValueDcc; set { _explicitNullValueDcc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dcc"); else _explicitNullProperties?.Remove("dcc"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicDcc _explicitNullValueDcc = default!;
 #endif
         /// <summary>Deducts the interchange fee from specified balance account.Possible values: **deductFromLiableAccount**, **deductFromOneBalanceAccount**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicInterchange? Interchange { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicInterchange? Interchange { get => _explicitNullValueInterchange; set { _explicitNullValueInterchange = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interchange"); else _explicitNullProperties?.Remove("interchange"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicInterchange? _explicitNullValueInterchange = default!;
         /// <summary>Deducts all transaction fees incurred by the payment from the specified balance account. The transaction fees include the acquiring fees (interchange and scheme fee), and the fees due to Adyen (markup or commission). You can book any and all these fees to different balance account by specifying other transaction fee parameters in your split configuration profile:- [`adyenCommission`](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/(merchantId)/splitConfigurations#request-rules-splitLogic-adyenCommission): The transaction fee due to Adyen under [blended rates](https://www.adyen.com/knowledge-hub/interchange-fees-explained#interchange-vs-blended).- [`adyenMarkup`](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/(merchantId)/splitConfigurations#request-rules-splitLogic-adyenMarkup): The transaction fee due to Adyen under [Interchange ++ pricing](https://www.adyen.com/knowledge-hub/interchange-fees-explained#interchange-vs-blended).- [`schemeFee`](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/(merchantId)/splitConfigurations#request-rules-splitLogic-schemeFee): The fee paid to the card scheme for using their network.- [`interchange`](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/(merchantId)/splitConfigurations#request-rules-splitLogic-interchange): The fee paid to the issuer for each payment transaction made with the card network.- [`adyenFees`](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/(merchantId)/splitConfigurations#request-rules-splitLogic-adyenFees): The aggregated amount of Adyen&apos;s commission and markup.- [`acquiringFees`](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/(merchantId)/splitConfigurations#request-rules-splitLogic-acquiringFees): The aggregated amount of the interchange and scheme fees.If you don&apos;t include at least one transaction fee type in the `splitLogic` object, Adyen updates the payment request with the `paymentFee` parameter, booking all transaction fees to your platform&apos;s liable balance account.Possible values: **deductFromLiableAccount**, **deductFromOneBalanceAccount**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicPaymentFee? PaymentFee { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicPaymentFee? PaymentFee { get => _explicitNullValuePaymentFee; set { _explicitNullValuePaymentFee = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentFee"); else _explicitNullProperties?.Remove("paymentFee"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicPaymentFee? _explicitNullValuePaymentFee = default!;
         /// <summary>Specifies how and from which balance account(s) to deduct the refund amount.Possible values: **deductFromLiableAccount**, **deductFromOneBalanceAccount**, **deductAccordingToSplitRatio**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicRefund? Refund { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicRefund? Refund { get => _explicitNullValueRefund; set { _explicitNullValueRefund = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("refund"); else _explicitNullProperties?.Remove("refund"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicRefund? _explicitNullValueRefund = default!;
         /// <summary>Deducts the refund costs from the specified balance account.Possible values: **deductFromLiableAccount**, **deductFromOneBalanceAccount**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicRefundCostAllocation? RefundCostAllocation { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicRefundCostAllocation? RefundCostAllocation { get => _explicitNullValueRefundCostAllocation; set { _explicitNullValueRefundCostAllocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("refundCostAllocation"); else _explicitNullProperties?.Remove("refundCostAllocation"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicRefundCostAllocation? _explicitNullValueRefundCostAllocation = default!;
         /// <summary>Books the amount left over after currency conversion to the specified balance account.Possible values: **addToLiableAccount**, **addToOneBalanceAccount**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicRemainder? Remainder { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicRemainder? Remainder { get => _explicitNullValueRemainder; set { _explicitNullValueRemainder = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remainder"); else _explicitNullProperties?.Remove("remainder"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicRemainder? _explicitNullValueRemainder = default!;
         /// <summary>Deducts the scheme fee from the specified balance account.Possible values: **deductFromLiableAccount**, **deductFromOneBalanceAccount**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicSchemeFee? SchemeFee { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicSchemeFee? SchemeFee { get => _explicitNullValueSchemeFee; set { _explicitNullValueSchemeFee = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schemeFee"); else _explicitNullProperties?.Remove("schemeFee"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicSchemeFee? _explicitNullValueSchemeFee = default!;
         /// <summary>Unique identifier of the collection of split instructions that are applied when the rule conditions are met.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -72,9 +114,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string SplitLogicId { get; private set; }
 #endif
         /// <summary>Books the surcharge amount to the specified balance account.Possible values: **addToLiableAccount**, **addToOneBalanceAccount**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicSurcharge? Surcharge { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicSurcharge? Surcharge { get => _explicitNullValueSurcharge; set { _explicitNullValueSurcharge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("surcharge"); else _explicitNullProperties?.Remove("surcharge"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicSurcharge? _explicitNullValueSurcharge = default!;
         /// <summary>Books the tips (gratuity) to the specified balance account.Possible values: **addToLiableAccount**, **addToOneBalanceAccount**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicTip? Tip { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicTip? Tip { get => _explicitNullValueTip; set { _explicitNullValueTip = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tip"); else _explicitNullProperties?.Remove("tip"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicTip? _explicitNullValueTip = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationRuleSplitLogic"/> and sets the default values.
         /// </summary>
@@ -90,7 +134,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationRuleSplitLogic CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationRuleSplitLogic();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationRuleSplitLogic(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -144,6 +188,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicSchemeFee>("schemeFee", SchemeFee);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicSurcharge>("surcharge", Surcharge);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicTip>("tip", Tip);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

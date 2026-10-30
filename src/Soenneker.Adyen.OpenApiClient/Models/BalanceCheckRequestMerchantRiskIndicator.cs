@@ -12,79 +12,121 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BalanceCheckRequestMerchantRiskIndicator : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("addressMatch") is { } nullNodeAddressMatch && nullNodeAddressMatch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddressMatch = null;
+            if (parseNode.GetChildNode("deliveryAddressIndicator") is { } nullNodeDeliveryAddressIndicator && nullNodeDeliveryAddressIndicator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeliveryAddressIndicator = null;
+            if (parseNode.GetChildNode("deliveryEmail") is { } nullNodeDeliveryEmail && nullNodeDeliveryEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeliveryEmail = null;
+            if (parseNode.GetChildNode("deliveryEmailAddress") is { } nullNodeDeliveryEmailAddress && nullNodeDeliveryEmailAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeliveryEmailAddress = null;
+            if (parseNode.GetChildNode("deliveryTimeframe") is { } nullNodeDeliveryTimeframe && nullNodeDeliveryTimeframe.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeliveryTimeframe = null;
+            if (parseNode.GetChildNode("giftCardAmount") is { } nullNodeGiftCardAmount && nullNodeGiftCardAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GiftCardAmount = null;
+            if (parseNode.GetChildNode("giftCardCount") is { } nullNodeGiftCardCount && nullNodeGiftCardCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GiftCardCount = null;
+            if (parseNode.GetChildNode("giftCardCurr") is { } nullNodeGiftCardCurr && nullNodeGiftCardCurr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GiftCardCurr = null;
+            if (parseNode.GetChildNode("preOrderDate") is { } nullNodePreOrderDate && nullNodePreOrderDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreOrderDate = null;
+            if (parseNode.GetChildNode("preOrderPurchase") is { } nullNodePreOrderPurchase && nullNodePreOrderPurchase.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreOrderPurchase = null;
+            if (parseNode.GetChildNode("preOrderPurchaseInd") is { } nullNodePreOrderPurchaseInd && nullNodePreOrderPurchaseInd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreOrderPurchaseInd = null;
+            if (parseNode.GetChildNode("reorderItems") is { } nullNodeReorderItems && nullNodeReorderItems.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReorderItems = null;
+            if (parseNode.GetChildNode("reorderItemsInd") is { } nullNodeReorderItemsInd && nullNodeReorderItemsInd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReorderItemsInd = null;
+            if (parseNode.GetChildNode("shipIndicator") is { } nullNodeShipIndicator && nullNodeShipIndicator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShipIndicator = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the chosen delivery address is identical to the billing address.</summary>
-        public bool? AddressMatch { get; set; }
+        public bool? AddressMatch { get => _explicitNullValueAddressMatch; set { _explicitNullValueAddressMatch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("addressMatch"); else _explicitNullProperties?.Remove("addressMatch"); } }
+        private bool? _explicitNullValueAddressMatch = default!;
         /// <summary>Indicator regarding the delivery address.Allowed values:* `shipToBillingAddress`* `shipToVerifiedAddress`* `shipToNewAddress`* `shipToStore`* `digitalGoods`* `goodsNotShipped`* `other`</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.MerchantRiskIndicatorDeliveryAddressIndicator? DeliveryAddressIndicator { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MerchantRiskIndicatorDeliveryAddressIndicator? DeliveryAddressIndicator { get => _explicitNullValueDeliveryAddressIndicator; set { _explicitNullValueDeliveryAddressIndicator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deliveryAddressIndicator"); else _explicitNullProperties?.Remove("deliveryAddressIndicator"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.MerchantRiskIndicatorDeliveryAddressIndicator? _explicitNullValueDeliveryAddressIndicator = default!;
         /// <summary>The delivery email address (for digital goods).</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeliveryEmail { get; set; }
+        public string? DeliveryEmail { get => _explicitNullValueDeliveryEmail; set { _explicitNullValueDeliveryEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deliveryEmail"); else _explicitNullProperties?.Remove("deliveryEmail"); } }
+        private string? _explicitNullValueDeliveryEmail = default!;
 #nullable restore
 #else
-        public string DeliveryEmail { get; set; }
+        public string DeliveryEmail { get => _explicitNullValueDeliveryEmail; set { _explicitNullValueDeliveryEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deliveryEmail"); else _explicitNullProperties?.Remove("deliveryEmail"); } }
+        private string _explicitNullValueDeliveryEmail = default!;
 #endif
         /// <summary>For Electronic delivery, the email address to which the merchandise was delivered. Maximum length: 254 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeliveryEmailAddress { get; set; }
+        public string? DeliveryEmailAddress { get => _explicitNullValueDeliveryEmailAddress; set { _explicitNullValueDeliveryEmailAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deliveryEmailAddress"); else _explicitNullProperties?.Remove("deliveryEmailAddress"); } }
+        private string? _explicitNullValueDeliveryEmailAddress = default!;
 #nullable restore
 #else
-        public string DeliveryEmailAddress { get; set; }
+        public string DeliveryEmailAddress { get => _explicitNullValueDeliveryEmailAddress; set { _explicitNullValueDeliveryEmailAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deliveryEmailAddress"); else _explicitNullProperties?.Remove("deliveryEmailAddress"); } }
+        private string _explicitNullValueDeliveryEmailAddress = default!;
 #endif
         /// <summary>The estimated delivery time for the shopper to receive the goods.Allowed values:* `electronicDelivery`* `sameDayShipping`* `overnightShipping`* `twoOrMoreDaysShipping`</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.MerchantRiskIndicatorDeliveryTimeframe? DeliveryTimeframe { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MerchantRiskIndicatorDeliveryTimeframe? DeliveryTimeframe { get => _explicitNullValueDeliveryTimeframe; set { _explicitNullValueDeliveryTimeframe = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deliveryTimeframe"); else _explicitNullProperties?.Remove("deliveryTimeframe"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.MerchantRiskIndicatorDeliveryTimeframe? _explicitNullValueDeliveryTimeframe = default!;
         /// <summary>For prepaid or gift card purchase, the purchase amount total of prepaid or gift card(s).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.MerchantRiskIndicatorGiftCardAmount? GiftCardAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MerchantRiskIndicatorGiftCardAmount? GiftCardAmount { get => _explicitNullValueGiftCardAmount; set { _explicitNullValueGiftCardAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("giftCardAmount"); else _explicitNullProperties?.Remove("giftCardAmount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.MerchantRiskIndicatorGiftCardAmount? _explicitNullValueGiftCardAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.MerchantRiskIndicatorGiftCardAmount GiftCardAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MerchantRiskIndicatorGiftCardAmount GiftCardAmount { get => _explicitNullValueGiftCardAmount; set { _explicitNullValueGiftCardAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("giftCardAmount"); else _explicitNullProperties?.Remove("giftCardAmount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.MerchantRiskIndicatorGiftCardAmount _explicitNullValueGiftCardAmount = default!;
 #endif
         /// <summary>For prepaid or gift card purchase, total count of individual prepaid or gift cards/codes purchased.</summary>
-        public int? GiftCardCount { get; set; }
+        public int? GiftCardCount { get => _explicitNullValueGiftCardCount; set { _explicitNullValueGiftCardCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("giftCardCount"); else _explicitNullProperties?.Remove("giftCardCount"); } }
+        private int? _explicitNullValueGiftCardCount = default!;
         /// <summary>For prepaid or gift card purchase, [ISO 4217](https://www.iso.org/iso-4217-currency-codes.html) three-digit currency code of the gift card, other than those listed in Table A.5 of the EMVCo 3D Secure Protocol and Core Functions Specification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GiftCardCurr { get; set; }
+        public string? GiftCardCurr { get => _explicitNullValueGiftCardCurr; set { _explicitNullValueGiftCardCurr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("giftCardCurr"); else _explicitNullProperties?.Remove("giftCardCurr"); } }
+        private string? _explicitNullValueGiftCardCurr = default!;
 #nullable restore
 #else
-        public string GiftCardCurr { get; set; }
+        public string GiftCardCurr { get => _explicitNullValueGiftCardCurr; set { _explicitNullValueGiftCardCurr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("giftCardCurr"); else _explicitNullProperties?.Remove("giftCardCurr"); } }
+        private string _explicitNullValueGiftCardCurr = default!;
 #endif
         /// <summary>For pre-order purchases, the expected date this product will be available to the shopper.</summary>
-        public DateTimeOffset? PreOrderDate { get; set; }
+        public DateTimeOffset? PreOrderDate { get => _explicitNullValuePreOrderDate; set { _explicitNullValuePreOrderDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preOrderDate"); else _explicitNullProperties?.Remove("preOrderDate"); } }
+        private DateTimeOffset? _explicitNullValuePreOrderDate = default!;
         /// <summary>Indicator for whether this transaction is for pre-ordering a product.</summary>
-        public bool? PreOrderPurchase { get; set; }
+        public bool? PreOrderPurchase { get => _explicitNullValuePreOrderPurchase; set { _explicitNullValuePreOrderPurchase = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preOrderPurchase"); else _explicitNullProperties?.Remove("preOrderPurchase"); } }
+        private bool? _explicitNullValuePreOrderPurchase = default!;
         /// <summary>Indicates whether Cardholder is placing an order for merchandise with a future availability or release date.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreOrderPurchaseInd { get; set; }
+        public string? PreOrderPurchaseInd { get => _explicitNullValuePreOrderPurchaseInd; set { _explicitNullValuePreOrderPurchaseInd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preOrderPurchaseInd"); else _explicitNullProperties?.Remove("preOrderPurchaseInd"); } }
+        private string? _explicitNullValuePreOrderPurchaseInd = default!;
 #nullable restore
 #else
-        public string PreOrderPurchaseInd { get; set; }
+        public string PreOrderPurchaseInd { get => _explicitNullValuePreOrderPurchaseInd; set { _explicitNullValuePreOrderPurchaseInd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preOrderPurchaseInd"); else _explicitNullProperties?.Remove("preOrderPurchaseInd"); } }
+        private string _explicitNullValuePreOrderPurchaseInd = default!;
 #endif
         /// <summary>Indicator for whether the shopper has already purchased the same items in the past.</summary>
-        public bool? ReorderItems { get; set; }
+        public bool? ReorderItems { get => _explicitNullValueReorderItems; set { _explicitNullValueReorderItems = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reorderItems"); else _explicitNullProperties?.Remove("reorderItems"); } }
+        private bool? _explicitNullValueReorderItems = default!;
         /// <summary>Indicates whether the cardholder is reordering previously purchased merchandise.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReorderItemsInd { get; set; }
+        public string? ReorderItemsInd { get => _explicitNullValueReorderItemsInd; set { _explicitNullValueReorderItemsInd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reorderItemsInd"); else _explicitNullProperties?.Remove("reorderItemsInd"); } }
+        private string? _explicitNullValueReorderItemsInd = default!;
 #nullable restore
 #else
-        public string ReorderItemsInd { get; set; }
+        public string ReorderItemsInd { get => _explicitNullValueReorderItemsInd; set { _explicitNullValueReorderItemsInd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reorderItemsInd"); else _explicitNullProperties?.Remove("reorderItemsInd"); } }
+        private string _explicitNullValueReorderItemsInd = default!;
 #endif
         /// <summary>Indicates shipping method chosen for the transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ShipIndicator { get; set; }
+        public string? ShipIndicator { get => _explicitNullValueShipIndicator; set { _explicitNullValueShipIndicator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shipIndicator"); else _explicitNullProperties?.Remove("shipIndicator"); } }
+        private string? _explicitNullValueShipIndicator = default!;
 #nullable restore
 #else
-        public string ShipIndicator { get; set; }
+        public string ShipIndicator { get => _explicitNullValueShipIndicator; set { _explicitNullValueShipIndicator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shipIndicator"); else _explicitNullProperties?.Remove("shipIndicator"); } }
+        private string _explicitNullValueShipIndicator = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestMerchantRiskIndicator"/> and sets the default values.
@@ -101,7 +143,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestMerchantRiskIndicator CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestMerchantRiskIndicator();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestMerchantRiskIndicator(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -148,6 +190,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteBoolValue("reorderItems", ReorderItems);
             writer.WriteStringValue("reorderItemsInd", ReorderItemsInd);
             writer.WriteStringValue("shipIndicator", ShipIndicator);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,27 +12,42 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PaymentValidationsResponseName : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("rawResponse") is { } nullNodeRawResponse && nullNodeRawResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RawResponse = null;
+            if (parseNode.GetChildNode("result") is { } nullNodeResult && nullNodeResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Result = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Contains the raw response(s) returned by the scheme for the name validation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentValidationsNameResponseRawResponse? RawResponse { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentValidationsNameResponseRawResponse? RawResponse { get => _explicitNullValueRawResponse; set { _explicitNullValueRawResponse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rawResponse"); else _explicitNullProperties?.Remove("rawResponse"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentValidationsNameResponseRawResponse? _explicitNullValueRawResponse = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentValidationsNameResponseRawResponse RawResponse { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentValidationsNameResponseRawResponse RawResponse { get => _explicitNullValueRawResponse; set { _explicitNullValueRawResponse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rawResponse"); else _explicitNullProperties?.Remove("rawResponse"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentValidationsNameResponseRawResponse _explicitNullValueRawResponse = default!;
 #endif
         /// <summary>Contains the scheme-agnostic match values returned by Adyen.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentValidationsNameResponseResult? Result { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentValidationsNameResponseResult? Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentValidationsNameResponseResult? _explicitNullValueResult = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentValidationsNameResponseResult Result { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentValidationsNameResponseResult Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentValidationsNameResponseResult _explicitNullValueResult = default!;
 #endif
         /// <summary>Informs you if the name validation was performed. Possible values:**performed**, **notPerformed**, **notSupported**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentValidationsNameResponseStatus? Status { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentValidationsNameResponseStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentValidationsNameResponseStatus? _explicitNullValueStatus = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentValidationsResponseName"/> and sets the default values.
         /// </summary>
@@ -48,7 +63,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.PaymentValidationsResponseName CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.PaymentValidationsResponseName();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.PaymentValidationsResponseName(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,6 +88,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentValidationsNameResponseRawResponse>("rawResponse", RawResponse);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentValidationsNameResponseResult>("result", Result);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentValidationsNameResponseStatus>("status", Status);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

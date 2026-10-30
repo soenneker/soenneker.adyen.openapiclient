@@ -13,35 +13,63 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TerminalApiV1PaymentResultInstalment : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("Charges") is { } nullNodeCharges && nullNodeCharges.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Charges = null;
+            if (parseNode.GetChildNode("CumulativeAmount") is { } nullNodeCumulativeAmount && nullNodeCumulativeAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CumulativeAmount = null;
+            if (parseNode.GetChildNode("FirstAmount") is { } nullNodeFirstAmount && nullNodeFirstAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstAmount = null;
+            if (parseNode.GetChildNode("FirstPaymentDate") is { } nullNodeFirstPaymentDate && nullNodeFirstPaymentDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstPaymentDate = null;
+            if (parseNode.GetChildNode("InstalmentType") is { } nullNodeInstalmentType && nullNodeInstalmentType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstalmentType = null;
+            if (parseNode.GetChildNode("Period") is { } nullNodePeriod && nullNodePeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Period = null;
+            if (parseNode.GetChildNode("PeriodUnit") is { } nullNodePeriodUnit && nullNodePeriodUnit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PeriodUnit = null;
+            if (parseNode.GetChildNode("PlanID") is { } nullNodePlanID && nullNodePlanID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlanID = null;
+            if (parseNode.GetChildNode("SequenceNumber") is { } nullNodeSequenceNumber && nullNodeSequenceNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SequenceNumber = null;
+            if (parseNode.GetChildNode("TotalNbOfPayments") is { } nullNodeTotalNbOfPayments && nullNodeTotalNbOfPayments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalNbOfPayments = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Charges related to a transaction. Charge related to the payment instalments.</summary>
-        public double? Charges { get; set; }
+        public double? Charges { get => _explicitNullValueCharges; set { _explicitNullValueCharges = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Charges"); else _explicitNullProperties?.Remove("Charges"); } }
+        private double? _explicitNullValueCharges = default!;
         /// <summary>Sum of a collection of amounts. Total amount of the payment instalments.</summary>
-        public double? CumulativeAmount { get; set; }
+        public double? CumulativeAmount { get => _explicitNullValueCumulativeAmount; set { _explicitNullValueCumulativeAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CumulativeAmount"); else _explicitNullProperties?.Remove("CumulativeAmount"); } }
+        private double? _explicitNullValueCumulativeAmount = default!;
         /// <summary>First amount of the payment instalments.</summary>
-        public double? FirstAmount { get; set; }
+        public double? FirstAmount { get => _explicitNullValueFirstAmount; set { _explicitNullValueFirstAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("FirstAmount"); else _explicitNullProperties?.Remove("FirstAmount"); } }
+        private double? _explicitNullValueFirstAmount = default!;
         /// <summary>First date of a payment. For instalment, the date of the first payments, if not immediate.</summary>
-        public Date? FirstPaymentDate { get; set; }
+        public Date? FirstPaymentDate { get => _explicitNullValueFirstPaymentDate; set { _explicitNullValueFirstPaymentDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("FirstPaymentDate"); else _explicitNullProperties?.Remove("FirstPaymentDate"); } }
+        private Date? _explicitNullValueFirstPaymentDate = default!;
         /// <summary>Type of instalment transaction. For requesting an instalment payment transaction.Possible values:* **DeferredInstalments*** **EqualInstalments*** **InequalInstalments**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.InstalmentInstalmentType? InstalmentType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.InstalmentInstalmentType? InstalmentType { get => _explicitNullValueInstalmentType; set { _explicitNullValueInstalmentType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("InstalmentType"); else _explicitNullProperties?.Remove("InstalmentType"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.InstalmentInstalmentType? _explicitNullValueInstalmentType = default!;
         /// <summary>Period of time with defined unit of time. A period between 2 payment instalments.</summary>
-        public int? Period { get; set; }
+        public int? Period { get => _explicitNullValuePeriod; set { _explicitNullValuePeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Period"); else _explicitNullProperties?.Remove("Period"); } }
+        private int? _explicitNullValuePeriod = default!;
         /// <summary>Type of instalment transaction.Possible values:* **Daily*** **Weekly*** **Monthly*** **Annual**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.InstalmentPeriodUnit? PeriodUnit { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.InstalmentPeriodUnit? PeriodUnit { get => _explicitNullValuePeriodUnit; set { _explicitNullValuePeriodUnit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PeriodUnit"); else _explicitNullProperties?.Remove("PeriodUnit"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.InstalmentPeriodUnit? _explicitNullValuePeriodUnit = default!;
         /// <summary>Identification of an instalment plan.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PlanID { get; set; }
+        public string? PlanID { get => _explicitNullValuePlanID; set { _explicitNullValuePlanID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PlanID"); else _explicitNullProperties?.Remove("PlanID"); } }
+        private string? _explicitNullValuePlanID = default!;
 #nullable restore
 #else
-        public string PlanID { get; set; }
+        public string PlanID { get => _explicitNullValuePlanID; set { _explicitNullValuePlanID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PlanID"); else _explicitNullProperties?.Remove("PlanID"); } }
+        private string _explicitNullValuePlanID = default!;
 #endif
         /// <summary>Sequence number of the instalment. For an instalment payment transaction, number of the payment, from 1 to TotalNbOfPayments.</summary>
-        public int? SequenceNumber { get; set; }
+        public int? SequenceNumber { get => _explicitNullValueSequenceNumber; set { _explicitNullValueSequenceNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SequenceNumber"); else _explicitNullProperties?.Remove("SequenceNumber"); } }
+        private int? _explicitNullValueSequenceNumber = default!;
         /// <summary>Total number of payments. For instalment, the number of payments, including the first one.</summary>
-        public int? TotalNbOfPayments { get; set; }
+        public int? TotalNbOfPayments { get => _explicitNullValueTotalNbOfPayments; set { _explicitNullValueTotalNbOfPayments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TotalNbOfPayments"); else _explicitNullProperties?.Remove("TotalNbOfPayments"); } }
+        private int? _explicitNullValueTotalNbOfPayments = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultInstalment"/> and sets the default values.
         /// </summary>
@@ -57,7 +85,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultInstalment CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultInstalment();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultInstalment(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -96,6 +124,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("PlanID", PlanID);
             writer.WriteIntValue("SequenceNumber", SequenceNumber);
             writer.WriteIntValue("TotalNbOfPayments", TotalNbOfPayments);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

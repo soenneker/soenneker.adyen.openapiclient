@@ -11,56 +11,81 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ThreeDs2CardRangeDetail : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("acsInfoInd") is { } nullNodeAcsInfoInd && nullNodeAcsInfoInd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcsInfoInd = null;
+            if (parseNode.GetChildNode("brandCode") is { } nullNodeBrandCode && nullNodeBrandCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BrandCode = null;
+            if (parseNode.GetChildNode("endRange") is { } nullNodeEndRange && nullNodeEndRange.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndRange = null;
+            if (parseNode.GetChildNode("startRange") is { } nullNodeStartRange && nullNodeStartRange.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartRange = null;
+            if (parseNode.GetChildNode("threeDS2Versions") is { } nullNodeThreeDS2Versions && nullNodeThreeDS2Versions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDS2Versions = null;
+            if (parseNode.GetChildNode("threeDSMethodURL") is { } nullNodeThreeDSMethodURL && nullNodeThreeDSMethodURL.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDSMethodURL = null;
+        }
+
         /// <summary>Provides additional information to the 3DS Server.Possible values:- 01 (Authentication is available at ACS)- 02 (Attempts supported by ACS or DS)- 03 (Decoupled authentication supported)- 04 (Whitelisting supported)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AcsInfoInd { get; set; }
+        public List<string>? AcsInfoInd { get => _explicitNullValueAcsInfoInd; set { _explicitNullValueAcsInfoInd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acsInfoInd"); else _explicitNullProperties?.Remove("acsInfoInd"); } }
+        private List<string>? _explicitNullValueAcsInfoInd = default!;
 #nullable restore
 #else
-        public List<string> AcsInfoInd { get; set; }
+        public List<string> AcsInfoInd { get => _explicitNullValueAcsInfoInd; set { _explicitNullValueAcsInfoInd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acsInfoInd"); else _explicitNullProperties?.Remove("acsInfoInd"); } }
+        private List<string> _explicitNullValueAcsInfoInd = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Card brand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BrandCode { get; set; }
+        public string? BrandCode { get => _explicitNullValueBrandCode; set { _explicitNullValueBrandCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("brandCode"); else _explicitNullProperties?.Remove("brandCode"); } }
+        private string? _explicitNullValueBrandCode = default!;
 #nullable restore
 #else
-        public string BrandCode { get; set; }
+        public string BrandCode { get => _explicitNullValueBrandCode; set { _explicitNullValueBrandCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("brandCode"); else _explicitNullProperties?.Remove("brandCode"); } }
+        private string _explicitNullValueBrandCode = default!;
 #endif
         /// <summary>BIN end range.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EndRange { get; set; }
+        public string? EndRange { get => _explicitNullValueEndRange; set { _explicitNullValueEndRange = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endRange"); else _explicitNullProperties?.Remove("endRange"); } }
+        private string? _explicitNullValueEndRange = default!;
 #nullable restore
 #else
-        public string EndRange { get; set; }
+        public string EndRange { get => _explicitNullValueEndRange; set { _explicitNullValueEndRange = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endRange"); else _explicitNullProperties?.Remove("endRange"); } }
+        private string _explicitNullValueEndRange = default!;
 #endif
         /// <summary>BIN start range.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StartRange { get; set; }
+        public string? StartRange { get => _explicitNullValueStartRange; set { _explicitNullValueStartRange = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startRange"); else _explicitNullProperties?.Remove("startRange"); } }
+        private string? _explicitNullValueStartRange = default!;
 #nullable restore
 #else
-        public string StartRange { get; set; }
+        public string StartRange { get => _explicitNullValueStartRange; set { _explicitNullValueStartRange = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startRange"); else _explicitNullProperties?.Remove("startRange"); } }
+        private string _explicitNullValueStartRange = default!;
 #endif
         /// <summary>Supported 3D Secure protocol versions</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ThreeDS2Versions { get; set; }
+        public List<string>? ThreeDS2Versions { get => _explicitNullValueThreeDS2Versions; set { _explicitNullValueThreeDS2Versions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDS2Versions"); else _explicitNullProperties?.Remove("threeDS2Versions"); } }
+        private List<string>? _explicitNullValueThreeDS2Versions = default!;
 #nullable restore
 #else
-        public List<string> ThreeDS2Versions { get; set; }
+        public List<string> ThreeDS2Versions { get => _explicitNullValueThreeDS2Versions; set { _explicitNullValueThreeDS2Versions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDS2Versions"); else _explicitNullProperties?.Remove("threeDS2Versions"); } }
+        private List<string> _explicitNullValueThreeDS2Versions = default!;
 #endif
         /// <summary>In a 3D Secure 2 browser-based flow, this is the URL where you should send the device fingerprint to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ThreeDSMethodURL { get; set; }
+        public string? ThreeDSMethodURL { get => _explicitNullValueThreeDSMethodURL; set { _explicitNullValueThreeDSMethodURL = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSMethodURL"); else _explicitNullProperties?.Remove("threeDSMethodURL"); } }
+        private string? _explicitNullValueThreeDSMethodURL = default!;
 #nullable restore
 #else
-        public string ThreeDSMethodURL { get; set; }
+        public string ThreeDSMethodURL { get => _explicitNullValueThreeDSMethodURL; set { _explicitNullValueThreeDSMethodURL = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSMethodURL"); else _explicitNullProperties?.Remove("threeDSMethodURL"); } }
+        private string _explicitNullValueThreeDSMethodURL = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2CardRangeDetail"/> and sets the default values.
@@ -77,7 +102,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2CardRangeDetail CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2CardRangeDetail();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2CardRangeDetail(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -108,6 +133,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("startRange", StartRange);
             writer.WriteCollectionOfPrimitiveValues<string>("threeDS2Versions", ThreeDS2Versions);
             writer.WriteStringValue("threeDSMethodURL", ThreeDSMethodURL);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

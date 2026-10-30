@@ -12,48 +12,70 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WebhookLinksComposed : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("company") is { } nullNodeCompany && nullNodeCompany.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Company = null;
+            if (parseNode.GetChildNode("generateHmac") is { } nullNodeGenerateHmac && nullNodeGenerateHmac.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GenerateHmac = null;
+            if (parseNode.GetChildNode("merchant") is { } nullNodeMerchant && nullNodeMerchant.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Merchant = null;
+            if (parseNode.GetChildNode("self") is { } nullNodeSelf && nullNodeSelf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Self = null;
+            if (parseNode.GetChildNode("testWebhook") is { } nullNodeTestWebhook && nullNodeTestWebhook.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TestWebhook = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The company account that the webhook is configured for. Only present for company-level webhooks.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksCompany? Company { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksCompany? Company { get => _explicitNullValueCompany; set { _explicitNullValueCompany = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("company"); else _explicitNullProperties?.Remove("company"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksCompany? _explicitNullValueCompany = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksCompany Company { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksCompany Company { get => _explicitNullValueCompany; set { _explicitNullValueCompany = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("company"); else _explicitNullProperties?.Remove("company"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksCompany _explicitNullValueCompany = default!;
 #endif
         /// <summary>Generate an HMAC key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksGenerateHmac? GenerateHmac { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksGenerateHmac? GenerateHmac { get => _explicitNullValueGenerateHmac; set { _explicitNullValueGenerateHmac = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generateHmac"); else _explicitNullProperties?.Remove("generateHmac"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksGenerateHmac? _explicitNullValueGenerateHmac = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksGenerateHmac GenerateHmac { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksGenerateHmac GenerateHmac { get => _explicitNullValueGenerateHmac; set { _explicitNullValueGenerateHmac = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generateHmac"); else _explicitNullProperties?.Remove("generateHmac"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksGenerateHmac _explicitNullValueGenerateHmac = default!;
 #endif
         /// <summary>The merchant account that the webhook is configured for. Only present for merchant-level webhooks.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksMerchant? Merchant { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksMerchant? Merchant { get => _explicitNullValueMerchant; set { _explicitNullValueMerchant = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchant"); else _explicitNullProperties?.Remove("merchant"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksMerchant? _explicitNullValueMerchant = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksMerchant Merchant { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksMerchant Merchant { get => _explicitNullValueMerchant; set { _explicitNullValueMerchant = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchant"); else _explicitNullProperties?.Remove("merchant"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksMerchant _explicitNullValueMerchant = default!;
 #endif
         /// <summary>Link to the resource itself.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksSelf? Self { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksSelf? Self { get => _explicitNullValueSelf; set { _explicitNullValueSelf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("self"); else _explicitNullProperties?.Remove("self"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksSelf? _explicitNullValueSelf = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksSelf Self { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksSelf Self { get => _explicitNullValueSelf; set { _explicitNullValueSelf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("self"); else _explicitNullProperties?.Remove("self"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksSelf _explicitNullValueSelf = default!;
 #endif
         /// <summary>Test the webhook setup.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksTestWebhook? TestWebhook { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksTestWebhook? TestWebhook { get => _explicitNullValueTestWebhook; set { _explicitNullValueTestWebhook = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("testWebhook"); else _explicitNullProperties?.Remove("testWebhook"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksTestWebhook? _explicitNullValueTestWebhook = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksTestWebhook TestWebhook { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksTestWebhook TestWebhook { get => _explicitNullValueTestWebhook; set { _explicitNullValueTestWebhook = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("testWebhook"); else _explicitNullProperties?.Remove("testWebhook"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksTestWebhook _explicitNullValueTestWebhook = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksComposed"/> and sets the default values.
@@ -70,7 +92,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksComposed CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksComposed();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksComposed(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -99,6 +121,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksMerchant>("merchant", Merchant);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksSelf>("self", Self);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksTestWebhook>("testWebhook", TestWebhook);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,24 +11,37 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RecurringDetailTokenDetails : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("tokenData") is { } nullNodeTokenData && nullNodeTokenData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TokenData = null;
+            if (parseNode.GetChildNode("tokenDataType") is { } nullNodeTokenDataType && nullNodeTokenDataType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TokenDataType = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The tokenData property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TokenDetailsTokenDataProperty2? TokenData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TokenDetailsTokenDataProperty2? TokenData { get => _explicitNullValueTokenData; set { _explicitNullValueTokenData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tokenData"); else _explicitNullProperties?.Remove("tokenData"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TokenDetailsTokenDataProperty2? _explicitNullValueTokenData = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TokenDetailsTokenDataProperty2 TokenData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TokenDetailsTokenDataProperty2 TokenData { get => _explicitNullValueTokenData; set { _explicitNullValueTokenData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tokenData"); else _explicitNullProperties?.Remove("tokenData"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TokenDetailsTokenDataProperty2 _explicitNullValueTokenData = default!;
 #endif
         /// <summary>The tokenDataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TokenDataType { get; set; }
+        public string? TokenDataType { get => _explicitNullValueTokenDataType; set { _explicitNullValueTokenDataType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tokenDataType"); else _explicitNullProperties?.Remove("tokenDataType"); } }
+        private string? _explicitNullValueTokenDataType = default!;
 #nullable restore
 #else
-        public string TokenDataType { get; set; }
+        public string TokenDataType { get => _explicitNullValueTokenDataType; set { _explicitNullValueTokenDataType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tokenDataType"); else _explicitNullProperties?.Remove("tokenDataType"); } }
+        private string _explicitNullValueTokenDataType = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.RecurringDetailTokenDetails"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.RecurringDetailTokenDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.RecurringDetailTokenDetails();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.RecurringDetailTokenDetails(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TokenDetailsTokenDataProperty2>("tokenData", TokenData);
             writer.WriteStringValue("tokenDataType", TokenDataType);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

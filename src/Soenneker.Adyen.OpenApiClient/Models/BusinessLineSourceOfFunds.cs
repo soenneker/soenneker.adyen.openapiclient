@@ -13,82 +13,123 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BusinessLineSourceOfFunds : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("adyenProcessedFunds") is { } nullNodeAdyenProcessedFunds && nullNodeAdyenProcessedFunds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdyenProcessedFunds = null;
+            if (parseNode.GetChildNode("amount") is { } nullNodeAmount && nullNodeAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Amount = null;
+            if (parseNode.GetChildNode("assetMonthsHeld") is { } nullNodeAssetMonthsHeld && nullNodeAssetMonthsHeld.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetMonthsHeld = null;
+            if (parseNode.GetChildNode("cryptocurrencyExchange") is { } nullNodeCryptocurrencyExchange && nullNodeCryptocurrencyExchange.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CryptocurrencyExchange = null;
+            if (parseNode.GetChildNode("dateOfFundsReceived") is { } nullNodeDateOfFundsReceived && nullNodeDateOfFundsReceived.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateOfFundsReceived = null;
+            if (parseNode.GetChildNode("dateOfSourceEvent") is { } nullNodeDateOfSourceEvent && nullNodeDateOfSourceEvent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateOfSourceEvent = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("financiers") is { } nullNodeFinanciers && nullNodeFinanciers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Financiers = null;
+            if (parseNode.GetChildNode("originatorLegalEntityId") is { } nullNodeOriginatorLegalEntityId && nullNodeOriginatorLegalEntityId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginatorLegalEntityId = null;
+            if (parseNode.GetChildNode("purpose") is { } nullNodePurpose && nullNodePurpose.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Purpose = null;
+            if (parseNode.GetChildNode("relationship") is { } nullNodeRelationship && nullNodeRelationship.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Relationship = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("website") is { } nullNodeWebsite && nullNodeWebsite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Website = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether the funds are coming from transactions processed by Adyen. If **false**, the `type` is required.</summary>
-        public bool? AdyenProcessedFunds { get; set; }
+        public bool? AdyenProcessedFunds { get => _explicitNullValueAdyenProcessedFunds; set { _explicitNullValueAdyenProcessedFunds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("adyenProcessedFunds"); else _explicitNullProperties?.Remove("adyenProcessedFunds"); } }
+        private bool? _explicitNullValueAdyenProcessedFunds = default!;
         /// <summary>Required if `type` is **business**, **assetSale**, **gamblingWinnings** or **inheritance**.For `type` **business**, provide the annual turn over of the business. For `type` **assetSale**, **gamblingWinnings** or **inheritance**, provide the amount of the funds.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.SourceOfFundsAmount? Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SourceOfFundsAmount? Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.SourceOfFundsAmount? _explicitNullValueAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.SourceOfFundsAmount Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SourceOfFundsAmount Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.SourceOfFundsAmount _explicitNullValueAmount = default!;
 #endif
         /// <summary>The number of months that the asset has been in possession of the user.For example, if the source of funds is of type **cryptocurrencyIncome** then `assetMonthsHeld` is the number of months the user has owned the cryptocurrency.</summary>
-        public int? AssetMonthsHeld { get; set; }
+        public int? AssetMonthsHeld { get => _explicitNullValueAssetMonthsHeld; set { _explicitNullValueAssetMonthsHeld = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assetMonthsHeld"); else _explicitNullProperties?.Remove("assetMonthsHeld"); } }
+        private int? _explicitNullValueAssetMonthsHeld = default!;
         /// <summary>Required if `type` is **cryptocurrencyIncome**. The cryptocurrency exchange where the funds were acquired.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CryptocurrencyExchange { get; set; }
+        public string? CryptocurrencyExchange { get => _explicitNullValueCryptocurrencyExchange; set { _explicitNullValueCryptocurrencyExchange = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cryptocurrencyExchange"); else _explicitNullProperties?.Remove("cryptocurrencyExchange"); } }
+        private string? _explicitNullValueCryptocurrencyExchange = default!;
 #nullable restore
 #else
-        public string CryptocurrencyExchange { get; set; }
+        public string CryptocurrencyExchange { get => _explicitNullValueCryptocurrencyExchange; set { _explicitNullValueCryptocurrencyExchange = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cryptocurrencyExchange"); else _explicitNullProperties?.Remove("cryptocurrencyExchange"); } }
+        private string _explicitNullValueCryptocurrencyExchange = default!;
 #endif
         /// <summary>Required if `type` is **donations** or **inheritance**. The date the funds were received, in YYYY-MM-DD format.</summary>
-        public Date? DateOfFundsReceived { get; set; }
+        public Date? DateOfFundsReceived { get => _explicitNullValueDateOfFundsReceived; set { _explicitNullValueDateOfFundsReceived = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateOfFundsReceived"); else _explicitNullProperties?.Remove("dateOfFundsReceived"); } }
+        private Date? _explicitNullValueDateOfFundsReceived = default!;
         /// <summary>Required if `type` is **assetSale** or **gamblingWinnings**. The date the funds were received, in YYYY-MM-DD format.For example, if the source of funds is of type **assetSale**, the dateOfSourceEvent is the date of the sale. If the source of funds is of type **gamblingWinnings**, the dateOfSourceEvent is the date of winnings.</summary>
-        public Date? DateOfSourceEvent { get; set; }
+        public Date? DateOfSourceEvent { get => _explicitNullValueDateOfSourceEvent; set { _explicitNullValueDateOfSourceEvent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateOfSourceEvent"); else _explicitNullProperties?.Remove("dateOfSourceEvent"); } }
+        private Date? _explicitNullValueDateOfSourceEvent = default!;
         /// <summary>Required if `type` is **business** or **assetSale**. A description for the source of funds.For example, for `type` **business**, provide a description of where the business transactions come from, such as payments through bank transfer. For `type` **assetSale**, provide a description of the asset. For example, the address of a residential property if it is a property sale.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>Required if `type` is **thirdPartyFunding**. Information about the financiers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.Financier>? Financiers { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.Financier>? Financiers { get => _explicitNullValueFinanciers; set { _explicitNullValueFinanciers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("financiers"); else _explicitNullProperties?.Remove("financiers"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.Financier>? _explicitNullValueFinanciers = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.Financier> Financiers { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.Financier> Financiers { get => _explicitNullValueFinanciers; set { _explicitNullValueFinanciers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("financiers"); else _explicitNullProperties?.Remove("financiers"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.Financier> _explicitNullValueFinanciers = default!;
 #endif
         /// <summary>Required if `type` is **donations** or **inheritance**. The legal entity ID representing the originator of the source of funds.For example, if the source of funds is **inheritance**, then `originatorOfFundsReference` should be the legal entity reference of the benefactor.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OriginatorLegalEntityId { get; set; }
+        public string? OriginatorLegalEntityId { get => _explicitNullValueOriginatorLegalEntityId; set { _explicitNullValueOriginatorLegalEntityId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originatorLegalEntityId"); else _explicitNullProperties?.Remove("originatorLegalEntityId"); } }
+        private string? _explicitNullValueOriginatorLegalEntityId = default!;
 #nullable restore
 #else
-        public string OriginatorLegalEntityId { get; set; }
+        public string OriginatorLegalEntityId { get => _explicitNullValueOriginatorLegalEntityId; set { _explicitNullValueOriginatorLegalEntityId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originatorLegalEntityId"); else _explicitNullProperties?.Remove("originatorLegalEntityId"); } }
+        private string _explicitNullValueOriginatorLegalEntityId = default!;
 #endif
         /// <summary>Required if `type` is **donations**. The reason for receiving the funds.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Purpose { get; set; }
+        public string? Purpose { get => _explicitNullValuePurpose; set { _explicitNullValuePurpose = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purpose"); else _explicitNullProperties?.Remove("purpose"); } }
+        private string? _explicitNullValuePurpose = default!;
 #nullable restore
 #else
-        public string Purpose { get; set; }
+        public string Purpose { get => _explicitNullValuePurpose; set { _explicitNullValuePurpose = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purpose"); else _explicitNullProperties?.Remove("purpose"); } }
+        private string _explicitNullValuePurpose = default!;
 #endif
         /// <summary>Required if `type` is **donations** or **inheritance**. The relationship of the originator of the funds to the recipient.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Relationship { get; set; }
+        public string? Relationship { get => _explicitNullValueRelationship; set { _explicitNullValueRelationship = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relationship"); else _explicitNullProperties?.Remove("relationship"); } }
+        private string? _explicitNullValueRelationship = default!;
 #nullable restore
 #else
-        public string Relationship { get; set; }
+        public string Relationship { get => _explicitNullValueRelationship; set { _explicitNullValueRelationship = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relationship"); else _explicitNullProperties?.Remove("relationship"); } }
+        private string _explicitNullValueRelationship = default!;
 #endif
         /// <summary>The type of the source of funds.Possible values:*  **business***  **employment***  **donations***  **inheritance***  **financialAid***  **rentalIncome***  **dividendIncome***  **royaltyIncome***  **thirdPartyFunding***  **pensionIncome***  **insuranceSettlement***  **cryptocurrencyIncome***  **assetSale***  **loans***  **gamblingWinnings**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.SourceOfFundsType? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SourceOfFundsType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.SourceOfFundsType? _explicitNullValueType = default!;
         /// <summary>Required if `type` is **gamblingWinnings**. The location of the gambling site for the winnings.For example, if the source of funds is online gambling, provide the website of the gambling company.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Website { get; set; }
+        public string? Website { get => _explicitNullValueWebsite; set { _explicitNullValueWebsite = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("website"); else _explicitNullProperties?.Remove("website"); } }
+        private string? _explicitNullValueWebsite = default!;
 #nullable restore
 #else
-        public string Website { get; set; }
+        public string Website { get => _explicitNullValueWebsite; set { _explicitNullValueWebsite = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("website"); else _explicitNullProperties?.Remove("website"); } }
+        private string _explicitNullValueWebsite = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineSourceOfFunds"/> and sets the default values.
@@ -105,7 +146,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineSourceOfFunds CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineSourceOfFunds();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineSourceOfFunds(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -150,6 +191,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("relationship", Relationship);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SourceOfFundsType>("type", Type);
             writer.WriteStringValue("website", Website);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

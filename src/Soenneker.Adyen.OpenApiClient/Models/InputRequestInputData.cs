@@ -12,69 +12,121 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InputRequestInputData : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("BeepKeyFlag") is { } nullNodeBeepKeyFlag && nullNodeBeepKeyFlag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BeepKeyFlag = null;
+            if (parseNode.GetChildNode("DefaultInputString") is { } nullNodeDefaultInputString && nullNodeDefaultInputString.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultInputString = null;
+            if (parseNode.GetChildNode("DefaultLayoutString") is { } nullNodeDefaultLayoutString && nullNodeDefaultLayoutString.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultLayoutString = null;
+            if (parseNode.GetChildNode("Device") is { } nullNodeDevice && nullNodeDevice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Device = null;
+            if (parseNode.GetChildNode("DisableCancelFlag") is { } nullNodeDisableCancelFlag && nullNodeDisableCancelFlag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisableCancelFlag = null;
+            if (parseNode.GetChildNode("DisableCorrectFlag") is { } nullNodeDisableCorrectFlag && nullNodeDisableCorrectFlag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisableCorrectFlag = null;
+            if (parseNode.GetChildNode("DisableValidFlag") is { } nullNodeDisableValidFlag && nullNodeDisableValidFlag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisableValidFlag = null;
+            if (parseNode.GetChildNode("FromRightToLeftFlag") is { } nullNodeFromRightToLeftFlag && nullNodeFromRightToLeftFlag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FromRightToLeftFlag = null;
+            if (parseNode.GetChildNode("GlobalCorrectionFlag") is { } nullNodeGlobalCorrectionFlag && nullNodeGlobalCorrectionFlag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GlobalCorrectionFlag = null;
+            if (parseNode.GetChildNode("ImmediateResponseFlag") is { } nullNodeImmediateResponseFlag && nullNodeImmediateResponseFlag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImmediateResponseFlag = null;
+            if (parseNode.GetChildNode("InfoQualify") is { } nullNodeInfoQualify && nullNodeInfoQualify.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InfoQualify = null;
+            if (parseNode.GetChildNode("InputCommand") is { } nullNodeInputCommand && nullNodeInputCommand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InputCommand = null;
+            if (parseNode.GetChildNode("MaskCharactersFlag") is { } nullNodeMaskCharactersFlag && nullNodeMaskCharactersFlag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaskCharactersFlag = null;
+            if (parseNode.GetChildNode("MaxDecimalLength") is { } nullNodeMaxDecimalLength && nullNodeMaxDecimalLength.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxDecimalLength = null;
+            if (parseNode.GetChildNode("MaxInputTime") is { } nullNodeMaxInputTime && nullNodeMaxInputTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxInputTime = null;
+            if (parseNode.GetChildNode("MaxLength") is { } nullNodeMaxLength && nullNodeMaxLength.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxLength = null;
+            if (parseNode.GetChildNode("MenuBackFlag") is { } nullNodeMenuBackFlag && nullNodeMenuBackFlag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MenuBackFlag = null;
+            if (parseNode.GetChildNode("MinLength") is { } nullNodeMinLength && nullNodeMinLength.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinLength = null;
+            if (parseNode.GetChildNode("NotifyCardInputFlag") is { } nullNodeNotifyCardInputFlag && nullNodeNotifyCardInputFlag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotifyCardInputFlag = null;
+            if (parseNode.GetChildNode("StringMask") is { } nullNodeStringMask && nullNodeStringMask.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StringMask = null;
+            if (parseNode.GetChildNode("WaitUserValidationFlag") is { } nullNodeWaitUserValidationFlag && nullNodeWaitUserValidationFlag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WaitUserValidationFlag = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates, when the user press a key, if a beep has to be generated (value True).</summary>
-        public bool? BeepKeyFlag { get; set; }
+        public bool? BeepKeyFlag { get => _explicitNullValueBeepKeyFlag; set { _explicitNullValueBeepKeyFlag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("BeepKeyFlag"); else _explicitNullProperties?.Remove("BeepKeyFlag"); } }
+        private bool? _explicitNullValueBeepKeyFlag = default!;
         /// <summary>Default string value for an input command. On the `TextString`, `DigitString` and `DecimalString` input commands: default string displayed on the input field before entering the string. In `GetConfirmation` input command: **Y** for yes, **N** for no.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultInputString { get; set; }
+        public string? DefaultInputString { get => _explicitNullValueDefaultInputString; set { _explicitNullValueDefaultInputString = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DefaultInputString"); else _explicitNullProperties?.Remove("DefaultInputString"); } }
+        private string? _explicitNullValueDefaultInputString = default!;
 #nullable restore
 #else
-        public string DefaultInputString { get; set; }
+        public string DefaultInputString { get => _explicitNullValueDefaultInputString; set { _explicitNullValueDefaultInputString = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DefaultInputString"); else _explicitNullProperties?.Remove("DefaultInputString"); } }
+        private string _explicitNullValueDefaultInputString = default!;
 #endif
         /// <summary>The DefaultLayoutString property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultLayoutString { get; set; }
+        public string? DefaultLayoutString { get => _explicitNullValueDefaultLayoutString; set { _explicitNullValueDefaultLayoutString = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DefaultLayoutString"); else _explicitNullProperties?.Remove("DefaultLayoutString"); } }
+        private string? _explicitNullValueDefaultLayoutString = default!;
 #nullable restore
 #else
-        public string DefaultLayoutString { get; set; }
+        public string DefaultLayoutString { get => _explicitNullValueDefaultLayoutString; set { _explicitNullValueDefaultLayoutString = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DefaultLayoutString"); else _explicitNullProperties?.Remove("DefaultLayoutString"); } }
+        private string _explicitNullValueDefaultLayoutString = default!;
 #endif
         /// <summary>Possible values:* **CashierDisplay*** **CustomerDisplay*** **CashierInput*** **CustomerInput**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.InputDataDevice? Device { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.InputDataDevice? Device { get => _explicitNullValueDevice; set { _explicitNullValueDevice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Device"); else _explicitNullProperties?.Remove("Device"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.InputDataDevice? _explicitNullValueDevice = default!;
         /// <summary>Indicates if the Cancel function key has to be deactivated (value True).</summary>
-        public bool? DisableCancelFlag { get; set; }
+        public bool? DisableCancelFlag { get => _explicitNullValueDisableCancelFlag; set { _explicitNullValueDisableCancelFlag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DisableCancelFlag"); else _explicitNullProperties?.Remove("DisableCancelFlag"); } }
+        private bool? _explicitNullValueDisableCancelFlag = default!;
         /// <summary>Indicates if the Correct function key has to be deactivated (value True). During the processing of an Input command `GetConfirmation`, `SiteManager`, or `GetMenuEntry`.</summary>
-        public bool? DisableCorrectFlag { get; set; }
+        public bool? DisableCorrectFlag { get => _explicitNullValueDisableCorrectFlag; set { _explicitNullValueDisableCorrectFlag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DisableCorrectFlag"); else _explicitNullProperties?.Remove("DisableCorrectFlag"); } }
+        private bool? _explicitNullValueDisableCorrectFlag = default!;
         /// <summary>Indicates if the Valid function key has to be deactivated (value True). During the processing of an Input command `GetConfirmation`, `SiteManager`, or `GetMenuEntry`.</summary>
-        public bool? DisableValidFlag { get; set; }
+        public bool? DisableValidFlag { get => _explicitNullValueDisableValidFlag; set { _explicitNullValueDisableValidFlag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DisableValidFlag"); else _explicitNullProperties?.Remove("DisableValidFlag"); } }
+        private bool? _explicitNullValueDisableValidFlag = default!;
         /// <summary>Indicates if the entered character has to be displayed from the right to the left of the display field.</summary>
-        public bool? FromRightToLeftFlag { get; set; }
+        public bool? FromRightToLeftFlag { get => _explicitNullValueFromRightToLeftFlag; set { _explicitNullValueFromRightToLeftFlag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("FromRightToLeftFlag"); else _explicitNullProperties?.Remove("FromRightToLeftFlag"); } }
+        private bool? _explicitNullValueFromRightToLeftFlag = default!;
         /// <summary>Indicates, when the user presses the Correct function key in an input entry, if all the entered characters are removed (value True) or only the last entered character if any (value False).</summary>
-        public bool? GlobalCorrectionFlag { get; set; }
+        public bool? GlobalCorrectionFlag { get => _explicitNullValueGlobalCorrectionFlag; set { _explicitNullValueGlobalCorrectionFlag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("GlobalCorrectionFlag"); else _explicitNullProperties?.Remove("GlobalCorrectionFlag"); } }
+        private bool? _explicitNullValueGlobalCorrectionFlag = default!;
         /// <summary>Indicates whether to request an Immediate response to the message without waiting for the completion of the command.</summary>
-        public bool? ImmediateResponseFlag { get; set; }
+        public bool? ImmediateResponseFlag { get => _explicitNullValueImmediateResponseFlag; set { _explicitNullValueImmediateResponseFlag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ImmediateResponseFlag"); else _explicitNullProperties?.Remove("ImmediateResponseFlag"); } }
+        private bool? _explicitNullValueImmediateResponseFlag = default!;
         /// <summary>Possible values:* **Status*** **Error*** **Display*** **Sound*** **Input*** **POIReplication*** **CustomerAssistance*** **Receipt*** **Document*** **Voucher**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.InputDataInfoQualify? InfoQualify { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.InputDataInfoQualify? InfoQualify { get => _explicitNullValueInfoQualify; set { _explicitNullValueInfoQualify = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("InfoQualify"); else _explicitNullProperties?.Remove("InfoQualify"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.InputDataInfoQualify? _explicitNullValueInfoQualify = default!;
         /// <summary>Possible values:* **GetAnyKey*** **GetConfirmation*** **SiteManager*** **TextString*** **DigitString*** **DecimalString*** **GetFunctionKey*** **GetMenuEntry*** **Password**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.InputDataInputCommand? InputCommand { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.InputDataInputCommand? InputCommand { get => _explicitNullValueInputCommand; set { _explicitNullValueInputCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("InputCommand"); else _explicitNullProperties?.Remove("InputCommand"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.InputDataInputCommand? _explicitNullValueInputCommand = default!;
         /// <summary>Indicates to mask the characters entered by the user (i.e. replacing in the display of the input, the entered character by a standard character as *).</summary>
-        public bool? MaskCharactersFlag { get; set; }
+        public bool? MaskCharactersFlag { get => _explicitNullValueMaskCharactersFlag; set { _explicitNullValueMaskCharactersFlag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MaskCharactersFlag"); else _explicitNullProperties?.Remove("MaskCharactersFlag"); } }
+        private bool? _explicitNullValueMaskCharactersFlag = default!;
         /// <summary>Maximum input length of the decimal part (without decimal point).</summary>
-        public int? MaxDecimalLength { get; set; }
+        public int? MaxDecimalLength { get => _explicitNullValueMaxDecimalLength; set { _explicitNullValueMaxDecimalLength = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MaxDecimalLength"); else _explicitNullProperties?.Remove("MaxDecimalLength"); } }
+        private int? _explicitNullValueMaxDecimalLength = default!;
         /// <summary>Maximum input time in seconds. Limits the time to answer to an Input request message.</summary>
-        public int? MaxInputTime { get; set; }
+        public int? MaxInputTime { get => _explicitNullValueMaxInputTime; set { _explicitNullValueMaxInputTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MaxInputTime"); else _explicitNullProperties?.Remove("MaxInputTime"); } }
+        private int? _explicitNullValueMaxInputTime = default!;
         /// <summary>Maximum length of an entered string, or maximum number of entries that can be selected in a menu.</summary>
-        public int? MaxLength { get; set; }
+        public int? MaxLength { get => _explicitNullValueMaxLength; set { _explicitNullValueMaxLength = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MaxLength"); else _explicitNullProperties?.Remove("MaxLength"); } }
+        private int? _explicitNullValueMaxLength = default!;
         /// <summary>If it has the value True, it indicates that the Back function key (respectively Home function key) may be used to go back to the immediate upper level of the menu. If it has the value False, it indicates that the current menu level has no parent menu.</summary>
-        public bool? MenuBackFlag { get; set; }
+        public bool? MenuBackFlag { get => _explicitNullValueMenuBackFlag; set { _explicitNullValueMenuBackFlag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MenuBackFlag"); else _explicitNullProperties?.Remove("MenuBackFlag"); } }
+        private bool? _explicitNullValueMenuBackFlag = default!;
         /// <summary>Minimum length of an entered string, or minimum number of entries that can be selected in a menu.</summary>
-        public int? MinLength { get; set; }
+        public int? MinLength { get => _explicitNullValueMinLength; set { _explicitNullValueMinLength = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MinLength"); else _explicitNullProperties?.Remove("MinLength"); } }
+        private int? _explicitNullValueMinLength = default!;
         /// <summary>Request Notification of the card entered in the POI card reader.</summary>
-        public bool? NotifyCardInputFlag { get; set; }
+        public bool? NotifyCardInputFlag { get => _explicitNullValueNotifyCardInputFlag; set { _explicitNullValueNotifyCardInputFlag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("NotifyCardInputFlag"); else _explicitNullProperties?.Remove("NotifyCardInputFlag"); } }
+        private bool? _explicitNullValueNotifyCardInputFlag = default!;
         /// <summary>String mask to get information requiring a specific format. For the processing of an Input command `TextString`, `DigitString` or `DecimalString`. Some information as date or plate number required to be entered with a certain format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StringMask { get; set; }
+        public string? StringMask { get => _explicitNullValueStringMask; set { _explicitNullValueStringMask = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("StringMask"); else _explicitNullProperties?.Remove("StringMask"); } }
+        private string? _explicitNullValueStringMask = default!;
 #nullable restore
 #else
-        public string StringMask { get; set; }
+        public string StringMask { get => _explicitNullValueStringMask; set { _explicitNullValueStringMask = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("StringMask"); else _explicitNullProperties?.Remove("StringMask"); } }
+        private string _explicitNullValueStringMask = default!;
 #endif
         /// <summary>Indicates that the user must confirm the entered characters, when the maximum allowed length is reached. During the processing of an Input command `TextString`, `DigitString` or `DecimalString` with `MaxLength` or `MaxDecimalLength` present in the request.</summary>
-        public bool? WaitUserValidationFlag { get; set; }
+        public bool? WaitUserValidationFlag { get => _explicitNullValueWaitUserValidationFlag; set { _explicitNullValueWaitUserValidationFlag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("WaitUserValidationFlag"); else _explicitNullProperties?.Remove("WaitUserValidationFlag"); } }
+        private bool? _explicitNullValueWaitUserValidationFlag = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.InputRequestInputData"/> and sets the default values.
         /// </summary>
@@ -101,7 +153,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.InputRequestInputData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.InputRequestInputData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.InputRequestInputData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -162,6 +214,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteBoolValue("NotifyCardInputFlag", NotifyCardInputFlag);
             writer.WriteStringValue("StringMask", StringMask);
             writer.WriteBoolValue("WaitUserValidationFlag", WaitUserValidationFlag);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

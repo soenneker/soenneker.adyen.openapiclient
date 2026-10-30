@@ -11,41 +11,65 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateTransferLimitRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("amount") is { } nullNodeAmount && nullNodeAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Amount = null;
+            if (parseNode.GetChildNode("endsAt") is { } nullNodeEndsAt && nullNodeEndsAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndsAt = null;
+            if (parseNode.GetChildNode("reference") is { } nullNodeReference && nullNodeReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reference = null;
+            if (parseNode.GetChildNode("scaInformation") is { } nullNodeScaInformation && nullNodeScaInformation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScaInformation = null;
+            if (parseNode.GetChildNode("scope") is { } nullNodeScope && nullNodeScope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scope = null;
+            if (parseNode.GetChildNode("startsAt") is { } nullNodeStartsAt && nullNodeStartsAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartsAt = null;
+            if (parseNode.GetChildNode("transferType") is { } nullNodeTransferType && nullNodeTransferType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferType = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The amount for the transfer limit. This is the maximum amount allowed per transfer or per day based on the `scope` of the limit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CreateTransferLimitRequestAmount? Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CreateTransferLimitRequestAmount? Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.CreateTransferLimitRequestAmount? _explicitNullValueAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CreateTransferLimitRequestAmount Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CreateTransferLimitRequestAmount Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.CreateTransferLimitRequestAmount _explicitNullValueAmount = default!;
 #endif
         /// <summary>The date and time when the transfer limit becomes inactive. If you do not specify an end date, the limit stays active until you override it with a new limit.Format [ISO 8601](https://www.w3.org/TR/NOTE-datetime): **YYYY-MM-DDThh:mm:ss.sssTZD**</summary>
-        public DateTimeOffset? EndsAt { get; set; }
+        public DateTimeOffset? EndsAt { get => _explicitNullValueEndsAt; set { _explicitNullValueEndsAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endsAt"); else _explicitNullProperties?.Remove("endsAt"); } }
+        private DateTimeOffset? _explicitNullValueEndsAt = default!;
         /// <summary>Your reference for the transfer limit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Reference { get; set; }
+        public string? Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
+        private string? _explicitNullValueReference = default!;
 #nullable restore
 #else
-        public string Reference { get; set; }
+        public string Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
+        private string _explicitNullValueReference = default!;
 #endif
         /// <summary>Information for the Strong Customer Authentication (SCA)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CreateTransferLimitRequestScaInformation? ScaInformation { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CreateTransferLimitRequestScaInformation? ScaInformation { get => _explicitNullValueScaInformation; set { _explicitNullValueScaInformation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scaInformation"); else _explicitNullProperties?.Remove("scaInformation"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.CreateTransferLimitRequestScaInformation? _explicitNullValueScaInformation = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CreateTransferLimitRequestScaInformation ScaInformation { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CreateTransferLimitRequestScaInformation ScaInformation { get => _explicitNullValueScaInformation; set { _explicitNullValueScaInformation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scaInformation"); else _explicitNullProperties?.Remove("scaInformation"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.CreateTransferLimitRequestScaInformation _explicitNullValueScaInformation = default!;
 #endif
         /// <summary>The scope to which the transfer limit applies. Possible values:* **perTransaction**: you set a maximum amount for each transfer made from the balance account or balance platform.* **perDay**: you set a maximum total amount for all transfers made from the balance account or balance platform in a day.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CreateTransferLimitRequestScope? Scope { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CreateTransferLimitRequestScope? Scope { get => _explicitNullValueScope; set { _explicitNullValueScope = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope"); else _explicitNullProperties?.Remove("scope"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.CreateTransferLimitRequestScope? _explicitNullValueScope = default!;
         /// <summary>The date and time when the transfer limit becomes active. If you specify a date in the future, we will schedule a transfer limit.Format [ISO 8601](https://www.w3.org/TR/NOTE-datetime): **YYYY-MM-DDThh:mm:ss.sssTZD**</summary>
-        public DateTimeOffset? StartsAt { get; set; }
+        public DateTimeOffset? StartsAt { get => _explicitNullValueStartsAt; set { _explicitNullValueStartsAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startsAt"); else _explicitNullProperties?.Remove("startsAt"); } }
+        private DateTimeOffset? _explicitNullValueStartsAt = default!;
         /// <summary>The type of transfer to which the limit applies. Possible values:* **instant**: the limit applies to transfers with an **instant** priority.* **all**: the limit applies to all transfers, regardless of priority.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CreateTransferLimitRequestTransferType? TransferType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CreateTransferLimitRequestTransferType? TransferType { get => _explicitNullValueTransferType; set { _explicitNullValueTransferType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferType"); else _explicitNullProperties?.Remove("transferType"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.CreateTransferLimitRequestTransferType? _explicitNullValueTransferType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CreateTransferLimitRequest"/> and sets the default values.
         /// </summary>
@@ -61,7 +85,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.CreateTransferLimitRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.CreateTransferLimitRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.CreateTransferLimitRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,6 +118,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateTransferLimitRequestScope>("scope", Scope);
             writer.WriteDateTimeOffsetValue("startsAt", StartsAt);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateTransferLimitRequestTransferType>("transferType", TransferType);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

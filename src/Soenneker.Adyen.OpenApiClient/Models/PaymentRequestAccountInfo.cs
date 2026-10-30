@@ -12,67 +12,115 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PaymentRequestAccountInfo : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("accountAgeIndicator") is { } nullNodeAccountAgeIndicator && nullNodeAccountAgeIndicator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountAgeIndicator = null;
+            if (parseNode.GetChildNode("accountChangeDate") is { } nullNodeAccountChangeDate && nullNodeAccountChangeDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountChangeDate = null;
+            if (parseNode.GetChildNode("accountChangeIndicator") is { } nullNodeAccountChangeIndicator && nullNodeAccountChangeIndicator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountChangeIndicator = null;
+            if (parseNode.GetChildNode("accountCreationDate") is { } nullNodeAccountCreationDate && nullNodeAccountCreationDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountCreationDate = null;
+            if (parseNode.GetChildNode("accountType") is { } nullNodeAccountType && nullNodeAccountType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountType = null;
+            if (parseNode.GetChildNode("addCardAttemptsDay") is { } nullNodeAddCardAttemptsDay && nullNodeAddCardAttemptsDay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddCardAttemptsDay = null;
+            if (parseNode.GetChildNode("deliveryAddressUsageDate") is { } nullNodeDeliveryAddressUsageDate && nullNodeDeliveryAddressUsageDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeliveryAddressUsageDate = null;
+            if (parseNode.GetChildNode("deliveryAddressUsageIndicator") is { } nullNodeDeliveryAddressUsageIndicator && nullNodeDeliveryAddressUsageIndicator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeliveryAddressUsageIndicator = null;
+            if (parseNode.GetChildNode("homePhone") is { } nullNodeHomePhone && nullNodeHomePhone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HomePhone = null;
+            if (parseNode.GetChildNode("mobilePhone") is { } nullNodeMobilePhone && nullNodeMobilePhone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MobilePhone = null;
+            if (parseNode.GetChildNode("passwordChangeDate") is { } nullNodePasswordChangeDate && nullNodePasswordChangeDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PasswordChangeDate = null;
+            if (parseNode.GetChildNode("passwordChangeIndicator") is { } nullNodePasswordChangeIndicator && nullNodePasswordChangeIndicator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PasswordChangeIndicator = null;
+            if (parseNode.GetChildNode("pastTransactionsDay") is { } nullNodePastTransactionsDay && nullNodePastTransactionsDay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PastTransactionsDay = null;
+            if (parseNode.GetChildNode("pastTransactionsYear") is { } nullNodePastTransactionsYear && nullNodePastTransactionsYear.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PastTransactionsYear = null;
+            if (parseNode.GetChildNode("paymentAccountAge") is { } nullNodePaymentAccountAge && nullNodePaymentAccountAge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentAccountAge = null;
+            if (parseNode.GetChildNode("paymentAccountIndicator") is { } nullNodePaymentAccountIndicator && nullNodePaymentAccountIndicator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentAccountIndicator = null;
+            if (parseNode.GetChildNode("purchasesLast6Months") is { } nullNodePurchasesLast6Months && nullNodePurchasesLast6Months.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PurchasesLast6Months = null;
+            if (parseNode.GetChildNode("suspiciousActivity") is { } nullNodeSuspiciousActivity && nullNodeSuspiciousActivity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SuspiciousActivity = null;
+            if (parseNode.GetChildNode("workPhone") is { } nullNodeWorkPhone && nullNodeWorkPhone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkPhone = null;
+        }
+
         /// <summary>Indicator for the length of time since this shopper account was created in the merchant&apos;s environment.Allowed values:* notApplicable* thisTransaction* lessThan30Days* from30To60Days* moreThan60Days</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountInfoAccountAgeIndicator? AccountAgeIndicator { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountInfoAccountAgeIndicator? AccountAgeIndicator { get => _explicitNullValueAccountAgeIndicator; set { _explicitNullValueAccountAgeIndicator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountAgeIndicator"); else _explicitNullProperties?.Remove("accountAgeIndicator"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.AccountInfoAccountAgeIndicator? _explicitNullValueAccountAgeIndicator = default!;
         /// <summary>Date when the shopper&apos;s account was last changed.</summary>
-        public DateTimeOffset? AccountChangeDate { get; set; }
+        public DateTimeOffset? AccountChangeDate { get => _explicitNullValueAccountChangeDate; set { _explicitNullValueAccountChangeDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountChangeDate"); else _explicitNullProperties?.Remove("accountChangeDate"); } }
+        private DateTimeOffset? _explicitNullValueAccountChangeDate = default!;
         /// <summary>Indicator for the length of time since the shopper&apos;s account was last updated.Allowed values:* thisTransaction* lessThan30Days* from30To60Days* moreThan60Days</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountInfoAccountChangeIndicator? AccountChangeIndicator { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountInfoAccountChangeIndicator? AccountChangeIndicator { get => _explicitNullValueAccountChangeIndicator; set { _explicitNullValueAccountChangeIndicator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountChangeIndicator"); else _explicitNullProperties?.Remove("accountChangeIndicator"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.AccountInfoAccountChangeIndicator? _explicitNullValueAccountChangeIndicator = default!;
         /// <summary>Date when the shopper&apos;s account was created.</summary>
-        public DateTimeOffset? AccountCreationDate { get; set; }
+        public DateTimeOffset? AccountCreationDate { get => _explicitNullValueAccountCreationDate; set { _explicitNullValueAccountCreationDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountCreationDate"); else _explicitNullProperties?.Remove("accountCreationDate"); } }
+        private DateTimeOffset? _explicitNullValueAccountCreationDate = default!;
         /// <summary>Indicates the type of account. For example, for a multi-account card product.Allowed values:* notApplicable* credit* debit</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountInfoAccountType? AccountType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountInfoAccountType? AccountType { get => _explicitNullValueAccountType; set { _explicitNullValueAccountType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountType"); else _explicitNullProperties?.Remove("accountType"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.AccountInfoAccountType? _explicitNullValueAccountType = default!;
         /// <summary>Number of attempts the shopper tried to add a card to their account in the last day.</summary>
-        public int? AddCardAttemptsDay { get; set; }
+        public int? AddCardAttemptsDay { get => _explicitNullValueAddCardAttemptsDay; set { _explicitNullValueAddCardAttemptsDay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("addCardAttemptsDay"); else _explicitNullProperties?.Remove("addCardAttemptsDay"); } }
+        private int? _explicitNullValueAddCardAttemptsDay = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Date the selected delivery address was first used.</summary>
-        public DateTimeOffset? DeliveryAddressUsageDate { get; set; }
+        public DateTimeOffset? DeliveryAddressUsageDate { get => _explicitNullValueDeliveryAddressUsageDate; set { _explicitNullValueDeliveryAddressUsageDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deliveryAddressUsageDate"); else _explicitNullProperties?.Remove("deliveryAddressUsageDate"); } }
+        private DateTimeOffset? _explicitNullValueDeliveryAddressUsageDate = default!;
         /// <summary>Indicator for the length of time since this delivery address was first used.Allowed values:* thisTransaction* lessThan30Days* from30To60Days* moreThan60Days</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountInfoDeliveryAddressUsageIndicator? DeliveryAddressUsageIndicator { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountInfoDeliveryAddressUsageIndicator? DeliveryAddressUsageIndicator { get => _explicitNullValueDeliveryAddressUsageIndicator; set { _explicitNullValueDeliveryAddressUsageIndicator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deliveryAddressUsageIndicator"); else _explicitNullProperties?.Remove("deliveryAddressUsageIndicator"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.AccountInfoDeliveryAddressUsageIndicator? _explicitNullValueDeliveryAddressUsageIndicator = default!;
         /// <summary>Shopper&apos;s home phone number (including the country code).</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HomePhone { get; set; }
+        public string? HomePhone { get => _explicitNullValueHomePhone; set { _explicitNullValueHomePhone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("homePhone"); else _explicitNullProperties?.Remove("homePhone"); } }
+        private string? _explicitNullValueHomePhone = default!;
 #nullable restore
 #else
-        public string HomePhone { get; set; }
+        public string HomePhone { get => _explicitNullValueHomePhone; set { _explicitNullValueHomePhone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("homePhone"); else _explicitNullProperties?.Remove("homePhone"); } }
+        private string _explicitNullValueHomePhone = default!;
 #endif
         /// <summary>Shopper&apos;s mobile phone number (including the country code).</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MobilePhone { get; set; }
+        public string? MobilePhone { get => _explicitNullValueMobilePhone; set { _explicitNullValueMobilePhone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mobilePhone"); else _explicitNullProperties?.Remove("mobilePhone"); } }
+        private string? _explicitNullValueMobilePhone = default!;
 #nullable restore
 #else
-        public string MobilePhone { get; set; }
+        public string MobilePhone { get => _explicitNullValueMobilePhone; set { _explicitNullValueMobilePhone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mobilePhone"); else _explicitNullProperties?.Remove("mobilePhone"); } }
+        private string _explicitNullValueMobilePhone = default!;
 #endif
         /// <summary>Date when the shopper last changed their password.</summary>
-        public DateTimeOffset? PasswordChangeDate { get; set; }
+        public DateTimeOffset? PasswordChangeDate { get => _explicitNullValuePasswordChangeDate; set { _explicitNullValuePasswordChangeDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passwordChangeDate"); else _explicitNullProperties?.Remove("passwordChangeDate"); } }
+        private DateTimeOffset? _explicitNullValuePasswordChangeDate = default!;
         /// <summary>Indicator when the shopper has changed their password.Allowed values:* notApplicable* thisTransaction* lessThan30Days* from30To60Days* moreThan60Days</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountInfoPasswordChangeIndicator? PasswordChangeIndicator { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountInfoPasswordChangeIndicator? PasswordChangeIndicator { get => _explicitNullValuePasswordChangeIndicator; set { _explicitNullValuePasswordChangeIndicator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passwordChangeIndicator"); else _explicitNullProperties?.Remove("passwordChangeIndicator"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.AccountInfoPasswordChangeIndicator? _explicitNullValuePasswordChangeIndicator = default!;
         /// <summary>Number of all transactions (successful and abandoned) from this shopper in the past 24 hours.</summary>
-        public int? PastTransactionsDay { get; set; }
+        public int? PastTransactionsDay { get => _explicitNullValuePastTransactionsDay; set { _explicitNullValuePastTransactionsDay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pastTransactionsDay"); else _explicitNullProperties?.Remove("pastTransactionsDay"); } }
+        private int? _explicitNullValuePastTransactionsDay = default!;
         /// <summary>Number of all transactions (successful and abandoned) from this shopper in the past year.</summary>
-        public int? PastTransactionsYear { get; set; }
+        public int? PastTransactionsYear { get => _explicitNullValuePastTransactionsYear; set { _explicitNullValuePastTransactionsYear = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pastTransactionsYear"); else _explicitNullProperties?.Remove("pastTransactionsYear"); } }
+        private int? _explicitNullValuePastTransactionsYear = default!;
         /// <summary>Date this payment method was added to the shopper&apos;s account.</summary>
-        public DateTimeOffset? PaymentAccountAge { get; set; }
+        public DateTimeOffset? PaymentAccountAge { get => _explicitNullValuePaymentAccountAge; set { _explicitNullValuePaymentAccountAge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentAccountAge"); else _explicitNullProperties?.Remove("paymentAccountAge"); } }
+        private DateTimeOffset? _explicitNullValuePaymentAccountAge = default!;
         /// <summary>Indicator for the length of time since this payment method was added to this shopper&apos;s account.Allowed values:* notApplicable* thisTransaction* lessThan30Days* from30To60Days* moreThan60Days</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountInfoPaymentAccountIndicator? PaymentAccountIndicator { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountInfoPaymentAccountIndicator? PaymentAccountIndicator { get => _explicitNullValuePaymentAccountIndicator; set { _explicitNullValuePaymentAccountIndicator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentAccountIndicator"); else _explicitNullProperties?.Remove("paymentAccountIndicator"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.AccountInfoPaymentAccountIndicator? _explicitNullValuePaymentAccountIndicator = default!;
         /// <summary>Number of successful purchases in the last six months.</summary>
-        public int? PurchasesLast6Months { get; set; }
+        public int? PurchasesLast6Months { get => _explicitNullValuePurchasesLast6Months; set { _explicitNullValuePurchasesLast6Months = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purchasesLast6Months"); else _explicitNullProperties?.Remove("purchasesLast6Months"); } }
+        private int? _explicitNullValuePurchasesLast6Months = default!;
         /// <summary>Whether suspicious activity was recorded on this account.</summary>
-        public bool? SuspiciousActivity { get; set; }
+        public bool? SuspiciousActivity { get => _explicitNullValueSuspiciousActivity; set { _explicitNullValueSuspiciousActivity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suspiciousActivity"); else _explicitNullProperties?.Remove("suspiciousActivity"); } }
+        private bool? _explicitNullValueSuspiciousActivity = default!;
         /// <summary>Shopper&apos;s work phone number (including the country code).</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WorkPhone { get; set; }
+        public string? WorkPhone { get => _explicitNullValueWorkPhone; set { _explicitNullValueWorkPhone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workPhone"); else _explicitNullProperties?.Remove("workPhone"); } }
+        private string? _explicitNullValueWorkPhone = default!;
 #nullable restore
 #else
-        public string WorkPhone { get; set; }
+        public string WorkPhone { get => _explicitNullValueWorkPhone; set { _explicitNullValueWorkPhone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workPhone"); else _explicitNullProperties?.Remove("workPhone"); } }
+        private string _explicitNullValueWorkPhone = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestAccountInfo"/> and sets the default values.
@@ -89,7 +137,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestAccountInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestAccountInfo();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestAccountInfo(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -146,6 +194,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteIntValue("purchasesLast6Months", PurchasesLast6Months);
             writer.WriteBoolValue("suspiciousActivity", SuspiciousActivity);
             writer.WriteStringValue("workPhone", WorkPhone);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

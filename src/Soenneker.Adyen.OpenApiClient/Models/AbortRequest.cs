@@ -12,32 +12,48 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AbortRequest : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("AbortReason") is { } nullNodeAbortReason && nullNodeAbortReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AbortReason = null;
+            if (parseNode.GetChildNode("DisplayOutput") is { } nullNodeDisplayOutput && nullNodeDisplayOutput.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayOutput = null;
+            if (parseNode.GetChildNode("MessageReference") is { } nullNodeMessageReference && nullNodeMessageReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageReference = null;
+        }
+
         /// <summary>Reason of aborting a transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AbortReason { get; set; }
+        public string? AbortReason { get => _explicitNullValueAbortReason; set { _explicitNullValueAbortReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AbortReason"); else _explicitNullProperties?.Remove("AbortReason"); } }
+        private string? _explicitNullValueAbortReason = default!;
 #nullable restore
 #else
-        public string AbortReason { get; set; }
+        public string AbortReason { get => _explicitNullValueAbortReason; set { _explicitNullValueAbortReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AbortReason"); else _explicitNullProperties?.Remove("AbortReason"); } }
+        private string _explicitNullValueAbortReason = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Information to display and the way to process the display.To display an abort message to the Customer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AbortRequestDisplayOutput? DisplayOutput { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AbortRequestDisplayOutput? DisplayOutput { get => _explicitNullValueDisplayOutput; set { _explicitNullValueDisplayOutput = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DisplayOutput"); else _explicitNullProperties?.Remove("DisplayOutput"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.AbortRequestDisplayOutput? _explicitNullValueDisplayOutput = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AbortRequestDisplayOutput DisplayOutput { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AbortRequestDisplayOutput DisplayOutput { get => _explicitNullValueDisplayOutput; set { _explicitNullValueDisplayOutput = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DisplayOutput"); else _explicitNullProperties?.Remove("DisplayOutput"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.AbortRequestDisplayOutput _explicitNullValueDisplayOutput = default!;
 #endif
         /// <summary>Identification of a previous POI transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AbortRequestMessageReference? MessageReference { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AbortRequestMessageReference? MessageReference { get => _explicitNullValueMessageReference; set { _explicitNullValueMessageReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MessageReference"); else _explicitNullProperties?.Remove("MessageReference"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.AbortRequestMessageReference? _explicitNullValueMessageReference = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AbortRequestMessageReference MessageReference { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AbortRequestMessageReference MessageReference { get => _explicitNullValueMessageReference; set { _explicitNullValueMessageReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MessageReference"); else _explicitNullProperties?.Remove("MessageReference"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.AbortRequestMessageReference _explicitNullValueMessageReference = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AbortRequest"/> and sets the default values.
@@ -54,7 +70,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.AbortRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.AbortRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.AbortRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +95,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("AbortReason", AbortReason);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AbortRequestDisplayOutput>("DisplayOutput", DisplayOutput);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AbortRequestMessageReference>("MessageReference", MessageReference);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

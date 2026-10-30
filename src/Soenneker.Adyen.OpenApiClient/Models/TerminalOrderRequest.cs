@@ -11,56 +11,81 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TerminalOrderRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("billingEntityId") is { } nullNodeBillingEntityId && nullNodeBillingEntityId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingEntityId = null;
+            if (parseNode.GetChildNode("customerOrderReference") is { } nullNodeCustomerOrderReference && nullNodeCustomerOrderReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerOrderReference = null;
+            if (parseNode.GetChildNode("items") is { } nullNodeItems && nullNodeItems.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Items = null;
+            if (parseNode.GetChildNode("orderType") is { } nullNodeOrderType && nullNodeOrderType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrderType = null;
+            if (parseNode.GetChildNode("shippingLocationId") is { } nullNodeShippingLocationId && nullNodeShippingLocationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShippingLocationId = null;
+            if (parseNode.GetChildNode("taxId") is { } nullNodeTaxId && nullNodeTaxId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The identification of the billing entity to use for the order.  &gt; When ordering products in Brazil, you do not need to include the `billingEntityId` in the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BillingEntityId { get; set; }
+        public string? BillingEntityId { get => _explicitNullValueBillingEntityId; set { _explicitNullValueBillingEntityId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingEntityId"); else _explicitNullProperties?.Remove("billingEntityId"); } }
+        private string? _explicitNullValueBillingEntityId = default!;
 #nullable restore
 #else
-        public string BillingEntityId { get; set; }
+        public string BillingEntityId { get => _explicitNullValueBillingEntityId; set { _explicitNullValueBillingEntityId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingEntityId"); else _explicitNullProperties?.Remove("billingEntityId"); } }
+        private string _explicitNullValueBillingEntityId = default!;
 #endif
         /// <summary>The merchant-defined purchase order reference.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomerOrderReference { get; set; }
+        public string? CustomerOrderReference { get => _explicitNullValueCustomerOrderReference; set { _explicitNullValueCustomerOrderReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customerOrderReference"); else _explicitNullProperties?.Remove("customerOrderReference"); } }
+        private string? _explicitNullValueCustomerOrderReference = default!;
 #nullable restore
 #else
-        public string CustomerOrderReference { get; set; }
+        public string CustomerOrderReference { get => _explicitNullValueCustomerOrderReference; set { _explicitNullValueCustomerOrderReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customerOrderReference"); else _explicitNullProperties?.Remove("customerOrderReference"); } }
+        private string _explicitNullValueCustomerOrderReference = default!;
 #endif
         /// <summary>The products included in the order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.OrderItem>? Items { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.OrderItem>? Items { get => _explicitNullValueItems; set { _explicitNullValueItems = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("items"); else _explicitNullProperties?.Remove("items"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.OrderItem>? _explicitNullValueItems = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.OrderItem> Items { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.OrderItem> Items { get => _explicitNullValueItems; set { _explicitNullValueItems = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("items"); else _explicitNullProperties?.Remove("items"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.OrderItem> _explicitNullValueItems = default!;
 #endif
         /// <summary>Type of order</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OrderType { get; set; }
+        public string? OrderType { get => _explicitNullValueOrderType; set { _explicitNullValueOrderType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orderType"); else _explicitNullProperties?.Remove("orderType"); } }
+        private string? _explicitNullValueOrderType = default!;
 #nullable restore
 #else
-        public string OrderType { get; set; }
+        public string OrderType { get => _explicitNullValueOrderType; set { _explicitNullValueOrderType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orderType"); else _explicitNullProperties?.Remove("orderType"); } }
+        private string _explicitNullValueOrderType = default!;
 #endif
         /// <summary>The identification of the shipping location to use for the order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ShippingLocationId { get; set; }
+        public string? ShippingLocationId { get => _explicitNullValueShippingLocationId; set { _explicitNullValueShippingLocationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shippingLocationId"); else _explicitNullProperties?.Remove("shippingLocationId"); } }
+        private string? _explicitNullValueShippingLocationId = default!;
 #nullable restore
 #else
-        public string ShippingLocationId { get; set; }
+        public string ShippingLocationId { get => _explicitNullValueShippingLocationId; set { _explicitNullValueShippingLocationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shippingLocationId"); else _explicitNullProperties?.Remove("shippingLocationId"); } }
+        private string _explicitNullValueShippingLocationId = default!;
 #endif
         /// <summary>The tax number of the billing entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TaxId { get; set; }
+        public string? TaxId { get => _explicitNullValueTaxId; set { _explicitNullValueTaxId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxId"); else _explicitNullProperties?.Remove("taxId"); } }
+        private string? _explicitNullValueTaxId = default!;
 #nullable restore
 #else
-        public string TaxId { get; set; }
+        public string TaxId { get => _explicitNullValueTaxId; set { _explicitNullValueTaxId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxId"); else _explicitNullProperties?.Remove("taxId"); } }
+        private string _explicitNullValueTaxId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TerminalOrderRequest"/> and sets the default values.
@@ -77,7 +102,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.TerminalOrderRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.TerminalOrderRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.TerminalOrderRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -108,6 +133,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("orderType", OrderType);
             writer.WriteStringValue("shippingLocationId", ShippingLocationId);
             writer.WriteStringValue("taxId", TaxId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

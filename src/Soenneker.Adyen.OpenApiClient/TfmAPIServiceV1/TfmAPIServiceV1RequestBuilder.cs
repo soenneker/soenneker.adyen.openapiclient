@@ -20,26 +20,31 @@ namespace Soenneker.Adyen.OpenApiClient.TfmAPIServiceV1
     public partial class TfmAPIServiceV1RequestBuilder : BaseRequestBuilder
     {
         /// <summary>The assignTerminals property</summary>
+        [Obsolete("")]
         public global::Soenneker.Adyen.OpenApiClient.TfmAPIServiceV1.AssignTerminals.AssignTerminalsRequestBuilder AssignTerminals
         {
             get => new global::Soenneker.Adyen.OpenApiClient.TfmAPIServiceV1.AssignTerminals.AssignTerminalsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The findTerminal property</summary>
+        [Obsolete("")]
         public global::Soenneker.Adyen.OpenApiClient.TfmAPIServiceV1.FindTerminal.FindTerminalRequestBuilder FindTerminal
         {
             get => new global::Soenneker.Adyen.OpenApiClient.TfmAPIServiceV1.FindTerminal.FindTerminalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The getStoresUnderAccount property</summary>
+        [Obsolete("")]
         public global::Soenneker.Adyen.OpenApiClient.TfmAPIServiceV1.GetStoresUnderAccount.GetStoresUnderAccountRequestBuilder GetStoresUnderAccount
         {
             get => new global::Soenneker.Adyen.OpenApiClient.TfmAPIServiceV1.GetStoresUnderAccount.GetStoresUnderAccountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The getTerminalDetails property</summary>
+        [Obsolete("")]
         public global::Soenneker.Adyen.OpenApiClient.TfmAPIServiceV1.GetTerminalDetails.GetTerminalDetailsRequestBuilder GetTerminalDetails
         {
             get => new global::Soenneker.Adyen.OpenApiClient.TfmAPIServiceV1.GetTerminalDetails.GetTerminalDetailsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The getTerminalsUnderAccount property</summary>
+        [Obsolete("")]
         public global::Soenneker.Adyen.OpenApiClient.TfmAPIServiceV1.GetTerminalsUnderAccount.GetTerminalsUnderAccountRequestBuilder GetTerminalsUnderAccount
         {
             get => new global::Soenneker.Adyen.OpenApiClient.TfmAPIServiceV1.GetTerminalsUnderAccount.GetTerminalsUnderAccountRequestBuilder(PathParameters, RequestAdapter);

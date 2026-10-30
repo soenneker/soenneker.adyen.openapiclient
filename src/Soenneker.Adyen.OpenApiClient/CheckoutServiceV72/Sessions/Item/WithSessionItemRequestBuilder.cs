@@ -49,7 +49,7 @@ namespace Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.Sessions.Item
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.SessionResultResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.SessionResultResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.SessionResultResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.SessionResultResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates an existing payment session with the `sessionId` specified in the path.You can update the session&apos;s `amount` and `payable` fields. The session can only be updated if it is not yet payable.
@@ -69,7 +69,7 @@ namespace Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.Sessions.Item
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionPatchSessionResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionPatchSessionResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionPatchSessionResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionPatchSessionResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns the status of the payment session with the `sessionId` and `sessionResult` specified in the path.

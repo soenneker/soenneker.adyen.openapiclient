@@ -11,34 +11,52 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CheckoutSessionThreeDs2RequestData : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("homePhone") is { } nullNodeHomePhone && nullNodeHomePhone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HomePhone = null;
+            if (parseNode.GetChildNode("mobilePhone") is { } nullNodeMobilePhone && nullNodeMobilePhone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MobilePhone = null;
+            if (parseNode.GetChildNode("threeDSRequestorChallengeInd") is { } nullNodeThreeDSRequestorChallengeInd && nullNodeThreeDSRequestorChallengeInd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDSRequestorChallengeInd = null;
+            if (parseNode.GetChildNode("workPhone") is { } nullNodeWorkPhone && nullNodeWorkPhone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkPhone = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The home phone number provided by the cardholder. The phone number must consist of a country code, followed by the number. If the value you provide does not follow the guidelines, we do not submit it for authentication.&gt; Required for Visa and JCB transactions that require 3D Secure 2 authentication, if you did not include the `shopperEmail`, and did not send the shopper&apos;s phone number in `telephoneNumber`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestDataHomePhone? HomePhone { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestDataHomePhone? HomePhone { get => _explicitNullValueHomePhone; set { _explicitNullValueHomePhone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("homePhone"); else _explicitNullProperties?.Remove("homePhone"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestDataHomePhone? _explicitNullValueHomePhone = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestDataHomePhone HomePhone { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestDataHomePhone HomePhone { get => _explicitNullValueHomePhone; set { _explicitNullValueHomePhone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("homePhone"); else _explicitNullProperties?.Remove("homePhone"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestDataHomePhone _explicitNullValueHomePhone = default!;
 #endif
         /// <summary>The mobile phone number provided by the cardholder. The phone number must consist of a country code, followed by the number. If the value you provide does not follow the guidelines, we do not submit it for authentication.&gt; Required for Visa and JCB transactions that require 3D Secure 2 authentication, if you did not include the `shopperEmail`, and did not send the shopper&apos;s phone number in `telephoneNumber`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestDataMobilePhone? MobilePhone { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestDataMobilePhone? MobilePhone { get => _explicitNullValueMobilePhone; set { _explicitNullValueMobilePhone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mobilePhone"); else _explicitNullProperties?.Remove("mobilePhone"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestDataMobilePhone? _explicitNullValueMobilePhone = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestDataMobilePhone MobilePhone { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestDataMobilePhone MobilePhone { get => _explicitNullValueMobilePhone; set { _explicitNullValueMobilePhone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mobilePhone"); else _explicitNullProperties?.Remove("mobilePhone"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestDataMobilePhone _explicitNullValueMobilePhone = default!;
 #endif
         /// <summary>Indicates whether a challenge is requested for this transaction. Possible values:* **01** — No preference* **02** — No challenge requested* **03** — Challenge requested (3DS Requestor preference)* **04** — Challenge requested (Mandate)* **05** — No challenge (transactional risk analysis is already performed)* **06** — Data Only</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestDataThreeDsRequestorChallengeInd? ThreeDSRequestorChallengeInd { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestDataThreeDsRequestorChallengeInd? ThreeDSRequestorChallengeInd { get => _explicitNullValueThreeDSRequestorChallengeInd; set { _explicitNullValueThreeDSRequestorChallengeInd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSRequestorChallengeInd"); else _explicitNullProperties?.Remove("threeDSRequestorChallengeInd"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestDataThreeDsRequestorChallengeInd? _explicitNullValueThreeDSRequestorChallengeInd = default!;
         /// <summary>The work phone number provided by the cardholder. The phone number must consist of a country code, followed by the number. If the value you provide does not follow the guidelines, we do not submit it for authentication.&gt; Required for Visa and JCB transactions that require 3D Secure 2 authentication, if you did not include the `shopperEmail`, and did not send the shopper&apos;s phone number in `telephoneNumber`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestDataWorkPhone? WorkPhone { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestDataWorkPhone? WorkPhone { get => _explicitNullValueWorkPhone; set { _explicitNullValueWorkPhone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workPhone"); else _explicitNullProperties?.Remove("workPhone"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestDataWorkPhone? _explicitNullValueWorkPhone = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestDataWorkPhone WorkPhone { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestDataWorkPhone WorkPhone { get => _explicitNullValueWorkPhone; set { _explicitNullValueWorkPhone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workPhone"); else _explicitNullProperties?.Remove("workPhone"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestDataWorkPhone _explicitNullValueWorkPhone = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestData"/> and sets the default values.
@@ -55,7 +73,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,6 +100,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestDataMobilePhone>("mobilePhone", MobilePhone);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestDataThreeDsRequestorChallengeInd>("threeDSRequestorChallengeInd", ThreeDSRequestorChallengeInd);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestDataWorkPhone>("workPhone", WorkPhone);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

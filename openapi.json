@@ -72197,46 +72197,65 @@
       },
       "MandateBankAccountAccountIdentification": {
         "required": [
+          "accountNumber",
+          "sortCode",
           "type"
         ],
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/UkLocalMandateAccountIdentification"
-          }
-        ],
+        "type": "object",
         "properties": {
+          "accountNumber": {
+            "maxLength": 8,
+            "minLength": 8,
+            "type": "string",
+            "description": "The 8-digit bank account number, without separators or whitespace."
+          },
+          "sortCode": {
+            "maxLength": 6,
+            "minLength": 6,
+            "type": "string",
+            "description": "The 6-digit [sort code](https://en.wikipedia.org/wiki/Sort_code), without separators or whitespace."
+          },
           "type": {
-            "type": "string"
+            "$ref": "#/components/schemas/BalancePlatformConfigurationNotification_v2_UkLocalType"
           }
         },
+        "additionalProperties": {
+          "not": { }
+        },
         "description": "Contains the bank account details of the counterparty. The fields required in this object depend on the country of the bank account and the currency of the transfer.",
-        "discriminator": {
+        "x-client-original-discriminator": {
           "propertyName": "type",
           "mapping": {
-            "ukLocal": "#/components/schemas/UkLocalMandateAccountIdentification",
-            "UkLocalMandateAccountIdentification": "#/components/schemas/UkLocalMandateAccountIdentification"
+            "ukLocal": "#/components/schemas/UkLocalMandateAccountIdentification"
           }
         }
       },
       "PaymentInstrumentAdditionalBankAccountIdentificationsItem": {
         "required": [
+          "iban",
           "type"
         ],
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/BalancePlatformConfigurationNotification_v2_IbanAccountIdentification"
-          }
-        ],
+        "type": "object",
         "properties": {
+          "bic": {
+            "type": "string",
+            "description": "The bank's 8- or 11-character BIC or SWIFT code."
+          },
+          "iban": {
+            "type": "string",
+            "description": "The international bank account number as defined in the [ISO-13616](https://www.iso.org/standard/81090.html) standard."
+          },
           "type": {
-            "type": "string"
+            "$ref": "#/components/schemas/BalancePlatformConfigurationNotification_v2_IbanType"
           }
         },
-        "discriminator": {
+        "additionalProperties": {
+          "not": { }
+        },
+        "x-client-original-discriminator": {
           "propertyName": "type",
           "mapping": {
-            "iban": "#/components/schemas/BalancePlatformConfigurationNotification_v2_IbanAccountIdentification",
-            "IbanAccountIdentification": "#/components/schemas/BalancePlatformConfigurationNotification_v2_IbanAccountIdentification"
+            "iban": "#/components/schemas/IbanAccountIdentification"
           }
         }
       },
@@ -79234,23 +79253,30 @@
       },
       "BalancePlatformRelayedAuthorisationNotification_v4_PaymentInstrumentAdditionalBankAccountIdentificationsItem": {
         "required": [
+          "iban",
           "type"
         ],
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/BalancePlatformRelayedAuthorisationNotification_v4_IbanAccountIdentification"
-          }
-        ],
+        "type": "object",
         "properties": {
+          "bic": {
+            "type": "string",
+            "description": "The bank's 8- or 11-character BIC or SWIFT code."
+          },
+          "iban": {
+            "type": "string",
+            "description": "The international bank account number as defined in the [ISO-13616](https://www.iso.org/standard/81090.html) standard."
+          },
           "type": {
-            "type": "string"
+            "$ref": "#/components/schemas/BalancePlatformRelayedAuthorisationNotification_v4_IbanType"
           }
         },
-        "discriminator": {
+        "additionalProperties": {
+          "not": { }
+        },
+        "x-client-original-discriminator": {
           "propertyName": "type",
           "mapping": {
-            "iban": "#/components/schemas/BalancePlatformRelayedAuthorisationNotification_v4_IbanAccountIdentification",
-            "IbanAccountIdentification": "#/components/schemas/BalancePlatformRelayedAuthorisationNotification_v4_IbanAccountIdentification"
+            "iban": "#/components/schemas/IbanAccountIdentification"
           }
         }
       },
@@ -87413,30 +87439,34 @@
       },
       "BalancePlatformService_v2_PaymentInstrumentAdditionalBankAccountIdentificationsItem": {
         "required": [
+          "iban",
           "type"
         ],
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/BalancePlatformService_v2_IbanAccountIdentification"
-          }
-        ],
+        "type": "object",
         "properties": {
+          "bic": {
+            "type": "string",
+            "description": "The bank's 8- or 11-character BIC or SWIFT code."
+          },
+          "iban": {
+            "type": "string",
+            "description": "The international bank account number as defined in the [ISO-13616](https://www.iso.org/standard/81090.html) standard."
+          },
           "type": {
-            "type": "string"
+            "$ref": "#/components/schemas/BalancePlatformService_v2_IbanType"
           }
         },
-        "discriminator": {
+        "additionalProperties": {
+          "not": { }
+        },
+        "x-client-original-discriminator": {
           "propertyName": "type",
           "mapping": {
-            "iban": "#/components/schemas/BalancePlatformService_v2_IbanAccountIdentification",
-            "IbanAccountIdentification": "#/components/schemas/BalancePlatformService_v2_IbanAccountIdentification"
+            "iban": "#/components/schemas/IbanAccountIdentification"
           }
         }
       },
       "TransferRouteRequirementsItem": {
-        "required": [
-          "type"
-        ],
         "oneOf": [
           {
             "$ref": "#/components/schemas/AdditionalBankIdentificationRequirement"
@@ -87469,12 +87499,7 @@
             "$ref": "#/components/schemas/UsInternationalAchPriorityRequirement"
           }
         ],
-        "properties": {
-          "type": {
-            "type": "string"
-          }
-        },
-        "discriminator": {
+        "x-client-original-discriminator": {
           "propertyName": "type",
           "mapping": {
             "amountMinMaxRequirement": "#/components/schemas/AmountMinMaxRequirement",
@@ -87486,39 +87511,36 @@
             "paymentInstrumentRequirement": "#/components/schemas/PaymentInstrumentRequirement",
             "usInternationalAchAddressRequirement": "#/components/schemas/UsInternationalAchAddressRequirement",
             "usInstantPayoutAddressRequirement": "#/components/schemas/UsInstantPayoutAddressRequirement",
-            "usInternationalAchPriorityRequirement": "#/components/schemas/UsInternationalAchPriorityRequirement",
-            "AdditionalBankIdentificationRequirement": "#/components/schemas/AdditionalBankIdentificationRequirement",
-            "AddressRequirement": "#/components/schemas/AddressRequirement",
-            "AmountMinMaxRequirement": "#/components/schemas/AmountMinMaxRequirement",
-            "AmountNonZeroDecimalsRequirement": "#/components/schemas/AmountNonZeroDecimalsRequirement",
-            "BankAccountIdentificationTypeRequirement": "#/components/schemas/BankAccountIdentificationTypeRequirement",
-            "IbanAccountIdentificationRequirement": "#/components/schemas/IbanAccountIdentificationRequirement",
-            "PaymentInstrumentRequirement": "#/components/schemas/PaymentInstrumentRequirement",
-            "UsInstantPayoutAddressRequirement": "#/components/schemas/UsInstantPayoutAddressRequirement",
-            "UsInternationalAchAddressRequirement": "#/components/schemas/UsInternationalAchAddressRequirement",
-            "UsInternationalAchPriorityRequirement": "#/components/schemas/UsInternationalAchPriorityRequirement"
+            "usInternationalAchPriorityRequirement": "#/components/schemas/UsInternationalAchPriorityRequirement"
           }
         }
       },
       "UpdatePaymentInstrumentAdditionalBankAccountIdentificationsItem": {
         "required": [
+          "iban",
           "type"
         ],
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/BalancePlatformService_v2_IbanAccountIdentification"
-          }
-        ],
+        "type": "object",
         "properties": {
+          "bic": {
+            "type": "string",
+            "description": "The bank's 8- or 11-character BIC or SWIFT code."
+          },
+          "iban": {
+            "type": "string",
+            "description": "The international bank account number as defined in the [ISO-13616](https://www.iso.org/standard/81090.html) standard."
+          },
           "type": {
-            "type": "string"
+            "$ref": "#/components/schemas/BalancePlatformService_v2_IbanType"
           }
         },
-        "discriminator": {
+        "additionalProperties": {
+          "not": { }
+        },
+        "x-client-original-discriminator": {
           "propertyName": "type",
           "mapping": {
-            "iban": "#/components/schemas/BalancePlatformService_v2_IbanAccountIdentification",
-            "IbanAccountIdentification": "#/components/schemas/BalancePlatformService_v2_IbanAccountIdentification"
+            "iban": "#/components/schemas/IbanAccountIdentification"
           }
         }
       },
@@ -95661,9 +95683,6 @@
         "x-addedInVersion": "4"
       },
       "TransferDataTracing": {
-        "required": [
-          "type"
-        ],
         "oneOf": [
           {
             "$ref": "#/components/schemas/UkFpsTracingData"
@@ -95672,27 +95691,17 @@
             "$ref": "#/components/schemas/UsAchTracingData"
           }
         ],
-        "properties": {
-          "type": {
-            "type": "string"
-          }
-        },
         "description": "Contains information for tracing the transfer after Adyen forwards it to the network.",
-        "discriminator": {
+        "x-addedInVersion": "4",
+        "x-client-original-discriminator": {
           "propertyName": "type",
           "mapping": {
             "usAch": "#/components/schemas/UsAchTracingData",
-            "ukFps": "#/components/schemas/UkFpsTracingData",
-            "UkFpsTracingData": "#/components/schemas/UkFpsTracingData",
-            "UsAchTracingData": "#/components/schemas/UsAchTracingData"
+            "ukFps": "#/components/schemas/UkFpsTracingData"
           }
-        },
-        "x-addedInVersion": "4"
+        }
       },
       "TransferDataTracking": {
-        "required": [
-          "type"
-        ],
         "oneOf": [
           {
             "$ref": "#/components/schemas/ConfirmationTrackingData"
@@ -95704,29 +95713,18 @@
             "$ref": "#/components/schemas/InternalReviewTrackingData"
           }
         ],
-        "properties": {
-          "type": {
-            "type": "string"
-          }
-        },
         "description": "The latest tracking information of the transfer.",
-        "discriminator": {
+        "x-addedInVersion": "3",
+        "x-client-original-discriminator": {
           "propertyName": "type",
           "mapping": {
             "estimation": "#/components/schemas/EstimationTrackingData",
             "confirmation": "#/components/schemas/ConfirmationTrackingData",
-            "internalReview": "#/components/schemas/InternalReviewTrackingData",
-            "ConfirmationTrackingData": "#/components/schemas/ConfirmationTrackingData",
-            "EstimationTrackingData": "#/components/schemas/EstimationTrackingData",
-            "InternalReviewTrackingData": "#/components/schemas/InternalReviewTrackingData"
+            "internalReview": "#/components/schemas/InternalReviewTrackingData"
           }
-        },
-        "x-addedInVersion": "3"
+        }
       },
       "TransferEventEventsDataItem": {
-        "required": [
-          "type"
-        ],
         "oneOf": [
           {
             "$ref": "#/components/schemas/InterchangeData"
@@ -95738,27 +95736,16 @@
             "$ref": "#/components/schemas/MerchantPurchaseData"
           }
         ],
-        "properties": {
-          "type": {
-            "type": "string"
-          }
-        },
-        "discriminator": {
+        "x-client-original-discriminator": {
           "propertyName": "type",
           "mapping": {
             "merchantPurchaseData": "#/components/schemas/MerchantPurchaseData",
             "issuingTransactionData": "#/components/schemas/IssuingTransactionData",
-            "interchangeData": "#/components/schemas/InterchangeData",
-            "InterchangeData": "#/components/schemas/InterchangeData",
-            "IssuingTransactionData": "#/components/schemas/IssuingTransactionData",
-            "MerchantPurchaseData": "#/components/schemas/MerchantPurchaseData"
+            "interchangeData": "#/components/schemas/InterchangeData"
           }
         }
       },
       "TransferEventTracingData": {
-        "required": [
-          "type"
-        ],
         "oneOf": [
           {
             "$ref": "#/components/schemas/UkFpsTracingData"
@@ -95767,27 +95754,17 @@
             "$ref": "#/components/schemas/UsAchTracingData"
           }
         ],
-        "properties": {
-          "type": {
-            "type": "string"
-          }
-        },
         "description": "Additional tracing information for the tracing event.",
-        "discriminator": {
+        "x-addedInVersion": "4",
+        "x-client-original-discriminator": {
           "propertyName": "type",
           "mapping": {
             "usAch": "#/components/schemas/UsAchTracingData",
-            "ukFps": "#/components/schemas/UkFpsTracingData",
-            "UkFpsTracingData": "#/components/schemas/UkFpsTracingData",
-            "UsAchTracingData": "#/components/schemas/UsAchTracingData"
+            "ukFps": "#/components/schemas/UkFpsTracingData"
           }
-        },
-        "x-addedInVersion": "4"
+        }
       },
       "TransferEventTrackingData": {
-        "required": [
-          "type"
-        ],
         "oneOf": [
           {
             "$ref": "#/components/schemas/ConfirmationTrackingData"
@@ -95799,24 +95776,16 @@
             "$ref": "#/components/schemas/InternalReviewTrackingData"
           }
         ],
-        "properties": {
-          "type": {
-            "type": "string"
-          }
-        },
         "description": "Additional information for the tracking event.",
-        "discriminator": {
+        "x-addedInVersion": "3",
+        "x-client-original-discriminator": {
           "propertyName": "type",
           "mapping": {
             "estimation": "#/components/schemas/EstimationTrackingData",
             "confirmation": "#/components/schemas/ConfirmationTrackingData",
-            "internalReview": "#/components/schemas/InternalReviewTrackingData",
-            "ConfirmationTrackingData": "#/components/schemas/ConfirmationTrackingData",
-            "EstimationTrackingData": "#/components/schemas/EstimationTrackingData",
-            "InternalReviewTrackingData": "#/components/schemas/InternalReviewTrackingData"
+            "internalReview": "#/components/schemas/InternalReviewTrackingData"
           }
-        },
-        "x-addedInVersion": "3"
+        }
       },
       "BalancePlatformTransferNotification_v4_RelayedAuthorisationDataMetadata": {
         "type": "object",
@@ -115672,25 +115641,47 @@
         "required": [
           "type"
         ],
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/CheckoutThreeDs2Action"
-          }
-        ],
+        "type": "object",
         "properties": {
+          "authorisationToken": {
+            "type": "string",
+            "description": "A token needed to authorise a payment."
+          },
+          "paymentData": {
+            "type": "string",
+            "description": "Encoded payment data."
+          },
+          "paymentMethodType": {
+            "type": "string",
+            "description": "Specifies the payment method."
+          },
+          "subtype": {
+            "type": "string",
+            "description": "A subtype of the token."
+          },
+          "token": {
+            "type": "string",
+            "description": "A token to pass to the 3DS2 Component to get the fingerprint."
+          },
           "type": {
-            "type": "string"
+            "$ref": "#/components/schemas/ThreeDs2Type"
+          },
+          "url": {
+            "type": "string",
+            "description": "Specifies the URL to redirect to."
           }
+        },
+        "additionalProperties": {
+          "not": { }
         },
         "description": "Action to be taken for completing the payment. When returned, only the 3D Secure action is needed in most cases.",
-        "discriminator": {
+        "x-addedInVersion": "49",
+        "x-client-original-discriminator": {
           "propertyName": "type",
           "mapping": {
-            "threeDS2": "#/components/schemas/CheckoutThreeDs2Action",
-            "CheckoutThreeDs2Action": "#/components/schemas/CheckoutThreeDs2Action"
+            "threeDS2": "#/components/schemas/CheckoutThreeDs2Action"
           }
-        },
-        "x-addedInVersion": "49"
+        }
       },
       "PaymentRequestPaymentMethod": {
         "required": [
@@ -116200,9 +116191,6 @@
         }
       },
       "PaymentResponseAction": {
-        "required": [
-          "type"
-        ],
         "oneOf": [
           {
             "$ref": "#/components/schemas/CheckoutAwaitAction"
@@ -116232,13 +116220,9 @@
             "$ref": "#/components/schemas/CheckoutVoucherAction"
           }
         ],
-        "properties": {
-          "type": {
-            "type": "string"
-          }
-        },
         "description": "Action to be taken for completing the payment.",
-        "discriminator": {
+        "x-addedInVersion": "49",
+        "x-client-original-discriminator": {
           "propertyName": "type",
           "mapping": {
             "bankTransfer": "#/components/schemas/CheckoutBankTransferAction",
@@ -116250,19 +116234,9 @@
             "threeDS2": "#/components/schemas/CheckoutThreeDs2Action",
             "delegatedAuthentication": "#/components/schemas/CheckoutDelegatedAuthenticationAction",
             "await": "#/components/schemas/CheckoutAwaitAction",
-            "voucher": "#/components/schemas/CheckoutVoucherAction",
-            "CheckoutAwaitAction": "#/components/schemas/CheckoutAwaitAction",
-            "CheckoutBankTransferAction": "#/components/schemas/CheckoutBankTransferAction",
-            "CheckoutDelegatedAuthenticationAction": "#/components/schemas/CheckoutDelegatedAuthenticationAction",
-            "CheckoutNativeRedirectAction": "#/components/schemas/CheckoutNativeRedirectAction",
-            "CheckoutQrCodeAction": "#/components/schemas/CheckoutQrCodeAction",
-            "CheckoutRedirectAction": "#/components/schemas/CheckoutRedirectAction",
-            "CheckoutSdkAction": "#/components/schemas/CheckoutSdkAction",
-            "CheckoutThreeDs2Action": "#/components/schemas/CheckoutThreeDs2Action",
-            "CheckoutVoucherAction": "#/components/schemas/CheckoutVoucherAction"
+            "voucher": "#/components/schemas/CheckoutVoucherAction"
           }
-        },
-        "x-addedInVersion": "49"
+        }
       },
       "PayToPaymentMethodAllOf2": {
         "type": "object",
@@ -185385,9 +185359,6 @@
         "x-addedInVersion": "4"
       },
       "TransferService_v4_TransferDataTracing": {
-        "required": [
-          "type"
-        ],
         "oneOf": [
           {
             "$ref": "#/components/schemas/TransferService_v4_UkFpsTracingData"
@@ -185396,27 +185367,17 @@
             "$ref": "#/components/schemas/TransferService_v4_UsAchTracingData"
           }
         ],
-        "properties": {
-          "type": {
-            "type": "string"
-          }
-        },
         "description": "Contains information for tracing the transfer after Adyen forwards it to the network.",
-        "discriminator": {
+        "x-addedInVersion": "4",
+        "x-client-original-discriminator": {
           "propertyName": "type",
           "mapping": {
-            "usAch": "#/components/schemas/TransferService_v4_UsAchTracingData",
-            "ukFps": "#/components/schemas/TransferService_v4_UkFpsTracingData",
-            "UkFpsTracingData": "#/components/schemas/TransferService_v4_UkFpsTracingData",
-            "UsAchTracingData": "#/components/schemas/TransferService_v4_UsAchTracingData"
+            "usAch": "#/components/schemas/UsAchTracingData",
+            "ukFps": "#/components/schemas/UkFpsTracingData"
           }
-        },
-        "x-addedInVersion": "4"
+        }
       },
       "TransferService_v4_TransferDataTracking": {
-        "required": [
-          "type"
-        ],
         "oneOf": [
           {
             "$ref": "#/components/schemas/TransferService_v4_ConfirmationTrackingData"
@@ -185428,29 +185389,18 @@
             "$ref": "#/components/schemas/TransferService_v4_InternalReviewTrackingData"
           }
         ],
-        "properties": {
-          "type": {
-            "type": "string"
-          }
-        },
         "description": "The latest tracking information of the transfer.",
-        "discriminator": {
+        "x-addedInVersion": "3",
+        "x-client-original-discriminator": {
           "propertyName": "type",
           "mapping": {
-            "estimation": "#/components/schemas/TransferService_v4_EstimationTrackingData",
-            "confirmation": "#/components/schemas/TransferService_v4_ConfirmationTrackingData",
-            "internalReview": "#/components/schemas/TransferService_v4_InternalReviewTrackingData",
-            "ConfirmationTrackingData": "#/components/schemas/TransferService_v4_ConfirmationTrackingData",
-            "EstimationTrackingData": "#/components/schemas/TransferService_v4_EstimationTrackingData",
-            "InternalReviewTrackingData": "#/components/schemas/TransferService_v4_InternalReviewTrackingData"
+            "estimation": "#/components/schemas/EstimationTrackingData",
+            "confirmation": "#/components/schemas/ConfirmationTrackingData",
+            "internalReview": "#/components/schemas/InternalReviewTrackingData"
           }
-        },
-        "x-addedInVersion": "3"
+        }
       },
       "TransferService_v4_TransferEventEventsDataItem": {
-        "required": [
-          "type"
-        ],
         "oneOf": [
           {
             "$ref": "#/components/schemas/TransferService_v4_InterchangeData"
@@ -185462,27 +185412,16 @@
             "$ref": "#/components/schemas/TransferService_v4_MerchantPurchaseData"
           }
         ],
-        "properties": {
-          "type": {
-            "type": "string"
-          }
-        },
-        "discriminator": {
+        "x-client-original-discriminator": {
           "propertyName": "type",
           "mapping": {
-            "merchantPurchaseData": "#/components/schemas/TransferService_v4_MerchantPurchaseData",
-            "issuingTransactionData": "#/components/schemas/TransferService_v4_IssuingTransactionData",
-            "interchangeData": "#/components/schemas/TransferService_v4_InterchangeData",
-            "InterchangeData": "#/components/schemas/TransferService_v4_InterchangeData",
-            "IssuingTransactionData": "#/components/schemas/TransferService_v4_IssuingTransactionData",
-            "MerchantPurchaseData": "#/components/schemas/TransferService_v4_MerchantPurchaseData"
+            "merchantPurchaseData": "#/components/schemas/MerchantPurchaseData",
+            "issuingTransactionData": "#/components/schemas/IssuingTransactionData",
+            "interchangeData": "#/components/schemas/InterchangeData"
           }
         }
       },
       "TransferService_v4_TransferEventTracingData": {
-        "required": [
-          "type"
-        ],
         "oneOf": [
           {
             "$ref": "#/components/schemas/TransferService_v4_UkFpsTracingData"
@@ -185491,27 +185430,17 @@
             "$ref": "#/components/schemas/TransferService_v4_UsAchTracingData"
           }
         ],
-        "properties": {
-          "type": {
-            "type": "string"
-          }
-        },
         "description": "Additional tracing information for the tracing event.",
-        "discriminator": {
+        "x-addedInVersion": "4",
+        "x-client-original-discriminator": {
           "propertyName": "type",
           "mapping": {
-            "usAch": "#/components/schemas/TransferService_v4_UsAchTracingData",
-            "ukFps": "#/components/schemas/TransferService_v4_UkFpsTracingData",
-            "UkFpsTracingData": "#/components/schemas/TransferService_v4_UkFpsTracingData",
-            "UsAchTracingData": "#/components/schemas/TransferService_v4_UsAchTracingData"
+            "usAch": "#/components/schemas/UsAchTracingData",
+            "ukFps": "#/components/schemas/UkFpsTracingData"
           }
-        },
-        "x-addedInVersion": "4"
+        }
       },
       "TransferService_v4_TransferEventTrackingData": {
-        "required": [
-          "type"
-        ],
         "oneOf": [
           {
             "$ref": "#/components/schemas/TransferService_v4_ConfirmationTrackingData"
@@ -185523,24 +185452,16 @@
             "$ref": "#/components/schemas/TransferService_v4_InternalReviewTrackingData"
           }
         ],
-        "properties": {
-          "type": {
-            "type": "string"
-          }
-        },
         "description": "Additional information for the tracking event.",
-        "discriminator": {
+        "x-addedInVersion": "3",
+        "x-client-original-discriminator": {
           "propertyName": "type",
           "mapping": {
-            "estimation": "#/components/schemas/TransferService_v4_EstimationTrackingData",
-            "confirmation": "#/components/schemas/TransferService_v4_ConfirmationTrackingData",
-            "internalReview": "#/components/schemas/TransferService_v4_InternalReviewTrackingData",
-            "ConfirmationTrackingData": "#/components/schemas/TransferService_v4_ConfirmationTrackingData",
-            "EstimationTrackingData": "#/components/schemas/TransferService_v4_EstimationTrackingData",
-            "InternalReviewTrackingData": "#/components/schemas/TransferService_v4_InternalReviewTrackingData"
+            "estimation": "#/components/schemas/EstimationTrackingData",
+            "confirmation": "#/components/schemas/ConfirmationTrackingData",
+            "internalReview": "#/components/schemas/InternalReviewTrackingData"
           }
-        },
-        "x-addedInVersion": "3"
+        }
       },
       "TransferService_v4_TransferViewCategoryData": {
         "required": [

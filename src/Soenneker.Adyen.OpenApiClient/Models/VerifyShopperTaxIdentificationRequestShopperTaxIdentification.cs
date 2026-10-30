@@ -12,27 +12,42 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class VerifyShopperTaxIdentificationRequestShopperTaxIdentification : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("taxCountryCode") is { } nullNodeTaxCountryCode && nullNodeTaxCountryCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxCountryCode = null;
+            if (parseNode.GetChildNode("taxIdentificationNumber") is { } nullNodeTaxIdentificationNumber && nullNodeTaxIdentificationNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxIdentificationNumber = null;
+            if (parseNode.GetChildNode("taxIdentificationType") is { } nullNodeTaxIdentificationType && nullNodeTaxIdentificationType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxIdentificationType = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The country governing the shopper&apos;s tax processing. Initially only IN is supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TaxCountryCode { get; set; }
+        public string? TaxCountryCode { get => _explicitNullValueTaxCountryCode; set { _explicitNullValueTaxCountryCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxCountryCode"); else _explicitNullProperties?.Remove("taxCountryCode"); } }
+        private string? _explicitNullValueTaxCountryCode = default!;
 #nullable restore
 #else
-        public string TaxCountryCode { get; set; }
+        public string TaxCountryCode { get => _explicitNullValueTaxCountryCode; set { _explicitNullValueTaxCountryCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxCountryCode"); else _explicitNullProperties?.Remove("taxCountryCode"); } }
+        private string _explicitNullValueTaxCountryCode = default!;
 #endif
         /// <summary>The tax identification number submitted for verification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TaxIdentificationNumber { get; set; }
+        public string? TaxIdentificationNumber { get => _explicitNullValueTaxIdentificationNumber; set { _explicitNullValueTaxIdentificationNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxIdentificationNumber"); else _explicitNullProperties?.Remove("taxIdentificationNumber"); } }
+        private string? _explicitNullValueTaxIdentificationNumber = default!;
 #nullable restore
 #else
-        public string TaxIdentificationNumber { get; set; }
+        public string TaxIdentificationNumber { get => _explicitNullValueTaxIdentificationNumber; set { _explicitNullValueTaxIdentificationNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxIdentificationNumber"); else _explicitNullProperties?.Remove("taxIdentificationNumber"); } }
+        private string _explicitNullValueTaxIdentificationNumber = default!;
 #endif
         /// <summary>The type of the tax identification. Initially only PAN is supported.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.ShopperTaxIdentificationTaxIdentificationType? TaxIdentificationType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ShopperTaxIdentificationTaxIdentificationType? TaxIdentificationType { get => _explicitNullValueTaxIdentificationType; set { _explicitNullValueTaxIdentificationType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxIdentificationType"); else _explicitNullProperties?.Remove("taxIdentificationType"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ShopperTaxIdentificationTaxIdentificationType? _explicitNullValueTaxIdentificationType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.VerifyShopperTaxIdentificationRequestShopperTaxIdentification"/> and sets the default values.
         /// </summary>
@@ -48,7 +63,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.VerifyShopperTaxIdentificationRequestShopperTaxIdentification CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.VerifyShopperTaxIdentificationRequestShopperTaxIdentification();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.VerifyShopperTaxIdentificationRequestShopperTaxIdentification(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,6 +88,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("taxCountryCode", TaxCountryCode);
             writer.WriteStringValue("taxIdentificationNumber", TaxIdentificationNumber);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ShopperTaxIdentificationTaxIdentificationType>("taxIdentificationType", TaxIdentificationType);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

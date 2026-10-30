@@ -63,6 +63,8 @@ namespace Soenneker.Adyen.OpenApiClient.PaymentServiceV68.Retrieve3ds2Result
                 { "403", global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ServiceError.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ServiceError.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ServiceError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2ResultResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2ResultResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

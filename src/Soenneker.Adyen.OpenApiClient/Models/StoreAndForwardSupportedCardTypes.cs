@@ -12,19 +12,36 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class StoreAndForwardSupportedCardTypes : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("credit") is { } nullNodeCredit && nullNodeCredit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Credit = null;
+            if (parseNode.GetChildNode("debit") is { } nullNodeDebit && nullNodeDebit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Debit = null;
+            if (parseNode.GetChildNode("deferredDebit") is { } nullNodeDeferredDebit && nullNodeDeferredDebit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeferredDebit = null;
+            if (parseNode.GetChildNode("prepaid") is { } nullNodePrepaid && nullNodePrepaid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Prepaid = null;
+            if (parseNode.GetChildNode("unknown") is { } nullNodeUnknown && nullNodeUnknown.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Unknown = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Set to **true** to accept credit cards.</summary>
-        public bool? Credit { get; set; }
+        public bool? Credit { get => _explicitNullValueCredit; set { _explicitNullValueCredit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credit"); else _explicitNullProperties?.Remove("credit"); } }
+        private bool? _explicitNullValueCredit = default!;
         /// <summary>Set to **true** to accept debit cards.</summary>
-        public bool? Debit { get; set; }
+        public bool? Debit { get => _explicitNullValueDebit; set { _explicitNullValueDebit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("debit"); else _explicitNullProperties?.Remove("debit"); } }
+        private bool? _explicitNullValueDebit = default!;
         /// <summary>Set to **true** to accept cards that allow deferred debit.</summary>
-        public bool? DeferredDebit { get; set; }
+        public bool? DeferredDebit { get => _explicitNullValueDeferredDebit; set { _explicitNullValueDeferredDebit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deferredDebit"); else _explicitNullProperties?.Remove("deferredDebit"); } }
+        private bool? _explicitNullValueDeferredDebit = default!;
         /// <summary>Set to **true** to accept prepaid cards.</summary>
-        public bool? Prepaid { get; set; }
+        public bool? Prepaid { get => _explicitNullValuePrepaid; set { _explicitNullValuePrepaid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prepaid"); else _explicitNullProperties?.Remove("prepaid"); } }
+        private bool? _explicitNullValuePrepaid = default!;
         /// <summary>Set to **true** to accept card types for which the terminal can&apos;t determine the funding source while offline.</summary>
-        public bool? Unknown { get; set; }
+        public bool? Unknown { get => _explicitNullValueUnknown; set { _explicitNullValueUnknown = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unknown"); else _explicitNullProperties?.Remove("unknown"); } }
+        private bool? _explicitNullValueUnknown = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.StoreAndForwardSupportedCardTypes"/> and sets the default values.
         /// </summary>
@@ -40,7 +57,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.StoreAndForwardSupportedCardTypes CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.StoreAndForwardSupportedCardTypes();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.StoreAndForwardSupportedCardTypes(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +86,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteBoolValue("deferredDebit", DeferredDebit);
             writer.WriteBoolValue("prepaid", Prepaid);
             writer.WriteBoolValue("unknown", Unknown);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,43 +12,74 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TransactionServiceV4PatchableNotDeliveredInfo : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("agreedDeliveryLocation") is { } nullNodeAgreedDeliveryLocation && nullNodeAgreedDeliveryLocation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgreedDeliveryLocation = null;
+            if (parseNode.GetChildNode("dateOfCancellation") is { } nullNodeDateOfCancellation && nullNodeDateOfCancellation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateOfCancellation = null;
+            if (parseNode.GetChildNode("deliveredToWrongLocation") is { } nullNodeDeliveredToWrongLocation && nullNodeDeliveredToWrongLocation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeliveredToWrongLocation = null;
+            if (parseNode.GetChildNode("descriptionOfIssue") is { } nullNodeDescriptionOfIssue && nullNodeDescriptionOfIssue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DescriptionOfIssue = null;
+            if (parseNode.GetChildNode("didCardholderReturn") is { } nullNodeDidCardholderReturn && nullNodeDidCardholderReturn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DidCardholderReturn = null;
+            if (parseNode.GetChildNode("isDeliveryLate") is { } nullNodeIsDeliveryLate && nullNodeIsDeliveryLate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsDeliveryLate = null;
+            if (parseNode.GetChildNode("isMerchantBankrupt") is { } nullNodeIsMerchantBankrupt && nullNodeIsMerchantBankrupt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsMerchantBankrupt = null;
+            if (parseNode.GetChildNode("isNonFiatOrNft") is { } nullNodeIsNonFiatOrNft && nullNodeIsNonFiatOrNft.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsNonFiatOrNft = null;
+            if (parseNode.GetChildNode("lastExpectedDate") is { } nullNodeLastExpectedDate && nullNodeLastExpectedDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastExpectedDate = null;
+            if (parseNode.GetChildNode("whatWasNotDelivered") is { } nullNodeWhatWasNotDelivered && nullNodeWhatWasNotDelivered.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WhatWasNotDelivered = null;
+            if (parseNode.GetChildNode("whoCancelled") is { } nullNodeWhoCancelled && nullNodeWhoCancelled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WhoCancelled = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The delivery location specified by the cardholder. Required if **deliveredToWrongLocation** is **true**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AgreedDeliveryLocation { get; set; }
+        public string? AgreedDeliveryLocation { get => _explicitNullValueAgreedDeliveryLocation; set { _explicitNullValueAgreedDeliveryLocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agreedDeliveryLocation"); else _explicitNullProperties?.Remove("agreedDeliveryLocation"); } }
+        private string? _explicitNullValueAgreedDeliveryLocation = default!;
 #nullable restore
 #else
-        public string AgreedDeliveryLocation { get; set; }
+        public string AgreedDeliveryLocation { get => _explicitNullValueAgreedDeliveryLocation; set { _explicitNullValueAgreedDeliveryLocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agreedDeliveryLocation"); else _explicitNullProperties?.Remove("agreedDeliveryLocation"); } }
+        private string _explicitNullValueAgreedDeliveryLocation = default!;
 #endif
         /// <summary>The date the undelivered goods or services were cancelled in YYYY-MM-DD format.</summary>
-        public Date? DateOfCancellation { get; set; }
+        public Date? DateOfCancellation { get => _explicitNullValueDateOfCancellation; set { _explicitNullValueDateOfCancellation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateOfCancellation"); else _explicitNullProperties?.Remove("dateOfCancellation"); } }
+        private Date? _explicitNullValueDateOfCancellation = default!;
         /// <summary>Indicates goods were delivered to the wrong location.Possible values: **true**, **false**.</summary>
-        public bool? DeliveredToWrongLocation { get; set; }
+        public bool? DeliveredToWrongLocation { get => _explicitNullValueDeliveredToWrongLocation; set { _explicitNullValueDeliveredToWrongLocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deliveredToWrongLocation"); else _explicitNullProperties?.Remove("deliveredToWrongLocation"); } }
+        private bool? _explicitNullValueDeliveredToWrongLocation = default!;
         /// <summary>Your description of the issue for raising a dispute of `type` **notDelivered**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DescriptionOfIssue { get; set; }
+        public string? DescriptionOfIssue { get => _explicitNullValueDescriptionOfIssue; set { _explicitNullValueDescriptionOfIssue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("descriptionOfIssue"); else _explicitNullProperties?.Remove("descriptionOfIssue"); } }
+        private string? _explicitNullValueDescriptionOfIssue = default!;
 #nullable restore
 #else
-        public string DescriptionOfIssue { get; set; }
+        public string DescriptionOfIssue { get => _explicitNullValueDescriptionOfIssue; set { _explicitNullValueDescriptionOfIssue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("descriptionOfIssue"); else _explicitNullProperties?.Remove("descriptionOfIssue"); } }
+        private string _explicitNullValueDescriptionOfIssue = default!;
 #endif
         /// <summary>Indicates if the cardholder returned the goods to the merchant. Required if **isDeliveryLate** is **true**.Possible values: **true**, **false**.</summary>
-        public bool? DidCardholderReturn { get; set; }
+        public bool? DidCardholderReturn { get => _explicitNullValueDidCardholderReturn; set { _explicitNullValueDidCardholderReturn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("didCardholderReturn"); else _explicitNullProperties?.Remove("didCardholderReturn"); } }
+        private bool? _explicitNullValueDidCardholderReturn = default!;
         /// <summary>Indicates if the goods or services were delivered late. Required if **whatWasNotDelivered** is **goods**.Possible values: **true**, **false**.</summary>
-        public bool? IsDeliveryLate { get; set; }
+        public bool? IsDeliveryLate { get => _explicitNullValueIsDeliveryLate; set { _explicitNullValueIsDeliveryLate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isDeliveryLate"); else _explicitNullProperties?.Remove("isDeliveryLate"); } }
+        private bool? _explicitNullValueIsDeliveryLate = default!;
         /// <summary>Indicates if the transaction was processed by a bankrupt merchant.Possible values: **true**, **false**.</summary>
-        public bool? IsMerchantBankrupt { get; set; }
+        public bool? IsMerchantBankrupt { get => _explicitNullValueIsMerchantBankrupt; set { _explicitNullValueIsMerchantBankrupt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isMerchantBankrupt"); else _explicitNullProperties?.Remove("isMerchantBankrupt"); } }
+        private bool? _explicitNullValueIsMerchantBankrupt = default!;
         /// <summary>Indicates if the transaction is non-fiat or non-fungible token (NFT) related.Possible values: **true**, **false**.</summary>
-        public bool? IsNonFiatOrNft { get; set; }
+        public bool? IsNonFiatOrNft { get => _explicitNullValueIsNonFiatOrNft; set { _explicitNullValueIsNonFiatOrNft = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isNonFiatOrNft"); else _explicitNullProperties?.Remove("isNonFiatOrNft"); } }
+        private bool? _explicitNullValueIsNonFiatOrNft = default!;
         /// <summary>The date the undelivered goods or services were expected to be delivered in YYYY-MM-DD format.</summary>
-        public Date? LastExpectedDate { get; set; }
+        public Date? LastExpectedDate { get => _explicitNullValueLastExpectedDate; set { _explicitNullValueLastExpectedDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastExpectedDate"); else _explicitNullProperties?.Remove("lastExpectedDate"); } }
+        private Date? _explicitNullValueLastExpectedDate = default!;
         /// <summary>The type of product that you expected to receive.Possible values: **goods**, **services**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableNotDeliveredInfoWhatWasNotDelivered? WhatWasNotDelivered { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableNotDeliveredInfoWhatWasNotDelivered? WhatWasNotDelivered { get => _explicitNullValueWhatWasNotDelivered; set { _explicitNullValueWhatWasNotDelivered = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("whatWasNotDelivered"); else _explicitNullProperties?.Remove("whatWasNotDelivered"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableNotDeliveredInfoWhatWasNotDelivered? _explicitNullValueWhatWasNotDelivered = default!;
         /// <summary>The party that initiated the cancellation of the transaction.Possible values: **merchant**, **cardholder**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4CancellingEntity? WhoCancelled { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4CancellingEntity? WhoCancelled { get => _explicitNullValueWhoCancelled; set { _explicitNullValueWhoCancelled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("whoCancelled"); else _explicitNullProperties?.Remove("whoCancelled"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4CancellingEntity? _explicitNullValueWhoCancelled = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableNotDeliveredInfo"/> and sets the default values.
         /// </summary>
@@ -64,7 +95,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableNotDeliveredInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableNotDeliveredInfo();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableNotDeliveredInfo(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -105,6 +136,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteDateValue("lastExpectedDate", LastExpectedDate);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableNotDeliveredInfoWhatWasNotDelivered>("whatWasNotDelivered", WhatWasNotDelivered);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4CancellingEntity>("whoCancelled", WhoCancelled);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

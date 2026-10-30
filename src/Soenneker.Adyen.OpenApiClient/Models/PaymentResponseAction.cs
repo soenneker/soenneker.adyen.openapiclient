@@ -12,7 +12,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PaymentResponseAction : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutAwaitAction"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -93,45 +98,66 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseAction CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseAction();
-            if("await".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("CheckoutAwaitAction".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.CheckoutAwaitAction = new global::Soenneker.Adyen.OpenApiClient.Models.CheckoutAwaitAction();
+                
             }
-            else if("bankTransfer".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("CheckoutBankTransferAction".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.CheckoutBankTransferAction = new global::Soenneker.Adyen.OpenApiClient.Models.CheckoutBankTransferAction();
+                
             }
             else if("CheckoutDelegatedAuthenticationAction".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.CheckoutDelegatedAuthenticationAction = new global::Soenneker.Adyen.OpenApiClient.Models.CheckoutDelegatedAuthenticationAction();
+                
             }
             else if("CheckoutNativeRedirectAction".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.CheckoutNativeRedirectAction = new global::Soenneker.Adyen.OpenApiClient.Models.CheckoutNativeRedirectAction();
+                
             }
             else if("CheckoutQrCodeAction".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.CheckoutQrCodeAction = new global::Soenneker.Adyen.OpenApiClient.Models.CheckoutQrCodeAction();
+                
             }
             else if("CheckoutRedirectAction".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.CheckoutRedirectAction = new global::Soenneker.Adyen.OpenApiClient.Models.CheckoutRedirectAction();
+                
             }
             else if("CheckoutSdkAction".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.CheckoutSdkAction = new global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSdkAction();
+                
             }
             else if("CheckoutThreeDs2Action".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.CheckoutThreeDs2Action = new global::Soenneker.Adyen.OpenApiClient.Models.CheckoutThreeDs2Action();
+                
             }
             else if("CheckoutVoucherAction".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.CheckoutVoucherAction = new global::Soenneker.Adyen.OpenApiClient.Models.CheckoutVoucherAction();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("await".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("bankTransfer".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("delegatedAuthentication".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("nativeRedirect".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch4 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("qrCode".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch5 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("redirect".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch6 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("sdk".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "wechatpaySDK".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch7 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("threeDS2".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch8 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("voucher".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            if (result.CheckoutAwaitAction == null && result.CheckoutBankTransferAction == null && result.CheckoutDelegatedAuthenticationAction == null && result.CheckoutNativeRedirectAction == null && result.CheckoutQrCodeAction == null && result.CheckoutRedirectAction == null && result.CheckoutSdkAction == null && result.CheckoutThreeDs2Action == null && result.CheckoutVoucherAction == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8) result.CheckoutAwaitAction = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.CheckoutAwaitAction(), parseNode);
+            if (result.CheckoutAwaitAction == null && result.CheckoutBankTransferAction == null && result.CheckoutDelegatedAuthenticationAction == null && result.CheckoutNativeRedirectAction == null && result.CheckoutQrCodeAction == null && result.CheckoutRedirectAction == null && result.CheckoutSdkAction == null && result.CheckoutThreeDs2Action == null && result.CheckoutVoucherAction == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8) result.CheckoutBankTransferAction = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.CheckoutBankTransferAction(), parseNode);
+            if (result.CheckoutAwaitAction == null && result.CheckoutBankTransferAction == null && result.CheckoutDelegatedAuthenticationAction == null && result.CheckoutNativeRedirectAction == null && result.CheckoutQrCodeAction == null && result.CheckoutRedirectAction == null && result.CheckoutSdkAction == null && result.CheckoutThreeDs2Action == null && result.CheckoutVoucherAction == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8) result.CheckoutDelegatedAuthenticationAction = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.CheckoutDelegatedAuthenticationAction(), parseNode);
+            if (result.CheckoutAwaitAction == null && result.CheckoutBankTransferAction == null && result.CheckoutDelegatedAuthenticationAction == null && result.CheckoutNativeRedirectAction == null && result.CheckoutQrCodeAction == null && result.CheckoutRedirectAction == null && result.CheckoutSdkAction == null && result.CheckoutThreeDs2Action == null && result.CheckoutVoucherAction == null && matchesUnionBranch3 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8) result.CheckoutNativeRedirectAction = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.CheckoutNativeRedirectAction(), parseNode);
+            if (result.CheckoutAwaitAction == null && result.CheckoutBankTransferAction == null && result.CheckoutDelegatedAuthenticationAction == null && result.CheckoutNativeRedirectAction == null && result.CheckoutQrCodeAction == null && result.CheckoutRedirectAction == null && result.CheckoutSdkAction == null && result.CheckoutThreeDs2Action == null && result.CheckoutVoucherAction == null && matchesUnionBranch4 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8) result.CheckoutQrCodeAction = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.CheckoutQrCodeAction(), parseNode);
+            if (result.CheckoutAwaitAction == null && result.CheckoutBankTransferAction == null && result.CheckoutDelegatedAuthenticationAction == null && result.CheckoutNativeRedirectAction == null && result.CheckoutQrCodeAction == null && result.CheckoutRedirectAction == null && result.CheckoutSdkAction == null && result.CheckoutThreeDs2Action == null && result.CheckoutVoucherAction == null && matchesUnionBranch5 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8) result.CheckoutRedirectAction = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.CheckoutRedirectAction(), parseNode);
+            if (result.CheckoutAwaitAction == null && result.CheckoutBankTransferAction == null && result.CheckoutDelegatedAuthenticationAction == null && result.CheckoutNativeRedirectAction == null && result.CheckoutQrCodeAction == null && result.CheckoutRedirectAction == null && result.CheckoutSdkAction == null && result.CheckoutThreeDs2Action == null && result.CheckoutVoucherAction == null && matchesUnionBranch6 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch7 && !matchesUnionBranch8) result.CheckoutSdkAction = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSdkAction(), parseNode);
+            if (result.CheckoutAwaitAction == null && result.CheckoutBankTransferAction == null && result.CheckoutDelegatedAuthenticationAction == null && result.CheckoutNativeRedirectAction == null && result.CheckoutQrCodeAction == null && result.CheckoutRedirectAction == null && result.CheckoutSdkAction == null && result.CheckoutThreeDs2Action == null && result.CheckoutVoucherAction == null && matchesUnionBranch7 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch8) result.CheckoutThreeDs2Action = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.CheckoutThreeDs2Action(), parseNode);
+            if (result.CheckoutAwaitAction == null && result.CheckoutBankTransferAction == null && result.CheckoutDelegatedAuthenticationAction == null && result.CheckoutNativeRedirectAction == null && result.CheckoutQrCodeAction == null && result.CheckoutRedirectAction == null && result.CheckoutSdkAction == null && result.CheckoutThreeDs2Action == null && result.CheckoutVoucherAction == null && matchesUnionBranch8 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7) result.CheckoutVoucherAction = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.CheckoutVoucherAction(), parseNode);
+            if (result.CheckoutAwaitAction == null && result.CheckoutBankTransferAction == null && result.CheckoutDelegatedAuthenticationAction == null && result.CheckoutNativeRedirectAction == null && result.CheckoutQrCodeAction == null && result.CheckoutRedirectAction == null && result.CheckoutSdkAction == null && result.CheckoutThreeDs2Action == null && result.CheckoutVoucherAction == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -183,41 +209,62 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (CheckoutAwaitAction == null && CheckoutBankTransferAction == null && CheckoutDelegatedAuthenticationAction == null && CheckoutNativeRedirectAction == null && CheckoutQrCodeAction == null && CheckoutRedirectAction == null && CheckoutSdkAction == null && CheckoutThreeDs2Action == null && CheckoutVoucherAction == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (CheckoutAwaitAction != null && CheckoutBankTransferAction == null && CheckoutDelegatedAuthenticationAction == null && CheckoutNativeRedirectAction == null && CheckoutQrCodeAction == null && CheckoutRedirectAction == null && CheckoutSdkAction == null && CheckoutThreeDs2Action == null && CheckoutVoucherAction == null) { if (CheckoutAwaitAction is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CheckoutAwaitAction); return; }
+            if (CheckoutBankTransferAction != null && CheckoutAwaitAction == null && CheckoutDelegatedAuthenticationAction == null && CheckoutNativeRedirectAction == null && CheckoutQrCodeAction == null && CheckoutRedirectAction == null && CheckoutSdkAction == null && CheckoutThreeDs2Action == null && CheckoutVoucherAction == null) { if (CheckoutBankTransferAction is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CheckoutBankTransferAction); return; }
+            if (CheckoutDelegatedAuthenticationAction != null && CheckoutAwaitAction == null && CheckoutBankTransferAction == null && CheckoutNativeRedirectAction == null && CheckoutQrCodeAction == null && CheckoutRedirectAction == null && CheckoutSdkAction == null && CheckoutThreeDs2Action == null && CheckoutVoucherAction == null) { if (CheckoutDelegatedAuthenticationAction is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CheckoutDelegatedAuthenticationAction); return; }
+            if (CheckoutNativeRedirectAction != null && CheckoutAwaitAction == null && CheckoutBankTransferAction == null && CheckoutDelegatedAuthenticationAction == null && CheckoutQrCodeAction == null && CheckoutRedirectAction == null && CheckoutSdkAction == null && CheckoutThreeDs2Action == null && CheckoutVoucherAction == null) { if (CheckoutNativeRedirectAction is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CheckoutNativeRedirectAction); return; }
+            if (CheckoutQrCodeAction != null && CheckoutAwaitAction == null && CheckoutBankTransferAction == null && CheckoutDelegatedAuthenticationAction == null && CheckoutNativeRedirectAction == null && CheckoutRedirectAction == null && CheckoutSdkAction == null && CheckoutThreeDs2Action == null && CheckoutVoucherAction == null) { if (CheckoutQrCodeAction is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CheckoutQrCodeAction); return; }
+            if (CheckoutRedirectAction != null && CheckoutAwaitAction == null && CheckoutBankTransferAction == null && CheckoutDelegatedAuthenticationAction == null && CheckoutNativeRedirectAction == null && CheckoutQrCodeAction == null && CheckoutSdkAction == null && CheckoutThreeDs2Action == null && CheckoutVoucherAction == null) { if (CheckoutRedirectAction is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CheckoutRedirectAction); return; }
+            if (CheckoutSdkAction != null && CheckoutAwaitAction == null && CheckoutBankTransferAction == null && CheckoutDelegatedAuthenticationAction == null && CheckoutNativeRedirectAction == null && CheckoutQrCodeAction == null && CheckoutRedirectAction == null && CheckoutThreeDs2Action == null && CheckoutVoucherAction == null) { if (CheckoutSdkAction is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CheckoutSdkAction); return; }
+            if (CheckoutThreeDs2Action != null && CheckoutAwaitAction == null && CheckoutBankTransferAction == null && CheckoutDelegatedAuthenticationAction == null && CheckoutNativeRedirectAction == null && CheckoutQrCodeAction == null && CheckoutRedirectAction == null && CheckoutSdkAction == null && CheckoutVoucherAction == null) { if (CheckoutThreeDs2Action is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CheckoutThreeDs2Action); return; }
+            if (CheckoutVoucherAction != null && CheckoutAwaitAction == null && CheckoutBankTransferAction == null && CheckoutDelegatedAuthenticationAction == null && CheckoutNativeRedirectAction == null && CheckoutQrCodeAction == null && CheckoutRedirectAction == null && CheckoutSdkAction == null && CheckoutThreeDs2Action == null) { if (CheckoutVoucherAction is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CheckoutVoucherAction); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(CheckoutAwaitAction != null)
             {
+                if (CheckoutAwaitAction is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutAwaitAction>(null, CheckoutAwaitAction);
             }
             else if(CheckoutBankTransferAction != null)
             {
+                if (CheckoutBankTransferAction is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutBankTransferAction>(null, CheckoutBankTransferAction);
             }
             else if(CheckoutDelegatedAuthenticationAction != null)
             {
+                if (CheckoutDelegatedAuthenticationAction is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutDelegatedAuthenticationAction>(null, CheckoutDelegatedAuthenticationAction);
             }
             else if(CheckoutNativeRedirectAction != null)
             {
+                if (CheckoutNativeRedirectAction is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutNativeRedirectAction>(null, CheckoutNativeRedirectAction);
             }
             else if(CheckoutQrCodeAction != null)
             {
+                if (CheckoutQrCodeAction is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutQrCodeAction>(null, CheckoutQrCodeAction);
             }
             else if(CheckoutRedirectAction != null)
             {
+                if (CheckoutRedirectAction is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutRedirectAction>(null, CheckoutRedirectAction);
             }
             else if(CheckoutSdkAction != null)
             {
+                if (CheckoutSdkAction is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSdkAction>(null, CheckoutSdkAction);
             }
             else if(CheckoutThreeDs2Action != null)
             {
+                if (CheckoutThreeDs2Action is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutThreeDs2Action>(null, CheckoutThreeDs2Action);
             }
             else if(CheckoutVoucherAction != null)
             {
+                if (CheckoutVoucherAction is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutVoucherAction>(null, CheckoutVoucherAction);
             }
         }

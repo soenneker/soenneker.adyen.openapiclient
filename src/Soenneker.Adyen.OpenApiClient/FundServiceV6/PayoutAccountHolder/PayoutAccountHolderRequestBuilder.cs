@@ -63,6 +63,8 @@ namespace Soenneker.Adyen.OpenApiClient.FundServiceV6.PayoutAccountHolder
                 { "403", global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6ServiceError.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6ServiceError.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6ServiceError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.PayoutAccountHolderResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.PayoutAccountHolderResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

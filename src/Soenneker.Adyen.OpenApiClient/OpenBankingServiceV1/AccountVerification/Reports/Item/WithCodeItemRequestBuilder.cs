@@ -63,6 +63,8 @@ namespace Soenneker.Adyen.OpenApiClient.OpenBankingServiceV1.AccountVerification
                 { "422", global::Soenneker.Adyen.OpenApiClient.Models.OpenBankingServiceV1DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Adyen.OpenApiClient.Models.OpenBankingServiceV1DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Adyen.OpenApiClient.Models.OpenBankingServiceV1DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.AccountVerificationReportResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.AccountVerificationReportResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

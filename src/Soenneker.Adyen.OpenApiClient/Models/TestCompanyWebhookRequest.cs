@@ -11,32 +11,48 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TestCompanyWebhookRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("merchantIds") is { } nullNodeMerchantIds && nullNodeMerchantIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantIds = null;
+            if (parseNode.GetChildNode("notification") is { } nullNodeNotification && nullNodeNotification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Notification = null;
+            if (parseNode.GetChildNode("types") is { } nullNodeTypes && nullNodeTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Types = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>List of `merchantId` values for which test webhooks will be sent. The list can have a maximum of 20 `merchantId` values.If not specified, we send sample notifications to all the merchant accounts that the webhook is configured for. If this is more than 20 merchant accounts, use this list to specify a subset of the merchant accounts for which to send test notifications.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MerchantIds { get; set; }
+        public List<string>? MerchantIds { get => _explicitNullValueMerchantIds; set { _explicitNullValueMerchantIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantIds"); else _explicitNullProperties?.Remove("merchantIds"); } }
+        private List<string>? _explicitNullValueMerchantIds = default!;
 #nullable restore
 #else
-        public List<string> MerchantIds { get; set; }
+        public List<string> MerchantIds { get => _explicitNullValueMerchantIds; set { _explicitNullValueMerchantIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantIds"); else _explicitNullProperties?.Remove("merchantIds"); } }
+        private List<string> _explicitNullValueMerchantIds = default!;
 #endif
         /// <summary>Custom test notification object. Required when the [`types`](https://docs.adyen.com/api-explorer/#/ManagementService/v1/post/companies/{companyId}/webhooks/{webhookId}/test__reqParam_types) list contains **CUSTOM**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TestCompanyWebhookRequestNotification? Notification { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TestCompanyWebhookRequestNotification? Notification { get => _explicitNullValueNotification; set { _explicitNullValueNotification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notification"); else _explicitNullProperties?.Remove("notification"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TestCompanyWebhookRequestNotification? _explicitNullValueNotification = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TestCompanyWebhookRequestNotification Notification { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TestCompanyWebhookRequestNotification Notification { get => _explicitNullValueNotification; set { _explicitNullValueNotification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notification"); else _explicitNullProperties?.Remove("notification"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TestCompanyWebhookRequestNotification _explicitNullValueNotification = default!;
 #endif
         /// <summary>List of event codes for which to send test notifications. Only the webhook types below are supported. Possible values if webhook `type`: **standard**:* **AUTHORISATION*** **CHARGEBACK_REVERSED*** **ORDER_CLOSED*** **ORDER_OPENED*** **PAIDOUT_REVERSED*** **PAYOUT_THIRDPARTY*** **REFUNDED_REVERSED*** **REFUND_WITH_DATA*** **REPORT_AVAILABLE*** **CUSTOM** - set your custom notification fields in the [`notification`](https://docs.adyen.com/api-explorer/#/ManagementService/v1/post/companies/{companyId}/webhooks/{webhookId}/test__reqParam_notification) object.Possible values if webhook `type`: **banktransfer-notification**:* **PENDING**Possible values if webhook `type`: **report-notification**:* **REPORT_AVAILABLE**Possible values if webhook `type`: **ideal-notification**:* **AUTHORISATION**Possible values if webhook `type`: **pending-notification**:* **PENDING**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Types { get; set; }
+        public List<string>? Types { get => _explicitNullValueTypes; set { _explicitNullValueTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("types"); else _explicitNullProperties?.Remove("types"); } }
+        private List<string>? _explicitNullValueTypes = default!;
 #nullable restore
 #else
-        public List<string> Types { get; set; }
+        public List<string> Types { get => _explicitNullValueTypes; set { _explicitNullValueTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("types"); else _explicitNullProperties?.Remove("types"); } }
+        private List<string> _explicitNullValueTypes = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TestCompanyWebhookRequest"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.TestCompanyWebhookRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.TestCompanyWebhookRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.TestCompanyWebhookRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("merchantIds", MerchantIds);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TestCompanyWebhookRequestNotification>("notification", Notification);
             writer.WriteCollectionOfPrimitiveValues<string>("types", Types);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

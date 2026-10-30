@@ -12,15 +12,28 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TerminalSettingsHomeScreenMember1 : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("hideNavigationBar") is { } nullNodeHideNavigationBar && nullNodeHideNavigationBar.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HideNavigationBar = null;
+            if (parseNode.GetChildNode("showPaymentsMenu") is { } nullNodeShowPaymentsMenu && nullNodeShowPaymentsMenu.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShowPaymentsMenu = null;
+            if (parseNode.GetChildNode("showSettingsMenu") is { } nullNodeShowSettingsMenu && nullNodeShowSettingsMenu.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShowSettingsMenu = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Hide/show the navigation bar.</summary>
-        public bool? HideNavigationBar { get; set; }
+        public bool? HideNavigationBar { get => _explicitNullValueHideNavigationBar; set { _explicitNullValueHideNavigationBar = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hideNavigationBar"); else _explicitNullProperties?.Remove("hideNavigationBar"); } }
+        private bool? _explicitNullValueHideNavigationBar = default!;
         /// <summary>Show/hide the payments menu.</summary>
-        public bool? ShowPaymentsMenu { get; set; }
+        public bool? ShowPaymentsMenu { get => _explicitNullValueShowPaymentsMenu; set { _explicitNullValueShowPaymentsMenu = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("showPaymentsMenu"); else _explicitNullProperties?.Remove("showPaymentsMenu"); } }
+        private bool? _explicitNullValueShowPaymentsMenu = default!;
         /// <summary>Show/hide the settings menu.</summary>
-        public bool? ShowSettingsMenu { get; set; }
+        public bool? ShowSettingsMenu { get => _explicitNullValueShowSettingsMenu; set { _explicitNullValueShowSettingsMenu = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("showSettingsMenu"); else _explicitNullProperties?.Remove("showSettingsMenu"); } }
+        private bool? _explicitNullValueShowSettingsMenu = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHomeScreenMember1"/> and sets the default values.
         /// </summary>
@@ -36,7 +49,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHomeScreenMember1 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHomeScreenMember1();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHomeScreenMember1(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -61,6 +74,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteBoolValue("hideNavigationBar", HideNavigationBar);
             writer.WriteBoolValue("showPaymentsMenu", ShowPaymentsMenu);
             writer.WriteBoolValue("showSettingsMenu", ShowSettingsMenu);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

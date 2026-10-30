@@ -12,13 +12,24 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreateTransferLimitRequestScaInformation : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("exemption") is { } nullNodeExemption && nullNodeExemption.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Exemption = null;
+            if (parseNode.GetChildNode("scaOnApproval") is { } nullNodeScaOnApproval && nullNodeScaOnApproval.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScaOnApproval = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The type of exemption for Strong Customer Authentication (SCA). Possible values:* **lowerLimit**: the newly created limit is lower than the existing limit.* **notRegulated**: the limit is created in a country, region, or industry where it is not mandated by law to use SCA.* **setByPlatform**: you set a limit for one of your user&apos;s balance accounts, or for your balance platform.* **initialLimit**: there are no existing transfer limits set on the balance account or balance platform.* **alreadyPerformed**: you are confident about your user&apos;s identity and do not need to verify this using SCA.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CreateScaInformationExemption? Exemption { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CreateScaInformationExemption? Exemption { get => _explicitNullValueExemption; set { _explicitNullValueExemption = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exemption"); else _explicitNullProperties?.Remove("exemption"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.CreateScaInformationExemption? _explicitNullValueExemption = default!;
         /// <summary>Indicates whether to initiate Strong Customer Authentication (SCA) later, during approval, or immediately after you submit this request. Possible values:* **true**: you can initiate SCA later, during approval, for all pending transfer limits.* **false** (default): you initiate SCA immediately after submitting the transfer limit request.</summary>
-        public bool? ScaOnApproval { get; set; }
+        public bool? ScaOnApproval { get => _explicitNullValueScaOnApproval; set { _explicitNullValueScaOnApproval = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scaOnApproval"); else _explicitNullProperties?.Remove("scaOnApproval"); } }
+        private bool? _explicitNullValueScaOnApproval = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CreateTransferLimitRequestScaInformation"/> and sets the default values.
         /// </summary>
@@ -34,7 +45,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.CreateTransferLimitRequestScaInformation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.CreateTransferLimitRequestScaInformation();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.CreateTransferLimitRequestScaInformation(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -57,6 +68,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateScaInformationExemption>("exemption", Exemption);
             writer.WriteBoolValue("scaOnApproval", ScaOnApproval);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

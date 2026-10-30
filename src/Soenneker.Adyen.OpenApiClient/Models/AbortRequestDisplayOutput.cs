@@ -12,41 +12,65 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AbortRequestDisplayOutput : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("Device") is { } nullNodeDevice && nullNodeDevice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Device = null;
+            if (parseNode.GetChildNode("InfoQualify") is { } nullNodeInfoQualify && nullNodeInfoQualify.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InfoQualify = null;
+            if (parseNode.GetChildNode("MenuEntry") is { } nullNodeMenuEntry && nullNodeMenuEntry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MenuEntry = null;
+            if (parseNode.GetChildNode("MinimumDisplayTime") is { } nullNodeMinimumDisplayTime && nullNodeMinimumDisplayTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinimumDisplayTime = null;
+            if (parseNode.GetChildNode("OutputContent") is { } nullNodeOutputContent && nullNodeOutputContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutputContent = null;
+            if (parseNode.GetChildNode("OutputSignature") is { } nullNodeOutputSignature && nullNodeOutputSignature.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutputSignature = null;
+            if (parseNode.GetChildNode("ResponseRequiredFlag") is { } nullNodeResponseRequiredFlag && nullNodeResponseRequiredFlag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseRequiredFlag = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Possible values:* **CashierDisplay*** **CustomerDisplay*** **CashierInput*** **CustomerInput**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.DisplayOutputDevice? Device { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DisplayOutputDevice? Device { get => _explicitNullValueDevice; set { _explicitNullValueDevice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Device"); else _explicitNullProperties?.Remove("Device"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.DisplayOutputDevice? _explicitNullValueDevice = default!;
         /// <summary>Possible values:* **Status*** **Error*** **Display*** **Sound*** **Input*** **POIReplication*** **CustomerAssistance*** **Receipt*** **Document*** **Voucher**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.DisplayOutputInfoQualify? InfoQualify { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DisplayOutputInfoQualify? InfoQualify { get => _explicitNullValueInfoQualify; set { _explicitNullValueInfoQualify = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("InfoQualify"); else _explicitNullProperties?.Remove("InfoQualify"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.DisplayOutputInfoQualify? _explicitNullValueInfoQualify = default!;
         /// <summary>An entry of the menu to present to the Cashier. It conveys the message text and parameters of the menu entry. This output data could be only provided for an input command, in order to choose an entryof the menu.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.MenuEntry>? MenuEntry { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.MenuEntry>? MenuEntry { get => _explicitNullValueMenuEntry; set { _explicitNullValueMenuEntry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MenuEntry"); else _explicitNullProperties?.Remove("MenuEntry"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.MenuEntry>? _explicitNullValueMenuEntry = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.MenuEntry> MenuEntry { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.MenuEntry> MenuEntry { get => _explicitNullValueMenuEntry; set { _explicitNullValueMenuEntry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MenuEntry"); else _explicitNullProperties?.Remove("MenuEntry"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.MenuEntry> _explicitNullValueMenuEntry = default!;
 #endif
         /// <summary>Number of seconds the message has to be displayed.</summary>
-        public int? MinimumDisplayTime { get; set; }
+        public int? MinimumDisplayTime { get => _explicitNullValueMinimumDisplayTime; set { _explicitNullValueMinimumDisplayTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MinimumDisplayTime"); else _explicitNullProperties?.Remove("MinimumDisplayTime"); } }
+        private int? _explicitNullValueMinimumDisplayTime = default!;
         /// <summary>Content to display or print.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.DisplayOutputOutputContent? OutputContent { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DisplayOutputOutputContent? OutputContent { get => _explicitNullValueOutputContent; set { _explicitNullValueOutputContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OutputContent"); else _explicitNullProperties?.Remove("OutputContent"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.DisplayOutputOutputContent? _explicitNullValueOutputContent = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.DisplayOutputOutputContent OutputContent { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DisplayOutputOutputContent OutputContent { get => _explicitNullValueOutputContent; set { _explicitNullValueOutputContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OutputContent"); else _explicitNullProperties?.Remove("OutputContent"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.DisplayOutputOutputContent _explicitNullValueOutputContent = default!;
 #endif
         /// <summary>Vendor-specific signature of the text message to display or print.If protection has to be provided to the vendor on the text to display or print.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? OutputSignature { get; set; }
+        public byte[]? OutputSignature { get => _explicitNullValueOutputSignature; set { _explicitNullValueOutputSignature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OutputSignature"); else _explicitNullProperties?.Remove("OutputSignature"); } }
+        private byte[]? _explicitNullValueOutputSignature = default!;
 #nullable restore
 #else
-        public byte[] OutputSignature { get; set; }
+        public byte[] OutputSignature { get => _explicitNullValueOutputSignature; set { _explicitNullValueOutputSignature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OutputSignature"); else _explicitNullProperties?.Remove("OutputSignature"); } }
+        private byte[] _explicitNullValueOutputSignature = default!;
 #endif
         /// <summary>Indicates if the message response is required.</summary>
-        public bool? ResponseRequiredFlag { get; set; }
+        public bool? ResponseRequiredFlag { get => _explicitNullValueResponseRequiredFlag; set { _explicitNullValueResponseRequiredFlag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ResponseRequiredFlag"); else _explicitNullProperties?.Remove("ResponseRequiredFlag"); } }
+        private bool? _explicitNullValueResponseRequiredFlag = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AbortRequestDisplayOutput"/> and sets the default values.
         /// </summary>
@@ -64,7 +88,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.AbortRequestDisplayOutput CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.AbortRequestDisplayOutput();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.AbortRequestDisplayOutput(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -97,6 +121,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisplayOutputOutputContent>("OutputContent", OutputContent);
             writer.WriteByteArrayValue("OutputSignature", OutputSignature);
             writer.WriteBoolValue("ResponseRequiredFlag", ResponseRequiredFlag);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

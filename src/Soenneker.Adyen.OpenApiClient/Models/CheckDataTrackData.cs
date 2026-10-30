@@ -12,20 +12,34 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CheckDataTrackData : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("TrackFormat") is { } nullNodeTrackFormat && nullNodeTrackFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrackFormat = null;
+            if (parseNode.GetChildNode("TrackNumb") is { } nullNodeTrackNumb && nullNodeTrackNumb.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrackNumb = null;
+            if (parseNode.GetChildNode("TrackValue") is { } nullNodeTrackValue && nullNodeTrackValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrackValue = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Magnetic track or magnetic ink characters line.Possible values:* **ISO*** **JIS-I*** **JIS-II*** **AAMVA*** **CMC-7*** **E-13B**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TrackDataTrackFormat? TrackFormat { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TrackDataTrackFormat? TrackFormat { get => _explicitNullValueTrackFormat; set { _explicitNullValueTrackFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TrackFormat"); else _explicitNullProperties?.Remove("TrackFormat"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TrackDataTrackFormat? _explicitNullValueTrackFormat = default!;
         /// <summary>Card track number.</summary>
-        public int? TrackNumb { get; set; }
+        public int? TrackNumb { get => _explicitNullValueTrackNumb; set { _explicitNullValueTrackNumb = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TrackNumb"); else _explicitNullProperties?.Remove("TrackNumb"); } }
+        private int? _explicitNullValueTrackNumb = default!;
         /// <summary>Card track content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TrackValue { get; set; }
+        public string? TrackValue { get => _explicitNullValueTrackValue; set { _explicitNullValueTrackValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TrackValue"); else _explicitNullProperties?.Remove("TrackValue"); } }
+        private string? _explicitNullValueTrackValue = default!;
 #nullable restore
 #else
-        public string TrackValue { get; set; }
+        public string TrackValue { get => _explicitNullValueTrackValue; set { _explicitNullValueTrackValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TrackValue"); else _explicitNullProperties?.Remove("TrackValue"); } }
+        private string _explicitNullValueTrackValue = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckDataTrackData"/> and sets the default values.
@@ -43,7 +57,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.CheckDataTrackData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.CheckDataTrackData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.CheckDataTrackData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +82,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TrackDataTrackFormat>("TrackFormat", TrackFormat);
             writer.WriteIntValue("TrackNumb", TrackNumb);
             writer.WriteStringValue("TrackValue", TrackValue);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
