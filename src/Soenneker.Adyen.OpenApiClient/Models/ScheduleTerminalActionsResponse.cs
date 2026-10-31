@@ -36,12 +36,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Information about the action to take.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsRequestActionDetails? ActionDetails { get => _explicitNullValueActionDetails; set { _explicitNullValueActionDetails = value; AdditionalData?.Remove("actionDetails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actionDetails"); else _explicitNullProperties?.Remove("actionDetails"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsRequestActionDetails? _explicitNullValueActionDetails = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseActionDetails? ActionDetails { get => _explicitNullValueActionDetails; set { _explicitNullValueActionDetails = value; AdditionalData?.Remove("actionDetails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actionDetails"); else _explicitNullProperties?.Remove("actionDetails"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseActionDetails? _explicitNullValueActionDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsRequestActionDetails ActionDetails { get => _explicitNullValueActionDetails; set { _explicitNullValueActionDetails = value; AdditionalData?.Remove("actionDetails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actionDetails"); else _explicitNullProperties?.Remove("actionDetails"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsRequestActionDetails _explicitNullValueActionDetails = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseActionDetails ActionDetails { get => _explicitNullValueActionDetails; set { _explicitNullValueActionDetails = value; AdditionalData?.Remove("actionDetails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actionDetails"); else _explicitNullProperties?.Remove("actionDetails"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseActionDetails _explicitNullValueActionDetails = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -116,7 +116,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "actionDetails", n => { ActionDetails = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsRequestActionDetails>(global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsRequestActionDetails.CreateFromDiscriminatorValue); } },
+                { "actionDetails", n => { ActionDetails = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseActionDetails>(global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseActionDetails.CreateFromDiscriminatorValue); } },
                 { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TerminalActionScheduleDetail>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalActionScheduleDetail.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "scheduledAt", n => { ScheduledAt = n.GetStringValue(); } },
                 { "storeId", n => { StoreId = n.GetStringValue(); } },
@@ -132,7 +132,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsRequestActionDetails>("actionDetails", ActionDetails);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseActionDetails>("actionDetails", ActionDetails);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TerminalActionScheduleDetail>("items", Items);
             writer.WriteStringValue("scheduledAt", ScheduledAt);
             writer.WriteStringValue("storeId", StoreId);

@@ -31,12 +31,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The relevant data according to the transfer category.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferCategoryData? CategoryData { get => _explicitNullValueCategoryData; set { _explicitNullValueCategoryData = value; AdditionalData?.Remove("categoryData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("categoryData"); else _explicitNullProperties?.Remove("categoryData"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TransferCategoryData? _explicitNullValueCategoryData = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferViewCategoryData? CategoryData { get => _explicitNullValueCategoryData; set { _explicitNullValueCategoryData = value; AdditionalData?.Remove("categoryData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("categoryData"); else _explicitNullProperties?.Remove("categoryData"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferViewCategoryData? _explicitNullValueCategoryData = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferCategoryData CategoryData { get => _explicitNullValueCategoryData; set { _explicitNullValueCategoryData = value; AdditionalData?.Remove("categoryData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("categoryData"); else _explicitNullProperties?.Remove("categoryData"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TransferCategoryData _explicitNullValueCategoryData = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferViewCategoryData CategoryData { get => _explicitNullValueCategoryData; set { _explicitNullValueCategoryData = value; AdditionalData?.Remove("categoryData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("categoryData"); else _explicitNullProperties?.Remove("categoryData"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferViewCategoryData _explicitNullValueCategoryData = default!;
 #endif
         /// <summary>The ID of the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -83,7 +83,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "categoryData", n => { CategoryData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferCategoryData>(global::Soenneker.Adyen.OpenApiClient.Models.TransferCategoryData.CreateFromDiscriminatorValue); } },
+                { "categoryData", n => { CategoryData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferViewCategoryData>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferViewCategoryData.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
             };
@@ -95,7 +95,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferCategoryData>("categoryData", CategoryData);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferViewCategoryData>("categoryData", CategoryData);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("reference", Reference);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

@@ -78,32 +78,32 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The cardholderReceipt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsCardholderReceipt? CardholderReceipt { get => _explicitNullValueCardholderReceipt; set { _explicitNullValueCardholderReceipt = value; AdditionalData?.Remove("cardholderReceipt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardholderReceipt"); else _explicitNullProperties?.Remove("cardholderReceipt"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsCardholderReceipt? _explicitNullValueCardholderReceipt = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsCardholderReceiptAnyOf1? CardholderReceipt { get => _explicitNullValueCardholderReceipt; set { _explicitNullValueCardholderReceipt = value; AdditionalData?.Remove("cardholderReceipt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardholderReceipt"); else _explicitNullProperties?.Remove("cardholderReceipt"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsCardholderReceiptAnyOf1? _explicitNullValueCardholderReceipt = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsCardholderReceipt CardholderReceipt { get => _explicitNullValueCardholderReceipt; set { _explicitNullValueCardholderReceipt = value; AdditionalData?.Remove("cardholderReceipt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardholderReceipt"); else _explicitNullProperties?.Remove("cardholderReceipt"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsCardholderReceipt _explicitNullValueCardholderReceipt = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsCardholderReceiptAnyOf1 CardholderReceipt { get => _explicitNullValueCardholderReceipt; set { _explicitNullValueCardholderReceipt = value; AdditionalData?.Remove("cardholderReceipt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardholderReceipt"); else _explicitNullProperties?.Remove("cardholderReceipt"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsCardholderReceiptAnyOf1 _explicitNullValueCardholderReceipt = default!;
 #endif
         /// <summary>The connectivity property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsConnectivity? Connectivity { get => _explicitNullValueConnectivity; set { _explicitNullValueConnectivity = value; AdditionalData?.Remove("connectivity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectivity"); else _explicitNullProperties?.Remove("connectivity"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsConnectivity? _explicitNullValueConnectivity = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsConnectivityAnyOf1? Connectivity { get => _explicitNullValueConnectivity; set { _explicitNullValueConnectivity = value; AdditionalData?.Remove("connectivity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectivity"); else _explicitNullProperties?.Remove("connectivity"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsConnectivityAnyOf1? _explicitNullValueConnectivity = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsConnectivity Connectivity { get => _explicitNullValueConnectivity; set { _explicitNullValueConnectivity = value; AdditionalData?.Remove("connectivity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectivity"); else _explicitNullProperties?.Remove("connectivity"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsConnectivity _explicitNullValueConnectivity = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsConnectivityAnyOf1 Connectivity { get => _explicitNullValueConnectivity; set { _explicitNullValueConnectivity = value; AdditionalData?.Remove("connectivity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectivity"); else _explicitNullProperties?.Remove("connectivity"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsConnectivityAnyOf1 _explicitNullValueConnectivity = default!;
 #endif
         /// <summary>The dcc property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsDcc? Dcc { get => _explicitNullValueDcc; set { _explicitNullValueDcc = value; AdditionalData?.Remove("dcc"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dcc"); else _explicitNullProperties?.Remove("dcc"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsDcc? _explicitNullValueDcc = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsDccAnyOf1? Dcc { get => _explicitNullValueDcc; set { _explicitNullValueDcc = value; AdditionalData?.Remove("dcc"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dcc"); else _explicitNullProperties?.Remove("dcc"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsDccAnyOf1? _explicitNullValueDcc = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsDcc Dcc { get => _explicitNullValueDcc; set { _explicitNullValueDcc = value; AdditionalData?.Remove("dcc"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dcc"); else _explicitNullProperties?.Remove("dcc"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsDcc _explicitNullValueDcc = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsDccAnyOf1 Dcc { get => _explicitNullValueDcc; set { _explicitNullValueDcc = value; AdditionalData?.Remove("dcc"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dcc"); else _explicitNullProperties?.Remove("dcc"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsDccAnyOf1 _explicitNullValueDcc = default!;
 #endif
         /// <summary>Settings for tipping with or without predefined options to choose from. The maximum number of predefined options is four, or three plus the option to enter a custom tip.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -118,142 +118,142 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The hardware property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHardware? Hardware { get => _explicitNullValueHardware; set { _explicitNullValueHardware = value; AdditionalData?.Remove("hardware"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hardware"); else _explicitNullProperties?.Remove("hardware"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHardware? _explicitNullValueHardware = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHardwareAnyOf1? Hardware { get => _explicitNullValueHardware; set { _explicitNullValueHardware = value; AdditionalData?.Remove("hardware"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hardware"); else _explicitNullProperties?.Remove("hardware"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHardwareAnyOf1? _explicitNullValueHardware = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHardware Hardware { get => _explicitNullValueHardware; set { _explicitNullValueHardware = value; AdditionalData?.Remove("hardware"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hardware"); else _explicitNullProperties?.Remove("hardware"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHardware _explicitNullValueHardware = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHardwareAnyOf1 Hardware { get => _explicitNullValueHardware; set { _explicitNullValueHardware = value; AdditionalData?.Remove("hardware"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hardware"); else _explicitNullProperties?.Remove("hardware"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHardwareAnyOf1 _explicitNullValueHardware = default!;
 #endif
         /// <summary>The homeScreen property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHomeScreen? HomeScreen { get => _explicitNullValueHomeScreen; set { _explicitNullValueHomeScreen = value; AdditionalData?.Remove("homeScreen"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("homeScreen"); else _explicitNullProperties?.Remove("homeScreen"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHomeScreen? _explicitNullValueHomeScreen = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHomeScreenAnyOf1? HomeScreen { get => _explicitNullValueHomeScreen; set { _explicitNullValueHomeScreen = value; AdditionalData?.Remove("homeScreen"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("homeScreen"); else _explicitNullProperties?.Remove("homeScreen"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHomeScreenAnyOf1? _explicitNullValueHomeScreen = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHomeScreen HomeScreen { get => _explicitNullValueHomeScreen; set { _explicitNullValueHomeScreen = value; AdditionalData?.Remove("homeScreen"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("homeScreen"); else _explicitNullProperties?.Remove("homeScreen"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHomeScreen _explicitNullValueHomeScreen = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHomeScreenAnyOf1 HomeScreen { get => _explicitNullValueHomeScreen; set { _explicitNullValueHomeScreen = value; AdditionalData?.Remove("homeScreen"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("homeScreen"); else _explicitNullProperties?.Remove("homeScreen"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHomeScreenAnyOf1 _explicitNullValueHomeScreen = default!;
 #endif
         /// <summary>The kioskMode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsKioskMode? KioskMode { get => _explicitNullValueKioskMode; set { _explicitNullValueKioskMode = value; AdditionalData?.Remove("kioskMode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kioskMode"); else _explicitNullProperties?.Remove("kioskMode"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsKioskMode? _explicitNullValueKioskMode = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsKioskModeAnyOf1? KioskMode { get => _explicitNullValueKioskMode; set { _explicitNullValueKioskMode = value; AdditionalData?.Remove("kioskMode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kioskMode"); else _explicitNullProperties?.Remove("kioskMode"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsKioskModeAnyOf1? _explicitNullValueKioskMode = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsKioskMode KioskMode { get => _explicitNullValueKioskMode; set { _explicitNullValueKioskMode = value; AdditionalData?.Remove("kioskMode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kioskMode"); else _explicitNullProperties?.Remove("kioskMode"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsKioskMode _explicitNullValueKioskMode = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsKioskModeAnyOf1 KioskMode { get => _explicitNullValueKioskMode; set { _explicitNullValueKioskMode = value; AdditionalData?.Remove("kioskMode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kioskMode"); else _explicitNullProperties?.Remove("kioskMode"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsKioskModeAnyOf1 _explicitNullValueKioskMode = default!;
 #endif
         /// <summary>The localization property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsLocalization? Localization { get => _explicitNullValueLocalization; set { _explicitNullValueLocalization = value; AdditionalData?.Remove("localization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("localization"); else _explicitNullProperties?.Remove("localization"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsLocalization? _explicitNullValueLocalization = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsLocalizationAnyOf1? Localization { get => _explicitNullValueLocalization; set { _explicitNullValueLocalization = value; AdditionalData?.Remove("localization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("localization"); else _explicitNullProperties?.Remove("localization"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsLocalizationAnyOf1? _explicitNullValueLocalization = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsLocalization Localization { get => _explicitNullValueLocalization; set { _explicitNullValueLocalization = value; AdditionalData?.Remove("localization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("localization"); else _explicitNullProperties?.Remove("localization"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsLocalization _explicitNullValueLocalization = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsLocalizationAnyOf1 Localization { get => _explicitNullValueLocalization; set { _explicitNullValueLocalization = value; AdditionalData?.Remove("localization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("localization"); else _explicitNullProperties?.Remove("localization"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsLocalizationAnyOf1 _explicitNullValueLocalization = default!;
 #endif
         /// <summary>The moto property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsMoto? Moto { get => _explicitNullValueMoto; set { _explicitNullValueMoto = value; AdditionalData?.Remove("moto"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("moto"); else _explicitNullProperties?.Remove("moto"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsMoto? _explicitNullValueMoto = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsMotoAnyOf1? Moto { get => _explicitNullValueMoto; set { _explicitNullValueMoto = value; AdditionalData?.Remove("moto"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("moto"); else _explicitNullProperties?.Remove("moto"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsMotoAnyOf1? _explicitNullValueMoto = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsMoto Moto { get => _explicitNullValueMoto; set { _explicitNullValueMoto = value; AdditionalData?.Remove("moto"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("moto"); else _explicitNullProperties?.Remove("moto"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsMoto _explicitNullValueMoto = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsMotoAnyOf1 Moto { get => _explicitNullValueMoto; set { _explicitNullValueMoto = value; AdditionalData?.Remove("moto"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("moto"); else _explicitNullProperties?.Remove("moto"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsMotoAnyOf1 _explicitNullValueMoto = default!;
 #endif
         /// <summary>The nexo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsNexo? Nexo { get => _explicitNullValueNexo; set { _explicitNullValueNexo = value; AdditionalData?.Remove("nexo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nexo"); else _explicitNullProperties?.Remove("nexo"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsNexo? _explicitNullValueNexo = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsNexoAnyOf1? Nexo { get => _explicitNullValueNexo; set { _explicitNullValueNexo = value; AdditionalData?.Remove("nexo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nexo"); else _explicitNullProperties?.Remove("nexo"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsNexoAnyOf1? _explicitNullValueNexo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsNexo Nexo { get => _explicitNullValueNexo; set { _explicitNullValueNexo = value; AdditionalData?.Remove("nexo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nexo"); else _explicitNullProperties?.Remove("nexo"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsNexo _explicitNullValueNexo = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsNexoAnyOf1 Nexo { get => _explicitNullValueNexo; set { _explicitNullValueNexo = value; AdditionalData?.Remove("nexo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nexo"); else _explicitNullProperties?.Remove("nexo"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsNexoAnyOf1 _explicitNullValueNexo = default!;
 #endif
         /// <summary>The offlineProcessing property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsOfflineProcessing? OfflineProcessing { get => _explicitNullValueOfflineProcessing; set { _explicitNullValueOfflineProcessing = value; AdditionalData?.Remove("offlineProcessing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("offlineProcessing"); else _explicitNullProperties?.Remove("offlineProcessing"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsOfflineProcessing? _explicitNullValueOfflineProcessing = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsOfflineProcessingAnyOf1? OfflineProcessing { get => _explicitNullValueOfflineProcessing; set { _explicitNullValueOfflineProcessing = value; AdditionalData?.Remove("offlineProcessing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("offlineProcessing"); else _explicitNullProperties?.Remove("offlineProcessing"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsOfflineProcessingAnyOf1? _explicitNullValueOfflineProcessing = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsOfflineProcessing OfflineProcessing { get => _explicitNullValueOfflineProcessing; set { _explicitNullValueOfflineProcessing = value; AdditionalData?.Remove("offlineProcessing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("offlineProcessing"); else _explicitNullProperties?.Remove("offlineProcessing"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsOfflineProcessing _explicitNullValueOfflineProcessing = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsOfflineProcessingAnyOf1 OfflineProcessing { get => _explicitNullValueOfflineProcessing; set { _explicitNullValueOfflineProcessing = value; AdditionalData?.Remove("offlineProcessing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("offlineProcessing"); else _explicitNullProperties?.Remove("offlineProcessing"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsOfflineProcessingAnyOf1 _explicitNullValueOfflineProcessing = default!;
 #endif
         /// <summary>The opi property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsOpi? Opi { get => _explicitNullValueOpi; set { _explicitNullValueOpi = value; AdditionalData?.Remove("opi"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("opi"); else _explicitNullProperties?.Remove("opi"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsOpi? _explicitNullValueOpi = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsOpiAnyOf1? Opi { get => _explicitNullValueOpi; set { _explicitNullValueOpi = value; AdditionalData?.Remove("opi"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("opi"); else _explicitNullProperties?.Remove("opi"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsOpiAnyOf1? _explicitNullValueOpi = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsOpi Opi { get => _explicitNullValueOpi; set { _explicitNullValueOpi = value; AdditionalData?.Remove("opi"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("opi"); else _explicitNullProperties?.Remove("opi"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsOpi _explicitNullValueOpi = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsOpiAnyOf1 Opi { get => _explicitNullValueOpi; set { _explicitNullValueOpi = value; AdditionalData?.Remove("opi"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("opi"); else _explicitNullProperties?.Remove("opi"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsOpiAnyOf1 _explicitNullValueOpi = default!;
 #endif
         /// <summary>The passcodes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPasscodes? Passcodes { get => _explicitNullValuePasscodes; set { _explicitNullValuePasscodes = value; AdditionalData?.Remove("passcodes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passcodes"); else _explicitNullProperties?.Remove("passcodes"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPasscodes? _explicitNullValuePasscodes = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPasscodesAnyOf1? Passcodes { get => _explicitNullValuePasscodes; set { _explicitNullValuePasscodes = value; AdditionalData?.Remove("passcodes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passcodes"); else _explicitNullProperties?.Remove("passcodes"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPasscodesAnyOf1? _explicitNullValuePasscodes = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPasscodes Passcodes { get => _explicitNullValuePasscodes; set { _explicitNullValuePasscodes = value; AdditionalData?.Remove("passcodes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passcodes"); else _explicitNullProperties?.Remove("passcodes"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPasscodes _explicitNullValuePasscodes = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPasscodesAnyOf1 Passcodes { get => _explicitNullValuePasscodes; set { _explicitNullValuePasscodes = value; AdditionalData?.Remove("passcodes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passcodes"); else _explicitNullProperties?.Remove("passcodes"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPasscodesAnyOf1 _explicitNullValuePasscodes = default!;
 #endif
         /// <summary>The payAtTable property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPayAtTable? PayAtTable { get => _explicitNullValuePayAtTable; set { _explicitNullValuePayAtTable = value; AdditionalData?.Remove("payAtTable"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payAtTable"); else _explicitNullProperties?.Remove("payAtTable"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPayAtTable? _explicitNullValuePayAtTable = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPayAtTableAnyOf1? PayAtTable { get => _explicitNullValuePayAtTable; set { _explicitNullValuePayAtTable = value; AdditionalData?.Remove("payAtTable"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payAtTable"); else _explicitNullProperties?.Remove("payAtTable"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPayAtTableAnyOf1? _explicitNullValuePayAtTable = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPayAtTable PayAtTable { get => _explicitNullValuePayAtTable; set { _explicitNullValuePayAtTable = value; AdditionalData?.Remove("payAtTable"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payAtTable"); else _explicitNullProperties?.Remove("payAtTable"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPayAtTable _explicitNullValuePayAtTable = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPayAtTableAnyOf1 PayAtTable { get => _explicitNullValuePayAtTable; set { _explicitNullValuePayAtTable = value; AdditionalData?.Remove("payAtTable"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payAtTable"); else _explicitNullProperties?.Remove("payAtTable"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPayAtTableAnyOf1 _explicitNullValuePayAtTable = default!;
 #endif
         /// <summary>The payment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPayment? Payment { get => _explicitNullValuePayment; set { _explicitNullValuePayment = value; AdditionalData?.Remove("payment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment"); else _explicitNullProperties?.Remove("payment"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPayment? _explicitNullValuePayment = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPaymentAnyOf1? Payment { get => _explicitNullValuePayment; set { _explicitNullValuePayment = value; AdditionalData?.Remove("payment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment"); else _explicitNullProperties?.Remove("payment"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPaymentAnyOf1? _explicitNullValuePayment = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPayment Payment { get => _explicitNullValuePayment; set { _explicitNullValuePayment = value; AdditionalData?.Remove("payment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment"); else _explicitNullProperties?.Remove("payment"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPayment _explicitNullValuePayment = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPaymentAnyOf1 Payment { get => _explicitNullValuePayment; set { _explicitNullValuePayment = value; AdditionalData?.Remove("payment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment"); else _explicitNullProperties?.Remove("payment"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPaymentAnyOf1 _explicitNullValuePayment = default!;
 #endif
         /// <summary>The receiptOptions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptOptions? ReceiptOptions { get => _explicitNullValueReceiptOptions; set { _explicitNullValueReceiptOptions = value; AdditionalData?.Remove("receiptOptions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("receiptOptions"); else _explicitNullProperties?.Remove("receiptOptions"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptOptions? _explicitNullValueReceiptOptions = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptOptionsAnyOf1? ReceiptOptions { get => _explicitNullValueReceiptOptions; set { _explicitNullValueReceiptOptions = value; AdditionalData?.Remove("receiptOptions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("receiptOptions"); else _explicitNullProperties?.Remove("receiptOptions"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptOptionsAnyOf1? _explicitNullValueReceiptOptions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptOptions ReceiptOptions { get => _explicitNullValueReceiptOptions; set { _explicitNullValueReceiptOptions = value; AdditionalData?.Remove("receiptOptions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("receiptOptions"); else _explicitNullProperties?.Remove("receiptOptions"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptOptions _explicitNullValueReceiptOptions = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptOptionsAnyOf1 ReceiptOptions { get => _explicitNullValueReceiptOptions; set { _explicitNullValueReceiptOptions = value; AdditionalData?.Remove("receiptOptions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("receiptOptions"); else _explicitNullProperties?.Remove("receiptOptions"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptOptionsAnyOf1 _explicitNullValueReceiptOptions = default!;
 #endif
         /// <summary>The receiptPrinting property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptPrinting? ReceiptPrinting { get => _explicitNullValueReceiptPrinting; set { _explicitNullValueReceiptPrinting = value; AdditionalData?.Remove("receiptPrinting"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("receiptPrinting"); else _explicitNullProperties?.Remove("receiptPrinting"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptPrinting? _explicitNullValueReceiptPrinting = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptPrintingAnyOf1? ReceiptPrinting { get => _explicitNullValueReceiptPrinting; set { _explicitNullValueReceiptPrinting = value; AdditionalData?.Remove("receiptPrinting"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("receiptPrinting"); else _explicitNullProperties?.Remove("receiptPrinting"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptPrintingAnyOf1? _explicitNullValueReceiptPrinting = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptPrinting ReceiptPrinting { get => _explicitNullValueReceiptPrinting; set { _explicitNullValueReceiptPrinting = value; AdditionalData?.Remove("receiptPrinting"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("receiptPrinting"); else _explicitNullProperties?.Remove("receiptPrinting"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptPrinting _explicitNullValueReceiptPrinting = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptPrintingAnyOf1 ReceiptPrinting { get => _explicitNullValueReceiptPrinting; set { _explicitNullValueReceiptPrinting = value; AdditionalData?.Remove("receiptPrinting"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("receiptPrinting"); else _explicitNullProperties?.Remove("receiptPrinting"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptPrintingAnyOf1 _explicitNullValueReceiptPrinting = default!;
 #endif
         /// <summary>The refunds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsRefunds? Refunds { get => _explicitNullValueRefunds; set { _explicitNullValueRefunds = value; AdditionalData?.Remove("refunds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("refunds"); else _explicitNullProperties?.Remove("refunds"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsRefunds? _explicitNullValueRefunds = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsRefundsAnyOf1? Refunds { get => _explicitNullValueRefunds; set { _explicitNullValueRefunds = value; AdditionalData?.Remove("refunds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("refunds"); else _explicitNullProperties?.Remove("refunds"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsRefundsAnyOf1? _explicitNullValueRefunds = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsRefunds Refunds { get => _explicitNullValueRefunds; set { _explicitNullValueRefunds = value; AdditionalData?.Remove("refunds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("refunds"); else _explicitNullProperties?.Remove("refunds"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsRefunds _explicitNullValueRefunds = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsRefundsAnyOf1 Refunds { get => _explicitNullValueRefunds; set { _explicitNullValueRefunds = value; AdditionalData?.Remove("refunds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("refunds"); else _explicitNullProperties?.Remove("refunds"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsRefundsAnyOf1 _explicitNullValueRefunds = default!;
 #endif
         /// <summary>Show the tipping amount calculated from the percentage next to each tipping percentage option on the terminal screen, for example `10 % | 10 EUR` for a 100 EUR payment.</summary>
         public bool? ShowCalculatedPercentageTippingAmount { get => _explicitNullValueShowCalculatedPercentageTippingAmount; set { _explicitNullValueShowCalculatedPercentageTippingAmount = value; AdditionalData?.Remove("showCalculatedPercentageTippingAmount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("showCalculatedPercentageTippingAmount"); else _explicitNullProperties?.Remove("showCalculatedPercentageTippingAmount"); } }
@@ -261,82 +261,82 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The signature property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSignature? Signature { get => _explicitNullValueSignature; set { _explicitNullValueSignature = value; AdditionalData?.Remove("signature"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signature"); else _explicitNullProperties?.Remove("signature"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSignature? _explicitNullValueSignature = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSignatureAnyOf1? Signature { get => _explicitNullValueSignature; set { _explicitNullValueSignature = value; AdditionalData?.Remove("signature"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signature"); else _explicitNullProperties?.Remove("signature"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSignatureAnyOf1? _explicitNullValueSignature = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSignature Signature { get => _explicitNullValueSignature; set { _explicitNullValueSignature = value; AdditionalData?.Remove("signature"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signature"); else _explicitNullProperties?.Remove("signature"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSignature _explicitNullValueSignature = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSignatureAnyOf1 Signature { get => _explicitNullValueSignature; set { _explicitNullValueSignature = value; AdditionalData?.Remove("signature"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signature"); else _explicitNullProperties?.Remove("signature"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSignatureAnyOf1 _explicitNullValueSignature = default!;
 #endif
         /// <summary>The standalone property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStandalone? Standalone { get => _explicitNullValueStandalone; set { _explicitNullValueStandalone = value; AdditionalData?.Remove("standalone"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("standalone"); else _explicitNullProperties?.Remove("standalone"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStandalone? _explicitNullValueStandalone = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStandaloneAnyOf1? Standalone { get => _explicitNullValueStandalone; set { _explicitNullValueStandalone = value; AdditionalData?.Remove("standalone"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("standalone"); else _explicitNullProperties?.Remove("standalone"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStandaloneAnyOf1? _explicitNullValueStandalone = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStandalone Standalone { get => _explicitNullValueStandalone; set { _explicitNullValueStandalone = value; AdditionalData?.Remove("standalone"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("standalone"); else _explicitNullProperties?.Remove("standalone"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStandalone _explicitNullValueStandalone = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStandaloneAnyOf1 Standalone { get => _explicitNullValueStandalone; set { _explicitNullValueStandalone = value; AdditionalData?.Remove("standalone"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("standalone"); else _explicitNullProperties?.Remove("standalone"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStandaloneAnyOf1 _explicitNullValueStandalone = default!;
 #endif
         /// <summary>The storeAndForward property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStoreAndForward? StoreAndForward { get => _explicitNullValueStoreAndForward; set { _explicitNullValueStoreAndForward = value; AdditionalData?.Remove("storeAndForward"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storeAndForward"); else _explicitNullProperties?.Remove("storeAndForward"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStoreAndForward? _explicitNullValueStoreAndForward = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStoreAndForwardAnyOf1? StoreAndForward { get => _explicitNullValueStoreAndForward; set { _explicitNullValueStoreAndForward = value; AdditionalData?.Remove("storeAndForward"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storeAndForward"); else _explicitNullProperties?.Remove("storeAndForward"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStoreAndForwardAnyOf1? _explicitNullValueStoreAndForward = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStoreAndForward StoreAndForward { get => _explicitNullValueStoreAndForward; set { _explicitNullValueStoreAndForward = value; AdditionalData?.Remove("storeAndForward"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storeAndForward"); else _explicitNullProperties?.Remove("storeAndForward"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStoreAndForward _explicitNullValueStoreAndForward = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStoreAndForwardAnyOf1 StoreAndForward { get => _explicitNullValueStoreAndForward; set { _explicitNullValueStoreAndForward = value; AdditionalData?.Remove("storeAndForward"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storeAndForward"); else _explicitNullProperties?.Remove("storeAndForward"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStoreAndForwardAnyOf1 _explicitNullValueStoreAndForward = default!;
 #endif
         /// <summary>The surcharge property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSurcharge? Surcharge { get => _explicitNullValueSurcharge; set { _explicitNullValueSurcharge = value; AdditionalData?.Remove("surcharge"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("surcharge"); else _explicitNullProperties?.Remove("surcharge"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSurcharge? _explicitNullValueSurcharge = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSurchargeAnyOf1? Surcharge { get => _explicitNullValueSurcharge; set { _explicitNullValueSurcharge = value; AdditionalData?.Remove("surcharge"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("surcharge"); else _explicitNullProperties?.Remove("surcharge"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSurchargeAnyOf1? _explicitNullValueSurcharge = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSurcharge Surcharge { get => _explicitNullValueSurcharge; set { _explicitNullValueSurcharge = value; AdditionalData?.Remove("surcharge"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("surcharge"); else _explicitNullProperties?.Remove("surcharge"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSurcharge _explicitNullValueSurcharge = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSurchargeAnyOf1 Surcharge { get => _explicitNullValueSurcharge; set { _explicitNullValueSurcharge = value; AdditionalData?.Remove("surcharge"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("surcharge"); else _explicitNullProperties?.Remove("surcharge"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSurchargeAnyOf1 _explicitNullValueSurcharge = default!;
 #endif
         /// <summary>The tapToPay property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTapToPay? TapToPay { get => _explicitNullValueTapToPay; set { _explicitNullValueTapToPay = value; AdditionalData?.Remove("tapToPay"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tapToPay"); else _explicitNullProperties?.Remove("tapToPay"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTapToPay? _explicitNullValueTapToPay = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTapToPayAnyOf1? TapToPay { get => _explicitNullValueTapToPay; set { _explicitNullValueTapToPay = value; AdditionalData?.Remove("tapToPay"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tapToPay"); else _explicitNullProperties?.Remove("tapToPay"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTapToPayAnyOf1? _explicitNullValueTapToPay = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTapToPay TapToPay { get => _explicitNullValueTapToPay; set { _explicitNullValueTapToPay = value; AdditionalData?.Remove("tapToPay"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tapToPay"); else _explicitNullProperties?.Remove("tapToPay"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTapToPay _explicitNullValueTapToPay = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTapToPayAnyOf1 TapToPay { get => _explicitNullValueTapToPay; set { _explicitNullValueTapToPay = value; AdditionalData?.Remove("tapToPay"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tapToPay"); else _explicitNullProperties?.Remove("tapToPay"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTapToPayAnyOf1 _explicitNullValueTapToPay = default!;
 #endif
         /// <summary>The terminalInstructions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTerminalInstructions? TerminalInstructions { get => _explicitNullValueTerminalInstructions; set { _explicitNullValueTerminalInstructions = value; AdditionalData?.Remove("terminalInstructions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("terminalInstructions"); else _explicitNullProperties?.Remove("terminalInstructions"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTerminalInstructions? _explicitNullValueTerminalInstructions = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTerminalInstructionsAnyOf1? TerminalInstructions { get => _explicitNullValueTerminalInstructions; set { _explicitNullValueTerminalInstructions = value; AdditionalData?.Remove("terminalInstructions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("terminalInstructions"); else _explicitNullProperties?.Remove("terminalInstructions"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTerminalInstructionsAnyOf1? _explicitNullValueTerminalInstructions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTerminalInstructions TerminalInstructions { get => _explicitNullValueTerminalInstructions; set { _explicitNullValueTerminalInstructions = value; AdditionalData?.Remove("terminalInstructions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("terminalInstructions"); else _explicitNullProperties?.Remove("terminalInstructions"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTerminalInstructions _explicitNullValueTerminalInstructions = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTerminalInstructionsAnyOf1 TerminalInstructions { get => _explicitNullValueTerminalInstructions; set { _explicitNullValueTerminalInstructions = value; AdditionalData?.Remove("terminalInstructions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("terminalInstructions"); else _explicitNullProperties?.Remove("terminalInstructions"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTerminalInstructionsAnyOf1 _explicitNullValueTerminalInstructions = default!;
 #endif
         /// <summary>The timeouts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTimeouts? Timeouts { get => _explicitNullValueTimeouts; set { _explicitNullValueTimeouts = value; AdditionalData?.Remove("timeouts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeouts"); else _explicitNullProperties?.Remove("timeouts"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTimeouts? _explicitNullValueTimeouts = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTimeoutsAnyOf1? Timeouts { get => _explicitNullValueTimeouts; set { _explicitNullValueTimeouts = value; AdditionalData?.Remove("timeouts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeouts"); else _explicitNullProperties?.Remove("timeouts"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTimeoutsAnyOf1? _explicitNullValueTimeouts = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTimeouts Timeouts { get => _explicitNullValueTimeouts; set { _explicitNullValueTimeouts = value; AdditionalData?.Remove("timeouts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeouts"); else _explicitNullProperties?.Remove("timeouts"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTimeouts _explicitNullValueTimeouts = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTimeoutsAnyOf1 Timeouts { get => _explicitNullValueTimeouts; set { _explicitNullValueTimeouts = value; AdditionalData?.Remove("timeouts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeouts"); else _explicitNullProperties?.Remove("timeouts"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTimeoutsAnyOf1 _explicitNullValueTimeouts = default!;
 #endif
         /// <summary>The wifiProfiles property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsWifiProfiles? WifiProfiles { get => _explicitNullValueWifiProfiles; set { _explicitNullValueWifiProfiles = value; AdditionalData?.Remove("wifiProfiles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wifiProfiles"); else _explicitNullProperties?.Remove("wifiProfiles"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsWifiProfiles? _explicitNullValueWifiProfiles = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsWifiProfilesAnyOf1? WifiProfiles { get => _explicitNullValueWifiProfiles; set { _explicitNullValueWifiProfiles = value; AdditionalData?.Remove("wifiProfiles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wifiProfiles"); else _explicitNullProperties?.Remove("wifiProfiles"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsWifiProfilesAnyOf1? _explicitNullValueWifiProfiles = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsWifiProfiles WifiProfiles { get => _explicitNullValueWifiProfiles; set { _explicitNullValueWifiProfiles = value; AdditionalData?.Remove("wifiProfiles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wifiProfiles"); else _explicitNullProperties?.Remove("wifiProfiles"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsWifiProfiles _explicitNullValueWifiProfiles = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsWifiProfilesAnyOf1 WifiProfiles { get => _explicitNullValueWifiProfiles; set { _explicitNullValueWifiProfiles = value; AdditionalData?.Remove("wifiProfiles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wifiProfiles"); else _explicitNullProperties?.Remove("wifiProfiles"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsWifiProfilesAnyOf1 _explicitNullValueWifiProfiles = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettings"/> and sets the default values.
@@ -363,33 +363,33 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "cardholderReceipt", n => { CardholderReceipt = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsCardholderReceipt>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsCardholderReceipt.CreateFromDiscriminatorValue); } },
-                { "connectivity", n => { Connectivity = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsConnectivity>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsConnectivity.CreateFromDiscriminatorValue); } },
-                { "dcc", n => { Dcc = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsDcc>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsDcc.CreateFromDiscriminatorValue); } },
+                { "cardholderReceipt", n => { CardholderReceipt = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsCardholderReceiptAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsCardholderReceiptAnyOf1.CreateFromDiscriminatorValue); } },
+                { "connectivity", n => { Connectivity = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsConnectivityAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsConnectivityAnyOf1.CreateFromDiscriminatorValue); } },
+                { "dcc", n => { Dcc = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsDccAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsDccAnyOf1.CreateFromDiscriminatorValue); } },
                 { "gratuities", n => { Gratuities = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Gratuity>(global::Soenneker.Adyen.OpenApiClient.Models.Gratuity.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "hardware", n => { Hardware = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHardware>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHardware.CreateFromDiscriminatorValue); } },
-                { "homeScreen", n => { HomeScreen = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHomeScreen>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHomeScreen.CreateFromDiscriminatorValue); } },
-                { "kioskMode", n => { KioskMode = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsKioskMode>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsKioskMode.CreateFromDiscriminatorValue); } },
-                { "localization", n => { Localization = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsLocalization>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsLocalization.CreateFromDiscriminatorValue); } },
-                { "moto", n => { Moto = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsMoto>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsMoto.CreateFromDiscriminatorValue); } },
-                { "nexo", n => { Nexo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsNexo>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsNexo.CreateFromDiscriminatorValue); } },
-                { "offlineProcessing", n => { OfflineProcessing = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsOfflineProcessing>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsOfflineProcessing.CreateFromDiscriminatorValue); } },
-                { "opi", n => { Opi = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsOpi>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsOpi.CreateFromDiscriminatorValue); } },
-                { "passcodes", n => { Passcodes = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPasscodes>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPasscodes.CreateFromDiscriminatorValue); } },
-                { "payAtTable", n => { PayAtTable = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPayAtTable>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPayAtTable.CreateFromDiscriminatorValue); } },
-                { "payment", n => { Payment = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPayment>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPayment.CreateFromDiscriminatorValue); } },
-                { "receiptOptions", n => { ReceiptOptions = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptOptions>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptOptions.CreateFromDiscriminatorValue); } },
-                { "receiptPrinting", n => { ReceiptPrinting = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptPrinting>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptPrinting.CreateFromDiscriminatorValue); } },
-                { "refunds", n => { Refunds = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsRefunds>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsRefunds.CreateFromDiscriminatorValue); } },
+                { "hardware", n => { Hardware = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHardwareAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHardwareAnyOf1.CreateFromDiscriminatorValue); } },
+                { "homeScreen", n => { HomeScreen = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHomeScreenAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHomeScreenAnyOf1.CreateFromDiscriminatorValue); } },
+                { "kioskMode", n => { KioskMode = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsKioskModeAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsKioskModeAnyOf1.CreateFromDiscriminatorValue); } },
+                { "localization", n => { Localization = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsLocalizationAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsLocalizationAnyOf1.CreateFromDiscriminatorValue); } },
+                { "moto", n => { Moto = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsMotoAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsMotoAnyOf1.CreateFromDiscriminatorValue); } },
+                { "nexo", n => { Nexo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsNexoAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsNexoAnyOf1.CreateFromDiscriminatorValue); } },
+                { "offlineProcessing", n => { OfflineProcessing = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsOfflineProcessingAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsOfflineProcessingAnyOf1.CreateFromDiscriminatorValue); } },
+                { "opi", n => { Opi = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsOpiAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsOpiAnyOf1.CreateFromDiscriminatorValue); } },
+                { "passcodes", n => { Passcodes = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPasscodesAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPasscodesAnyOf1.CreateFromDiscriminatorValue); } },
+                { "payAtTable", n => { PayAtTable = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPayAtTableAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPayAtTableAnyOf1.CreateFromDiscriminatorValue); } },
+                { "payment", n => { Payment = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPaymentAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPaymentAnyOf1.CreateFromDiscriminatorValue); } },
+                { "receiptOptions", n => { ReceiptOptions = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptOptionsAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptOptionsAnyOf1.CreateFromDiscriminatorValue); } },
+                { "receiptPrinting", n => { ReceiptPrinting = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptPrintingAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptPrintingAnyOf1.CreateFromDiscriminatorValue); } },
+                { "refunds", n => { Refunds = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsRefundsAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsRefundsAnyOf1.CreateFromDiscriminatorValue); } },
                 { "showCalculatedPercentageTippingAmount", n => { ShowCalculatedPercentageTippingAmount = n.GetBoolValue(); } },
-                { "signature", n => { Signature = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSignature>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSignature.CreateFromDiscriminatorValue); } },
-                { "standalone", n => { Standalone = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStandalone>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStandalone.CreateFromDiscriminatorValue); } },
-                { "storeAndForward", n => { StoreAndForward = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStoreAndForward>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStoreAndForward.CreateFromDiscriminatorValue); } },
-                { "surcharge", n => { Surcharge = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSurcharge>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSurcharge.CreateFromDiscriminatorValue); } },
-                { "tapToPay", n => { TapToPay = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTapToPay>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTapToPay.CreateFromDiscriminatorValue); } },
-                { "terminalInstructions", n => { TerminalInstructions = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTerminalInstructions>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTerminalInstructions.CreateFromDiscriminatorValue); } },
-                { "timeouts", n => { Timeouts = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTimeouts>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTimeouts.CreateFromDiscriminatorValue); } },
-                { "wifiProfiles", n => { WifiProfiles = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsWifiProfiles>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsWifiProfiles.CreateFromDiscriminatorValue); } },
+                { "signature", n => { Signature = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSignatureAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSignatureAnyOf1.CreateFromDiscriminatorValue); } },
+                { "standalone", n => { Standalone = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStandaloneAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStandaloneAnyOf1.CreateFromDiscriminatorValue); } },
+                { "storeAndForward", n => { StoreAndForward = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStoreAndForwardAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStoreAndForwardAnyOf1.CreateFromDiscriminatorValue); } },
+                { "surcharge", n => { Surcharge = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSurchargeAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSurchargeAnyOf1.CreateFromDiscriminatorValue); } },
+                { "tapToPay", n => { TapToPay = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTapToPayAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTapToPayAnyOf1.CreateFromDiscriminatorValue); } },
+                { "terminalInstructions", n => { TerminalInstructions = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTerminalInstructionsAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTerminalInstructionsAnyOf1.CreateFromDiscriminatorValue); } },
+                { "timeouts", n => { Timeouts = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTimeoutsAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTimeoutsAnyOf1.CreateFromDiscriminatorValue); } },
+                { "wifiProfiles", n => { WifiProfiles = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsWifiProfilesAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsWifiProfilesAnyOf1.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -399,33 +399,33 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsCardholderReceipt>("cardholderReceipt", CardholderReceipt);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsConnectivity>("connectivity", Connectivity);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsDcc>("dcc", Dcc);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsCardholderReceiptAnyOf1>("cardholderReceipt", CardholderReceipt);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsConnectivityAnyOf1>("connectivity", Connectivity);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsDccAnyOf1>("dcc", Dcc);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Gratuity>("gratuities", Gratuities);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHardware>("hardware", Hardware);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHomeScreen>("homeScreen", HomeScreen);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsKioskMode>("kioskMode", KioskMode);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsLocalization>("localization", Localization);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsMoto>("moto", Moto);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsNexo>("nexo", Nexo);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsOfflineProcessing>("offlineProcessing", OfflineProcessing);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsOpi>("opi", Opi);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPasscodes>("passcodes", Passcodes);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPayAtTable>("payAtTable", PayAtTable);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPayment>("payment", Payment);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptOptions>("receiptOptions", ReceiptOptions);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptPrinting>("receiptPrinting", ReceiptPrinting);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsRefunds>("refunds", Refunds);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHardwareAnyOf1>("hardware", Hardware);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHomeScreenAnyOf1>("homeScreen", HomeScreen);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsKioskModeAnyOf1>("kioskMode", KioskMode);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsLocalizationAnyOf1>("localization", Localization);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsMotoAnyOf1>("moto", Moto);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsNexoAnyOf1>("nexo", Nexo);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsOfflineProcessingAnyOf1>("offlineProcessing", OfflineProcessing);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsOpiAnyOf1>("opi", Opi);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPasscodesAnyOf1>("passcodes", Passcodes);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPayAtTableAnyOf1>("payAtTable", PayAtTable);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPaymentAnyOf1>("payment", Payment);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptOptionsAnyOf1>("receiptOptions", ReceiptOptions);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptPrintingAnyOf1>("receiptPrinting", ReceiptPrinting);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsRefundsAnyOf1>("refunds", Refunds);
             writer.WriteBoolValue("showCalculatedPercentageTippingAmount", ShowCalculatedPercentageTippingAmount);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSignature>("signature", Signature);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStandalone>("standalone", Standalone);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStoreAndForward>("storeAndForward", StoreAndForward);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSurcharge>("surcharge", Surcharge);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTapToPay>("tapToPay", TapToPay);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTerminalInstructions>("terminalInstructions", TerminalInstructions);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTimeouts>("timeouts", Timeouts);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsWifiProfiles>("wifiProfiles", WifiProfiles);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSignatureAnyOf1>("signature", Signature);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStandaloneAnyOf1>("standalone", Standalone);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStoreAndForwardAnyOf1>("storeAndForward", StoreAndForward);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSurchargeAnyOf1>("surcharge", Surcharge);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTapToPayAnyOf1>("tapToPay", TapToPay);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTerminalInstructionsAnyOf1>("terminalInstructions", TerminalInstructions);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTimeoutsAnyOf1>("timeouts", Timeouts);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsWifiProfilesAnyOf1>("wifiProfiles", WifiProfiles);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

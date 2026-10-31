@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4AuLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4BrLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4CaLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4CzLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4DkLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4HkLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4HuLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4IbanAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4NoLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4NumberAndBicAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4NzLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4PlLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4SeLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4SgLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4UkLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4UsLocalAccountIdentification"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4AuLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4BrLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4CaLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4CzLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4DkLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4HkLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4HuLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4IbanAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4NoLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4NumberAndBicAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4NzLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4PlLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4SeLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4UkLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4UsLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BankAccountV3AccountIdentificationOneOf14"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BalancePlatformTransferNotificationV4BankAccountV3AccountIdentification : IComposedTypeWrapper, IParsable
@@ -122,14 +122,6 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4SeLocalAccountIdentification BalancePlatformTransferNotificationV4SeLocalAccountIdentification { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4SgLocalAccountIdentification"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4SgLocalAccountIdentification? BalancePlatformTransferNotificationV4SgLocalAccountIdentification { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4SgLocalAccountIdentification BalancePlatformTransferNotificationV4SgLocalAccountIdentification { get; set; }
-#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4UkLocalAccountIdentification"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -146,6 +138,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4UsLocalAccountIdentification BalancePlatformTransferNotificationV4UsLocalAccountIdentification { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BankAccountV3AccountIdentificationOneOf14"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.BankAccountV3AccountIdentificationOneOf14? BankAccountV3AccountIdentificationOneOf14 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.BankAccountV3AccountIdentificationOneOf14 BankAccountV3AccountIdentificationOneOf14 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -154,69 +154,69 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4BankAccountV3AccountIdentification CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4BankAccountV3AccountIdentification();
-            if("auLocal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("BalancePlatformTransferNotificationV4AuLocalAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
-            else if("brLocal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("BalancePlatformTransferNotificationV4BrLocalAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
-            else if("caLocal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("BalancePlatformTransferNotificationV4CaLocalAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
-            else if("czLocal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("BalancePlatformTransferNotificationV4CzLocalAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
-            else if("dkLocal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("BalancePlatformTransferNotificationV4DkLocalAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
-            else if("hkLocal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("BalancePlatformTransferNotificationV4HkLocalAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
-            else if("huLocal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("BalancePlatformTransferNotificationV4HuLocalAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
-            else if("iban".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("BalancePlatformTransferNotificationV4IbanAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
-            else if("noLocal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("BalancePlatformTransferNotificationV4NoLocalAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
-            else if("numberAndBic".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("BalancePlatformTransferNotificationV4NumberAndBicAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
-            else if("nzLocal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("BalancePlatformTransferNotificationV4NzLocalAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
-            else if("plLocal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("BalancePlatformTransferNotificationV4PlLocalAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
-            else if("seLocal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("BalancePlatformTransferNotificationV4SeLocalAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
-            else if("sgLocal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("BalancePlatformTransferNotificationV4UkLocalAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
-            else if("ukLocal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("BalancePlatformTransferNotificationV4UsLocalAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
-            else if("usLocal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("BankAccountV3AccountIdentificationOneOf14".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
@@ -235,7 +235,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             bool matchesUnionBranch10 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("accountNumber") && shapeMembers1.ContainsKey("bic") && shapeMembers1.ContainsKey("type") && (!shapeMembers1.ContainsKey("accountNumber") || (((shapeMembers1["accountNumber"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("additionalBankIdentification") || (((shapeMembers1["additionalBankIdentification"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (shapeMembers1["additionalBankIdentification"] is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject4 || (shapeObject4.GetValue() is var shapeMembers5 && ((!shapeMembers5.ContainsKey("code") || (((shapeMembers5["code"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers5.ContainsKey("type") || (((shapeMembers5["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers5["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal8 && "auBsbCode".Equals(literal8.GetValue(), global::System.StringComparison.Ordinal)) || (shapeMembers5["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal9 && "caRoutingNumber".Equals(literal9.GetValue(), global::System.StringComparison.Ordinal)) || (shapeMembers5["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal10 && "gbSortCode".Equals(literal10.GetValue(), global::System.StringComparison.Ordinal)) || (shapeMembers5["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal11 && "usRoutingNumber".Equals(literal11.GetValue(), global::System.StringComparison.Ordinal)))))))))) && (!shapeMembers1.ContainsKey("bic") || (((shapeMembers1["bic"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("type") || (((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal16 && "numberAndBic".Equals(literal16.GetValue(), global::System.StringComparison.Ordinal))))))))))();
             bool matchesUnionBranch11 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("accountNumber") && shapeMembers1.ContainsKey("type") && (!shapeMembers1.ContainsKey("accountNumber") || (((shapeMembers1["accountNumber"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("type") || (((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal4 && "plLocal".Equals(literal4.GetValue(), global::System.StringComparison.Ordinal))))))))))();
             bool matchesUnionBranch12 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("accountNumber") && shapeMembers1.ContainsKey("clearingNumber") && shapeMembers1.ContainsKey("type") && (!shapeMembers1.ContainsKey("accountNumber") || (((shapeMembers1["accountNumber"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("clearingNumber") || (((shapeMembers1["clearingNumber"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("type") || (((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal6 && "seLocal".Equals(literal6.GetValue(), global::System.StringComparison.Ordinal))))))))))();
-            bool matchesUnionBranch13 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("accountNumber") && shapeMembers1.ContainsKey("bic") && (!shapeMembers1.ContainsKey("accountNumber") || (((shapeMembers1["accountNumber"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("bic") || (((shapeMembers1["bic"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("type") || (((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal6 && "sgLocal".Equals(literal6.GetValue(), global::System.StringComparison.Ordinal))))))))))();
+            bool matchesUnionBranch13 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("accountNumber") && shapeMembers1.ContainsKey("bic") && shapeMembers1.ContainsKey("type") && (!shapeMembers1.ContainsKey("accountNumber") || (((shapeMembers1["accountNumber"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("bic") || (((shapeMembers1["bic"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("type") || (((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal6 && "sgLocal".Equals(literal6.GetValue(), global::System.StringComparison.Ordinal))))))))))();
             bool matchesUnionBranch14 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("accountNumber") && shapeMembers1.ContainsKey("sortCode") && shapeMembers1.ContainsKey("type") && (!shapeMembers1.ContainsKey("accountNumber") || (((shapeMembers1["accountNumber"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("sortCode") || (((shapeMembers1["sortCode"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("type") || (((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal6 && "ukLocal".Equals(literal6.GetValue(), global::System.StringComparison.Ordinal))))))))))();
             bool matchesUnionBranch15 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("accountNumber") && shapeMembers1.ContainsKey("routingNumber") && shapeMembers1.ContainsKey("type") && (!shapeMembers1.ContainsKey("accountNumber") || (((shapeMembers1["accountNumber"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("accountType") || (((shapeMembers1["accountType"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["accountType"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal4 && "checking".Equals(literal4.GetValue(), global::System.StringComparison.Ordinal)) || (shapeMembers1["accountType"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal5 && "savings".Equals(literal5.GetValue(), global::System.StringComparison.Ordinal))))) && (!shapeMembers1.ContainsKey("routingNumber") || (((shapeMembers1["routingNumber"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("type") || (((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal10 && "usLocal".Equals(literal10.GetValue(), global::System.StringComparison.Ordinal))))))))))();
             int matchingUnionBranches = 0;
@@ -255,7 +255,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if (matchesUnionBranch13) matchingUnionBranches++;
             if (matchesUnionBranch14) matchingUnionBranches++;
             if (matchesUnionBranch15) matchingUnionBranches++;
-            bool noSelectedUnionBranch = result.BalancePlatformTransferNotificationV4AuLocalAccountIdentification == null && result.BalancePlatformTransferNotificationV4BrLocalAccountIdentification == null && result.BalancePlatformTransferNotificationV4CaLocalAccountIdentification == null && result.BalancePlatformTransferNotificationV4CzLocalAccountIdentification == null && result.BalancePlatformTransferNotificationV4DkLocalAccountIdentification == null && result.BalancePlatformTransferNotificationV4HkLocalAccountIdentification == null && result.BalancePlatformTransferNotificationV4HuLocalAccountIdentification == null && result.BalancePlatformTransferNotificationV4IbanAccountIdentification == null && result.BalancePlatformTransferNotificationV4NoLocalAccountIdentification == null && result.BalancePlatformTransferNotificationV4NumberAndBicAccountIdentification == null && result.BalancePlatformTransferNotificationV4NzLocalAccountIdentification == null && result.BalancePlatformTransferNotificationV4PlLocalAccountIdentification == null && result.BalancePlatformTransferNotificationV4SeLocalAccountIdentification == null && result.BalancePlatformTransferNotificationV4SgLocalAccountIdentification == null && result.BalancePlatformTransferNotificationV4UkLocalAccountIdentification == null && result.BalancePlatformTransferNotificationV4UsLocalAccountIdentification == null;
+            bool noSelectedUnionBranch = result.BalancePlatformTransferNotificationV4AuLocalAccountIdentification == null && result.BalancePlatformTransferNotificationV4BrLocalAccountIdentification == null && result.BalancePlatformTransferNotificationV4CaLocalAccountIdentification == null && result.BalancePlatformTransferNotificationV4CzLocalAccountIdentification == null && result.BalancePlatformTransferNotificationV4DkLocalAccountIdentification == null && result.BalancePlatformTransferNotificationV4HkLocalAccountIdentification == null && result.BalancePlatformTransferNotificationV4HuLocalAccountIdentification == null && result.BalancePlatformTransferNotificationV4IbanAccountIdentification == null && result.BalancePlatformTransferNotificationV4NoLocalAccountIdentification == null && result.BalancePlatformTransferNotificationV4NumberAndBicAccountIdentification == null && result.BalancePlatformTransferNotificationV4NzLocalAccountIdentification == null && result.BalancePlatformTransferNotificationV4PlLocalAccountIdentification == null && result.BalancePlatformTransferNotificationV4SeLocalAccountIdentification == null && result.BalancePlatformTransferNotificationV4UkLocalAccountIdentification == null && result.BalancePlatformTransferNotificationV4UsLocalAccountIdentification == null && result.BankAccountV3AccountIdentificationOneOf14 == null;
             if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.BalancePlatformTransferNotificationV4AuLocalAccountIdentification = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4AuLocalAccountIdentification(), parseNode);
             if (noSelectedUnionBranch && matchesUnionBranch1 && matchingUnionBranches == 1) result.BalancePlatformTransferNotificationV4BrLocalAccountIdentification = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4BrLocalAccountIdentification(), parseNode);
             if (noSelectedUnionBranch && matchesUnionBranch2 && matchingUnionBranches == 1) result.BalancePlatformTransferNotificationV4CaLocalAccountIdentification = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4CaLocalAccountIdentification(), parseNode);
@@ -269,10 +269,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if (noSelectedUnionBranch && matchesUnionBranch10 && matchingUnionBranches == 1) result.BalancePlatformTransferNotificationV4NumberAndBicAccountIdentification = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4NumberAndBicAccountIdentification(), parseNode);
             if (noSelectedUnionBranch && matchesUnionBranch11 && matchingUnionBranches == 1) result.BalancePlatformTransferNotificationV4PlLocalAccountIdentification = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4PlLocalAccountIdentification(), parseNode);
             if (noSelectedUnionBranch && matchesUnionBranch12 && matchingUnionBranches == 1) result.BalancePlatformTransferNotificationV4SeLocalAccountIdentification = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4SeLocalAccountIdentification(), parseNode);
-            if (noSelectedUnionBranch && matchesUnionBranch13 && matchingUnionBranches == 1) result.BalancePlatformTransferNotificationV4SgLocalAccountIdentification = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4SgLocalAccountIdentification(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch13 && matchingUnionBranches == 1) result.BankAccountV3AccountIdentificationOneOf14 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.BankAccountV3AccountIdentificationOneOf14(), parseNode);
             if (noSelectedUnionBranch && matchesUnionBranch14 && matchingUnionBranches == 1) result.BalancePlatformTransferNotificationV4UkLocalAccountIdentification = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4UkLocalAccountIdentification(), parseNode);
             if (noSelectedUnionBranch && matchesUnionBranch15 && matchingUnionBranches == 1) result.BalancePlatformTransferNotificationV4UsLocalAccountIdentification = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4UsLocalAccountIdentification(), parseNode);
-            if (result.BalancePlatformTransferNotificationV4AuLocalAccountIdentification == null && result.BalancePlatformTransferNotificationV4BrLocalAccountIdentification == null && result.BalancePlatformTransferNotificationV4CaLocalAccountIdentification == null && result.BalancePlatformTransferNotificationV4CzLocalAccountIdentification == null && result.BalancePlatformTransferNotificationV4DkLocalAccountIdentification == null && result.BalancePlatformTransferNotificationV4HkLocalAccountIdentification == null && result.BalancePlatformTransferNotificationV4HuLocalAccountIdentification == null && result.BalancePlatformTransferNotificationV4IbanAccountIdentification == null && result.BalancePlatformTransferNotificationV4NoLocalAccountIdentification == null && result.BalancePlatformTransferNotificationV4NumberAndBicAccountIdentification == null && result.BalancePlatformTransferNotificationV4NzLocalAccountIdentification == null && result.BalancePlatformTransferNotificationV4PlLocalAccountIdentification == null && result.BalancePlatformTransferNotificationV4SeLocalAccountIdentification == null && result.BalancePlatformTransferNotificationV4SgLocalAccountIdentification == null && result.BalancePlatformTransferNotificationV4UkLocalAccountIdentification == null && result.BalancePlatformTransferNotificationV4UsLocalAccountIdentification == null) result.UnrecognizedValue = unionPayload;
+            if (result.BalancePlatformTransferNotificationV4AuLocalAccountIdentification == null && result.BalancePlatformTransferNotificationV4BrLocalAccountIdentification == null && result.BalancePlatformTransferNotificationV4CaLocalAccountIdentification == null && result.BalancePlatformTransferNotificationV4CzLocalAccountIdentification == null && result.BalancePlatformTransferNotificationV4DkLocalAccountIdentification == null && result.BalancePlatformTransferNotificationV4HkLocalAccountIdentification == null && result.BalancePlatformTransferNotificationV4HuLocalAccountIdentification == null && result.BalancePlatformTransferNotificationV4IbanAccountIdentification == null && result.BalancePlatformTransferNotificationV4NoLocalAccountIdentification == null && result.BalancePlatformTransferNotificationV4NumberAndBicAccountIdentification == null && result.BalancePlatformTransferNotificationV4NzLocalAccountIdentification == null && result.BalancePlatformTransferNotificationV4PlLocalAccountIdentification == null && result.BalancePlatformTransferNotificationV4SeLocalAccountIdentification == null && result.BalancePlatformTransferNotificationV4UkLocalAccountIdentification == null && result.BalancePlatformTransferNotificationV4UsLocalAccountIdentification == null && result.BankAccountV3AccountIdentificationOneOf14 == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
         /// <summary>
@@ -335,10 +335,6 @@ return result;
             {
                 return BalancePlatformTransferNotificationV4SeLocalAccountIdentification.GetFieldDeserializers();
             }
-            else if(BalancePlatformTransferNotificationV4SgLocalAccountIdentification != null)
-            {
-                return BalancePlatformTransferNotificationV4SgLocalAccountIdentification.GetFieldDeserializers();
-            }
             else if(BalancePlatformTransferNotificationV4UkLocalAccountIdentification != null)
             {
                 return BalancePlatformTransferNotificationV4UkLocalAccountIdentification.GetFieldDeserializers();
@@ -346,6 +342,10 @@ return result;
             else if(BalancePlatformTransferNotificationV4UsLocalAccountIdentification != null)
             {
                 return BalancePlatformTransferNotificationV4UsLocalAccountIdentification.GetFieldDeserializers();
+            }
+            else if(BankAccountV3AccountIdentificationOneOf14 != null)
+            {
+                return BankAccountV3AccountIdentificationOneOf14.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -356,7 +356,7 @@ return result;
         public virtual void Serialize(ISerializationWriter writer)
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
-            if (BalancePlatformTransferNotificationV4AuLocalAccountIdentification == null && BalancePlatformTransferNotificationV4BrLocalAccountIdentification == null && BalancePlatformTransferNotificationV4CaLocalAccountIdentification == null && BalancePlatformTransferNotificationV4CzLocalAccountIdentification == null && BalancePlatformTransferNotificationV4DkLocalAccountIdentification == null && BalancePlatformTransferNotificationV4HkLocalAccountIdentification == null && BalancePlatformTransferNotificationV4HuLocalAccountIdentification == null && BalancePlatformTransferNotificationV4IbanAccountIdentification == null && BalancePlatformTransferNotificationV4NoLocalAccountIdentification == null && BalancePlatformTransferNotificationV4NumberAndBicAccountIdentification == null && BalancePlatformTransferNotificationV4NzLocalAccountIdentification == null && BalancePlatformTransferNotificationV4PlLocalAccountIdentification == null && BalancePlatformTransferNotificationV4SeLocalAccountIdentification == null && BalancePlatformTransferNotificationV4SgLocalAccountIdentification == null && BalancePlatformTransferNotificationV4UkLocalAccountIdentification == null && BalancePlatformTransferNotificationV4UsLocalAccountIdentification == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (BalancePlatformTransferNotificationV4AuLocalAccountIdentification == null && BalancePlatformTransferNotificationV4BrLocalAccountIdentification == null && BalancePlatformTransferNotificationV4CaLocalAccountIdentification == null && BalancePlatformTransferNotificationV4CzLocalAccountIdentification == null && BalancePlatformTransferNotificationV4DkLocalAccountIdentification == null && BalancePlatformTransferNotificationV4HkLocalAccountIdentification == null && BalancePlatformTransferNotificationV4HuLocalAccountIdentification == null && BalancePlatformTransferNotificationV4IbanAccountIdentification == null && BalancePlatformTransferNotificationV4NoLocalAccountIdentification == null && BalancePlatformTransferNotificationV4NumberAndBicAccountIdentification == null && BalancePlatformTransferNotificationV4NzLocalAccountIdentification == null && BalancePlatformTransferNotificationV4PlLocalAccountIdentification == null && BalancePlatformTransferNotificationV4SeLocalAccountIdentification == null && BalancePlatformTransferNotificationV4UkLocalAccountIdentification == null && BalancePlatformTransferNotificationV4UsLocalAccountIdentification == null && BankAccountV3AccountIdentificationOneOf14 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
             int selectedUnionBranches = 0;
             if (BalancePlatformTransferNotificationV4AuLocalAccountIdentification != null) selectedUnionBranches++;
             if (BalancePlatformTransferNotificationV4BrLocalAccountIdentification != null) selectedUnionBranches++;
@@ -371,9 +371,9 @@ return result;
             if (BalancePlatformTransferNotificationV4NzLocalAccountIdentification != null) selectedUnionBranches++;
             if (BalancePlatformTransferNotificationV4PlLocalAccountIdentification != null) selectedUnionBranches++;
             if (BalancePlatformTransferNotificationV4SeLocalAccountIdentification != null) selectedUnionBranches++;
-            if (BalancePlatformTransferNotificationV4SgLocalAccountIdentification != null) selectedUnionBranches++;
             if (BalancePlatformTransferNotificationV4UkLocalAccountIdentification != null) selectedUnionBranches++;
             if (BalancePlatformTransferNotificationV4UsLocalAccountIdentification != null) selectedUnionBranches++;
+            if (BankAccountV3AccountIdentificationOneOf14 != null) selectedUnionBranches++;
             if (BalancePlatformTransferNotificationV4AuLocalAccountIdentification != null && selectedUnionBranches == 1) { if (BalancePlatformTransferNotificationV4AuLocalAccountIdentification is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, BalancePlatformTransferNotificationV4AuLocalAccountIdentification); return; }
             if (BalancePlatformTransferNotificationV4BrLocalAccountIdentification != null && selectedUnionBranches == 1) { if (BalancePlatformTransferNotificationV4BrLocalAccountIdentification is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, BalancePlatformTransferNotificationV4BrLocalAccountIdentification); return; }
             if (BalancePlatformTransferNotificationV4CaLocalAccountIdentification != null && selectedUnionBranches == 1) { if (BalancePlatformTransferNotificationV4CaLocalAccountIdentification is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, BalancePlatformTransferNotificationV4CaLocalAccountIdentification); return; }
@@ -387,9 +387,9 @@ return result;
             if (BalancePlatformTransferNotificationV4NzLocalAccountIdentification != null && selectedUnionBranches == 1) { if (BalancePlatformTransferNotificationV4NzLocalAccountIdentification is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, BalancePlatformTransferNotificationV4NzLocalAccountIdentification); return; }
             if (BalancePlatformTransferNotificationV4PlLocalAccountIdentification != null && selectedUnionBranches == 1) { if (BalancePlatformTransferNotificationV4PlLocalAccountIdentification is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, BalancePlatformTransferNotificationV4PlLocalAccountIdentification); return; }
             if (BalancePlatformTransferNotificationV4SeLocalAccountIdentification != null && selectedUnionBranches == 1) { if (BalancePlatformTransferNotificationV4SeLocalAccountIdentification is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, BalancePlatformTransferNotificationV4SeLocalAccountIdentification); return; }
-            if (BalancePlatformTransferNotificationV4SgLocalAccountIdentification != null && selectedUnionBranches == 1) { if (BalancePlatformTransferNotificationV4SgLocalAccountIdentification is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, BalancePlatformTransferNotificationV4SgLocalAccountIdentification); return; }
             if (BalancePlatformTransferNotificationV4UkLocalAccountIdentification != null && selectedUnionBranches == 1) { if (BalancePlatformTransferNotificationV4UkLocalAccountIdentification is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, BalancePlatformTransferNotificationV4UkLocalAccountIdentification); return; }
             if (BalancePlatformTransferNotificationV4UsLocalAccountIdentification != null && selectedUnionBranches == 1) { if (BalancePlatformTransferNotificationV4UsLocalAccountIdentification is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, BalancePlatformTransferNotificationV4UsLocalAccountIdentification); return; }
+            if (BankAccountV3AccountIdentificationOneOf14 != null && selectedUnionBranches == 1) { if (BankAccountV3AccountIdentificationOneOf14 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, BankAccountV3AccountIdentificationOneOf14); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(BalancePlatformTransferNotificationV4AuLocalAccountIdentification != null)
@@ -457,11 +457,6 @@ return result;
                 if (BalancePlatformTransferNotificationV4SeLocalAccountIdentification is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4SeLocalAccountIdentification>(null, BalancePlatformTransferNotificationV4SeLocalAccountIdentification);
             }
-            else if(BalancePlatformTransferNotificationV4SgLocalAccountIdentification != null)
-            {
-                if (BalancePlatformTransferNotificationV4SgLocalAccountIdentification is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
-                writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4SgLocalAccountIdentification>(null, BalancePlatformTransferNotificationV4SgLocalAccountIdentification);
-            }
             else if(BalancePlatformTransferNotificationV4UkLocalAccountIdentification != null)
             {
                 if (BalancePlatformTransferNotificationV4UkLocalAccountIdentification is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
@@ -471,6 +466,11 @@ return result;
             {
                 if (BalancePlatformTransferNotificationV4UsLocalAccountIdentification is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4UsLocalAccountIdentification>(null, BalancePlatformTransferNotificationV4UsLocalAccountIdentification);
+            }
+            else if(BankAccountV3AccountIdentificationOneOf14 != null)
+            {
+                if (BankAccountV3AccountIdentificationOneOf14 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BankAccountV3AccountIdentificationOneOf14>(null, BankAccountV3AccountIdentificationOneOf14);
             }
         }
     }

@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2AuLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2BrLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CaLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CzLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2DkLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2HuLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2IbanAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2NoLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2NumberAndBicAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2PlLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SeLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SgLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2UkLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2UsLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.HkLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.NzLocalAccountIdentification"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2AuLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2BrLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CaLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CzLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2DkLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2HuLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2IbanAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2NoLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2NumberAndBicAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2PlLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SeLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2UkLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2UsLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BankAccountAccountIdentificationOneOf14"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.HkLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.NzLocalAccountIdentification"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BankAccountAccountIdentification : IComposedTypeWrapper, IParsable
@@ -106,14 +106,6 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SeLocalAccountIdentification BalancePlatformServiceV2SeLocalAccountIdentification { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SgLocalAccountIdentification"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SgLocalAccountIdentification? BalancePlatformServiceV2SgLocalAccountIdentification { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SgLocalAccountIdentification BalancePlatformServiceV2SgLocalAccountIdentification { get; set; }
-#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2UkLocalAccountIdentification"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -129,6 +121,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2UsLocalAccountIdentification BalancePlatformServiceV2UsLocalAccountIdentification { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BankAccountAccountIdentificationOneOf14"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.BankAccountAccountIdentificationOneOf14? BankAccountAccountIdentificationOneOf14 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.BankAccountAccountIdentificationOneOf14 BankAccountAccountIdentificationOneOf14 { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.HkLocalAccountIdentification"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -154,69 +154,69 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.BankAccountAccountIdentification CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Adyen.OpenApiClient.Models.BankAccountAccountIdentification();
-            if("auLocal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("BalancePlatformServiceV2AuLocalAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
-            else if("brLocal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("BalancePlatformServiceV2BrLocalAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
-            else if("caLocal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("BalancePlatformServiceV2CaLocalAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
-            else if("czLocal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("BalancePlatformServiceV2CzLocalAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
-            else if("dkLocal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("BalancePlatformServiceV2DkLocalAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
-            else if("huLocal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("BalancePlatformServiceV2HuLocalAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
-            else if("iban".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("BalancePlatformServiceV2IbanAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
-            else if("noLocal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("BalancePlatformServiceV2NoLocalAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
-            else if("numberAndBic".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("BalancePlatformServiceV2NumberAndBicAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
-            else if("plLocal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("BalancePlatformServiceV2PlLocalAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
-            else if("seLocal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("BalancePlatformServiceV2SeLocalAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
-            else if("sgLocal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("BalancePlatformServiceV2UkLocalAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
-            else if("ukLocal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("BalancePlatformServiceV2UsLocalAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
-            else if("usLocal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("BankAccountAccountIdentificationOneOf14".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
-            else if("hkLocal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("HkLocalAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
-            else if("nzLocal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("NzLocalAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
@@ -235,7 +235,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             bool matchesUnionBranch10 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("accountNumber") && shapeMembers1.ContainsKey("bic") && shapeMembers1.ContainsKey("type") && (!shapeMembers1.ContainsKey("accountNumber") || (((shapeMembers1["accountNumber"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("additionalBankIdentification") || (((shapeMembers1["additionalBankIdentification"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (shapeMembers1["additionalBankIdentification"] is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject4 || (shapeObject4.GetValue() is var shapeMembers5 && ((!shapeMembers5.ContainsKey("code") || (((shapeMembers5["code"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers5.ContainsKey("type") || (((shapeMembers5["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers5["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal8 && "auBsbCode".Equals(literal8.GetValue(), global::System.StringComparison.Ordinal)) || (shapeMembers5["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal9 && "caRoutingNumber".Equals(literal9.GetValue(), global::System.StringComparison.Ordinal)) || (shapeMembers5["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal10 && "gbSortCode".Equals(literal10.GetValue(), global::System.StringComparison.Ordinal)) || (shapeMembers5["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal11 && "usRoutingNumber".Equals(literal11.GetValue(), global::System.StringComparison.Ordinal)))))))))) && (!shapeMembers1.ContainsKey("bic") || (((shapeMembers1["bic"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("type") || (((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal16 && "numberAndBic".Equals(literal16.GetValue(), global::System.StringComparison.Ordinal))))))))))();
             bool matchesUnionBranch11 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("accountNumber") && shapeMembers1.ContainsKey("type") && (!shapeMembers1.ContainsKey("accountNumber") || (((shapeMembers1["accountNumber"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("type") || (((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal4 && "plLocal".Equals(literal4.GetValue(), global::System.StringComparison.Ordinal))))))))))();
             bool matchesUnionBranch12 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("accountNumber") && shapeMembers1.ContainsKey("clearingNumber") && shapeMembers1.ContainsKey("type") && (!shapeMembers1.ContainsKey("accountNumber") || (((shapeMembers1["accountNumber"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("clearingNumber") || (((shapeMembers1["clearingNumber"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("type") || (((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal6 && "seLocal".Equals(literal6.GetValue(), global::System.StringComparison.Ordinal))))))))))();
-            bool matchesUnionBranch13 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("accountNumber") && shapeMembers1.ContainsKey("bic") && (!shapeMembers1.ContainsKey("accountNumber") || (((shapeMembers1["accountNumber"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("bic") || (((shapeMembers1["bic"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("type") || (((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal6 && "sgLocal".Equals(literal6.GetValue(), global::System.StringComparison.Ordinal))))))))))();
+            bool matchesUnionBranch13 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("accountNumber") && shapeMembers1.ContainsKey("bic") && shapeMembers1.ContainsKey("type") && (!shapeMembers1.ContainsKey("accountNumber") || (((shapeMembers1["accountNumber"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("bic") || (((shapeMembers1["bic"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("type") || (((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal6 && "sgLocal".Equals(literal6.GetValue(), global::System.StringComparison.Ordinal))))))))))();
             bool matchesUnionBranch14 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("accountNumber") && shapeMembers1.ContainsKey("sortCode") && shapeMembers1.ContainsKey("type") && (!shapeMembers1.ContainsKey("accountNumber") || (((shapeMembers1["accountNumber"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("sortCode") || (((shapeMembers1["sortCode"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("type") || (((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal6 && "ukLocal".Equals(literal6.GetValue(), global::System.StringComparison.Ordinal))))))))))();
             bool matchesUnionBranch15 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("accountNumber") && shapeMembers1.ContainsKey("routingNumber") && shapeMembers1.ContainsKey("type") && (!shapeMembers1.ContainsKey("accountNumber") || (((shapeMembers1["accountNumber"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("accountType") || (((shapeMembers1["accountType"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["accountType"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal4 && "checking".Equals(literal4.GetValue(), global::System.StringComparison.Ordinal)) || (shapeMembers1["accountType"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal5 && "savings".Equals(literal5.GetValue(), global::System.StringComparison.Ordinal))))) && (!shapeMembers1.ContainsKey("routingNumber") || (((shapeMembers1["routingNumber"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("type") || (((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal10 && "usLocal".Equals(literal10.GetValue(), global::System.StringComparison.Ordinal))))))))))();
             int matchingUnionBranches = 0;
@@ -255,7 +255,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if (matchesUnionBranch13) matchingUnionBranches++;
             if (matchesUnionBranch14) matchingUnionBranches++;
             if (matchesUnionBranch15) matchingUnionBranches++;
-            bool noSelectedUnionBranch = result.BalancePlatformServiceV2AuLocalAccountIdentification == null && result.BalancePlatformServiceV2BrLocalAccountIdentification == null && result.BalancePlatformServiceV2CaLocalAccountIdentification == null && result.BalancePlatformServiceV2CzLocalAccountIdentification == null && result.BalancePlatformServiceV2DkLocalAccountIdentification == null && result.BalancePlatformServiceV2HuLocalAccountIdentification == null && result.BalancePlatformServiceV2IbanAccountIdentification == null && result.BalancePlatformServiceV2NoLocalAccountIdentification == null && result.BalancePlatformServiceV2NumberAndBicAccountIdentification == null && result.BalancePlatformServiceV2PlLocalAccountIdentification == null && result.BalancePlatformServiceV2SeLocalAccountIdentification == null && result.BalancePlatformServiceV2SgLocalAccountIdentification == null && result.BalancePlatformServiceV2UkLocalAccountIdentification == null && result.BalancePlatformServiceV2UsLocalAccountIdentification == null && result.HkLocalAccountIdentification == null && result.NzLocalAccountIdentification == null;
+            bool noSelectedUnionBranch = result.BalancePlatformServiceV2AuLocalAccountIdentification == null && result.BalancePlatformServiceV2BrLocalAccountIdentification == null && result.BalancePlatformServiceV2CaLocalAccountIdentification == null && result.BalancePlatformServiceV2CzLocalAccountIdentification == null && result.BalancePlatformServiceV2DkLocalAccountIdentification == null && result.BalancePlatformServiceV2HuLocalAccountIdentification == null && result.BalancePlatformServiceV2IbanAccountIdentification == null && result.BalancePlatformServiceV2NoLocalAccountIdentification == null && result.BalancePlatformServiceV2NumberAndBicAccountIdentification == null && result.BalancePlatformServiceV2PlLocalAccountIdentification == null && result.BalancePlatformServiceV2SeLocalAccountIdentification == null && result.BalancePlatformServiceV2UkLocalAccountIdentification == null && result.BalancePlatformServiceV2UsLocalAccountIdentification == null && result.BankAccountAccountIdentificationOneOf14 == null && result.HkLocalAccountIdentification == null && result.NzLocalAccountIdentification == null;
             if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.BalancePlatformServiceV2AuLocalAccountIdentification = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2AuLocalAccountIdentification(), parseNode);
             if (noSelectedUnionBranch && matchesUnionBranch1 && matchingUnionBranches == 1) result.BalancePlatformServiceV2BrLocalAccountIdentification = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2BrLocalAccountIdentification(), parseNode);
             if (noSelectedUnionBranch && matchesUnionBranch2 && matchingUnionBranches == 1) result.BalancePlatformServiceV2CaLocalAccountIdentification = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CaLocalAccountIdentification(), parseNode);
@@ -269,10 +269,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if (noSelectedUnionBranch && matchesUnionBranch10 && matchingUnionBranches == 1) result.BalancePlatformServiceV2NumberAndBicAccountIdentification = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2NumberAndBicAccountIdentification(), parseNode);
             if (noSelectedUnionBranch && matchesUnionBranch11 && matchingUnionBranches == 1) result.BalancePlatformServiceV2PlLocalAccountIdentification = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2PlLocalAccountIdentification(), parseNode);
             if (noSelectedUnionBranch && matchesUnionBranch12 && matchingUnionBranches == 1) result.BalancePlatformServiceV2SeLocalAccountIdentification = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SeLocalAccountIdentification(), parseNode);
-            if (noSelectedUnionBranch && matchesUnionBranch13 && matchingUnionBranches == 1) result.BalancePlatformServiceV2SgLocalAccountIdentification = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SgLocalAccountIdentification(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch13 && matchingUnionBranches == 1) result.BankAccountAccountIdentificationOneOf14 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.BankAccountAccountIdentificationOneOf14(), parseNode);
             if (noSelectedUnionBranch && matchesUnionBranch14 && matchingUnionBranches == 1) result.BalancePlatformServiceV2UkLocalAccountIdentification = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2UkLocalAccountIdentification(), parseNode);
             if (noSelectedUnionBranch && matchesUnionBranch15 && matchingUnionBranches == 1) result.BalancePlatformServiceV2UsLocalAccountIdentification = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2UsLocalAccountIdentification(), parseNode);
-            if (result.BalancePlatformServiceV2AuLocalAccountIdentification == null && result.BalancePlatformServiceV2BrLocalAccountIdentification == null && result.BalancePlatformServiceV2CaLocalAccountIdentification == null && result.BalancePlatformServiceV2CzLocalAccountIdentification == null && result.BalancePlatformServiceV2DkLocalAccountIdentification == null && result.BalancePlatformServiceV2HuLocalAccountIdentification == null && result.BalancePlatformServiceV2IbanAccountIdentification == null && result.BalancePlatformServiceV2NoLocalAccountIdentification == null && result.BalancePlatformServiceV2NumberAndBicAccountIdentification == null && result.BalancePlatformServiceV2PlLocalAccountIdentification == null && result.BalancePlatformServiceV2SeLocalAccountIdentification == null && result.BalancePlatformServiceV2SgLocalAccountIdentification == null && result.BalancePlatformServiceV2UkLocalAccountIdentification == null && result.BalancePlatformServiceV2UsLocalAccountIdentification == null && result.HkLocalAccountIdentification == null && result.NzLocalAccountIdentification == null) result.UnrecognizedValue = unionPayload;
+            if (result.BalancePlatformServiceV2AuLocalAccountIdentification == null && result.BalancePlatformServiceV2BrLocalAccountIdentification == null && result.BalancePlatformServiceV2CaLocalAccountIdentification == null && result.BalancePlatformServiceV2CzLocalAccountIdentification == null && result.BalancePlatformServiceV2DkLocalAccountIdentification == null && result.BalancePlatformServiceV2HuLocalAccountIdentification == null && result.BalancePlatformServiceV2IbanAccountIdentification == null && result.BalancePlatformServiceV2NoLocalAccountIdentification == null && result.BalancePlatformServiceV2NumberAndBicAccountIdentification == null && result.BalancePlatformServiceV2PlLocalAccountIdentification == null && result.BalancePlatformServiceV2SeLocalAccountIdentification == null && result.BalancePlatformServiceV2UkLocalAccountIdentification == null && result.BalancePlatformServiceV2UsLocalAccountIdentification == null && result.BankAccountAccountIdentificationOneOf14 == null && result.HkLocalAccountIdentification == null && result.NzLocalAccountIdentification == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
         /// <summary>
@@ -327,10 +327,6 @@ return result;
             {
                 return BalancePlatformServiceV2SeLocalAccountIdentification.GetFieldDeserializers();
             }
-            else if(BalancePlatformServiceV2SgLocalAccountIdentification != null)
-            {
-                return BalancePlatformServiceV2SgLocalAccountIdentification.GetFieldDeserializers();
-            }
             else if(BalancePlatformServiceV2UkLocalAccountIdentification != null)
             {
                 return BalancePlatformServiceV2UkLocalAccountIdentification.GetFieldDeserializers();
@@ -338,6 +334,10 @@ return result;
             else if(BalancePlatformServiceV2UsLocalAccountIdentification != null)
             {
                 return BalancePlatformServiceV2UsLocalAccountIdentification.GetFieldDeserializers();
+            }
+            else if(BankAccountAccountIdentificationOneOf14 != null)
+            {
+                return BankAccountAccountIdentificationOneOf14.GetFieldDeserializers();
             }
             else if(HkLocalAccountIdentification != null)
             {
@@ -356,7 +356,7 @@ return result;
         public virtual void Serialize(ISerializationWriter writer)
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
-            if (BalancePlatformServiceV2AuLocalAccountIdentification == null && BalancePlatformServiceV2BrLocalAccountIdentification == null && BalancePlatformServiceV2CaLocalAccountIdentification == null && BalancePlatformServiceV2CzLocalAccountIdentification == null && BalancePlatformServiceV2DkLocalAccountIdentification == null && BalancePlatformServiceV2HuLocalAccountIdentification == null && BalancePlatformServiceV2IbanAccountIdentification == null && BalancePlatformServiceV2NoLocalAccountIdentification == null && BalancePlatformServiceV2NumberAndBicAccountIdentification == null && BalancePlatformServiceV2PlLocalAccountIdentification == null && BalancePlatformServiceV2SeLocalAccountIdentification == null && BalancePlatformServiceV2SgLocalAccountIdentification == null && BalancePlatformServiceV2UkLocalAccountIdentification == null && BalancePlatformServiceV2UsLocalAccountIdentification == null && HkLocalAccountIdentification == null && NzLocalAccountIdentification == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (BalancePlatformServiceV2AuLocalAccountIdentification == null && BalancePlatformServiceV2BrLocalAccountIdentification == null && BalancePlatformServiceV2CaLocalAccountIdentification == null && BalancePlatformServiceV2CzLocalAccountIdentification == null && BalancePlatformServiceV2DkLocalAccountIdentification == null && BalancePlatformServiceV2HuLocalAccountIdentification == null && BalancePlatformServiceV2IbanAccountIdentification == null && BalancePlatformServiceV2NoLocalAccountIdentification == null && BalancePlatformServiceV2NumberAndBicAccountIdentification == null && BalancePlatformServiceV2PlLocalAccountIdentification == null && BalancePlatformServiceV2SeLocalAccountIdentification == null && BalancePlatformServiceV2UkLocalAccountIdentification == null && BalancePlatformServiceV2UsLocalAccountIdentification == null && BankAccountAccountIdentificationOneOf14 == null && HkLocalAccountIdentification == null && NzLocalAccountIdentification == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
             int selectedUnionBranches = 0;
             if (BalancePlatformServiceV2AuLocalAccountIdentification != null) selectedUnionBranches++;
             if (BalancePlatformServiceV2BrLocalAccountIdentification != null) selectedUnionBranches++;
@@ -369,9 +369,9 @@ return result;
             if (BalancePlatformServiceV2NumberAndBicAccountIdentification != null) selectedUnionBranches++;
             if (BalancePlatformServiceV2PlLocalAccountIdentification != null) selectedUnionBranches++;
             if (BalancePlatformServiceV2SeLocalAccountIdentification != null) selectedUnionBranches++;
-            if (BalancePlatformServiceV2SgLocalAccountIdentification != null) selectedUnionBranches++;
             if (BalancePlatformServiceV2UkLocalAccountIdentification != null) selectedUnionBranches++;
             if (BalancePlatformServiceV2UsLocalAccountIdentification != null) selectedUnionBranches++;
+            if (BankAccountAccountIdentificationOneOf14 != null) selectedUnionBranches++;
             if (HkLocalAccountIdentification != null) selectedUnionBranches++;
             if (NzLocalAccountIdentification != null) selectedUnionBranches++;
             if (BalancePlatformServiceV2AuLocalAccountIdentification != null && selectedUnionBranches == 1) { if (BalancePlatformServiceV2AuLocalAccountIdentification is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, BalancePlatformServiceV2AuLocalAccountIdentification); return; }
@@ -385,9 +385,9 @@ return result;
             if (BalancePlatformServiceV2NumberAndBicAccountIdentification != null && selectedUnionBranches == 1) { if (BalancePlatformServiceV2NumberAndBicAccountIdentification is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, BalancePlatformServiceV2NumberAndBicAccountIdentification); return; }
             if (BalancePlatformServiceV2PlLocalAccountIdentification != null && selectedUnionBranches == 1) { if (BalancePlatformServiceV2PlLocalAccountIdentification is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, BalancePlatformServiceV2PlLocalAccountIdentification); return; }
             if (BalancePlatformServiceV2SeLocalAccountIdentification != null && selectedUnionBranches == 1) { if (BalancePlatformServiceV2SeLocalAccountIdentification is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, BalancePlatformServiceV2SeLocalAccountIdentification); return; }
-            if (BalancePlatformServiceV2SgLocalAccountIdentification != null && selectedUnionBranches == 1) { if (BalancePlatformServiceV2SgLocalAccountIdentification is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, BalancePlatformServiceV2SgLocalAccountIdentification); return; }
             if (BalancePlatformServiceV2UkLocalAccountIdentification != null && selectedUnionBranches == 1) { if (BalancePlatformServiceV2UkLocalAccountIdentification is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, BalancePlatformServiceV2UkLocalAccountIdentification); return; }
             if (BalancePlatformServiceV2UsLocalAccountIdentification != null && selectedUnionBranches == 1) { if (BalancePlatformServiceV2UsLocalAccountIdentification is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, BalancePlatformServiceV2UsLocalAccountIdentification); return; }
+            if (BankAccountAccountIdentificationOneOf14 != null && selectedUnionBranches == 1) { if (BankAccountAccountIdentificationOneOf14 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, BankAccountAccountIdentificationOneOf14); return; }
             if (HkLocalAccountIdentification != null && selectedUnionBranches == 1) { if (HkLocalAccountIdentification is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, HkLocalAccountIdentification); return; }
             if (NzLocalAccountIdentification != null && selectedUnionBranches == 1) { if (NzLocalAccountIdentification is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, NzLocalAccountIdentification); return; }
 
@@ -447,11 +447,6 @@ return result;
                 if (BalancePlatformServiceV2SeLocalAccountIdentification is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SeLocalAccountIdentification>(null, BalancePlatformServiceV2SeLocalAccountIdentification);
             }
-            else if(BalancePlatformServiceV2SgLocalAccountIdentification != null)
-            {
-                if (BalancePlatformServiceV2SgLocalAccountIdentification is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
-                writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SgLocalAccountIdentification>(null, BalancePlatformServiceV2SgLocalAccountIdentification);
-            }
             else if(BalancePlatformServiceV2UkLocalAccountIdentification != null)
             {
                 if (BalancePlatformServiceV2UkLocalAccountIdentification is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
@@ -461,6 +456,11 @@ return result;
             {
                 if (BalancePlatformServiceV2UsLocalAccountIdentification is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2UsLocalAccountIdentification>(null, BalancePlatformServiceV2UsLocalAccountIdentification);
+            }
+            else if(BankAccountAccountIdentificationOneOf14 != null)
+            {
+                if (BankAccountAccountIdentificationOneOf14 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BankAccountAccountIdentificationOneOf14>(null, BankAccountAccountIdentificationOneOf14);
             }
             else if(HkLocalAccountIdentification != null)
             {

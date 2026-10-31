@@ -141,12 +141,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The relevant data according to the transfer category.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferCategoryData? CategoryData { get => _explicitNullValueCategoryData; set { _explicitNullValueCategoryData = value; AdditionalData?.Remove("categoryData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("categoryData"); else _explicitNullProperties?.Remove("categoryData"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TransferCategoryData? _explicitNullValueCategoryData = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferDataCategoryData? CategoryData { get => _explicitNullValueCategoryData; set { _explicitNullValueCategoryData = value; AdditionalData?.Remove("categoryData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("categoryData"); else _explicitNullProperties?.Remove("categoryData"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferDataCategoryData? _explicitNullValueCategoryData = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferCategoryData CategoryData { get => _explicitNullValueCategoryData; set { _explicitNullValueCategoryData = value; AdditionalData?.Remove("categoryData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("categoryData"); else _explicitNullProperties?.Remove("categoryData"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TransferCategoryData _explicitNullValueCategoryData = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferDataCategoryData CategoryData { get => _explicitNullValueCategoryData; set { _explicitNullValueCategoryData = value; AdditionalData?.Remove("categoryData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("categoryData"); else _explicitNullProperties?.Remove("categoryData"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferDataCategoryData _explicitNullValueCategoryData = default!;
 #endif
         /// <summary>The other party in the transfer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -374,7 +374,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "balancePlatform", n => { BalancePlatform = n.GetStringValue(); } },
                 { "balances", n => { Balances = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4BalanceMutation>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4BalanceMutation.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "category", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferDataCategory>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCategory = default; _explicitNullProperties?.Remove("category"); AdditionalData["category"] = unknown; } else { Category = parsed; AdditionalData.Remove("category"); } } },
-                { "categoryData", n => { CategoryData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferCategoryData>(global::Soenneker.Adyen.OpenApiClient.Models.TransferCategoryData.CreateFromDiscriminatorValue); } },
+                { "categoryData", n => { CategoryData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferDataCategoryData>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferDataCategoryData.CreateFromDiscriminatorValue); } },
                 { "counterparty", n => { Counterparty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferDataCounterparty>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferDataCounterparty.CreateFromDiscriminatorValue); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "creationDate", n => { CreationDate = n.GetDateTimeOffsetValue(); } },
@@ -415,7 +415,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("balancePlatform", BalancePlatform);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4BalanceMutation>("balances", Balances);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferDataCategory>("category", Category);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferCategoryData>("categoryData", CategoryData);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferDataCategoryData>("categoryData", CategoryData);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferDataCounterparty>("counterparty", Counterparty);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteDateTimeOffsetValue("creationDate", CreationDate);

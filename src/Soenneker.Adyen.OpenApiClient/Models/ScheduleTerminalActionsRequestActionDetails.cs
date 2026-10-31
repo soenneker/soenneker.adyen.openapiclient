@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ForceRebootDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.InstallAndroidAppDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.InstallAndroidCertificateDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ReleaseUpdateDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.UninstallAndroidAppDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.UninstallAndroidCertificateDetails"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsRequestActionDetailsOneOf1"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsRequestActionDetailsOneOf2"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsRequestActionDetailsOneOf3"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsRequestActionDetailsOneOf4"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsRequestActionDetailsOneOf5"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsRequestActionDetailsOneOf6"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ScheduleTerminalActionsRequestActionDetails : IComposedTypeWrapper, IParsable
@@ -18,53 +18,53 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ForceRebootDetails"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsRequestActionDetailsOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ForceRebootDetails? ForceRebootDetails { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsRequestActionDetailsOneOf1? ScheduleTerminalActionsRequestActionDetailsOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ForceRebootDetails ForceRebootDetails { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsRequestActionDetailsOneOf1 ScheduleTerminalActionsRequestActionDetailsOneOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.InstallAndroidAppDetails"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsRequestActionDetailsOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.InstallAndroidAppDetails? InstallAndroidAppDetails { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsRequestActionDetailsOneOf2? ScheduleTerminalActionsRequestActionDetailsOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.InstallAndroidAppDetails InstallAndroidAppDetails { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsRequestActionDetailsOneOf2 ScheduleTerminalActionsRequestActionDetailsOneOf2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.InstallAndroidCertificateDetails"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsRequestActionDetailsOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.InstallAndroidCertificateDetails? InstallAndroidCertificateDetails { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsRequestActionDetailsOneOf3? ScheduleTerminalActionsRequestActionDetailsOneOf3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.InstallAndroidCertificateDetails InstallAndroidCertificateDetails { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsRequestActionDetailsOneOf3 ScheduleTerminalActionsRequestActionDetailsOneOf3 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ReleaseUpdateDetails"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsRequestActionDetailsOneOf4"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ReleaseUpdateDetails? ReleaseUpdateDetails { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsRequestActionDetailsOneOf4? ScheduleTerminalActionsRequestActionDetailsOneOf4 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ReleaseUpdateDetails ReleaseUpdateDetails { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsRequestActionDetailsOneOf4 ScheduleTerminalActionsRequestActionDetailsOneOf4 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.UninstallAndroidAppDetails"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsRequestActionDetailsOneOf5"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.UninstallAndroidAppDetails? UninstallAndroidAppDetails { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsRequestActionDetailsOneOf5? ScheduleTerminalActionsRequestActionDetailsOneOf5 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.UninstallAndroidAppDetails UninstallAndroidAppDetails { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsRequestActionDetailsOneOf5 ScheduleTerminalActionsRequestActionDetailsOneOf5 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.UninstallAndroidCertificateDetails"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsRequestActionDetailsOneOf6"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.UninstallAndroidCertificateDetails? UninstallAndroidCertificateDetails { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsRequestActionDetailsOneOf6? ScheduleTerminalActionsRequestActionDetailsOneOf6 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.UninstallAndroidCertificateDetails UninstallAndroidCertificateDetails { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsRequestActionDetailsOneOf6 ScheduleTerminalActionsRequestActionDetailsOneOf6 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -74,40 +74,40 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsRequestActionDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsRequestActionDetails();
-            if("ForceReboot".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("ScheduleTerminalActionsRequestActionDetailsOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
-            else if("InstallAndroidApp".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ScheduleTerminalActionsRequestActionDetailsOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
-            else if("InstallAndroidCertificate".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ScheduleTerminalActionsRequestActionDetailsOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
-            else if("ReleaseUpdate".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ScheduleTerminalActionsRequestActionDetailsOneOf4".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
-            else if("UninstallAndroidApp".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ScheduleTerminalActionsRequestActionDetailsOneOf5".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
-            else if("UninstallAndroidCertificate".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ScheduleTerminalActionsRequestActionDetailsOneOf6".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && ((!shapeMembers1.ContainsKey("type") || (((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal2 && "ForceReboot".Equals(literal2.GetValue(), global::System.StringComparison.Ordinal))))))))))();
-            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && ((!shapeMembers1.ContainsKey("appId") || (((shapeMembers1["appId"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("type") || (((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal4 && "InstallAndroidApp".Equals(literal4.GetValue(), global::System.StringComparison.Ordinal))))))))))();
-            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && ((!shapeMembers1.ContainsKey("certificateId") || (((shapeMembers1["certificateId"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("type") || (((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal4 && "InstallAndroidCertificate".Equals(literal4.GetValue(), global::System.StringComparison.Ordinal))))))))))();
-            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && ((!shapeMembers1.ContainsKey("type") || (((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal2 && "ReleaseUpdate".Equals(literal2.GetValue(), global::System.StringComparison.Ordinal))))) && (!shapeMembers1.ContainsKey("updateAtFirstMaintenanceCall") || (((shapeMembers1["updateAtFirstMaintenanceCall"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedBoolean)))))))))();
-            bool matchesUnionBranch4 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && ((!shapeMembers1.ContainsKey("appId") || (((shapeMembers1["appId"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("type") || (((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal4 && "UninstallAndroidApp".Equals(literal4.GetValue(), global::System.StringComparison.Ordinal))))))))))();
-            bool matchesUnionBranch5 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && ((!shapeMembers1.ContainsKey("certificateId") || (((shapeMembers1["certificateId"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("type") || (((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal4 && "UninstallAndroidCertificate".Equals(literal4.GetValue(), global::System.StringComparison.Ordinal))))))))))();
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("type") && (!shapeMembers1.ContainsKey("type") || (((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal2 && "ForceReboot".Equals(literal2.GetValue(), global::System.StringComparison.Ordinal))))))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("type") && (!shapeMembers1.ContainsKey("appId") || (((shapeMembers1["appId"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("type") || (((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal4 && "InstallAndroidApp".Equals(literal4.GetValue(), global::System.StringComparison.Ordinal))))))))))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("type") && (!shapeMembers1.ContainsKey("certificateId") || (((shapeMembers1["certificateId"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("type") || (((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal4 && "InstallAndroidCertificate".Equals(literal4.GetValue(), global::System.StringComparison.Ordinal))))))))))();
+            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("type") && (!shapeMembers1.ContainsKey("type") || (((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal2 && "ReleaseUpdate".Equals(literal2.GetValue(), global::System.StringComparison.Ordinal))))) && (!shapeMembers1.ContainsKey("updateAtFirstMaintenanceCall") || (((shapeMembers1["updateAtFirstMaintenanceCall"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedBoolean)))))))))();
+            bool matchesUnionBranch4 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("type") && (!shapeMembers1.ContainsKey("appId") || (((shapeMembers1["appId"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("type") || (((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal4 && "UninstallAndroidApp".Equals(literal4.GetValue(), global::System.StringComparison.Ordinal))))))))))();
+            bool matchesUnionBranch5 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("type") && (!shapeMembers1.ContainsKey("certificateId") || (((shapeMembers1["certificateId"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("type") || (((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal4 && "UninstallAndroidCertificate".Equals(literal4.GetValue(), global::System.StringComparison.Ordinal))))))))))();
             int matchingUnionBranches = 0;
             if (matchesUnionBranch0) matchingUnionBranches++;
             if (matchesUnionBranch1) matchingUnionBranches++;
@@ -115,14 +115,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if (matchesUnionBranch3) matchingUnionBranches++;
             if (matchesUnionBranch4) matchingUnionBranches++;
             if (matchesUnionBranch5) matchingUnionBranches++;
-            bool noSelectedUnionBranch = result.ForceRebootDetails == null && result.InstallAndroidAppDetails == null && result.InstallAndroidCertificateDetails == null && result.ReleaseUpdateDetails == null && result.UninstallAndroidAppDetails == null && result.UninstallAndroidCertificateDetails == null;
-            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.ForceRebootDetails = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.ForceRebootDetails(), parseNode);
-            if (noSelectedUnionBranch && matchesUnionBranch1 && matchingUnionBranches == 1) result.InstallAndroidAppDetails = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.InstallAndroidAppDetails(), parseNode);
-            if (noSelectedUnionBranch && matchesUnionBranch2 && matchingUnionBranches == 1) result.InstallAndroidCertificateDetails = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.InstallAndroidCertificateDetails(), parseNode);
-            if (noSelectedUnionBranch && matchesUnionBranch3 && matchingUnionBranches == 1) result.ReleaseUpdateDetails = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.ReleaseUpdateDetails(), parseNode);
-            if (noSelectedUnionBranch && matchesUnionBranch4 && matchingUnionBranches == 1) result.UninstallAndroidAppDetails = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.UninstallAndroidAppDetails(), parseNode);
-            if (noSelectedUnionBranch && matchesUnionBranch5 && matchingUnionBranches == 1) result.UninstallAndroidCertificateDetails = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.UninstallAndroidCertificateDetails(), parseNode);
-            if (result.ForceRebootDetails == null && result.InstallAndroidAppDetails == null && result.InstallAndroidCertificateDetails == null && result.ReleaseUpdateDetails == null && result.UninstallAndroidAppDetails == null && result.UninstallAndroidCertificateDetails == null) result.UnrecognizedValue = unionPayload;
+            bool noSelectedUnionBranch = result.ScheduleTerminalActionsRequestActionDetailsOneOf1 == null && result.ScheduleTerminalActionsRequestActionDetailsOneOf2 == null && result.ScheduleTerminalActionsRequestActionDetailsOneOf3 == null && result.ScheduleTerminalActionsRequestActionDetailsOneOf4 == null && result.ScheduleTerminalActionsRequestActionDetailsOneOf5 == null && result.ScheduleTerminalActionsRequestActionDetailsOneOf6 == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.ScheduleTerminalActionsRequestActionDetailsOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsRequestActionDetailsOneOf1(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch1 && matchingUnionBranches == 1) result.ScheduleTerminalActionsRequestActionDetailsOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsRequestActionDetailsOneOf2(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch2 && matchingUnionBranches == 1) result.ScheduleTerminalActionsRequestActionDetailsOneOf3 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsRequestActionDetailsOneOf3(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch3 && matchingUnionBranches == 1) result.ScheduleTerminalActionsRequestActionDetailsOneOf4 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsRequestActionDetailsOneOf4(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch4 && matchingUnionBranches == 1) result.ScheduleTerminalActionsRequestActionDetailsOneOf5 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsRequestActionDetailsOneOf5(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch5 && matchingUnionBranches == 1) result.ScheduleTerminalActionsRequestActionDetailsOneOf6 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsRequestActionDetailsOneOf6(), parseNode);
+            if (result.ScheduleTerminalActionsRequestActionDetailsOneOf1 == null && result.ScheduleTerminalActionsRequestActionDetailsOneOf2 == null && result.ScheduleTerminalActionsRequestActionDetailsOneOf3 == null && result.ScheduleTerminalActionsRequestActionDetailsOneOf4 == null && result.ScheduleTerminalActionsRequestActionDetailsOneOf5 == null && result.ScheduleTerminalActionsRequestActionDetailsOneOf6 == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
         /// <summary>
@@ -133,29 +133,29 @@ return result;
         {
             if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
 
-            if(ForceRebootDetails != null)
+            if(ScheduleTerminalActionsRequestActionDetailsOneOf1 != null)
             {
-                return ForceRebootDetails.GetFieldDeserializers();
+                return ScheduleTerminalActionsRequestActionDetailsOneOf1.GetFieldDeserializers();
             }
-            else if(InstallAndroidAppDetails != null)
+            else if(ScheduleTerminalActionsRequestActionDetailsOneOf2 != null)
             {
-                return InstallAndroidAppDetails.GetFieldDeserializers();
+                return ScheduleTerminalActionsRequestActionDetailsOneOf2.GetFieldDeserializers();
             }
-            else if(InstallAndroidCertificateDetails != null)
+            else if(ScheduleTerminalActionsRequestActionDetailsOneOf3 != null)
             {
-                return InstallAndroidCertificateDetails.GetFieldDeserializers();
+                return ScheduleTerminalActionsRequestActionDetailsOneOf3.GetFieldDeserializers();
             }
-            else if(ReleaseUpdateDetails != null)
+            else if(ScheduleTerminalActionsRequestActionDetailsOneOf4 != null)
             {
-                return ReleaseUpdateDetails.GetFieldDeserializers();
+                return ScheduleTerminalActionsRequestActionDetailsOneOf4.GetFieldDeserializers();
             }
-            else if(UninstallAndroidAppDetails != null)
+            else if(ScheduleTerminalActionsRequestActionDetailsOneOf5 != null)
             {
-                return UninstallAndroidAppDetails.GetFieldDeserializers();
+                return ScheduleTerminalActionsRequestActionDetailsOneOf5.GetFieldDeserializers();
             }
-            else if(UninstallAndroidCertificateDetails != null)
+            else if(ScheduleTerminalActionsRequestActionDetailsOneOf6 != null)
             {
-                return UninstallAndroidCertificateDetails.GetFieldDeserializers();
+                return ScheduleTerminalActionsRequestActionDetailsOneOf6.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -166,51 +166,51 @@ return result;
         public virtual void Serialize(ISerializationWriter writer)
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
-            if (ForceRebootDetails == null && InstallAndroidAppDetails == null && InstallAndroidCertificateDetails == null && ReleaseUpdateDetails == null && UninstallAndroidAppDetails == null && UninstallAndroidCertificateDetails == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (ScheduleTerminalActionsRequestActionDetailsOneOf1 == null && ScheduleTerminalActionsRequestActionDetailsOneOf2 == null && ScheduleTerminalActionsRequestActionDetailsOneOf3 == null && ScheduleTerminalActionsRequestActionDetailsOneOf4 == null && ScheduleTerminalActionsRequestActionDetailsOneOf5 == null && ScheduleTerminalActionsRequestActionDetailsOneOf6 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
             int selectedUnionBranches = 0;
-            if (ForceRebootDetails != null) selectedUnionBranches++;
-            if (InstallAndroidAppDetails != null) selectedUnionBranches++;
-            if (InstallAndroidCertificateDetails != null) selectedUnionBranches++;
-            if (ReleaseUpdateDetails != null) selectedUnionBranches++;
-            if (UninstallAndroidAppDetails != null) selectedUnionBranches++;
-            if (UninstallAndroidCertificateDetails != null) selectedUnionBranches++;
-            if (ForceRebootDetails != null && selectedUnionBranches == 1) { if (ForceRebootDetails is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ForceRebootDetails); return; }
-            if (InstallAndroidAppDetails != null && selectedUnionBranches == 1) { if (InstallAndroidAppDetails is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, InstallAndroidAppDetails); return; }
-            if (InstallAndroidCertificateDetails != null && selectedUnionBranches == 1) { if (InstallAndroidCertificateDetails is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, InstallAndroidCertificateDetails); return; }
-            if (ReleaseUpdateDetails != null && selectedUnionBranches == 1) { if (ReleaseUpdateDetails is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ReleaseUpdateDetails); return; }
-            if (UninstallAndroidAppDetails != null && selectedUnionBranches == 1) { if (UninstallAndroidAppDetails is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, UninstallAndroidAppDetails); return; }
-            if (UninstallAndroidCertificateDetails != null && selectedUnionBranches == 1) { if (UninstallAndroidCertificateDetails is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, UninstallAndroidCertificateDetails); return; }
+            if (ScheduleTerminalActionsRequestActionDetailsOneOf1 != null) selectedUnionBranches++;
+            if (ScheduleTerminalActionsRequestActionDetailsOneOf2 != null) selectedUnionBranches++;
+            if (ScheduleTerminalActionsRequestActionDetailsOneOf3 != null) selectedUnionBranches++;
+            if (ScheduleTerminalActionsRequestActionDetailsOneOf4 != null) selectedUnionBranches++;
+            if (ScheduleTerminalActionsRequestActionDetailsOneOf5 != null) selectedUnionBranches++;
+            if (ScheduleTerminalActionsRequestActionDetailsOneOf6 != null) selectedUnionBranches++;
+            if (ScheduleTerminalActionsRequestActionDetailsOneOf1 != null && selectedUnionBranches == 1) { if (ScheduleTerminalActionsRequestActionDetailsOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ScheduleTerminalActionsRequestActionDetailsOneOf1); return; }
+            if (ScheduleTerminalActionsRequestActionDetailsOneOf2 != null && selectedUnionBranches == 1) { if (ScheduleTerminalActionsRequestActionDetailsOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ScheduleTerminalActionsRequestActionDetailsOneOf2); return; }
+            if (ScheduleTerminalActionsRequestActionDetailsOneOf3 != null && selectedUnionBranches == 1) { if (ScheduleTerminalActionsRequestActionDetailsOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ScheduleTerminalActionsRequestActionDetailsOneOf3); return; }
+            if (ScheduleTerminalActionsRequestActionDetailsOneOf4 != null && selectedUnionBranches == 1) { if (ScheduleTerminalActionsRequestActionDetailsOneOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ScheduleTerminalActionsRequestActionDetailsOneOf4); return; }
+            if (ScheduleTerminalActionsRequestActionDetailsOneOf5 != null && selectedUnionBranches == 1) { if (ScheduleTerminalActionsRequestActionDetailsOneOf5 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ScheduleTerminalActionsRequestActionDetailsOneOf5); return; }
+            if (ScheduleTerminalActionsRequestActionDetailsOneOf6 != null && selectedUnionBranches == 1) { if (ScheduleTerminalActionsRequestActionDetailsOneOf6 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ScheduleTerminalActionsRequestActionDetailsOneOf6); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(ForceRebootDetails != null)
+            if(ScheduleTerminalActionsRequestActionDetailsOneOf1 != null)
             {
-                if (ForceRebootDetails is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
-                writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ForceRebootDetails>(null, ForceRebootDetails);
+                if (ScheduleTerminalActionsRequestActionDetailsOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsRequestActionDetailsOneOf1>(null, ScheduleTerminalActionsRequestActionDetailsOneOf1);
             }
-            else if(InstallAndroidAppDetails != null)
+            else if(ScheduleTerminalActionsRequestActionDetailsOneOf2 != null)
             {
-                if (InstallAndroidAppDetails is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
-                writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.InstallAndroidAppDetails>(null, InstallAndroidAppDetails);
+                if (ScheduleTerminalActionsRequestActionDetailsOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsRequestActionDetailsOneOf2>(null, ScheduleTerminalActionsRequestActionDetailsOneOf2);
             }
-            else if(InstallAndroidCertificateDetails != null)
+            else if(ScheduleTerminalActionsRequestActionDetailsOneOf3 != null)
             {
-                if (InstallAndroidCertificateDetails is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
-                writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.InstallAndroidCertificateDetails>(null, InstallAndroidCertificateDetails);
+                if (ScheduleTerminalActionsRequestActionDetailsOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsRequestActionDetailsOneOf3>(null, ScheduleTerminalActionsRequestActionDetailsOneOf3);
             }
-            else if(ReleaseUpdateDetails != null)
+            else if(ScheduleTerminalActionsRequestActionDetailsOneOf4 != null)
             {
-                if (ReleaseUpdateDetails is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
-                writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ReleaseUpdateDetails>(null, ReleaseUpdateDetails);
+                if (ScheduleTerminalActionsRequestActionDetailsOneOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsRequestActionDetailsOneOf4>(null, ScheduleTerminalActionsRequestActionDetailsOneOf4);
             }
-            else if(UninstallAndroidAppDetails != null)
+            else if(ScheduleTerminalActionsRequestActionDetailsOneOf5 != null)
             {
-                if (UninstallAndroidAppDetails is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
-                writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.UninstallAndroidAppDetails>(null, UninstallAndroidAppDetails);
+                if (ScheduleTerminalActionsRequestActionDetailsOneOf5 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsRequestActionDetailsOneOf5>(null, ScheduleTerminalActionsRequestActionDetailsOneOf5);
             }
-            else if(UninstallAndroidCertificateDetails != null)
+            else if(ScheduleTerminalActionsRequestActionDetailsOneOf6 != null)
             {
-                if (UninstallAndroidCertificateDetails is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
-                writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.UninstallAndroidCertificateDetails>(null, UninstallAndroidCertificateDetails);
+                if (ScheduleTerminalActionsRequestActionDetailsOneOf6 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsRequestActionDetailsOneOf6>(null, ScheduleTerminalActionsRequestActionDetailsOneOf6);
             }
         }
     }
