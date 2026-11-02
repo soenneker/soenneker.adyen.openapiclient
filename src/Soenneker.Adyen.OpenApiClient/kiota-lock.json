@@ -2,7 +2,7 @@
   "descriptionHash": "991182BDC449421A1F6EAB642A82A051FB50B1A695A0D8E8F30CE24B869012C95B3ADDD0A0162BC24B82066CAE410D01769126C0127024F78E8DF558EB849DB1",
   "descriptionLocation": "../../fixed.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.37.0",
+  "kiotaVersion": "1.38.0",
   "clientClassName": "AdyenOpenApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Soenneker.Adyen.OpenApiClient",
