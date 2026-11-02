@@ -47,6 +47,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool? matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? (bool?)null : (bool?)false;
+            bool? matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? (bool?)null : (bool?)false;
+            int matchingUnionBranches = 0;
+            if (matchesUnionBranch0 != false) matchingUnionBranches++;
+            if (matchesUnionBranch1 != false) matchingUnionBranches++;
+            bool noSelectedUnionBranch = result.LegalEntityServiceV4PostLegalEntitiesIdRequestPeriodicReview200ResponseSchema == null && result.LegalEntityServiceV4PostLegalEntitiesIdRequestPeriodicReview204ResponseSchema == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 == true && matchingUnionBranches == 1) result.LegalEntityServiceV4PostLegalEntitiesIdRequestPeriodicReview200ResponseSchema = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4PostLegalEntitiesIdRequestPeriodicReview200ResponseSchema(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch1 == true && matchingUnionBranches == 1) result.LegalEntityServiceV4PostLegalEntitiesIdRequestPeriodicReview204ResponseSchema = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4PostLegalEntitiesIdRequestPeriodicReview204ResponseSchema(), parseNode);
             if (result.LegalEntityServiceV4PostLegalEntitiesIdRequestPeriodicReview200ResponseSchema == null && result.LegalEntityServiceV4PostLegalEntitiesIdRequestPeriodicReview204ResponseSchema == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
