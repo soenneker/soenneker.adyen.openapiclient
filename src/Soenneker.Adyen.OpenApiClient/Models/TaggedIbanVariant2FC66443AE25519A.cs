@@ -9,7 +9,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class BankAccountIdentificationValidationRequestAccountIdentificationBalancePlatformServiceV2IbanAccountIdentification : global::Soenneker.Adyen.OpenApiClient.Models.BankAccountIdentificationValidationRequestAccountIdentification, IParsable
+    public partial class TaggedIbanVariant2FC66443AE25519A : global::Soenneker.Adyen.OpenApiClient.Models.BankAccountIdentificationValidationRequestAccountIdentification, IParsable
     #pragma warning restore CS1591
     {
         // Track explicitly assigned nulls separately from absent properties.
@@ -47,12 +47,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BankAccountIdentificationValidationRequestAccountIdentificationBalancePlatformServiceV2IbanAccountIdentification"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TaggedIbanVariant2FC66443AE25519A"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Adyen.OpenApiClient.Models.BankAccountIdentificationValidationRequestAccountIdentificationBalancePlatformServiceV2IbanAccountIdentification CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Soenneker.Adyen.OpenApiClient.Models.TaggedIbanVariant2FC66443AE25519A CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.BankAccountIdentificationValidationRequestAccountIdentificationBalancePlatformServiceV2IbanAccountIdentification(), parseNode);
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.TaggedIbanVariant2FC66443AE25519A(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model

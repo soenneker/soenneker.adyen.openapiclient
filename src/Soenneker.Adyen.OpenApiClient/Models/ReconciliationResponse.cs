@@ -31,8 +31,15 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Identification of the reconciliation period between Sale and POI.Absent if ReconciliationType is `AcquirerReconciliation`.</summary>
-        public int? POIReconciliationID { get => _explicitNullValuePOIReconciliationID; set { _explicitNullValuePOIReconciliationID = value; AdditionalData?.Remove("POIReconciliationID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("POIReconciliationID"); else _explicitNullProperties?.Remove("POIReconciliationID"); } }
-        private int? _explicitNullValuePOIReconciliationID = default!;
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? POIReconciliationID { get => _explicitNullValuePOIReconciliationID; set { _explicitNullValuePOIReconciliationID = value; AdditionalData?.Remove("POIReconciliationID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("POIReconciliationID"); else _explicitNullProperties?.Remove("POIReconciliationID"); } }
+        private string? _explicitNullValuePOIReconciliationID = default!;
+#nullable restore
+#else
+        public string POIReconciliationID { get => _explicitNullValuePOIReconciliationID; set { _explicitNullValuePOIReconciliationID = value; AdditionalData?.Remove("POIReconciliationID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("POIReconciliationID"); else _explicitNullProperties?.Remove("POIReconciliationID"); } }
+        private string _explicitNullValuePOIReconciliationID = default!;
+#endif
         /// <summary>Possible values:* **SaleReconciliation*** **AcquirerSynchronisation*** **AcquirerReconciliation*** **PreviousReconciliation**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.ReconciliationResponseReconciliationType? ReconciliationType { get => _explicitNullValueReconciliationType; set { _explicitNullValueReconciliationType = value; AdditionalData?.Remove("ReconciliationType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ReconciliationType"); else _explicitNullProperties?.Remove("ReconciliationType"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.ReconciliationResponseReconciliationType? _explicitNullValueReconciliationType = default!;
@@ -81,7 +88,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "POIReconciliationID", n => { POIReconciliationID = n.GetIntValue(); } },
+                { "POIReconciliationID", n => { POIReconciliationID = n.GetStringValue(); } },
                 { "ReconciliationType", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ReconciliationResponseReconciliationType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueReconciliationType = default; _explicitNullProperties?.Remove("ReconciliationType"); AdditionalData["ReconciliationType"] = unknown; } else { ReconciliationType = parsed; AdditionalData.Remove("ReconciliationType"); } } },
                 { "Response", n => { Response = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue>(global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue.CreateFromDiscriminatorValue); } },
                 { "TransactionTotals", n => { TransactionTotals = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TransactionTotals>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionTotals.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -94,7 +101,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("POIReconciliationID", POIReconciliationID);
+            writer.WriteStringValue("POIReconciliationID", POIReconciliationID);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ReconciliationResponseReconciliationType>("ReconciliationType", ReconciliationType);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue>("Response", Response);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TransactionTotals>("TransactionTotals", TransactionTotals);

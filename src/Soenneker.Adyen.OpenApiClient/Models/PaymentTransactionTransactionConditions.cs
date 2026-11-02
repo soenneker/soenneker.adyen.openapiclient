@@ -41,12 +41,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Identification of the Acquirer.Restrict to these Acquirer if present.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? AcquirerID { get => _explicitNullValueAcquirerID; set { _explicitNullValueAcquirerID = value; AdditionalData?.Remove("AcquirerID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AcquirerID"); else _explicitNullProperties?.Remove("AcquirerID"); } }
-        private List<int?>? _explicitNullValueAcquirerID = default!;
+        public List<string>? AcquirerID { get => _explicitNullValueAcquirerID; set { _explicitNullValueAcquirerID = value; AdditionalData?.Remove("AcquirerID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AcquirerID"); else _explicitNullProperties?.Remove("AcquirerID"); } }
+        private List<string>? _explicitNullValueAcquirerID = default!;
 #nullable restore
 #else
-        public List<int?> AcquirerID { get => _explicitNullValueAcquirerID; set { _explicitNullValueAcquirerID = value; AdditionalData?.Remove("AcquirerID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AcquirerID"); else _explicitNullProperties?.Remove("AcquirerID"); } }
-        private List<int?> _explicitNullValueAcquirerID = default!;
+        public List<string> AcquirerID { get => _explicitNullValueAcquirerID; set { _explicitNullValueAcquirerID = value; AdditionalData?.Remove("AcquirerID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AcquirerID"); else _explicitNullProperties?.Remove("AcquirerID"); } }
+        private List<string> _explicitNullValueAcquirerID = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -135,7 +135,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "AcquirerID", n => { AcquirerID = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
+                { "AcquirerID", n => { AcquirerID = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "AllowedLoyaltyBrand", n => { AllowedLoyaltyBrand = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "AllowedPaymentBrand", n => { AllowedPaymentBrand = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "CustomerLanguage", n => { CustomerLanguage = n.GetStringValue(); } },
@@ -153,7 +153,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<int?>("AcquirerID", AcquirerID);
+            writer.WriteCollectionOfPrimitiveValues<string>("AcquirerID", AcquirerID);
             writer.WriteCollectionOfPrimitiveValues<string>("AllowedLoyaltyBrand", AllowedLoyaltyBrand);
             writer.WriteCollectionOfPrimitiveValues<string>("AllowedPaymentBrand", AllowedPaymentBrand);
             writer.WriteStringValue("CustomerLanguage", CustomerLanguage);

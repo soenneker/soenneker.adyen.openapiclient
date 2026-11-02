@@ -141,12 +141,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Numeric value of a handwritten signature. Contains the value of a handwritten signature, e.g. the signature of a cardholder on the merchant payment receipt. The format before encryption is the encoded data structure CapturedSignature. The data structure before encryption includes the start and end tags for an XML encoding, the identifier and length bytes for an ASN.1 encoding, and the complete member ProtectedSignature for a JSON encoding.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProtectedSignature { get => _explicitNullValueProtectedSignature; set { _explicitNullValueProtectedSignature = value; AdditionalData?.Remove("ProtectedSignature"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ProtectedSignature"); else _explicitNullProperties?.Remove("ProtectedSignature"); } }
-        private string? _explicitNullValueProtectedSignature = default!;
+        public byte[]? ProtectedSignature { get => _explicitNullValueProtectedSignature; set { _explicitNullValueProtectedSignature = value; AdditionalData?.Remove("ProtectedSignature"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ProtectedSignature"); else _explicitNullProperties?.Remove("ProtectedSignature"); } }
+        private byte[]? _explicitNullValueProtectedSignature = default!;
 #nullable restore
 #else
-        public string ProtectedSignature { get => _explicitNullValueProtectedSignature; set { _explicitNullValueProtectedSignature = value; AdditionalData?.Remove("ProtectedSignature"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ProtectedSignature"); else _explicitNullProperties?.Remove("ProtectedSignature"); } }
-        private string _explicitNullValueProtectedSignature = default!;
+        public byte[] ProtectedSignature { get => _explicitNullValueProtectedSignature; set { _explicitNullValueProtectedSignature = value; AdditionalData?.Remove("ProtectedSignature"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ProtectedSignature"); else _explicitNullProperties?.Remove("ProtectedSignature"); } }
+        private byte[] _explicitNullValueProtectedSignature = default!;
 #endif
         /// <summary>End of the validity period for the reservation, for the first reservation, and the reservation updates as well.</summary>
         public Date? ValidityDate { get => _explicitNullValueValidityDate; set { _explicitNullValueValidityDate = value; AdditionalData?.Remove("ValidityDate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ValidityDate"); else _explicitNullProperties?.Remove("ValidityDate"); } }
@@ -189,7 +189,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "PaymentAcquirerData", n => { PaymentAcquirerData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultPaymentAcquirerData>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultPaymentAcquirerData.CreateFromDiscriminatorValue); } },
                 { "PaymentInstrumentData", n => { PaymentInstrumentData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultPaymentInstrumentData>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultPaymentInstrumentData.CreateFromDiscriminatorValue); } },
                 { "PaymentType", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultPaymentType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePaymentType = default; _explicitNullProperties?.Remove("PaymentType"); AdditionalData["PaymentType"] = unknown; } else { PaymentType = parsed; AdditionalData.Remove("PaymentType"); } } },
-                { "ProtectedSignature", n => { ProtectedSignature = n.GetStringValue(); } },
+                { "ProtectedSignature", n => { ProtectedSignature = n.GetByteArrayValue(); } },
                 { "ValidityDate", n => { ValidityDate = n.GetDateValue(); } },
             };
         }
@@ -211,7 +211,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultPaymentAcquirerData>("PaymentAcquirerData", PaymentAcquirerData);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultPaymentInstrumentData>("PaymentInstrumentData", PaymentInstrumentData);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultPaymentType>("PaymentType", PaymentType);
-            writer.WriteStringValue("ProtectedSignature", ProtectedSignature);
+            writer.WriteByteArrayValue("ProtectedSignature", ProtectedSignature);
             writer.WriteDateValue("ValidityDate", ValidityDate);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

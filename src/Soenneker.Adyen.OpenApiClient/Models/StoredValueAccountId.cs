@@ -47,8 +47,15 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         private List<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountIdEntryModeItem?> _explicitNullValueEntryMode = default!;
 #endif
         /// <summary>Date after which the card cannot be used. If EMV expiry date is present, it overrides Track2 information. Format is MMYY.</summary>
-        public int? ExpiryDate { get => _explicitNullValueExpiryDate; set { _explicitNullValueExpiryDate = value; AdditionalData?.Remove("ExpiryDate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ExpiryDate"); else _explicitNullProperties?.Remove("ExpiryDate"); } }
-        private int? _explicitNullValueExpiryDate = default!;
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ExpiryDate { get => _explicitNullValueExpiryDate; set { _explicitNullValueExpiryDate = value; AdditionalData?.Remove("ExpiryDate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ExpiryDate"); else _explicitNullProperties?.Remove("ExpiryDate"); } }
+        private string? _explicitNullValueExpiryDate = default!;
+#nullable restore
+#else
+        public string ExpiryDate { get => _explicitNullValueExpiryDate; set { _explicitNullValueExpiryDate = value; AdditionalData?.Remove("ExpiryDate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ExpiryDate"); else _explicitNullProperties?.Remove("ExpiryDate"); } }
+        private string _explicitNullValueExpiryDate = default!;
+#endif
         /// <summary>Possible values:* **PAN*** **ISOTrack2*** **BarCode*** **AccountNumber*** **PhoneNumber**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountIdIdentificationType? IdentificationType { get => _explicitNullValueIdentificationType; set { _explicitNullValueIdentificationType = value; AdditionalData?.Remove("IdentificationType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("IdentificationType"); else _explicitNullProperties?.Remove("IdentificationType"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountIdIdentificationType? _explicitNullValueIdentificationType = default!;
@@ -111,7 +118,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "EntryMode", n => { EntryMode = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountIdEntryModeItem>()?.AsList(); } },
-                { "ExpiryDate", n => { ExpiryDate = n.GetIntValue(); } },
+                { "ExpiryDate", n => { ExpiryDate = n.GetStringValue(); } },
                 { "IdentificationType", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountIdIdentificationType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueIdentificationType = default; _explicitNullProperties?.Remove("IdentificationType"); AdditionalData["IdentificationType"] = unknown; } else { IdentificationType = parsed; AdditionalData.Remove("IdentificationType"); } } },
                 { "OwnerName", n => { OwnerName = n.GetStringValue(); } },
                 { "StoredValueAccountType", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountIdStoredValueAccountType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStoredValueAccountType = default; _explicitNullProperties?.Remove("StoredValueAccountType"); AdditionalData["StoredValueAccountType"] = unknown; } else { StoredValueAccountType = parsed; AdditionalData.Remove("StoredValueAccountType"); } } },
@@ -127,7 +134,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountIdEntryModeItem>("EntryMode", EntryMode);
-            writer.WriteIntValue("ExpiryDate", ExpiryDate);
+            writer.WriteStringValue("ExpiryDate", ExpiryDate);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountIdIdentificationType>("IdentificationType", IdentificationType);
             writer.WriteStringValue("OwnerName", OwnerName);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountIdStoredValueAccountType>("StoredValueAccountType", StoredValueAccountType);

@@ -31,14 +31,35 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Card Sequence Number.If EntryMode is File, Keyed, or Manual.</summary>
-        public int? CardSeqNumb { get => _explicitNullValueCardSeqNumb; set { _explicitNullValueCardSeqNumb = value; AdditionalData?.Remove("CardSeqNumb"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CardSeqNumb"); else _explicitNullProperties?.Remove("CardSeqNumb"); } }
-        private int? _explicitNullValueCardSeqNumb = default!;
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CardSeqNumb { get => _explicitNullValueCardSeqNumb; set { _explicitNullValueCardSeqNumb = value; AdditionalData?.Remove("CardSeqNumb"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CardSeqNumb"); else _explicitNullProperties?.Remove("CardSeqNumb"); } }
+        private string? _explicitNullValueCardSeqNumb = default!;
+#nullable restore
+#else
+        public string CardSeqNumb { get => _explicitNullValueCardSeqNumb; set { _explicitNullValueCardSeqNumb = value; AdditionalData?.Remove("CardSeqNumb"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CardSeqNumb"); else _explicitNullProperties?.Remove("CardSeqNumb"); } }
+        private string _explicitNullValueCardSeqNumb = default!;
+#endif
         /// <summary>Date after which the card cannot be used.If EntryMode is File.</summary>
-        public int? ExpiryDate { get => _explicitNullValueExpiryDate; set { _explicitNullValueExpiryDate = value; AdditionalData?.Remove("ExpiryDate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ExpiryDate"); else _explicitNullProperties?.Remove("ExpiryDate"); } }
-        private int? _explicitNullValueExpiryDate = default!;
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ExpiryDate { get => _explicitNullValueExpiryDate; set { _explicitNullValueExpiryDate = value; AdditionalData?.Remove("ExpiryDate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ExpiryDate"); else _explicitNullProperties?.Remove("ExpiryDate"); } }
+        private string? _explicitNullValueExpiryDate = default!;
+#nullable restore
+#else
+        public string ExpiryDate { get => _explicitNullValueExpiryDate; set { _explicitNullValueExpiryDate = value; AdditionalData?.Remove("ExpiryDate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ExpiryDate"); else _explicitNullProperties?.Remove("ExpiryDate"); } }
+        private string _explicitNullValueExpiryDate = default!;
+#endif
         /// <summary>Primary Account Number.</summary>
-        public int? PAN { get => _explicitNullValuePAN; set { _explicitNullValuePAN = value; AdditionalData?.Remove("PAN"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PAN"); else _explicitNullProperties?.Remove("PAN"); } }
-        private int? _explicitNullValuePAN = default!;
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PAN { get => _explicitNullValuePAN; set { _explicitNullValuePAN = value; AdditionalData?.Remove("PAN"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PAN"); else _explicitNullProperties?.Remove("PAN"); } }
+        private string? _explicitNullValuePAN = default!;
+#nullable restore
+#else
+        public string PAN { get => _explicitNullValuePAN; set { _explicitNullValuePAN = value; AdditionalData?.Remove("PAN"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PAN"); else _explicitNullProperties?.Remove("PAN"); } }
+        private string _explicitNullValuePAN = default!;
+#endif
         /// <summary>Magnetic track or magnetic ink characters line.If EntryMode is MagStripe or RFID .</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -74,9 +95,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "CardSeqNumb", n => { CardSeqNumb = n.GetIntValue(); } },
-                { "ExpiryDate", n => { ExpiryDate = n.GetIntValue(); } },
-                { "PAN", n => { PAN = n.GetIntValue(); } },
+                { "CardSeqNumb", n => { CardSeqNumb = n.GetStringValue(); } },
+                { "ExpiryDate", n => { ExpiryDate = n.GetStringValue(); } },
+                { "PAN", n => { PAN = n.GetStringValue(); } },
                 { "TrackData", n => { TrackData = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TrackData>(global::Soenneker.Adyen.OpenApiClient.Models.TrackData.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -87,9 +108,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("CardSeqNumb", CardSeqNumb);
-            writer.WriteIntValue("ExpiryDate", ExpiryDate);
-            writer.WriteIntValue("PAN", PAN);
+            writer.WriteStringValue("CardSeqNumb", CardSeqNumb);
+            writer.WriteStringValue("ExpiryDate", ExpiryDate);
+            writer.WriteStringValue("PAN", PAN);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TrackData>("TrackData", TrackData);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

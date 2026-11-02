@@ -33,8 +33,15 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         }
 
         /// <summary>Identification of the Acquirer.Identification of the Acquirer when the POI System is multi-acquirer.</summary>
-        public int? AcquirerID { get => _explicitNullValueAcquirerID; set { _explicitNullValueAcquirerID = value; AdditionalData?.Remove("AcquirerID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AcquirerID"); else _explicitNullProperties?.Remove("AcquirerID"); } }
-        private int? _explicitNullValueAcquirerID = default!;
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AcquirerID { get => _explicitNullValueAcquirerID; set { _explicitNullValueAcquirerID = value; AdditionalData?.Remove("AcquirerID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AcquirerID"); else _explicitNullProperties?.Remove("AcquirerID"); } }
+        private string? _explicitNullValueAcquirerID = default!;
+#nullable restore
+#else
+        public string AcquirerID { get => _explicitNullValueAcquirerID; set { _explicitNullValueAcquirerID = value; AdditionalData?.Remove("AcquirerID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AcquirerID"); else _explicitNullProperties?.Remove("AcquirerID"); } }
+        private string _explicitNullValueAcquirerID = default!;
+#endif
         /// <summary>Identification of the POI for the payment Acquirer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -112,7 +119,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "AcquirerID", n => { AcquirerID = n.GetIntValue(); } },
+                { "AcquirerID", n => { AcquirerID = n.GetStringValue(); } },
                 { "AcquirerPOIID", n => { AcquirerPOIID = n.GetStringValue(); } },
                 { "AcquirerTransactionID", n => { AcquirerTransactionID = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType.CreateFromDiscriminatorValue); } },
                 { "ApprovalCode", n => { ApprovalCode = n.GetStringValue(); } },
@@ -127,7 +134,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("AcquirerID", AcquirerID);
+            writer.WriteStringValue("AcquirerID", AcquirerID);
             writer.WriteStringValue("AcquirerPOIID", AcquirerPOIID);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType>("AcquirerTransactionID", AcquirerTransactionID);
             writer.WriteStringValue("ApprovalCode", ApprovalCode);

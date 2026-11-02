@@ -39,8 +39,15 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Country Code attached to the card (3 numerics).If available in the card.</summary>
-        public int? CardCountryCode { get => _explicitNullValueCardCountryCode; set { _explicitNullValueCardCountryCode = value; AdditionalData?.Remove("CardCountryCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CardCountryCode"); else _explicitNullProperties?.Remove("CardCountryCode"); } }
-        private int? _explicitNullValueCardCountryCode = default!;
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CardCountryCode { get => _explicitNullValueCardCountryCode; set { _explicitNullValueCardCountryCode = value; AdditionalData?.Remove("CardCountryCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CardCountryCode"); else _explicitNullProperties?.Remove("CardCountryCode"); } }
+        private string? _explicitNullValueCardCountryCode = default!;
+#nullable restore
+#else
+        public string CardCountryCode { get => _explicitNullValueCardCountryCode; set { _explicitNullValueCardCountryCode = value; AdditionalData?.Remove("CardCountryCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CardCountryCode"); else _explicitNullProperties?.Remove("CardCountryCode"); } }
+        private string _explicitNullValueCardCountryCode = default!;
+#endif
         /// <summary>The EntryMode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -94,12 +101,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Sensitive information related to the payment card, protected by CMS.SensitiveCardData protected by CMS EnvelopedData.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProtectedCardData { get => _explicitNullValueProtectedCardData; set { _explicitNullValueProtectedCardData = value; AdditionalData?.Remove("ProtectedCardData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ProtectedCardData"); else _explicitNullProperties?.Remove("ProtectedCardData"); } }
-        private string? _explicitNullValueProtectedCardData = default!;
+        public byte[]? ProtectedCardData { get => _explicitNullValueProtectedCardData; set { _explicitNullValueProtectedCardData = value; AdditionalData?.Remove("ProtectedCardData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ProtectedCardData"); else _explicitNullProperties?.Remove("ProtectedCardData"); } }
+        private byte[]? _explicitNullValueProtectedCardData = default!;
 #nullable restore
 #else
-        public string ProtectedCardData { get => _explicitNullValueProtectedCardData; set { _explicitNullValueProtectedCardData = value; AdditionalData?.Remove("ProtectedCardData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ProtectedCardData"); else _explicitNullProperties?.Remove("ProtectedCardData"); } }
-        private string _explicitNullValueProtectedCardData = default!;
+        public byte[] ProtectedCardData { get => _explicitNullValueProtectedCardData; set { _explicitNullValueProtectedCardData = value; AdditionalData?.Remove("ProtectedCardData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ProtectedCardData"); else _explicitNullProperties?.Remove("ProtectedCardData"); } }
+        private byte[] _explicitNullValueProtectedCardData = default!;
 #endif
         /// <summary>Sensitive information related to the payment card, entered or read by the Sale System.If structure non empty and unprotected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -136,13 +143,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "CardCountryCode", n => { CardCountryCode = n.GetIntValue(); } },
+                { "CardCountryCode", n => { CardCountryCode = n.GetStringValue(); } },
                 { "EntryMode", n => { EntryMode = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.CardDataEntryModeItem>()?.AsList(); } },
                 { "MaskedPan", n => { MaskedPan = n.GetStringValue(); } },
                 { "PaymentAccountRef", n => { PaymentAccountRef = n.GetStringValue(); } },
                 { "PaymentBrand", n => { PaymentBrand = n.GetStringValue(); } },
                 { "PaymentToken", n => { PaymentToken = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CardDataPaymentToken>(global::Soenneker.Adyen.OpenApiClient.Models.CardDataPaymentToken.CreateFromDiscriminatorValue); } },
-                { "ProtectedCardData", n => { ProtectedCardData = n.GetStringValue(); } },
+                { "ProtectedCardData", n => { ProtectedCardData = n.GetByteArrayValue(); } },
                 { "SensitiveCardData", n => { SensitiveCardData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CardDataSensitiveCardData>(global::Soenneker.Adyen.OpenApiClient.Models.CardDataSensitiveCardData.CreateFromDiscriminatorValue); } },
             };
         }
@@ -153,13 +160,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("CardCountryCode", CardCountryCode);
+            writer.WriteStringValue("CardCountryCode", CardCountryCode);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.CardDataEntryModeItem>("EntryMode", EntryMode);
             writer.WriteStringValue("MaskedPan", MaskedPan);
             writer.WriteStringValue("PaymentAccountRef", PaymentAccountRef);
             writer.WriteStringValue("PaymentBrand", PaymentBrand);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CardDataPaymentToken>("PaymentToken", PaymentToken);
-            writer.WriteStringValue("ProtectedCardData", ProtectedCardData);
+            writer.WriteByteArrayValue("ProtectedCardData", ProtectedCardData);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CardDataSensitiveCardData>("SensitiveCardData", SensitiveCardData);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

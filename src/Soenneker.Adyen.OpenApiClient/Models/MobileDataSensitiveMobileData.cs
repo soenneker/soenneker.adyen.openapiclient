@@ -29,14 +29,35 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>International Mobile Equipment Identity. Unique number associated with the mobile phone device.</summary>
-        public int? IMEI { get => _explicitNullValueIMEI; set { _explicitNullValueIMEI = value; AdditionalData?.Remove("IMEI"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("IMEI"); else _explicitNullProperties?.Remove("IMEI"); } }
-        private int? _explicitNullValueIMEI = default!;
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IMEI { get => _explicitNullValueIMEI; set { _explicitNullValueIMEI = value; AdditionalData?.Remove("IMEI"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("IMEI"); else _explicitNullProperties?.Remove("IMEI"); } }
+        private string? _explicitNullValueIMEI = default!;
+#nullable restore
+#else
+        public string IMEI { get => _explicitNullValueIMEI; set { _explicitNullValueIMEI = value; AdditionalData?.Remove("IMEI"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("IMEI"); else _explicitNullProperties?.Remove("IMEI"); } }
+        private string _explicitNullValueIMEI = default!;
+#endif
         /// <summary>International Mobile Subscriber Identity. Unique number associated with the mobile phone user, containing the Mobile Country Code (MCC), the Mobile Network Code (MNC), and the Mobile Identification Number (MSIN)</summary>
-        public int? IMSI { get => _explicitNullValueIMSI; set { _explicitNullValueIMSI = value; AdditionalData?.Remove("IMSI"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("IMSI"); else _explicitNullProperties?.Remove("IMSI"); } }
-        private int? _explicitNullValueIMSI = default!;
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IMSI { get => _explicitNullValueIMSI; set { _explicitNullValueIMSI = value; AdditionalData?.Remove("IMSI"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("IMSI"); else _explicitNullProperties?.Remove("IMSI"); } }
+        private string? _explicitNullValueIMSI = default!;
+#nullable restore
+#else
+        public string IMSI { get => _explicitNullValueIMSI; set { _explicitNullValueIMSI = value; AdditionalData?.Remove("IMSI"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("IMSI"); else _explicitNullProperties?.Remove("IMSI"); } }
+        private string _explicitNullValueIMSI = default!;
+#endif
         /// <summary>Mobile Subscriber Integrated Service Digital Network (i.e. mobile phone number of the SIM card). Country, National Destination Code, and Subscriber Number.</summary>
-        public int? MSISDN { get => _explicitNullValueMSISDN; set { _explicitNullValueMSISDN = value; AdditionalData?.Remove("MSISDN"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MSISDN"); else _explicitNullProperties?.Remove("MSISDN"); } }
-        private int? _explicitNullValueMSISDN = default!;
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MSISDN { get => _explicitNullValueMSISDN; set { _explicitNullValueMSISDN = value; AdditionalData?.Remove("MSISDN"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MSISDN"); else _explicitNullProperties?.Remove("MSISDN"); } }
+        private string? _explicitNullValueMSISDN = default!;
+#nullable restore
+#else
+        public string MSISDN { get => _explicitNullValueMSISDN; set { _explicitNullValueMSISDN = value; AdditionalData?.Remove("MSISDN"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MSISDN"); else _explicitNullProperties?.Remove("MSISDN"); } }
+        private string _explicitNullValueMSISDN = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.MobileDataSensitiveMobileData"/> and sets the default values.
         /// </summary>
@@ -62,9 +83,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "IMEI", n => { IMEI = n.GetIntValue(); } },
-                { "IMSI", n => { IMSI = n.GetIntValue(); } },
-                { "MSISDN", n => { MSISDN = n.GetIntValue(); } },
+                { "IMEI", n => { IMEI = n.GetStringValue(); } },
+                { "IMSI", n => { IMSI = n.GetStringValue(); } },
+                { "MSISDN", n => { MSISDN = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -74,9 +95,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("IMEI", IMEI);
-            writer.WriteIntValue("IMSI", IMSI);
-            writer.WriteIntValue("MSISDN", MSISDN);
+            writer.WriteStringValue("IMEI", IMEI);
+            writer.WriteStringValue("IMSI", IMSI);
+            writer.WriteStringValue("MSISDN", MSISDN);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

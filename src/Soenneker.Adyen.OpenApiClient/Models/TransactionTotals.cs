@@ -43,8 +43,15 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         }
 
         /// <summary>Identification of the Acquirer.</summary>
-        public int? AcquirerID { get => _explicitNullValueAcquirerID; set { _explicitNullValueAcquirerID = value; AdditionalData?.Remove("AcquirerID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AcquirerID"); else _explicitNullProperties?.Remove("AcquirerID"); } }
-        private int? _explicitNullValueAcquirerID = default!;
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AcquirerID { get => _explicitNullValueAcquirerID; set { _explicitNullValueAcquirerID = value; AdditionalData?.Remove("AcquirerID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AcquirerID"); else _explicitNullProperties?.Remove("AcquirerID"); } }
+        private string? _explicitNullValueAcquirerID = default!;
+#nullable restore
+#else
+        public string AcquirerID { get => _explicitNullValueAcquirerID; set { _explicitNullValueAcquirerID = value; AdditionalData?.Remove("AcquirerID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AcquirerID"); else _explicitNullProperties?.Remove("AcquirerID"); } }
+        private string _explicitNullValueAcquirerID = default!;
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Type of payment or loyalty card.If configured to present totals per card brand, and Response.Result is Success.</summary>
@@ -165,7 +172,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "AcquirerID", n => { AcquirerID = n.GetIntValue(); } },
+                { "AcquirerID", n => { AcquirerID = n.GetStringValue(); } },
                 { "CardBrand", n => { CardBrand = n.GetStringValue(); } },
                 { "HostReconciliationID", n => { HostReconciliationID = n.GetStringValue(); } },
                 { "OperatorID", n => { OperatorID = n.GetStringValue(); } },
@@ -185,7 +192,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("AcquirerID", AcquirerID);
+            writer.WriteStringValue("AcquirerID", AcquirerID);
             writer.WriteStringValue("CardBrand", CardBrand);
             writer.WriteStringValue("HostReconciliationID", HostReconciliationID);
             writer.WriteStringValue("OperatorID", OperatorID);

@@ -9,7 +9,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class BankAccountIdentificationValidationRequestAccountIdentificationBalancePlatformServiceV2AuLocalAccountIdentification : global::Soenneker.Adyen.OpenApiClient.Models.BankAccountIdentificationValidationRequestAccountIdentification, IParsable
+    public partial class TaggedUkLocalVariantDBEF76BD8A35D333 : global::Soenneker.Adyen.OpenApiClient.Models.BankAccountIdentificationValidationRequestAccountIdentification, IParsable
     #pragma warning restore CS1591
     {
         // Track explicitly assigned nulls separately from absent properties.
@@ -20,11 +20,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             base.CaptureExplicitNulls(parseNode);
             if (parseNode.GetChildNode("accountNumber") is null) { _explicitNullValueAccountNumber = default!; _explicitNullProperties?.Remove("accountNumber"); }
             else if (parseNode.GetChildNode("accountNumber") is { } nullNodeAccountNumber && nullNodeAccountNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountNumber = null;
-            if (parseNode.GetChildNode("bsbCode") is null) { _explicitNullValueBsbCode = default!; _explicitNullProperties?.Remove("bsbCode"); }
-            else if (parseNode.GetChildNode("bsbCode") is { } nullNodeBsbCode && nullNodeBsbCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BsbCode = null;
+            if (parseNode.GetChildNode("sortCode") is null) { _explicitNullValueSortCode = default!; _explicitNullProperties?.Remove("sortCode"); }
+            else if (parseNode.GetChildNode("sortCode") is { } nullNodeSortCode && nullNodeSortCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SortCode = null;
         }
 
-        /// <summary>The bank account number, without separators or whitespace.</summary>
+        /// <summary>The 8-digit bank account number, without separators or whitespace.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccountNumber { get => _explicitNullValueAccountNumber; set { _explicitNullValueAccountNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountNumber"); else _explicitNullProperties?.Remove("accountNumber"); } }
@@ -34,25 +34,25 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string AccountNumber { get => _explicitNullValueAccountNumber; set { _explicitNullValueAccountNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountNumber"); else _explicitNullProperties?.Remove("accountNumber"); } }
         private string _explicitNullValueAccountNumber = default!;
 #endif
-        /// <summary>The 6-digit [Bank State Branch (BSB) code](https://en.wikipedia.org/wiki/Bank_state_branch), without separators or whitespace.</summary>
+        /// <summary>The 6-digit [sort code](https://en.wikipedia.org/wiki/Sort_code), without separators or whitespace.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BsbCode { get => _explicitNullValueBsbCode; set { _explicitNullValueBsbCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bsbCode"); else _explicitNullProperties?.Remove("bsbCode"); } }
-        private string? _explicitNullValueBsbCode = default!;
+        public string? SortCode { get => _explicitNullValueSortCode; set { _explicitNullValueSortCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sortCode"); else _explicitNullProperties?.Remove("sortCode"); } }
+        private string? _explicitNullValueSortCode = default!;
 #nullable restore
 #else
-        public string BsbCode { get => _explicitNullValueBsbCode; set { _explicitNullValueBsbCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bsbCode"); else _explicitNullProperties?.Remove("bsbCode"); } }
-        private string _explicitNullValueBsbCode = default!;
+        public string SortCode { get => _explicitNullValueSortCode; set { _explicitNullValueSortCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sortCode"); else _explicitNullProperties?.Remove("sortCode"); } }
+        private string _explicitNullValueSortCode = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BankAccountIdentificationValidationRequestAccountIdentificationBalancePlatformServiceV2AuLocalAccountIdentification"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TaggedUkLocalVariantDBEF76BD8A35D333"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Adyen.OpenApiClient.Models.BankAccountIdentificationValidationRequestAccountIdentificationBalancePlatformServiceV2AuLocalAccountIdentification CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Soenneker.Adyen.OpenApiClient.Models.TaggedUkLocalVariantDBEF76BD8A35D333 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.BankAccountIdentificationValidationRequestAccountIdentificationBalancePlatformServiceV2AuLocalAccountIdentification(), parseNode);
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.TaggedUkLocalVariantDBEF76BD8A35D333(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,7 +63,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "accountNumber", n => { AccountNumber = n.GetStringValue(); } },
-                { "bsbCode", n => { BsbCode = n.GetStringValue(); } },
+                { "sortCode", n => { SortCode = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -75,7 +75,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("accountNumber", AccountNumber);
-            writer.WriteStringValue("bsbCode", BsbCode);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            writer.WriteStringValue("sortCode", SortCode);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             
         }
     }

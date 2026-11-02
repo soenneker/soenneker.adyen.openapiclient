@@ -9,7 +9,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class BankAccountIdentificationValidationRequestAccountIdentificationBalancePlatformServiceV2NoLocalAccountIdentification : global::Soenneker.Adyen.OpenApiClient.Models.BankAccountIdentificationValidationRequestAccountIdentification, IParsable
+    public partial class TaggedPlLocalVariant2ECBC1358BE4503A : global::Soenneker.Adyen.OpenApiClient.Models.BankAccountIdentificationValidationRequestAccountIdentification, IParsable
     #pragma warning restore CS1591
     {
         // Track explicitly assigned nulls separately from absent properties.
@@ -22,7 +22,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             else if (parseNode.GetChildNode("accountNumber") is { } nullNodeAccountNumber && nullNodeAccountNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountNumber = null;
         }
 
-        /// <summary>The 11-digit bank account number, without separators or whitespace.</summary>
+        /// <summary>The 26-digit bank account number ([Numer rachunku](https://pl.wikipedia.org/wiki/Numer_Rachunku_Bankowego)), without separators or whitespace.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccountNumber { get => _explicitNullValueAccountNumber; set { _explicitNullValueAccountNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountNumber"); else _explicitNullProperties?.Remove("accountNumber"); } }
@@ -35,12 +35,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BankAccountIdentificationValidationRequestAccountIdentificationBalancePlatformServiceV2NoLocalAccountIdentification"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TaggedPlLocalVariant2ECBC1358BE4503A"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Adyen.OpenApiClient.Models.BankAccountIdentificationValidationRequestAccountIdentificationBalancePlatformServiceV2NoLocalAccountIdentification CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Soenneker.Adyen.OpenApiClient.Models.TaggedPlLocalVariant2ECBC1358BE4503A CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.BankAccountIdentificationValidationRequestAccountIdentificationBalancePlatformServiceV2NoLocalAccountIdentification(), parseNode);
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.TaggedPlLocalVariant2ECBC1358BE4503A(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model

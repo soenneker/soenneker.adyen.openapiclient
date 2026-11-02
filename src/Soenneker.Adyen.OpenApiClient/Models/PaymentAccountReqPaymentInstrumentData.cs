@@ -70,12 +70,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Sensitive information related to the payment card, protected by CMS.SensitiveCardData protected by CMS EnvelopedData.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProtectedCardData { get => _explicitNullValueProtectedCardData; set { _explicitNullValueProtectedCardData = value; AdditionalData?.Remove("ProtectedCardData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ProtectedCardData"); else _explicitNullProperties?.Remove("ProtectedCardData"); } }
-        private string? _explicitNullValueProtectedCardData = default!;
+        public byte[]? ProtectedCardData { get => _explicitNullValueProtectedCardData; set { _explicitNullValueProtectedCardData = value; AdditionalData?.Remove("ProtectedCardData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ProtectedCardData"); else _explicitNullProperties?.Remove("ProtectedCardData"); } }
+        private byte[]? _explicitNullValueProtectedCardData = default!;
 #nullable restore
 #else
-        public string ProtectedCardData { get => _explicitNullValueProtectedCardData; set { _explicitNullValueProtectedCardData = value; AdditionalData?.Remove("ProtectedCardData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ProtectedCardData"); else _explicitNullProperties?.Remove("ProtectedCardData"); } }
-        private string _explicitNullValueProtectedCardData = default!;
+        public byte[] ProtectedCardData { get => _explicitNullValueProtectedCardData; set { _explicitNullValueProtectedCardData = value; AdditionalData?.Remove("ProtectedCardData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ProtectedCardData"); else _explicitNullProperties?.Remove("ProtectedCardData"); } }
+        private byte[] _explicitNullValueProtectedCardData = default!;
 #endif
         /// <summary>Identification of the stored value account or the stored value card and the associated product sold by the Sale System for stored value requests.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -116,7 +116,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "CheckData", n => { CheckData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentDataCheckData>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentDataCheckData.CreateFromDiscriminatorValue); } },
                 { "MobileData", n => { MobileData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentDataMobileData>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentDataMobileData.CreateFromDiscriminatorValue); } },
                 { "PaymentInstrumentType", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentDataPaymentInstrumentType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePaymentInstrumentType = default; _explicitNullProperties?.Remove("PaymentInstrumentType"); AdditionalData["PaymentInstrumentType"] = unknown; } else { PaymentInstrumentType = parsed; AdditionalData.Remove("PaymentInstrumentType"); } } },
-                { "ProtectedCardData", n => { ProtectedCardData = n.GetStringValue(); } },
+                { "ProtectedCardData", n => { ProtectedCardData = n.GetByteArrayValue(); } },
                 { "StoredValueAccountID", n => { StoredValueAccountID = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountId>(global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountId.CreateFromDiscriminatorValue); } },
             };
         }
@@ -131,7 +131,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentDataCheckData>("CheckData", CheckData);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentDataMobileData>("MobileData", MobileData);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentDataPaymentInstrumentType>("PaymentInstrumentType", PaymentInstrumentType);
-            writer.WriteStringValue("ProtectedCardData", ProtectedCardData);
+            writer.WriteByteArrayValue("ProtectedCardData", ProtectedCardData);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountId>("StoredValueAccountID", StoredValueAccountID);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

@@ -6,7 +6,6 @@ using Soenneker.Adyen.OpenApiClient.TerminalAPIV1.Abort;
 using Soenneker.Adyen.OpenApiClient.TerminalAPIV1.Admin;
 using Soenneker.Adyen.OpenApiClient.TerminalAPIV1.Balanceinquiry;
 using Soenneker.Adyen.OpenApiClient.TerminalAPIV1.Cardacquisition;
-using Soenneker.Adyen.OpenApiClient.TerminalAPIV1.Cardreaderapdu;
 using Soenneker.Adyen.OpenApiClient.TerminalAPIV1.Diagnosis;
 using Soenneker.Adyen.OpenApiClient.TerminalAPIV1.Display;
 using Soenneker.Adyen.OpenApiClient.TerminalAPIV1.Enableservice;
@@ -51,11 +50,6 @@ namespace Soenneker.Adyen.OpenApiClient.TerminalAPIV1
         public global::Soenneker.Adyen.OpenApiClient.TerminalAPIV1.Cardacquisition.CardacquisitionRequestBuilder Cardacquisition
         {
             get => new global::Soenneker.Adyen.OpenApiClient.TerminalAPIV1.Cardacquisition.CardacquisitionRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The cardreaderapdu property</summary>
-        public global::Soenneker.Adyen.OpenApiClient.TerminalAPIV1.Cardreaderapdu.CardreaderapduRequestBuilder Cardreaderapdu
-        {
-            get => new global::Soenneker.Adyen.OpenApiClient.TerminalAPIV1.Cardreaderapdu.CardreaderapduRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The diagnosis property</summary>
         public global::Soenneker.Adyen.OpenApiClient.TerminalAPIV1.Diagnosis.DiagnosisRequestBuilder Diagnosis

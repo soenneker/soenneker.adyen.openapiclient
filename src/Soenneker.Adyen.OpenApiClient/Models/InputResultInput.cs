@@ -40,11 +40,25 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public bool? ConfirmedFlag { get => _explicitNullValueConfirmedFlag; set { _explicitNullValueConfirmedFlag = value; AdditionalData?.Remove("ConfirmedFlag"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ConfirmedFlag"); else _explicitNullProperties?.Remove("ConfirmedFlag"); } }
         private bool? _explicitNullValueConfirmedFlag = default!;
         /// <summary>The digits typed by the Customer on the POI or by the Cashier on the Sale Terminal.</summary>
-        public int? DigitInput { get => _explicitNullValueDigitInput; set { _explicitNullValueDigitInput = value; AdditionalData?.Remove("DigitInput"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DigitInput"); else _explicitNullProperties?.Remove("DigitInput"); } }
-        private int? _explicitNullValueDigitInput = default!;
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DigitInput { get => _explicitNullValueDigitInput; set { _explicitNullValueDigitInput = value; AdditionalData?.Remove("DigitInput"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DigitInput"); else _explicitNullProperties?.Remove("DigitInput"); } }
+        private string? _explicitNullValueDigitInput = default!;
+#nullable restore
+#else
+        public string DigitInput { get => _explicitNullValueDigitInput; set { _explicitNullValueDigitInput = value; AdditionalData?.Remove("DigitInput"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DigitInput"); else _explicitNullProperties?.Remove("DigitInput"); } }
+        private string _explicitNullValueDigitInput = default!;
+#endif
         /// <summary>The number of the function key which is typed by the Customer on the POI or the Cashier on the Sale Terminal.</summary>
-        public int? FunctionKey { get => _explicitNullValueFunctionKey; set { _explicitNullValueFunctionKey = value; AdditionalData?.Remove("FunctionKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("FunctionKey"); else _explicitNullProperties?.Remove("FunctionKey"); } }
-        private int? _explicitNullValueFunctionKey = default!;
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? FunctionKey { get => _explicitNullValueFunctionKey; set { _explicitNullValueFunctionKey = value; AdditionalData?.Remove("FunctionKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("FunctionKey"); else _explicitNullProperties?.Remove("FunctionKey"); } }
+        private string? _explicitNullValueFunctionKey = default!;
+#nullable restore
+#else
+        public string FunctionKey { get => _explicitNullValueFunctionKey; set { _explicitNullValueFunctionKey = value; AdditionalData?.Remove("FunctionKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("FunctionKey"); else _explicitNullProperties?.Remove("FunctionKey"); } }
+        private string _explicitNullValueFunctionKey = default!;
+#endif
         /// <summary>Possible values:* **GetAnyKey*** **GetConfirmation*** **SiteManager*** **TextString*** **DigitString*** **DecimalString*** **GetFunctionKey*** **GetMenuEntry*** **Password**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.InputInputCommand? InputCommand { get => _explicitNullValueInputCommand; set { _explicitNullValueInputCommand = value; AdditionalData?.Remove("InputCommand"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("InputCommand"); else _explicitNullProperties?.Remove("InputCommand"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.InputInputCommand? _explicitNullValueInputCommand = default!;
@@ -61,12 +75,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The text password typed by the Customer on the POI or by the Cashier on the Sale Terminal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Password { get => _explicitNullValuePassword; set { _explicitNullValuePassword = value; AdditionalData?.Remove("Password"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Password"); else _explicitNullProperties?.Remove("Password"); } }
-        private string? _explicitNullValuePassword = default!;
+        public byte[]? Password { get => _explicitNullValuePassword; set { _explicitNullValuePassword = value; AdditionalData?.Remove("Password"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Password"); else _explicitNullProperties?.Remove("Password"); } }
+        private byte[]? _explicitNullValuePassword = default!;
 #nullable restore
 #else
-        public string Password { get => _explicitNullValuePassword; set { _explicitNullValuePassword = value; AdditionalData?.Remove("Password"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Password"); else _explicitNullProperties?.Remove("Password"); } }
-        private string _explicitNullValuePassword = default!;
+        public byte[] Password { get => _explicitNullValuePassword; set { _explicitNullValuePassword = value; AdditionalData?.Remove("Password"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Password"); else _explicitNullProperties?.Remove("Password"); } }
+        private byte[] _explicitNullValuePassword = default!;
 #endif
         /// <summary>The text typed by the Customer on the POI or by the Cashier on the Sale Terminal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -104,11 +118,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "ConfirmedFlag", n => { ConfirmedFlag = n.GetBoolValue(); } },
-                { "DigitInput", n => { DigitInput = n.GetIntValue(); } },
-                { "FunctionKey", n => { FunctionKey = n.GetIntValue(); } },
+                { "DigitInput", n => { DigitInput = n.GetStringValue(); } },
+                { "FunctionKey", n => { FunctionKey = n.GetStringValue(); } },
                 { "InputCommand", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.InputInputCommand>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueInputCommand = default; _explicitNullProperties?.Remove("InputCommand"); AdditionalData["InputCommand"] = unknown; } else { InputCommand = parsed; AdditionalData.Remove("InputCommand"); } } },
                 { "MenuEntryNumber", n => { MenuEntryNumber = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
-                { "Password", n => { Password = n.GetStringValue(); } },
+                { "Password", n => { Password = n.GetByteArrayValue(); } },
                 { "TextInput", n => { TextInput = n.GetStringValue(); } },
             };
         }
@@ -120,11 +134,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("ConfirmedFlag", ConfirmedFlag);
-            writer.WriteIntValue("DigitInput", DigitInput);
-            writer.WriteIntValue("FunctionKey", FunctionKey);
+            writer.WriteStringValue("DigitInput", DigitInput);
+            writer.WriteStringValue("FunctionKey", FunctionKey);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.InputInputCommand>("InputCommand", InputCommand);
             writer.WriteCollectionOfPrimitiveValues<int?>("MenuEntryNumber", MenuEntryNumber);
-            writer.WriteStringValue("Password", Password);
+            writer.WriteByteArrayValue("Password", Password);
             writer.WriteStringValue("TextInput", TextInput);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

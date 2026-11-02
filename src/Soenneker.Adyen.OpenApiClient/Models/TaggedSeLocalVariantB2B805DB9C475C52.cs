@@ -9,7 +9,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class BankAccountIdentificationValidationRequestAccountIdentificationBankAccountIdentificationValidationRequestAccountIdentificationOneOf14 : global::Soenneker.Adyen.OpenApiClient.Models.BankAccountIdentificationValidationRequestAccountIdentification, IParsable
+    public partial class TaggedSeLocalVariantB2B805DB9C475C52 : global::Soenneker.Adyen.OpenApiClient.Models.BankAccountIdentificationValidationRequestAccountIdentification, IParsable
     #pragma warning restore CS1591
     {
         // Track explicitly assigned nulls separately from absent properties.
@@ -20,11 +20,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             base.CaptureExplicitNulls(parseNode);
             if (parseNode.GetChildNode("accountNumber") is null) { _explicitNullValueAccountNumber = default!; _explicitNullProperties?.Remove("accountNumber"); }
             else if (parseNode.GetChildNode("accountNumber") is { } nullNodeAccountNumber && nullNodeAccountNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountNumber = null;
-            if (parseNode.GetChildNode("bic") is null) { _explicitNullValueBic = default!; _explicitNullProperties?.Remove("bic"); }
-            else if (parseNode.GetChildNode("bic") is { } nullNodeBic && nullNodeBic.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bic = null;
+            if (parseNode.GetChildNode("clearingNumber") is null) { _explicitNullValueClearingNumber = default!; _explicitNullProperties?.Remove("clearingNumber"); }
+            else if (parseNode.GetChildNode("clearingNumber") is { } nullNodeClearingNumber && nullNodeClearingNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClearingNumber = null;
         }
 
-        /// <summary>The 4- to 19-digit bank account number, without separators or whitespace.</summary>
+        /// <summary>The 7- to 10-digit bank account number ([Bankkontonummer](https://sv.wikipedia.org/wiki/Bankkonto)), without the clearing number, separators, or whitespace.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccountNumber { get => _explicitNullValueAccountNumber; set { _explicitNullValueAccountNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountNumber"); else _explicitNullProperties?.Remove("accountNumber"); } }
@@ -34,25 +34,25 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string AccountNumber { get => _explicitNullValueAccountNumber; set { _explicitNullValueAccountNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountNumber"); else _explicitNullProperties?.Remove("accountNumber"); } }
         private string _explicitNullValueAccountNumber = default!;
 #endif
-        /// <summary>The bank&apos;s 8- or 11-character BIC or SWIFT code.</summary>
+        /// <summary>The 4- to 5-digit clearing number ([Clearingnummer](https://sv.wikipedia.org/wiki/Clearingnummer)), without separators or whitespace.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Bic { get => _explicitNullValueBic; set { _explicitNullValueBic = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bic"); else _explicitNullProperties?.Remove("bic"); } }
-        private string? _explicitNullValueBic = default!;
+        public string? ClearingNumber { get => _explicitNullValueClearingNumber; set { _explicitNullValueClearingNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clearingNumber"); else _explicitNullProperties?.Remove("clearingNumber"); } }
+        private string? _explicitNullValueClearingNumber = default!;
 #nullable restore
 #else
-        public string Bic { get => _explicitNullValueBic; set { _explicitNullValueBic = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bic"); else _explicitNullProperties?.Remove("bic"); } }
-        private string _explicitNullValueBic = default!;
+        public string ClearingNumber { get => _explicitNullValueClearingNumber; set { _explicitNullValueClearingNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clearingNumber"); else _explicitNullProperties?.Remove("clearingNumber"); } }
+        private string _explicitNullValueClearingNumber = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BankAccountIdentificationValidationRequestAccountIdentificationBankAccountIdentificationValidationRequestAccountIdentificationOneOf14"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TaggedSeLocalVariantB2B805DB9C475C52"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Adyen.OpenApiClient.Models.BankAccountIdentificationValidationRequestAccountIdentificationBankAccountIdentificationValidationRequestAccountIdentificationOneOf14 CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Soenneker.Adyen.OpenApiClient.Models.TaggedSeLocalVariantB2B805DB9C475C52 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.BankAccountIdentificationValidationRequestAccountIdentificationBankAccountIdentificationValidationRequestAccountIdentificationOneOf14(), parseNode);
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Adyen.OpenApiClient.Models.TaggedSeLocalVariantB2B805DB9C475C52(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,7 +63,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "accountNumber", n => { AccountNumber = n.GetStringValue(); } },
-                { "bic", n => { Bic = n.GetStringValue(); } },
+                { "clearingNumber", n => { ClearingNumber = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -75,7 +75,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("accountNumber", AccountNumber);
-            writer.WriteStringValue("bic", Bic);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            writer.WriteStringValue("clearingNumber", ClearingNumber);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             
         }
     }

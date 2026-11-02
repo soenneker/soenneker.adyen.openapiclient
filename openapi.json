@@ -56656,48 +56656,6 @@
         ]
       }
     },
-    "/TerminalAPI-v1/cardreaderapdu": {
-      "post": {
-        "summary": "CardReaderAPDU Request",
-        "description": "It contains the APDU request to send to the chip of the card, and a possible invitation message to display on the CashierInterface or the CustomerInterface.\nContent of the Card Reader APDU Request message.",
-        "operationId": "TerminalAPI_v1_PostCardreaderapdu",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CardReaderApduRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Content of the Card Reader APDU Response message.\nIt contains the result of the requested service, APDU response sent by the chip of the card in response to the APDU request.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CardReaderApduResponse"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "TerminalAPI_v1_BasicAuth": [ ]
-          },
-          {
-            "TerminalAPI_v1_ApiKeyAuth": [ ]
-          }
-        ],
-        "servers": [
-          {
-            "url": "https://device-api-test.adyen.com/v1/merchants/{merchantAccount}/devices/{deviceId}/sync",
-            "description": "with cloud integration"
-          }
-        ]
-      }
-    },
     "/TestCardService-v1/createTestCardRanges": {
       "post": {
         "tags": [
@@ -86424,7 +86382,7 @@
             "numberAndBic": "#/components/schemas/BankAccountAccountIdentificationNumberAndBicAccountIdentification",
             "plLocal": "#/components/schemas/BankAccountAccountIdentificationPlLocalAccountIdentification",
             "seLocal": "#/components/schemas/BankAccountAccountIdentificationSeLocalAccountIdentification",
-            "sgLocal": "#/components/schemas/BankAccountAccountIdentificationBankAccountAccountIdentificationOneOf14",
+            "sgLocal": "#/components/schemas/BankAccountAccountIdentificationOneOf14Variant",
             "ukLocal": "#/components/schemas/BankAccountAccountIdentificationUkLocalAccountIdentification",
             "usLocal": "#/components/schemas/BankAccountAccountIdentificationUsLocalAccountIdentification",
             "BankAccountAccountIdentificationAuLocalAccountIdentification": "#/components/schemas/BankAccountAccountIdentificationAuLocalAccountIdentification",
@@ -86440,7 +86398,7 @@
             "BankAccountAccountIdentificationNumberAndBicAccountIdentification": "#/components/schemas/BankAccountAccountIdentificationNumberAndBicAccountIdentification",
             "BankAccountAccountIdentificationPlLocalAccountIdentification": "#/components/schemas/BankAccountAccountIdentificationPlLocalAccountIdentification",
             "BankAccountAccountIdentificationSeLocalAccountIdentification": "#/components/schemas/BankAccountAccountIdentificationSeLocalAccountIdentification",
-            "BankAccountAccountIdentificationBankAccountAccountIdentificationOneOf14": "#/components/schemas/BankAccountAccountIdentificationBankAccountAccountIdentificationOneOf14",
+            "BankAccountAccountIdentificationOneOf14Variant": "#/components/schemas/BankAccountAccountIdentificationOneOf14Variant",
             "BankAccountAccountIdentificationUkLocalAccountIdentification": "#/components/schemas/BankAccountAccountIdentificationUkLocalAccountIdentification",
             "BankAccountAccountIdentificationUsLocalAccountIdentification": "#/components/schemas/BankAccountAccountIdentificationUsLocalAccountIdentification"
           }
@@ -92276,7 +92234,7 @@
           }
         ]
       },
-      "BankAccountAccountIdentificationBankAccountAccountIdentificationOneOf14": {
+      "BankAccountAccountIdentificationOneOf14Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/BankAccountAccountIdentification"
@@ -92997,14 +92955,14 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "bank": "#/components/schemas/TransferViewCategoryDataTransferViewCategoryDataOneOf1",
-            "internal": "#/components/schemas/TransferViewCategoryDataTransferViewCategoryDataOneOf2",
-            "issuedCard": "#/components/schemas/TransferViewCategoryDataTransferViewCategoryDataOneOf3",
-            "platformPayment": "#/components/schemas/TransferViewCategoryDataTransferViewCategoryDataOneOf4",
-            "TransferViewCategoryDataTransferViewCategoryDataOneOf1": "#/components/schemas/TransferViewCategoryDataTransferViewCategoryDataOneOf1",
-            "TransferViewCategoryDataTransferViewCategoryDataOneOf2": "#/components/schemas/TransferViewCategoryDataTransferViewCategoryDataOneOf2",
-            "TransferViewCategoryDataTransferViewCategoryDataOneOf3": "#/components/schemas/TransferViewCategoryDataTransferViewCategoryDataOneOf3",
-            "TransferViewCategoryDataTransferViewCategoryDataOneOf4": "#/components/schemas/TransferViewCategoryDataTransferViewCategoryDataOneOf4"
+            "bank": "#/components/schemas/TransferViewCategoryDataOneOf1Variant",
+            "internal": "#/components/schemas/TransferViewCategoryDataOneOf2Variant",
+            "issuedCard": "#/components/schemas/TransferViewCategoryDataOneOf3Variant",
+            "platformPayment": "#/components/schemas/TransferViewCategoryDataOneOf4Variant",
+            "TransferViewCategoryDataOneOf1Variant": "#/components/schemas/TransferViewCategoryDataOneOf1Variant",
+            "TransferViewCategoryDataOneOf2Variant": "#/components/schemas/TransferViewCategoryDataOneOf2Variant",
+            "TransferViewCategoryDataOneOf3Variant": "#/components/schemas/TransferViewCategoryDataOneOf3Variant",
+            "TransferViewCategoryDataOneOf4Variant": "#/components/schemas/TransferViewCategoryDataOneOf4Variant"
           }
         },
         "x-addedInVersion": "4",
@@ -93321,7 +93279,7 @@
           ]
         }
       },
-      "TransferViewCategoryDataTransferViewCategoryDataOneOf1": {
+      "TransferViewCategoryDataOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/TransferViewCategoryData"
@@ -93359,7 +93317,7 @@
           }
         ]
       },
-      "TransferViewCategoryDataTransferViewCategoryDataOneOf2": {
+      "TransferViewCategoryDataOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/TransferViewCategoryData"
@@ -93404,7 +93362,7 @@
           }
         ]
       },
-      "TransferViewCategoryDataTransferViewCategoryDataOneOf3": {
+      "TransferViewCategoryDataOneOf3Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/TransferViewCategoryData"
@@ -93489,7 +93447,7 @@
           }
         ]
       },
-      "TransferViewCategoryDataTransferViewCategoryDataOneOf4": {
+      "TransferViewCategoryDataOneOf4Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/TransferViewCategoryData"
@@ -94898,7 +94856,7 @@
             "numberAndBic": "#/components/schemas/BankAccountV3AccountIdentificationNumberAndBicAccountIdentification",
             "plLocal": "#/components/schemas/BankAccountV3AccountIdentificationPlLocalAccountIdentification",
             "seLocal": "#/components/schemas/BankAccountV3AccountIdentificationSeLocalAccountIdentification",
-            "sgLocal": "#/components/schemas/BankAccountV3AccountIdentificationBankAccountV3AccountIdentificationOneOf14",
+            "sgLocal": "#/components/schemas/BankAccountV3AccountIdentificationOneOf14Variant",
             "ukLocal": "#/components/schemas/BankAccountV3AccountIdentificationUkLocalAccountIdentification",
             "usLocal": "#/components/schemas/BankAccountV3AccountIdentificationUsLocalAccountIdentification",
             "BankAccountV3AccountIdentificationAuLocalAccountIdentification": "#/components/schemas/BankAccountV3AccountIdentificationAuLocalAccountIdentification",
@@ -94914,7 +94872,7 @@
             "BankAccountV3AccountIdentificationNumberAndBicAccountIdentification": "#/components/schemas/BankAccountV3AccountIdentificationNumberAndBicAccountIdentification",
             "BankAccountV3AccountIdentificationPlLocalAccountIdentification": "#/components/schemas/BankAccountV3AccountIdentificationPlLocalAccountIdentification",
             "BankAccountV3AccountIdentificationSeLocalAccountIdentification": "#/components/schemas/BankAccountV3AccountIdentificationSeLocalAccountIdentification",
-            "BankAccountV3AccountIdentificationBankAccountV3AccountIdentificationOneOf14": "#/components/schemas/BankAccountV3AccountIdentificationBankAccountV3AccountIdentificationOneOf14",
+            "BankAccountV3AccountIdentificationOneOf14Variant": "#/components/schemas/BankAccountV3AccountIdentificationOneOf14Variant",
             "BankAccountV3AccountIdentificationUkLocalAccountIdentification": "#/components/schemas/BankAccountV3AccountIdentificationUkLocalAccountIdentification",
             "BankAccountV3AccountIdentificationUsLocalAccountIdentification": "#/components/schemas/BankAccountV3AccountIdentificationUsLocalAccountIdentification"
           }
@@ -95050,14 +95008,14 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "bank": "#/components/schemas/TransferDataCategoryDataTransferDataCategoryDataOneOf1",
-            "internal": "#/components/schemas/TransferDataCategoryDataTransferDataCategoryDataOneOf2",
-            "issuedCard": "#/components/schemas/TransferDataCategoryDataTransferDataCategoryDataOneOf3",
-            "platformPayment": "#/components/schemas/TransferDataCategoryDataTransferDataCategoryDataOneOf4",
-            "TransferDataCategoryDataTransferDataCategoryDataOneOf1": "#/components/schemas/TransferDataCategoryDataTransferDataCategoryDataOneOf1",
-            "TransferDataCategoryDataTransferDataCategoryDataOneOf2": "#/components/schemas/TransferDataCategoryDataTransferDataCategoryDataOneOf2",
-            "TransferDataCategoryDataTransferDataCategoryDataOneOf3": "#/components/schemas/TransferDataCategoryDataTransferDataCategoryDataOneOf3",
-            "TransferDataCategoryDataTransferDataCategoryDataOneOf4": "#/components/schemas/TransferDataCategoryDataTransferDataCategoryDataOneOf4"
+            "bank": "#/components/schemas/TransferDataCategoryDataOneOf1Variant",
+            "internal": "#/components/schemas/TransferDataCategoryDataOneOf2Variant",
+            "issuedCard": "#/components/schemas/TransferDataCategoryDataOneOf3Variant",
+            "platformPayment": "#/components/schemas/TransferDataCategoryDataOneOf4Variant",
+            "TransferDataCategoryDataOneOf1Variant": "#/components/schemas/TransferDataCategoryDataOneOf1Variant",
+            "TransferDataCategoryDataOneOf2Variant": "#/components/schemas/TransferDataCategoryDataOneOf2Variant",
+            "TransferDataCategoryDataOneOf3Variant": "#/components/schemas/TransferDataCategoryDataOneOf3Variant",
+            "TransferDataCategoryDataOneOf4Variant": "#/components/schemas/TransferDataCategoryDataOneOf4Variant"
           }
         },
         "x-addedInVersion": "4",
@@ -99045,7 +99003,7 @@
           }
         ]
       },
-      "BankAccountV3AccountIdentificationBankAccountV3AccountIdentificationOneOf14": {
+      "BankAccountV3AccountIdentificationOneOf14Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/BalancePlatformTransferNotification_v4_BankAccountV3AccountIdentification"
@@ -99167,7 +99125,7 @@
           }
         ]
       },
-      "TransferDataCategoryDataTransferDataCategoryDataOneOf1": {
+      "TransferDataCategoryDataOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/TransferDataCategoryData"
@@ -99205,7 +99163,7 @@
           }
         ]
       },
-      "TransferDataCategoryDataTransferDataCategoryDataOneOf2": {
+      "TransferDataCategoryDataOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/TransferDataCategoryData"
@@ -99250,7 +99208,7 @@
           }
         ]
       },
-      "TransferDataCategoryDataTransferDataCategoryDataOneOf3": {
+      "TransferDataCategoryDataOneOf3Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/TransferDataCategoryData"
@@ -99335,7 +99293,7 @@
           }
         ]
       },
-      "TransferDataCategoryDataTransferDataCategoryDataOneOf4": {
+      "TransferDataCategoryDataOneOf4Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/TransferDataCategoryData"
@@ -112479,23 +112437,23 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "applepay": "#/components/schemas/DonationPaymentRequestPaymentMethodDonationPaymentRequestPaymentMethodOneOf1",
-            "bcmc": "#/components/schemas/DonationPaymentRequestPaymentMethodDonationPaymentRequestPaymentMethodOneOf2",
-            "scheme": "#/components/schemas/DonationPaymentRequestPaymentMethodDonationPaymentRequestPaymentMethodOneOf2",
-            "networkToken": "#/components/schemas/DonationPaymentRequestPaymentMethodDonationPaymentRequestPaymentMethodOneOf2",
-            "giftcard": "#/components/schemas/DonationPaymentRequestPaymentMethodDonationPaymentRequestPaymentMethodOneOf2",
-            "card": "#/components/schemas/DonationPaymentRequestPaymentMethodDonationPaymentRequestPaymentMethodOneOf2",
-            "clicktopay": "#/components/schemas/DonationPaymentRequestPaymentMethodDonationPaymentRequestPaymentMethodOneOf2",
-            "googlepay": "#/components/schemas/DonationPaymentRequestPaymentMethodDonationPaymentRequestPaymentMethodOneOf3",
-            "ideal": "#/components/schemas/DonationPaymentRequestPaymentMethodDonationPaymentRequestPaymentMethodOneOf4",
-            "paywithgoogle": "#/components/schemas/DonationPaymentRequestPaymentMethodDonationPaymentRequestPaymentMethodOneOf5",
-            "sepadirectdebit": "#/components/schemas/DonationPaymentRequestPaymentMethodDonationPaymentRequestPaymentMethodOneOf6",
-            "DonationPaymentRequestPaymentMethodDonationPaymentRequestPaymentMethodOneOf1": "#/components/schemas/DonationPaymentRequestPaymentMethodDonationPaymentRequestPaymentMethodOneOf1",
-            "DonationPaymentRequestPaymentMethodDonationPaymentRequestPaymentMethodOneOf2": "#/components/schemas/DonationPaymentRequestPaymentMethodDonationPaymentRequestPaymentMethodOneOf2",
-            "DonationPaymentRequestPaymentMethodDonationPaymentRequestPaymentMethodOneOf3": "#/components/schemas/DonationPaymentRequestPaymentMethodDonationPaymentRequestPaymentMethodOneOf3",
-            "DonationPaymentRequestPaymentMethodDonationPaymentRequestPaymentMethodOneOf4": "#/components/schemas/DonationPaymentRequestPaymentMethodDonationPaymentRequestPaymentMethodOneOf4",
-            "DonationPaymentRequestPaymentMethodDonationPaymentRequestPaymentMethodOneOf5": "#/components/schemas/DonationPaymentRequestPaymentMethodDonationPaymentRequestPaymentMethodOneOf5",
-            "DonationPaymentRequestPaymentMethodDonationPaymentRequestPaymentMethodOneOf6": "#/components/schemas/DonationPaymentRequestPaymentMethodDonationPaymentRequestPaymentMethodOneOf6"
+            "applepay": "#/components/schemas/DonationPaymentRequestPaymentMethodOneOf1Variant",
+            "bcmc": "#/components/schemas/DonationPaymentRequestPaymentMethodOneOf2Variant",
+            "scheme": "#/components/schemas/DonationPaymentRequestPaymentMethodOneOf2Variant",
+            "networkToken": "#/components/schemas/DonationPaymentRequestPaymentMethodOneOf2Variant",
+            "giftcard": "#/components/schemas/DonationPaymentRequestPaymentMethodOneOf2Variant",
+            "card": "#/components/schemas/DonationPaymentRequestPaymentMethodOneOf2Variant",
+            "clicktopay": "#/components/schemas/DonationPaymentRequestPaymentMethodOneOf2Variant",
+            "googlepay": "#/components/schemas/DonationPaymentRequestPaymentMethodOneOf3Variant",
+            "ideal": "#/components/schemas/DonationPaymentRequestPaymentMethodOneOf4Variant",
+            "paywithgoogle": "#/components/schemas/DonationPaymentRequestPaymentMethodOneOf5Variant",
+            "sepadirectdebit": "#/components/schemas/DonationPaymentRequestPaymentMethodOneOf6Variant",
+            "DonationPaymentRequestPaymentMethodOneOf1Variant": "#/components/schemas/DonationPaymentRequestPaymentMethodOneOf1Variant",
+            "DonationPaymentRequestPaymentMethodOneOf2Variant": "#/components/schemas/DonationPaymentRequestPaymentMethodOneOf2Variant",
+            "DonationPaymentRequestPaymentMethodOneOf3Variant": "#/components/schemas/DonationPaymentRequestPaymentMethodOneOf3Variant",
+            "DonationPaymentRequestPaymentMethodOneOf4Variant": "#/components/schemas/DonationPaymentRequestPaymentMethodOneOf4Variant",
+            "DonationPaymentRequestPaymentMethodOneOf5Variant": "#/components/schemas/DonationPaymentRequestPaymentMethodOneOf5Variant",
+            "DonationPaymentRequestPaymentMethodOneOf6Variant": "#/components/schemas/DonationPaymentRequestPaymentMethodOneOf6Variant"
           }
         },
         "x-client-original-discriminator": {
@@ -112624,34 +112582,34 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "ach": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf1",
-            "ach_plaid": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf1",
-            "affirm": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf2",
+            "ach": "#/components/schemas/PaymentRequestPaymentMethodOneOf1Variant",
+            "ach_plaid": "#/components/schemas/PaymentRequestPaymentMethodOneOf1Variant",
+            "affirm": "#/components/schemas/PaymentRequestPaymentMethodOneOf2Variant",
             "afterpay_default": "#/components/schemas/PaymentRequestPaymentMethodAfterpayDetails",
             "afterpaytouch": "#/components/schemas/PaymentRequestPaymentMethodAfterpayDetails",
             "afterpaytouch_US": "#/components/schemas/PaymentRequestPaymentMethodAfterpayDetails",
             "afterpay_b2b": "#/components/schemas/PaymentRequestPaymentMethodAfterpayDetails",
             "clearpay": "#/components/schemas/PaymentRequestPaymentMethodAfterpayDetails",
-            "alma": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf4",
-            "amazonpay": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf5",
-            "ancv": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf6",
-            "androidpay": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf7",
-            "applepay": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf8",
-            "aupay": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf9",
-            "directdebit_GB": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf10",
+            "alma": "#/components/schemas/PaymentRequestPaymentMethodOneOf4Variant",
+            "amazonpay": "#/components/schemas/PaymentRequestPaymentMethodOneOf5Variant",
+            "ancv": "#/components/schemas/PaymentRequestPaymentMethodOneOf6Variant",
+            "androidpay": "#/components/schemas/PaymentRequestPaymentMethodOneOf7Variant",
+            "applepay": "#/components/schemas/PaymentRequestPaymentMethodOneOf8Variant",
+            "aupay": "#/components/schemas/PaymentRequestPaymentMethodOneOf9Variant",
+            "directdebit_GB": "#/components/schemas/PaymentRequestPaymentMethodOneOf10Variant",
             "billdesk_online": "#/components/schemas/PaymentRequestPaymentMethodBillDeskDetails",
             "billdesk_wallet": "#/components/schemas/PaymentRequestPaymentMethodBillDeskDetails",
-            "blik": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf12",
-            "bcmc": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf13",
-            "scheme": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf13",
-            "networkToken": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf13",
-            "giftcard": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf13",
-            "card": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf13",
-            "clicktopay": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf13",
-            "cashapp": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf14",
-            "cellulant": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf15",
-            "dbarai": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf16",
-            "directdebit_AU": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf17",
+            "blik": "#/components/schemas/PaymentRequestPaymentMethodOneOf12Variant",
+            "bcmc": "#/components/schemas/PaymentRequestPaymentMethodOneOf13Variant",
+            "scheme": "#/components/schemas/PaymentRequestPaymentMethodOneOf13Variant",
+            "networkToken": "#/components/schemas/PaymentRequestPaymentMethodOneOf13Variant",
+            "giftcard": "#/components/schemas/PaymentRequestPaymentMethodOneOf13Variant",
+            "card": "#/components/schemas/PaymentRequestPaymentMethodOneOf13Variant",
+            "clicktopay": "#/components/schemas/PaymentRequestPaymentMethodOneOf13Variant",
+            "cashapp": "#/components/schemas/PaymentRequestPaymentMethodOneOf14Variant",
+            "cellulant": "#/components/schemas/PaymentRequestPaymentMethodOneOf15Variant",
+            "dbarai": "#/components/schemas/PaymentRequestPaymentMethodOneOf16Variant",
+            "directdebit_AU": "#/components/schemas/PaymentRequestPaymentMethodOneOf17Variant",
             "doku_mandiri_va": "#/components/schemas/PaymentRequestPaymentMethodDokuDetails",
             "doku_cimb_va": "#/components/schemas/PaymentRequestPaymentMethodDokuDetails",
             "doku_danamon_va": "#/components/schemas/PaymentRequestPaymentMethodDokuDetails",
@@ -112673,7 +112631,7 @@
             "econtext": "#/components/schemas/PaymentRequestPaymentMethodEcontextVoucherDetails",
             "econtext_stores": "#/components/schemas/PaymentRequestPaymentMethodEcontextVoucherDetails",
             "econtext_atm": "#/components/schemas/PaymentRequestPaymentMethodEcontextVoucherDetails",
-            "eft_directdebit_CA": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf22",
+            "eft_directdebit_CA": "#/components/schemas/PaymentRequestPaymentMethodOneOf22Variant",
             "externalToken": "#/components/schemas/PaymentRequestPaymentMethodExternalTokenDetails",
             "fastlane": "#/components/schemas/PaymentRequestPaymentMethodFastlaneDetails",
             "onlineBanking_PL": "#/components/schemas/PaymentRequestPaymentMethodGenericIssuerPaymentMethodDetails",
@@ -112681,8 +112639,8 @@
             "onlineBanking_SK": "#/components/schemas/PaymentRequestPaymentMethodGenericIssuerPaymentMethodDetails",
             "onlineBanking_CZ": "#/components/schemas/PaymentRequestPaymentMethodGenericIssuerPaymentMethodDetails",
             "onlinebanking_IN": "#/components/schemas/PaymentRequestPaymentMethodGenericIssuerPaymentMethodDetails",
-            "googlepay": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf26",
-            "ideal": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf27",
+            "googlepay": "#/components/schemas/PaymentRequestPaymentMethodOneOf26Variant",
+            "ideal": "#/components/schemas/PaymentRequestPaymentMethodOneOf27Variant",
             "klarna": "#/components/schemas/PaymentRequestPaymentMethodKlarnaDetails",
             "klarnapayments": "#/components/schemas/PaymentRequestPaymentMethodKlarnaDetails",
             "klarnapayments_account": "#/components/schemas/PaymentRequestPaymentMethodKlarnaDetails",
@@ -112691,225 +112649,225 @@
             "klarna_account": "#/components/schemas/PaymentRequestPaymentMethodKlarnaDetails",
             "klarna_b2b": "#/components/schemas/PaymentRequestPaymentMethodKlarnaDetails",
             "klarna_network": "#/components/schemas/PaymentRequestPaymentMethodKlarnaNetworkDetails",
-            "masterpass": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf30",
-            "mbway": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf31",
-            "mobilepay": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf32",
+            "masterpass": "#/components/schemas/PaymentRequestPaymentMethodOneOf30Variant",
+            "mbway": "#/components/schemas/PaymentRequestPaymentMethodOneOf31Variant",
+            "mobilepay": "#/components/schemas/PaymentRequestPaymentMethodOneOf32Variant",
             "molpay_ebanking_fpx_MY": "#/components/schemas/PaymentRequestPaymentMethodMolPayDetails",
             "molpay_ebanking_TH": "#/components/schemas/PaymentRequestPaymentMethodMolPayDetails",
-            "openinvoice": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf34",
-            "afterpay_directdebit": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf34",
-            "atome_pos": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf34",
+            "openinvoice": "#/components/schemas/PaymentRequestPaymentMethodOneOf34Variant",
+            "afterpay_directdebit": "#/components/schemas/PaymentRequestPaymentMethodOneOf34Variant",
+            "atome_pos": "#/components/schemas/PaymentRequestPaymentMethodOneOf34Variant",
             "paybybank_AIS_DD": "#/components/schemas/PaymentRequestPaymentMethodPayByBankAisDirectDebitDetails",
             "paybybank_ca": "#/components/schemas/PaymentRequestPaymentMethodPayByBankCaDirectDebitDetails",
             "paybybank": "#/components/schemas/PaymentRequestPaymentMethodPayByBankDetails",
             "paypal": "#/components/schemas/PaymentRequestPaymentMethodPayPalDetails",
-            "paypay": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf39",
-            "payto": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf40",
+            "paypay": "#/components/schemas/PaymentRequestPaymentMethodOneOf39Variant",
+            "payto": "#/components/schemas/PaymentRequestPaymentMethodOneOf40Variant",
             "payu_IN_upi": "#/components/schemas/PaymentRequestPaymentMethodPayUUpiDetails",
-            "paywithgoogle": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf42",
-            "alipay": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "multibanco": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "bankTransfer": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "bankTransfer_IBAN": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "paynow": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "affirm_pos": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "iris": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "wero": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "trustly": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "trustlyvector": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "oney": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "facilypay": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "facilypay_3x": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "facilypay_4x": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "facilypay_6x": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "facilypay_10x": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "facilypay_12x": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "unionpay": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "kcp_banktransfer": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "kcp_payco": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "kcp_creditcard": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "wechatpaySDK": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "wechatpayQR": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "wechatpayWeb": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "molpay_boost": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "wallet_IN": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "payu_IN_cashcard": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "payu_IN_nb": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "paytm": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "molpay_ebanking_VN": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "molpay_ebanking_MY": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "molpay_ebanking_direct_MY": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "swish": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "bizum": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "walley": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "walley_b2b": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "paypo": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "satispay": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "scalapay": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "scalapay_3x": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "scalapay_4x": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "molpay_fpx": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "payme": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "payme_pos": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "konbini": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "directEbanking": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "boletobancario": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "cashticket": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "ikano": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "karenmillen": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "oasis": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "warehouse": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "primeiropay_boleto": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "mada": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "benefit": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "knet": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "omannet": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "kcp_naverpay": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "fawry": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "atome": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "naps": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "nordea": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "boletobancario_bradesco": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "boletobancario_itau": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "boletobancario_santander": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "boletobancario_bancodobrasil": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "boletobancario_hsbc": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "molpay_maybank2u": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "molpay_cimb": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "molpay_rhb": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "molpay_amb": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "molpay_hlb": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "molpay_affin_epg": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "molpay_bankislam": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "molpay_publicbank": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "fpx_agrobank": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "touchngo": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "maybank2u_mae": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "duitnow": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "promptpay": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "twint_pos": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "alipay_hk": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "alipay_hk_web": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "alipay_hk_wap": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "alipay_wap": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "balanceplatform": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "pix": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf44",
-            "paybybank_pix": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf45",
-            "pse_payulatam": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf46",
-            "rakutenpay": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf47",
+            "paywithgoogle": "#/components/schemas/PaymentRequestPaymentMethodOneOf42Variant",
+            "alipay": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "multibanco": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "bankTransfer": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "bankTransfer_IBAN": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "paynow": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "affirm_pos": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "iris": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "wero": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "trustly": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "trustlyvector": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "oney": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "facilypay": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "facilypay_3x": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "facilypay_4x": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "facilypay_6x": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "facilypay_10x": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "facilypay_12x": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "unionpay": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "kcp_banktransfer": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "kcp_payco": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "kcp_creditcard": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "wechatpaySDK": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "wechatpayQR": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "wechatpayWeb": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "molpay_boost": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "wallet_IN": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "payu_IN_cashcard": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "payu_IN_nb": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "paytm": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "molpay_ebanking_VN": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "molpay_ebanking_MY": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "molpay_ebanking_direct_MY": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "swish": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "bizum": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "walley": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "walley_b2b": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "paypo": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "satispay": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "scalapay": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "scalapay_3x": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "scalapay_4x": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "molpay_fpx": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "payme": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "payme_pos": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "konbini": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "directEbanking": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "boletobancario": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "cashticket": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "ikano": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "karenmillen": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "oasis": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "warehouse": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "primeiropay_boleto": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "mada": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "benefit": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "knet": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "omannet": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "kcp_naverpay": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "fawry": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "atome": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "naps": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "nordea": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "boletobancario_bradesco": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "boletobancario_itau": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "boletobancario_santander": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "boletobancario_bancodobrasil": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "boletobancario_hsbc": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "molpay_maybank2u": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "molpay_cimb": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "molpay_rhb": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "molpay_amb": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "molpay_hlb": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "molpay_affin_epg": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "molpay_bankislam": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "molpay_publicbank": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "fpx_agrobank": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "touchngo": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "maybank2u_mae": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "duitnow": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "promptpay": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "twint_pos": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "alipay_hk": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "alipay_hk_web": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "alipay_hk_wap": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "alipay_wap": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "balanceplatform": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "pix": "#/components/schemas/PaymentRequestPaymentMethodOneOf44Variant",
+            "paybybank_pix": "#/components/schemas/PaymentRequestPaymentMethodOneOf45Variant",
+            "pse_payulatam": "#/components/schemas/PaymentRequestPaymentMethodOneOf46Variant",
+            "rakutenpay": "#/components/schemas/PaymentRequestPaymentMethodOneOf47Variant",
             "ratepay": "#/components/schemas/PaymentRequestPaymentMethodRatepayDetails",
             "ratepay_directdebit": "#/components/schemas/PaymentRequestPaymentMethodRatepayDetails",
             "riverty": "#/components/schemas/PaymentRequestPaymentMethodRivertyDetails",
             "riverty_account": "#/components/schemas/PaymentRequestPaymentMethodRivertyDetails",
             "riverty_installments": "#/components/schemas/PaymentRequestPaymentMethodRivertyDetails",
             "sepadirectdebit_riverty": "#/components/schemas/PaymentRequestPaymentMethodRivertyDetails",
-            "samsungpay": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf50",
-            "sepadirectdebit": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf51",
-            "sepadirectdebit_amazonpay": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf51",
-            "alipay_plus": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf52",
-            "alipay_plus_alipay_cn": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf52",
-            "alipay_plus_alipay_hk": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf52",
-            "alipay_plus_dana": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf52",
-            "alipay_plus_gcash": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf52",
-            "alipay_plus_kakaopay": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf52",
-            "alipay_plus_kplus": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf52",
-            "alipay_plus_naverpay": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf52",
-            "alipay_plus_rabbitlinepay": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf52",
-            "alipay_plus_tosspay": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf52",
-            "alipay_plus_touchngo": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf52",
-            "alipay_plus_truemoney": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf52",
-            "bcmc_mobile": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf52",
-            "bcmc_mobile_QR": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf52",
-            "bcmc_mobile_app": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf52",
-            "momo_wallet": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf52",
-            "momo_wallet_app": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf52",
-            "revolutpay": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf52",
-            "paymaya_wallet": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf52",
-            "grabpay_SG": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf52",
-            "grabpay_MY": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf52",
-            "grabpay_TH": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf52",
-            "grabpay_ID": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf52",
-            "grabpay_VN": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf52",
-            "grabpay_PH": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf52",
-            "oxxo": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf52",
-            "gcash": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf52",
-            "dana": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf52",
-            "kakaopay": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf52",
-            "truemoney": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf52",
-            "paysafecard": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf52",
-            "gopay_wallet": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf52",
-            "twint": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf53",
+            "samsungpay": "#/components/schemas/PaymentRequestPaymentMethodOneOf50Variant",
+            "sepadirectdebit": "#/components/schemas/PaymentRequestPaymentMethodOneOf51Variant",
+            "sepadirectdebit_amazonpay": "#/components/schemas/PaymentRequestPaymentMethodOneOf51Variant",
+            "alipay_plus": "#/components/schemas/PaymentRequestPaymentMethodOneOf52Variant",
+            "alipay_plus_alipay_cn": "#/components/schemas/PaymentRequestPaymentMethodOneOf52Variant",
+            "alipay_plus_alipay_hk": "#/components/schemas/PaymentRequestPaymentMethodOneOf52Variant",
+            "alipay_plus_dana": "#/components/schemas/PaymentRequestPaymentMethodOneOf52Variant",
+            "alipay_plus_gcash": "#/components/schemas/PaymentRequestPaymentMethodOneOf52Variant",
+            "alipay_plus_kakaopay": "#/components/schemas/PaymentRequestPaymentMethodOneOf52Variant",
+            "alipay_plus_kplus": "#/components/schemas/PaymentRequestPaymentMethodOneOf52Variant",
+            "alipay_plus_naverpay": "#/components/schemas/PaymentRequestPaymentMethodOneOf52Variant",
+            "alipay_plus_rabbitlinepay": "#/components/schemas/PaymentRequestPaymentMethodOneOf52Variant",
+            "alipay_plus_tosspay": "#/components/schemas/PaymentRequestPaymentMethodOneOf52Variant",
+            "alipay_plus_touchngo": "#/components/schemas/PaymentRequestPaymentMethodOneOf52Variant",
+            "alipay_plus_truemoney": "#/components/schemas/PaymentRequestPaymentMethodOneOf52Variant",
+            "bcmc_mobile": "#/components/schemas/PaymentRequestPaymentMethodOneOf52Variant",
+            "bcmc_mobile_QR": "#/components/schemas/PaymentRequestPaymentMethodOneOf52Variant",
+            "bcmc_mobile_app": "#/components/schemas/PaymentRequestPaymentMethodOneOf52Variant",
+            "momo_wallet": "#/components/schemas/PaymentRequestPaymentMethodOneOf52Variant",
+            "momo_wallet_app": "#/components/schemas/PaymentRequestPaymentMethodOneOf52Variant",
+            "revolutpay": "#/components/schemas/PaymentRequestPaymentMethodOneOf52Variant",
+            "paymaya_wallet": "#/components/schemas/PaymentRequestPaymentMethodOneOf52Variant",
+            "grabpay_SG": "#/components/schemas/PaymentRequestPaymentMethodOneOf52Variant",
+            "grabpay_MY": "#/components/schemas/PaymentRequestPaymentMethodOneOf52Variant",
+            "grabpay_TH": "#/components/schemas/PaymentRequestPaymentMethodOneOf52Variant",
+            "grabpay_ID": "#/components/schemas/PaymentRequestPaymentMethodOneOf52Variant",
+            "grabpay_VN": "#/components/schemas/PaymentRequestPaymentMethodOneOf52Variant",
+            "grabpay_PH": "#/components/schemas/PaymentRequestPaymentMethodOneOf52Variant",
+            "oxxo": "#/components/schemas/PaymentRequestPaymentMethodOneOf52Variant",
+            "gcash": "#/components/schemas/PaymentRequestPaymentMethodOneOf52Variant",
+            "dana": "#/components/schemas/PaymentRequestPaymentMethodOneOf52Variant",
+            "kakaopay": "#/components/schemas/PaymentRequestPaymentMethodOneOf52Variant",
+            "truemoney": "#/components/schemas/PaymentRequestPaymentMethodOneOf52Variant",
+            "paysafecard": "#/components/schemas/PaymentRequestPaymentMethodOneOf52Variant",
+            "gopay_wallet": "#/components/schemas/PaymentRequestPaymentMethodOneOf52Variant",
+            "twint": "#/components/schemas/PaymentRequestPaymentMethodOneOf53Variant",
             "upi_collect": "#/components/schemas/PaymentRequestPaymentMethodUpiCollectDetails",
             "upi_intent": "#/components/schemas/PaymentRequestPaymentMethodUpiIntentDetails",
             "upi_qr": "#/components/schemas/PaymentRequestPaymentMethodUpiQrDetails",
-            "vipps": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf57",
-            "visacheckout": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf58",
-            "wechatpay": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf59",
-            "wechatpay_pos": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf59",
-            "wechatpayMiniProgram": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf60",
-            "zip": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf61",
-            "zip_pos": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf61",
-            "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf1": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf1",
-            "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf2": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf2",
+            "vipps": "#/components/schemas/PaymentRequestPaymentMethodOneOf57Variant",
+            "visacheckout": "#/components/schemas/PaymentRequestPaymentMethodOneOf58Variant",
+            "wechatpay": "#/components/schemas/PaymentRequestPaymentMethodOneOf59Variant",
+            "wechatpay_pos": "#/components/schemas/PaymentRequestPaymentMethodOneOf59Variant",
+            "wechatpayMiniProgram": "#/components/schemas/PaymentRequestPaymentMethodOneOf60Variant",
+            "zip": "#/components/schemas/PaymentRequestPaymentMethodOneOf61Variant",
+            "zip_pos": "#/components/schemas/PaymentRequestPaymentMethodOneOf61Variant",
+            "PaymentRequestPaymentMethodOneOf1Variant": "#/components/schemas/PaymentRequestPaymentMethodOneOf1Variant",
+            "PaymentRequestPaymentMethodOneOf2Variant": "#/components/schemas/PaymentRequestPaymentMethodOneOf2Variant",
             "PaymentRequestPaymentMethodAfterpayDetails": "#/components/schemas/PaymentRequestPaymentMethodAfterpayDetails",
-            "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf4": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf4",
-            "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf5": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf5",
-            "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf6": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf6",
-            "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf7": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf7",
-            "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf8": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf8",
-            "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf9": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf9",
-            "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf10": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf10",
+            "PaymentRequestPaymentMethodOneOf4Variant": "#/components/schemas/PaymentRequestPaymentMethodOneOf4Variant",
+            "PaymentRequestPaymentMethodOneOf5Variant": "#/components/schemas/PaymentRequestPaymentMethodOneOf5Variant",
+            "PaymentRequestPaymentMethodOneOf6Variant": "#/components/schemas/PaymentRequestPaymentMethodOneOf6Variant",
+            "PaymentRequestPaymentMethodOneOf7Variant": "#/components/schemas/PaymentRequestPaymentMethodOneOf7Variant",
+            "PaymentRequestPaymentMethodOneOf8Variant": "#/components/schemas/PaymentRequestPaymentMethodOneOf8Variant",
+            "PaymentRequestPaymentMethodOneOf9Variant": "#/components/schemas/PaymentRequestPaymentMethodOneOf9Variant",
+            "PaymentRequestPaymentMethodOneOf10Variant": "#/components/schemas/PaymentRequestPaymentMethodOneOf10Variant",
             "PaymentRequestPaymentMethodBillDeskDetails": "#/components/schemas/PaymentRequestPaymentMethodBillDeskDetails",
-            "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf12": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf12",
-            "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf13": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf13",
-            "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf14": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf14",
-            "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf15": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf15",
-            "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf16": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf16",
-            "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf17": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf17",
+            "PaymentRequestPaymentMethodOneOf12Variant": "#/components/schemas/PaymentRequestPaymentMethodOneOf12Variant",
+            "PaymentRequestPaymentMethodOneOf13Variant": "#/components/schemas/PaymentRequestPaymentMethodOneOf13Variant",
+            "PaymentRequestPaymentMethodOneOf14Variant": "#/components/schemas/PaymentRequestPaymentMethodOneOf14Variant",
+            "PaymentRequestPaymentMethodOneOf15Variant": "#/components/schemas/PaymentRequestPaymentMethodOneOf15Variant",
+            "PaymentRequestPaymentMethodOneOf16Variant": "#/components/schemas/PaymentRequestPaymentMethodOneOf16Variant",
+            "PaymentRequestPaymentMethodOneOf17Variant": "#/components/schemas/PaymentRequestPaymentMethodOneOf17Variant",
             "PaymentRequestPaymentMethodDokuDetails": "#/components/schemas/PaymentRequestPaymentMethodDokuDetails",
             "PaymentRequestPaymentMethodDragonpayDetails": "#/components/schemas/PaymentRequestPaymentMethodDragonpayDetails",
             "PaymentRequestPaymentMethodEBankingFinlandDetails": "#/components/schemas/PaymentRequestPaymentMethodEBankingFinlandDetails",
             "PaymentRequestPaymentMethodEcontextVoucherDetails": "#/components/schemas/PaymentRequestPaymentMethodEcontextVoucherDetails",
-            "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf22": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf22",
+            "PaymentRequestPaymentMethodOneOf22Variant": "#/components/schemas/PaymentRequestPaymentMethodOneOf22Variant",
             "PaymentRequestPaymentMethodExternalTokenDetails": "#/components/schemas/PaymentRequestPaymentMethodExternalTokenDetails",
             "PaymentRequestPaymentMethodFastlaneDetails": "#/components/schemas/PaymentRequestPaymentMethodFastlaneDetails",
             "PaymentRequestPaymentMethodGenericIssuerPaymentMethodDetails": "#/components/schemas/PaymentRequestPaymentMethodGenericIssuerPaymentMethodDetails",
-            "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf26": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf26",
-            "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf27": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf27",
+            "PaymentRequestPaymentMethodOneOf26Variant": "#/components/schemas/PaymentRequestPaymentMethodOneOf26Variant",
+            "PaymentRequestPaymentMethodOneOf27Variant": "#/components/schemas/PaymentRequestPaymentMethodOneOf27Variant",
             "PaymentRequestPaymentMethodKlarnaDetails": "#/components/schemas/PaymentRequestPaymentMethodKlarnaDetails",
             "PaymentRequestPaymentMethodKlarnaNetworkDetails": "#/components/schemas/PaymentRequestPaymentMethodKlarnaNetworkDetails",
-            "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf30": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf30",
-            "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf31": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf31",
-            "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf32": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf32",
+            "PaymentRequestPaymentMethodOneOf30Variant": "#/components/schemas/PaymentRequestPaymentMethodOneOf30Variant",
+            "PaymentRequestPaymentMethodOneOf31Variant": "#/components/schemas/PaymentRequestPaymentMethodOneOf31Variant",
+            "PaymentRequestPaymentMethodOneOf32Variant": "#/components/schemas/PaymentRequestPaymentMethodOneOf32Variant",
             "PaymentRequestPaymentMethodMolPayDetails": "#/components/schemas/PaymentRequestPaymentMethodMolPayDetails",
-            "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf34": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf34",
+            "PaymentRequestPaymentMethodOneOf34Variant": "#/components/schemas/PaymentRequestPaymentMethodOneOf34Variant",
             "PaymentRequestPaymentMethodPayByBankAisDirectDebitDetails": "#/components/schemas/PaymentRequestPaymentMethodPayByBankAisDirectDebitDetails",
             "PaymentRequestPaymentMethodPayByBankCaDirectDebitDetails": "#/components/schemas/PaymentRequestPaymentMethodPayByBankCaDirectDebitDetails",
             "PaymentRequestPaymentMethodPayByBankDetails": "#/components/schemas/PaymentRequestPaymentMethodPayByBankDetails",
             "PaymentRequestPaymentMethodPayPalDetails": "#/components/schemas/PaymentRequestPaymentMethodPayPalDetails",
-            "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf39": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf39",
-            "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf40": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf40",
+            "PaymentRequestPaymentMethodOneOf39Variant": "#/components/schemas/PaymentRequestPaymentMethodOneOf39Variant",
+            "PaymentRequestPaymentMethodOneOf40Variant": "#/components/schemas/PaymentRequestPaymentMethodOneOf40Variant",
             "PaymentRequestPaymentMethodPayUUpiDetails": "#/components/schemas/PaymentRequestPaymentMethodPayUUpiDetails",
-            "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf42": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf42",
-            "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43",
-            "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf44": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf44",
-            "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf45": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf45",
-            "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf46": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf46",
-            "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf47": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf47",
+            "PaymentRequestPaymentMethodOneOf42Variant": "#/components/schemas/PaymentRequestPaymentMethodOneOf42Variant",
+            "PaymentRequestPaymentMethodOneOf43Variant": "#/components/schemas/PaymentRequestPaymentMethodOneOf43Variant",
+            "PaymentRequestPaymentMethodOneOf44Variant": "#/components/schemas/PaymentRequestPaymentMethodOneOf44Variant",
+            "PaymentRequestPaymentMethodOneOf45Variant": "#/components/schemas/PaymentRequestPaymentMethodOneOf45Variant",
+            "PaymentRequestPaymentMethodOneOf46Variant": "#/components/schemas/PaymentRequestPaymentMethodOneOf46Variant",
+            "PaymentRequestPaymentMethodOneOf47Variant": "#/components/schemas/PaymentRequestPaymentMethodOneOf47Variant",
             "PaymentRequestPaymentMethodRatepayDetails": "#/components/schemas/PaymentRequestPaymentMethodRatepayDetails",
             "PaymentRequestPaymentMethodRivertyDetails": "#/components/schemas/PaymentRequestPaymentMethodRivertyDetails",
-            "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf50": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf50",
-            "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf51": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf51",
-            "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf52": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf52",
-            "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf53": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf53",
+            "PaymentRequestPaymentMethodOneOf50Variant": "#/components/schemas/PaymentRequestPaymentMethodOneOf50Variant",
+            "PaymentRequestPaymentMethodOneOf51Variant": "#/components/schemas/PaymentRequestPaymentMethodOneOf51Variant",
+            "PaymentRequestPaymentMethodOneOf52Variant": "#/components/schemas/PaymentRequestPaymentMethodOneOf52Variant",
+            "PaymentRequestPaymentMethodOneOf53Variant": "#/components/schemas/PaymentRequestPaymentMethodOneOf53Variant",
             "PaymentRequestPaymentMethodUpiCollectDetails": "#/components/schemas/PaymentRequestPaymentMethodUpiCollectDetails",
             "PaymentRequestPaymentMethodUpiIntentDetails": "#/components/schemas/PaymentRequestPaymentMethodUpiIntentDetails",
             "PaymentRequestPaymentMethodUpiQrDetails": "#/components/schemas/PaymentRequestPaymentMethodUpiQrDetails",
-            "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf57": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf57",
-            "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf58": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf58",
-            "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf59": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf59",
-            "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf60": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf60",
-            "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf61": "#/components/schemas/PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf61"
+            "PaymentRequestPaymentMethodOneOf57Variant": "#/components/schemas/PaymentRequestPaymentMethodOneOf57Variant",
+            "PaymentRequestPaymentMethodOneOf58Variant": "#/components/schemas/PaymentRequestPaymentMethodOneOf58Variant",
+            "PaymentRequestPaymentMethodOneOf59Variant": "#/components/schemas/PaymentRequestPaymentMethodOneOf59Variant",
+            "PaymentRequestPaymentMethodOneOf60Variant": "#/components/schemas/PaymentRequestPaymentMethodOneOf60Variant",
+            "PaymentRequestPaymentMethodOneOf61Variant": "#/components/schemas/PaymentRequestPaymentMethodOneOf61Variant"
           }
         },
         "x-client-original-discriminator": {
@@ -119249,7 +119207,7 @@
           ]
         }
       },
-      "DonationPaymentRequestPaymentMethodDonationPaymentRequestPaymentMethodOneOf1": {
+      "DonationPaymentRequestPaymentMethodOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/DonationPaymentRequestPaymentMethod"
@@ -119316,7 +119274,7 @@
           }
         ]
       },
-      "DonationPaymentRequestPaymentMethodDonationPaymentRequestPaymentMethodOneOf2": {
+      "DonationPaymentRequestPaymentMethodOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/DonationPaymentRequestPaymentMethod"
@@ -119498,7 +119456,7 @@
           }
         ]
       },
-      "DonationPaymentRequestPaymentMethodDonationPaymentRequestPaymentMethodOneOf3": {
+      "DonationPaymentRequestPaymentMethodOneOf3Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/DonationPaymentRequestPaymentMethod"
@@ -119574,7 +119532,7 @@
           }
         ]
       },
-      "DonationPaymentRequestPaymentMethodDonationPaymentRequestPaymentMethodOneOf4": {
+      "DonationPaymentRequestPaymentMethodOneOf4Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/DonationPaymentRequestPaymentMethod"
@@ -119636,7 +119594,7 @@
           }
         ]
       },
-      "DonationPaymentRequestPaymentMethodDonationPaymentRequestPaymentMethodOneOf5": {
+      "DonationPaymentRequestPaymentMethodOneOf5Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/DonationPaymentRequestPaymentMethod"
@@ -119708,7 +119666,7 @@
           }
         ]
       },
-      "DonationPaymentRequestPaymentMethodDonationPaymentRequestPaymentMethodOneOf6": {
+      "DonationPaymentRequestPaymentMethodOneOf6Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/DonationPaymentRequestPaymentMethod"
@@ -119766,7 +119724,7 @@
           }
         ]
       },
-      "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf1": {
+      "PaymentRequestPaymentMethodOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/PaymentRequestPaymentMethod"
@@ -119859,7 +119817,7 @@
           }
         ]
       },
-      "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf2": {
+      "PaymentRequestPaymentMethodOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/PaymentRequestPaymentMethod"
@@ -119965,7 +119923,7 @@
           }
         ]
       },
-      "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf4": {
+      "PaymentRequestPaymentMethodOneOf4Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/PaymentRequestPaymentMethod"
@@ -120013,7 +119971,7 @@
           }
         ]
       },
-      "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf5": {
+      "PaymentRequestPaymentMethodOneOf5Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/PaymentRequestPaymentMethod"
@@ -120066,7 +120024,7 @@
           }
         ]
       },
-      "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf6": {
+      "PaymentRequestPaymentMethodOneOf6Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/PaymentRequestPaymentMethod"
@@ -120128,7 +120086,7 @@
           }
         ]
       },
-      "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf7": {
+      "PaymentRequestPaymentMethodOneOf7Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/PaymentRequestPaymentMethod"
@@ -120173,7 +120131,7 @@
           }
         ]
       },
-      "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf8": {
+      "PaymentRequestPaymentMethodOneOf8Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/PaymentRequestPaymentMethod"
@@ -120240,7 +120198,7 @@
           }
         ]
       },
-      "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf9": {
+      "PaymentRequestPaymentMethodOneOf9Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/PaymentRequestPaymentMethod"
@@ -120298,7 +120256,7 @@
           }
         ]
       },
-      "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf10": {
+      "PaymentRequestPaymentMethodOneOf10Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/PaymentRequestPaymentMethod"
@@ -120412,7 +120370,7 @@
           }
         ]
       },
-      "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf12": {
+      "PaymentRequestPaymentMethodOneOf12Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/PaymentRequestPaymentMethod"
@@ -120474,7 +120432,7 @@
           }
         ]
       },
-      "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf13": {
+      "PaymentRequestPaymentMethodOneOf13Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/PaymentRequestPaymentMethod"
@@ -120656,7 +120614,7 @@
           }
         ]
       },
-      "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf14": {
+      "PaymentRequestPaymentMethodOneOf14Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/PaymentRequestPaymentMethod"
@@ -120738,7 +120696,7 @@
           }
         ]
       },
-      "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf15": {
+      "PaymentRequestPaymentMethodOneOf15Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/PaymentRequestPaymentMethod"
@@ -120787,7 +120745,7 @@
           }
         ]
       },
-      "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf16": {
+      "PaymentRequestPaymentMethodOneOf16Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/PaymentRequestPaymentMethod"
@@ -120845,7 +120803,7 @@
           }
         ]
       },
-      "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf17": {
+      "PaymentRequestPaymentMethodOneOf17Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/PaymentRequestPaymentMethod"
@@ -121092,7 +121050,7 @@
           }
         ]
       },
-      "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf22": {
+      "PaymentRequestPaymentMethodOneOf22Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/PaymentRequestPaymentMethod"
@@ -121320,7 +121278,7 @@
           }
         ]
       },
-      "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf26": {
+      "PaymentRequestPaymentMethodOneOf26Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/PaymentRequestPaymentMethod"
@@ -121396,7 +121354,7 @@
           }
         ]
       },
-      "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf27": {
+      "PaymentRequestPaymentMethodOneOf27Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/PaymentRequestPaymentMethod"
@@ -121588,7 +121546,7 @@
           }
         ]
       },
-      "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf30": {
+      "PaymentRequestPaymentMethodOneOf30Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/PaymentRequestPaymentMethod"
@@ -121641,7 +121599,7 @@
           }
         ]
       },
-      "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf31": {
+      "PaymentRequestPaymentMethodOneOf31Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/PaymentRequestPaymentMethod"
@@ -121696,7 +121654,7 @@
           }
         ]
       },
-      "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf32": {
+      "PaymentRequestPaymentMethodOneOf32Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/PaymentRequestPaymentMethod"
@@ -121778,7 +121736,7 @@
           }
         ]
       },
-      "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf34": {
+      "PaymentRequestPaymentMethodOneOf34Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/PaymentRequestPaymentMethod"
@@ -122048,7 +122006,7 @@
           }
         ]
       },
-      "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf39": {
+      "PaymentRequestPaymentMethodOneOf39Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/PaymentRequestPaymentMethod"
@@ -122106,7 +122064,7 @@
           }
         ]
       },
-      "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf40": {
+      "PaymentRequestPaymentMethodOneOf40Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/PaymentRequestPaymentMethod"
@@ -122221,7 +122179,7 @@
           }
         ]
       },
-      "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf42": {
+      "PaymentRequestPaymentMethodOneOf42Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/PaymentRequestPaymentMethod"
@@ -122293,7 +122251,7 @@
           }
         ]
       },
-      "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf43": {
+      "PaymentRequestPaymentMethodOneOf43Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/PaymentRequestPaymentMethod"
@@ -122763,7 +122721,7 @@
           }
         ]
       },
-      "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf44": {
+      "PaymentRequestPaymentMethodOneOf44Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/PaymentRequestPaymentMethod"
@@ -122824,7 +122782,7 @@
           }
         ]
       },
-      "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf45": {
+      "PaymentRequestPaymentMethodOneOf45Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/PaymentRequestPaymentMethod"
@@ -122892,7 +122850,7 @@
           }
         ]
       },
-      "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf46": {
+      "PaymentRequestPaymentMethodOneOf46Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/PaymentRequestPaymentMethod"
@@ -122957,7 +122915,7 @@
           }
         ]
       },
-      "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf47": {
+      "PaymentRequestPaymentMethodOneOf47Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/PaymentRequestPaymentMethod"
@@ -123149,7 +123107,7 @@
           }
         ]
       },
-      "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf50": {
+      "PaymentRequestPaymentMethodOneOf50Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/PaymentRequestPaymentMethod"
@@ -123216,7 +123174,7 @@
           }
         ]
       },
-      "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf51": {
+      "PaymentRequestPaymentMethodOneOf51Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/PaymentRequestPaymentMethod"
@@ -123295,7 +123253,7 @@
           }
         ]
       },
-      "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf52": {
+      "PaymentRequestPaymentMethodOneOf52Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/PaymentRequestPaymentMethod"
@@ -123508,7 +123466,7 @@
           }
         ]
       },
-      "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf53": {
+      "PaymentRequestPaymentMethodOneOf53Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/PaymentRequestPaymentMethod"
@@ -123737,7 +123695,7 @@
           }
         ]
       },
-      "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf57": {
+      "PaymentRequestPaymentMethodOneOf57Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/PaymentRequestPaymentMethod"
@@ -123800,7 +123758,7 @@
           }
         ]
       },
-      "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf58": {
+      "PaymentRequestPaymentMethodOneOf58Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/PaymentRequestPaymentMethod"
@@ -123853,7 +123811,7 @@
           }
         ]
       },
-      "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf59": {
+      "PaymentRequestPaymentMethodOneOf59Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/PaymentRequestPaymentMethod"
@@ -123903,7 +123861,7 @@
           }
         ]
       },
-      "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf60": {
+      "PaymentRequestPaymentMethodOneOf60Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/PaymentRequestPaymentMethod"
@@ -123967,7 +123925,7 @@
           }
         ]
       },
-      "PaymentRequestPaymentMethodPaymentRequestPaymentMethodOneOf61": {
+      "PaymentRequestPaymentMethodOneOf61Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/PaymentRequestPaymentMethod"
@@ -131477,7 +131435,7 @@
             "numberAndBic": "#/components/schemas/BankAccountInfoAccountIdentificationNumberAndBicAccountIdentification",
             "plLocal": "#/components/schemas/BankAccountInfoAccountIdentificationPlLocalAccountIdentification",
             "seLocal": "#/components/schemas/BankAccountInfoAccountIdentificationSeLocalAccountIdentification",
-            "sgLocal": "#/components/schemas/BankAccountInfoAccountIdentificationBankAccountInfoAccountIdentificationOneOf13",
+            "sgLocal": "#/components/schemas/BankAccountInfoAccountIdentificationOneOf13Variant",
             "ukLocal": "#/components/schemas/BankAccountInfoAccountIdentificationUkLocalAccountIdentification",
             "usLocal": "#/components/schemas/BankAccountInfoAccountIdentificationUsLocalAccountIdentification",
             "BankAccountInfoAccountIdentificationAuLocalAccountIdentification": "#/components/schemas/BankAccountInfoAccountIdentificationAuLocalAccountIdentification",
@@ -131492,7 +131450,7 @@
             "BankAccountInfoAccountIdentificationNumberAndBicAccountIdentification": "#/components/schemas/BankAccountInfoAccountIdentificationNumberAndBicAccountIdentification",
             "BankAccountInfoAccountIdentificationPlLocalAccountIdentification": "#/components/schemas/BankAccountInfoAccountIdentificationPlLocalAccountIdentification",
             "BankAccountInfoAccountIdentificationSeLocalAccountIdentification": "#/components/schemas/BankAccountInfoAccountIdentificationSeLocalAccountIdentification",
-            "BankAccountInfoAccountIdentificationBankAccountInfoAccountIdentificationOneOf13": "#/components/schemas/BankAccountInfoAccountIdentificationBankAccountInfoAccountIdentificationOneOf13",
+            "BankAccountInfoAccountIdentificationOneOf13Variant": "#/components/schemas/BankAccountInfoAccountIdentificationOneOf13Variant",
             "BankAccountInfoAccountIdentificationUkLocalAccountIdentification": "#/components/schemas/BankAccountInfoAccountIdentificationUkLocalAccountIdentification",
             "BankAccountInfoAccountIdentificationUsLocalAccountIdentification": "#/components/schemas/BankAccountInfoAccountIdentificationUsLocalAccountIdentification"
           }
@@ -135133,7 +135091,7 @@
           }
         ]
       },
-      "BankAccountInfoAccountIdentificationBankAccountInfoAccountIdentificationOneOf13": {
+      "BankAccountInfoAccountIdentificationOneOf13Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/BankAccountInfoAccountIdentification"
@@ -145643,18 +145601,18 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "ForceReboot": "#/components/schemas/ScheduleTerminalActionsRequestActionDetailsScheduleTerminalActionsRequestActionDetailsOneOf1",
-            "InstallAndroidApp": "#/components/schemas/ScheduleTerminalActionsRequestActionDetailsScheduleTerminalActionsRequestActionDetailsOneOf2",
-            "InstallAndroidCertificate": "#/components/schemas/ScheduleTerminalActionsRequestActionDetailsScheduleTerminalActionsRequestActionDetailsOneOf3",
-            "ReleaseUpdate": "#/components/schemas/ScheduleTerminalActionsRequestActionDetailsScheduleTerminalActionsRequestActionDetailsOneOf4",
-            "UninstallAndroidApp": "#/components/schemas/ScheduleTerminalActionsRequestActionDetailsScheduleTerminalActionsRequestActionDetailsOneOf5",
-            "UninstallAndroidCertificate": "#/components/schemas/ScheduleTerminalActionsRequestActionDetailsScheduleTerminalActionsRequestActionDetailsOneOf6",
-            "ScheduleTerminalActionsRequestActionDetailsScheduleTerminalActionsRequestActionDetailsOneOf1": "#/components/schemas/ScheduleTerminalActionsRequestActionDetailsScheduleTerminalActionsRequestActionDetailsOneOf1",
-            "ScheduleTerminalActionsRequestActionDetailsScheduleTerminalActionsRequestActionDetailsOneOf2": "#/components/schemas/ScheduleTerminalActionsRequestActionDetailsScheduleTerminalActionsRequestActionDetailsOneOf2",
-            "ScheduleTerminalActionsRequestActionDetailsScheduleTerminalActionsRequestActionDetailsOneOf3": "#/components/schemas/ScheduleTerminalActionsRequestActionDetailsScheduleTerminalActionsRequestActionDetailsOneOf3",
-            "ScheduleTerminalActionsRequestActionDetailsScheduleTerminalActionsRequestActionDetailsOneOf4": "#/components/schemas/ScheduleTerminalActionsRequestActionDetailsScheduleTerminalActionsRequestActionDetailsOneOf4",
-            "ScheduleTerminalActionsRequestActionDetailsScheduleTerminalActionsRequestActionDetailsOneOf5": "#/components/schemas/ScheduleTerminalActionsRequestActionDetailsScheduleTerminalActionsRequestActionDetailsOneOf5",
-            "ScheduleTerminalActionsRequestActionDetailsScheduleTerminalActionsRequestActionDetailsOneOf6": "#/components/schemas/ScheduleTerminalActionsRequestActionDetailsScheduleTerminalActionsRequestActionDetailsOneOf6"
+            "ForceReboot": "#/components/schemas/ScheduleTerminalActionsRequestActionDetailsOneOf1Variant",
+            "InstallAndroidApp": "#/components/schemas/ScheduleTerminalActionsRequestActionDetailsOneOf2Variant",
+            "InstallAndroidCertificate": "#/components/schemas/ScheduleTerminalActionsRequestActionDetailsOneOf3Variant",
+            "ReleaseUpdate": "#/components/schemas/ScheduleTerminalActionsRequestActionDetailsOneOf4Variant",
+            "UninstallAndroidApp": "#/components/schemas/ScheduleTerminalActionsRequestActionDetailsOneOf5Variant",
+            "UninstallAndroidCertificate": "#/components/schemas/ScheduleTerminalActionsRequestActionDetailsOneOf6Variant",
+            "ScheduleTerminalActionsRequestActionDetailsOneOf1Variant": "#/components/schemas/ScheduleTerminalActionsRequestActionDetailsOneOf1Variant",
+            "ScheduleTerminalActionsRequestActionDetailsOneOf2Variant": "#/components/schemas/ScheduleTerminalActionsRequestActionDetailsOneOf2Variant",
+            "ScheduleTerminalActionsRequestActionDetailsOneOf3Variant": "#/components/schemas/ScheduleTerminalActionsRequestActionDetailsOneOf3Variant",
+            "ScheduleTerminalActionsRequestActionDetailsOneOf4Variant": "#/components/schemas/ScheduleTerminalActionsRequestActionDetailsOneOf4Variant",
+            "ScheduleTerminalActionsRequestActionDetailsOneOf5Variant": "#/components/schemas/ScheduleTerminalActionsRequestActionDetailsOneOf5Variant",
+            "ScheduleTerminalActionsRequestActionDetailsOneOf6Variant": "#/components/schemas/ScheduleTerminalActionsRequestActionDetailsOneOf6Variant"
           }
         },
         "x-client-original-discriminator": {
@@ -145728,18 +145686,18 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "ForceReboot": "#/components/schemas/ScheduleTerminalActionsResponseActionDetailsScheduleTerminalActionsResponseActionDetailsOneOf1",
-            "InstallAndroidApp": "#/components/schemas/ScheduleTerminalActionsResponseActionDetailsScheduleTerminalActionsResponseActionDetailsOneOf2",
-            "InstallAndroidCertificate": "#/components/schemas/ScheduleTerminalActionsResponseActionDetailsScheduleTerminalActionsResponseActionDetailsOneOf3",
-            "ReleaseUpdate": "#/components/schemas/ScheduleTerminalActionsResponseActionDetailsScheduleTerminalActionsResponseActionDetailsOneOf4",
-            "UninstallAndroidApp": "#/components/schemas/ScheduleTerminalActionsResponseActionDetailsScheduleTerminalActionsResponseActionDetailsOneOf5",
-            "UninstallAndroidCertificate": "#/components/schemas/ScheduleTerminalActionsResponseActionDetailsScheduleTerminalActionsResponseActionDetailsOneOf6",
-            "ScheduleTerminalActionsResponseActionDetailsScheduleTerminalActionsResponseActionDetailsOneOf1": "#/components/schemas/ScheduleTerminalActionsResponseActionDetailsScheduleTerminalActionsResponseActionDetailsOneOf1",
-            "ScheduleTerminalActionsResponseActionDetailsScheduleTerminalActionsResponseActionDetailsOneOf2": "#/components/schemas/ScheduleTerminalActionsResponseActionDetailsScheduleTerminalActionsResponseActionDetailsOneOf2",
-            "ScheduleTerminalActionsResponseActionDetailsScheduleTerminalActionsResponseActionDetailsOneOf3": "#/components/schemas/ScheduleTerminalActionsResponseActionDetailsScheduleTerminalActionsResponseActionDetailsOneOf3",
-            "ScheduleTerminalActionsResponseActionDetailsScheduleTerminalActionsResponseActionDetailsOneOf4": "#/components/schemas/ScheduleTerminalActionsResponseActionDetailsScheduleTerminalActionsResponseActionDetailsOneOf4",
-            "ScheduleTerminalActionsResponseActionDetailsScheduleTerminalActionsResponseActionDetailsOneOf5": "#/components/schemas/ScheduleTerminalActionsResponseActionDetailsScheduleTerminalActionsResponseActionDetailsOneOf5",
-            "ScheduleTerminalActionsResponseActionDetailsScheduleTerminalActionsResponseActionDetailsOneOf6": "#/components/schemas/ScheduleTerminalActionsResponseActionDetailsScheduleTerminalActionsResponseActionDetailsOneOf6"
+            "ForceReboot": "#/components/schemas/ScheduleTerminalActionsResponseActionDetailsOneOf1Variant",
+            "InstallAndroidApp": "#/components/schemas/ScheduleTerminalActionsResponseActionDetailsOneOf2Variant",
+            "InstallAndroidCertificate": "#/components/schemas/ScheduleTerminalActionsResponseActionDetailsOneOf3Variant",
+            "ReleaseUpdate": "#/components/schemas/ScheduleTerminalActionsResponseActionDetailsOneOf4Variant",
+            "UninstallAndroidApp": "#/components/schemas/ScheduleTerminalActionsResponseActionDetailsOneOf5Variant",
+            "UninstallAndroidCertificate": "#/components/schemas/ScheduleTerminalActionsResponseActionDetailsOneOf6Variant",
+            "ScheduleTerminalActionsResponseActionDetailsOneOf1Variant": "#/components/schemas/ScheduleTerminalActionsResponseActionDetailsOneOf1Variant",
+            "ScheduleTerminalActionsResponseActionDetailsOneOf2Variant": "#/components/schemas/ScheduleTerminalActionsResponseActionDetailsOneOf2Variant",
+            "ScheduleTerminalActionsResponseActionDetailsOneOf3Variant": "#/components/schemas/ScheduleTerminalActionsResponseActionDetailsOneOf3Variant",
+            "ScheduleTerminalActionsResponseActionDetailsOneOf4Variant": "#/components/schemas/ScheduleTerminalActionsResponseActionDetailsOneOf4Variant",
+            "ScheduleTerminalActionsResponseActionDetailsOneOf5Variant": "#/components/schemas/ScheduleTerminalActionsResponseActionDetailsOneOf5Variant",
+            "ScheduleTerminalActionsResponseActionDetailsOneOf6Variant": "#/components/schemas/ScheduleTerminalActionsResponseActionDetailsOneOf6Variant"
           }
         },
         "x-client-original-discriminator": {
@@ -153880,7 +153838,7 @@
           ]
         }
       },
-      "ScheduleTerminalActionsRequestActionDetailsScheduleTerminalActionsRequestActionDetailsOneOf1": {
+      "ScheduleTerminalActionsRequestActionDetailsOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ScheduleTerminalActionsRequestActionDetails"
@@ -153905,7 +153863,7 @@
           }
         ]
       },
-      "ScheduleTerminalActionsRequestActionDetailsScheduleTerminalActionsRequestActionDetailsOneOf2": {
+      "ScheduleTerminalActionsRequestActionDetailsOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ScheduleTerminalActionsRequestActionDetails"
@@ -153934,7 +153892,7 @@
           }
         ]
       },
-      "ScheduleTerminalActionsRequestActionDetailsScheduleTerminalActionsRequestActionDetailsOneOf3": {
+      "ScheduleTerminalActionsRequestActionDetailsOneOf3Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ScheduleTerminalActionsRequestActionDetails"
@@ -153963,7 +153921,7 @@
           }
         ]
       },
-      "ScheduleTerminalActionsRequestActionDetailsScheduleTerminalActionsRequestActionDetailsOneOf4": {
+      "ScheduleTerminalActionsRequestActionDetailsOneOf4Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ScheduleTerminalActionsRequestActionDetails"
@@ -153992,7 +153950,7 @@
           }
         ]
       },
-      "ScheduleTerminalActionsRequestActionDetailsScheduleTerminalActionsRequestActionDetailsOneOf5": {
+      "ScheduleTerminalActionsRequestActionDetailsOneOf5Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ScheduleTerminalActionsRequestActionDetails"
@@ -154021,7 +153979,7 @@
           }
         ]
       },
-      "ScheduleTerminalActionsRequestActionDetailsScheduleTerminalActionsRequestActionDetailsOneOf6": {
+      "ScheduleTerminalActionsRequestActionDetailsOneOf6Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ScheduleTerminalActionsRequestActionDetails"
@@ -154050,7 +154008,7 @@
           }
         ]
       },
-      "ScheduleTerminalActionsResponseActionDetailsScheduleTerminalActionsResponseActionDetailsOneOf1": {
+      "ScheduleTerminalActionsResponseActionDetailsOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ScheduleTerminalActionsResponseActionDetails"
@@ -154075,7 +154033,7 @@
           }
         ]
       },
-      "ScheduleTerminalActionsResponseActionDetailsScheduleTerminalActionsResponseActionDetailsOneOf2": {
+      "ScheduleTerminalActionsResponseActionDetailsOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ScheduleTerminalActionsResponseActionDetails"
@@ -154104,7 +154062,7 @@
           }
         ]
       },
-      "ScheduleTerminalActionsResponseActionDetailsScheduleTerminalActionsResponseActionDetailsOneOf3": {
+      "ScheduleTerminalActionsResponseActionDetailsOneOf3Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ScheduleTerminalActionsResponseActionDetails"
@@ -154133,7 +154091,7 @@
           }
         ]
       },
-      "ScheduleTerminalActionsResponseActionDetailsScheduleTerminalActionsResponseActionDetailsOneOf4": {
+      "ScheduleTerminalActionsResponseActionDetailsOneOf4Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ScheduleTerminalActionsResponseActionDetails"
@@ -154162,7 +154120,7 @@
           }
         ]
       },
-      "ScheduleTerminalActionsResponseActionDetailsScheduleTerminalActionsResponseActionDetailsOneOf5": {
+      "ScheduleTerminalActionsResponseActionDetailsOneOf5Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ScheduleTerminalActionsResponseActionDetails"
@@ -154191,7 +154149,7 @@
           }
         ]
       },
-      "ScheduleTerminalActionsResponseActionDetailsScheduleTerminalActionsResponseActionDetailsOneOf6": {
+      "ScheduleTerminalActionsResponseActionDetailsOneOf6Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ScheduleTerminalActionsResponseActionDetails"
@@ -175237,7 +175195,7 @@
                 "$ref": "#/components/schemas/TrackFormat"
               }
             ],
-            "description": "Card track format.\nPossible values:\n* **AAMVA**\n* **ISO**",
+            "description": "Card track format.\nPossible values:\n* **AAMVA**\n* **CMC-7**\n* **E-13B**\n* **ISO**\n* **JIS-I**\n* **JIS-II**",
             "x-nexo-default": "ISO"
           },
           "TrackValue": {
@@ -175256,21 +175214,24 @@
           "PAN": {
             "maximum": 28,
             "minimum": 8,
-            "type": "integer",
+            "pattern": "^[0-9]*$",
+            "type": "string",
             "description": "Primary Account Number.",
             "x-nexo-kind": "digitstring"
           },
           "CardSeqNumb": {
             "maximum": 3,
             "minimum": 2,
-            "type": "integer",
+            "pattern": "^[0-9]*$",
+            "type": "string",
             "description": "Card Sequence Number.\nIf EntryMode is File, Keyed, or Manual.",
             "x-nexo-kind": "digitstring"
           },
           "ExpiryDate": {
             "maximum": 4,
             "minimum": 4,
-            "type": "integer",
+            "pattern": "^[0-9]*$",
+            "type": "string",
             "description": "Date after which the card cannot be used.\nIf EntryMode is File.",
             "x-nexo-kind": "digitstring"
           },
@@ -175341,13 +175302,15 @@
           "CardCountryCode": {
             "maximum": 3,
             "minimum": 3,
-            "type": "integer",
+            "pattern": "^[0-9]*$",
+            "type": "string",
             "description": "Country Code attached to the card (3 numerics).\nIf available in the card.",
             "x-nexo-kind": "digitstring"
           },
           "ProtectedCardData": {
             "type": "string",
             "description": "Sensitive information related to the payment card, protected by CMS.\nSensitiveCardData protected by CMS EnvelopedData.",
+            "format": "byte",
             "x-nexo-kind": "contentinformation"
           },
           "SensitiveCardData": {
@@ -175414,9 +175377,10 @@
             "description": "Identification of the Cashier or Operator."
           },
           "OperatorLanguage": {
-            "pattern": "^[a-z]{2,2}$",
+            "pattern": "^[A-Za-z]{2,2}$",
             "type": "string",
-            "description": "Language of the Cashier or Operator.\nIf different from the Login."
+            "description": "Language of the Cashier or Operator.\nIf different from the Login.",
+            "x-nexo-kind": "isolanguage2a"
           },
           "ShiftNumber": {
             "pattern": "^.+$",
@@ -175491,7 +175455,8 @@
             "$ref": "#/components/schemas/TransactionIdType"
           },
           "POIReconciliationID": {
-            "type": "integer",
+            "pattern": "^[0-9]*$",
+            "type": "string",
             "description": "Identification of the reconciliation period between Sale and POI.\nIf Result is Success.",
             "x-nexo-kind": "digitstring"
           }
@@ -175734,9 +175699,10 @@
             "description": "Identification of a predefined message to display or print."
           },
           "Language": {
-            "pattern": "^[a-z]{2,2}$",
+            "pattern": "^[A-Za-z]{2,2}$",
             "type": "string",
-            "description": "Identification of a language."
+            "description": "Identification of a language.",
+            "x-nexo-kind": "isolanguage2a"
           }
         },
         "description": "Reference of a predefined message to display or print.\nIt conveys information related to the predefined message."
@@ -176021,17 +175987,20 @@
         "type": "object",
         "properties": {
           "MSISDN": {
-            "type": "integer",
+            "pattern": "^[0-9]*$",
+            "type": "string",
             "description": "Mobile Subscriber Integrated Service Digital Network (i.e. mobile phone number of the SIM card). Country, National Destination Code, and Subscriber Number.",
             "x-nexo-kind": "digitstring"
           },
           "IMSI": {
-            "type": "integer",
+            "pattern": "^[0-9]*$",
+            "type": "string",
             "description": "International Mobile Subscriber Identity. Unique number associated with the mobile phone user, containing the Mobile Country Code (MCC), the Mobile Network Code (MNC), and the Mobile Identification Number (MSIN)",
             "x-nexo-kind": "digitstring"
           },
           "IMEI": {
-            "type": "integer",
+            "pattern": "^[0-9]*$",
+            "type": "string",
             "description": "International Mobile Equipment Identity. Unique number associated with the mobile phone device.",
             "x-nexo-kind": "digitstring"
           }
@@ -176098,19 +176067,22 @@
           "MobileCountryCode": {
             "maximum": 3,
             "minimum": 3,
-            "type": "integer",
+            "pattern": "^[0-9]*$",
+            "type": "string",
             "description": "Identifies the country of a mobile phone operator.\nIf data available.",
             "x-nexo-kind": "digitstring"
           },
           "MobileNetworkCode": {
             "maximum": 3,
             "minimum": 2,
-            "type": "integer",
+            "pattern": "^[0-9]*$",
+            "type": "string",
             "description": "Identifies the mobile phone operator inside a country.\nIf data available.",
             "x-nexo-kind": "digitstring"
           },
           "MaskedMSISDN": {
-            "type": "integer",
+            "pattern": "^[0-9]*$",
+            "type": "string",
             "description": "Masked Mobile Subscriber Integrated Service Digital Network.\nIf data available.",
             "x-nexo-kind": "digitstring"
           },
@@ -176125,6 +176097,7 @@
           "ProtectedMobileData": {
             "type": "string",
             "description": "Sensitive information related to the mobile phone, protected by CMS.\nSensitiveMobileData.",
+            "format": "byte",
             "x-nexo-kind": "contentinformation"
           },
           "SensitiveMobileData": {
@@ -176187,6 +176160,7 @@
             "minimum": 0.0,
             "type": "number",
             "description": "Sum of a collection of amounts. Total amount of the payment instalments.",
+            "format": "double",
             "x-nexo-kind": "simpleamount"
           },
           "FirstAmount": {
@@ -176194,6 +176168,7 @@
             "minimum": 0.0,
             "type": "number",
             "description": "First amount of the payment instalments.",
+            "format": "double",
             "x-nexo-kind": "simpleamount"
           },
           "Charges": {
@@ -176201,6 +176176,7 @@
             "minimum": 0.0,
             "type": "number",
             "description": "Charges related to a transaction. Charge related to the payment instalments.",
+            "format": "double",
             "x-nexo-kind": "simpleamount"
           }
         }
@@ -176235,7 +176211,8 @@
           "ExpiryDate": {
             "maximum": 4,
             "minimum": 4,
-            "type": "integer",
+            "pattern": "^[0-9]*$",
+            "type": "string",
             "description": "Date after which the card cannot be used. If EMV expiry date is present, it overrides Track2 information. Format is MMYY.",
             "x-nexo-kind": "digitstring"
           },
@@ -176278,6 +176255,7 @@
           "ProtectedCardData": {
             "type": "string",
             "description": "Sensitive information related to the payment card, protected by CMS.\nSensitiveCardData protected by CMS EnvelopedData.",
+            "format": "byte",
             "x-nexo-kind": "contentinformation"
           },
           "CardData": {
@@ -176337,7 +176315,8 @@
             "description": "Code assigned to a transaction approval by the Acquirer.\nIf referral."
           },
           "AcquirerID": {
-            "type": "integer",
+            "pattern": "^[0-9]*$",
+            "type": "string",
             "description": "Identification of the Acquirer.\nRestrict to the Acquirer if present.",
             "x-nexo-kind": "digitstring"
           },
@@ -176346,6 +176325,7 @@
             "minimum": 0.0,
             "type": "number",
             "description": "Value of an amount.",
+            "format": "double",
             "x-nexo-kind": "simpleamount"
           },
           "HostTransactionID": {
@@ -176369,7 +176349,8 @@
           "AcquirerID": {
             "type": "array",
             "items": {
-              "type": "integer",
+              "pattern": "^[0-9]*$",
+              "type": "string",
               "description": "Identification of the Acquirer.\nRestrict to these Acquirer if present.",
               "x-nexo-kind": "digitstring"
             },
@@ -176398,9 +176379,10 @@
             "x-nexo-default": "Forbidden"
           },
           "CustomerLanguage": {
-            "pattern": "^[a-z]{2,2}$",
+            "pattern": "^[A-Za-z]{2,2}$",
             "type": "string",
-            "description": "The language used on the terminal screen or in text printed by the terminal.\nTypical use case is setting the language on unattended terminals. Format: two-character [ISO 639:2023](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) format."
+            "description": "The language used on the terminal screen or in text printed by the terminal.\nTypical use case is setting the language on unattended terminals. Format: two-character [ISO 639:2023](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) format.",
+            "x-nexo-kind": "isolanguage2a"
           },
           "ForceOnlineFlag": {
             "type": "boolean",
@@ -176484,6 +176466,7 @@
             "minimum": 0.0,
             "type": "number",
             "description": "Amount requested by the Sale for the payment.",
+            "format": "double",
             "x-nexo-kind": "simpleamount"
           },
           "CashBackAmount": {
@@ -176491,6 +176474,7 @@
             "minimum": 0.0,
             "type": "number",
             "description": "The cash-back part of the amount requested by the Sale for the payment.",
+            "format": "double",
             "x-nexo-kind": "simpleamount"
           },
           "TipAmount": {
@@ -176498,6 +176482,7 @@
             "minimum": 0.0,
             "type": "number",
             "description": "Amount paid for a tip. Allow the printing of the tip on the receipt, and to qualify the tip part of the amount.",
+            "format": "double",
             "x-nexo-kind": "simpleamount"
           },
           "PaidAmount": {
@@ -176505,6 +176490,7 @@
             "minimum": 0.0,
             "type": "number",
             "description": "Amount already paid in case of split payment. Depending on the context, a split payment is either a split amount, or a split basket (required by some payment means as fleet cards). The PaidAmount is present when the split payment is a split\n     of the amount. Split of the basket involves two Sale Transactions, and does not have to be recognised by\n     the POI.",
+            "format": "double",
             "x-nexo-kind": "simpleamount"
           },
           "MinimumAmountToDeliver": {
@@ -176512,6 +176498,7 @@
             "minimum": 0.0,
             "type": "number",
             "description": "Minimum amount the Sale System is allowed to deliver for this payment. For the OneTimeReservation, when the maximum amount is unknown, the Sale System indicates the minimum amount it allows.",
+            "format": "double",
             "x-nexo-kind": "simpleamount"
           },
           "MaximumCashBackAmount": {
@@ -176519,6 +176506,7 @@
             "minimum": 0.0,
             "type": "number",
             "description": "Maximum amount which could be requested for cash-back to the Sale System. Allows the Cashier\n   to limit the amount value of cash-back to deliver to the Customer.",
+            "format": "double",
             "x-nexo-kind": "simpleamount"
           },
           "MinimumSplitAmount": {
@@ -176526,6 +176514,7 @@
             "minimum": 0.0,
             "type": "number",
             "description": "Minimum amount of a split, which could be requested by a Customer.Allows the Merchant to limit the number of split requested by the Customer.",
+            "format": "double",
             "x-nexo-kind": "simpleamount"
           }
         },
@@ -176570,6 +176559,7 @@
             "minimum": 0.0,
             "type": "number",
             "description": "Value of an amount.",
+            "format": "double",
             "x-nexo-kind": "simpleamount"
           },
           "Currency": {
@@ -176602,11 +176592,13 @@
           "Rate": {
             "type": "number",
             "description": "Rate of currency conversion.",
+            "format": "double",
             "x-nexo-kind": "decimal"
           },
           "Markup": {
             "type": "number",
             "description": "Markup of a currency conversion amount as a percentage.",
+            "format": "double",
             "x-nexo-kind": "decimal"
           },
           "Commission": {
@@ -176614,6 +176606,7 @@
             "minimum": 0.0,
             "type": "number",
             "description": "Commission for a currency conversion.",
+            "format": "double",
             "x-nexo-kind": "simpleamount"
           },
           "Declaration": {
@@ -176632,18 +176625,20 @@
         "type": "object",
         "properties": {
           "X": {
+            "pattern": "^[0-9a-fA-F]*$",
             "type": "string",
             "description": "The hexadecimal value of the coordinates of a point on the abscissa.",
-            "x-nexo-kind": "hexstring",
             "x-nexo-min": 1,
-            "x-nexo-max": 4
+            "x-nexo-max": 4,
+            "x-nexo-kind": "hexstring"
           },
           "Y": {
+            "pattern": "^[0-9a-fA-F]*$",
             "type": "string",
             "description": "The hexadecimal value of the coordinates of a point on the ordinate.",
-            "x-nexo-kind": "hexstring",
             "x-nexo-min": 1,
-            "x-nexo-max": 4
+            "x-nexo-max": 4,
+            "x-nexo-kind": "hexstring"
           }
         }
       },
@@ -176706,6 +176701,7 @@
             "minimum": 0.0,
             "type": "number",
             "description": "Balance of an account.\nIf known (provided by the card or an external host).",
+            "format": "double",
             "x-nexo-kind": "simpleamount"
           },
           "LoyaltyAcquirerData": {
@@ -176762,7 +176758,8 @@
         "type": "object",
         "properties": {
           "AcquirerID": {
-            "type": "integer",
+            "pattern": "^[0-9]*$",
+            "type": "string",
             "description": "Identification of the Acquirer.\nIdentification of the Acquirer when the POI System is multi-acquirer.",
             "x-nexo-kind": "digitstring"
           },
@@ -176800,18 +176797,20 @@
         "type": "object",
         "properties": {
           "X": {
+            "pattern": "^[0-9a-fA-F]*$",
             "type": "string",
             "description": "Abscissa of a point coordinates. The hexadecimal value in text of the abscissa of the coordinates of a point. Leading zero can be removed (e.g. 3BC, 0, and 1287).",
-            "x-nexo-kind": "hexstring",
             "x-nexo-min": 1,
-            "x-nexo-max": 4
+            "x-nexo-max": 4,
+            "x-nexo-kind": "hexstring"
           },
           "Y": {
+            "pattern": "^[0-9a-fA-F]*$",
             "type": "string",
             "description": "Ordinate of a point coordinates. The hexadecimal value in text of the ordinate of the coordinates of a point. Leading zero can be removed (e.g. 3BC, 0, and 1287).",
-            "x-nexo-kind": "hexstring",
             "x-nexo-min": 1,
-            "x-nexo-max": 4
+            "x-nexo-max": 4,
+            "x-nexo-kind": "hexstring"
           }
         }
       },
@@ -176852,6 +176851,7 @@
             "minimum": 0.0,
             "type": "number",
             "description": "Amount requested by the Sale for the payment.",
+            "format": "double",
             "x-nexo-kind": "simpleamount"
           },
           "TotalRebatesAmount": {
@@ -176859,6 +176859,7 @@
             "minimum": 0.0,
             "type": "number",
             "description": "Sum of rebates in amount (total amount or line item amount) for all the loyalty programs.",
+            "format": "double",
             "x-nexo-kind": "simpleamount"
           },
           "TotalFeesAmount": {
@@ -176866,6 +176867,7 @@
             "minimum": 0.0,
             "type": "number",
             "description": "Total amount of financial fees.",
+            "format": "double",
             "x-nexo-kind": "simpleamount"
           },
           "CashBackAmount": {
@@ -176873,6 +176875,7 @@
             "minimum": 0.0,
             "type": "number",
             "description": "The cash-back part of the amount requested by the Sale for the payment.",
+            "format": "double",
             "x-nexo-kind": "simpleamount"
           },
           "TipAmount": {
@@ -176880,6 +176883,7 @@
             "minimum": 0.0,
             "type": "number",
             "description": "Amount paid for a tip. Allow the printing of the tip on the receipt, and to qualify the tip part of the amount.",
+            "format": "double",
             "x-nexo-kind": "simpleamount"
           }
         }
@@ -176943,12 +176947,14 @@
           "ProtectedSignature": {
             "type": "string",
             "description": "Numeric value of a handwritten signature. Contains the value of a handwritten signature, e.g. the signature of a cardholder on the merchant payment receipt. The format before encryption is the encoded data structure CapturedSignature. The data structure before encryption includes the start and end tags for an XML encoding, the identifier and length bytes for an ASN.1 encoding, and the complete member ProtectedSignature for a JSON encoding.",
+            "format": "byte",
             "x-nexo-kind": "contentinformation"
           },
           "CustomerLanguage": {
-            "pattern": "^[a-z]{2,2}$",
+            "pattern": "^[A-Za-z]{2,2}$",
             "type": "string",
-            "description": "The language of the customer that was used on the terminal screen or in text printed by the terminal. Format: two-character [ISO 639:2023](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) format."
+            "description": "The language of the customer that was used on the terminal screen or in text printed by the terminal. Format: two-character [ISO 639:2023](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) format.",
+            "x-nexo-kind": "isolanguage2a"
           },
           "OnlineFlag": {
             "type": "boolean",
@@ -177007,9 +177013,10 @@
             "description": "Type of Loyalty processing requested by the Sale System. An way to specify what the POI has to handle concerning the loyalty.\nPossible values:\n* **Allowed**\n* **Forbidden**\n* **Processed**\n* **Proposed**\n* **Required**"
           },
           "CustomerLanguage": {
-            "pattern": "^[a-z]{2,2}$",
+            "pattern": "^[A-Za-z]{2,2}$",
             "type": "string",
-            "description": "The language used on the terminal screen or in text printed by the terminal.\n  Typical use case is setting the language on unattended terminals. Format: two-character [ISO 639:2023](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) format."
+            "description": "The language used on the terminal screen or in text printed by the terminal.\n  Typical use case is setting the language on unattended terminals. Format: two-character [ISO 639:2023](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) format.",
+            "x-nexo-kind": "isolanguage2a"
           },
           "ForceEntryMode": {
             "type": "array",
@@ -177026,6 +177033,7 @@
             "minimum": 0.0,
             "type": "number",
             "description": "Amount of a transaction. In the Card Acquisition Request message, it allows the processing of a contactless card.",
+            "format": "double",
             "x-nexo-kind": "simpleamount"
           },
           "PaymentType": {
@@ -177070,12 +177078,14 @@
           "ProductCode": {
             "maximum": 20,
             "minimum": 1,
-            "type": "integer",
+            "pattern": "^[0-9]*$",
+            "type": "string",
             "description": "Product code of item purchased with the transaction.",
             "x-nexo-kind": "digitstring"
           },
           "EanUpc": {
-            "type": "integer",
+            "pattern": "^[0-9]*$",
+            "type": "string",
             "description": "Standard product code of item purchased with the transaction.",
             "x-nexo-kind": "digitstring"
           },
@@ -177084,6 +177094,7 @@
             "minimum": 0.0,
             "type": "number",
             "description": "Total amount of the item line.",
+            "format": "double",
             "x-nexo-kind": "simpleamount"
           },
           "Currency": {
@@ -177109,6 +177120,7 @@
             "minimum": 0.0,
             "type": "number",
             "description": "If relevant and known.",
+            "format": "double",
             "x-nexo-kind": "simpleamount"
           }
         }
@@ -177130,12 +177142,14 @@
           "ProductCode": {
             "maximum": 20,
             "minimum": 1,
-            "type": "integer",
+            "pattern": "^[0-9]*$",
+            "type": "string",
             "description": "Product code of item purchased with the transaction.\nCopy.",
             "x-nexo-kind": "digitstring"
           },
           "EanUpc": {
-            "type": "integer",
+            "pattern": "^[0-9]*$",
+            "type": "string",
             "description": "Standard product code of item purchased with the transaction.\nCopy.",
             "x-nexo-kind": "digitstring"
           },
@@ -177144,6 +177158,7 @@
             "minimum": 0.0,
             "type": "number",
             "description": "Total amount of the item line.",
+            "format": "double",
             "x-nexo-kind": "simpleamount"
           },
           "Currency": {
@@ -177192,6 +177207,7 @@
             "minimum": 0.0,
             "type": "number",
             "description": "Sum of amount of processed transaction during the period.",
+            "format": "double",
             "x-nexo-kind": "simpleamount"
           }
         },
@@ -177212,7 +177228,8 @@
             "description": "Type of payment instrument.\nPossible values:\n* **Card**\n* **Cash**\n* **Check**\n* **Mobile**\n* **StoredValue**"
           },
           "AcquirerID": {
-            "type": "integer",
+            "pattern": "^[0-9]*$",
+            "type": "string",
             "description": "Identification of the Acquirer.",
             "x-nexo-kind": "digitstring"
           },
@@ -177354,6 +177371,7 @@
             "minimum": 0.0,
             "type": "number",
             "description": "Balance of an account after processing of the transaction.",
+            "format": "double",
             "x-nexo-kind": "simpleamount"
           },
           "Currency": {
@@ -177553,7 +177571,8 @@
         "type": "object",
         "properties": {
           "AcquirerID": {
-            "type": "integer",
+            "pattern": "^[0-9]*$",
+            "type": "string",
             "description": "Identification of the Acquirer.",
             "x-nexo-kind": "digitstring"
           },
@@ -177737,7 +177756,8 @@
             "description": "Indicates te response of the user from the `GetConfirmation` input command."
           },
           "FunctionKey": {
-            "type": "integer",
+            "pattern": "^[0-9]*$",
+            "type": "string",
             "description": "The number of the function key which is typed by the Customer on the POI or the Cashier on the Sale Terminal.",
             "x-nexo-kind": "digitstring"
           },
@@ -177747,13 +177767,15 @@
             "x-nexo-kind": "unicode"
           },
           "DigitInput": {
-            "type": "integer",
+            "pattern": "^[0-9]*$",
+            "type": "string",
             "description": "The digits typed by the Customer on the POI or by the Cashier on the Sale Terminal.",
             "x-nexo-kind": "digitstring"
           },
           "Password": {
             "type": "string",
             "description": "The text password typed by the Customer on the POI or by the Cashier on the Sale Terminal.",
+            "format": "byte",
             "x-nexo-kind": "contentinformation"
           },
           "MenuEntryNumber": {
@@ -177883,9 +177905,10 @@
             "default": false
           },
           "OperatorLanguage": {
-            "pattern": "^[a-z]{2,2}$",
+            "pattern": "^[A-Za-z]{2,2}$",
             "type": "string",
-            "description": "Language of the Cashier or Operator.\nDefault value for Device type displays."
+            "description": "Language of the Cashier or Operator.\nDefault value for Device type displays.",
+            "x-nexo-kind": "isolanguage2a"
           },
           "OperatorID": {
             "pattern": "^.+$",
@@ -178098,6 +178121,7 @@
             "minimum": 0.0,
             "type": "number",
             "description": "Amount of the payment or loyalty to reverse.\nReversedAmount is implicitly equal to the AuthorizedAmount if absent.",
+            "format": "double",
             "x-nexo-kind": "simpleamount"
           },
           "ReversalReason": {
@@ -178129,14 +178153,16 @@
           "AcquirerID": {
             "type": "array",
             "items": {
-              "type": "integer",
+              "pattern": "^[0-9]*$",
+              "type": "string",
               "description": "Identification of the Acquirer.\nCould be present only if ReconciliationType is AcquirerReconciliation or AcquirerSynchronisation.",
               "x-nexo-kind": "digitstring"
             },
             "description": "Identification of the Acquirer.\nCould be present only if ReconciliationType is AcquirerReconciliation or AcquirerSynchronisation."
           },
           "POIReconciliationID": {
-            "type": "integer",
+            "pattern": "^[0-9]*$",
+            "type": "string",
             "description": "Identification of the reconciliation period between Sale and POI.\nAbsent if ReconciliationType is not PreviousReconciliation.",
             "x-nexo-kind": "digitstring"
           }
@@ -178266,7 +178292,8 @@
           "AcquirerID": {
             "type": "array",
             "items": {
-              "type": "integer",
+              "pattern": "^[0-9]*$",
+              "type": "string",
               "description": "Identification of the Acquirer.\nPresent if requesting the diagnosis of these hosts only.",
               "x-nexo-kind": "digitstring"
             },
@@ -178336,64 +178363,6 @@
         },
         "description": "Content of the Print Request message.\nIt conveys the complete data to print and how to process the print.",
         "x-nexo-kind": "request"
-      },
-      "CardReaderApduRequest": {
-        "required": [
-          "APDUClass",
-          "APDUInstruction",
-          "APDUPar1",
-          "APDUPar2"
-        ],
-        "type": "object",
-        "properties": {
-          "APDUClass": {
-            "pattern": "^.{1,1}$",
-            "type": "string",
-            "description": "Class field of the APDU command (CLA). APDU request for Card Reader device request. For specific card like synchronous card, a private value should be used in accordance to ISO 7816- 4 (private range D0-FE).",
-            "format": "byte",
-            "x-nexo-min": 1,
-            "x-nexo-max": 1
-          },
-          "APDUInstruction": {
-            "pattern": "^.{1,1}$",
-            "type": "string",
-            "description": "Instruction field of the APDU command (INS).",
-            "format": "byte",
-            "x-nexo-min": 1,
-            "x-nexo-max": 1
-          },
-          "APDUPar1": {
-            "pattern": "^.{1,1}$",
-            "type": "string",
-            "description": "Parameter 1 field of the APDU command (P1).",
-            "format": "byte",
-            "x-nexo-min": 1,
-            "x-nexo-max": 1
-          },
-          "APDUPar2": {
-            "pattern": "^.{1,1}$",
-            "type": "string",
-            "description": "Parameter 2 field of the APDU command(P2).",
-            "format": "byte",
-            "x-nexo-min": 1,
-            "x-nexo-max": 1
-          },
-          "APDUData": {
-            "pattern": "^.+$",
-            "type": "string",
-            "description": "Data field of the APDU command (Lc + Data).",
-            "format": "byte"
-          },
-          "APDUExpectedLength": {
-            "pattern": "^.{1,1}$",
-            "type": "string",
-            "description": "Expected length of the data field of the APDU response to the command (Le).",
-            "format": "byte",
-            "x-nexo-min": 1,
-            "x-nexo-max": 1
-          }
-        },
-        "description": "It contains the APDU request to send to the chip of the card, and a possible invitation message to display on the CashierInterface or the CustomerInterface.\nContent of the Card Reader APDU Request message."
       },
       "LoginResponse": {
         "required": [
@@ -178650,6 +178619,7 @@
             "minimum": 0.0,
             "type": "number",
             "description": "Amount of the payment or loyalty to reverse.\nCopy.",
+            "format": "double",
             "x-nexo-kind": "simpleamount"
           },
           "PaymentReceipt": {
@@ -178681,7 +178651,8 @@
             "description": "Type of Reconciliation requested by the Sale to the POI.\nPossible values:\n* **AcquirerReconciliation**\n* **AcquirerSynchronisation**\n* **PreviousReconciliation**\n* **SaleReconciliation**"
           },
           "POIReconciliationID": {
-            "type": "integer",
+            "pattern": "^[0-9]*$",
+            "type": "string",
             "description": "Identification of the reconciliation period between Sale and POI.\nAbsent if ReconciliationType is `AcquirerReconciliation`.",
             "x-nexo-kind": "digitstring"
           },
@@ -178707,7 +178678,8 @@
             "$ref": "#/components/schemas/ResponseValue"
           },
           "POIReconciliationID": {
-            "type": "integer",
+            "pattern": "^[0-9]*$",
+            "type": "string",
             "description": "Identification of the reconciliation period between Sale and POI.",
             "x-nexo-kind": "digitstring"
           },
@@ -183848,7 +183820,7 @@
             "numberAndBic": "#/components/schemas/TransferService_v4_BankAccountV3AccountIdentificationNumberAndBicAccountIdentification",
             "plLocal": "#/components/schemas/TransferService_v4_BankAccountV3AccountIdentificationPlLocalAccountIdentification",
             "seLocal": "#/components/schemas/TransferService_v4_BankAccountV3AccountIdentificationSeLocalAccountIdentification",
-            "sgLocal": "#/components/schemas/TransferService_v4_BankAccountV3AccountIdentificationBankAccountV3AccountIdentificationOneOf14",
+            "sgLocal": "#/components/schemas/TransferService_v4_BankAccountV3AccountIdentificationOneOf14Variant",
             "ukLocal": "#/components/schemas/TransferService_v4_BankAccountV3AccountIdentificationUkLocalAccountIdentification",
             "usLocal": "#/components/schemas/TransferService_v4_BankAccountV3AccountIdentificationUsLocalAccountIdentification",
             "BankAccountV3AccountIdentificationAuLocalAccountIdentification": "#/components/schemas/TransferService_v4_BankAccountV3AccountIdentificationAuLocalAccountIdentification",
@@ -183864,7 +183836,7 @@
             "BankAccountV3AccountIdentificationNumberAndBicAccountIdentification": "#/components/schemas/TransferService_v4_BankAccountV3AccountIdentificationNumberAndBicAccountIdentification",
             "BankAccountV3AccountIdentificationPlLocalAccountIdentification": "#/components/schemas/TransferService_v4_BankAccountV3AccountIdentificationPlLocalAccountIdentification",
             "BankAccountV3AccountIdentificationSeLocalAccountIdentification": "#/components/schemas/TransferService_v4_BankAccountV3AccountIdentificationSeLocalAccountIdentification",
-            "BankAccountV3AccountIdentificationBankAccountV3AccountIdentificationOneOf14": "#/components/schemas/TransferService_v4_BankAccountV3AccountIdentificationBankAccountV3AccountIdentificationOneOf14",
+            "BankAccountV3AccountIdentificationOneOf14Variant": "#/components/schemas/TransferService_v4_BankAccountV3AccountIdentificationOneOf14Variant",
             "BankAccountV3AccountIdentificationUkLocalAccountIdentification": "#/components/schemas/TransferService_v4_BankAccountV3AccountIdentificationUkLocalAccountIdentification",
             "BankAccountV3AccountIdentificationUsLocalAccountIdentification": "#/components/schemas/TransferService_v4_BankAccountV3AccountIdentificationUsLocalAccountIdentification"
           }
@@ -184000,14 +183972,14 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "bank": "#/components/schemas/TransferCategoryDataTransferCategoryDataOneOf1",
-            "internal": "#/components/schemas/TransferCategoryDataTransferCategoryDataOneOf2",
-            "issuedCard": "#/components/schemas/TransferCategoryDataTransferCategoryDataOneOf3",
-            "platformPayment": "#/components/schemas/TransferCategoryDataTransferCategoryDataOneOf4",
-            "TransferCategoryDataTransferCategoryDataOneOf1": "#/components/schemas/TransferCategoryDataTransferCategoryDataOneOf1",
-            "TransferCategoryDataTransferCategoryDataOneOf2": "#/components/schemas/TransferCategoryDataTransferCategoryDataOneOf2",
-            "TransferCategoryDataTransferCategoryDataOneOf3": "#/components/schemas/TransferCategoryDataTransferCategoryDataOneOf3",
-            "TransferCategoryDataTransferCategoryDataOneOf4": "#/components/schemas/TransferCategoryDataTransferCategoryDataOneOf4"
+            "bank": "#/components/schemas/TransferCategoryDataOneOf1Variant",
+            "internal": "#/components/schemas/TransferCategoryDataOneOf2Variant",
+            "issuedCard": "#/components/schemas/TransferCategoryDataOneOf3Variant",
+            "platformPayment": "#/components/schemas/TransferCategoryDataOneOf4Variant",
+            "TransferCategoryDataOneOf1Variant": "#/components/schemas/TransferCategoryDataOneOf1Variant",
+            "TransferCategoryDataOneOf2Variant": "#/components/schemas/TransferCategoryDataOneOf2Variant",
+            "TransferCategoryDataOneOf3Variant": "#/components/schemas/TransferCategoryDataOneOf3Variant",
+            "TransferCategoryDataOneOf4Variant": "#/components/schemas/TransferCategoryDataOneOf4Variant"
           }
         },
         "x-addedInVersion": "4",
@@ -184071,14 +184043,14 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "bank": "#/components/schemas/TransferService_v4_TransferDataCategoryDataTransferDataCategoryDataOneOf1",
-            "internal": "#/components/schemas/TransferService_v4_TransferDataCategoryDataTransferDataCategoryDataOneOf2",
-            "issuedCard": "#/components/schemas/TransferService_v4_TransferDataCategoryDataTransferDataCategoryDataOneOf3",
-            "platformPayment": "#/components/schemas/TransferService_v4_TransferDataCategoryDataTransferDataCategoryDataOneOf4",
-            "TransferDataCategoryDataTransferDataCategoryDataOneOf1": "#/components/schemas/TransferService_v4_TransferDataCategoryDataTransferDataCategoryDataOneOf1",
-            "TransferDataCategoryDataTransferDataCategoryDataOneOf2": "#/components/schemas/TransferService_v4_TransferDataCategoryDataTransferDataCategoryDataOneOf2",
-            "TransferDataCategoryDataTransferDataCategoryDataOneOf3": "#/components/schemas/TransferService_v4_TransferDataCategoryDataTransferDataCategoryDataOneOf3",
-            "TransferDataCategoryDataTransferDataCategoryDataOneOf4": "#/components/schemas/TransferService_v4_TransferDataCategoryDataTransferDataCategoryDataOneOf4"
+            "bank": "#/components/schemas/TransferService_v4_TransferDataCategoryDataOneOf1Variant",
+            "internal": "#/components/schemas/TransferService_v4_TransferDataCategoryDataOneOf2Variant",
+            "issuedCard": "#/components/schemas/TransferService_v4_TransferDataCategoryDataOneOf3Variant",
+            "platformPayment": "#/components/schemas/TransferService_v4_TransferDataCategoryDataOneOf4Variant",
+            "TransferDataCategoryDataOneOf1Variant": "#/components/schemas/TransferService_v4_TransferDataCategoryDataOneOf1Variant",
+            "TransferDataCategoryDataOneOf2Variant": "#/components/schemas/TransferService_v4_TransferDataCategoryDataOneOf2Variant",
+            "TransferDataCategoryDataOneOf3Variant": "#/components/schemas/TransferService_v4_TransferDataCategoryDataOneOf3Variant",
+            "TransferDataCategoryDataOneOf4Variant": "#/components/schemas/TransferService_v4_TransferDataCategoryDataOneOf4Variant"
           }
         },
         "x-addedInVersion": "4",
@@ -184381,14 +184353,14 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "bank": "#/components/schemas/TransferService_v4_TransferViewCategoryDataTransferViewCategoryDataOneOf1",
-            "internal": "#/components/schemas/TransferService_v4_TransferViewCategoryDataTransferViewCategoryDataOneOf2",
-            "issuedCard": "#/components/schemas/TransferService_v4_TransferViewCategoryDataTransferViewCategoryDataOneOf3",
-            "platformPayment": "#/components/schemas/TransferService_v4_TransferViewCategoryDataTransferViewCategoryDataOneOf4",
-            "TransferViewCategoryDataTransferViewCategoryDataOneOf1": "#/components/schemas/TransferService_v4_TransferViewCategoryDataTransferViewCategoryDataOneOf1",
-            "TransferViewCategoryDataTransferViewCategoryDataOneOf2": "#/components/schemas/TransferService_v4_TransferViewCategoryDataTransferViewCategoryDataOneOf2",
-            "TransferViewCategoryDataTransferViewCategoryDataOneOf3": "#/components/schemas/TransferService_v4_TransferViewCategoryDataTransferViewCategoryDataOneOf3",
-            "TransferViewCategoryDataTransferViewCategoryDataOneOf4": "#/components/schemas/TransferService_v4_TransferViewCategoryDataTransferViewCategoryDataOneOf4"
+            "bank": "#/components/schemas/TransferService_v4_TransferViewCategoryDataOneOf1Variant",
+            "internal": "#/components/schemas/TransferService_v4_TransferViewCategoryDataOneOf2Variant",
+            "issuedCard": "#/components/schemas/TransferService_v4_TransferViewCategoryDataOneOf3Variant",
+            "platformPayment": "#/components/schemas/TransferService_v4_TransferViewCategoryDataOneOf4Variant",
+            "TransferViewCategoryDataOneOf1Variant": "#/components/schemas/TransferService_v4_TransferViewCategoryDataOneOf1Variant",
+            "TransferViewCategoryDataOneOf2Variant": "#/components/schemas/TransferService_v4_TransferViewCategoryDataOneOf2Variant",
+            "TransferViewCategoryDataOneOf3Variant": "#/components/schemas/TransferService_v4_TransferViewCategoryDataOneOf3Variant",
+            "TransferViewCategoryDataOneOf4Variant": "#/components/schemas/TransferService_v4_TransferViewCategoryDataOneOf4Variant"
           }
         },
         "x-addedInVersion": "4",
@@ -189635,7 +189607,7 @@
           }
         ]
       },
-      "TransferService_v4_BankAccountV3AccountIdentificationBankAccountV3AccountIdentificationOneOf14": {
+      "TransferService_v4_BankAccountV3AccountIdentificationOneOf14Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/TransferService_v4_BankAccountV3AccountIdentification"
@@ -189757,7 +189729,7 @@
           }
         ]
       },
-      "TransferCategoryDataTransferCategoryDataOneOf1": {
+      "TransferCategoryDataOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/TransferCategoryData"
@@ -189795,7 +189767,7 @@
           }
         ]
       },
-      "TransferCategoryDataTransferCategoryDataOneOf2": {
+      "TransferCategoryDataOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/TransferCategoryData"
@@ -189840,7 +189812,7 @@
           }
         ]
       },
-      "TransferCategoryDataTransferCategoryDataOneOf3": {
+      "TransferCategoryDataOneOf3Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/TransferCategoryData"
@@ -189925,7 +189897,7 @@
           }
         ]
       },
-      "TransferCategoryDataTransferCategoryDataOneOf4": {
+      "TransferCategoryDataOneOf4Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/TransferCategoryData"
@@ -189983,7 +189955,7 @@
           }
         ]
       },
-      "TransferService_v4_TransferDataCategoryDataTransferDataCategoryDataOneOf1": {
+      "TransferService_v4_TransferDataCategoryDataOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/TransferService_v4_TransferDataCategoryData"
@@ -190021,7 +189993,7 @@
           }
         ]
       },
-      "TransferService_v4_TransferDataCategoryDataTransferDataCategoryDataOneOf2": {
+      "TransferService_v4_TransferDataCategoryDataOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/TransferService_v4_TransferDataCategoryData"
@@ -190066,7 +190038,7 @@
           }
         ]
       },
-      "TransferService_v4_TransferDataCategoryDataTransferDataCategoryDataOneOf3": {
+      "TransferService_v4_TransferDataCategoryDataOneOf3Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/TransferService_v4_TransferDataCategoryData"
@@ -190151,7 +190123,7 @@
           }
         ]
       },
-      "TransferService_v4_TransferDataCategoryDataTransferDataCategoryDataOneOf4": {
+      "TransferService_v4_TransferDataCategoryDataOneOf4Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/TransferService_v4_TransferDataCategoryData"
@@ -190435,7 +190407,7 @@
           }
         ]
       },
-      "TransferService_v4_TransferViewCategoryDataTransferViewCategoryDataOneOf1": {
+      "TransferService_v4_TransferViewCategoryDataOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/TransferService_v4_TransferViewCategoryData"
@@ -190473,7 +190445,7 @@
           }
         ]
       },
-      "TransferService_v4_TransferViewCategoryDataTransferViewCategoryDataOneOf2": {
+      "TransferService_v4_TransferViewCategoryDataOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/TransferService_v4_TransferViewCategoryData"
@@ -190518,7 +190490,7 @@
           }
         ]
       },
-      "TransferService_v4_TransferViewCategoryDataTransferViewCategoryDataOneOf3": {
+      "TransferService_v4_TransferViewCategoryDataOneOf3Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/TransferService_v4_TransferViewCategoryData"
@@ -190603,7 +190575,7 @@
           }
         ]
       },
-      "TransferService_v4_TransferViewCategoryDataTransferViewCategoryDataOneOf4": {
+      "TransferService_v4_TransferViewCategoryDataOneOf4Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/TransferService_v4_TransferViewCategoryData"
@@ -239883,13 +239855,6 @@
           }
         ],
         "x-client-unused-schemas": {
-          "SaleCapabilities": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SaleCapabilitiesItem"
-            },
-            "description": "place holder!\nPossible values:\n* **CashierDisplay**\n* **CashierError**\n* **CashierInput**\n* **CashierStatus**\n* **CustomerAssistance**\n* **CustomerDisplay**\n* **CustomerError**\n* **CustomerInput**\n* **EMVContactless**\n* **ICC**\n* **MagStripe**\n* **POIReplication**\n* **PrinterDocument**\n* **PrinterReceipt**\n* **PrinterVoucher**"
-          },
           "CustomerOrderReq": {
             "type": "array",
             "items": {
@@ -239953,82 +239918,6 @@
             ],
             "type": "string",
             "description": "Event the POI notifies to the Sale System.\nPossible values:\n* **BeginMaintenance**\n* **EndMaintenance**\n* **Shutdown**\n* **Initialised**\n* **OutOfOrder**\n* **Completed**\n* **Abort**\n* **SaleWakeUp**\n* **SaleAdmin**\n* **CustomerLanguage**\n* **KeyPressed**\n* **SecurityAlarm**\n* **StopAssistance**\n* **CardInserted**\n* **CardRemoved**\n* **Reject**\n* **UseAnotherCardForPreauth**\n* **ScanBarcodeResult**"
-          },
-          "SoundFormat": {
-            "enum": [
-              "SoundRef",
-              "MessageRef",
-              "Text"
-            ],
-            "type": "string",
-            "description": "\nPossible values:\n* **SoundRef**\n* **MessageRef**\n* **Text**"
-          },
-          "SoundAction": {
-            "enum": [
-              "StartSound",
-              "StopSound",
-              "SetDefaultVolume"
-            ],
-            "type": "string",
-            "description": "\nPossible values:\n* **StartSound**\n* **StopSound**\n* **SetDefaultVolume**"
-          },
-          "PinFormat": {
-            "enum": [
-              "ISO0",
-              "ISO1",
-              "ISO2",
-              "ISO3"
-            ],
-            "type": "string",
-            "x-ms-enum": {
-              "name": "PinFormat",
-              "modelAsString": false,
-              "values": [
-                {
-                  "value": "ISO0",
-                  "name": "Iso0"
-                },
-                {
-                  "value": "ISO1",
-                  "name": "Iso1"
-                },
-                {
-                  "value": "ISO2",
-                  "name": "Iso2"
-                },
-                {
-                  "value": "ISO3",
-                  "name": "Iso3"
-                }
-              ]
-            }
-          },
-          "PinRequestType": {
-            "enum": [
-              "PINVerify",
-              "PINVerifyOnly",
-              "PINEnter"
-            ],
-            "type": "string",
-            "description": "Type of PIN Service.\nPossible values:\n* **PINVerify**\n* **PINVerifyOnly**\n* **PINEnter**",
-            "x-ms-enum": {
-              "name": "PinRequestType",
-              "modelAsString": false,
-              "values": [
-                {
-                  "value": "PINVerify",
-                  "name": "PinVerify"
-                },
-                {
-                  "value": "PINVerifyOnly",
-                  "name": "PinVerifyOnly"
-                },
-                {
-                  "value": "PINEnter",
-                  "name": "PinEnter"
-                }
-              ]
-            }
           },
           "TerminalApiRequest": {
             "required": [
@@ -240230,102 +240119,6 @@
             },
             "description": "The SaleToPOIResponse message pair is a container for the response message content. It contains a MessageHeader and a message body."
           },
-          "PerformedTransaction": {
-            "required": [
-              "Response"
-            ],
-            "type": "object",
-            "properties": {
-              "Response": {
-                "$ref": "#/components/schemas/ResponseValue"
-              },
-              "SaleData": {
-                "description": "Data associated with the Sale System, with a particular value during the processing of the payment by the POI, including the cards acquisition.",
-                "$ref": "#/components/schemas/SaleData"
-              },
-              "POIData": {
-                "$ref": "#/components/schemas/PoiData"
-              },
-              "PaymentResult": {
-                "$ref": "#/components/schemas/PaymentResult"
-              },
-              "LoyaltyResult": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/LoyaltyResult"
-                }
-              },
-              "ReversedAmount": {
-                "maximum": 99999999.999999,
-                "minimum": 0.0,
-                "type": "number",
-                "x-nexo-kind": "simpleamount"
-              }
-            }
-          },
-          "SoundContent": {
-            "required": [
-              "SoundFormat"
-            ],
-            "type": "object",
-            "properties": {
-              "SoundFormat": {
-                "description": "Possible values:\n* **MessageRef**\n* **SoundRef**\n* **Text**",
-                "$ref": "#/components/schemas/SoundFormat"
-              },
-              "Language": {
-                "pattern": "^[a-z]{2,2}$",
-                "type": "string"
-              },
-              "ReferenceID": {
-                "pattern": "^.+$",
-                "type": "string"
-              },
-              "Text": {
-                "pattern": "^.+$",
-                "type": "string"
-              }
-            }
-          },
-          "CardHolderPin": {
-            "required": [
-              "EncrPINBlock",
-              "PINFormat"
-            ],
-            "type": "object",
-            "properties": {
-              "EncrPINBlock": {
-                "type": "string",
-                "x-nexo-kind": "contentinformation"
-              },
-              "PINFormat": {
-                "$ref": "#/components/schemas/PinFormat"
-              },
-              "AdditionalInput": {
-                "pattern": "^.+$",
-                "type": "string"
-              }
-            }
-          },
-          "IccResetData": {
-            "type": "object",
-            "properties": {
-              "ATRValue": {
-                "pattern": "^.{1,100}$",
-                "type": "string",
-                "format": "byte",
-                "x-nexo-min": 1,
-                "x-nexo-max": 100
-              },
-              "CardStatusWords": {
-                "pattern": "^.{2,2}$",
-                "type": "string",
-                "format": "byte",
-                "x-nexo-min": 2,
-                "x-nexo-max": 2
-              }
-            }
-          },
           "SecurityTrailer": {
             "required": [
               "AdyenCryptoVersion",
@@ -240446,6 +240239,64 @@
             },
             "description": "Definition: Content of the Input Update message. : It conveys\nupdate of the display of an Input request in progress."
           },
+          "CardReaderApduRequest": {
+            "required": [
+              "APDUClass",
+              "APDUInstruction",
+              "APDUPar1",
+              "APDUPar2"
+            ],
+            "type": "object",
+            "properties": {
+              "APDUClass": {
+                "pattern": "^.{1,1}$",
+                "type": "string",
+                "description": "Class field of the APDU command (CLA). APDU request for Card Reader device request. For specific card like synchronous card, a private value should be used in accordance to ISO 7816- 4 (private range D0-FE).",
+                "format": "byte",
+                "x-nexo-min": 1,
+                "x-nexo-max": 1
+              },
+              "APDUInstruction": {
+                "pattern": "^.{1,1}$",
+                "type": "string",
+                "description": "Instruction field of the APDU command (INS).",
+                "format": "byte",
+                "x-nexo-min": 1,
+                "x-nexo-max": 1
+              },
+              "APDUPar1": {
+                "pattern": "^.{1,1}$",
+                "type": "string",
+                "description": "Parameter 1 field of the APDU command (P1).",
+                "format": "byte",
+                "x-nexo-min": 1,
+                "x-nexo-max": 1
+              },
+              "APDUPar2": {
+                "pattern": "^.{1,1}$",
+                "type": "string",
+                "description": "Parameter 2 field of the APDU command(P2).",
+                "format": "byte",
+                "x-nexo-min": 1,
+                "x-nexo-max": 1
+              },
+              "APDUData": {
+                "pattern": "^.+$",
+                "type": "string",
+                "description": "Data field of the APDU command (Lc + Data).",
+                "format": "byte"
+              },
+              "APDUExpectedLength": {
+                "pattern": "^.{1,1}$",
+                "type": "string",
+                "description": "Expected length of the data field of the APDU response to the command (Le).",
+                "format": "byte",
+                "x-nexo-min": 1,
+                "x-nexo-max": 1
+              }
+            },
+            "description": "It contains the APDU request to send to the chip of the card, and a possible invitation message to display on the CashierInterface or the CustomerInterface.\nContent of the Card Reader APDU Request message."
+          },
           "AbortResponse": {
             "type": "object",
             "description": "A successful `AbortRequest` returns a response with a **200 OK** HTTP status code and no body.",
@@ -240454,44 +240305,6 @@
           "ExamplePayload": {
             "type": "object",
             "description": "Placeholder schema for path example refs"
-          },
-          "SaleCapabilitiesItem": {
-            "enum": [
-              "CashierStatus",
-              "CashierError",
-              "CashierDisplay",
-              "POIReplication",
-              "CashierInput",
-              "CustomerAssistance",
-              "CustomerDisplay",
-              "CustomerError",
-              "CustomerInput",
-              "PrinterReceipt",
-              "PrinterDocument",
-              "PrinterVoucher",
-              "MagStripe",
-              "ICC",
-              "EMVContactless"
-            ],
-            "type": "string",
-            "x-ms-enum": {
-              "name": "SaleCapabilitiesItem",
-              "modelAsString": false,
-              "values": [
-                {
-                  "value": "POIReplication",
-                  "name": "PoiReplication"
-                },
-                {
-                  "value": "ICC",
-                  "name": "Icc"
-                },
-                {
-                  "value": "EMVContactless",
-                  "name": "EmvContactless"
-                }
-              ]
-            }
           },
           "CustomerOrderReqItem": {
             "enum": [

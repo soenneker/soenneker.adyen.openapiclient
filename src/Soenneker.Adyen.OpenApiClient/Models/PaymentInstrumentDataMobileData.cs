@@ -45,23 +45,44 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         private global::Soenneker.Adyen.OpenApiClient.Models.MobileDataGeolocation _explicitNullValueGeolocation = default!;
 #endif
         /// <summary>Masked Mobile Subscriber Integrated Service Digital Network.If data available.</summary>
-        public int? MaskedMSISDN { get => _explicitNullValueMaskedMSISDN; set { _explicitNullValueMaskedMSISDN = value; AdditionalData?.Remove("MaskedMSISDN"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MaskedMSISDN"); else _explicitNullProperties?.Remove("MaskedMSISDN"); } }
-        private int? _explicitNullValueMaskedMSISDN = default!;
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MaskedMSISDN { get => _explicitNullValueMaskedMSISDN; set { _explicitNullValueMaskedMSISDN = value; AdditionalData?.Remove("MaskedMSISDN"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MaskedMSISDN"); else _explicitNullProperties?.Remove("MaskedMSISDN"); } }
+        private string? _explicitNullValueMaskedMSISDN = default!;
+#nullable restore
+#else
+        public string MaskedMSISDN { get => _explicitNullValueMaskedMSISDN; set { _explicitNullValueMaskedMSISDN = value; AdditionalData?.Remove("MaskedMSISDN"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MaskedMSISDN"); else _explicitNullProperties?.Remove("MaskedMSISDN"); } }
+        private string _explicitNullValueMaskedMSISDN = default!;
+#endif
         /// <summary>Identifies the country of a mobile phone operator.If data available.</summary>
-        public int? MobileCountryCode { get => _explicitNullValueMobileCountryCode; set { _explicitNullValueMobileCountryCode = value; AdditionalData?.Remove("MobileCountryCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MobileCountryCode"); else _explicitNullProperties?.Remove("MobileCountryCode"); } }
-        private int? _explicitNullValueMobileCountryCode = default!;
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MobileCountryCode { get => _explicitNullValueMobileCountryCode; set { _explicitNullValueMobileCountryCode = value; AdditionalData?.Remove("MobileCountryCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MobileCountryCode"); else _explicitNullProperties?.Remove("MobileCountryCode"); } }
+        private string? _explicitNullValueMobileCountryCode = default!;
+#nullable restore
+#else
+        public string MobileCountryCode { get => _explicitNullValueMobileCountryCode; set { _explicitNullValueMobileCountryCode = value; AdditionalData?.Remove("MobileCountryCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MobileCountryCode"); else _explicitNullProperties?.Remove("MobileCountryCode"); } }
+        private string _explicitNullValueMobileCountryCode = default!;
+#endif
         /// <summary>Identifies the mobile phone operator inside a country.If data available.</summary>
-        public int? MobileNetworkCode { get => _explicitNullValueMobileNetworkCode; set { _explicitNullValueMobileNetworkCode = value; AdditionalData?.Remove("MobileNetworkCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MobileNetworkCode"); else _explicitNullProperties?.Remove("MobileNetworkCode"); } }
-        private int? _explicitNullValueMobileNetworkCode = default!;
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MobileNetworkCode { get => _explicitNullValueMobileNetworkCode; set { _explicitNullValueMobileNetworkCode = value; AdditionalData?.Remove("MobileNetworkCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MobileNetworkCode"); else _explicitNullProperties?.Remove("MobileNetworkCode"); } }
+        private string? _explicitNullValueMobileNetworkCode = default!;
+#nullable restore
+#else
+        public string MobileNetworkCode { get => _explicitNullValueMobileNetworkCode; set { _explicitNullValueMobileNetworkCode = value; AdditionalData?.Remove("MobileNetworkCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MobileNetworkCode"); else _explicitNullProperties?.Remove("MobileNetworkCode"); } }
+        private string _explicitNullValueMobileNetworkCode = default!;
+#endif
         /// <summary>Sensitive information related to the mobile phone, protected by CMS.SensitiveMobileData.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProtectedMobileData { get => _explicitNullValueProtectedMobileData; set { _explicitNullValueProtectedMobileData = value; AdditionalData?.Remove("ProtectedMobileData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ProtectedMobileData"); else _explicitNullProperties?.Remove("ProtectedMobileData"); } }
-        private string? _explicitNullValueProtectedMobileData = default!;
+        public byte[]? ProtectedMobileData { get => _explicitNullValueProtectedMobileData; set { _explicitNullValueProtectedMobileData = value; AdditionalData?.Remove("ProtectedMobileData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ProtectedMobileData"); else _explicitNullProperties?.Remove("ProtectedMobileData"); } }
+        private byte[]? _explicitNullValueProtectedMobileData = default!;
 #nullable restore
 #else
-        public string ProtectedMobileData { get => _explicitNullValueProtectedMobileData; set { _explicitNullValueProtectedMobileData = value; AdditionalData?.Remove("ProtectedMobileData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ProtectedMobileData"); else _explicitNullProperties?.Remove("ProtectedMobileData"); } }
-        private string _explicitNullValueProtectedMobileData = default!;
+        public byte[] ProtectedMobileData { get => _explicitNullValueProtectedMobileData; set { _explicitNullValueProtectedMobileData = value; AdditionalData?.Remove("ProtectedMobileData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ProtectedMobileData"); else _explicitNullProperties?.Remove("ProtectedMobileData"); } }
+        private byte[] _explicitNullValueProtectedMobileData = default!;
 #endif
         /// <summary>Sensitive information related to the mobile phone.If unprotected mobile data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -99,10 +120,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "Geolocation", n => { Geolocation = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MobileDataGeolocation>(global::Soenneker.Adyen.OpenApiClient.Models.MobileDataGeolocation.CreateFromDiscriminatorValue); } },
-                { "MaskedMSISDN", n => { MaskedMSISDN = n.GetIntValue(); } },
-                { "MobileCountryCode", n => { MobileCountryCode = n.GetIntValue(); } },
-                { "MobileNetworkCode", n => { MobileNetworkCode = n.GetIntValue(); } },
-                { "ProtectedMobileData", n => { ProtectedMobileData = n.GetStringValue(); } },
+                { "MaskedMSISDN", n => { MaskedMSISDN = n.GetStringValue(); } },
+                { "MobileCountryCode", n => { MobileCountryCode = n.GetStringValue(); } },
+                { "MobileNetworkCode", n => { MobileNetworkCode = n.GetStringValue(); } },
+                { "ProtectedMobileData", n => { ProtectedMobileData = n.GetByteArrayValue(); } },
                 { "SensitiveMobileData", n => { SensitiveMobileData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MobileDataSensitiveMobileData>(global::Soenneker.Adyen.OpenApiClient.Models.MobileDataSensitiveMobileData.CreateFromDiscriminatorValue); } },
             };
         }
@@ -114,10 +135,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MobileDataGeolocation>("Geolocation", Geolocation);
-            writer.WriteIntValue("MaskedMSISDN", MaskedMSISDN);
-            writer.WriteIntValue("MobileCountryCode", MobileCountryCode);
-            writer.WriteIntValue("MobileNetworkCode", MobileNetworkCode);
-            writer.WriteStringValue("ProtectedMobileData", ProtectedMobileData);
+            writer.WriteStringValue("MaskedMSISDN", MaskedMSISDN);
+            writer.WriteStringValue("MobileCountryCode", MobileCountryCode);
+            writer.WriteStringValue("MobileNetworkCode", MobileNetworkCode);
+            writer.WriteByteArrayValue("ProtectedMobileData", ProtectedMobileData);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MobileDataSensitiveMobileData>("SensitiveMobileData", SensitiveMobileData);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
