@@ -29,12 +29,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Request-specific parameter values to populate the template placeholders. Each key must match a placeholder defined in the template referenced by `requestTemplateCode`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ThirdPartyTokenRedundancyInfoRequestParametersProperty2? RequestParameters { get => _explicitNullValueRequestParameters; set { _explicitNullValueRequestParameters = value; AdditionalData?.Remove("requestParameters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requestParameters"); else _explicitNullProperties?.Remove("requestParameters"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.ThirdPartyTokenRedundancyInfoRequestParametersProperty2? _explicitNullValueRequestParameters = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.ThirdPartyTokenRedundancyInfoRequestParameters? RequestParameters { get => _explicitNullValueRequestParameters; set { _explicitNullValueRequestParameters = value; AdditionalData?.Remove("requestParameters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requestParameters"); else _explicitNullProperties?.Remove("requestParameters"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ThirdPartyTokenRedundancyInfoRequestParameters? _explicitNullValueRequestParameters = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ThirdPartyTokenRedundancyInfoRequestParametersProperty2 RequestParameters { get => _explicitNullValueRequestParameters; set { _explicitNullValueRequestParameters = value; AdditionalData?.Remove("requestParameters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requestParameters"); else _explicitNullProperties?.Remove("requestParameters"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.ThirdPartyTokenRedundancyInfoRequestParametersProperty2 _explicitNullValueRequestParameters = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.ThirdPartyTokenRedundancyInfoRequestParameters RequestParameters { get => _explicitNullValueRequestParameters; set { _explicitNullValueRequestParameters = value; AdditionalData?.Remove("requestParameters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requestParameters"); else _explicitNullProperties?.Remove("requestParameters"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ThirdPartyTokenRedundancyInfoRequestParameters _explicitNullValueRequestParameters = default!;
 #endif
         /// <summary>Identifier for the third-party token request template configured in your Adyen account. This template defines the structure and endpoint for token requests.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,7 +71,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "requestParameters", n => { RequestParameters = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThirdPartyTokenRedundancyInfoRequestParametersProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.ThirdPartyTokenRedundancyInfoRequestParametersProperty2.CreateFromDiscriminatorValue); } },
+                { "requestParameters", n => { RequestParameters = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThirdPartyTokenRedundancyInfoRequestParameters>(global::Soenneker.Adyen.OpenApiClient.Models.ThirdPartyTokenRedundancyInfoRequestParameters.CreateFromDiscriminatorValue); } },
                 { "requestTemplateCode", n => { RequestTemplateCode = n.GetStringValue(); } },
             };
         }
@@ -82,7 +82,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThirdPartyTokenRedundancyInfoRequestParametersProperty2>("requestParameters", RequestParameters);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThirdPartyTokenRedundancyInfoRequestParameters>("requestParameters", RequestParameters);
             writer.WriteStringValue("requestTemplateCode", RequestTemplateCode);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

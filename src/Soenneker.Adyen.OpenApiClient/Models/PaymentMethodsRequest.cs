@@ -60,12 +60,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>This field contains additional data, which may be required for a particular payment request.The `additionalData` object consists of entries, each of which includes the key and value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodsRequestAdditionalDataProperty2? AdditionalDataProperty { get => _explicitNullValueAdditionalDataProperty; set { _explicitNullValueAdditionalDataProperty = value; AdditionalData?.Remove("additionalData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additionalData"); else _explicitNullProperties?.Remove("additionalData"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodsRequestAdditionalDataProperty2? _explicitNullValueAdditionalDataProperty = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodsRequestAdditionalData? AdditionalDataProperty { get => _explicitNullValueAdditionalDataProperty; set { _explicitNullValueAdditionalDataProperty = value; AdditionalData?.Remove("additionalData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additionalData"); else _explicitNullProperties?.Remove("additionalData"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodsRequestAdditionalData? _explicitNullValueAdditionalDataProperty = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodsRequestAdditionalDataProperty2 AdditionalDataProperty { get => _explicitNullValueAdditionalDataProperty; set { _explicitNullValueAdditionalDataProperty = value; AdditionalData?.Remove("additionalData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additionalData"); else _explicitNullProperties?.Remove("additionalData"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodsRequestAdditionalDataProperty2 _explicitNullValueAdditionalDataProperty = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodsRequestAdditionalData AdditionalDataProperty { get => _explicitNullValueAdditionalDataProperty; set { _explicitNullValueAdditionalDataProperty = value; AdditionalData?.Remove("additionalData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additionalData"); else _explicitNullProperties?.Remove("additionalData"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodsRequestAdditionalData _explicitNullValueAdditionalDataProperty = default!;
 #endif
         /// <summary>List of payment methods to be presented to the shopper. To refer to payment methods, use their [payment method type](https://docs.adyen.com/payment-methods/payment-method-types).Example: `&quot;allowedPaymentMethods&quot;:[&quot;ideal&quot;,&quot;applepay&quot;]`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -242,7 +242,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "additionalData", n => { AdditionalDataProperty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodsRequestAdditionalDataProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodsRequestAdditionalDataProperty2.CreateFromDiscriminatorValue); } },
+                { "additionalData", n => { AdditionalDataProperty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodsRequestAdditionalData>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodsRequestAdditionalData.CreateFromDiscriminatorValue); } },
                 { "allowedPaymentMethods", n => { AllowedPaymentMethods = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodsRequestAmount>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodsRequestAmount.CreateFromDiscriminatorValue); } },
                 { "blockedPaymentMethods", n => { BlockedPaymentMethods = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -269,7 +269,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodsRequestAdditionalDataProperty2>("additionalData", AdditionalDataProperty);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodsRequestAdditionalData>("additionalData", AdditionalDataProperty);
             writer.WriteCollectionOfPrimitiveValues<string>("allowedPaymentMethods", AllowedPaymentMethods);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodsRequestAmount>("amount", Amount);
             writer.WriteCollectionOfPrimitiveValues<string>("blockedPaymentMethods", BlockedPaymentMethods);

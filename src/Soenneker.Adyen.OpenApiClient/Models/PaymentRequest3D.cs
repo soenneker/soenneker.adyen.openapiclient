@@ -135,12 +135,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>This field contains additional data, which may be required for a particular payment request.The `additionalData` object consists of entries, each of which includes the key and value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DAdditionalDataProperty2? AdditionalDataProperty { get => _explicitNullValueAdditionalDataProperty; set { _explicitNullValueAdditionalDataProperty = value; AdditionalData?.Remove("additionalData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additionalData"); else _explicitNullProperties?.Remove("additionalData"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DAdditionalDataProperty2? _explicitNullValueAdditionalDataProperty = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DAdditionalData? AdditionalDataProperty { get => _explicitNullValueAdditionalDataProperty; set { _explicitNullValueAdditionalDataProperty = value; AdditionalData?.Remove("additionalData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additionalData"); else _explicitNullProperties?.Remove("additionalData"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DAdditionalData? _explicitNullValueAdditionalDataProperty = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DAdditionalDataProperty2 AdditionalDataProperty { get => _explicitNullValueAdditionalDataProperty; set { _explicitNullValueAdditionalDataProperty = value; AdditionalData?.Remove("additionalData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additionalData"); else _explicitNullProperties?.Remove("additionalData"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DAdditionalDataProperty2 _explicitNullValueAdditionalDataProperty = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DAdditionalData AdditionalDataProperty { get => _explicitNullValueAdditionalDataProperty; set { _explicitNullValueAdditionalDataProperty = value; AdditionalData?.Remove("additionalData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additionalData"); else _explicitNullProperties?.Remove("additionalData"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DAdditionalData _explicitNullValueAdditionalDataProperty = default!;
 #endif
         /// <summary>The amount information for the transaction (in [minor units](https://docs.adyen.com/development-resources/currency-codes)). For [BIN or card verification](https://docs.adyen.com/payment-methods/cards/bin-data-and-card-verification) requests, set amount to 0 (zero).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -237,12 +237,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The `localizedShopperStatement` field lets you use dynamic values for your shopper statement in a local character set. If this parameter is left empty, not provided, or not applicable (in case of cross-border transactions), then **shopperStatement** is used.Currently, `localizedShopperStatement` is only supported for payments with Visa, Mastercard, JCB, Diners, and Discover.**Supported characters**: Hiragana, Katakana, Kanji, and alphanumeric.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DLocalizedShopperStatementProperty2? LocalizedShopperStatement { get => _explicitNullValueLocalizedShopperStatement; set { _explicitNullValueLocalizedShopperStatement = value; AdditionalData?.Remove("localizedShopperStatement"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("localizedShopperStatement"); else _explicitNullProperties?.Remove("localizedShopperStatement"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DLocalizedShopperStatementProperty2? _explicitNullValueLocalizedShopperStatement = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DLocalizedShopperStatement? LocalizedShopperStatement { get => _explicitNullValueLocalizedShopperStatement; set { _explicitNullValueLocalizedShopperStatement = value; AdditionalData?.Remove("localizedShopperStatement"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("localizedShopperStatement"); else _explicitNullProperties?.Remove("localizedShopperStatement"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DLocalizedShopperStatement? _explicitNullValueLocalizedShopperStatement = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DLocalizedShopperStatementProperty2 LocalizedShopperStatement { get => _explicitNullValueLocalizedShopperStatement; set { _explicitNullValueLocalizedShopperStatement = value; AdditionalData?.Remove("localizedShopperStatement"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("localizedShopperStatement"); else _explicitNullProperties?.Remove("localizedShopperStatement"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DLocalizedShopperStatementProperty2 _explicitNullValueLocalizedShopperStatement = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DLocalizedShopperStatement LocalizedShopperStatement { get => _explicitNullValueLocalizedShopperStatement; set { _explicitNullValueLocalizedShopperStatement = value; AdditionalData?.Remove("localizedShopperStatement"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("localizedShopperStatement"); else _explicitNullProperties?.Remove("localizedShopperStatement"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DLocalizedShopperStatement _explicitNullValueLocalizedShopperStatement = default!;
 #endif
         /// <summary>The [merchant category code](https://en.wikipedia.org/wiki/Merchant_category_code) (MCC) is a four-digit number, which relates to a particular market segment. This code reflects the predominant activity that is conducted by the merchant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -297,12 +297,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Metadata consists of entries, each of which includes a key and a value.Limits:* Maximum 20 key-value pairs per request. When exceeding, the &quot;177&quot; error occurs: &quot;Metadata size exceeds limit&quot;.* Maximum 20 characters per key.* Maximum 80 characters per value. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DMetadataProperty2? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DMetadataProperty2? _explicitNullValueMetadata = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DMetadata? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DMetadata? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DMetadataProperty2 Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DMetadataProperty2 _explicitNullValueMetadata = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DMetadata Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DMetadata _explicitNullValueMetadata = default!;
 #endif
         /// <summary>When you are doing multiple partial (gift card) payments, this is the `pspReference` of the first payment. We use this to link the multiple payments to each other. As your own reference for linking multiple payments, use the `merchantOrderReference`instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -534,7 +534,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "accountInfo", n => { AccountInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DAccountInfo>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DAccountInfo.CreateFromDiscriminatorValue); } },
                 { "additionalAmount", n => { AdditionalAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DAdditionalAmount>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DAdditionalAmount.CreateFromDiscriminatorValue); } },
-                { "additionalData", n => { AdditionalDataProperty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DAdditionalDataProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DAdditionalDataProperty2.CreateFromDiscriminatorValue); } },
+                { "additionalData", n => { AdditionalDataProperty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DAdditionalData>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DAdditionalData.CreateFromDiscriminatorValue); } },
                 { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DAmount>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DAmount.CreateFromDiscriminatorValue); } },
                 { "applicationInfo", n => { ApplicationInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DApplicationInfo>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DApplicationInfo.CreateFromDiscriminatorValue); } },
                 { "billingAddress", n => { BillingAddress = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DBillingAddress>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DBillingAddress.CreateFromDiscriminatorValue); } },
@@ -547,13 +547,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "deviceFingerprint", n => { DeviceFingerprint = n.GetStringValue(); } },
                 { "fraudOffset", n => { FraudOffset = n.GetIntValue(); } },
                 { "installments", n => { Installments = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DInstallments>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DInstallments.CreateFromDiscriminatorValue); } },
-                { "localizedShopperStatement", n => { LocalizedShopperStatement = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DLocalizedShopperStatementProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DLocalizedShopperStatementProperty2.CreateFromDiscriminatorValue); } },
+                { "localizedShopperStatement", n => { LocalizedShopperStatement = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DLocalizedShopperStatement>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DLocalizedShopperStatement.CreateFromDiscriminatorValue); } },
                 { "mcc", n => { Mcc = n.GetStringValue(); } },
                 { "md", n => { Md = n.GetStringValue(); } },
                 { "merchantAccount", n => { MerchantAccount = n.GetStringValue(); } },
                 { "merchantOrderReference", n => { MerchantOrderReference = n.GetStringValue(); } },
                 { "merchantRiskIndicator", n => { MerchantRiskIndicator = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DMerchantRiskIndicator>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DMerchantRiskIndicator.CreateFromDiscriminatorValue); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DMetadataProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DMetadataProperty2.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DMetadata>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DMetadata.CreateFromDiscriminatorValue); } },
                 { "orderReference", n => { OrderReference = n.GetStringValue(); } },
                 { "paResponse", n => { PaResponse = n.GetStringValue(); } },
                 { "recurring", n => { Recurring = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DRecurring>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DRecurring.CreateFromDiscriminatorValue); } },
@@ -588,7 +588,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DAccountInfo>("accountInfo", AccountInfo);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DAdditionalAmount>("additionalAmount", AdditionalAmount);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DAdditionalDataProperty2>("additionalData", AdditionalDataProperty);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DAdditionalData>("additionalData", AdditionalDataProperty);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DAmount>("amount", Amount);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DApplicationInfo>("applicationInfo", ApplicationInfo);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DBillingAddress>("billingAddress", BillingAddress);
@@ -601,13 +601,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("deviceFingerprint", DeviceFingerprint);
             writer.WriteIntValue("fraudOffset", FraudOffset);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DInstallments>("installments", Installments);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DLocalizedShopperStatementProperty2>("localizedShopperStatement", LocalizedShopperStatement);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DLocalizedShopperStatement>("localizedShopperStatement", LocalizedShopperStatement);
             writer.WriteStringValue("mcc", Mcc);
             writer.WriteStringValue("md", Md);
             writer.WriteStringValue("merchantAccount", MerchantAccount);
             writer.WriteStringValue("merchantOrderReference", MerchantOrderReference);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DMerchantRiskIndicator>("merchantRiskIndicator", MerchantRiskIndicator);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DMetadataProperty2>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DMetadata>("metadata", Metadata);
             writer.WriteStringValue("orderReference", OrderReference);
             writer.WriteStringValue("paResponse", PaResponse);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DRecurring>("recurring", Recurring);

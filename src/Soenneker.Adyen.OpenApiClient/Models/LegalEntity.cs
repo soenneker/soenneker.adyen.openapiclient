@@ -50,12 +50,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Contains key-value pairs that specify the actions that the legal entity can do in your platform.The key is a capability required for your integration. For example, **issueCard** for Issuing. The value is an object containing the settings for the capability.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityCapabilitiesProperty2? Capabilities { get => _explicitNullValueCapabilities; set { _explicitNullValueCapabilities = value; AdditionalData?.Remove("capabilities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("capabilities"); else _explicitNullProperties?.Remove("capabilities"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityCapabilitiesProperty2? _explicitNullValueCapabilities = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityCapabilities? Capabilities { get => _explicitNullValueCapabilities; set { _explicitNullValueCapabilities = value; AdditionalData?.Remove("capabilities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("capabilities"); else _explicitNullProperties?.Remove("capabilities"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityCapabilities? _explicitNullValueCapabilities = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityCapabilitiesProperty2 Capabilities { get => _explicitNullValueCapabilities; set { _explicitNullValueCapabilities = value; AdditionalData?.Remove("capabilities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("capabilities"); else _explicitNullProperties?.Remove("capabilities"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityCapabilitiesProperty2 _explicitNullValueCapabilities = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityCapabilities Capabilities { get => _explicitNullValueCapabilities; set { _explicitNullValueCapabilities = value; AdditionalData?.Remove("capabilities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("capabilities"); else _explicitNullProperties?.Remove("capabilities"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityCapabilities _explicitNullValueCapabilities = default!;
 #endif
         /// <summary>List of documents uploaded for the legal entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -220,7 +220,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "capabilities", n => { Capabilities = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityCapabilitiesProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityCapabilitiesProperty2.CreateFromDiscriminatorValue); } },
+                { "capabilities", n => { Capabilities = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityCapabilities>(global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityCapabilities.CreateFromDiscriminatorValue); } },
                 { "documentDetails", n => { DocumentDetails = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.DocumentReference>(global::Soenneker.Adyen.OpenApiClient.Models.DocumentReference.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "documents", n => { Documents = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.EntityReference>(global::Soenneker.Adyen.OpenApiClient.Models.EntityReference.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "entityAssociations", n => { EntityAssociations = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityAssociation>(global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityAssociation.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -245,7 +245,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityCapabilitiesProperty2>("capabilities", Capabilities);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityCapabilities>("capabilities", Capabilities);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.DocumentReference>("documentDetails", DocumentDetails);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.EntityReference>("documents", Documents);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityAssociation>("entityAssociations", EntityAssociations);

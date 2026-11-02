@@ -30,12 +30,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>This field contains additional data, which may be returned in a particular modification response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ModificationResultAdditionalDataProperty2? AdditionalDataProperty { get => _explicitNullValueAdditionalDataProperty; set { _explicitNullValueAdditionalDataProperty = value; AdditionalData?.Remove("additionalData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additionalData"); else _explicitNullProperties?.Remove("additionalData"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.ModificationResultAdditionalDataProperty2? _explicitNullValueAdditionalDataProperty = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.ModificationResultAdditionalData? AdditionalDataProperty { get => _explicitNullValueAdditionalDataProperty; set { _explicitNullValueAdditionalDataProperty = value; AdditionalData?.Remove("additionalData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additionalData"); else _explicitNullProperties?.Remove("additionalData"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ModificationResultAdditionalData? _explicitNullValueAdditionalDataProperty = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ModificationResultAdditionalDataProperty2 AdditionalDataProperty { get => _explicitNullValueAdditionalDataProperty; set { _explicitNullValueAdditionalDataProperty = value; AdditionalData?.Remove("additionalData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additionalData"); else _explicitNullProperties?.Remove("additionalData"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.ModificationResultAdditionalDataProperty2 _explicitNullValueAdditionalDataProperty = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.ModificationResultAdditionalData AdditionalDataProperty { get => _explicitNullValueAdditionalDataProperty; set { _explicitNullValueAdditionalDataProperty = value; AdditionalData?.Remove("additionalData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additionalData"); else _explicitNullProperties?.Remove("additionalData"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ModificationResultAdditionalData _explicitNullValueAdditionalDataProperty = default!;
 #endif
         /// <summary>Adyen&apos;s 16-character string reference associated with the transaction/request. This value is globally unique; quote it when communicating with us about this request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -75,7 +75,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "additionalData", n => { AdditionalDataProperty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ModificationResultAdditionalDataProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.ModificationResultAdditionalDataProperty2.CreateFromDiscriminatorValue); } },
+                { "additionalData", n => { AdditionalDataProperty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ModificationResultAdditionalData>(global::Soenneker.Adyen.OpenApiClient.Models.ModificationResultAdditionalData.CreateFromDiscriminatorValue); } },
                 { "pspReference", n => { PspReference = n.GetStringValue(); } },
                 { "response", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ModificationResultResponse>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueResponse = default; _explicitNullProperties?.Remove("response"); AdditionalData["response"] = unknown; } else { Response = parsed; AdditionalData.Remove("response"); } } },
             };
@@ -87,7 +87,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ModificationResultAdditionalDataProperty2>("additionalData", AdditionalDataProperty);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ModificationResultAdditionalData>("additionalData", AdditionalDataProperty);
             writer.WriteStringValue("pspReference", PspReference);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ModificationResultResponse>("response", Response);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

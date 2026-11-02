@@ -55,12 +55,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The request headers that will be included in the request Adyen makes to the third party on your behalf. Supports the `{{credentials}}` [placeholder](https://docs.adyen.com/online-payments/tokenization/forward-payment-details#placeholders).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOutgoingForwardRequestHeadersProperty2? Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; AdditionalData?.Remove("headers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOutgoingForwardRequestHeadersProperty2? _explicitNullValueHeaders = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOutgoingForwardRequestHeaders? Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; AdditionalData?.Remove("headers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOutgoingForwardRequestHeaders? _explicitNullValueHeaders = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOutgoingForwardRequestHeadersProperty2 Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; AdditionalData?.Remove("headers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOutgoingForwardRequestHeadersProperty2 _explicitNullValueHeaders = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOutgoingForwardRequestHeaders Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; AdditionalData?.Remove("headers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOutgoingForwardRequestHeaders _explicitNullValueHeaders = default!;
 #endif
         /// <summary>The HTTP method to use for the request Adyen makes on your behalf to the third party.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOutgoingForwardRequestHttpMethod? HttpMethod { get => _explicitNullValueHttpMethod; set { _explicitNullValueHttpMethod = value; AdditionalData?.Remove("httpMethod"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("httpMethod"); else _explicitNullProperties?.Remove("httpMethod"); } }
@@ -102,7 +102,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "body", n => { Body = n.GetStringValue(); } },
                 { "credentials", n => { Credentials = n.GetStringValue(); } },
-                { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOutgoingForwardRequestHeadersProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOutgoingForwardRequestHeadersProperty2.CreateFromDiscriminatorValue); } },
+                { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOutgoingForwardRequestHeaders>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOutgoingForwardRequestHeaders.CreateFromDiscriminatorValue); } },
                 { "httpMethod", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOutgoingForwardRequestHttpMethod>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueHttpMethod = default; _explicitNullProperties?.Remove("httpMethod"); AdditionalData["httpMethod"] = unknown; } else { HttpMethod = parsed; AdditionalData.Remove("httpMethod"); } } },
                 { "urlSuffix", n => { UrlSuffix = n.GetStringValue(); } },
             };
@@ -116,7 +116,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("body", Body);
             writer.WriteStringValue("credentials", Credentials);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOutgoingForwardRequestHeadersProperty2>("headers", Headers);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOutgoingForwardRequestHeaders>("headers", Headers);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOutgoingForwardRequestHttpMethod>("httpMethod", HttpMethod);
             writer.WriteStringValue("urlSuffix", UrlSuffix);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

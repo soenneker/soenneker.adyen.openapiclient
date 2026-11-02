@@ -54,12 +54,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Properties of the payment instrument group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentGroupInfoPropertiesProperty2? Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; AdditionalData?.Remove("properties"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentGroupInfoPropertiesProperty2? _explicitNullValueProperties = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentGroupInfoProperties? Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; AdditionalData?.Remove("properties"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentGroupInfoProperties? _explicitNullValueProperties = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentGroupInfoPropertiesProperty2 Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; AdditionalData?.Remove("properties"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentGroupInfoPropertiesProperty2 _explicitNullValueProperties = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentGroupInfoProperties Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; AdditionalData?.Remove("properties"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentGroupInfoProperties _explicitNullValueProperties = default!;
 #endif
         /// <summary>Your reference for the payment instrument group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -108,7 +108,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "balancePlatform", n => { BalancePlatform = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentGroupInfoPropertiesProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentGroupInfoPropertiesProperty2.CreateFromDiscriminatorValue); } },
+                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentGroupInfoProperties>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentGroupInfoProperties.CreateFromDiscriminatorValue); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
                 { "txVariant", n => { TxVariant = n.GetStringValue(); } },
             };
@@ -122,7 +122,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("balancePlatform", BalancePlatform);
             writer.WriteStringValue("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentGroupInfoPropertiesProperty2>("properties", Properties);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentGroupInfoProperties>("properties", Properties);
             writer.WriteStringValue("reference", Reference);
             writer.WriteStringValue("txVariant", TxVariant);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

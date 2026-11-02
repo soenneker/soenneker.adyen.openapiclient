@@ -82,12 +82,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>A set of key and value pairs for general use.The keys do not have specific names and may be used for storing miscellaneous data as desired.&gt; Note that during an update of metadata, the omission of existing key-value pairs will result in the deletion of those key-value pairs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountBaseMetadataProperty2? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountBaseMetadataProperty2? _explicitNullValueMetadata = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountBaseMetadata? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountBaseMetadata? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountBaseMetadataProperty2 Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountBaseMetadataProperty2 _explicitNullValueMetadata = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountBaseMetadata Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountBaseMetadata _explicitNullValueMetadata = default!;
 #endif
         /// <summary>The unique identifier of the account of the migrated account holder in the classic integration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -159,7 +159,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "defaultCurrencyCode", n => { DefaultCurrencyCode = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountBaseMetadataProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountBaseMetadataProperty2.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountBaseMetadata>(global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountBaseMetadata.CreateFromDiscriminatorValue); } },
                 { "migratedAccountCode", n => { MigratedAccountCode = n.GetStringValue(); } },
                 { "platformPaymentConfiguration", n => { PlatformPaymentConfiguration = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountBasePlatformPaymentConfiguration>(global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountBasePlatformPaymentConfiguration.CreateFromDiscriminatorValue); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
@@ -178,7 +178,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("defaultCurrencyCode", DefaultCurrencyCode);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountBaseMetadataProperty2>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountBaseMetadata>("metadata", Metadata);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountBasePlatformPaymentConfiguration>("platformPaymentConfiguration", PlatformPaymentConfiguration);
             writer.WriteStringValue("reference", Reference);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountBaseStatus>("status", Status);

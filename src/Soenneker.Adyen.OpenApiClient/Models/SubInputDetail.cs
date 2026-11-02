@@ -36,12 +36,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Configuration parameters for the required input.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.SubInputDetailConfigurationProperty2? Configuration { get => _explicitNullValueConfiguration; set { _explicitNullValueConfiguration = value; AdditionalData?.Remove("configuration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configuration"); else _explicitNullProperties?.Remove("configuration"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.SubInputDetailConfigurationProperty2? _explicitNullValueConfiguration = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.SubInputDetailConfiguration? Configuration { get => _explicitNullValueConfiguration; set { _explicitNullValueConfiguration = value; AdditionalData?.Remove("configuration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configuration"); else _explicitNullProperties?.Remove("configuration"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.SubInputDetailConfiguration? _explicitNullValueConfiguration = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.SubInputDetailConfigurationProperty2 Configuration { get => _explicitNullValueConfiguration; set { _explicitNullValueConfiguration = value; AdditionalData?.Remove("configuration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configuration"); else _explicitNullProperties?.Remove("configuration"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.SubInputDetailConfigurationProperty2 _explicitNullValueConfiguration = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.SubInputDetailConfiguration Configuration { get => _explicitNullValueConfiguration; set { _explicitNullValueConfiguration = value; AdditionalData?.Remove("configuration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configuration"); else _explicitNullProperties?.Remove("configuration"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.SubInputDetailConfiguration _explicitNullValueConfiguration = default!;
 #endif
         /// <summary>In case of a select, the items to choose from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,7 +111,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SubInputDetailConfigurationProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.SubInputDetailConfigurationProperty2.CreateFromDiscriminatorValue); } },
+                { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SubInputDetailConfiguration>(global::Soenneker.Adyen.OpenApiClient.Models.SubInputDetailConfiguration.CreateFromDiscriminatorValue); } },
                 { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.ItemValue>(global::Soenneker.Adyen.OpenApiClient.Models.ItemValue.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "key", n => { Key = n.GetStringValue(); } },
                 { "optional", n => { Optional = n.GetBoolValue(); } },
@@ -126,7 +126,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SubInputDetailConfigurationProperty2>("configuration", Configuration);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SubInputDetailConfiguration>("configuration", Configuration);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.ItemValue>("items", Items);
             writer.WriteStringValue("key", Key);
             writer.WriteBoolValue("optional", Optional);

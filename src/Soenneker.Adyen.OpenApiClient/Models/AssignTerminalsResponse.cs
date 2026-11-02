@@ -26,12 +26,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Array that returns a list of the terminals, and for each terminal the result of assigning it to an account or store.The results can be:  - `Done`: The terminal has been assigned. - `AssignmentScheduled`: The terminal will be assigned asynschronously. - `RemoveConfigScheduled`: The terminal was previously assigned and boarded. Wait for the terminal to synchronize with the Adyen platform. For more information, refer to [Reassigning boarded terminals](https://docs.adyen.com/point-of-sale/managing-terminals/assign-terminals#reassign-boarded-terminals). - `Error`: There was an error when assigning the terminal. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AssignTerminalsResponseResultsProperty2? Results { get => _explicitNullValueResults; set { _explicitNullValueResults = value; AdditionalData?.Remove("results"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("results"); else _explicitNullProperties?.Remove("results"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.AssignTerminalsResponseResultsProperty2? _explicitNullValueResults = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.AssignTerminalsResponseResults? Results { get => _explicitNullValueResults; set { _explicitNullValueResults = value; AdditionalData?.Remove("results"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("results"); else _explicitNullProperties?.Remove("results"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.AssignTerminalsResponseResults? _explicitNullValueResults = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AssignTerminalsResponseResultsProperty2 Results { get => _explicitNullValueResults; set { _explicitNullValueResults = value; AdditionalData?.Remove("results"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("results"); else _explicitNullProperties?.Remove("results"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.AssignTerminalsResponseResultsProperty2 _explicitNullValueResults = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.AssignTerminalsResponseResults Results { get => _explicitNullValueResults; set { _explicitNullValueResults = value; AdditionalData?.Remove("results"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("results"); else _explicitNullProperties?.Remove("results"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.AssignTerminalsResponseResults _explicitNullValueResults = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AssignTerminalsResponse"/> and sets the default values.
@@ -58,7 +58,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "results", n => { Results = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AssignTerminalsResponseResultsProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.AssignTerminalsResponseResultsProperty2.CreateFromDiscriminatorValue); } },
+                { "results", n => { Results = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AssignTerminalsResponseResults>(global::Soenneker.Adyen.OpenApiClient.Models.AssignTerminalsResponseResults.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AssignTerminalsResponseResultsProperty2>("results", Results);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AssignTerminalsResponseResults>("results", Results);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

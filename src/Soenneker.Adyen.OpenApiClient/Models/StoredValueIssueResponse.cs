@@ -58,12 +58,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The collection that contains the type of the payment method and its specific information if available</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueIssueResponsePaymentMethodProperty2? PaymentMethod { get => _explicitNullValuePaymentMethod; set { _explicitNullValuePaymentMethod = value; AdditionalData?.Remove("paymentMethod"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentMethod"); else _explicitNullProperties?.Remove("paymentMethod"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.StoredValueIssueResponsePaymentMethodProperty2? _explicitNullValuePaymentMethod = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueIssueResponsePaymentMethod? PaymentMethod { get => _explicitNullValuePaymentMethod; set { _explicitNullValuePaymentMethod = value; AdditionalData?.Remove("paymentMethod"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentMethod"); else _explicitNullProperties?.Remove("paymentMethod"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.StoredValueIssueResponsePaymentMethod? _explicitNullValuePaymentMethod = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueIssueResponsePaymentMethodProperty2 PaymentMethod { get => _explicitNullValuePaymentMethod; set { _explicitNullValuePaymentMethod = value; AdditionalData?.Remove("paymentMethod"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentMethod"); else _explicitNullProperties?.Remove("paymentMethod"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.StoredValueIssueResponsePaymentMethodProperty2 _explicitNullValuePaymentMethod = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueIssueResponsePaymentMethod PaymentMethod { get => _explicitNullValuePaymentMethod; set { _explicitNullValuePaymentMethod = value; AdditionalData?.Remove("paymentMethod"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentMethod"); else _explicitNullProperties?.Remove("paymentMethod"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.StoredValueIssueResponsePaymentMethod _explicitNullValuePaymentMethod = default!;
 #endif
         /// <summary>Adyen&apos;s 16-character string reference associated with the transaction/request. This value is globally unique; quote it when communicating with us about this request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -125,7 +125,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "authCode", n => { AuthCode = n.GetStringValue(); } },
                 { "currentBalance", n => { CurrentBalance = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueIssueResponseCurrentBalance>(global::Soenneker.Adyen.OpenApiClient.Models.StoredValueIssueResponseCurrentBalance.CreateFromDiscriminatorValue); } },
-                { "paymentMethod", n => { PaymentMethod = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueIssueResponsePaymentMethodProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.StoredValueIssueResponsePaymentMethodProperty2.CreateFromDiscriminatorValue); } },
+                { "paymentMethod", n => { PaymentMethod = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueIssueResponsePaymentMethod>(global::Soenneker.Adyen.OpenApiClient.Models.StoredValueIssueResponsePaymentMethod.CreateFromDiscriminatorValue); } },
                 { "pspReference", n => { PspReference = n.GetStringValue(); } },
                 { "refusalReason", n => { RefusalReason = n.GetStringValue(); } },
                 { "resultCode", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueIssueResponseResultCode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueResultCode = default; _explicitNullProperties?.Remove("resultCode"); AdditionalData["resultCode"] = unknown; } else { ResultCode = parsed; AdditionalData.Remove("resultCode"); } } },
@@ -141,7 +141,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("authCode", AuthCode);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueIssueResponseCurrentBalance>("currentBalance", CurrentBalance);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueIssueResponsePaymentMethodProperty2>("paymentMethod", PaymentMethod);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueIssueResponsePaymentMethod>("paymentMethod", PaymentMethod);
             writer.WriteStringValue("pspReference", PspReference);
             writer.WriteStringValue("refusalReason", RefusalReason);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueIssueResponseResultCode>("resultCode", ResultCode);

@@ -41,12 +41,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The HTTP headers of the response Adyen received from the third party.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseFromUrlHeadersProperty2? Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; AdditionalData?.Remove("headers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseFromUrlHeadersProperty2? _explicitNullValueHeaders = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseFromUrlHeaders? Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; AdditionalData?.Remove("headers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseFromUrlHeaders? _explicitNullValueHeaders = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseFromUrlHeadersProperty2 Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; AdditionalData?.Remove("headers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseFromUrlHeadersProperty2 _explicitNullValueHeaders = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseFromUrlHeaders Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; AdditionalData?.Remove("headers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseFromUrlHeaders _explicitNullValueHeaders = default!;
 #endif
         /// <summary>The HTTP status of the response Adyen received from the third party.</summary>
         public int? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
@@ -77,7 +77,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "body", n => { Body = n.GetStringValue(); } },
-                { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseFromUrlHeadersProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseFromUrlHeadersProperty2.CreateFromDiscriminatorValue); } },
+                { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseFromUrlHeaders>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseFromUrlHeaders.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetIntValue(); } },
             };
         }
@@ -89,7 +89,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("body", Body);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseFromUrlHeadersProperty2>("headers", Headers);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseFromUrlHeaders>("headers", Headers);
             writer.WriteIntValue("status", Status);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

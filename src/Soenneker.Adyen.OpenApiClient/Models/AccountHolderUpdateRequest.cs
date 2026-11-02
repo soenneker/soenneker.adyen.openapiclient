@@ -52,12 +52,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Contains key-value pairs that specify the actions that an account holder can do in your platform. The key is a capability required for your integration. For example, **issueCard** for Issuing. The value is an object containing the settings for the capability.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderUpdateRequestCapabilitiesProperty2? Capabilities { get => _explicitNullValueCapabilities; set { _explicitNullValueCapabilities = value; AdditionalData?.Remove("capabilities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("capabilities"); else _explicitNullProperties?.Remove("capabilities"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderUpdateRequestCapabilitiesProperty2? _explicitNullValueCapabilities = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderUpdateRequestCapabilities? Capabilities { get => _explicitNullValueCapabilities; set { _explicitNullValueCapabilities = value; AdditionalData?.Remove("capabilities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("capabilities"); else _explicitNullProperties?.Remove("capabilities"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderUpdateRequestCapabilities? _explicitNullValueCapabilities = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderUpdateRequestCapabilitiesProperty2 Capabilities { get => _explicitNullValueCapabilities; set { _explicitNullValueCapabilities = value; AdditionalData?.Remove("capabilities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("capabilities"); else _explicitNullProperties?.Remove("capabilities"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderUpdateRequestCapabilitiesProperty2 _explicitNullValueCapabilities = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderUpdateRequestCapabilities Capabilities { get => _explicitNullValueCapabilities; set { _explicitNullValueCapabilities = value; AdditionalData?.Remove("capabilities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("capabilities"); else _explicitNullProperties?.Remove("capabilities"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderUpdateRequestCapabilities _explicitNullValueCapabilities = default!;
 #endif
         /// <summary>Contact details of the account holder.</summary>
         [Obsolete("")]
@@ -83,12 +83,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>A set of key and value pairs for general use.The keys do not have specific names and may be used for storing miscellaneous data as desired.&gt; Note that during an update of metadata, the omission of existing key-value pairs will result in the deletion of those key-value pairs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderUpdateRequestMetadataProperty2? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderUpdateRequestMetadataProperty2? _explicitNullValueMetadata = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderUpdateRequestMetadata? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderUpdateRequestMetadata? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderUpdateRequestMetadataProperty2 Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderUpdateRequestMetadataProperty2 _explicitNullValueMetadata = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderUpdateRequestMetadata Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderUpdateRequestMetadata _explicitNullValueMetadata = default!;
 #endif
         /// <summary>The unique identifier of the migrated account holder in the classic integration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -165,10 +165,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "balancePlatform", n => { BalancePlatform = n.GetStringValue(); } },
-                { "capabilities", n => { Capabilities = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderUpdateRequestCapabilitiesProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderUpdateRequestCapabilitiesProperty2.CreateFromDiscriminatorValue); } },
+                { "capabilities", n => { Capabilities = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderUpdateRequestCapabilities>(global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderUpdateRequestCapabilities.CreateFromDiscriminatorValue); } },
                 { "contactDetails", n => { ContactDetails = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderUpdateRequestContactDetails>(global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderUpdateRequestContactDetails.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderUpdateRequestMetadataProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderUpdateRequestMetadataProperty2.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderUpdateRequestMetadata>(global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderUpdateRequestMetadata.CreateFromDiscriminatorValue); } },
                 { "migratedAccountHolderCode", n => { MigratedAccountHolderCode = n.GetStringValue(); } },
                 { "primaryBalanceAccount", n => { PrimaryBalanceAccount = n.GetStringValue(); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
@@ -185,10 +185,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("balancePlatform", BalancePlatform);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderUpdateRequestCapabilitiesProperty2>("capabilities", Capabilities);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderUpdateRequestCapabilities>("capabilities", Capabilities);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderUpdateRequestContactDetails>("contactDetails", ContactDetails);
             writer.WriteStringValue("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderUpdateRequestMetadataProperty2>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderUpdateRequestMetadata>("metadata", Metadata);
             writer.WriteStringValue("primaryBalanceAccount", PrimaryBalanceAccount);
             writer.WriteStringValue("reference", Reference);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderUpdateRequestStatus>("status", Status);

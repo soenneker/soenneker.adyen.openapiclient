@@ -28,12 +28,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The tokenData property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TokenDetailsTokenDataProperty2? TokenData { get => _explicitNullValueTokenData; set { _explicitNullValueTokenData = value; AdditionalData?.Remove("tokenData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tokenData"); else _explicitNullProperties?.Remove("tokenData"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TokenDetailsTokenDataProperty2? _explicitNullValueTokenData = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TokenDetailsTokenData? TokenData { get => _explicitNullValueTokenData; set { _explicitNullValueTokenData = value; AdditionalData?.Remove("tokenData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tokenData"); else _explicitNullProperties?.Remove("tokenData"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TokenDetailsTokenData? _explicitNullValueTokenData = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TokenDetailsTokenDataProperty2 TokenData { get => _explicitNullValueTokenData; set { _explicitNullValueTokenData = value; AdditionalData?.Remove("tokenData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tokenData"); else _explicitNullProperties?.Remove("tokenData"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TokenDetailsTokenDataProperty2 _explicitNullValueTokenData = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TokenDetailsTokenData TokenData { get => _explicitNullValueTokenData; set { _explicitNullValueTokenData = value; AdditionalData?.Remove("tokenData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tokenData"); else _explicitNullProperties?.Remove("tokenData"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TokenDetailsTokenData _explicitNullValueTokenData = default!;
 #endif
         /// <summary>The tokenDataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -70,7 +70,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "tokenData", n => { TokenData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TokenDetailsTokenDataProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.TokenDetailsTokenDataProperty2.CreateFromDiscriminatorValue); } },
+                { "tokenData", n => { TokenData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TokenDetailsTokenData>(global::Soenneker.Adyen.OpenApiClient.Models.TokenDetailsTokenData.CreateFromDiscriminatorValue); } },
                 { "tokenDataType", n => { TokenDataType = n.GetStringValue(); } },
             };
         }
@@ -81,7 +81,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TokenDetailsTokenDataProperty2>("tokenData", TokenData);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TokenDetailsTokenData>("tokenData", TokenData);
             writer.WriteStringValue("tokenDataType", TokenDataType);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

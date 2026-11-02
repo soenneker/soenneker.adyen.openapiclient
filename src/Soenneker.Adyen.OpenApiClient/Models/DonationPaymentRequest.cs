@@ -278,12 +278,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Metadata consists of entries, each of which includes a key and a value.Limits:* Maximum 20 key-value pairs per request. When exceeding, the &quot;177&quot; error occurs: &quot;Metadata size exceeds limit&quot;.* Maximum 20 characters per key.* Maximum 80 characters per value. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestMetadataProperty2? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestMetadataProperty2? _explicitNullValueMetadata = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestMetadata? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestMetadata? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestMetadataProperty2 Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestMetadataProperty2 _explicitNullValueMetadata = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestMetadata Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestMetadata _explicitNullValueMetadata = default!;
 #endif
         /// <summary>Authentication data produced by an MPI (Mastercard SecureCode, Visa Secure, or Cartes Bancaires).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -505,7 +505,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "lineItems", n => { LineItems = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.LineItem>(global::Soenneker.Adyen.OpenApiClient.Models.LineItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "merchantAccount", n => { MerchantAccount = n.GetStringValue(); } },
                 { "merchantRiskIndicator", n => { MerchantRiskIndicator = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestMerchantRiskIndicator>(global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestMerchantRiskIndicator.CreateFromDiscriminatorValue); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestMetadataProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestMetadataProperty2.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestMetadata>(global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestMetadata.CreateFromDiscriminatorValue); } },
                 { "mpiData", n => { MpiData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestMpiData>(global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestMpiData.CreateFromDiscriminatorValue); } },
                 { "origin", n => { Origin = n.GetStringValue(); } },
                 { "paymentMethod", n => { PaymentMethod = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestPaymentMethod>(global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestPaymentMethod.CreateFromDiscriminatorValue); } },
@@ -553,7 +553,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.LineItem>("lineItems", LineItems);
             writer.WriteStringValue("merchantAccount", MerchantAccount);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestMerchantRiskIndicator>("merchantRiskIndicator", MerchantRiskIndicator);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestMetadataProperty2>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestMetadata>("metadata", Metadata);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestMpiData>("mpiData", MpiData);
             writer.WriteStringValue("origin", Origin);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestPaymentMethod>("paymentMethod", PaymentMethod);

@@ -46,12 +46,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>List of capabilities for this transfer instrument.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentCapabilitiesProperty2? Capabilities { get => _explicitNullValueCapabilities; set { _explicitNullValueCapabilities = value; AdditionalData?.Remove("capabilities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("capabilities"); else _explicitNullProperties?.Remove("capabilities"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentCapabilitiesProperty2? _explicitNullValueCapabilities = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentCapabilities? Capabilities { get => _explicitNullValueCapabilities; set { _explicitNullValueCapabilities = value; AdditionalData?.Remove("capabilities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("capabilities"); else _explicitNullProperties?.Remove("capabilities"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentCapabilities? _explicitNullValueCapabilities = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentCapabilitiesProperty2 Capabilities { get => _explicitNullValueCapabilities; set { _explicitNullValueCapabilities = value; AdditionalData?.Remove("capabilities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("capabilities"); else _explicitNullProperties?.Remove("capabilities"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentCapabilitiesProperty2 _explicitNullValueCapabilities = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentCapabilities Capabilities { get => _explicitNullValueCapabilities; set { _explicitNullValueCapabilities = value; AdditionalData?.Remove("capabilities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("capabilities"); else _explicitNullProperties?.Remove("capabilities"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentCapabilities _explicitNullValueCapabilities = default!;
 #endif
         /// <summary>List of documents uploaded for the transfer instrument.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -120,7 +120,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "bankAccount", n => { BankAccount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentBankAccount>(global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentBankAccount.CreateFromDiscriminatorValue); } },
-                { "capabilities", n => { Capabilities = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentCapabilitiesProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentCapabilitiesProperty2.CreateFromDiscriminatorValue); } },
+                { "capabilities", n => { Capabilities = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentCapabilities>(global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentCapabilities.CreateFromDiscriminatorValue); } },
                 { "documentDetails", n => { DocumentDetails = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.DocumentReference>(global::Soenneker.Adyen.OpenApiClient.Models.DocumentReference.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "legalEntityId", n => { LegalEntityId = n.GetStringValue(); } },
@@ -136,7 +136,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentBankAccount>("bankAccount", BankAccount);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentCapabilitiesProperty2>("capabilities", Capabilities);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentCapabilities>("capabilities", Capabilities);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.DocumentReference>("documentDetails", DocumentDetails);
             writer.WriteStringValue("legalEntityId", LegalEntityId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4CapabilityProblem>("problems", Problems);

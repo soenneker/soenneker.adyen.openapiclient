@@ -133,12 +133,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>This field contains additional data, which may be required for a particular payment request.The `additionalData` object consists of entries, each of which includes the key and value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestAdditionalDataProperty2? AdditionalDataProperty { get => _explicitNullValueAdditionalDataProperty; set { _explicitNullValueAdditionalDataProperty = value; AdditionalData?.Remove("additionalData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additionalData"); else _explicitNullProperties?.Remove("additionalData"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestAdditionalDataProperty2? _explicitNullValueAdditionalDataProperty = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestAdditionalData? AdditionalDataProperty { get => _explicitNullValueAdditionalDataProperty; set { _explicitNullValueAdditionalDataProperty = value; AdditionalData?.Remove("additionalData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additionalData"); else _explicitNullProperties?.Remove("additionalData"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestAdditionalData? _explicitNullValueAdditionalDataProperty = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestAdditionalDataProperty2 AdditionalDataProperty { get => _explicitNullValueAdditionalDataProperty; set { _explicitNullValueAdditionalDataProperty = value; AdditionalData?.Remove("additionalData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additionalData"); else _explicitNullProperties?.Remove("additionalData"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestAdditionalDataProperty2 _explicitNullValueAdditionalDataProperty = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestAdditionalData AdditionalDataProperty { get => _explicitNullValueAdditionalDataProperty; set { _explicitNullValueAdditionalDataProperty = value; AdditionalData?.Remove("additionalData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additionalData"); else _explicitNullProperties?.Remove("additionalData"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestAdditionalData _explicitNullValueAdditionalDataProperty = default!;
 #endif
         /// <summary>The amount information for the transaction (in [minor units](https://docs.adyen.com/development-resources/currency-codes)). For [BIN or card verification](https://docs.adyen.com/payment-methods/cards/bin-data-and-card-verification) requests, set amount to 0 (zero).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -235,12 +235,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The `localizedShopperStatement` field lets you use dynamic values for your shopper statement in a local character set. If this parameter is left empty, not provided, or not applicable (in case of cross-border transactions), then **shopperStatement** is used.Currently, `localizedShopperStatement` is only supported for payments with Visa, Mastercard, JCB, Diners, and Discover.**Supported characters**: Hiragana, Katakana, Kanji, and alphanumeric.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestLocalizedShopperStatementProperty2? LocalizedShopperStatement { get => _explicitNullValueLocalizedShopperStatement; set { _explicitNullValueLocalizedShopperStatement = value; AdditionalData?.Remove("localizedShopperStatement"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("localizedShopperStatement"); else _explicitNullProperties?.Remove("localizedShopperStatement"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestLocalizedShopperStatementProperty2? _explicitNullValueLocalizedShopperStatement = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestLocalizedShopperStatement? LocalizedShopperStatement { get => _explicitNullValueLocalizedShopperStatement; set { _explicitNullValueLocalizedShopperStatement = value; AdditionalData?.Remove("localizedShopperStatement"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("localizedShopperStatement"); else _explicitNullProperties?.Remove("localizedShopperStatement"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestLocalizedShopperStatement? _explicitNullValueLocalizedShopperStatement = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestLocalizedShopperStatementProperty2 LocalizedShopperStatement { get => _explicitNullValueLocalizedShopperStatement; set { _explicitNullValueLocalizedShopperStatement = value; AdditionalData?.Remove("localizedShopperStatement"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("localizedShopperStatement"); else _explicitNullProperties?.Remove("localizedShopperStatement"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestLocalizedShopperStatementProperty2 _explicitNullValueLocalizedShopperStatement = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestLocalizedShopperStatement LocalizedShopperStatement { get => _explicitNullValueLocalizedShopperStatement; set { _explicitNullValueLocalizedShopperStatement = value; AdditionalData?.Remove("localizedShopperStatement"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("localizedShopperStatement"); else _explicitNullProperties?.Remove("localizedShopperStatement"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestLocalizedShopperStatement _explicitNullValueLocalizedShopperStatement = default!;
 #endif
         /// <summary>The [merchant category code](https://en.wikipedia.org/wiki/Merchant_category_code) (MCC) is a four-digit number, which relates to a particular market segment. This code reflects the predominant activity that is conducted by the merchant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -285,12 +285,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Metadata consists of entries, each of which includes a key and a value.Limits:* Maximum 20 key-value pairs per request. When exceeding, the &quot;177&quot; error occurs: &quot;Metadata size exceeds limit&quot;.* Maximum 20 characters per key.* Maximum 80 characters per value. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestMetadataProperty2? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestMetadataProperty2? _explicitNullValueMetadata = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestMetadata? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestMetadata? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestMetadataProperty2 Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestMetadataProperty2 _explicitNullValueMetadata = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestMetadata Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestMetadata _explicitNullValueMetadata = default!;
 #endif
         /// <summary>When you are doing multiple partial (gift card) payments, this is the `pspReference` of the first payment. We use this to link the multiple payments to each other. As your own reference for linking multiple payments, use the `merchantOrderReference`instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -305,12 +305,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The collection that contains the type of the payment method and its specific information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestPaymentMethodProperty2? PaymentMethod { get => _explicitNullValuePaymentMethod; set { _explicitNullValuePaymentMethod = value; AdditionalData?.Remove("paymentMethod"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentMethod"); else _explicitNullProperties?.Remove("paymentMethod"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestPaymentMethodProperty2? _explicitNullValuePaymentMethod = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestPaymentMethod? PaymentMethod { get => _explicitNullValuePaymentMethod; set { _explicitNullValuePaymentMethod = value; AdditionalData?.Remove("paymentMethod"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentMethod"); else _explicitNullProperties?.Remove("paymentMethod"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestPaymentMethod? _explicitNullValuePaymentMethod = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestPaymentMethodProperty2 PaymentMethod { get => _explicitNullValuePaymentMethod; set { _explicitNullValuePaymentMethod = value; AdditionalData?.Remove("paymentMethod"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentMethod"); else _explicitNullProperties?.Remove("paymentMethod"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestPaymentMethodProperty2 _explicitNullValuePaymentMethod = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestPaymentMethod PaymentMethod { get => _explicitNullValuePaymentMethod; set { _explicitNullValuePaymentMethod = value; AdditionalData?.Remove("paymentMethod"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentMethod"); else _explicitNullProperties?.Remove("paymentMethod"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestPaymentMethod _explicitNullValuePaymentMethod = default!;
 #endif
         /// <summary>The recurring settings for the payment. Use this property when you want to enable [recurring payments](https://docs.adyen.com/classic-integration/recurring-payments).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -523,7 +523,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "accountInfo", n => { AccountInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestAccountInfo>(global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestAccountInfo.CreateFromDiscriminatorValue); } },
                 { "additionalAmount", n => { AdditionalAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestAdditionalAmount>(global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestAdditionalAmount.CreateFromDiscriminatorValue); } },
-                { "additionalData", n => { AdditionalDataProperty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestAdditionalDataProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestAdditionalDataProperty2.CreateFromDiscriminatorValue); } },
+                { "additionalData", n => { AdditionalDataProperty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestAdditionalData>(global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestAdditionalData.CreateFromDiscriminatorValue); } },
                 { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestAmount>(global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestAmount.CreateFromDiscriminatorValue); } },
                 { "applicationInfo", n => { ApplicationInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestApplicationInfo>(global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestApplicationInfo.CreateFromDiscriminatorValue); } },
                 { "billingAddress", n => { BillingAddress = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestBillingAddress>(global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestBillingAddress.CreateFromDiscriminatorValue); } },
@@ -536,14 +536,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "deviceFingerprint", n => { DeviceFingerprint = n.GetStringValue(); } },
                 { "fraudOffset", n => { FraudOffset = n.GetIntValue(); } },
                 { "installments", n => { Installments = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestInstallments>(global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestInstallments.CreateFromDiscriminatorValue); } },
-                { "localizedShopperStatement", n => { LocalizedShopperStatement = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestLocalizedShopperStatementProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestLocalizedShopperStatementProperty2.CreateFromDiscriminatorValue); } },
+                { "localizedShopperStatement", n => { LocalizedShopperStatement = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestLocalizedShopperStatement>(global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestLocalizedShopperStatement.CreateFromDiscriminatorValue); } },
                 { "mcc", n => { Mcc = n.GetStringValue(); } },
                 { "merchantAccount", n => { MerchantAccount = n.GetStringValue(); } },
                 { "merchantOrderReference", n => { MerchantOrderReference = n.GetStringValue(); } },
                 { "merchantRiskIndicator", n => { MerchantRiskIndicator = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestMerchantRiskIndicator>(global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestMerchantRiskIndicator.CreateFromDiscriminatorValue); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestMetadataProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestMetadataProperty2.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestMetadata>(global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestMetadata.CreateFromDiscriminatorValue); } },
                 { "orderReference", n => { OrderReference = n.GetStringValue(); } },
-                { "paymentMethod", n => { PaymentMethod = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestPaymentMethodProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestPaymentMethodProperty2.CreateFromDiscriminatorValue); } },
+                { "paymentMethod", n => { PaymentMethod = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestPaymentMethod>(global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestPaymentMethod.CreateFromDiscriminatorValue); } },
                 { "recurring", n => { Recurring = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestRecurring>(global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestRecurring.CreateFromDiscriminatorValue); } },
                 { "recurringProcessingModel", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestRecurringProcessingModel>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRecurringProcessingModel = default; _explicitNullProperties?.Remove("recurringProcessingModel"); AdditionalData["recurringProcessingModel"] = unknown; } else { RecurringProcessingModel = parsed; AdditionalData.Remove("recurringProcessingModel"); } } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
@@ -576,7 +576,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestAccountInfo>("accountInfo", AccountInfo);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestAdditionalAmount>("additionalAmount", AdditionalAmount);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestAdditionalDataProperty2>("additionalData", AdditionalDataProperty);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestAdditionalData>("additionalData", AdditionalDataProperty);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestAmount>("amount", Amount);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestApplicationInfo>("applicationInfo", ApplicationInfo);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestBillingAddress>("billingAddress", BillingAddress);
@@ -589,14 +589,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("deviceFingerprint", DeviceFingerprint);
             writer.WriteIntValue("fraudOffset", FraudOffset);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestInstallments>("installments", Installments);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestLocalizedShopperStatementProperty2>("localizedShopperStatement", LocalizedShopperStatement);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestLocalizedShopperStatement>("localizedShopperStatement", LocalizedShopperStatement);
             writer.WriteStringValue("mcc", Mcc);
             writer.WriteStringValue("merchantAccount", MerchantAccount);
             writer.WriteStringValue("merchantOrderReference", MerchantOrderReference);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestMerchantRiskIndicator>("merchantRiskIndicator", MerchantRiskIndicator);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestMetadataProperty2>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestMetadata>("metadata", Metadata);
             writer.WriteStringValue("orderReference", OrderReference);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestPaymentMethodProperty2>("paymentMethod", PaymentMethod);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestPaymentMethod>("paymentMethod", PaymentMethod);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestRecurring>("recurring", Recurring);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestRecurringProcessingModel>("recurringProcessingModel", RecurringProcessingModel);
             writer.WriteStringValue("reference", Reference);

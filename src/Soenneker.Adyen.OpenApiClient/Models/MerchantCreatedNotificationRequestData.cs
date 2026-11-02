@@ -35,12 +35,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Key-value pairs that specify the actions that the merchant account can do and its settings. The key is a capability. For example, the **sendToTransferInstrument** is the capability required before you can pay out funds to the bank account. The value is an object containing the settings for the capability.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountCreateNotificationDataCapabilitiesProperty2? Capabilities { get => _explicitNullValueCapabilities; set { _explicitNullValueCapabilities = value; AdditionalData?.Remove("capabilities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("capabilities"); else _explicitNullProperties?.Remove("capabilities"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.AccountCreateNotificationDataCapabilitiesProperty2? _explicitNullValueCapabilities = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountCreateNotificationDataCapabilities? Capabilities { get => _explicitNullValueCapabilities; set { _explicitNullValueCapabilities = value; AdditionalData?.Remove("capabilities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("capabilities"); else _explicitNullProperties?.Remove("capabilities"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.AccountCreateNotificationDataCapabilities? _explicitNullValueCapabilities = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountCreateNotificationDataCapabilitiesProperty2 Capabilities { get => _explicitNullValueCapabilities; set { _explicitNullValueCapabilities = value; AdditionalData?.Remove("capabilities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("capabilities"); else _explicitNullProperties?.Remove("capabilities"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.AccountCreateNotificationDataCapabilitiesProperty2 _explicitNullValueCapabilities = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountCreateNotificationDataCapabilities Capabilities { get => _explicitNullValueCapabilities; set { _explicitNullValueCapabilities = value; AdditionalData?.Remove("capabilities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("capabilities"); else _explicitNullProperties?.Remove("capabilities"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.AccountCreateNotificationDataCapabilities _explicitNullValueCapabilities = default!;
 #endif
         /// <summary>The unique identifier of the company account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -107,7 +107,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "capabilities", n => { Capabilities = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountCreateNotificationDataCapabilitiesProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.AccountCreateNotificationDataCapabilitiesProperty2.CreateFromDiscriminatorValue); } },
+                { "capabilities", n => { Capabilities = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountCreateNotificationDataCapabilities>(global::Soenneker.Adyen.OpenApiClient.Models.AccountCreateNotificationDataCapabilities.CreateFromDiscriminatorValue); } },
                 { "companyId", n => { CompanyId = n.GetStringValue(); } },
                 { "legalEntityId", n => { LegalEntityId = n.GetStringValue(); } },
                 { "merchantId", n => { MerchantId = n.GetStringValue(); } },
@@ -121,7 +121,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountCreateNotificationDataCapabilitiesProperty2>("capabilities", Capabilities);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountCreateNotificationDataCapabilities>("capabilities", Capabilities);
             writer.WriteStringValue("companyId", CompanyId);
             writer.WriteStringValue("legalEntityId", LegalEntityId);
             writer.WriteStringValue("merchantId", MerchantId);

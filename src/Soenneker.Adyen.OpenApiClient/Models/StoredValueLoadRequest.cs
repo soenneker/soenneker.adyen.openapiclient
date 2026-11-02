@@ -65,12 +65,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The collection that contains the type of the payment method and its specific information if available</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueLoadRequestPaymentMethodProperty2? PaymentMethod { get => _explicitNullValuePaymentMethod; set { _explicitNullValuePaymentMethod = value; AdditionalData?.Remove("paymentMethod"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentMethod"); else _explicitNullProperties?.Remove("paymentMethod"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.StoredValueLoadRequestPaymentMethodProperty2? _explicitNullValuePaymentMethod = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueLoadRequestPaymentMethod? PaymentMethod { get => _explicitNullValuePaymentMethod; set { _explicitNullValuePaymentMethod = value; AdditionalData?.Remove("paymentMethod"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentMethod"); else _explicitNullProperties?.Remove("paymentMethod"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.StoredValueLoadRequestPaymentMethod? _explicitNullValuePaymentMethod = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueLoadRequestPaymentMethodProperty2 PaymentMethod { get => _explicitNullValuePaymentMethod; set { _explicitNullValuePaymentMethod = value; AdditionalData?.Remove("paymentMethod"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentMethod"); else _explicitNullProperties?.Remove("paymentMethod"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.StoredValueLoadRequestPaymentMethodProperty2 _explicitNullValuePaymentMethod = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueLoadRequestPaymentMethod PaymentMethod { get => _explicitNullValuePaymentMethod; set { _explicitNullValuePaymentMethod = value; AdditionalData?.Remove("paymentMethod"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentMethod"); else _explicitNullProperties?.Remove("paymentMethod"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.StoredValueLoadRequestPaymentMethod _explicitNullValuePaymentMethod = default!;
 #endif
         /// <summary>The recurringDetailReference property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -143,7 +143,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueLoadRequestAmount>(global::Soenneker.Adyen.OpenApiClient.Models.StoredValueLoadRequestAmount.CreateFromDiscriminatorValue); } },
                 { "loadType", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueLoadRequestLoadType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueLoadType = default; _explicitNullProperties?.Remove("loadType"); AdditionalData["loadType"] = unknown; } else { LoadType = parsed; AdditionalData.Remove("loadType"); } } },
                 { "merchantAccount", n => { MerchantAccount = n.GetStringValue(); } },
-                { "paymentMethod", n => { PaymentMethod = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueLoadRequestPaymentMethodProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.StoredValueLoadRequestPaymentMethodProperty2.CreateFromDiscriminatorValue); } },
+                { "paymentMethod", n => { PaymentMethod = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueLoadRequestPaymentMethod>(global::Soenneker.Adyen.OpenApiClient.Models.StoredValueLoadRequestPaymentMethod.CreateFromDiscriminatorValue); } },
                 { "recurringDetailReference", n => { RecurringDetailReference = n.GetStringValue(); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
                 { "shopperInteraction", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueLoadRequestShopperInteraction>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueShopperInteraction = default; _explicitNullProperties?.Remove("shopperInteraction"); AdditionalData["shopperInteraction"] = unknown; } else { ShopperInteraction = parsed; AdditionalData.Remove("shopperInteraction"); } } },
@@ -161,7 +161,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueLoadRequestAmount>("amount", Amount);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueLoadRequestLoadType>("loadType", LoadType);
             writer.WriteStringValue("merchantAccount", MerchantAccount);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueLoadRequestPaymentMethodProperty2>("paymentMethod", PaymentMethod);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueLoadRequestPaymentMethod>("paymentMethod", PaymentMethod);
             writer.WriteStringValue("recurringDetailReference", RecurringDetailReference);
             writer.WriteStringValue("reference", Reference);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueLoadRequestShopperInteraction>("shopperInteraction", ShopperInteraction);

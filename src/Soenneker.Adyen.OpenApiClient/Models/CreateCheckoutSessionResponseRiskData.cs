@@ -43,12 +43,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Any custom fields used as part of the input to configured risk rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.RiskDataCustomFieldsProperty2? CustomFields { get => _explicitNullValueCustomFields; set { _explicitNullValueCustomFields = value; AdditionalData?.Remove("customFields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customFields"); else _explicitNullProperties?.Remove("customFields"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.RiskDataCustomFieldsProperty2? _explicitNullValueCustomFields = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.RiskDataCustomFields? CustomFields { get => _explicitNullValueCustomFields; set { _explicitNullValueCustomFields = value; AdditionalData?.Remove("customFields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customFields"); else _explicitNullProperties?.Remove("customFields"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.RiskDataCustomFields? _explicitNullValueCustomFields = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.RiskDataCustomFieldsProperty2 CustomFields { get => _explicitNullValueCustomFields; set { _explicitNullValueCustomFields = value; AdditionalData?.Remove("customFields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customFields"); else _explicitNullProperties?.Remove("customFields"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.RiskDataCustomFieldsProperty2 _explicitNullValueCustomFields = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.RiskDataCustomFields CustomFields { get => _explicitNullValueCustomFields; set { _explicitNullValueCustomFields = value; AdditionalData?.Remove("customFields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customFields"); else _explicitNullProperties?.Remove("customFields"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.RiskDataCustomFields _explicitNullValueCustomFields = default!;
 #endif
         /// <summary>An integer value that is added to the normal fraud score. The value can be either positive or negative.</summary>
         public int? FraudOffset { get => _explicitNullValueFraudOffset; set { _explicitNullValueFraudOffset = value; AdditionalData?.Remove("fraudOffset"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fraudOffset"); else _explicitNullProperties?.Remove("fraudOffset"); } }
@@ -89,7 +89,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "clientData", n => { ClientData = n.GetStringValue(); } },
-                { "customFields", n => { CustomFields = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RiskDataCustomFieldsProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.RiskDataCustomFieldsProperty2.CreateFromDiscriminatorValue); } },
+                { "customFields", n => { CustomFields = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RiskDataCustomFields>(global::Soenneker.Adyen.OpenApiClient.Models.RiskDataCustomFields.CreateFromDiscriminatorValue); } },
                 { "fraudOffset", n => { FraudOffset = n.GetIntValue(); } },
                 { "profileReference", n => { ProfileReference = n.GetStringValue(); } },
             };
@@ -102,7 +102,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("clientData", ClientData);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RiskDataCustomFieldsProperty2>("customFields", CustomFields);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RiskDataCustomFields>("customFields", CustomFields);
             writer.WriteIntValue("fraudOffset", FraudOffset);
             writer.WriteStringValue("profileReference", ProfileReference);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

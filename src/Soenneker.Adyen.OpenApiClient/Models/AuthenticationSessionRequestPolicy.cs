@@ -29,12 +29,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>An object containing the type and the unique identifier of the user of the component.For [Onboarding components](https://docs.adyen.com/platforms/onboard-users/components), this is the ID of the legal entity that has a contractual relationship with your platform. For sole proprietorships, use the ID of the legal entity of the individual owner.For [Platform Experience components](https://docs.adyen.com/platforms/build-user-dashboards), this is the ID of the account holder that is associated with the balance account shown in the component.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.SessionAuthenticationServiceV1Resource>? Resources { get => _explicitNullValueResources; set { _explicitNullValueResources = value; AdditionalData?.Remove("resources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resources"); else _explicitNullProperties?.Remove("resources"); } }
-        private List<global::Soenneker.Adyen.OpenApiClient.Models.SessionAuthenticationServiceV1Resource>? _explicitNullValueResources = default!;
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.Resource>? Resources { get => _explicitNullValueResources; set { _explicitNullValueResources = value; AdditionalData?.Remove("resources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resources"); else _explicitNullProperties?.Remove("resources"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.Resource>? _explicitNullValueResources = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.SessionAuthenticationServiceV1Resource> Resources { get => _explicitNullValueResources; set { _explicitNullValueResources = value; AdditionalData?.Remove("resources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resources"); else _explicitNullProperties?.Remove("resources"); } }
-        private List<global::Soenneker.Adyen.OpenApiClient.Models.SessionAuthenticationServiceV1Resource> _explicitNullValueResources = default!;
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.Resource> Resources { get => _explicitNullValueResources; set { _explicitNullValueResources = value; AdditionalData?.Remove("resources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resources"); else _explicitNullProperties?.Remove("resources"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.Resource> _explicitNullValueResources = default!;
 #endif
         /// <summary>The name of the role required to use the component.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,7 +71,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "resources", n => { Resources = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.SessionAuthenticationServiceV1Resource>(global::Soenneker.Adyen.OpenApiClient.Models.SessionAuthenticationServiceV1Resource.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "resources", n => { Resources = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Resource>(global::Soenneker.Adyen.OpenApiClient.Models.Resource.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "roles", n => { Roles = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -82,7 +82,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.SessionAuthenticationServiceV1Resource>("resources", Resources);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Resource>("resources", Resources);
             writer.WriteCollectionOfPrimitiveValues<string>("roles", Roles);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

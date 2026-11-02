@@ -51,12 +51,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Object containing boolean key-value pairs. The key can be any [standard webhook additional setting](https://docs.adyen.com/development-resources/webhooks/additional-settings), and the value indicates if the setting is enabled.For example, `includeCaptureDelayHours`: **true** means the standard notifications you get will contain the number of hours remaining until the payment will be captured.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AdditionalSettingsResponsePropertiesProperty2? Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; AdditionalData?.Remove("properties"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.AdditionalSettingsResponsePropertiesProperty2? _explicitNullValueProperties = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.AdditionalSettingsResponseProperties? Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; AdditionalData?.Remove("properties"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.AdditionalSettingsResponseProperties? _explicitNullValueProperties = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AdditionalSettingsResponsePropertiesProperty2 Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; AdditionalData?.Remove("properties"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.AdditionalSettingsResponsePropertiesProperty2 _explicitNullValueProperties = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.AdditionalSettingsResponseProperties Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; AdditionalData?.Remove("properties"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.AdditionalSettingsResponseProperties _explicitNullValueProperties = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.WebhookAdditionalSettings"/> and sets the default values.
@@ -85,7 +85,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "excludeEventCodes", n => { ExcludeEventCodes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "includeEventCodes", n => { IncludeEventCodes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AdditionalSettingsResponsePropertiesProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.AdditionalSettingsResponsePropertiesProperty2.CreateFromDiscriminatorValue); } },
+                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AdditionalSettingsResponseProperties>(global::Soenneker.Adyen.OpenApiClient.Models.AdditionalSettingsResponseProperties.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -97,7 +97,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("excludeEventCodes", ExcludeEventCodes);
             writer.WriteCollectionOfPrimitiveValues<string>("includeEventCodes", IncludeEventCodes);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AdditionalSettingsResponsePropertiesProperty2>("properties", Properties);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AdditionalSettingsResponseProperties>("properties", Properties);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

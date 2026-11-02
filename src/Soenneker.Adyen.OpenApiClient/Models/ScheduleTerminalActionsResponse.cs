@@ -78,12 +78,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The validation errors that occurred in the list of terminals, and for each error the IDs of the terminals that the error applies to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseTerminalsWithErrorsProperty2? TerminalsWithErrors { get => _explicitNullValueTerminalsWithErrors; set { _explicitNullValueTerminalsWithErrors = value; AdditionalData?.Remove("terminalsWithErrors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("terminalsWithErrors"); else _explicitNullProperties?.Remove("terminalsWithErrors"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseTerminalsWithErrorsProperty2? _explicitNullValueTerminalsWithErrors = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseTerminalsWithErrors? TerminalsWithErrors { get => _explicitNullValueTerminalsWithErrors; set { _explicitNullValueTerminalsWithErrors = value; AdditionalData?.Remove("terminalsWithErrors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("terminalsWithErrors"); else _explicitNullProperties?.Remove("terminalsWithErrors"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseTerminalsWithErrors? _explicitNullValueTerminalsWithErrors = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseTerminalsWithErrorsProperty2 TerminalsWithErrors { get => _explicitNullValueTerminalsWithErrors; set { _explicitNullValueTerminalsWithErrors = value; AdditionalData?.Remove("terminalsWithErrors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("terminalsWithErrors"); else _explicitNullProperties?.Remove("terminalsWithErrors"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseTerminalsWithErrorsProperty2 _explicitNullValueTerminalsWithErrors = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseTerminalsWithErrors TerminalsWithErrors { get => _explicitNullValueTerminalsWithErrors; set { _explicitNullValueTerminalsWithErrors = value; AdditionalData?.Remove("terminalsWithErrors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("terminalsWithErrors"); else _explicitNullProperties?.Remove("terminalsWithErrors"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseTerminalsWithErrors _explicitNullValueTerminalsWithErrors = default!;
 #endif
         /// <summary>The number of terminals for which scheduling the action failed.</summary>
         public int? TotalErrors { get => _explicitNullValueTotalErrors; set { _explicitNullValueTotalErrors = value; AdditionalData?.Remove("totalErrors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalErrors"); else _explicitNullProperties?.Remove("totalErrors"); } }
@@ -120,7 +120,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TerminalActionScheduleDetail>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalActionScheduleDetail.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "scheduledAt", n => { ScheduledAt = n.GetStringValue(); } },
                 { "storeId", n => { StoreId = n.GetStringValue(); } },
-                { "terminalsWithErrors", n => { TerminalsWithErrors = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseTerminalsWithErrorsProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseTerminalsWithErrorsProperty2.CreateFromDiscriminatorValue); } },
+                { "terminalsWithErrors", n => { TerminalsWithErrors = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseTerminalsWithErrors>(global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseTerminalsWithErrors.CreateFromDiscriminatorValue); } },
                 { "totalErrors", n => { TotalErrors = n.GetIntValue(); } },
                 { "totalScheduled", n => { TotalScheduled = n.GetIntValue(); } },
             };
@@ -136,7 +136,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TerminalActionScheduleDetail>("items", Items);
             writer.WriteStringValue("scheduledAt", ScheduledAt);
             writer.WriteStringValue("storeId", StoreId);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseTerminalsWithErrorsProperty2>("terminalsWithErrors", TerminalsWithErrors);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseTerminalsWithErrors>("terminalsWithErrors", TerminalsWithErrors);
             writer.WriteIntValue("totalErrors", TotalErrors);
             writer.WriteIntValue("totalScheduled", TotalScheduled);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

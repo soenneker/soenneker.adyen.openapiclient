@@ -1058,12 +1058,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>A set of key-value pairs provided in the request, prefixed with &apos;metadata.&apos;. For example, &apos;metadata.myField: myValue&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.NotificationAdditionalDataMetadataProperty2? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.NotificationAdditionalDataMetadataProperty2? _explicitNullValueMetadata = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.NotificationAdditionalDataMetadata? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.NotificationAdditionalDataMetadata? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.NotificationAdditionalDataMetadataProperty2 Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.NotificationAdditionalDataMetadataProperty2 _explicitNullValueMetadata = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.NotificationAdditionalDataMetadata Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.NotificationAdditionalDataMetadata _explicitNullValueMetadata = default!;
 #endif
         /// <summary>Indicates the processing flow.Possible values:* **sale**: You do not need to separately capture the funds, because capture happens automatically as part of the transaction. * **auth**: If you have not [configured automatic capture for the transaction](https://docs.adyen.com/online-payments/capture#types-of-capture), you must manually capture the funds.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -1619,7 +1619,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "latestCard.expiryDate", n => { LatestCardExpiryDate = n.GetStringValue(); } },
                 { "latestCard.summary", n => { LatestCardSummary = n.GetStringValue(); } },
                 { "liabilityShift", n => { LiabilityShift = n.GetStringValue(); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.NotificationAdditionalDataMetadataProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.NotificationAdditionalDataMetadataProperty2.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.NotificationAdditionalDataMetadata>(global::Soenneker.Adyen.OpenApiClient.Models.NotificationAdditionalDataMetadata.CreateFromDiscriminatorValue); } },
                 { "networkProcessingMode", n => { NetworkProcessingMode = n.GetStringValue(); } },
                 { "networkToken.available", n => { NetworkTokenAvailable = n.GetStringValue(); } },
                 { "networkToken.bin", n => { NetworkTokenBin = n.GetStringValue(); } },
@@ -1753,7 +1753,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("latestCard.expiryDate", LatestCardExpiryDate);
             writer.WriteStringValue("latestCard.summary", LatestCardSummary);
             writer.WriteStringValue("liabilityShift", LiabilityShift);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.NotificationAdditionalDataMetadataProperty2>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.NotificationAdditionalDataMetadata>("metadata", Metadata);
             writer.WriteStringValue("networkProcessingMode", NetworkProcessingMode);
             writer.WriteStringValue("networkToken.available", NetworkTokenAvailable);
             writer.WriteStringValue("networkToken.bin", NetworkTokenBin);

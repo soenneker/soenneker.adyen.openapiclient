@@ -1682,12 +1682,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>A set of key-value pairs provided in the request, prefixed with &apos;metadata.&apos;. For example, &apos;metadata.myField: myValue&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AuthorisationNotificationAdditionalDataMetadataProperty2? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.AuthorisationNotificationAdditionalDataMetadataProperty2? _explicitNullValueMetadata = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.AuthorisationNotificationAdditionalDataMetadata? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.AuthorisationNotificationAdditionalDataMetadata? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AuthorisationNotificationAdditionalDataMetadataProperty2 Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
-        private global::Soenneker.Adyen.OpenApiClient.Models.AuthorisationNotificationAdditionalDataMetadataProperty2 _explicitNullValueMetadata = default!;
+        public global::Soenneker.Adyen.OpenApiClient.Models.AuthorisationNotificationAdditionalDataMetadata Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.AuthorisationNotificationAdditionalDataMetadata _explicitNullValueMetadata = default!;
 #endif
         /// <summary>The modifiedShopperReference property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -2701,7 +2701,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "merchantIntegration.version", n => { MerchantIntegrationVersion = n.GetStringValue(); } },
                 { "merchantOrderReference", n => { MerchantOrderReference = n.GetStringValue(); } },
                 { "merchantReference", n => { MerchantReference = n.GetStringValue(); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AuthorisationNotificationAdditionalDataMetadataProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.AuthorisationNotificationAdditionalDataMetadataProperty2.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AuthorisationNotificationAdditionalDataMetadata>(global::Soenneker.Adyen.OpenApiClient.Models.AuthorisationNotificationAdditionalDataMetadata.CreateFromDiscriminatorValue); } },
                 { "modifiedShopperReference", n => { ModifiedShopperReference = n.GetStringValue(); } },
                 { "networkProcessingMode", n => { NetworkProcessingMode = n.GetStringValue(); } },
                 { "networkToken.available", n => { NetworkTokenAvailable = n.GetStringValue(); } },
@@ -2922,7 +2922,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("merchantIntegration.version", MerchantIntegrationVersion);
             writer.WriteStringValue("merchantOrderReference", MerchantOrderReference);
             writer.WriteStringValue("merchantReference", MerchantReference);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AuthorisationNotificationAdditionalDataMetadataProperty2>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AuthorisationNotificationAdditionalDataMetadata>("metadata", Metadata);
             writer.WriteStringValue("modifiedShopperReference", ModifiedShopperReference);
             writer.WriteStringValue("networkProcessingMode", NetworkProcessingMode);
             writer.WriteStringValue("networkToken.available", NetworkTokenAvailable);
