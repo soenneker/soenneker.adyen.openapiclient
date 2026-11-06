@@ -134,6 +134,20 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             else if (parseNode.GetChildNode("paymentLinkId") is { } nullNodePaymentLinkId && nullNodePaymentLinkId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentLinkId = null;
             if (parseNode.GetChildNode("paymentMethodVariant") is null) { _explicitNullValuePaymentMethodVariant = default!; _explicitNullProperties?.Remove("paymentMethodVariant"); }
             else if (parseNode.GetChildNode("paymentMethodVariant") is { } nullNodePaymentMethodVariant && nullNodePaymentMethodVariant.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentMethodVariant = null;
+            if (parseNode.GetChildNode("pix.endToEndId") is null) { _explicitNullValuePixEndToEndId = default!; _explicitNullProperties?.Remove("pix.endToEndId"); }
+            else if (parseNode.GetChildNode("pix.endToEndId") is { } nullNodePixEndToEndId && nullNodePixEndToEndId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PixEndToEndId = null;
+            if (parseNode.GetChildNode("pix.originalAmountCurrency") is null) { _explicitNullValuePixOriginalAmountCurrency = default!; _explicitNullProperties?.Remove("pix.originalAmountCurrency"); }
+            else if (parseNode.GetChildNode("pix.originalAmountCurrency") is { } nullNodePixOriginalAmountCurrency && nullNodePixOriginalAmountCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PixOriginalAmountCurrency = null;
+            if (parseNode.GetChildNode("pix.originalAmountValue") is null) { _explicitNullValuePixOriginalAmountValue = default!; _explicitNullProperties?.Remove("pix.originalAmountValue"); }
+            else if (parseNode.GetChildNode("pix.originalAmountValue") is { } nullNodePixOriginalAmountValue && nullNodePixOriginalAmountValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PixOriginalAmountValue = null;
+            if (parseNode.GetChildNode("pix.payer.bankName") is null) { _explicitNullValuePixPayerBankName = default!; _explicitNullProperties?.Remove("pix.payer.bankName"); }
+            else if (parseNode.GetChildNode("pix.payer.bankName") is { } nullNodePixPayerBankName && nullNodePixPayerBankName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PixPayerBankName = null;
+            if (parseNode.GetChildNode("pix.payer.isbp") is null) { _explicitNullValuePixPayerIsbp = default!; _explicitNullProperties?.Remove("pix.payer.isbp"); }
+            else if (parseNode.GetChildNode("pix.payer.isbp") is { } nullNodePixPayerIsbp && nullNodePixPayerIsbp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PixPayerIsbp = null;
+            if (parseNode.GetChildNode("pix.payer.name") is null) { _explicitNullValuePixPayerName = default!; _explicitNullProperties?.Remove("pix.payer.name"); }
+            else if (parseNode.GetChildNode("pix.payer.name") is { } nullNodePixPayerName && nullNodePixPayerName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PixPayerName = null;
+            if (parseNode.GetChildNode("pix.payer.taxId") is null) { _explicitNullValuePixPayerTaxId = default!; _explicitNullProperties?.Remove("pix.payer.taxId"); }
+            else if (parseNode.GetChildNode("pix.payer.taxId") is { } nullNodePixPayerTaxId && nullNodePixPayerTaxId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PixPayerTaxId = null;
             if (parseNode.GetChildNode("riskdata.<name>") is null) { _explicitNullValueRiskdataName = default!; _explicitNullProperties?.Remove("riskdata.<name>"); }
             else if (parseNode.GetChildNode("riskdata.<name>") is { } nullNodeRiskdataName && nullNodeRiskdataName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RiskdataName = null;
             if (parseNode.GetChildNode("shopperCountry") is null) { _explicitNullValueShopperCountry = default!; _explicitNullProperties?.Remove("shopperCountry"); }
@@ -721,6 +735,76 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string PaymentMethodVariant { get => _explicitNullValuePaymentMethodVariant; set { _explicitNullValuePaymentMethodVariant = value; AdditionalData?.Remove("paymentMethodVariant"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentMethodVariant"); else _explicitNullProperties?.Remove("paymentMethodVariant"); } }
         private string _explicitNullValuePaymentMethodVariant = default!;
 #endif
+        /// <summary>The unique end-to-end identifier of the Pix transaction.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PixEndToEndId { get => _explicitNullValuePixEndToEndId; set { _explicitNullValuePixEndToEndId = value; AdditionalData?.Remove("pix.endToEndId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pix.endToEndId"); else _explicitNullProperties?.Remove("pix.endToEndId"); } }
+        private string? _explicitNullValuePixEndToEndId = default!;
+#nullable restore
+#else
+        public string PixEndToEndId { get => _explicitNullValuePixEndToEndId; set { _explicitNullValuePixEndToEndId = value; AdditionalData?.Remove("pix.endToEndId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pix.endToEndId"); else _explicitNullProperties?.Remove("pix.endToEndId"); } }
+        private string _explicitNullValuePixEndToEndId = default!;
+#endif
+        /// <summary>The three-character ISO currency code of the original Pix transaction amount.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PixOriginalAmountCurrency { get => _explicitNullValuePixOriginalAmountCurrency; set { _explicitNullValuePixOriginalAmountCurrency = value; AdditionalData?.Remove("pix.originalAmountCurrency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pix.originalAmountCurrency"); else _explicitNullProperties?.Remove("pix.originalAmountCurrency"); } }
+        private string? _explicitNullValuePixOriginalAmountCurrency = default!;
+#nullable restore
+#else
+        public string PixOriginalAmountCurrency { get => _explicitNullValuePixOriginalAmountCurrency; set { _explicitNullValuePixOriginalAmountCurrency = value; AdditionalData?.Remove("pix.originalAmountCurrency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pix.originalAmountCurrency"); else _explicitNullProperties?.Remove("pix.originalAmountCurrency"); } }
+        private string _explicitNullValuePixOriginalAmountCurrency = default!;
+#endif
+        /// <summary>The original amount of the Pix transaction, in minor units.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PixOriginalAmountValue { get => _explicitNullValuePixOriginalAmountValue; set { _explicitNullValuePixOriginalAmountValue = value; AdditionalData?.Remove("pix.originalAmountValue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pix.originalAmountValue"); else _explicitNullProperties?.Remove("pix.originalAmountValue"); } }
+        private string? _explicitNullValuePixOriginalAmountValue = default!;
+#nullable restore
+#else
+        public string PixOriginalAmountValue { get => _explicitNullValuePixOriginalAmountValue; set { _explicitNullValuePixOriginalAmountValue = value; AdditionalData?.Remove("pix.originalAmountValue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pix.originalAmountValue"); else _explicitNullProperties?.Remove("pix.originalAmountValue"); } }
+        private string _explicitNullValuePixOriginalAmountValue = default!;
+#endif
+        /// <summary>The name of the Pix payer&apos;s bank.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PixPayerBankName { get => _explicitNullValuePixPayerBankName; set { _explicitNullValuePixPayerBankName = value; AdditionalData?.Remove("pix.payer.bankName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pix.payer.bankName"); else _explicitNullProperties?.Remove("pix.payer.bankName"); } }
+        private string? _explicitNullValuePixPayerBankName = default!;
+#nullable restore
+#else
+        public string PixPayerBankName { get => _explicitNullValuePixPayerBankName; set { _explicitNullValuePixPayerBankName = value; AdditionalData?.Remove("pix.payer.bankName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pix.payer.bankName"); else _explicitNullProperties?.Remove("pix.payer.bankName"); } }
+        private string _explicitNullValuePixPayerBankName = default!;
+#endif
+        /// <summary>The ISPB (Identificador do Sistema de Pagamentos Brasileiro) code of the Pix payer&apos;s bank.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PixPayerIsbp { get => _explicitNullValuePixPayerIsbp; set { _explicitNullValuePixPayerIsbp = value; AdditionalData?.Remove("pix.payer.isbp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pix.payer.isbp"); else _explicitNullProperties?.Remove("pix.payer.isbp"); } }
+        private string? _explicitNullValuePixPayerIsbp = default!;
+#nullable restore
+#else
+        public string PixPayerIsbp { get => _explicitNullValuePixPayerIsbp; set { _explicitNullValuePixPayerIsbp = value; AdditionalData?.Remove("pix.payer.isbp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pix.payer.isbp"); else _explicitNullProperties?.Remove("pix.payer.isbp"); } }
+        private string _explicitNullValuePixPayerIsbp = default!;
+#endif
+        /// <summary>The full name of the Pix payer.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PixPayerName { get => _explicitNullValuePixPayerName; set { _explicitNullValuePixPayerName = value; AdditionalData?.Remove("pix.payer.name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pix.payer.name"); else _explicitNullProperties?.Remove("pix.payer.name"); } }
+        private string? _explicitNullValuePixPayerName = default!;
+#nullable restore
+#else
+        public string PixPayerName { get => _explicitNullValuePixPayerName; set { _explicitNullValuePixPayerName = value; AdditionalData?.Remove("pix.payer.name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pix.payer.name"); else _explicitNullProperties?.Remove("pix.payer.name"); } }
+        private string _explicitNullValuePixPayerName = default!;
+#endif
+        /// <summary>The tax identification number (CPF or CNPJ) of the Pix payer.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PixPayerTaxId { get => _explicitNullValuePixPayerTaxId; set { _explicitNullValuePixPayerTaxId = value; AdditionalData?.Remove("pix.payer.taxId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pix.payer.taxId"); else _explicitNullProperties?.Remove("pix.payer.taxId"); } }
+        private string? _explicitNullValuePixPayerTaxId = default!;
+#nullable restore
+#else
+        public string PixPayerTaxId { get => _explicitNullValuePixPayerTaxId; set { _explicitNullValuePixPayerTaxId = value; AdditionalData?.Remove("pix.payer.taxId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pix.payer.taxId"); else _explicitNullProperties?.Remove("pix.payer.taxId"); } }
+        private string _explicitNullValuePixPayerTaxId = default!;
+#endif
         /// <summary>Risk data in a dynamic format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -854,6 +938,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "PaymentAccountReference", n => { PaymentAccountReference = n.GetStringValue(); } },
                 { "paymentLinkId", n => { PaymentLinkId = n.GetStringValue(); } },
                 { "paymentMethodVariant", n => { PaymentMethodVariant = n.GetStringValue(); } },
+                { "pix.endToEndId", n => { PixEndToEndId = n.GetStringValue(); } },
+                { "pix.originalAmountCurrency", n => { PixOriginalAmountCurrency = n.GetStringValue(); } },
+                { "pix.originalAmountValue", n => { PixOriginalAmountValue = n.GetStringValue(); } },
+                { "pix.payer.bankName", n => { PixPayerBankName = n.GetStringValue(); } },
+                { "pix.payer.isbp", n => { PixPayerIsbp = n.GetStringValue(); } },
+                { "pix.payer.name", n => { PixPayerName = n.GetStringValue(); } },
+                { "pix.payer.taxId", n => { PixPayerTaxId = n.GetStringValue(); } },
                 { "riskdata.<name>", n => { RiskdataName = n.GetStringValue(); } },
                 { "shopperCountry", n => { ShopperCountry = n.GetStringValue(); } },
                 { "shopperSocialSecurityNumber", n => { ShopperSocialSecurityNumber = n.GetStringValue(); } },
@@ -926,6 +1017,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("PaymentAccountReference", PaymentAccountReference);
             writer.WriteStringValue("paymentLinkId", PaymentLinkId);
             writer.WriteStringValue("paymentMethodVariant", PaymentMethodVariant);
+            writer.WriteStringValue("pix.endToEndId", PixEndToEndId);
+            writer.WriteStringValue("pix.originalAmountCurrency", PixOriginalAmountCurrency);
+            writer.WriteStringValue("pix.originalAmountValue", PixOriginalAmountValue);
+            writer.WriteStringValue("pix.payer.bankName", PixPayerBankName);
+            writer.WriteStringValue("pix.payer.isbp", PixPayerIsbp);
+            writer.WriteStringValue("pix.payer.name", PixPayerName);
+            writer.WriteStringValue("pix.payer.taxId", PixPayerTaxId);
             writer.WriteStringValue("riskdata.<name>", RiskdataName);
             writer.WriteStringValue("shopperCountry", ShopperCountry);
             writer.WriteStringValue("shopperSocialSecurityNumber", ShopperSocialSecurityNumber);

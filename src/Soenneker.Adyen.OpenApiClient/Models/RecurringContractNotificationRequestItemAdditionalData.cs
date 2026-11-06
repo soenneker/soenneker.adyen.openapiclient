@@ -48,20 +48,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             else if (parseNode.GetChildNode("avsResult") is { } nullNodeAvsResult && nullNodeAvsResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvsResult = null;
             if (parseNode.GetChildNode("avsResultRaw") is null) { _explicitNullValueAvsResultRaw = default!; _explicitNullProperties?.Remove("avsResultRaw"); }
             else if (parseNode.GetChildNode("avsResultRaw") is { } nullNodeAvsResultRaw && nullNodeAvsResultRaw.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvsResultRaw = null;
-            if (parseNode.GetChildNode("bankAccountNumber") is null) { _explicitNullValueBankAccountNumber = default!; _explicitNullProperties?.Remove("bankAccountNumber"); }
-            else if (parseNode.GetChildNode("bankAccountNumber") is { } nullNodeBankAccountNumber && nullNodeBankAccountNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankAccountNumber = null;
             if (parseNode.GetChildNode("bankLocation") is null) { _explicitNullValueBankLocation = default!; _explicitNullProperties?.Remove("bankLocation"); }
             else if (parseNode.GetChildNode("bankLocation") is { } nullNodeBankLocation && nullNodeBankLocation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankLocation = null;
             if (parseNode.GetChildNode("bankLocationId") is null) { _explicitNullValueBankLocationId = default!; _explicitNullProperties?.Remove("bankLocationId"); }
             else if (parseNode.GetChildNode("bankLocationId") is { } nullNodeBankLocationId && nullNodeBankLocationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankLocationId = null;
-            if (parseNode.GetChildNode("bankName") is null) { _explicitNullValueBankName = default!; _explicitNullProperties?.Remove("bankName"); }
-            else if (parseNode.GetChildNode("bankName") is { } nullNodeBankName && nullNodeBankName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankName = null;
             if (parseNode.GetChildNode("bankVerificationResult") is null) { _explicitNullValueBankVerificationResult = default!; _explicitNullProperties?.Remove("bankVerificationResult"); }
             else if (parseNode.GetChildNode("bankVerificationResult") is { } nullNodeBankVerificationResult && nullNodeBankVerificationResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankVerificationResult = null;
             if (parseNode.GetChildNode("bankVerificationResultRaw") is null) { _explicitNullValueBankVerificationResultRaw = default!; _explicitNullProperties?.Remove("bankVerificationResultRaw"); }
             else if (parseNode.GetChildNode("bankVerificationResultRaw") is { } nullNodeBankVerificationResultRaw && nullNodeBankVerificationResultRaw.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankVerificationResultRaw = null;
-            if (parseNode.GetChildNode("bic") is null) { _explicitNullValueBic = default!; _explicitNullProperties?.Remove("bic"); }
-            else if (parseNode.GetChildNode("bic") is { } nullNodeBic && nullNodeBic.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bic = null;
             if (parseNode.GetChildNode("billingAddress.city") is null) { _explicitNullValueBillingAddressCity = default!; _explicitNullProperties?.Remove("billingAddress.city"); }
             else if (parseNode.GetChildNode("billingAddress.city") is { } nullNodeBillingAddressCity && nullNodeBillingAddressCity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingAddressCity = null;
             if (parseNode.GetChildNode("billingAddress.houseNumberOrName") is null) { _explicitNullValueBillingAddressHouseNumberOrName = default!; _explicitNullProperties?.Remove("billingAddress.houseNumberOrName"); }
@@ -160,8 +154,6 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             else if (parseNode.GetChildNode("grossCurrency") is { } nullNodeGrossCurrency && nullNodeGrossCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GrossCurrency = null;
             if (parseNode.GetChildNode("grossValue") is null) { _explicitNullValueGrossValue = default!; _explicitNullProperties?.Remove("grossValue"); }
             else if (parseNode.GetChildNode("grossValue") is { } nullNodeGrossValue && nullNodeGrossValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GrossValue = null;
-            if (parseNode.GetChildNode("iban") is null) { _explicitNullValueIban = default!; _explicitNullProperties?.Remove("iban"); }
-            else if (parseNode.GetChildNode("iban") is { } nullNodeIban && nullNodeIban.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Iban = null;
             if (parseNode.GetChildNode("installments.value") is null) { _explicitNullValueInstallmentsValue = default!; _explicitNullProperties?.Remove("installments.value"); }
             else if (parseNode.GetChildNode("installments.value") is { } nullNodeInstallmentsValue && nullNodeInstallmentsValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstallmentsValue = null;
             if (parseNode.GetChildNode("interactionCounter") is null) { _explicitNullValueInteractionCounter = default!; _explicitNullProperties?.Remove("interactionCounter"); }
@@ -204,8 +196,6 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             else if (parseNode.GetChildNode("opi.transToken") is { } nullNodeOpiTransToken && nullNodeOpiTransToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OpiTransToken = null;
             if (parseNode.GetChildNode("ownerCity") is null) { _explicitNullValueOwnerCity = default!; _explicitNullProperties?.Remove("ownerCity"); }
             else if (parseNode.GetChildNode("ownerCity") is { } nullNodeOwnerCity && nullNodeOwnerCity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OwnerCity = null;
-            if (parseNode.GetChildNode("ownerName") is null) { _explicitNullValueOwnerName = default!; _explicitNullProperties?.Remove("ownerName"); }
-            else if (parseNode.GetChildNode("ownerName") is { } nullNodeOwnerName && nullNodeOwnerName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OwnerName = null;
             if (parseNode.GetChildNode("PaymentAccountReference") is null) { _explicitNullValuePaymentAccountReference = default!; _explicitNullProperties?.Remove("PaymentAccountReference"); }
             else if (parseNode.GetChildNode("PaymentAccountReference") is { } nullNodePaymentAccountReference && nullNodePaymentAccountReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentAccountReference = null;
             if (parseNode.GetChildNode("paymentLinkId") is null) { _explicitNullValuePaymentLinkId = default!; _explicitNullProperties?.Remove("paymentLinkId"); }
@@ -426,16 +416,6 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string AvsResultRaw { get => _explicitNullValueAvsResultRaw; set { _explicitNullValueAvsResultRaw = value; AdditionalData?.Remove("avsResultRaw"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avsResultRaw"); else _explicitNullProperties?.Remove("avsResultRaw"); } }
         private string _explicitNullValueAvsResultRaw = default!;
 #endif
-        /// <summary>The bank account number.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BankAccountNumber { get => _explicitNullValueBankAccountNumber; set { _explicitNullValueBankAccountNumber = value; AdditionalData?.Remove("bankAccountNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankAccountNumber"); else _explicitNullProperties?.Remove("bankAccountNumber"); } }
-        private string? _explicitNullValueBankAccountNumber = default!;
-#nullable restore
-#else
-        public string BankAccountNumber { get => _explicitNullValueBankAccountNumber; set { _explicitNullValueBankAccountNumber = value; AdditionalData?.Remove("bankAccountNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankAccountNumber"); else _explicitNullProperties?.Remove("bankAccountNumber"); } }
-        private string _explicitNullValueBankAccountNumber = default!;
-#endif
         /// <summary>The bank location.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -456,16 +436,6 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string BankLocationId { get => _explicitNullValueBankLocationId; set { _explicitNullValueBankLocationId = value; AdditionalData?.Remove("bankLocationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankLocationId"); else _explicitNullProperties?.Remove("bankLocationId"); } }
         private string _explicitNullValueBankLocationId = default!;
 #endif
-        /// <summary>The bank name.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BankName { get => _explicitNullValueBankName; set { _explicitNullValueBankName = value; AdditionalData?.Remove("bankName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankName"); else _explicitNullProperties?.Remove("bankName"); } }
-        private string? _explicitNullValueBankName = default!;
-#nullable restore
-#else
-        public string BankName { get => _explicitNullValueBankName; set { _explicitNullValueBankName = value; AdditionalData?.Remove("bankName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankName"); else _explicitNullProperties?.Remove("bankName"); } }
-        private string _explicitNullValueBankName = default!;
-#endif
         /// <summary>The bank verification result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -485,16 +455,6 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string BankVerificationResultRaw { get => _explicitNullValueBankVerificationResultRaw; set { _explicitNullValueBankVerificationResultRaw = value; AdditionalData?.Remove("bankVerificationResultRaw"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankVerificationResultRaw"); else _explicitNullProperties?.Remove("bankVerificationResultRaw"); } }
         private string _explicitNullValueBankVerificationResultRaw = default!;
-#endif
-        /// <summary>Business Identifier Code.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Bic { get => _explicitNullValueBic; set { _explicitNullValueBic = value; AdditionalData?.Remove("bic"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bic"); else _explicitNullProperties?.Remove("bic"); } }
-        private string? _explicitNullValueBic = default!;
-#nullable restore
-#else
-        public string Bic { get => _explicitNullValueBic; set { _explicitNullValueBic = value; AdditionalData?.Remove("bic"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bic"); else _explicitNullProperties?.Remove("bic"); } }
-        private string _explicitNullValueBic = default!;
 #endif
         /// <summary>BillingAddress: county.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -979,16 +939,6 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string GrossValue { get => _explicitNullValueGrossValue; set { _explicitNullValueGrossValue = value; AdditionalData?.Remove("grossValue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grossValue"); else _explicitNullProperties?.Remove("grossValue"); } }
         private string _explicitNullValueGrossValue = default!;
 #endif
-        /// <summary>International Bank Account Number.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Iban { get => _explicitNullValueIban; set { _explicitNullValueIban = value; AdditionalData?.Remove("iban"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iban"); else _explicitNullProperties?.Remove("iban"); } }
-        private string? _explicitNullValueIban = default!;
-#nullable restore
-#else
-        public string Iban { get => _explicitNullValueIban; set { _explicitNullValueIban = value; AdditionalData?.Remove("iban"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iban"); else _explicitNullProperties?.Remove("iban"); } }
-        private string _explicitNullValueIban = default!;
-#endif
         /// <summary>The number of installments that the payment amount should be charged with.Example: 5&gt; Only relevant for card payments in countries that support installments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -1198,16 +1148,6 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string OwnerCity { get => _explicitNullValueOwnerCity; set { _explicitNullValueOwnerCity = value; AdditionalData?.Remove("ownerCity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownerCity"); else _explicitNullProperties?.Remove("ownerCity"); } }
         private string _explicitNullValueOwnerCity = default!;
-#endif
-        /// <summary>Owner name.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OwnerName { get => _explicitNullValueOwnerName; set { _explicitNullValueOwnerName = value; AdditionalData?.Remove("ownerName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownerName"); else _explicitNullProperties?.Remove("ownerName"); } }
-        private string? _explicitNullValueOwnerName = default!;
-#nullable restore
-#else
-        public string OwnerName { get => _explicitNullValueOwnerName; set { _explicitNullValueOwnerName = value; AdditionalData?.Remove("ownerName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownerName"); else _explicitNullProperties?.Remove("ownerName"); } }
-        private string _explicitNullValueOwnerName = default!;
 #endif
         /// <summary>Reference of the payment account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -1579,13 +1519,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "authorisedAmountValue", n => { AuthorisedAmountValue = n.GetStringValue(); } },
                 { "avsResult", n => { AvsResult = n.GetStringValue(); } },
                 { "avsResultRaw", n => { AvsResultRaw = n.GetStringValue(); } },
-                { "bankAccountNumber", n => { BankAccountNumber = n.GetStringValue(); } },
                 { "bankLocation", n => { BankLocation = n.GetStringValue(); } },
                 { "bankLocationId", n => { BankLocationId = n.GetStringValue(); } },
-                { "bankName", n => { BankName = n.GetStringValue(); } },
                 { "bankVerificationResult", n => { BankVerificationResult = n.GetStringValue(); } },
                 { "bankVerificationResultRaw", n => { BankVerificationResultRaw = n.GetStringValue(); } },
-                { "bic", n => { Bic = n.GetStringValue(); } },
                 { "billingAddress.city", n => { BillingAddressCity = n.GetStringValue(); } },
                 { "billingAddress.houseNumberOrName", n => { BillingAddressHouseNumberOrName = n.GetStringValue(); } },
                 { "billingAddress.postalCode", n => { BillingAddressPostalCode = n.GetStringValue(); } },
@@ -1635,7 +1572,6 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "GoPay.gopayAccountId", n => { GoPayGopayAccountId = n.GetStringValue(); } },
                 { "grossCurrency", n => { GrossCurrency = n.GetStringValue(); } },
                 { "grossValue", n => { GrossValue = n.GetStringValue(); } },
-                { "iban", n => { Iban = n.GetStringValue(); } },
                 { "installments.value", n => { InstallmentsValue = n.GetStringValue(); } },
                 { "interactionCounter", n => { InteractionCounter = n.GetStringValue(); } },
                 { "issuerComments.cardholderName", n => { IssuerCommentsCardholderName = n.GetStringValue(); } },
@@ -1657,7 +1593,6 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "nfc.uid", n => { NfcUid = n.GetStringValue(); } },
                 { "opi.transToken", n => { OpiTransToken = n.GetStringValue(); } },
                 { "ownerCity", n => { OwnerCity = n.GetStringValue(); } },
-                { "ownerName", n => { OwnerName = n.GetStringValue(); } },
                 { "payULatamTrazabilityCode", n => { PayULatamTrazabilityCode = n.GetStringValue(); } },
                 { "PaymentAccountReference", n => { PaymentAccountReference = n.GetStringValue(); } },
                 { "paymentLinkId", n => { PaymentLinkId = n.GetStringValue(); } },
@@ -1715,13 +1650,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("authorisedAmountValue", AuthorisedAmountValue);
             writer.WriteStringValue("avsResult", AvsResult);
             writer.WriteStringValue("avsResultRaw", AvsResultRaw);
-            writer.WriteStringValue("bankAccountNumber", BankAccountNumber);
             writer.WriteStringValue("bankLocation", BankLocation);
             writer.WriteStringValue("bankLocationId", BankLocationId);
-            writer.WriteStringValue("bankName", BankName);
             writer.WriteStringValue("bankVerificationResult", BankVerificationResult);
             writer.WriteStringValue("bankVerificationResultRaw", BankVerificationResultRaw);
-            writer.WriteStringValue("bic", Bic);
             writer.WriteStringValue("billingAddress.city", BillingAddressCity);
             writer.WriteStringValue("billingAddress.houseNumberOrName", BillingAddressHouseNumberOrName);
             writer.WriteStringValue("billingAddress.postalCode", BillingAddressPostalCode);
@@ -1771,7 +1703,6 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("GoPay.gopayAccountId", GoPayGopayAccountId);
             writer.WriteStringValue("grossCurrency", GrossCurrency);
             writer.WriteStringValue("grossValue", GrossValue);
-            writer.WriteStringValue("iban", Iban);
             writer.WriteStringValue("installments.value", InstallmentsValue);
             writer.WriteStringValue("interactionCounter", InteractionCounter);
             writer.WriteStringValue("issuerComments.cardholderName", IssuerCommentsCardholderName);
@@ -1793,7 +1724,6 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("nfc.uid", NfcUid);
             writer.WriteStringValue("opi.transToken", OpiTransToken);
             writer.WriteStringValue("ownerCity", OwnerCity);
-            writer.WriteStringValue("ownerName", OwnerName);
             writer.WriteStringValue("PaymentAccountReference", PaymentAccountReference);
             writer.WriteStringValue("paymentLinkId", PaymentLinkId);
             writer.WriteStringValue("payULatamTrazabilityCode", PayULatamTrazabilityCode);

@@ -208829,6 +208829,34 @@
             "type": "string",
             "description": "Related to PayPal."
           },
+          "pix.endToEndId": {
+            "type": "string",
+            "description": "The unique end-to-end identifier of the Pix transaction."
+          },
+          "pix.originalAmountCurrency": {
+            "type": "string",
+            "description": "The three-character ISO currency code of the original Pix transaction amount."
+          },
+          "pix.originalAmountValue": {
+            "type": "string",
+            "description": "The original amount of the Pix transaction, in minor units."
+          },
+          "pix.payer.bankName": {
+            "type": "string",
+            "description": "The name of the Pix payer\u0027s bank."
+          },
+          "pix.payer.isbp": {
+            "type": "string",
+            "description": "The ISPB (Identificador do Sistema de Pagamentos Brasileiro) code of the Pix payer\u0027s bank."
+          },
+          "pix.payer.name": {
+            "type": "string",
+            "description": "The full name of the Pix payer."
+          },
+          "pix.payer.taxId": {
+            "type": "string",
+            "description": "The tax identification number (CPF or CNPJ) of the Pix payer."
+          },
           "platform": {
             "type": "string"
           },
@@ -209377,6 +209405,34 @@
           },
           "paymentMethodVariant": {
             "type": "string"
+          },
+          "pix.endToEndId": {
+            "type": "string",
+            "description": "The unique end-to-end identifier of the Pix transaction."
+          },
+          "pix.originalAmountCurrency": {
+            "type": "string",
+            "description": "The three-character ISO currency code of the original Pix transaction amount."
+          },
+          "pix.originalAmountValue": {
+            "type": "string",
+            "description": "The original amount of the Pix transaction, in minor units."
+          },
+          "pix.payer.bankName": {
+            "type": "string",
+            "description": "The name of the Pix payer\u0027s bank."
+          },
+          "pix.payer.isbp": {
+            "type": "string",
+            "description": "The ISPB (Identificador do Sistema de Pagamentos Brasileiro) code of the Pix payer\u0027s bank."
+          },
+          "pix.payer.name": {
+            "type": "string",
+            "description": "The full name of the Pix payer."
+          },
+          "pix.payer.taxId": {
+            "type": "string",
+            "description": "The tax identification number (CPF or CNPJ) of the Pix payer."
           },
           "riskdata.\u003Cname\u003E": {
             "type": "string",
@@ -211153,10 +211209,6 @@
             "type": "string",
             "description": "Address Verification Service result raw."
           },
-          "bankAccountNumber": {
-            "type": "string",
-            "description": "The bank account number."
-          },
           "bankLocation": {
             "type": "string",
             "description": "The bank location."
@@ -211165,10 +211217,6 @@
             "type": "string",
             "description": "The bank location ID."
           },
-          "bankName": {
-            "type": "string",
-            "description": "The bank name."
-          },
           "bankVerificationResult": {
             "type": "string",
             "description": "The bank verification result."
@@ -211176,10 +211224,6 @@
           "bankVerificationResultRaw": {
             "type": "string",
             "description": "The bank verification result raw."
-          },
-          "bic": {
-            "type": "string",
-            "description": "Business Identifier Code."
           },
           "billingAddress.city": {
             "type": "string",
@@ -211373,10 +211417,6 @@
             "type": "string",
             "description": "Chargeback gross value."
           },
-          "iban": {
-            "type": "string",
-            "description": "International Bank Account Number."
-          },
           "installments.value": {
             "type": "string",
             "description": "The number of installments that the payment amount should be charged with.\n\nExample: 5\n\u003E Only relevant for card payments in countries that support installments."
@@ -211459,10 +211499,6 @@
           "ownerCity": {
             "type": "string",
             "description": "Owner city."
-          },
-          "ownerName": {
-            "type": "string",
-            "description": "Owner name."
           },
           "payULatamTrazabilityCode": {
             "type": "string",
@@ -211948,6 +211984,34 @@
           },
           "paymentMethodVariant": {
             "type": "string"
+          },
+          "pix.endToEndId": {
+            "type": "string",
+            "description": "The unique end-to-end identifier of the Pix transaction."
+          },
+          "pix.originalAmountCurrency": {
+            "type": "string",
+            "description": "The three-character ISO currency code of the original Pix transaction amount."
+          },
+          "pix.originalAmountValue": {
+            "type": "string",
+            "description": "The original amount of the Pix transaction, in minor units."
+          },
+          "pix.payer.bankName": {
+            "type": "string",
+            "description": "The name of the Pix payer\u0027s bank."
+          },
+          "pix.payer.isbp": {
+            "type": "string",
+            "description": "The ISPB (Identificador do Sistema de Pagamentos Brasileiro) code of the Pix payer\u0027s bank."
+          },
+          "pix.payer.name": {
+            "type": "string",
+            "description": "The full name of the Pix payer."
+          },
+          "pix.payer.taxId": {
+            "type": "string",
+            "description": "The tax identification number (CPF or CNPJ) of the Pix payer."
           },
           "refusalReasonRaw": {
             "type": "string"
@@ -299448,6 +299512,34 @@
           "type": "string",
           "description": "Related to PayPal."
         },
+        "pix.endToEndId": {
+          "type": "string",
+          "description": "The unique end-to-end identifier of the Pix transaction."
+        },
+        "pix.originalAmountCurrency": {
+          "type": "string",
+          "description": "The three-character ISO currency code of the original Pix transaction amount."
+        },
+        "pix.originalAmountValue": {
+          "type": "string",
+          "description": "The original amount of the Pix transaction, in minor units."
+        },
+        "pix.payer.bankName": {
+          "type": "string",
+          "description": "The name of the Pix payer\u0027s bank."
+        },
+        "pix.payer.isbp": {
+          "type": "string",
+          "description": "The ISPB (Identificador do Sistema de Pagamentos Brasileiro) code of the Pix payer\u0027s bank."
+        },
+        "pix.payer.name": {
+          "type": "string",
+          "description": "The full name of the Pix payer."
+        },
+        "pix.payer.taxId": {
+          "type": "string",
+          "description": "The tax identification number (CPF or CNPJ) of the Pix payer."
+        },
         "platform": {
           "type": "string"
         },
@@ -299938,6 +300030,34 @@
         },
         "paymentMethodVariant": {
           "type": "string"
+        },
+        "pix.endToEndId": {
+          "type": "string",
+          "description": "The unique end-to-end identifier of the Pix transaction."
+        },
+        "pix.originalAmountCurrency": {
+          "type": "string",
+          "description": "The three-character ISO currency code of the original Pix transaction amount."
+        },
+        "pix.originalAmountValue": {
+          "type": "string",
+          "description": "The original amount of the Pix transaction, in minor units."
+        },
+        "pix.payer.bankName": {
+          "type": "string",
+          "description": "The name of the Pix payer\u0027s bank."
+        },
+        "pix.payer.isbp": {
+          "type": "string",
+          "description": "The ISPB (Identificador do Sistema de Pagamentos Brasileiro) code of the Pix payer\u0027s bank."
+        },
+        "pix.payer.name": {
+          "type": "string",
+          "description": "The full name of the Pix payer."
+        },
+        "pix.payer.taxId": {
+          "type": "string",
+          "description": "The tax identification number (CPF or CNPJ) of the Pix payer."
         },
         "riskdata.\u003Cname\u003E": {
           "type": "string",
@@ -300946,10 +301066,6 @@
           "type": "string",
           "description": "Address Verification Service result raw."
         },
-        "bankAccountNumber": {
-          "type": "string",
-          "description": "The bank account number."
-        },
         "bankLocation": {
           "type": "string",
           "description": "The bank location."
@@ -300958,10 +301074,6 @@
           "type": "string",
           "description": "The bank location ID."
         },
-        "bankName": {
-          "type": "string",
-          "description": "The bank name."
-        },
         "bankVerificationResult": {
           "type": "string",
           "description": "The bank verification result."
@@ -300969,10 +301081,6 @@
         "bankVerificationResultRaw": {
           "type": "string",
           "description": "The bank verification result raw."
-        },
-        "bic": {
-          "type": "string",
-          "description": "Business Identifier Code."
         },
         "billingAddress.city": {
           "type": "string",
@@ -301166,10 +301274,6 @@
           "type": "string",
           "description": "Chargeback gross value."
         },
-        "iban": {
-          "type": "string",
-          "description": "International Bank Account Number."
-        },
         "installments.value": {
           "type": "string",
           "description": "The number of installments that the payment amount should be charged with.\n\nExample: 5\n\u003E Only relevant for card payments in countries that support installments."
@@ -301252,10 +301356,6 @@
         "ownerCity": {
           "type": "string",
           "description": "Owner city."
-        },
-        "ownerName": {
-          "type": "string",
-          "description": "Owner name."
         },
         "payULatamTrazabilityCode": {
           "type": "string",
@@ -301616,6 +301716,34 @@
         },
         "paymentMethodVariant": {
           "type": "string"
+        },
+        "pix.endToEndId": {
+          "type": "string",
+          "description": "The unique end-to-end identifier of the Pix transaction."
+        },
+        "pix.originalAmountCurrency": {
+          "type": "string",
+          "description": "The three-character ISO currency code of the original Pix transaction amount."
+        },
+        "pix.originalAmountValue": {
+          "type": "string",
+          "description": "The original amount of the Pix transaction, in minor units."
+        },
+        "pix.payer.bankName": {
+          "type": "string",
+          "description": "The name of the Pix payer\u0027s bank."
+        },
+        "pix.payer.isbp": {
+          "type": "string",
+          "description": "The ISPB (Identificador do Sistema de Pagamentos Brasileiro) code of the Pix payer\u0027s bank."
+        },
+        "pix.payer.name": {
+          "type": "string",
+          "description": "The full name of the Pix payer."
+        },
+        "pix.payer.taxId": {
+          "type": "string",
+          "description": "The tax identification number (CPF or CNPJ) of the Pix payer."
         },
         "refusalReasonRaw": {
           "type": "string"
