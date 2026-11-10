@@ -40,10 +40,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Indicates whether receiving payments is allowed. This value is set to **true** by Adyen after screening your merchant account.</summary>
+        /// <summary>Indicates whether receiving payments is allowed. This value is set to **true** by Adyen after screening your merchant account.Only returned in webhooks that include the screening results for your merchant account.</summary>
         public bool? Allowed { get => _explicitNullValueAllowed; set { _explicitNullValueAllowed = value; AdditionalData?.Remove("allowed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed"); else _explicitNullProperties?.Remove("allowed"); } }
         private bool? _explicitNullValueAllowed = default!;
-        /// <summary>Indicates whether the payment method is enabled (**true**) or disabled (**false**).</summary>
+        /// <summary>Indicates whether the payment method is enabled (**true**) or disabled (**false**).Only reliable in webhooks that include the screening results for your merchant account.</summary>
         public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
         /// <summary>The unique identifier of the resource.</summary>
@@ -76,7 +76,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; AdditionalData?.Remove("reference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
         private string _explicitNullValueReference = default!;
 #endif
-        /// <summary>The status of the request to add a payment method. Possible values:* **success**: the payment method was added.* **failure**: the request failed.* **capabilityPending**: the **receivePayments** capability is not allowed.</summary>
+        /// <summary>The status of the request to add a payment method. Possible values:* **success**: the payment method was added.* **failure**: the request failed.* **capabilityPending**: the **receivePayments** capability is not allowed.A webhook with `status` **success** is the last webhook for that payment method.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.MidServiceNotificationDataStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.MidServiceNotificationDataStatus? _explicitNullValueStatus = default!;
         /// <summary>The unique identifier of the [store](https://docs.adyen.com/api-explorer/#/ManagementService/latest/post/merchants/{id}/paymentMethodSettings__reqParam_storeId), if any.</summary>
@@ -99,7 +99,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private string _explicitNullValueType = default!;
 #endif
-        /// <summary>Payment method status. Possible values:* **valid*** **pending*** **invalid*** **rejected**</summary>
+        /// <summary>Payment method status. Possible values:* **valid*** **pending*** **invalid*** **rejected**Only returned in webhooks that include the screening results for your merchant account.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.MidServiceNotificationDataVerificationStatus? VerificationStatus { get => _explicitNullValueVerificationStatus; set { _explicitNullValueVerificationStatus = value; AdditionalData?.Remove("verificationStatus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verificationStatus"); else _explicitNullProperties?.Remove("verificationStatus"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.MidServiceNotificationDataVerificationStatus? _explicitNullValueVerificationStatus = default!;
         /// <summary>

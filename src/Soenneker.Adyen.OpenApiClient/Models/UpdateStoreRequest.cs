@@ -77,7 +77,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string ExternalReferenceId { get => _explicitNullValueExternalReferenceId; set { _explicitNullValueExternalReferenceId = value; AdditionalData?.Remove("externalReferenceId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalReferenceId"); else _explicitNullProperties?.Remove("externalReferenceId"); } }
         private string _explicitNullValueExternalReferenceId = default!;
 #endif
-        /// <summary>The phone number of the store, including &apos;+&apos; and country code in the [E.164](https://en.wikipedia.org/wiki/E.164) format. If passed in a different format, we convert and validate the phone number against E.164. </summary>
+        /// <summary>The phone number of the store in [E.164](https://en.wikipedia.org/wiki/E.164) format: a plus sign (`+`), the country code, and the phone number. For example, **+13123456789**.You can include spaces, hyphens, or brackets, such as **+1 (312) 345-6789**. We reject phone numbers that do not start with `+` and the country code, such as **3123456789** or **0031201234567**.The phone number can be from a different country than the store address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PhoneNumber { get => _explicitNullValuePhoneNumber; set { _explicitNullValuePhoneNumber = value; AdditionalData?.Remove("phoneNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phoneNumber"); else _explicitNullProperties?.Remove("phoneNumber"); } }

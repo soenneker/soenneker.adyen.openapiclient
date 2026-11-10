@@ -57,6 +57,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             else if (parseNode.GetChildNode("showCalculatedPercentageTippingAmount") is { } nullNodeShowCalculatedPercentageTippingAmount && nullNodeShowCalculatedPercentageTippingAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShowCalculatedPercentageTippingAmount = null;
             if (parseNode.GetChildNode("signature") is null) { _explicitNullValueSignature = default!; _explicitNullProperties?.Remove("signature"); }
             else if (parseNode.GetChildNode("signature") is { } nullNodeSignature && nullNodeSignature.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Signature = null;
+            if (parseNode.GetChildNode("skipTipConfirmationOnTerminal") is null) { _explicitNullValueSkipTipConfirmationOnTerminal = default!; _explicitNullProperties?.Remove("skipTipConfirmationOnTerminal"); }
+            else if (parseNode.GetChildNode("skipTipConfirmationOnTerminal") is { } nullNodeSkipTipConfirmationOnTerminal && nullNodeSkipTipConfirmationOnTerminal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkipTipConfirmationOnTerminal = null;
             if (parseNode.GetChildNode("standalone") is null) { _explicitNullValueStandalone = default!; _explicitNullProperties?.Remove("standalone"); }
             else if (parseNode.GetChildNode("standalone") is { } nullNodeStandalone && nullNodeStandalone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Standalone = null;
             if (parseNode.GetChildNode("storeAndForward") is null) { _explicitNullValueStoreAndForward = default!; _explicitNullProperties?.Remove("storeAndForward"); }
@@ -268,6 +270,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSignature Signature { get => _explicitNullValueSignature; set { _explicitNullValueSignature = value; AdditionalData?.Remove("signature"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signature"); else _explicitNullProperties?.Remove("signature"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSignature _explicitNullValueSignature = default!;
 #endif
+        /// <summary>Skip the tip confirmation step of the Adyen payment app on the terminal. Set to **true** only if your own app that handles tipping is installed on the same terminal. If your app is not installed on the terminal, set to **false**.</summary>
+        public bool? SkipTipConfirmationOnTerminal { get => _explicitNullValueSkipTipConfirmationOnTerminal; set { _explicitNullValueSkipTipConfirmationOnTerminal = value; AdditionalData?.Remove("skipTipConfirmationOnTerminal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skipTipConfirmationOnTerminal"); else _explicitNullProperties?.Remove("skipTipConfirmationOnTerminal"); } }
+        private bool? _explicitNullValueSkipTipConfirmationOnTerminal = default!;
         /// <summary>Settings for [standalone](https://docs.adyen.com/point-of-sale/standalone/standalone-build/set-up-standalone#set-up-standalone-using-an-api-call) features.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -383,6 +388,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "refunds", n => { Refunds = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsRefunds>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsRefunds.CreateFromDiscriminatorValue); } },
                 { "showCalculatedPercentageTippingAmount", n => { ShowCalculatedPercentageTippingAmount = n.GetBoolValue(); } },
                 { "signature", n => { Signature = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSignature>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSignature.CreateFromDiscriminatorValue); } },
+                { "skipTipConfirmationOnTerminal", n => { SkipTipConfirmationOnTerminal = n.GetBoolValue(); } },
                 { "standalone", n => { Standalone = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStandalone>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStandalone.CreateFromDiscriminatorValue); } },
                 { "storeAndForward", n => { StoreAndForward = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStoreAndForward>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStoreAndForward.CreateFromDiscriminatorValue); } },
                 { "surcharge", n => { Surcharge = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSurcharge>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSurcharge.CreateFromDiscriminatorValue); } },
@@ -419,6 +425,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsRefunds>("refunds", Refunds);
             writer.WriteBoolValue("showCalculatedPercentageTippingAmount", ShowCalculatedPercentageTippingAmount);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSignature>("signature", Signature);
+            writer.WriteBoolValue("skipTipConfirmationOnTerminal", SkipTipConfirmationOnTerminal);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStandalone>("standalone", Standalone);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStoreAndForward>("storeAndForward", StoreAndForward);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSurcharge>("surcharge", Surcharge);

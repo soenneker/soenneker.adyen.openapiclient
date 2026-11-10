@@ -156,6 +156,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         #pragma warning disable CS1591
         BlikPos,
         #pragma warning restore CS1591
+        [EnumMember(Value = "boncard")]
+        #pragma warning disable CS1591
+        Boncard,
+        #pragma warning restore CS1591
         [EnumMember(Value = "br_schemes")]
         #pragma warning disable CS1591
         BrSchemes,
@@ -428,6 +432,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         #pragma warning disable CS1591
         PaybybankPlaid,
         #pragma warning restore CS1591
+        [EnumMember(Value = "paybybank_plaid_ca")]
+        #pragma warning disable CS1591
+        PaybybankPlaidCa,
+        #pragma warning restore CS1591
         [EnumMember(Value = "payme")]
         #pragma warning disable CS1591
         Payme,
@@ -463,6 +471,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         [EnumMember(Value = "personal_card_debit")]
         #pragma warning disable CS1591
         PersonalCardDebit,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "pix")]
+        #pragma warning disable CS1591
+        Pix,
         #pragma warning restore CS1591
         [EnumMember(Value = "pulse")]
         #pragma warning disable CS1591

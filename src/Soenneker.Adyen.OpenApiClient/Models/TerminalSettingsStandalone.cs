@@ -24,6 +24,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             else if (parseNode.GetChildNode("enableGratuities") is { } nullNodeEnableGratuities && nullNodeEnableGratuities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableGratuities = null;
             if (parseNode.GetChildNode("enableStandalone") is null) { _explicitNullValueEnableStandalone = default!; _explicitNullProperties?.Remove("enableStandalone"); }
             else if (parseNode.GetChildNode("enableStandalone") is { } nullNodeEnableStandalone && nullNodeEnableStandalone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableStandalone = null;
+            if (parseNode.GetChildNode("merchantReference") is null) { _explicitNullValueMerchantReference = default!; _explicitNullProperties?.Remove("merchantReference"); }
+            else if (parseNode.GetChildNode("merchantReference") is { } nullNodeMerchantReference && nullNodeMerchantReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantReference = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -44,6 +46,16 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Enable standalone mode.</summary>
         public bool? EnableStandalone { get => _explicitNullValueEnableStandalone; set { _explicitNullValueEnableStandalone = value; AdditionalData?.Remove("enableStandalone"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enableStandalone"); else _explicitNullProperties?.Remove("enableStandalone"); } }
         private bool? _explicitNullValueEnableStandalone = default!;
+        /// <summary>The merchant reference to be sent with every transaction when the terminal is in standalone mode. Used for reconciliation.This property also accepts one or more variables as input, together with plain text. When this property reaches the terminal, the terminal replaces the variables with the values that apply to it. For the list of allowed variables, see [Configure the merchant reference](https://docs.adyen.com/point-of-sale/standalone/standalone-build/set-up-standalone#configure-merchant-reference).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MerchantReference { get => _explicitNullValueMerchantReference; set { _explicitNullValueMerchantReference = value; AdditionalData?.Remove("merchantReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantReference"); else _explicitNullProperties?.Remove("merchantReference"); } }
+        private string? _explicitNullValueMerchantReference = default!;
+#nullable restore
+#else
+        public string MerchantReference { get => _explicitNullValueMerchantReference; set { _explicitNullValueMerchantReference = value; AdditionalData?.Remove("merchantReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantReference"); else _explicitNullProperties?.Remove("merchantReference"); } }
+        private string _explicitNullValueMerchantReference = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStandalone"/> and sets the default values.
         /// </summary>
@@ -74,6 +86,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "currencyCode", n => { CurrencyCode = n.GetStringValue(); } },
                 { "enableGratuities", n => { EnableGratuities = n.GetBoolValue(); } },
                 { "enableStandalone", n => { EnableStandalone = n.GetBoolValue(); } },
+                { "merchantReference", n => { MerchantReference = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -86,6 +99,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("currencyCode", CurrencyCode);
             writer.WriteBoolValue("enableGratuities", EnableGratuities);
             writer.WriteBoolValue("enableStandalone", EnableStandalone);
+            writer.WriteStringValue("merchantReference", MerchantReference);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -76,6 +76,7 @@ namespace Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Merchants.Item.Users
         /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3RestServiceError">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3RestServiceError">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3RestServiceError">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3RestServiceError">When receiving a 409 status code</exception>
         /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3RestServiceError">When receiving a 422 status code</exception>
         /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3RestServiceError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -94,6 +95,7 @@ namespace Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Merchants.Item.Users
                 { "400", global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3RestServiceError.CreateFromDiscriminatorValue },
                 { "401", global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3RestServiceError.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3RestServiceError.CreateFromDiscriminatorValue },
+                { "409", global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3RestServiceError.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3RestServiceError.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3RestServiceError.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },

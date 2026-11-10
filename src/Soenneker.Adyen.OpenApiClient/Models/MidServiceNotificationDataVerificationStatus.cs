@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>Payment method status. Possible values:* **valid*** **pending*** **invalid*** **rejected**</summary>
+    /// <summary>Payment method status. Possible values:* **valid*** **pending*** **invalid*** **rejected**Only returned in webhooks that include the screening results for your merchant account.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum MidServiceNotificationDataVerificationStatus
     {

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>The status of the request to add a payment method. Possible values:* **success**: the payment method was added.* **failure**: the request failed.* **capabilityPending**: the **receivePayments** capability is not allowed.</summary>
+    /// <summary>The status of the request to add a payment method. Possible values:* **success**: the payment method was added.* **failure**: the request failed.* **capabilityPending**: the **receivePayments** capability is not allowed.A webhook with `status` **success** is the last webhook for that payment method.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum MidServiceNotificationDataStatus
     {

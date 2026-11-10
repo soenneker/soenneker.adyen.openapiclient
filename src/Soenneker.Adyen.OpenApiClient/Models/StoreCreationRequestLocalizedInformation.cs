@@ -18,12 +18,26 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("localizedAddress") is null) { _explicitNullValueLocalizedAddress = default!; _explicitNullProperties?.Remove("localizedAddress"); }
+            else if (parseNode.GetChildNode("localizedAddress") is { } nullNodeLocalizedAddress && nullNodeLocalizedAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocalizedAddress = null;
             if (parseNode.GetChildNode("localShopperStatement") is null) { _explicitNullValueLocalShopperStatement = default!; _explicitNullProperties?.Remove("localShopperStatement"); }
             else if (parseNode.GetChildNode("localShopperStatement") is { } nullNodeLocalShopperStatement && nullNodeLocalShopperStatement.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocalShopperStatement = null;
+            if (parseNode.GetChildNode("localStoreName") is null) { _explicitNullValueLocalStoreName = default!; _explicitNullProperties?.Remove("localStoreName"); }
+            else if (parseNode.GetChildNode("localStoreName") is { } nullNodeLocalStoreName && nullNodeLocalStoreName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocalStoreName = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>An array of localized addresses. Used for payment method onboarding in Japan.The `script` of each address selects which fields it carries, so each locale sends the fields its addresses have.For Japanese stores, both **ja-Hani** and **ja-Kana** addresses are required.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.LocalizedInformationLocalizedAddressItem>? LocalizedAddress { get => _explicitNullValueLocalizedAddress; set { _explicitNullValueLocalizedAddress = value; AdditionalData?.Remove("localizedAddress"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("localizedAddress"); else _explicitNullProperties?.Remove("localizedAddress"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.LocalizedInformationLocalizedAddressItem>? _explicitNullValueLocalizedAddress = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.LocalizedInformationLocalizedAddressItem> LocalizedAddress { get => _explicitNullValueLocalizedAddress; set { _explicitNullValueLocalizedAddress = value; AdditionalData?.Remove("localizedAddress"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("localizedAddress"); else _explicitNullProperties?.Remove("localizedAddress"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.LocalizedInformationLocalizedAddressItem> _explicitNullValueLocalizedAddress = default!;
+#endif
         /// <summary>An array of local shopper statements. Card schemes use this in the bank statement.For Japan local shopper statements in both ja-Hani and ja-Kana are required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -33,6 +47,16 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public List<global::Soenneker.Adyen.OpenApiClient.Models.LocalShopperStatement> LocalShopperStatement { get => _explicitNullValueLocalShopperStatement; set { _explicitNullValueLocalShopperStatement = value; AdditionalData?.Remove("localShopperStatement"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("localShopperStatement"); else _explicitNullProperties?.Remove("localShopperStatement"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.LocalShopperStatement> _explicitNullValueLocalShopperStatement = default!;
+#endif
+        /// <summary>An array of localized store names. Used for payment method onboarding in Japan.Possible scripts: **ja-Hani**, **ja-Kana**.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.LocalStoreName>? LocalStoreName { get => _explicitNullValueLocalStoreName; set { _explicitNullValueLocalStoreName = value; AdditionalData?.Remove("localStoreName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("localStoreName"); else _explicitNullProperties?.Remove("localStoreName"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.LocalStoreName>? _explicitNullValueLocalStoreName = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.LocalStoreName> LocalStoreName { get => _explicitNullValueLocalStoreName; set { _explicitNullValueLocalStoreName = value; AdditionalData?.Remove("localStoreName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("localStoreName"); else _explicitNullProperties?.Remove("localStoreName"); } }
+        private List<global::Soenneker.Adyen.OpenApiClient.Models.LocalStoreName> _explicitNullValueLocalStoreName = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.StoreCreationRequestLocalizedInformation"/> and sets the default values.
@@ -60,6 +84,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "localShopperStatement", n => { LocalShopperStatement = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.LocalShopperStatement>(global::Soenneker.Adyen.OpenApiClient.Models.LocalShopperStatement.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "localStoreName", n => { LocalStoreName = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.LocalStoreName>(global::Soenneker.Adyen.OpenApiClient.Models.LocalStoreName.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "localizedAddress", n => { LocalizedAddress = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.LocalizedInformationLocalizedAddressItem>(global::Soenneker.Adyen.OpenApiClient.Models.LocalizedInformationLocalizedAddressItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -69,7 +95,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.LocalizedInformationLocalizedAddressItem>("localizedAddress", LocalizedAddress);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.LocalShopperStatement>("localShopperStatement", LocalShopperStatement);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.LocalStoreName>("localStoreName", LocalStoreName);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

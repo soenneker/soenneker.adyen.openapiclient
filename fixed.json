@@ -32633,6 +32633,30 @@
               }
             }
           },
+          "409": {
+            "description": "Conflict - the user already has access to an account, account group, or role specified in the request, or the specified username is already in use.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementServiceV3RestServiceError"
+                },
+                "examples": {
+                  "user-already-has-account": {
+                    "$ref": "#/components/examples/patch-companies-companyId-users-userId-user-already-has-account-409"
+                  },
+                  "user-already-has-account-group": {
+                    "$ref": "#/components/examples/patch-companies-companyId-users-userId-user-already-has-account-group-409"
+                  },
+                  "user-already-has-role": {
+                    "$ref": "#/components/examples/patch-companies-companyId-users-userId-user-already-has-role-409"
+                  },
+                  "username-already-in-use": {
+                    "$ref": "#/components/examples/patch-companies-companyId-users-userId-username-already-in-use-409"
+                  }
+                }
+              }
+            }
+          },
           "422": {
             "description": "Unprocessable Entity - a request validation error.",
             "content": {
@@ -41200,6 +41224,30 @@
               }
             }
           },
+          "409": {
+            "description": "Conflict - the user already has access to an account, account group, or role specified in the request, or the specified username is already in use.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementServiceV3RestServiceError"
+                },
+                "examples": {
+                  "user-already-has-account": {
+                    "$ref": "#/components/examples/patch-merchants-merchantId-users-userId-user-already-has-account-409"
+                  },
+                  "user-already-has-account-group": {
+                    "$ref": "#/components/examples/patch-merchants-merchantId-users-userId-user-already-has-account-group-409"
+                  },
+                  "user-already-has-role": {
+                    "$ref": "#/components/examples/patch-merchants-merchantId-users-userId-user-already-has-role-409"
+                  },
+                  "username-already-in-use": {
+                    "$ref": "#/components/examples/patch-merchants-merchantId-users-userId-username-already-in-use-409"
+                  }
+                }
+              }
+            }
+          },
           "422": {
             "description": "Unprocessable Entity - a request validation error.",
             "content": {
@@ -44558,12 +44606,7 @@
         ],
         "servers": [
           {
-            "url": "https://management-live.adyen.com",
-            "description": "Live Environment"
-          },
-          {
-            "url": "https://management-test.adyen.com",
-            "description": "Test Environment"
+            "url": "https://management-test.adyen.com/v3"
           }
         ],
         "x-methodName": "listClientCertificates",
@@ -44734,12 +44777,7 @@
         ],
         "servers": [
           {
-            "url": "https://management-live.adyen.com",
-            "description": "Live Environment"
-          },
-          {
-            "url": "https://management-test.adyen.com",
-            "description": "Test Environment"
+            "url": "https://management-test.adyen.com/v3"
           }
         ],
         "x-methodName": "generateClientCertificate",
@@ -111416,7 +111454,7 @@
           "updatesExpected"
         ],
         "type": "string",
-        "description": "The status of the request to add a payment method. Possible values:\n\n* **success**: the payment method was added.\n* **failure**: the request failed.\n* **capabilityPending**: the **receivePayments** capability is not allowed.\n",
+        "description": "The status of the request to add a payment method. Possible values:\n\n* **success**: the payment method was added.\n* **failure**: the request failed.\n* **capabilityPending**: the **receivePayments** capability is not allowed.\n\nA webhook with \u0060status\u0060 **success** is the last webhook for that payment method.",
         "x-addedInVersion": "2",
         "x-ms-enum": {
           "name": "MidServiceNotificationDataStatus",
@@ -111453,7 +111491,7 @@
           "rejected"
         ],
         "type": "string",
-        "description": "Payment method status. Possible values:\n* **valid**\n* **pending**\n* **invalid**\n* **rejected**",
+        "description": "Payment method status. Possible values:\n* **valid**\n* **pending**\n* **invalid**\n* **rejected**\n\nOnly returned in webhooks that include the screening results for your merchant account.",
         "x-ms-enum": {
           "name": "MidServiceNotificationDataVerificationStatus",
           "modelAsString": false,
@@ -113538,7 +113576,27 @@
           },
           "value": {
             "type": "string",
-            "description": "The text of the local shopper statement in the specified character set."
+            "description": "The localized shopper statement in the specified character set.\n\n* For \u0060ja-Hani\u0060 the allowed characters are: Full-width kanji including letters, numbers, and symbols.\n\n* For \u0060ja-Kana\u0060 the allowed characters are:\n    * \u0060Half-width katakana\u0060\n    * Letters: \u0060a-z\u0060, \u0060A-Z\u0060\n    * Numbers: \u00600-9\u0060\n    * Symbols: \u0060!\u0060, \u0060\u0022\u0060, \u0060#\u0060, \u0060$\u0060, \u0060%\u0060, \u0060\u0026\u0060, \u0060\u0027\u0060, \u0060(\u0060, \u0060)\u0060, \u0060*\u0060, \u0060\u002B\u0060, \u0060,\u0060, \u0060-\u0060, \u0060.\u0060, \u0060/\u0060, \u0060:\u0060, \u0060;\u0060, \u0060\u003C\u0060, \u0060=\u0060, \u0060\u003E\u0060, \u0060?\u0060, \u0060@\u0060, \u0060[\u0060, \u0060\\\u0060, \u0060]\u0060, \u0060^\u0060, \u0060_\u0060, \u0060\u0060 \u0060 \u0060\u0060, \u0060{\u0060, \u0060|\u0060, \u0060}\u0060, \u0060~\u0060, \u0060\uFF61\u0060, \u0060\uFF62\u0060, \u0060\uFF63\u0060, \u0060\uFF64\u0060, \u0060\uFF65\u0060, \u0060\uFF70\u0060\n"
+          }
+        },
+        "additionalProperties": {
+          "not": {}
+        }
+      },
+      "LocalStoreName": {
+        "required": [
+          "script",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "script": {
+            "type": "string",
+            "description": "The character set of the localized store name.\n\nPossible values: **ja-Hani**, **ja-Kana**."
+          },
+          "value": {
+            "type": "string",
+            "description": "The text of the localized store name in the specified character set.\n* For \u0060ja-Hani\u0060 the allowed characters are: Full-width kanji including letters, numbers and symbols.\n\n* For \u0060ja-Kana\u0060 the allowed characters are:\n    * Half-width katakana\n    * Letters: \u0060a-z\u0060, \u0060A-Z\u0060\n    * Numbers: \u00600-9\u0060\n    * Symbols: \u0060-\u0060,\u0060\uFF70\u0060,\u0060\uFF65\u0060,\u0060.\u0060\n"
           }
         },
         "additionalProperties": {
@@ -113892,6 +113950,9 @@
           "bcmc": {
             "$ref": "#/components/schemas/ManagementServiceV3PaymentMethodBcmc"
           },
+          "boncard": {
+            "$ref": "#/components/schemas/ManagementServiceV3PaymentMethodBoncard"
+          },
           "businessLineId": {
             "type": "string",
             "description": "The unique identifier of the business line. Required if you are a [platform model](https://docs.adyen.com/platforms)."
@@ -113999,6 +114060,9 @@
           "paybybank_plaid": {
             "$ref": "#/components/schemas/ManagementServiceV3PaymentMethodPaybybankPlaid"
           },
+          "paybybank_plaid_ca": {
+            "$ref": "#/components/schemas/ManagementServiceV3PaymentMethodPaybybankPlaidCa"
+          },
           "payme": {
             "$ref": "#/components/schemas/ManagementServiceV3PaymentMethodPayme"
           },
@@ -114007,6 +114071,9 @@
           },
           "payto": {
             "$ref": "#/components/schemas/ManagementServiceV3PaymentMethodPayto"
+          },
+          "pix": {
+            "$ref": "#/components/schemas/ManagementServiceV3PaymentMethodPix"
           },
           "pulse": {
             "$ref": "#/components/schemas/ManagementServiceV3PaymentMethodPulse"
@@ -114149,6 +114216,9 @@
           "bcmc": {
             "$ref": "#/components/schemas/PaymentMethodSetupInfoBcmc"
           },
+          "boncard": {
+            "$ref": "#/components/schemas/PaymentMethodSetupInfoBoncard"
+          },
           "businessLineId": {
             "type": "string",
             "description": "The unique identifier of the business line. Required if you are a [platform model](https://docs.adyen.com/platforms)."
@@ -114240,6 +114310,9 @@
           "paybybank_plaid": {
             "$ref": "#/components/schemas/PaymentMethodSetupInfoPaybybankPlaid"
           },
+          "paybybank_plaid_ca": {
+            "$ref": "#/components/schemas/PaymentMethodSetupInfoPaybybankPlaidCa"
+          },
           "payme": {
             "$ref": "#/components/schemas/PaymentMethodSetupInfoPayme"
           },
@@ -114248,6 +114321,9 @@
           },
           "payto": {
             "$ref": "#/components/schemas/PaymentMethodSetupInfoPayto"
+          },
+          "pix": {
+            "$ref": "#/components/schemas/PaymentMethodSetupInfoPix"
           },
           "pulse": {
             "$ref": "#/components/schemas/PaymentMethodSetupInfoPulse"
@@ -114801,7 +114877,7 @@
           },
           "phoneNumber": {
             "type": "string",
-            "description": "The phone number of the store, including \u0027\u002B\u0027 and country code in the [E.164](https://en.wikipedia.org/wiki/E.164) format. If passed in a different format, we convert and validate the phone number against E.164. "
+            "description": "The phone number of the store, including \u0027\u002B\u0027 and country code in the [E.164](https://en.wikipedia.org/wiki/E.164) format."
           },
           "reference": {
             "type": "string",
@@ -114858,7 +114934,7 @@
           },
           "phoneNumber": {
             "type": "string",
-            "description": "The phone number of the store, including \u0027\u002B\u0027 and country code in the [E.164](https://en.wikipedia.org/wiki/E.164) format. If passed in a different format, we convert and validate the phone number against E.164. "
+            "description": "The phone number of the store in [E.164](https://en.wikipedia.org/wiki/E.164) format: a plus sign (\u0060\u002B\u0060), the country code, and the phone number. For example, **\u002B13123456789**.\n\nYou can include spaces, hyphens, or brackets, such as **\u002B1 (312) 345-6789**. We reject phone numbers that do not start with \u0060\u002B\u0060 and the country code, such as **3123456789** or **0031201234567**.\n\nThe phone number can be from a different country than the store address."
           },
           "reference": {
             "type": "string",
@@ -114916,7 +114992,7 @@
           },
           "phoneNumber": {
             "type": "string",
-            "description": "The phone number of the store, including \u0027\u002B\u0027 and country code in the [E.164](https://en.wikipedia.org/wiki/E.164) format. If passed in a different format, we convert and validate the phone number against E.164. "
+            "description": "The phone number of the store in [E.164](https://en.wikipedia.org/wiki/E.164) format: a plus sign (\u0060\u002B\u0060), the country code, and the phone number. For example, **\u002B13123456789**.\n\nYou can include spaces, hyphens, or brackets, such as **\u002B1 (312) 345-6789**. We reject phone numbers that do not start with \u0060\u002B\u0060 and the country code, such as **3123456789** or **0031201234567**.\n\nThe phone number can be from a different country than the store address."
           },
           "reference": {
             "type": "string",
@@ -115361,6 +115437,13 @@
             "description": "Settings to skip signature, sign on display, or sign on receipt.",
             "$ref": "#/components/schemas/TerminalSettingsSignature"
           },
+          "skipTipConfirmationOnTerminal": {
+            "type": [
+              "null",
+              "boolean"
+            ],
+            "description": "Skip the tip confirmation step of the Adyen payment app on the terminal. Set to **true** only if your own app that handles tipping is installed on the same terminal. If your app is not installed on the terminal, set to **false**."
+          },
           "standalone": {
             "description": "Settings for [standalone](https://docs.adyen.com/point-of-sale/standalone/standalone-build/set-up-standalone#set-up-standalone-using-an-api-call) features.",
             "$ref": "#/components/schemas/TerminalSettingsStandalone"
@@ -115797,6 +115880,9 @@
           "bcmc": {
             "$ref": "#/components/schemas/UpdatePaymentMethodInfoBcmc"
           },
+          "boncard": {
+            "$ref": "#/components/schemas/UpdatePaymentMethodInfoBoncard"
+          },
           "carnet": {
             "$ref": "#/components/schemas/UpdatePaymentMethodInfoCarnet"
           },
@@ -115875,6 +115961,9 @@
           },
           "paybybank_plaid": {
             "$ref": "#/components/schemas/UpdatePaymentMethodInfoPaybybankPlaid"
+          },
+          "paybybank_plaid_ca": {
+            "$ref": "#/components/schemas/UpdatePaymentMethodInfoPaybybankPlaidCa"
           },
           "pulse": {
             "$ref": "#/components/schemas/UpdatePaymentMethodInfoPulse"
@@ -116074,7 +116163,7 @@
           },
           "phoneNumber": {
             "type": "string",
-            "description": "The phone number of the store, including \u0027\u002B\u0027 and country code in the [E.164](https://en.wikipedia.org/wiki/E.164) format. If passed in a different format, we convert and validate the phone number against E.164. "
+            "description": "The phone number of the store in [E.164](https://en.wikipedia.org/wiki/E.164) format: a plus sign (\u0060\u002B\u0060), the country code, and the phone number. For example, **\u002B13123456789**.\n\nYou can include spaces, hyphens, or brackets, such as **\u002B1 (312) 345-6789**. We reject phone numbers that do not start with \u0060\u002B\u0060 and the country code, such as **3123456789** or **0031201234567**.\n\nThe phone number can be from a different country than the store address."
           },
           "splitConfiguration": {
             "$ref": "#/components/schemas/UpdateStoreRequestSplitConfiguration"
@@ -117113,6 +117202,32 @@
         },
         "description": "The response containing the updated terminal theme details."
       },
+      "LocalizedInformationLocalizedAddressItem": {
+        "required": [
+          "fields",
+          "script"
+        ],
+        "type": "object",
+        "properties": {
+          "fields": {
+            "$ref": "#/components/schemas/LocalizedInformationLocalizedAddressItemFields"
+          },
+          "script": {
+            "description": "The character set of the localized address.\n\nPossible values: **ja-Hani**, **ja-Kana**.",
+            "$ref": "#/components/schemas/JapaneseLocalizedAddressScript"
+          }
+        },
+        "additionalProperties": {
+          "not": {}
+        },
+        "x-client-original-discriminator": {
+          "propertyName": "script",
+          "mapping": {
+            "ja-Kana": "#/components/schemas/JapaneseLocalizedAddress",
+            "ja-Hani": "#/components/schemas/JapaneseLocalizedAddress"
+          }
+        }
+      },
       "ScheduleTerminalActionsRequestActionDetails": {
         "required": [
           "type"
@@ -117985,6 +118100,10 @@
           "enableStandalone": {
             "type": "boolean",
             "description": "Enable standalone mode."
+          },
+          "merchantReference": {
+            "type": "string",
+            "description": "The merchant reference to be sent with every transaction when the terminal is in standalone mode. Used for reconciliation.\n\nThis property also accepts one or more variables as input, together with plain text. When this property reaches the terminal, the terminal replaces the variables with the values that apply to it. For the list of allowed variables, see [Configure the merchant reference](https://docs.adyen.com/point-of-sale/standalone/standalone-build/set-up-standalone#configure-merchant-reference).\n"
           }
         },
         "additionalProperties": {
@@ -121209,7 +121328,7 @@
           "pos"
         ],
         "type": "string",
-        "description": "The type of transactions processed over this payment method.\n Allowed values:\n- **pos** for in-person payments. \n- **billpay** for subscription payments, both the initial payment and the later recurring payments. These transactions have \u0060recurringProcessingModel\u0060 **Subscription**. \n- **ecom** for all other card not present transactions. This includes non-recurring transactions and transactions with \u0060recurringProcessingModel\u0060 **CardOnFile** or **UnscheduledCardOnFile**.\n",
+        "description": "The type of transactions processed over this payment method. The recommended usage is to not specify a processing type. We then set up the payment method to process all transaction types. \n Allowed values:\n- **pos** for in-person payments. \n- **billpay** for subscription payments, both the initial payment and the later recurring payments. These transactions have \u0060recurringProcessingModel\u0060 **Subscription**. \n- **ecom** for all other card not present transactions. This includes non-recurring transactions and transactions with \u0060recurringProcessingModel\u0060 **CardOnFile** or **UnscheduledCardOnFile**.\n",
         "x-ms-enum": {
           "name": "AccelInfoProcessingType",
           "modelAsString": false,
@@ -121225,6 +121344,28 @@
             {
               "value": "pos",
               "name": "Pos"
+            }
+          ]
+        }
+      },
+      "AccelResponseInfoNetworkProcessingMode": {
+        "enum": [
+          "auth",
+          "sale"
+        ],
+        "type": "string",
+        "description": "Indicates the processing flow for the payment method. Possible values:\n- **auth**: If you have not [configured automatic capture](https://docs.adyen.com/online-payments/capture#types-of-capture) for the transaction, you must manually capture the funds. \n- **sale**: You do not need to separately capture the funds, because capture happens automatically as part of the transaction, together with authorization.\n",
+        "x-ms-enum": {
+          "name": "AccelResponseInfoNetworkProcessingMode",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "auth",
+              "name": "Auth"
+            },
+            {
+              "value": "sale",
+              "name": "Sale"
             }
           ]
         }
@@ -121594,6 +121735,28 @@
           ]
         }
       },
+      "JapaneseLocalizedAddressScript": {
+        "enum": [
+          "ja-Kana",
+          "ja-Hani"
+        ],
+        "type": "string",
+        "description": "The character set of the localized address.\n\nPossible values: **ja-Hani**, **ja-Kana**.",
+        "x-ms-enum": {
+          "name": "JapaneseLocalizedAddressScript",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "ja-Kana",
+              "name": "JaKana"
+            },
+            {
+              "value": "ja-Hani",
+              "name": "JaHani"
+            }
+          ]
+        }
+      },
       "KlarnaInfoRegion": {
         "maxLength": 2,
         "minLength": 2,
@@ -121686,7 +121849,7 @@
           "pos"
         ],
         "type": "string",
-        "description": "The type of transactions processed over this payment method.\n Allowed values:\n- **pos** for in-person payments. \n- **billpay** for subscription payments, both the initial payment and the later recurring payments. These transactions have \u0060recurringProcessingModel\u0060 **Subscription**. \n- **ecom** for all other card not present transactions. This includes non-recurring transactions and transactions with \u0060recurringProcessingModel\u0060 **CardOnFile** or **UnscheduledCardOnFile**.\n",
+        "description": "The type of transactions processed over this payment method. The recommended usage is to not specify a processing type. We then set up the payment method to process all transaction types. \n Allowed values:\n- **pos** for in-person payments. \n- **billpay** for subscription payments, both the initial payment and the later recurring payments. These transactions have \u0060recurringProcessingModel\u0060 **Subscription**. \n- **ecom** for all other card not present transactions. This includes non-recurring transactions and transactions with \u0060recurringProcessingModel\u0060 **CardOnFile** or **UnscheduledCardOnFile**.\n",
         "x-ms-enum": {
           "name": "NyceInfoProcessingType",
           "modelAsString": false,
@@ -121702,6 +121865,28 @@
             {
               "value": "pos",
               "name": "Pos"
+            }
+          ]
+        }
+      },
+      "NyceResponseInfoNetworkProcessingMode": {
+        "enum": [
+          "auth",
+          "sale"
+        ],
+        "type": "string",
+        "description": "Indicates the processing flow for the payment method. Possible values:\n- **auth**: If you have not [configured automatic capture](https://docs.adyen.com/online-payments/capture#types-of-capture) for the transaction, you must manually capture the funds. \n- **sale**: You do not need to separately capture the funds, because capture happens automatically as part of the transaction, together with authorization.\n",
+        "x-ms-enum": {
+          "name": "NyceResponseInfoNetworkProcessingMode",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "auth",
+              "name": "Auth"
+            },
+            {
+              "value": "sale",
+              "name": "Sale"
             }
           ]
         }
@@ -121837,6 +122022,7 @@
           "bcmc",
           "blik",
           "blik_pos",
+          "boncard",
           "br_schemes",
           "carnet",
           "cartebancaire",
@@ -121905,6 +122091,7 @@
           "onlineBanking_PL",
           "paybybank",
           "paybybank_plaid",
+          "paybybank_plaid_ca",
           "payme",
           "payme_pos",
           "paynow",
@@ -121914,6 +122101,7 @@
           "personal_card",
           "personal_card_credit",
           "personal_card_debit",
+          "pix",
           "pulse",
           "romcard",
           "romcard_credit",
@@ -122104,6 +122292,10 @@
             {
               "value": "blik_pos",
               "name": "BlikPos"
+            },
+            {
+              "value": "boncard",
+              "name": "Boncard"
             },
             {
               "value": "br_schemes",
@@ -122378,6 +122570,10 @@
               "name": "PaybybankPlaid"
             },
             {
+              "value": "paybybank_plaid_ca",
+              "name": "PaybybankPlaidCa"
+            },
+            {
               "value": "payme",
               "name": "Payme"
             },
@@ -122412,6 +122608,10 @@
             {
               "value": "personal_card_debit",
               "name": "PersonalCardDebit"
+            },
+            {
+              "value": "pix",
+              "name": "Pix"
             },
             {
               "value": "pulse",
@@ -122635,6 +122835,7 @@
           "bcmc",
           "blik",
           "blik_pos",
+          "boncard",
           "br_schemes",
           "carnet",
           "cartebancaire",
@@ -122703,6 +122904,7 @@
           "onlineBanking_PL",
           "paybybank",
           "paybybank_plaid",
+          "paybybank_plaid_ca",
           "payme",
           "payme_pos",
           "paynow",
@@ -122712,6 +122914,7 @@
           "personal_card",
           "personal_card_credit",
           "personal_card_debit",
+          "pix",
           "pulse",
           "romcard",
           "romcard_credit",
@@ -122903,6 +123106,10 @@
             {
               "value": "blik_pos",
               "name": "BlikPos"
+            },
+            {
+              "value": "boncard",
+              "name": "Boncard"
             },
             {
               "value": "br_schemes",
@@ -123177,6 +123384,10 @@
               "name": "PaybybankPlaid"
             },
             {
+              "value": "paybybank_plaid_ca",
+              "name": "PaybybankPlaidCa"
+            },
+            {
               "value": "payme",
               "name": "Payme"
             },
@@ -123211,6 +123422,10 @@
             {
               "value": "personal_card_debit",
               "name": "PersonalCardDebit"
+            },
+            {
+              "value": "pix",
+              "name": "Pix"
             },
             {
               "value": "pulse",
@@ -123429,7 +123644,7 @@
           "pos"
         ],
         "type": "string",
-        "description": "The type of transactions processed over this payment method.\n Allowed values:\n- **pos** for in-person payments. \n- **billpay** for subscription payments, both the initial payment and the later recurring payments. These transactions have \u0060recurringProcessingModel\u0060 **Subscription**. \n- **ecom** for all other card not present transactions. This includes non-recurring transactions and transactions with \u0060recurringProcessingModel\u0060 **CardOnFile** or **UnscheduledCardOnFile**.\n",
+        "description": "The type of transactions processed over this payment method. The recommended usage is to not specify a processing type. We then set up the payment method to process all transaction types. \n Allowed values:\n- **pos** for in-person payments. \n- **billpay** for subscription payments, both the initial payment and the later recurring payments. These transactions have \u0060recurringProcessingModel\u0060 **Subscription**. \n- **ecom** for all other card not present transactions. This includes non-recurring transactions and transactions with \u0060recurringProcessingModel\u0060 **CardOnFile** or **UnscheduledCardOnFile**.\n",
         "x-ms-enum": {
           "name": "PulseInfoProcessingType",
           "modelAsString": false,
@@ -123445,6 +123660,28 @@
             {
               "value": "pos",
               "name": "Pos"
+            }
+          ]
+        }
+      },
+      "PulseResponseInfoNetworkProcessingMode": {
+        "enum": [
+          "auth",
+          "sale"
+        ],
+        "type": "string",
+        "description": "Indicates the processing flow for the payment method. Possible values:\n- **auth**: If you have not [configured automatic capture](https://docs.adyen.com/online-payments/capture#types-of-capture) for the transaction, you must manually capture the funds. \n- **sale**: You do not need to separately capture the funds, because capture happens automatically as part of the transaction, together with authorization.\n",
+        "x-ms-enum": {
+          "name": "PulseResponseInfoNetworkProcessingMode",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "auth",
+              "name": "Auth"
+            },
+            {
+              "value": "sale",
+              "name": "Sale"
             }
           ]
         }
@@ -123937,7 +124174,7 @@
           "pos"
         ],
         "type": "string",
-        "description": "The type of transactions processed over this payment method.\n Allowed values:\n- **pos** for in-person payments. \n- **billpay** for subscription payments, both the initial payment and the later recurring payments. These transactions have \u0060recurringProcessingModel\u0060 **Subscription**. \n- **ecom** for all other card not present transactions. This includes non-recurring transactions and transactions with \u0060recurringProcessingModel\u0060 **CardOnFile** or **UnscheduledCardOnFile**.\n",
+        "description": "The type of transactions processed over this payment method. The recommended usage is to not specify a processing type. We then set up the payment method to process all transaction types. \n Allowed values:\n- **pos** for in-person payments. \n- **billpay** for subscription payments, both the initial payment and the later recurring payments. These transactions have \u0060recurringProcessingModel\u0060 **Subscription**. \n- **ecom** for all other card not present transactions. This includes non-recurring transactions and transactions with \u0060recurringProcessingModel\u0060 **CardOnFile** or **UnscheduledCardOnFile**.\n",
         "x-ms-enum": {
           "name": "StarInfoProcessingType",
           "modelAsString": false,
@@ -123953,6 +124190,28 @@
             {
               "value": "pos",
               "name": "Pos"
+            }
+          ]
+        }
+      },
+      "StarResponseInfoNetworkProcessingMode": {
+        "enum": [
+          "auth",
+          "sale"
+        ],
+        "type": "string",
+        "description": "Indicates the processing flow for the payment method. Possible values:\n- **auth**: If you have not [configured automatic capture](https://docs.adyen.com/online-payments/capture#types-of-capture) for the transaction, you must manually capture the funds. \n- **sale**: You do not need to separately capture the funds, because capture happens automatically as part of the transaction, together with authorization.\n",
+        "x-ms-enum": {
+          "name": "StarResponseInfoNetworkProcessingMode",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "auth",
+              "name": "Auth"
+            },
+            {
+              "value": "sale",
+              "name": "Sale"
             }
           ]
         }
@@ -184719,11 +184978,11 @@
         "properties": {
           "allowed": {
             "type": "boolean",
-            "description": "Indicates whether receiving payments is allowed. This value is set to **true** by Adyen after screening your merchant account."
+            "description": "Indicates whether receiving payments is allowed. This value is set to **true** by Adyen after screening your merchant account.\n\nOnly returned in webhooks that include the screening results for your merchant account."
           },
           "enabled": {
             "type": "boolean",
-            "description": "Indicates whether the payment method is enabled (**true**) or disabled (**false**)."
+            "description": "Indicates whether the payment method is enabled (**true**) or disabled (**false**).\n\nOnly reliable in webhooks that include the screening results for your merchant account."
           },
           "id": {
             "type": "string",
@@ -184738,7 +184997,7 @@
             "description": "Your reference for the payment method."
           },
           "status": {
-            "description": "The status of the request to add a payment method. Possible values:\n\n* **success**: the payment method was added.\n* **failure**: the request failed.\n* **capabilityPending**: the **receivePayments** capability is not allowed.\n",
+            "description": "The status of the request to add a payment method. Possible values:\n\n* **success**: the payment method was added.\n* **failure**: the request failed.\n* **capabilityPending**: the **receivePayments** capability is not allowed.\n\nA webhook with \u0060status\u0060 **success** is the last webhook for that payment method.",
             "$ref": "#/components/schemas/MidServiceNotificationDataStatus"
           },
           "storeId": {
@@ -184750,7 +185009,7 @@
             "description": "Payment method [variant](https://docs.adyen.com/development-resources/paymentmethodvariant#management-api).\n\nFor payment method variant **cartebancaire**, method-specific details are returned in the [\u0060cartesBancaires\u0060](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/(merchantId)/paymentMethodSettings#responses-200-cartesBancaires) object of the response."
           },
           "verificationStatus": {
-            "description": "Payment method status. Possible values:\n* **valid**\n* **pending**\n* **invalid**\n* **rejected**",
+            "description": "Payment method status. Possible values:\n* **valid**\n* **pending**\n* **invalid**\n* **rejected**\n\nOnly returned in webhooks that include the screening results for your merchant account.",
             "$ref": "#/components/schemas/MidServiceNotificationDataVerificationStatus"
           }
         },
@@ -184770,11 +185029,11 @@
         "properties": {
           "allowed": {
             "type": "boolean",
-            "description": "Indicates whether receiving payments is allowed. This value is set to **true** by Adyen after screening your merchant account."
+            "description": "Indicates whether receiving payments is allowed. This value is set to **true** by Adyen after screening your merchant account.\n\nOnly returned in webhooks that include the screening results for your merchant account."
           },
           "enabled": {
             "type": "boolean",
-            "description": "Indicates whether the payment method is enabled (**true**) or disabled (**false**)."
+            "description": "Indicates whether the payment method is enabled (**true**) or disabled (**false**).\n\nOnly reliable in webhooks that include the screening results for your merchant account."
           },
           "id": {
             "type": "string",
@@ -184789,7 +185048,7 @@
             "description": "Your reference for the payment method."
           },
           "status": {
-            "description": "The status of the request to add a payment method. Possible values:\n\n* **success**: the payment method was added.\n* **failure**: the request failed.\n* **capabilityPending**: the **receivePayments** capability is not allowed.\n",
+            "description": "The status of the request to add a payment method. Possible values:\n\n* **success**: the payment method was added.\n* **failure**: the request failed.\n* **capabilityPending**: the **receivePayments** capability is not allowed.\n\nA webhook with \u0060status\u0060 **success** is the last webhook for that payment method.",
             "$ref": "#/components/schemas/MidServiceNotificationDataStatus"
           },
           "storeId": {
@@ -184801,7 +185060,7 @@
             "description": "Payment method [variant](https://docs.adyen.com/development-resources/paymentmethodvariant#management-api).\n\nFor payment method variant **cartebancaire**, method-specific details are returned in the [\u0060cartesBancaires\u0060](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/(merchantId)/paymentMethodSettings#responses-200-cartesBancaires) object of the response."
           },
           "verificationStatus": {
-            "description": "Payment method status. Possible values:\n* **valid**\n* **pending**\n* **invalid**\n* **rejected**",
+            "description": "Payment method status. Possible values:\n* **valid**\n* **pending**\n* **invalid**\n* **rejected**\n\nOnly returned in webhooks that include the screening results for your merchant account.",
             "$ref": "#/components/schemas/MidServiceNotificationDataVerificationStatus"
           }
         },
@@ -184821,11 +185080,11 @@
         "properties": {
           "allowed": {
             "type": "boolean",
-            "description": "Indicates whether receiving payments is allowed. This value is set to **true** by Adyen after screening your merchant account."
+            "description": "Indicates whether receiving payments is allowed. This value is set to **true** by Adyen after screening your merchant account.\n\nOnly returned in webhooks that include the screening results for your merchant account."
           },
           "enabled": {
             "type": "boolean",
-            "description": "Indicates whether the payment method is enabled (**true**) or disabled (**false**)."
+            "description": "Indicates whether the payment method is enabled (**true**) or disabled (**false**).\n\nOnly reliable in webhooks that include the screening results for your merchant account."
           },
           "id": {
             "type": "string",
@@ -184840,7 +185099,7 @@
             "description": "Your reference for the payment method."
           },
           "status": {
-            "description": "The status of the request to add a payment method. Possible values:\n\n* **success**: the payment method was added.\n* **failure**: the request failed.\n* **capabilityPending**: the **receivePayments** capability is not allowed.\n",
+            "description": "The status of the request to add a payment method. Possible values:\n\n* **success**: the payment method was added.\n* **failure**: the request failed.\n* **capabilityPending**: the **receivePayments** capability is not allowed.\n\nA webhook with \u0060status\u0060 **success** is the last webhook for that payment method.",
             "$ref": "#/components/schemas/MidServiceNotificationDataStatus"
           },
           "storeId": {
@@ -184852,7 +185111,7 @@
             "description": "Payment method [variant](https://docs.adyen.com/development-resources/paymentmethodvariant#management-api).\n\nFor payment method variant **cartebancaire**, method-specific details are returned in the [\u0060cartesBancaires\u0060](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/(merchantId)/paymentMethodSettings#responses-200-cartesBancaires) object of the response."
           },
           "verificationStatus": {
-            "description": "Payment method status. Possible values:\n* **valid**\n* **pending**\n* **invalid**\n* **rejected**",
+            "description": "Payment method status. Possible values:\n* **valid**\n* **pending**\n* **invalid**\n* **rejected**\n\nOnly returned in webhooks that include the screening results for your merchant account.",
             "$ref": "#/components/schemas/MidServiceNotificationDataVerificationStatus"
           }
         },
@@ -186329,6 +186588,10 @@
       "ManagementServiceV3PaymentMethodAccel": {
         "type": "object",
         "properties": {
+          "networkProcessingMode": {
+            "description": "Indicates the processing flow for the payment method. Possible values:\n- **auth**: If you have not [configured automatic capture](https://docs.adyen.com/online-payments/capture#types-of-capture) for the transaction, you must manually capture the funds. \n- **sale**: You do not need to separately capture the funds, because capture happens automatically as part of the transaction, together with authorization.\n",
+            "$ref": "#/components/schemas/AccelResponseInfoNetworkProcessingMode"
+          },
           "processingType": {
             "description": "The type of transactions processed over this payment method.\n Allowed values:\n- **pos** for in-person payments. \n- **billpay** for subscription payments, both the initial payment and the later recurring payments. These transactions have \u0060recurringProcessingModel\u0060 **Subscription**. \n- **ecom** for all other card not present transactions. This includes non-recurring transactions and transactions with \u0060recurringProcessingModel\u0060 **CardOnFile** or **UnscheduledCardOnFile**.\n",
             "$ref": "#/components/schemas/AccelResponseInfoProcessingType"
@@ -186450,6 +186713,19 @@
           "not": {}
         },
         "description": "**bcmc** (Bancontact) details"
+      },
+      "ManagementServiceV3PaymentMethodBoncard": {
+        "type": "object",
+        "properties": {
+          "terminalId": {
+            "type": "string",
+            "description": "The TerminalID that Boncard assigns to the merchant. Format: 6 to 10 alphanumeric characters.\nExample: 5Z6G8PV9."
+          }
+        },
+        "additionalProperties": {
+          "not": {}
+        },
+        "description": "**boncard** details"
       },
       "ManagementServiceV3PaymentMethodCarnet": {
         "type": "object",
@@ -186683,6 +186959,10 @@
       "ManagementServiceV3PaymentMethodNyce": {
         "type": "object",
         "properties": {
+          "networkProcessingMode": {
+            "description": "Indicates the processing flow for the payment method. Possible values:\n- **auth**: If you have not [configured automatic capture](https://docs.adyen.com/online-payments/capture#types-of-capture) for the transaction, you must manually capture the funds. \n- **sale**: You do not need to separately capture the funds, because capture happens automatically as part of the transaction, together with authorization.\n",
+            "$ref": "#/components/schemas/NyceResponseInfoNetworkProcessingMode"
+          },
           "processingType": {
             "description": "The type of transactions processed over this payment method.\n Allowed values:\n- **pos** for in-person payments. \n- **billpay** for subscription payments, both the initial payment and the later recurring payments. These transactions have \u0060recurringProcessingModel\u0060 **Subscription**. \n- **ecom** for all other card not present transactions. This includes non-recurring transactions and transactions with \u0060recurringProcessingModel\u0060 **CardOnFile** or **UnscheduledCardOnFile**.\n",
             "$ref": "#/components/schemas/NyceResponseInfoProcessingType"
@@ -186712,6 +186992,23 @@
           "not": {}
         },
         "description": "**paybybank_plaid** details"
+      },
+      "ManagementServiceV3PaymentMethodPaybybankPlaidCa": {
+        "type": "object",
+        "properties": {
+          "logo": {
+            "type": "string",
+            "description": "Merchant logo",
+            "deprecated": true
+          },
+          "transactionDescription": {
+            "$ref": "#/components/schemas/PayByBankPlaidResponseInfoTransactionDescription"
+          }
+        },
+        "additionalProperties": {
+          "not": {}
+        },
+        "description": "**paybybank_plaid_ca** details"
       },
       "ManagementServiceV3PaymentMethodPayme": {
         "type": "object",
@@ -186774,9 +187071,30 @@
         },
         "description": "**payto** details"
       },
+      "ManagementServiceV3PaymentMethodPix": {
+        "type": "object",
+        "properties": {
+          "allowRecurring": {
+            "type": "boolean",
+            "description": "Indicates whether the Pix payment method is set up as Pix Recurring (Pix Autom\u00E1tico) instead of standard Pix."
+          },
+          "allowPayByBank": {
+            "type": "boolean",
+            "description": "Indicates whether the Pix payment method is set up as Pix Pay by Bank instead of standard Pix."
+          }
+        },
+        "additionalProperties": {
+          "not": {}
+        },
+        "description": "**pix** details"
+      },
       "ManagementServiceV3PaymentMethodPulse": {
         "type": "object",
         "properties": {
+          "networkProcessingMode": {
+            "description": "Indicates the processing flow for the payment method. Possible values:\n- **auth**: If you have not [configured automatic capture](https://docs.adyen.com/online-payments/capture#types-of-capture) for the transaction, you must manually capture the funds. \n- **sale**: You do not need to separately capture the funds, because capture happens automatically as part of the transaction, together with authorization.\n",
+            "$ref": "#/components/schemas/PulseResponseInfoNetworkProcessingMode"
+          },
           "processingType": {
             "description": "The type of transactions processed over this payment method.\n Allowed values:\n- **pos** for in-person payments. \n- **billpay** for subscription payments, both the initial payment and the later recurring payments. These transactions have \u0060recurringProcessingModel\u0060 **Subscription**. \n- **ecom** for all other card not present transactions. This includes non-recurring transactions and transactions with \u0060recurringProcessingModel\u0060 **CardOnFile** or **UnscheduledCardOnFile**.\n",
             "$ref": "#/components/schemas/PulseResponseInfoProcessingType"
@@ -186841,6 +187159,10 @@
       "ManagementServiceV3PaymentMethodStar": {
         "type": "object",
         "properties": {
+          "networkProcessingMode": {
+            "description": "Indicates the processing flow for the payment method. Possible values:\n- **auth**: If you have not [configured automatic capture](https://docs.adyen.com/online-payments/capture#types-of-capture) for the transaction, you must manually capture the funds. \n- **sale**: You do not need to separately capture the funds, because capture happens automatically as part of the transaction, together with authorization.\n",
+            "$ref": "#/components/schemas/StarResponseInfoNetworkProcessingMode"
+          },
           "processingType": {
             "description": "The type of transactions processed over this payment method.\n Allowed values:\n- **pos** for in-person payments. \n- **billpay** for subscription payments, both the initial payment and the later recurring payments. These transactions have \u0060recurringProcessingModel\u0060 **Subscription**. \n- **ecom** for all other card not present transactions. This includes non-recurring transactions and transactions with \u0060recurringProcessingModel\u0060 **CardOnFile** or **UnscheduledCardOnFile**.\n",
             "$ref": "#/components/schemas/StarResponseInfoProcessingType"
@@ -187027,13 +187349,10 @@
         "description": "Pagination references."
       },
       "PaymentMethodSetupInfoAccel": {
-        "required": [
-          "processingType"
-        ],
         "type": "object",
         "properties": {
           "processingType": {
-            "description": "The type of transactions processed over this payment method.\n Allowed values:\n- **pos** for in-person payments. \n- **billpay** for subscription payments, both the initial payment and the later recurring payments. These transactions have \u0060recurringProcessingModel\u0060 **Subscription**. \n- **ecom** for all other card not present transactions. This includes non-recurring transactions and transactions with \u0060recurringProcessingModel\u0060 **CardOnFile** or **UnscheduledCardOnFile**.\n",
+            "description": "The type of transactions processed over this payment method. The recommended usage is to not specify a processing type. We then set up the payment method to process all transaction types. \n Allowed values:\n- **pos** for in-person payments. \n- **billpay** for subscription payments, both the initial payment and the later recurring payments. These transactions have \u0060recurringProcessingModel\u0060 **Subscription**. \n- **ecom** for all other card not present transactions. This includes non-recurring transactions and transactions with \u0060recurringProcessingModel\u0060 **CardOnFile** or **UnscheduledCardOnFile**.\n",
             "$ref": "#/components/schemas/AccelInfoProcessingType"
           },
           "transactionDescription": {
@@ -187186,6 +187505,25 @@
           "not": {}
         },
         "description": "Details to provide if \u0060type\u0060 is **bcmc** (Bancontact)."
+      },
+      "PaymentMethodSetupInfoBoncard": {
+        "required": [
+          "terminalId"
+        ],
+        "type": "object",
+        "properties": {
+          "terminalId": {
+            "maxLength": 10,
+            "minLength": 6,
+            "pattern": "^[A-Za-z0-9]{6,10}$",
+            "type": "string",
+            "description": "The TerminalID that Boncard assigns to the merchant. Format: 6 to 10 alphanumeric characters.\nExample: 5Z6G8PV9."
+          }
+        },
+        "additionalProperties": {
+          "not": {}
+        },
+        "description": "Details to provide if \u0060type\u0060 is **boncard**."
       },
       "PaymentMethodSetupInfoCarnet": {
         "type": "object",
@@ -187489,13 +187827,10 @@
         "description": "Details to provide if \u0060type\u0060 is **mc**."
       },
       "PaymentMethodSetupInfoNyce": {
-        "required": [
-          "processingType"
-        ],
         "type": "object",
         "properties": {
           "processingType": {
-            "description": "The type of transactions processed over this payment method.\n Allowed values:\n- **pos** for in-person payments. \n- **billpay** for subscription payments, both the initial payment and the later recurring payments. These transactions have \u0060recurringProcessingModel\u0060 **Subscription**. \n- **ecom** for all other card not present transactions. This includes non-recurring transactions and transactions with \u0060recurringProcessingModel\u0060 **CardOnFile** or **UnscheduledCardOnFile**.\n",
+            "description": "The type of transactions processed over this payment method. The recommended usage is to not specify a processing type. We then set up the payment method to process all transaction types. \n Allowed values:\n- **pos** for in-person payments. \n- **billpay** for subscription payments, both the initial payment and the later recurring payments. These transactions have \u0060recurringProcessingModel\u0060 **Subscription**. \n- **ecom** for all other card not present transactions. This includes non-recurring transactions and transactions with \u0060recurringProcessingModel\u0060 **CardOnFile** or **UnscheduledCardOnFile**.\n",
             "$ref": "#/components/schemas/NyceInfoProcessingType"
           },
           "transactionDescription": {
@@ -187523,6 +187858,23 @@
           "not": {}
         },
         "description": "Details to provide if \u0060type\u0060 is **paybybank_plaid**."
+      },
+      "PaymentMethodSetupInfoPaybybankPlaidCa": {
+        "type": "object",
+        "properties": {
+          "logo": {
+            "type": "string",
+            "description": "Merchant logo (max. size 150kB). Format: Base64-encoded string.",
+            "deprecated": true
+          },
+          "transactionDescription": {
+            "$ref": "#/components/schemas/PayByBankPlaidInfoTransactionDescription"
+          }
+        },
+        "additionalProperties": {
+          "not": {}
+        },
+        "description": "Details to provide if \u0060type\u0060 is **paybybank_plaid_ca**."
       },
       "PaymentMethodSetupInfoPayme": {
         "required": [
@@ -187598,14 +187950,30 @@
         },
         "description": "Details to provide if \u0060type\u0060 is **payto**."
       },
+      "PaymentMethodSetupInfoPix": {
+        "type": "object",
+        "properties": {
+          "allowRecurring": {
+            "type": "boolean",
+            "description": "Indicates whether to set up Pix Recurring (Pix Autom\u00E1tico) instead of standard Pix. The default value is **false**.",
+            "default": false
+          },
+          "allowPayByBank": {
+            "type": "boolean",
+            "description": "Indicates whether to set up Pix Pay by Bank instead of standard Pix. The default value is **false**.",
+            "default": false
+          }
+        },
+        "additionalProperties": {
+          "not": {}
+        },
+        "description": "Details to provide if \u0060type\u0060 is **pix**."
+      },
       "PaymentMethodSetupInfoPulse": {
-        "required": [
-          "processingType"
-        ],
         "type": "object",
         "properties": {
           "processingType": {
-            "description": "The type of transactions processed over this payment method.\n Allowed values:\n- **pos** for in-person payments. \n- **billpay** for subscription payments, both the initial payment and the later recurring payments. These transactions have \u0060recurringProcessingModel\u0060 **Subscription**. \n- **ecom** for all other card not present transactions. This includes non-recurring transactions and transactions with \u0060recurringProcessingModel\u0060 **CardOnFile** or **UnscheduledCardOnFile**.\n",
+            "description": "The type of transactions processed over this payment method. The recommended usage is to not specify a processing type. We then set up the payment method to process all transaction types. \n Allowed values:\n- **pos** for in-person payments. \n- **billpay** for subscription payments, both the initial payment and the later recurring payments. These transactions have \u0060recurringProcessingModel\u0060 **Subscription**. \n- **ecom** for all other card not present transactions. This includes non-recurring transactions and transactions with \u0060recurringProcessingModel\u0060 **CardOnFile** or **UnscheduledCardOnFile**.\n",
             "$ref": "#/components/schemas/PulseInfoProcessingType"
           },
           "transactionDescription": {
@@ -187673,13 +188041,10 @@
         "x-deprecatedInVersion": "1"
       },
       "PaymentMethodSetupInfoStar": {
-        "required": [
-          "processingType"
-        ],
         "type": "object",
         "properties": {
           "processingType": {
-            "description": "The type of transactions processed over this payment method.\n Allowed values:\n- **pos** for in-person payments. \n- **billpay** for subscription payments, both the initial payment and the later recurring payments. These transactions have \u0060recurringProcessingModel\u0060 **Subscription**. \n- **ecom** for all other card not present transactions. This includes non-recurring transactions and transactions with \u0060recurringProcessingModel\u0060 **CardOnFile** or **UnscheduledCardOnFile**.\n",
+            "description": "The type of transactions processed over this payment method. The recommended usage is to not specify a processing type. We then set up the payment method to process all transaction types. \n Allowed values:\n- **pos** for in-person payments. \n- **billpay** for subscription payments, both the initial payment and the later recurring payments. These transactions have \u0060recurringProcessingModel\u0060 **Subscription**. \n- **ecom** for all other card not present transactions. This includes non-recurring transactions and transactions with \u0060recurringProcessingModel\u0060 **CardOnFile** or **UnscheduledCardOnFile**.\n",
             "$ref": "#/components/schemas/StarInfoProcessingType"
           },
           "transactionDescription": {
@@ -188378,6 +188743,20 @@
               "$ref": "#/components/schemas/LocalShopperStatement"
             },
             "description": "An array of local shopper statements. Card schemes use this in the bank statement.\n\nFor Japan local shopper statements in both ja-Hani and ja-Kana are required."
+          },
+          "localStoreName": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LocalStoreName"
+            },
+            "description": "An array of localized store names. Used for payment method onboarding in Japan.\n\nPossible scripts: **ja-Hani**, **ja-Kana**."
+          },
+          "localizedAddress": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LocalizedInformationLocalizedAddressItem"
+            },
+            "description": "An array of localized addresses. Used for payment method onboarding in Japan.\n\nThe \u0060script\u0060 of each address selects which fields it carries, so each locale sends the fields its addresses have.\n\nFor Japanese stores, both **ja-Hani** and **ja-Kana** addresses are required."
           }
         },
         "additionalProperties": {
@@ -188487,6 +188866,20 @@
               "$ref": "#/components/schemas/LocalShopperStatement"
             },
             "description": "An array of local shopper statements. Card schemes use this in the bank statement.\n\nFor Japan local shopper statements in both ja-Hani and ja-Kana are required."
+          },
+          "localStoreName": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LocalStoreName"
+            },
+            "description": "An array of localized store names. Used for payment method onboarding in Japan.\n\nPossible scripts: **ja-Hani**, **ja-Kana**."
+          },
+          "localizedAddress": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LocalizedInformationLocalizedAddressItem"
+            },
+            "description": "An array of localized addresses. Used for payment method onboarding in Japan.\n\nThe \u0060script\u0060 of each address selects which fields it carries, so each locale sends the fields its addresses have.\n\nFor Japanese stores, both **ja-Hani** and **ja-Kana** addresses are required."
           }
         },
         "additionalProperties": {
@@ -188596,6 +188989,20 @@
               "$ref": "#/components/schemas/LocalShopperStatement"
             },
             "description": "An array of local shopper statements. Card schemes use this in the bank statement.\n\nFor Japan local shopper statements in both ja-Hani and ja-Kana are required."
+          },
+          "localStoreName": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LocalStoreName"
+            },
+            "description": "An array of localized store names. Used for payment method onboarding in Japan.\n\nPossible scripts: **ja-Hani**, **ja-Kana**."
+          },
+          "localizedAddress": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LocalizedInformationLocalizedAddressItem"
+            },
+            "description": "An array of localized addresses. Used for payment method onboarding in Japan.\n\nThe \u0060script\u0060 of each address selects which fields it carries, so each locale sends the fields its addresses have.\n\nFor Japanese stores, both **ja-Hani** and **ja-Kana** addresses are required."
           }
         },
         "additionalProperties": {
@@ -188976,6 +189383,22 @@
         },
         "description": "Details to provide if \u0060type\u0060 is **bcmc** (Bancontact)."
       },
+      "UpdatePaymentMethodInfoBoncard": {
+        "type": "object",
+        "properties": {
+          "terminalId": {
+            "maxLength": 10,
+            "minLength": 6,
+            "pattern": "^[A-Za-z0-9]{6,10}$",
+            "type": "string",
+            "description": "The TerminalID that Boncard assigns to the merchant. Format: 6 to 10 alphanumeric characters.\nExample: 5Z6G8PV9."
+          }
+        },
+        "additionalProperties": {
+          "not": {}
+        },
+        "description": "Details to provide if \u0060type\u0060 is **boncard**."
+      },
       "UpdatePaymentMethodInfoCarnet": {
         "type": "object",
         "properties": {
@@ -189202,6 +189625,18 @@
           "not": {}
         },
         "description": "Details to provide if \u0060type\u0060 is **paybybank_plaid**."
+      },
+      "UpdatePaymentMethodInfoPaybybankPlaidCa": {
+        "type": "object",
+        "properties": {
+          "transactionDescription": {
+            "$ref": "#/components/schemas/PayByBankPlaidUpdateInfoTransactionDescription"
+          }
+        },
+        "additionalProperties": {
+          "not": {}
+        },
+        "description": "Details to provide if \u0060type\u0060 is **paybybank_plaid_ca**."
       },
       "UpdatePaymentMethodInfoPulse": {
         "type": "object",
@@ -190350,6 +190785,44 @@
             }
           ]
         }
+      },
+      "LocalizedInformationLocalizedAddressItemFields": {
+        "required": [
+          "city",
+          "line1",
+          "prefecture"
+        ],
+        "type": "object",
+        "properties": {
+          "building": {
+            "type": "string",
+            "description": "The building name, floor, and room number (\u5EFA\u7269\u540D\u30FB\u968E\u30FB\u90E8\u5C4B\u756A\u53F7)."
+          },
+          "city": {
+            "type": "string",
+            "description": "The city (\u5E02\u533A\u753A\u6751).\n\nRequired for both \u0060ja-Hani\u0060 and \u0060ja-Kana\u0060 addresses."
+          },
+          "district": {
+            "type": "string",
+            "description": "The town or locality  (\u753A\u57DF / \u753A\u540D)."
+          },
+          "line1": {
+            "type": "string",
+            "description": "The street address including ch\u014Dme, block/lot, and house number (\u4E01\u76EE\u30FB\u756A\u5730\u30FB\u53F7\u7B49).\n\nRequired for both \u0060ja-Hani\u0060 and \u0060ja-Kana\u0060 addresses."
+          },
+          "postalCode": {
+            "type": "string",
+            "description": "The postal code (\u90F5\u4FBF\u756A\u53F7).\n\nRequired for both \u0060ja-Hani\u0060 and \u0060ja-Kana\u0060 addresses only when \u0060address.postalCode\u0060 is omitted. \nOtherwise, the value in \u0060address.postalCode\u0060 is used."
+          },
+          "prefecture": {
+            "type": "string",
+            "description": "The prefecture, state, or province (\u90FD\u9053\u5E9C\u770C).\n\nRequired for both \u0060ja-Hani\u0060 and \u0060ja-Kana\u0060 addresses."
+          }
+        },
+        "additionalProperties": {
+          "not": {}
+        },
+        "description": "The address fields in the specified character set."
       },
       "TerminalSettingsConnectivityTerminalIpAddressUrl": {
         "type": "object",
@@ -233997,6 +234470,50 @@
           }
         }
       },
+      "patch-companies-companyId-users-userId-user-already-has-account-409": {
+        "summary": "Response code - 409 Conflict. The user already has access to an account specified in the request.",
+        "value": {
+          "type": "https://docs.adyen.com/development-resources/error-codes",
+          "errorCode": "00_409",
+          "title": "Conflict",
+          "status": 409,
+          "detail": "The user already has access to an account specified in the request.",
+          "requestId": "MKUDJSF3JGHB3B7L"
+        }
+      },
+      "patch-companies-companyId-users-userId-user-already-has-account-group-409": {
+        "summary": "Response code - 409 Conflict. The user already has access to an account group specified in the request.",
+        "value": {
+          "type": "https://docs.adyen.com/development-resources/error-codes",
+          "errorCode": "00_409",
+          "title": "Conflict",
+          "status": 409,
+          "detail": "The user already has access to an account group specified in the request.",
+          "requestId": "MKUDJSF3JGHB3B6K"
+        }
+      },
+      "patch-companies-companyId-users-userId-user-already-has-role-409": {
+        "summary": "Response code - 409 Conflict. The user already has access to a role specified in the request.",
+        "value": {
+          "type": "https://docs.adyen.com/development-resources/error-codes",
+          "errorCode": "00_409",
+          "title": "Conflict",
+          "status": 409,
+          "detail": "The user already has access to a role specified in the request.",
+          "requestId": "MKUDJSF3JGHB3B8M"
+        }
+      },
+      "patch-companies-companyId-users-userId-username-already-in-use-409": {
+        "summary": "Response code - 409 Conflict. The specified username is already in use.",
+        "value": {
+          "type": "https://docs.adyen.com/development-resources/error-codes",
+          "errorCode": "00_409",
+          "title": "Conflict",
+          "status": 409,
+          "detail": "The specified \u0027username\u0027 is already in use.",
+          "requestId": "MKUDJSF3JGHB3B9N"
+        }
+      },
       "patch-companies-companyId-webhooks-webhookId-patch-company-webhook": {
         "summary": "Activate the webhook",
         "description": "Example request for activating a webhook configuration.",
@@ -235245,6 +235762,50 @@
           "hardware": {
             "displayMaximumBackLight": 75
           }
+        }
+      },
+      "patch-merchants-merchantId-users-userId-user-already-has-account-409": {
+        "summary": "Response code - 409 Conflict. The user already has access to an account specified in the request.",
+        "value": {
+          "type": "https://docs.adyen.com/development-resources/error-codes",
+          "errorCode": "00_409",
+          "title": "Conflict",
+          "status": 409,
+          "detail": "The user already has access to an account specified in the request.",
+          "requestId": "MKUDJSF3JGHB3C7Q"
+        }
+      },
+      "patch-merchants-merchantId-users-userId-user-already-has-account-group-409": {
+        "summary": "Response code - 409 Conflict. The user already has access to an account group specified in the request.",
+        "value": {
+          "type": "https://docs.adyen.com/development-resources/error-codes",
+          "errorCode": "00_409",
+          "title": "Conflict",
+          "status": 409,
+          "detail": "The user already has access to an account group specified in the request.",
+          "requestId": "MKUDJSF3JGHB3C6P"
+        }
+      },
+      "patch-merchants-merchantId-users-userId-user-already-has-role-409": {
+        "summary": "Response code - 409 Conflict. The user already has access to a role specified in the request.",
+        "value": {
+          "type": "https://docs.adyen.com/development-resources/error-codes",
+          "errorCode": "00_409",
+          "title": "Conflict",
+          "status": 409,
+          "detail": "The user already has access to a role specified in the request.",
+          "requestId": "MKUDJSF3JGHB3C8R"
+        }
+      },
+      "patch-merchants-merchantId-users-userId-username-already-in-use-409": {
+        "summary": "Response code - 409 Conflict. The specified username is already in use.",
+        "value": {
+          "type": "https://docs.adyen.com/development-resources/error-codes",
+          "errorCode": "00_409",
+          "title": "Conflict",
+          "status": 409,
+          "detail": "The specified \u0027username\u0027 is already in use.",
+          "requestId": "MKUDJSF3JGHB3C9S"
         }
       },
       "patch-merchants-merchantId-webhooks-webhookId-patch-merchant-webhook": {
@@ -255376,6 +255937,23 @@
           "JsonObject": {
             "type": "object"
           },
+          "JapaneseLocalizedAddress": {
+            "required": [
+              "fields",
+              "script"
+            ],
+            "type": "object",
+            "properties": {
+              "fields": {
+                "description": "The address fields in the specified character set.",
+                "$ref": "#/components/schemas/JapaneseLocalizedAddressFields"
+              },
+              "script": {
+                "$ref": "#/components/schemas/JapaneseLocalizedAddressScript"
+              }
+            },
+            "additionalProperties": false
+          },
           "KioskModeSettings": {
             "type": "object",
             "properties": {
@@ -255714,6 +256292,10 @@
               "enableStandalone": {
                 "type": "boolean",
                 "description": "Enable standalone mode."
+              },
+              "merchantReference": {
+                "type": "string",
+                "description": "The merchant reference to be sent with every transaction when the terminal is in standalone mode. Used for reconciliation.\n\nThis property also accepts one or more variables as input, together with plain text. When this property reaches the terminal, the terminal replaces the variables with the values that apply to it. For the list of allowed variables, see [Configure the merchant reference](https://docs.adyen.com/point-of-sale/standalone/standalone-build/set-up-standalone#configure-merchant-reference).\n"
               }
             },
             "additionalProperties": false
@@ -285651,11 +286233,11 @@
       "properties": {
         "allowed": {
           "type": "boolean",
-          "description": "Indicates whether receiving payments is allowed. This value is set to **true** by Adyen after screening your merchant account."
+          "description": "Indicates whether receiving payments is allowed. This value is set to **true** by Adyen after screening your merchant account.\n\nOnly returned in webhooks that include the screening results for your merchant account."
         },
         "enabled": {
           "type": "boolean",
-          "description": "Indicates whether the payment method is enabled (**true**) or disabled (**false**)."
+          "description": "Indicates whether the payment method is enabled (**true**) or disabled (**false**).\n\nOnly reliable in webhooks that include the screening results for your merchant account."
         },
         "id": {
           "type": "string",
@@ -285670,7 +286252,7 @@
           "description": "Your reference for the payment method."
         },
         "status": {
-          "description": "The status of the request to add a payment method. Possible values:\n\n* **success**: the payment method was added.\n* **failure**: the request failed.\n* **capabilityPending**: the **receivePayments** capability is not allowed.\n",
+          "description": "The status of the request to add a payment method. Possible values:\n\n* **success**: the payment method was added.\n* **failure**: the request failed.\n* **capabilityPending**: the **receivePayments** capability is not allowed.\n\nA webhook with \u0060status\u0060 **success** is the last webhook for that payment method.",
           "$ref": "#/components/schemas/MidServiceNotificationDataStatus"
         },
         "storeId": {
@@ -285682,7 +286264,7 @@
           "description": "Payment method [variant](https://docs.adyen.com/development-resources/paymentmethodvariant#management-api).\n\nFor payment method variant **cartebancaire**, method-specific details are returned in the [\u0060cartesBancaires\u0060](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/(merchantId)/paymentMethodSettings#responses-200-cartesBancaires) object of the response."
         },
         "verificationStatus": {
-          "description": "Payment method status. Possible values:\n* **valid**\n* **pending**\n* **invalid**\n* **rejected**",
+          "description": "Payment method status. Possible values:\n* **valid**\n* **pending**\n* **invalid**\n* **rejected**\n\nOnly returned in webhooks that include the screening results for your merchant account.",
           "$ref": "#/components/schemas/MidServiceNotificationDataVerificationStatus"
         }
       },
@@ -285769,13 +286351,10 @@
       "description": "Key-value pairs that specify what you can do with the merchant account and its settings. The key is a capability. For example, the **sendToTransferInstrument** is the capability required before you can pay out the funds of a merchant account to a [bank account](https://docs.adyen.com/api-explorer/legalentity/latest/post/transferInstruments). The value is an object containing the settings for the capability."
     },
     "AccelInfo": {
-      "required": [
-        "processingType"
-      ],
       "type": "object",
       "properties": {
         "processingType": {
-          "description": "The type of transactions processed over this payment method.\n Allowed values:\n- **pos** for in-person payments. \n- **billpay** for subscription payments, both the initial payment and the later recurring payments. These transactions have \u0060recurringProcessingModel\u0060 **Subscription**. \n- **ecom** for all other card not present transactions. This includes non-recurring transactions and transactions with \u0060recurringProcessingModel\u0060 **CardOnFile** or **UnscheduledCardOnFile**.\n",
+          "description": "The type of transactions processed over this payment method. The recommended usage is to not specify a processing type. We then set up the payment method to process all transaction types. \n Allowed values:\n- **pos** for in-person payments. \n- **billpay** for subscription payments, both the initial payment and the later recurring payments. These transactions have \u0060recurringProcessingModel\u0060 **Subscription**. \n- **ecom** for all other card not present transactions. This includes non-recurring transactions and transactions with \u0060recurringProcessingModel\u0060 **CardOnFile** or **UnscheduledCardOnFile**.\n",
           "$ref": "#/components/schemas/AccelInfoProcessingType"
         },
         "transactionDescription": {
@@ -285789,6 +286368,10 @@
     "AccelResponseInfo": {
       "type": "object",
       "properties": {
+        "networkProcessingMode": {
+          "description": "Indicates the processing flow for the payment method. Possible values:\n- **auth**: If you have not [configured automatic capture](https://docs.adyen.com/online-payments/capture#types-of-capture) for the transaction, you must manually capture the funds. \n- **sale**: You do not need to separately capture the funds, because capture happens automatically as part of the transaction, together with authorization.\n",
+          "$ref": "#/components/schemas/AccelResponseInfoNetworkProcessingMode"
+        },
         "processingType": {
           "description": "The type of transactions processed over this payment method.\n Allowed values:\n- **pos** for in-person payments. \n- **billpay** for subscription payments, both the initial payment and the later recurring payments. These transactions have \u0060recurringProcessingModel\u0060 **Subscription**. \n- **ecom** for all other card not present transactions. This includes non-recurring transactions and transactions with \u0060recurringProcessingModel\u0060 **CardOnFile** or **UnscheduledCardOnFile**.\n",
           "$ref": "#/components/schemas/AccelResponseInfoProcessingType"
@@ -286186,6 +286769,51 @@
       "properties": {
         "transactionDescription": {
           "$ref": "#/components/schemas/BcmcUpdateInfoTransactionDescription"
+        }
+      },
+      "additionalProperties": {
+        "not": {}
+      }
+    },
+    "BoncardInfo": {
+      "required": [
+        "terminalId"
+      ],
+      "type": "object",
+      "properties": {
+        "terminalId": {
+          "maxLength": 10,
+          "minLength": 6,
+          "pattern": "^[A-Za-z0-9]{6,10}$",
+          "type": "string",
+          "description": "The TerminalID that Boncard assigns to the merchant. Format: 6 to 10 alphanumeric characters.\nExample: 5Z6G8PV9."
+        }
+      },
+      "additionalProperties": {
+        "not": {}
+      }
+    },
+    "BoncardResponseInfo": {
+      "type": "object",
+      "properties": {
+        "terminalId": {
+          "type": "string",
+          "description": "The TerminalID that Boncard assigns to the merchant. Format: 6 to 10 alphanumeric characters.\nExample: 5Z6G8PV9."
+        }
+      },
+      "additionalProperties": {
+        "not": {}
+      }
+    },
+    "BoncardUpdateInfo": {
+      "type": "object",
+      "properties": {
+        "terminalId": {
+          "maxLength": 10,
+          "minLength": 6,
+          "pattern": "^[A-Za-z0-9]{6,10}$",
+          "type": "string",
+          "description": "The TerminalID that Boncard assigns to the merchant. Format: 6 to 10 alphanumeric characters.\nExample: 5Z6G8PV9."
         }
       },
       "additionalProperties": {
@@ -286728,6 +287356,43 @@
         "not": {}
       }
     },
+    "JapaneseLocalizedAddressFields": {
+      "required": [
+        "city",
+        "line1",
+        "prefecture"
+      ],
+      "type": "object",
+      "properties": {
+        "building": {
+          "type": "string",
+          "description": "The building name, floor, and room number (\u5EFA\u7269\u540D\u30FB\u968E\u30FB\u90E8\u5C4B\u756A\u53F7)."
+        },
+        "city": {
+          "type": "string",
+          "description": "The city (\u5E02\u533A\u753A\u6751).\n\nRequired for both \u0060ja-Hani\u0060 and \u0060ja-Kana\u0060 addresses."
+        },
+        "district": {
+          "type": "string",
+          "description": "The town or locality  (\u753A\u57DF / \u753A\u540D)."
+        },
+        "line1": {
+          "type": "string",
+          "description": "The street address including ch\u014Dme, block/lot, and house number (\u4E01\u76EE\u30FB\u756A\u5730\u30FB\u53F7\u7B49).\n\nRequired for both \u0060ja-Hani\u0060 and \u0060ja-Kana\u0060 addresses."
+        },
+        "postalCode": {
+          "type": "string",
+          "description": "The postal code (\u90F5\u4FBF\u756A\u53F7).\n\nRequired for both \u0060ja-Hani\u0060 and \u0060ja-Kana\u0060 addresses only when \u0060address.postalCode\u0060 is omitted. \nOtherwise, the value in \u0060address.postalCode\u0060 is used."
+        },
+        "prefecture": {
+          "type": "string",
+          "description": "The prefecture, state, or province (\u90FD\u9053\u5E9C\u770C).\n\nRequired for both \u0060ja-Hani\u0060 and \u0060ja-Kana\u0060 addresses."
+        }
+      },
+      "additionalProperties": {
+        "not": {}
+      }
+    },
     "Key": {
       "type": "object",
       "properties": {
@@ -286828,6 +287493,20 @@
             "$ref": "#/components/schemas/LocalShopperStatement"
           },
           "description": "An array of local shopper statements. Card schemes use this in the bank statement.\n\nFor Japan local shopper statements in both ja-Hani and ja-Kana are required."
+        },
+        "localStoreName": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/LocalStoreName"
+          },
+          "description": "An array of localized store names. Used for payment method onboarding in Japan.\n\nPossible scripts: **ja-Hani**, **ja-Kana**."
+        },
+        "localizedAddress": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/LocalizedInformationLocalizedAddressItem"
+          },
+          "description": "An array of localized addresses. Used for payment method onboarding in Japan.\n\nThe \u0060script\u0060 of each address selects which fields it carries, so each locale sends the fields its addresses have.\n\nFor Japanese stores, both **ja-Hani** and **ja-Kana** addresses are required."
         }
       },
       "additionalProperties": {
@@ -286919,13 +287598,10 @@
       }
     },
     "NyceInfo": {
-      "required": [
-        "processingType"
-      ],
       "type": "object",
       "properties": {
         "processingType": {
-          "description": "The type of transactions processed over this payment method.\n Allowed values:\n- **pos** for in-person payments. \n- **billpay** for subscription payments, both the initial payment and the later recurring payments. These transactions have \u0060recurringProcessingModel\u0060 **Subscription**. \n- **ecom** for all other card not present transactions. This includes non-recurring transactions and transactions with \u0060recurringProcessingModel\u0060 **CardOnFile** or **UnscheduledCardOnFile**.\n",
+          "description": "The type of transactions processed over this payment method. The recommended usage is to not specify a processing type. We then set up the payment method to process all transaction types. \n Allowed values:\n- **pos** for in-person payments. \n- **billpay** for subscription payments, both the initial payment and the later recurring payments. These transactions have \u0060recurringProcessingModel\u0060 **Subscription**. \n- **ecom** for all other card not present transactions. This includes non-recurring transactions and transactions with \u0060recurringProcessingModel\u0060 **CardOnFile** or **UnscheduledCardOnFile**.\n",
           "$ref": "#/components/schemas/NyceInfoProcessingType"
         },
         "transactionDescription": {
@@ -286939,6 +287615,10 @@
     "NyceResponseInfo": {
       "type": "object",
       "properties": {
+        "networkProcessingMode": {
+          "description": "Indicates the processing flow for the payment method. Possible values:\n- **auth**: If you have not [configured automatic capture](https://docs.adyen.com/online-payments/capture#types-of-capture) for the transaction, you must manually capture the funds. \n- **sale**: You do not need to separately capture the funds, because capture happens automatically as part of the transaction, together with authorization.\n",
+          "$ref": "#/components/schemas/NyceResponseInfoNetworkProcessingMode"
+        },
         "processingType": {
           "description": "The type of transactions processed over this payment method.\n Allowed values:\n- **pos** for in-person payments. \n- **billpay** for subscription payments, both the initial payment and the later recurring payments. These transactions have \u0060recurringProcessingModel\u0060 **Subscription**. \n- **ecom** for all other card not present transactions. This includes non-recurring transactions and transactions with \u0060recurringProcessingModel\u0060 **CardOnFile** or **UnscheduledCardOnFile**.\n",
           "$ref": "#/components/schemas/NyceResponseInfoProcessingType"
@@ -287159,14 +287839,45 @@
         "not": {}
       }
     },
+    "PixInfo": {
+      "type": "object",
+      "properties": {
+        "allowRecurring": {
+          "type": "boolean",
+          "description": "Indicates whether to set up Pix Recurring (Pix Autom\u00E1tico) instead of standard Pix. The default value is **false**.",
+          "default": false
+        },
+        "allowPayByBank": {
+          "type": "boolean",
+          "description": "Indicates whether to set up Pix Pay by Bank instead of standard Pix. The default value is **false**.",
+          "default": false
+        }
+      },
+      "additionalProperties": {
+        "not": {}
+      }
+    },
+    "PixResponseInfo": {
+      "type": "object",
+      "properties": {
+        "allowRecurring": {
+          "type": "boolean",
+          "description": "Indicates whether the Pix payment method is set up as Pix Recurring (Pix Autom\u00E1tico) instead of standard Pix."
+        },
+        "allowPayByBank": {
+          "type": "boolean",
+          "description": "Indicates whether the Pix payment method is set up as Pix Pay by Bank instead of standard Pix."
+        }
+      },
+      "additionalProperties": {
+        "not": {}
+      }
+    },
     "PulseInfo": {
-      "required": [
-        "processingType"
-      ],
       "type": "object",
       "properties": {
         "processingType": {
-          "description": "The type of transactions processed over this payment method.\n Allowed values:\n- **pos** for in-person payments. \n- **billpay** for subscription payments, both the initial payment and the later recurring payments. These transactions have \u0060recurringProcessingModel\u0060 **Subscription**. \n- **ecom** for all other card not present transactions. This includes non-recurring transactions and transactions with \u0060recurringProcessingModel\u0060 **CardOnFile** or **UnscheduledCardOnFile**.\n",
+          "description": "The type of transactions processed over this payment method. The recommended usage is to not specify a processing type. We then set up the payment method to process all transaction types. \n Allowed values:\n- **pos** for in-person payments. \n- **billpay** for subscription payments, both the initial payment and the later recurring payments. These transactions have \u0060recurringProcessingModel\u0060 **Subscription**. \n- **ecom** for all other card not present transactions. This includes non-recurring transactions and transactions with \u0060recurringProcessingModel\u0060 **CardOnFile** or **UnscheduledCardOnFile**.\n",
           "$ref": "#/components/schemas/PulseInfoProcessingType"
         },
         "transactionDescription": {
@@ -287180,6 +287891,10 @@
     "PulseResponseInfo": {
       "type": "object",
       "properties": {
+        "networkProcessingMode": {
+          "description": "Indicates the processing flow for the payment method. Possible values:\n- **auth**: If you have not [configured automatic capture](https://docs.adyen.com/online-payments/capture#types-of-capture) for the transaction, you must manually capture the funds. \n- **sale**: You do not need to separately capture the funds, because capture happens automatically as part of the transaction, together with authorization.\n",
+          "$ref": "#/components/schemas/PulseResponseInfoNetworkProcessingMode"
+        },
         "processingType": {
           "description": "The type of transactions processed over this payment method.\n Allowed values:\n- **pos** for in-person payments. \n- **billpay** for subscription payments, both the initial payment and the later recurring payments. These transactions have \u0060recurringProcessingModel\u0060 **Subscription**. \n- **ecom** for all other card not present transactions. This includes non-recurring transactions and transactions with \u0060recurringProcessingModel\u0060 **CardOnFile** or **UnscheduledCardOnFile**.\n",
           "$ref": "#/components/schemas/PulseResponseInfoProcessingType"
@@ -287434,13 +288149,10 @@
       }
     },
     "StarInfo": {
-      "required": [
-        "processingType"
-      ],
       "type": "object",
       "properties": {
         "processingType": {
-          "description": "The type of transactions processed over this payment method.\n Allowed values:\n- **pos** for in-person payments. \n- **billpay** for subscription payments, both the initial payment and the later recurring payments. These transactions have \u0060recurringProcessingModel\u0060 **Subscription**. \n- **ecom** for all other card not present transactions. This includes non-recurring transactions and transactions with \u0060recurringProcessingModel\u0060 **CardOnFile** or **UnscheduledCardOnFile**.\n",
+          "description": "The type of transactions processed over this payment method. The recommended usage is to not specify a processing type. We then set up the payment method to process all transaction types. \n Allowed values:\n- **pos** for in-person payments. \n- **billpay** for subscription payments, both the initial payment and the later recurring payments. These transactions have \u0060recurringProcessingModel\u0060 **Subscription**. \n- **ecom** for all other card not present transactions. This includes non-recurring transactions and transactions with \u0060recurringProcessingModel\u0060 **CardOnFile** or **UnscheduledCardOnFile**.\n",
           "$ref": "#/components/schemas/StarInfoProcessingType"
         },
         "transactionDescription": {
@@ -287454,6 +288166,10 @@
     "StarResponseInfo": {
       "type": "object",
       "properties": {
+        "networkProcessingMode": {
+          "description": "Indicates the processing flow for the payment method. Possible values:\n- **auth**: If you have not [configured automatic capture](https://docs.adyen.com/online-payments/capture#types-of-capture) for the transaction, you must manually capture the funds. \n- **sale**: You do not need to separately capture the funds, because capture happens automatically as part of the transaction, together with authorization.\n",
+          "$ref": "#/components/schemas/StarResponseInfoNetworkProcessingMode"
+        },
         "processingType": {
           "description": "The type of transactions processed over this payment method.\n Allowed values:\n- **pos** for in-person payments. \n- **billpay** for subscription payments, both the initial payment and the later recurring payments. These transactions have \u0060recurringProcessingModel\u0060 **Subscription**. \n- **ecom** for all other card not present transactions. This includes non-recurring transactions and transactions with \u0060recurringProcessingModel\u0060 **CardOnFile** or **UnscheduledCardOnFile**.\n",
           "$ref": "#/components/schemas/StarResponseInfoProcessingType"

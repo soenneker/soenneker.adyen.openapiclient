@@ -18,6 +18,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("networkProcessingMode") is null) { _explicitNullValueNetworkProcessingMode = default!; _explicitNullProperties?.Remove("networkProcessingMode"); }
+            else if (parseNode.GetChildNode("networkProcessingMode") is { } nullNodeNetworkProcessingMode && nullNodeNetworkProcessingMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NetworkProcessingMode = null;
             if (parseNode.GetChildNode("processingType") is null) { _explicitNullValueProcessingType = default!; _explicitNullProperties?.Remove("processingType"); }
             else if (parseNode.GetChildNode("processingType") is { } nullNodeProcessingType && nullNodeProcessingType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProcessingType = null;
             if (parseNode.GetChildNode("transactionDescription") is null) { _explicitNullValueTransactionDescription = default!; _explicitNullProperties?.Remove("transactionDescription"); }
@@ -26,6 +28,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Indicates the processing flow for the payment method. Possible values:- **auth**: If you have not [configured automatic capture](https://docs.adyen.com/online-payments/capture#types-of-capture) for the transaction, you must manually capture the funds. - **sale**: You do not need to separately capture the funds, because capture happens automatically as part of the transaction, together with authorization.</summary>
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccelResponseInfoNetworkProcessingMode? NetworkProcessingMode { get => _explicitNullValueNetworkProcessingMode; set { _explicitNullValueNetworkProcessingMode = value; AdditionalData?.Remove("networkProcessingMode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("networkProcessingMode"); else _explicitNullProperties?.Remove("networkProcessingMode"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.AccelResponseInfoNetworkProcessingMode? _explicitNullValueNetworkProcessingMode = default!;
         /// <summary>The type of transactions processed over this payment method. Allowed values:- **pos** for in-person payments. - **billpay** for subscription payments, both the initial payment and the later recurring payments. These transactions have `recurringProcessingModel` **Subscription**. - **ecom** for all other card not present transactions. This includes non-recurring transactions and transactions with `recurringProcessingModel` **CardOnFile** or **UnscheduledCardOnFile**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.AccelResponseInfoProcessingType? ProcessingType { get => _explicitNullValueProcessingType; set { _explicitNullValueProcessingType = value; AdditionalData?.Remove("processingType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processingType"); else _explicitNullProperties?.Remove("processingType"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.AccelResponseInfoProcessingType? _explicitNullValueProcessingType = default!;
@@ -64,6 +69,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "networkProcessingMode", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccelResponseInfoNetworkProcessingMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueNetworkProcessingMode = default; _explicitNullProperties?.Remove("networkProcessingMode"); AdditionalData["networkProcessingMode"] = unknown; } else { NetworkProcessingMode = parsed; AdditionalData.Remove("networkProcessingMode"); } } },
                 { "processingType", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccelResponseInfoProcessingType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueProcessingType = default; _explicitNullProperties?.Remove("processingType"); AdditionalData["processingType"] = unknown; } else { ProcessingType = parsed; AdditionalData.Remove("processingType"); } } },
                 { "transactionDescription", n => { TransactionDescription = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccelResponseInfoTransactionDescription>(global::Soenneker.Adyen.OpenApiClient.Models.AccelResponseInfoTransactionDescription.CreateFromDiscriminatorValue); } },
             };
@@ -75,6 +81,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccelResponseInfoNetworkProcessingMode>("networkProcessingMode", NetworkProcessingMode);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccelResponseInfoProcessingType>("processingType", ProcessingType);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccelResponseInfoTransactionDescription>("transactionDescription", TransactionDescription);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

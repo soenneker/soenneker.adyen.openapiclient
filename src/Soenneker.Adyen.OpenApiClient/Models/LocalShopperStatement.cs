@@ -35,7 +35,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Script { get => _explicitNullValueScript; set { _explicitNullValueScript = value; AdditionalData?.Remove("script"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("script"); else _explicitNullProperties?.Remove("script"); } }
         private string _explicitNullValueScript = default!;
 #endif
-        /// <summary>The text of the local shopper statement in the specified character set.</summary>
+        /// <summary>The localized shopper statement in the specified character set.* For `ja-Hani` the allowed characters are: Full-width kanji including letters, numbers, and symbols.* For `ja-Kana` the allowed characters are:    * `Half-width katakana`    * Letters: `a-z`, `A-Z`    * Numbers: `0-9`    * Symbols: `!`, `&quot;`, `#`, `$`, `%`, `&amp;`, `&apos;`, `(`, `)`, `*`, `+`, `,`, `-`, `.`, `/`, `:`, `;`, `&lt;`, `=`, `&gt;`, `?`, `@`, `[`, `\`, `]`, `^`, `_`, `` ` ``, `{`, `|`, `}`, `~`, `｡`, `｢`, `｣`, `､`, `･`, `ｰ`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
