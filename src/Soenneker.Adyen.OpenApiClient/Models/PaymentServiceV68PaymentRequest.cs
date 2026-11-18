@@ -116,6 +116,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             else if (parseNode.GetChildNode("splits") is { } nullNodeSplits && nullNodeSplits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Splits = null;
             if (parseNode.GetChildNode("store") is null) { _explicitNullValueStore = default!; _explicitNullProperties?.Remove("store"); }
             else if (parseNode.GetChildNode("store") is { } nullNodeStore && nullNodeStore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Store = null;
+            if (parseNode.GetChildNode("storeClickToPayProfile") is null) { _explicitNullValueStoreClickToPayProfile = default!; _explicitNullProperties?.Remove("storeClickToPayProfile"); }
+            else if (parseNode.GetChildNode("storeClickToPayProfile") is { } nullNodeStoreClickToPayProfile && nullNodeStoreClickToPayProfile.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StoreClickToPayProfile = null;
             if (parseNode.GetChildNode("telephoneNumber") is null) { _explicitNullValueTelephoneNumber = default!; _explicitNullProperties?.Remove("telephoneNumber"); }
             else if (parseNode.GetChildNode("telephoneNumber") is { } nullNodeTelephoneNumber && nullNodeTelephoneNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TelephoneNumber = null;
             if (parseNode.GetChildNode("threeDS2RequestData") is null) { _explicitNullValueThreeDS2RequestData = default!; _explicitNullProperties?.Remove("threeDS2RequestData"); }
@@ -200,7 +202,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68PaymentRequestBillingAddress BillingAddress { get => _explicitNullValueBillingAddress; set { _explicitNullValueBillingAddress = value; AdditionalData?.Remove("billingAddress"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingAddress"); else _explicitNullProperties?.Remove("billingAddress"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68PaymentRequestBillingAddress _explicitNullValueBillingAddress = default!;
 #endif
-        /// <summary>The shopper&apos;s browser information.&gt; For 3D Secure, the full object is required for web integrations. For mobile app integrations, include the `userAgent` and `acceptHeader` fields to indicate  that your integration can support a redirect in case a payment is routed to 3D Secure 2 redirect.</summary>
+        /// <summary>The shopper&apos;s browser information.&gt; For 3D Secure, the full object is required for web integrations. For mobile app integrations, include the `userAgent` and `acceptHeader` fields to indicate  that your integration can support a redirect in case a payment is routed to 3D Secure 2 redirect.&gt;&gt; For browser-based payments, missing or incomplete `browserInfo` means 3D Secure 2 cannot be initiated. The transaction is then treated as ineligible for 3D Secure 2 and can be authorized without liability shift. Native app 3D Secure 2 authentication does not require `browserInfo`. This field is usually collected on the client, so validate its presence and completeness on your server before you submit the payment. For more information, see [3D Secure 2 authentication](https://docs.adyen.com/online-payments/3d-secure/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68PaymentRequestBrowserInfo? BrowserInfo { get => _explicitNullValueBrowserInfo; set { _explicitNullValueBrowserInfo = value; AdditionalData?.Remove("browserInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("browserInfo"); else _explicitNullProperties?.Remove("browserInfo"); } }
@@ -564,6 +566,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Store { get => _explicitNullValueStore; set { _explicitNullValueStore = value; AdditionalData?.Remove("store"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("store"); else _explicitNullProperties?.Remove("store"); } }
         private string _explicitNullValueStore = default!;
 #endif
+        /// <summary>When enrolling a new user, this field determines whether to store the shopper&apos;s card in their Click to Pay profile. When this is set to **True**, the request must include `shopperEmail`, `shopperName`, and `telephoneNumber`.</summary>
+        public bool? StoreClickToPayProfile { get => _explicitNullValueStoreClickToPayProfile; set { _explicitNullValueStoreClickToPayProfile = value; AdditionalData?.Remove("storeClickToPayProfile"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storeClickToPayProfile"); else _explicitNullProperties?.Remove("storeClickToPayProfile"); } }
+        private bool? _explicitNullValueStoreClickToPayProfile = default!;
         /// <summary>The shopper&apos;s telephone number. The phone number must include a plus sign (+) and a country code (1-3 digits), followed by the number (4-15 digits). If the value you provide does not follow the guidelines, we do not submit it for authentication.&gt; Required for Visa and JCB transactions that require 3D Secure 2 authentication, if you did not include the `shopperEmail`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -624,7 +629,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(55)
             {
                 { "accountInfo", n => { AccountInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68PaymentRequestAccountInfo>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68PaymentRequestAccountInfo.CreateFromDiscriminatorValue); } },
                 { "additionalAmount", n => { AdditionalAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68PaymentRequestAdditionalAmount>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68PaymentRequestAdditionalAmount.CreateFromDiscriminatorValue); } },
@@ -675,6 +680,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "socialSecurityNumber", n => { SocialSecurityNumber = n.GetStringValue(); } },
                 { "splits", n => { Splits = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68Split>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68Split.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "store", n => { Store = n.GetStringValue(); } },
+                { "storeClickToPayProfile", n => { StoreClickToPayProfile = n.GetBoolValue(); } },
                 { "telephoneNumber", n => { TelephoneNumber = n.GetStringValue(); } },
                 { "threeDS2RequestData", n => { ThreeDS2RequestData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestData>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestData.CreateFromDiscriminatorValue); } },
                 { "threeDSAuthenticationOnly", n => { ThreeDSAuthenticationOnly = n.GetBoolValue(); } },
@@ -738,6 +744,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("socialSecurityNumber", SocialSecurityNumber);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68Split>("splits", Splits);
             writer.WriteStringValue("store", Store);
+            writer.WriteBoolValue("storeClickToPayProfile", StoreClickToPayProfile);
             writer.WriteStringValue("telephoneNumber", TelephoneNumber);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestData>("threeDS2RequestData", ThreeDS2RequestData);
             writer.WriteBoolValue("threeDSAuthenticationOnly", ThreeDSAuthenticationOnly);

@@ -109,7 +109,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestRequest Request { get => _explicitNullValueRequest; set { _explicitNullValueRequest = value; AdditionalData?.Remove("request"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request"); else _explicitNullProperties?.Remove("request"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestRequest _explicitNullValueRequest = default!;
 #endif
-        /// <summary>Your reference to uniquely identify this shopper, for example user ID or account ID. The value is case-sensitive and must be at least three characters.&gt; Your reference must not include personally identifiable information (PII) such as name or email address.</summary>
+        /// <summary>Your reference to uniquely identify this shopper, for example user ID or account ID. The value is case-sensitive and must be at least three characters.This parameter is required unless the request is for PAN forwarding and `options.tokenize` is false (the default).&gt; Your reference must not include personally identifiable information (PII) such as name or email address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ShopperReference { get => _explicitNullValueShopperReference; set { _explicitNullValueShopperReference = value; AdditionalData?.Remove("shopperReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shopperReference"); else _explicitNullProperties?.Remove("shopperReference"); } }
@@ -152,7 +152,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(9)
             {
                 { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestAmount>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestAmount.CreateFromDiscriminatorValue); } },
                 { "baseUrl", n => { BaseUrl = n.GetStringValue(); } },

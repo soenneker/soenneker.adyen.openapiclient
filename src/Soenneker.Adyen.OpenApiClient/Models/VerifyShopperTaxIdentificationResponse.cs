@@ -33,7 +33,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The human-readable reason for the unsuccessful result.</summary>
+        /// <summary>The human-readable reason for an **INVALID** or **UNKNOWN** verification result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; AdditionalData?.Remove("reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
@@ -43,7 +43,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; AdditionalData?.Remove("reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
         private string _explicitNullValueReason = default!;
 #endif
-        /// <summary>The reason code for the unsuccessful result, when available.</summary>
+        /// <summary>The code for an unsuccessful verification, if available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReasonCode { get => _explicitNullValueReasonCode; set { _explicitNullValueReasonCode = value; AdditionalData?.Remove("reasonCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reasonCode"); else _explicitNullProperties?.Remove("reasonCode"); } }
@@ -56,7 +56,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The result property</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.ResultValue? Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; AdditionalData?.Remove("result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.ResultValue? _explicitNullValueResult = default!;
-        /// <summary>The unique reference for the verification attempt.</summary>
+        /// <summary>The unique reference for the verification. Returned only when `result` is **VALID**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TaxVerificationReference { get => _explicitNullValueTaxVerificationReference; set { _explicitNullValueTaxVerificationReference = value; AdditionalData?.Remove("taxVerificationReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxVerificationReference"); else _explicitNullProperties?.Remove("taxVerificationReference"); } }
@@ -66,7 +66,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string TaxVerificationReference { get => _explicitNullValueTaxVerificationReference; set { _explicitNullValueTaxVerificationReference = value; AdditionalData?.Remove("taxVerificationReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxVerificationReference"); else _explicitNullProperties?.Remove("taxVerificationReference"); } }
         private string _explicitNullValueTaxVerificationReference = default!;
 #endif
-        /// <summary>The masked representation of the verified tax identification.</summary>
+        /// <summary>The masked representation of the verified tax identification. Returned only when `result` is **VALID**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.VerifyShopperTaxIdentificationResponseVerifiedShopperTaxIdentification? VerifiedShopperTaxIdentification { get => _explicitNullValueVerifiedShopperTaxIdentification; set { _explicitNullValueVerifiedShopperTaxIdentification = value; AdditionalData?.Remove("verifiedShopperTaxIdentification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verifiedShopperTaxIdentification"); else _explicitNullProperties?.Remove("verifiedShopperTaxIdentification"); } }
@@ -76,7 +76,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.VerifyShopperTaxIdentificationResponseVerifiedShopperTaxIdentification VerifiedShopperTaxIdentification { get => _explicitNullValueVerifiedShopperTaxIdentification; set { _explicitNullValueVerifiedShopperTaxIdentification = value; AdditionalData?.Remove("verifiedShopperTaxIdentification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verifiedShopperTaxIdentification"); else _explicitNullProperties?.Remove("verifiedShopperTaxIdentification"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.VerifyShopperTaxIdentificationResponseVerifiedShopperTaxIdentification _explicitNullValueVerifiedShopperTaxIdentification = default!;
 #endif
-        /// <summary>The opaque, encrypted, and signed token representing the successful verification. Required in /payments.</summary>
+        /// <summary>The encrypted and signed token representing a successful verification. Returned only when `result` is **VALID**. Submit this value as `shopperTaxIdentification.verifiedShopperTaxIdentificationToken` in `/payments` with the same `shopperReference` used for verification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? VerifiedShopperTaxIdentificationToken { get => _explicitNullValueVerifiedShopperTaxIdentificationToken; set { _explicitNullValueVerifiedShopperTaxIdentificationToken = value; AdditionalData?.Remove("verifiedShopperTaxIdentificationToken"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verifiedShopperTaxIdentificationToken"); else _explicitNullProperties?.Remove("verifiedShopperTaxIdentificationToken"); } }
@@ -109,7 +109,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "reason", n => { Reason = n.GetStringValue(); } },
                 { "reasonCode", n => { ReasonCode = n.GetStringValue(); } },

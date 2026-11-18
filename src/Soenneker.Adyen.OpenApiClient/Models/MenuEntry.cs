@@ -97,7 +97,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "DefaultSelectedFlag", n => { DefaultSelectedFlag = n.GetBoolValue(); } },
                 { "MenuEntryTag", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MenuEntryMenuEntryTag>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueMenuEntryTag = default; _explicitNullProperties?.Remove("MenuEntryTag"); AdditionalData["MenuEntryTag"] = unknown; } else { MenuEntryTag = parsed; AdditionalData.Remove("MenuEntryTag"); } } },

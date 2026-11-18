@@ -124,7 +124,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(9)
             {
                 { "accountHolderId", n => { AccountHolderId = n.GetStringValue(); } },
                 { "contractType", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOfferContractType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueContractType = default; _explicitNullProperties?.Remove("contractType"); AdditionalData["contractType"] = unknown; } else { ContractType = parsed; AdditionalData.Remove("contractType"); } } },

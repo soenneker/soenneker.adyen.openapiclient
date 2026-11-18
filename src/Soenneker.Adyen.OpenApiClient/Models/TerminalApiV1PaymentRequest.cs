@@ -93,7 +93,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "LoyaltyData", n => { LoyaltyData = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyData>(global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyData.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "PaymentData", n => { PaymentData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentRequestPaymentData>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentRequestPaymentData.CreateFromDiscriminatorValue); } },

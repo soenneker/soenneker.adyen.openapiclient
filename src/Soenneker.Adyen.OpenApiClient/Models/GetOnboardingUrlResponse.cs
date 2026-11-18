@@ -92,7 +92,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "invalidFields", n => { InvalidFields = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.HopServiceV6ErrorFieldType>(global::Soenneker.Adyen.OpenApiClient.Models.HopServiceV6ErrorFieldType.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "pspReference", n => { PspReference = n.GetStringValue(); } },

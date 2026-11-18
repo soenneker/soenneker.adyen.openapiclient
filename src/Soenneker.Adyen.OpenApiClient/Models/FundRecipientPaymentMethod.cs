@@ -68,6 +68,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             else if (parseNode.GetChildNode("srcScheme") is { } nullNodeSrcScheme && nullNodeSrcScheme.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SrcScheme = null;
             if (parseNode.GetChildNode("srcTokenReference") is null) { _explicitNullValueSrcTokenReference = default!; _explicitNullProperties?.Remove("srcTokenReference"); }
             else if (parseNode.GetChildNode("srcTokenReference") is { } nullNodeSrcTokenReference && nullNodeSrcTokenReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SrcTokenReference = null;
+            if (parseNode.GetChildNode("storeClickToPayProfile") is null) { _explicitNullValueStoreClickToPayProfile = default!; _explicitNullProperties?.Remove("storeClickToPayProfile"); }
+            else if (parseNode.GetChildNode("storeClickToPayProfile") is { } nullNodeStoreClickToPayProfile && nullNodeStoreClickToPayProfile.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StoreClickToPayProfile = null;
             if (parseNode.GetChildNode("storedPaymentMethodId") is null) { _explicitNullValueStoredPaymentMethodId = default!; _explicitNullProperties?.Remove("storedPaymentMethodId"); }
             else if (parseNode.GetChildNode("storedPaymentMethodId") is { } nullNodeStoredPaymentMethodId && nullNodeStoredPaymentMethodId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StoredPaymentMethodId = null;
             if (parseNode.GetChildNode("threeDS2SdkVersion") is null) { _explicitNullValueThreeDS2SdkVersion = default!; _explicitNullProperties?.Remove("threeDS2SdkVersion"); }
@@ -323,6 +325,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string SrcTokenReference { get => _explicitNullValueSrcTokenReference; set { _explicitNullValueSrcTokenReference = value; AdditionalData?.Remove("srcTokenReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("srcTokenReference"); else _explicitNullProperties?.Remove("srcTokenReference"); } }
         private string _explicitNullValueSrcTokenReference = default!;
 #endif
+        /// <summary>When enrolling a new user, this field determines whether to store the shopper&apos;s card in their Click to Pay profile. When this is set to **True**, the request must include `shopperEmail`, `shopperName`, and `telephoneNumber`.</summary>
+        public bool? StoreClickToPayProfile { get => _explicitNullValueStoreClickToPayProfile; set { _explicitNullValueStoreClickToPayProfile = value; AdditionalData?.Remove("storeClickToPayProfile"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storeClickToPayProfile"); else _explicitNullProperties?.Remove("storeClickToPayProfile"); } }
+        private bool? _explicitNullValueStoreClickToPayProfile = default!;
         /// <summary>This is the `recurringDetailReference` returned in the response when you created the token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -369,7 +374,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(29)
             {
                 { "billingSequenceNumber", n => { BillingSequenceNumber = n.GetStringValue(); } },
                 { "brand", n => { Brand = n.GetStringValue(); } },
@@ -396,6 +401,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "srcDigitalCardId", n => { SrcDigitalCardId = n.GetStringValue(); } },
                 { "srcScheme", n => { SrcScheme = n.GetStringValue(); } },
                 { "srcTokenReference", n => { SrcTokenReference = n.GetStringValue(); } },
+                { "storeClickToPayProfile", n => { StoreClickToPayProfile = n.GetBoolValue(); } },
                 { "storedPaymentMethodId", n => { StoredPaymentMethodId = n.GetStringValue(); } },
                 { "threeDS2SdkVersion", n => { ThreeDS2SdkVersion = n.GetStringValue(); } },
                 { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CardDetailsType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
@@ -433,6 +439,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("srcDigitalCardId", SrcDigitalCardId);
             writer.WriteStringValue("srcScheme", SrcScheme);
             writer.WriteStringValue("srcTokenReference", SrcTokenReference);
+            writer.WriteBoolValue("storeClickToPayProfile", StoreClickToPayProfile);
             writer.WriteStringValue("storedPaymentMethodId", StoredPaymentMethodId);
             writer.WriteStringValue("threeDS2SdkVersion", ThreeDS2SdkVersion);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CardDetailsType>("type", Type);

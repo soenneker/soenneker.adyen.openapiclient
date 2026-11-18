@@ -92,7 +92,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "balances", n => { Balances = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Balance>(global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Balance.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "fundingBalanceAccountId", n => { FundingBalanceAccountId = n.GetStringValue(); } },

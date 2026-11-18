@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>The status of the INR 1 million LRS sublimit, for example EXCEEDED.</summary>
+    /// <summary>The status of the INR 1 million Liberalised Remittance Scheme sublimit. Possible values:* **EXCEEDED**: the sublimit is exceeded.* **NOT_EXCEEDED**: the sublimit is not exceeded.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum LrsContextSublimitStatus
     {

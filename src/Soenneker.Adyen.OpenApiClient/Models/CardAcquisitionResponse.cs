@@ -117,7 +117,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "LoyaltyAccount", n => { LoyaltyAccount = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccount>(global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccount.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "POIData", n => { POIData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PoiData>(global::Soenneker.Adyen.OpenApiClient.Models.PoiData.CreateFromDiscriminatorValue); } },

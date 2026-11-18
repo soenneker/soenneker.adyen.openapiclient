@@ -98,7 +98,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "OutputBarcode", n => { OutputBarcode = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OutputContentOutputBarcode>(global::Soenneker.Adyen.OpenApiClient.Models.OutputContentOutputBarcode.CreateFromDiscriminatorValue); } },
                 { "OutputFormat", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.OutputContentOutputFormat>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueOutputFormat = default; _explicitNullProperties?.Remove("OutputFormat"); AdditionalData["OutputFormat"] = unknown; } else { OutputFormat = parsed; AdditionalData.Remove("OutputFormat"); } } },

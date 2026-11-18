@@ -110,7 +110,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "authentication", n => { Authentication = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationNotificationDataAuthentication>(global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationNotificationDataAuthentication.CreateFromDiscriminatorValue); } },
                 { "balancePlatform", n => { BalancePlatform = n.GetStringValue(); } },

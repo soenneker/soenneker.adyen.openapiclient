@@ -140,7 +140,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "billingEntity", n => { BillingEntity = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalOrderBillingEntity>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalOrderBillingEntity.CreateFromDiscriminatorValue); } },
                 { "customerOrderReference", n => { CustomerOrderReference = n.GetStringValue(); } },

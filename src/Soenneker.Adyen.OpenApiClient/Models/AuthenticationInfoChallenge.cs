@@ -82,7 +82,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "challengeCancel", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ChallengeInfoChallengeCancel>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueChallengeCancel = default; _explicitNullProperties?.Remove("challengeCancel"); AdditionalData["challengeCancel"] = unknown; } else { ChallengeCancel = parsed; AdditionalData.Remove("challengeCancel"); } } },
                 { "flow", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ChallengeInfoFlow>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFlow = default; _explicitNullProperties?.Remove("flow"); AdditionalData["flow"] = unknown; } else { Flow = parsed; AdditionalData.Remove("flow"); } } },

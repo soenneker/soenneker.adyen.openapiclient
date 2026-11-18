@@ -93,7 +93,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "bluetooth", n => { Bluetooth = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityBluetooth>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityBluetooth.CreateFromDiscriminatorValue); } },
                 { "cellular", n => { Cellular = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityCellular>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityCellular.CreateFromDiscriminatorValue); } },

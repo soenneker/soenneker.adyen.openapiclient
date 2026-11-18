@@ -434,7 +434,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(33)
             {
                 { "accel", n => { Accel = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdatePaymentMethodInfoAccel>(global::Soenneker.Adyen.OpenApiClient.Models.UpdatePaymentMethodInfoAccel.CreateFromDiscriminatorValue); } },
                 { "affirm", n => { Affirm = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdatePaymentMethodInfoAffirm>(global::Soenneker.Adyen.OpenApiClient.Models.UpdatePaymentMethodInfoAffirm.CreateFromDiscriminatorValue); } },

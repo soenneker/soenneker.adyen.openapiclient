@@ -79,7 +79,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "exchangeSide", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CalculateRateRequestItemExchangeSide>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueExchangeSide = default; _explicitNullProperties?.Remove("exchangeSide"); AdditionalData["exchangeSide"] = unknown; } else { ExchangeSide = parsed; AdditionalData.Remove("exchangeSide"); } } },
                 { "sourceAmount", n => { SourceAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CalculateRateRequestItemSourceAmount>(global::Soenneker.Adyen.OpenApiClient.Models.CalculateRateRequestItemSourceAmount.CreateFromDiscriminatorValue); } },

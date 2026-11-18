@@ -92,7 +92,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "cardBin", n => { CardBin = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateResponseCardBin>(global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateResponseCardBin.CreateFromDiscriminatorValue); } },
                 { "costEstimateAmount", n => { CostEstimateAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateResponseCostEstimateAmount>(global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateResponseCostEstimateAmount.CreateFromDiscriminatorValue); } },

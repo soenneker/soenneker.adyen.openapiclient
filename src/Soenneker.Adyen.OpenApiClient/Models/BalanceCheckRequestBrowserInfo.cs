@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
     /// <summary>
-    /// The shopper&apos;s browser information.&gt; For 3D Secure, the full object is required for web integrations. For mobile app integrations, include the `userAgent` and `acceptHeader` fields to indicate  that your integration can support a redirect in case a payment is routed to 3D Secure 2 redirect.
+    /// The shopper&apos;s browser information.&gt; The 3D Secure 2 guidance for `browserInfo` applies to the later `/payments` request, not to this balance check. For browser-based 3D Secure 2 payments, include complete `browserInfo`. For mobile app integrations that can be routed to a 3D Secure 2 redirect, include the `userAgent` and `acceptHeader` fields. Native app 3D Secure 2 authentication does not require `browserInfo`.&gt;&gt; This field is usually collected on the client, so validate its presence and completeness on your server before you submit the payment.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BalanceCheckRequestBrowserInfo : IAdditionalDataHolder, IParsable
@@ -112,7 +112,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(9)
             {
                 { "acceptHeader", n => { AcceptHeader = n.GetStringValue(); } },
                 { "colorDepth", n => { ColorDepth = n.GetIntValue(); } },

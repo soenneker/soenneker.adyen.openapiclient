@@ -507,7 +507,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(46)
             {
                 { "allowedPaymentMethods", n => { AllowedPaymentMethods = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentLinkResponseAmount>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentLinkResponseAmount.CreateFromDiscriminatorValue); } },

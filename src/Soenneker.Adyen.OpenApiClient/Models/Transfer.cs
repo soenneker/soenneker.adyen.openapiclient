@@ -248,7 +248,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(21)
             {
                 { "accountHolder", n => { AccountHolder = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferAccountHolder>(global::Soenneker.Adyen.OpenApiClient.Models.TransferAccountHolder.CreateFromDiscriminatorValue); } },
                 { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferAmount>(global::Soenneker.Adyen.OpenApiClient.Models.TransferAmount.CreateFromDiscriminatorValue); } },

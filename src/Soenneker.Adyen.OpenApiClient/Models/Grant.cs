@@ -116,7 +116,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "balances", n => { Balances = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GrantBalances>(global::Soenneker.Adyen.OpenApiClient.Models.GrantBalances.CreateFromDiscriminatorValue); } },
                 { "counterparty", n => { Counterparty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GrantCounterpartyComposed>(global::Soenneker.Adyen.OpenApiClient.Models.GrantCounterpartyComposed.CreateFromDiscriminatorValue); } },

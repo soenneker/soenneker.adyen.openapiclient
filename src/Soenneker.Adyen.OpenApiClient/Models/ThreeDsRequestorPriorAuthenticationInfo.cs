@@ -85,7 +85,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "threeDSReqPriorAuthData", n => { ThreeDSReqPriorAuthData = n.GetStringValue(); } },
                 { "threeDSReqPriorAuthMethod", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsRequestorPriorAuthenticationInfoThreeDsReqPriorAuthMethod>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueThreeDSReqPriorAuthMethod = default; _explicitNullProperties?.Remove("threeDSReqPriorAuthMethod"); AdditionalData["threeDSReqPriorAuthMethod"] = unknown; } else { ThreeDSReqPriorAuthMethod = parsed; AdditionalData.Remove("threeDSReqPriorAuthMethod"); } } },

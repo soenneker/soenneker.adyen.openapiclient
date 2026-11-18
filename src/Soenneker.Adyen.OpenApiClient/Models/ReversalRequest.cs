@@ -79,7 +79,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "OriginalPOITransaction", n => { OriginalPOITransaction = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OriginalPoiTransaction>(global::Soenneker.Adyen.OpenApiClient.Models.OriginalPoiTransaction.CreateFromDiscriminatorValue); } },
                 { "ReversalReason", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ReversalRequestReversalReason>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueReversalReason = default; _explicitNullProperties?.Remove("ReversalReason"); AdditionalData["ReversalReason"] = unknown; } else { ReversalReason = parsed; AdditionalData.Remove("ReversalReason"); } } },

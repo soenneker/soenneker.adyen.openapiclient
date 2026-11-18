@@ -73,7 +73,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "DocumentQualifier", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentReceiptDocumentQualifier>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDocumentQualifier = default; _explicitNullProperties?.Remove("DocumentQualifier"); AdditionalData["DocumentQualifier"] = unknown; } else { DocumentQualifier = parsed; AdditionalData.Remove("DocumentQualifier"); } } },
                 { "IntegratedPrintFlag", n => { IntegratedPrintFlag = n.GetBoolValue(); } },

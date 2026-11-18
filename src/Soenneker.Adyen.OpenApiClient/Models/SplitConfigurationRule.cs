@@ -108,7 +108,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "cardRegion", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationRuleCardRegion>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCardRegion = default; _explicitNullProperties?.Remove("cardRegion"); AdditionalData["cardRegion"] = unknown; } else { CardRegion = parsed; AdditionalData.Remove("cardRegion"); } } },
                 { "cardUsageType", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationRuleCardUsageType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCardUsageType = default; _explicitNullProperties?.Remove("cardUsageType"); AdditionalData["cardUsageType"] = unknown; } else { CardUsageType = parsed; AdditionalData.Remove("cardUsageType"); } } },

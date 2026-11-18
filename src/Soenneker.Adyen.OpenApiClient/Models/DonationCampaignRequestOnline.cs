@@ -86,7 +86,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "defaultAmount", n => { DefaultAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OnlineDonationSettingsDefaultAmount>(global::Soenneker.Adyen.OpenApiClient.Models.OnlineDonationSettingsDefaultAmount.CreateFromDiscriminatorValue); } },
                 { "donationType", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.OnlineDonationSettingsDonationType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDonationType = default; _explicitNullProperties?.Remove("donationType"); AdditionalData["donationType"] = unknown; } else { DonationType = parsed; AdditionalData.Remove("donationType"); } } },

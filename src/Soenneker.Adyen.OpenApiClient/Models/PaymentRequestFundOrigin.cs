@@ -105,7 +105,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "billingAddress", n => { BillingAddress = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.FundOriginBillingAddress>(global::Soenneker.Adyen.OpenApiClient.Models.FundOriginBillingAddress.CreateFromDiscriminatorValue); } },
                 { "shopperEmail", n => { ShopperEmail = n.GetStringValue(); } },

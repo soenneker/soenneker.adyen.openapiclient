@@ -104,7 +104,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "balancePerAccount", n => { BalancePerAccount = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.AccountDetailBalance>(global::Soenneker.Adyen.OpenApiClient.Models.AccountDetailBalance.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "invalidFields", n => { InvalidFields = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6ErrorFieldType>(global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6ErrorFieldType.CreateFromDiscriminatorValue)?.AsList(); } },

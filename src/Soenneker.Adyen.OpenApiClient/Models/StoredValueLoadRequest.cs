@@ -138,7 +138,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(9)
             {
                 { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueLoadRequestAmount>(global::Soenneker.Adyen.OpenApiClient.Models.StoredValueLoadRequestAmount.CreateFromDiscriminatorValue); } },
                 { "loadType", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueLoadRequestLoadType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueLoadType = default; _explicitNullProperties?.Remove("loadType"); AdditionalData["loadType"] = unknown; } else { LoadType = parsed; AdditionalData.Remove("loadType"); } } },

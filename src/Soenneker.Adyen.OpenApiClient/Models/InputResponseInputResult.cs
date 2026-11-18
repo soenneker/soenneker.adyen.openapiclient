@@ -79,7 +79,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "Device", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.InputResultDevice>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDevice = default; _explicitNullProperties?.Remove("Device"); AdditionalData["Device"] = unknown; } else { Device = parsed; AdditionalData.Remove("Device"); } } },
                 { "InfoQualify", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.InputResultInfoQualify>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueInfoQualify = default; _explicitNullProperties?.Remove("InfoQualify"); AdditionalData["InfoQualify"] = unknown; } else { InfoQualify = parsed; AdditionalData.Remove("InfoQualify"); } } },

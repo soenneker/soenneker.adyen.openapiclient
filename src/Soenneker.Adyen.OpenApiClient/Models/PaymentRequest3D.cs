@@ -172,7 +172,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DBillingAddress BillingAddress { get => _explicitNullValueBillingAddress; set { _explicitNullValueBillingAddress = value; AdditionalData?.Remove("billingAddress"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingAddress"); else _explicitNullProperties?.Remove("billingAddress"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DBillingAddress _explicitNullValueBillingAddress = default!;
 #endif
-        /// <summary>The shopper&apos;s browser information.&gt; For 3D Secure, the full object is required for web integrations. For mobile app integrations, include the `userAgent` and `acceptHeader` fields to indicate  that your integration can support a redirect in case a payment is routed to 3D Secure 2 redirect.</summary>
+        /// <summary>The shopper&apos;s browser information.&gt; You do not need to include `browserInfo` in `/authorise3d`.&gt; This endpoint continues a 3D Secure 1 payment and does not initiate 3D Secure 2.&gt;&gt; To initiate a browser-based 3D Secure 2 payment, include complete `browserInfo` in the initial `/authorise` request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DBrowserInfo? BrowserInfo { get => _explicitNullValueBrowserInfo; set { _explicitNullValueBrowserInfo = value; AdditionalData?.Remove("browserInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("browserInfo"); else _explicitNullProperties?.Remove("browserInfo"); } }
@@ -530,7 +530,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(45)
             {
                 { "accountInfo", n => { AccountInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DAccountInfo>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DAccountInfo.CreateFromDiscriminatorValue); } },
                 { "additionalAmount", n => { AdditionalAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DAdditionalAmount>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequest3DAdditionalAmount.CreateFromDiscriminatorValue); } },

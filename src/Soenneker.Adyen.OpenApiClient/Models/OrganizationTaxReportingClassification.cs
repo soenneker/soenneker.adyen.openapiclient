@@ -72,7 +72,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "businessType", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TaxReportingClassificationBusinessType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBusinessType = default; _explicitNullProperties?.Remove("businessType"); AdditionalData["businessType"] = unknown; } else { BusinessType = parsed; AdditionalData.Remove("businessType"); } } },
                 { "financialInstitutionNumber", n => { FinancialInstitutionNumber = n.GetStringValue(); } },

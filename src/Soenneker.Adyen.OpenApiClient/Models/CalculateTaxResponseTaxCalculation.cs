@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
     /// <summary>
-    /// The canonical calculation accepted and produced by Adyen. Informational in the initial release.
+    /// The tax calculation results.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CalculateTaxResponseTaxCalculation : IAdditionalDataHolder, IParsable
@@ -34,7 +34,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The merchant account for which the calculation was made.</summary>
+        /// <summary>The merchant account identifier, with which you want to process the transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MerchantAccount { get => _explicitNullValueMerchantAccount; set { _explicitNullValueMerchantAccount = value; AdditionalData?.Remove("merchantAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantAccount"); else _explicitNullProperties?.Remove("merchantAccount"); } }
@@ -44,7 +44,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string MerchantAccount { get => _explicitNullValueMerchantAccount; set { _explicitNullValueMerchantAccount = value; AdditionalData?.Remove("merchantAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantAccount"); else _explicitNullProperties?.Remove("merchantAccount"); } }
         private string _explicitNullValueMerchantAccount = default!;
 #endif
-        /// <summary>The taxable amount accepted by Adyen.</summary>
+        /// <summary>The taxable amount from the request, before tax.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationTaxableAmount? TaxableAmount { get => _explicitNullValueTaxableAmount; set { _explicitNullValueTaxableAmount = value; AdditionalData?.Remove("taxableAmount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxableAmount"); else _explicitNullProperties?.Remove("taxableAmount"); } }
@@ -54,7 +54,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationTaxableAmount TaxableAmount { get => _explicitNullValueTaxableAmount; set { _explicitNullValueTaxableAmount = value; AdditionalData?.Remove("taxableAmount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxableAmount"); else _explicitNullProperties?.Remove("taxableAmount"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationTaxableAmount _explicitNullValueTaxableAmount = default!;
 #endif
-        /// <summary>The tax country, calculation type, and LRS declarations accepted by Adyen.</summary>
+        /// <summary>The tax country, calculation type, and LRS declarations from the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationTaxCalculationContext? TaxCalculationContext { get => _explicitNullValueTaxCalculationContext; set { _explicitNullValueTaxCalculationContext = value; AdditionalData?.Remove("taxCalculationContext"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxCalculationContext"); else _explicitNullProperties?.Remove("taxCalculationContext"); } }
@@ -74,7 +74,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public List<global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationComponent> TaxCalculations { get => _explicitNullValueTaxCalculations; set { _explicitNullValueTaxCalculations = value; AdditionalData?.Remove("taxCalculations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxCalculations"); else _explicitNullProperties?.Remove("taxCalculations"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationComponent> _explicitNullValueTaxCalculations = default!;
 #endif
-        /// <summary>The taxable amount plus the calculated tax. Use this amount in /payments.amount.</summary>
+        /// <summary>The sum of `taxableAmount` and `totalTaxAmount`. Use this amount as `amount` in `/payments`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationTotalAmount? TotalAmount { get => _explicitNullValueTotalAmount; set { _explicitNullValueTotalAmount = value; AdditionalData?.Remove("totalAmount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalAmount"); else _explicitNullProperties?.Remove("totalAmount"); } }
@@ -84,7 +84,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationTotalAmount TotalAmount { get => _explicitNullValueTotalAmount; set { _explicitNullValueTotalAmount = value; AdditionalData?.Remove("totalAmount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalAmount"); else _explicitNullProperties?.Remove("totalAmount"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationTotalAmount _explicitNullValueTotalAmount = default!;
 #endif
-        /// <summary>The total tax amount calculated by Adyen.</summary>
+        /// <summary>The sum of the individual tax amounts in `taxCalculations`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationTotalTaxAmount? TotalTaxAmount { get => _explicitNullValueTotalTaxAmount; set { _explicitNullValueTotalTaxAmount = value; AdditionalData?.Remove("totalTaxAmount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalTaxAmount"); else _explicitNullProperties?.Remove("totalTaxAmount"); } }
@@ -117,7 +117,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "merchantAccount", n => { MerchantAccount = n.GetStringValue(); } },
                 { "taxCalculationContext", n => { TaxCalculationContext = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationTaxCalculationContext>(global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationTaxCalculationContext.CreateFromDiscriminatorValue); } },

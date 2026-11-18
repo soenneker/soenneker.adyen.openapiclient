@@ -366,7 +366,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(28)
             {
                 { "cardholderReceipt", n => { CardholderReceipt = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsCardholderReceipt>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsCardholderReceipt.CreateFromDiscriminatorValue); } },
                 { "connectivity", n => { Connectivity = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsConnectivity>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsConnectivity.CreateFromDiscriminatorValue); } },

@@ -137,7 +137,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CashOutInfoAmount>(global::Soenneker.Adyen.OpenApiClient.Models.CashOutInfoAmount.CreateFromDiscriminatorValue); } },
                 { "counterparty", n => { Counterparty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CashOutInfoCounterpartyComposed>(global::Soenneker.Adyen.OpenApiClient.Models.CashOutInfoCounterpartyComposed.CreateFromDiscriminatorValue); } },

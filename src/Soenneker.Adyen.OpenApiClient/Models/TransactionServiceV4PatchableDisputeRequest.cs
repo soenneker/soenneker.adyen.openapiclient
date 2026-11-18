@@ -97,7 +97,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "duplicateInfo", n => { DuplicateInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableDuplicateInfo>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableDuplicateInfo.CreateFromDiscriminatorValue); } },
                 { "fraudInfo", n => { FraudInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableFraudInfo>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableFraudInfo.CreateFromDiscriminatorValue); } },

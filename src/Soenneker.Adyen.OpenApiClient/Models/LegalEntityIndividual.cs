@@ -166,7 +166,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(10)
             {
                 { "birthData", n => { BirthData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.IndividualBirthData>(global::Soenneker.Adyen.OpenApiClient.Models.IndividualBirthData.CreateFromDiscriminatorValue); } },
                 { "email", n => { Email = n.GetStringValue(); } },

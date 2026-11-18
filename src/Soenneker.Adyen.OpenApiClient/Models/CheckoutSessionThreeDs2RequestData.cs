@@ -85,7 +85,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "homePhone", n => { HomePhone = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestDataHomePhone>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestDataHomePhone.CreateFromDiscriminatorValue); } },
                 { "mobilePhone", n => { MobilePhone = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestDataMobilePhone>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestDataMobilePhone.CreateFromDiscriminatorValue); } },

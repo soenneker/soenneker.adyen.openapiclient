@@ -128,7 +128,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "accountHolder", n => { AccountHolder = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.KycCheckResult>(global::Soenneker.Adyen.OpenApiClient.Models.KycCheckResult.CreateFromDiscriminatorValue); } },
                 { "legalArrangements", n => { LegalArrangements = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.KycLegalArrangementCheckResult>(global::Soenneker.Adyen.OpenApiClient.Models.KycLegalArrangementCheckResult.CreateFromDiscriminatorValue)?.AsList(); } },

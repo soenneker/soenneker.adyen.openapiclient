@@ -102,7 +102,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4AmountAdjustmentAmount>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4AmountAdjustmentAmount.CreateFromDiscriminatorValue); } },
                 { "amountAdjustmentType", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4AmountAdjustmentAmountAdjustmentType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAmountAdjustmentType = default; _explicitNullProperties?.Remove("amountAdjustmentType"); AdditionalData["amountAdjustmentType"] = unknown; } else { AmountAdjustmentType = parsed; AdditionalData.Remove("amountAdjustmentType"); } } },

@@ -117,7 +117,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "allowedOrigins", n => { AllowedOrigins = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ApiCredentialLinksAllowedOrigins>(global::Soenneker.Adyen.OpenApiClient.Models.ApiCredentialLinksAllowedOrigins.CreateFromDiscriminatorValue); } },
                 { "company", n => { Company = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ApiCredentialLinksCompany>(global::Soenneker.Adyen.OpenApiClient.Models.ApiCredentialLinksCompany.CreateFromDiscriminatorValue); } },

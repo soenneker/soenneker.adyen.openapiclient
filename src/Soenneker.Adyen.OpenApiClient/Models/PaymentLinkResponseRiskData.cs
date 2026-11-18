@@ -86,7 +86,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "clientData", n => { ClientData = n.GetStringValue(); } },
                 { "customFields", n => { CustomFields = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RiskDataCustomFields>(global::Soenneker.Adyen.OpenApiClient.Models.RiskDataCustomFields.CreateFromDiscriminatorValue); } },

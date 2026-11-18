@@ -114,7 +114,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "actionDetails", n => { ActionDetails = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseActionDetails>(global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseActionDetails.CreateFromDiscriminatorValue); } },
                 { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TerminalActionScheduleDetail>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalActionScheduleDetail.CreateFromDiscriminatorValue)?.AsList(); } },

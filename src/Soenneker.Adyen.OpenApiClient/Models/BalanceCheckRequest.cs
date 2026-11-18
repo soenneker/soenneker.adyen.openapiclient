@@ -170,7 +170,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestBillingAddress BillingAddress { get => _explicitNullValueBillingAddress; set { _explicitNullValueBillingAddress = value; AdditionalData?.Remove("billingAddress"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingAddress"); else _explicitNullProperties?.Remove("billingAddress"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestBillingAddress _explicitNullValueBillingAddress = default!;
 #endif
-        /// <summary>The shopper&apos;s browser information.&gt; For 3D Secure, the full object is required for web integrations. For mobile app integrations, include the `userAgent` and `acceptHeader` fields to indicate  that your integration can support a redirect in case a payment is routed to 3D Secure 2 redirect.</summary>
+        /// <summary>The shopper&apos;s browser information.&gt; The 3D Secure 2 guidance for `browserInfo` applies to the later `/payments` request, not to this balance check. For browser-based 3D Secure 2 payments, include complete `browserInfo`. For mobile app integrations that can be routed to a 3D Secure 2 redirect, include the `userAgent` and `acceptHeader` fields. Native app 3D Secure 2 authentication does not require `browserInfo`.&gt;&gt; This field is usually collected on the client, so validate its presence and completeness on your server before you submit the payment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestBrowserInfo? BrowserInfo { get => _explicitNullValueBrowserInfo; set { _explicitNullValueBrowserInfo = value; AdditionalData?.Remove("browserInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("browserInfo"); else _explicitNullProperties?.Remove("browserInfo"); } }
@@ -519,7 +519,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(44)
             {
                 { "accountInfo", n => { AccountInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestAccountInfo>(global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestAccountInfo.CreateFromDiscriminatorValue); } },
                 { "additionalAmount", n => { AdditionalAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestAdditionalAmount>(global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckRequestAdditionalAmount.CreateFromDiscriminatorValue); } },

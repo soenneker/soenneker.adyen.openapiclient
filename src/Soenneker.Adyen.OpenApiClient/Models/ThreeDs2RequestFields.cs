@@ -417,7 +417,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(36)
             {
                 { "acctInfo", n => { AcctInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFieldsAcctInfo>(global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFieldsAcctInfo.CreateFromDiscriminatorValue); } },
                 { "acctType", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFieldsAcctType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAcctType = default; _explicitNullProperties?.Remove("acctType"); AdditionalData["acctType"] = unknown; } else { AcctType = parsed; AdditionalData.Remove("acctType"); } } },

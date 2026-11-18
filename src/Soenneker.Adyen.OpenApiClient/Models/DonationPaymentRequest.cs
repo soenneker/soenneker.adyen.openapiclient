@@ -149,7 +149,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestBillingAddress BillingAddress { get => _explicitNullValueBillingAddress; set { _explicitNullValueBillingAddress = value; AdditionalData?.Remove("billingAddress"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingAddress"); else _explicitNullProperties?.Remove("billingAddress"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestBillingAddress _explicitNullValueBillingAddress = default!;
 #endif
-        /// <summary>The shopper&apos;s browser information.&gt; For 3D Secure, the full object is required for web integrations. For mobile app integrations, include the `userAgent` and `acceptHeader` fields to indicate  that your integration can support a redirect in case a payment is routed to 3D Secure 2 redirect.</summary>
+        /// <summary>The shopper&apos;s browser information.&gt; For 3D Secure, the full object is required for web integrations. For mobile app integrations, include the `userAgent` and `acceptHeader` fields to indicate  that your integration can support a redirect in case a payment is routed to 3D Secure 2 redirect.&gt;&gt; For browser-based payments, missing or incomplete `browserInfo` means 3D Secure 2 cannot be initiated. The transaction is then treated as ineligible for 3D Secure 2 and can be authorized without liability shift. Native app 3D Secure 2 authentication does not require `browserInfo`. This field is usually collected on the client, so validate its presence and completeness on your server before you submit the payment. For more information, see [3D Secure 2 authentication](https://docs.adyen.com/online-payments/3d-secure/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestBrowserInfo? BrowserInfo { get => _explicitNullValueBrowserInfo; set { _explicitNullValueBrowserInfo = value; AdditionalData?.Remove("browserInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("browserInfo"); else _explicitNullProperties?.Remove("browserInfo"); } }
@@ -295,7 +295,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestMpiData MpiData { get => _explicitNullValueMpiData; set { _explicitNullValueMpiData = value; AdditionalData?.Remove("mpiData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mpiData"); else _explicitNullProperties?.Remove("mpiData"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestMpiData _explicitNullValueMpiData = default!;
 #endif
-        /// <summary>&gt; Required for browser-based (`channel` **Web**) 3D Secure 2 transactions.Set this to the origin URL of the page where you are rendering the Drop-in/Component. Do not include subdirectories and a trailing slash.</summary>
+        /// <summary>&gt; Required for browser-based (`channel` **Web**) 3D Secure 2 transactions.Set this to the origin URL of the page where you are rendering the Drop-in/Component. Do not include subdirectories and a trailing slash.&gt; If `origin` is missing or incorrect, 3D Secure 2 cannot be initiated and the transaction can be authorized without liability shift. Set this value on your server. If you receive it from the client, validate it first. For more information, see [3D Secure 2 authentication](https://docs.adyen.com/online-payments/3d-secure/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Origin { get => _explicitNullValueOrigin; set { _explicitNullValueOrigin = value; AdditionalData?.Remove("origin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin"); else _explicitNullProperties?.Remove("origin"); } }
@@ -484,7 +484,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(39)
             {
                 { "accountInfo", n => { AccountInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestAccountInfo>(global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestAccountInfo.CreateFromDiscriminatorValue); } },
                 { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestAmount>(global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestAmount.CreateFromDiscriminatorValue); } },

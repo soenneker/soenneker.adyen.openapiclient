@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
     /// <summary>
-    /// The shopper&apos;s browser information.&gt; For 3D Secure, the full object is required for web integrations. For mobile app integrations, include the `userAgent` and `acceptHeader` fields to indicate  that your integration can support a redirect in case a payment is routed to 3D Secure 2 redirect.
+    /// The shopper&apos;s browser information.&gt; For 3D Secure, the full object is required for web integrations. For mobile app integrations, include the `userAgent` and `acceptHeader` fields to indicate  that your integration can support a redirect in case a payment is routed to 3D Secure 2 redirect.&gt;&gt; If you proceed with a 3D Secure 2 payment, the following requirements apply to `browserInfo` in the `/payments` request. For browser-based 3D Secure 2 payments, include complete `browserInfo`. For mobile app integrations that can be routed to a 3D Secure 2 redirect, include the `userAgent` and `acceptHeader` fields. Native app 3D Secure 2 authentication does not require `browserInfo`. If the `/payments` request of a browser-based payment has missing or incomplete `browserInfo`, the transaction is treated as ineligible for 3D Secure 2 and can be authorized without liability shift. This field is usually collected on the client, so validate its presence and completeness on your server before you submit the payment. For more information, see [3D Secure 2 authentication](https://docs.adyen.com/online-payments/3d-secure/).
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PaymentMethodsRequestBrowserInfo : IAdditionalDataHolder, IParsable
@@ -112,7 +112,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(9)
             {
                 { "acceptHeader", n => { AcceptHeader = n.GetStringValue(); } },
                 { "colorDepth", n => { ColorDepth = n.GetIntValue(); } },

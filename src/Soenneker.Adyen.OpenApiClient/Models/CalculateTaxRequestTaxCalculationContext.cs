@@ -28,10 +28,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The type of calculation requested. Initially only LRS_TCS is supported.</summary>
+        /// <summary>The type of tax calculation. Supported value: **LRS_TCS**, the Indian Liberalised Remittance Scheme Tax Collected at Source.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationContextCalculationType? CalculationType { get => _explicitNullValueCalculationType; set { _explicitNullValueCalculationType = value; AdditionalData?.Remove("calculationType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("calculationType"); else _explicitNullProperties?.Remove("calculationType"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationContextCalculationType? _explicitNullValueCalculationType = default!;
-        /// <summary>India-specific LRS declarations.</summary>
+        /// <summary>The shopper&apos;s declarations for the Indian Liberalised Remittance Scheme (LRS).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationContextLrs? Lrs { get => _explicitNullValueLrs; set { _explicitNullValueLrs = value; AdditionalData?.Remove("lrs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lrs"); else _explicitNullProperties?.Remove("lrs"); } }
@@ -41,7 +41,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationContextLrs Lrs { get => _explicitNullValueLrs; set { _explicitNullValueLrs = value; AdditionalData?.Remove("lrs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lrs"); else _explicitNullProperties?.Remove("lrs"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationContextLrs _explicitNullValueLrs = default!;
 #endif
-        /// <summary>The country governing tax processing. Initially only IN is supported.</summary>
+        /// <summary>The two-letter country code governing tax processing, in [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format. Supported value: **IN**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TaxCountryCode { get => _explicitNullValueTaxCountryCode; set { _explicitNullValueTaxCountryCode = value; AdditionalData?.Remove("taxCountryCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxCountryCode"); else _explicitNullProperties?.Remove("taxCountryCode"); } }

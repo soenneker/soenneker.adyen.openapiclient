@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
     /// <summary>
-    /// The masked representation of the verified tax identification.
+    /// The masked representation of the verified tax identification. Returned only when `result` is **VALID**.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class VerifyShopperTaxIdentificationResponseVerifiedShopperTaxIdentification : IAdditionalDataHolder, IParsable
@@ -28,7 +28,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The masked name of the tax identification holder.</summary>
+        /// <summary>The masked name of the tax identification holder. The full name is not returned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MaskedName { get => _explicitNullValueMaskedName; set { _explicitNullValueMaskedName = value; AdditionalData?.Remove("maskedName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maskedName"); else _explicitNullProperties?.Remove("maskedName"); } }
@@ -38,7 +38,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string MaskedName { get => _explicitNullValueMaskedName; set { _explicitNullValueMaskedName = value; AdditionalData?.Remove("maskedName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maskedName"); else _explicitNullProperties?.Remove("maskedName"); } }
         private string _explicitNullValueMaskedName = default!;
 #endif
-        /// <summary>The country governing the shopper&apos;s tax processing.</summary>
+        /// <summary>The two-letter country code governing the shopper&apos;s tax processing, in [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format. Supported value: **IN**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TaxCountryCode { get => _explicitNullValueTaxCountryCode; set { _explicitNullValueTaxCountryCode = value; AdditionalData?.Remove("taxCountryCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxCountryCode"); else _explicitNullProperties?.Remove("taxCountryCode"); } }
@@ -48,7 +48,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string TaxCountryCode { get => _explicitNullValueTaxCountryCode; set { _explicitNullValueTaxCountryCode = value; AdditionalData?.Remove("taxCountryCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxCountryCode"); else _explicitNullProperties?.Remove("taxCountryCode"); } }
         private string _explicitNullValueTaxCountryCode = default!;
 #endif
-        /// <summary>The type of the verified tax identification.</summary>
+        /// <summary>The type of verified tax identification. Supported value: **PAN**, an Indian Permanent Account Number.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.VerifiedShopperTaxIdentificationTaxIdentificationType? TaxIdentificationType { get => _explicitNullValueTaxIdentificationType; set { _explicitNullValueTaxIdentificationType = value; AdditionalData?.Remove("taxIdentificationType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxIdentificationType"); else _explicitNullProperties?.Remove("taxIdentificationType"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.VerifiedShopperTaxIdentificationTaxIdentificationType? _explicitNullValueTaxIdentificationType = default!;
         /// <summary>

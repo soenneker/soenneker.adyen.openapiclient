@@ -169,7 +169,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(11)
             {
                 { "address", n => { Address = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6LegalArrangementEntityDetailAddress>(global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6LegalArrangementEntityDetailAddress.CreateFromDiscriminatorValue); } },
                 { "businessDetails", n => { BusinessDetails = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6LegalArrangementEntityDetailBusinessDetails>(global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6LegalArrangementEntityDetailBusinessDetails.CreateFromDiscriminatorValue); } },

@@ -86,7 +86,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "POIReconciliationID", n => { POIReconciliationID = n.GetStringValue(); } },
                 { "ReconciliationType", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ReconciliationResponseReconciliationType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueReconciliationType = default; _explicitNullProperties?.Remove("ReconciliationType"); AdditionalData["ReconciliationType"] = unknown; } else { ReconciliationType = parsed; AdditionalData.Remove("ReconciliationType"); } } },

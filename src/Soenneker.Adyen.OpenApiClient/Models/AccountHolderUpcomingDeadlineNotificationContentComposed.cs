@@ -79,7 +79,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "accountHolderCode", n => { AccountHolderCode = n.GetStringValue(); } },
                 { "event", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderUpcomingDeadlineNotificationContentEvent>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEvent = default; _explicitNullProperties?.Remove("event"); AdditionalData["event"] = unknown; } else { Event = parsed; AdditionalData.Remove("event"); } } },

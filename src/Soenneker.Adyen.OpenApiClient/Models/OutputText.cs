@@ -98,7 +98,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(9)
             {
                 { "Alignment", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.OutputTextAlignment>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAlignment = default; _explicitNullProperties?.Remove("Alignment"); AdditionalData["Alignment"] = unknown; } else { Alignment = parsed; AdditionalData.Remove("Alignment"); } } },
                 { "CharacterHeight", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.OutputTextCharacterHeight>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCharacterHeight = default; _explicitNullProperties?.Remove("CharacterHeight"); AdditionalData["CharacterHeight"] = unknown; } else { CharacterHeight = parsed; AdditionalData.Remove("CharacterHeight"); } } },

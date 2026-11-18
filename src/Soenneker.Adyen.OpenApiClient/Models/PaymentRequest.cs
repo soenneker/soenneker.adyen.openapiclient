@@ -143,6 +143,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             else if (parseNode.GetChildNode("shopperReference") is { } nullNodeShopperReference && nullNodeShopperReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShopperReference = null;
             if (parseNode.GetChildNode("shopperStatement") is null) { _explicitNullValueShopperStatement = default!; _explicitNullProperties?.Remove("shopperStatement"); }
             else if (parseNode.GetChildNode("shopperStatement") is { } nullNodeShopperStatement && nullNodeShopperStatement.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShopperStatement = null;
+            if (parseNode.GetChildNode("shopperTaxIdentification") is null) { _explicitNullValueShopperTaxIdentification = default!; _explicitNullProperties?.Remove("shopperTaxIdentification"); }
+            else if (parseNode.GetChildNode("shopperTaxIdentification") is { } nullNodeShopperTaxIdentification && nullNodeShopperTaxIdentification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShopperTaxIdentification = null;
             if (parseNode.GetChildNode("shopperTaxInfo") is null) { _explicitNullValueShopperTaxInfo = default!; _explicitNullProperties?.Remove("shopperTaxInfo"); }
             else if (parseNode.GetChildNode("shopperTaxInfo") is { } nullNodeShopperTaxInfo && nullNodeShopperTaxInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShopperTaxInfo = null;
             if (parseNode.GetChildNode("socialSecurityNumber") is null) { _explicitNullValueSocialSecurityNumber = default!; _explicitNullProperties?.Remove("socialSecurityNumber"); }
@@ -157,6 +159,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             else if (parseNode.GetChildNode("subMerchants") is { } nullNodeSubMerchants && nullNodeSubMerchants.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubMerchants = null;
             if (parseNode.GetChildNode("surcharge") is null) { _explicitNullValueSurcharge = default!; _explicitNullProperties?.Remove("surcharge"); }
             else if (parseNode.GetChildNode("surcharge") is { } nullNodeSurcharge && nullNodeSurcharge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Surcharge = null;
+            if (parseNode.GetChildNode("taxCalculation") is null) { _explicitNullValueTaxCalculation = default!; _explicitNullProperties?.Remove("taxCalculation"); }
+            else if (parseNode.GetChildNode("taxCalculation") is { } nullNodeTaxCalculation && nullNodeTaxCalculation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxCalculation = null;
             if (parseNode.GetChildNode("telephoneNumber") is null) { _explicitNullValueTelephoneNumber = default!; _explicitNullProperties?.Remove("telephoneNumber"); }
             else if (parseNode.GetChildNode("telephoneNumber") is { } nullNodeTelephoneNumber && nullNodeTelephoneNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TelephoneNumber = null;
             if (parseNode.GetChildNode("thirdPartyTokenRedundancyInfo") is null) { _explicitNullValueThirdPartyTokenRedundancyInfo = default!; _explicitNullProperties?.Remove("thirdPartyTokenRedundancyInfo"); }
@@ -251,7 +255,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestBillingAddress BillingAddress { get => _explicitNullValueBillingAddress; set { _explicitNullValueBillingAddress = value; AdditionalData?.Remove("billingAddress"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingAddress"); else _explicitNullProperties?.Remove("billingAddress"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestBillingAddress _explicitNullValueBillingAddress = default!;
 #endif
-        /// <summary>The shopper&apos;s browser information.&gt; For 3D Secure, the full object is required for web integrations. For mobile app integrations, include the `userAgent` and `acceptHeader` fields to indicate  that your integration can support a redirect in case a payment is routed to 3D Secure 2 redirect.</summary>
+        /// <summary>The shopper&apos;s browser information.&gt; For 3D Secure, the full object is required for web integrations. For mobile app integrations, include the `userAgent` and `acceptHeader` fields to indicate  that your integration can support a redirect in case a payment is routed to 3D Secure 2 redirect.&gt;&gt; For browser-based payments, missing or incomplete `browserInfo` means 3D Secure 2 cannot be initiated. The transaction is then treated as ineligible for 3D Secure 2 and can be authorized without liability shift. Native app 3D Secure 2 authentication does not require `browserInfo`. This field is usually collected on the client, so validate its presence and completeness on your server before you submit the payment. For more information, see [3D Secure 2 authentication](https://docs.adyen.com/online-payments/3d-secure/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestBrowserInfo? BrowserInfo { get => _explicitNullValueBrowserInfo; set { _explicitNullValueBrowserInfo = value; AdditionalData?.Remove("browserInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("browserInfo"); else _explicitNullProperties?.Remove("browserInfo"); } }
@@ -515,7 +519,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string OrderReference { get => _explicitNullValueOrderReference; set { _explicitNullValueOrderReference = value; AdditionalData?.Remove("orderReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orderReference"); else _explicitNullProperties?.Remove("orderReference"); } }
         private string _explicitNullValueOrderReference = default!;
 #endif
-        /// <summary>&gt; Required for browser-based (`channel` **Web**) 3D Secure 2 transactions.Set this to the origin URL of the page where you are rendering the Drop-in/Component. Do not include subdirectories and a trailing slash.</summary>
+        /// <summary>&gt; Required for browser-based (`channel` **Web**) 3D Secure 2 transactions.Set this to the origin URL of the page where you are rendering the Drop-in/Component. Do not include subdirectories and a trailing slash.&gt; If `origin` is missing or incorrect, 3D Secure 2 cannot be initiated and the transaction can be authorized without liability shift. Set this value on your server. If you receive it from the client, validate it first. For more information, see [3D Secure 2 authentication](https://docs.adyen.com/online-payments/3d-secure/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Origin { get => _explicitNullValueOrigin; set { _explicitNullValueOrigin = value; AdditionalData?.Remove("origin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin"); else _explicitNullProperties?.Remove("origin"); } }
@@ -711,6 +715,16 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string ShopperStatement { get => _explicitNullValueShopperStatement; set { _explicitNullValueShopperStatement = value; AdditionalData?.Remove("shopperStatement"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shopperStatement"); else _explicitNullProperties?.Remove("shopperStatement"); } }
         private string _explicitNullValueShopperStatement = default!;
 #endif
+        /// <summary>The shopper&apos;s tax identification, verified by Adyen. Contains the token returned by `/verifyShopperTaxIdentification`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestShopperTaxIdentification? ShopperTaxIdentification { get => _explicitNullValueShopperTaxIdentification; set { _explicitNullValueShopperTaxIdentification = value; AdditionalData?.Remove("shopperTaxIdentification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shopperTaxIdentification"); else _explicitNullProperties?.Remove("shopperTaxIdentification"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestShopperTaxIdentification? _explicitNullValueShopperTaxIdentification = default!;
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestShopperTaxIdentification ShopperTaxIdentification { get => _explicitNullValueShopperTaxIdentification; set { _explicitNullValueShopperTaxIdentification = value; AdditionalData?.Remove("shopperTaxIdentification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shopperTaxIdentification"); else _explicitNullProperties?.Remove("shopperTaxIdentification"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestShopperTaxIdentification _explicitNullValueShopperTaxIdentification = default!;
+#endif
         /// <summary>The tax info of the shopper</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -775,6 +789,16 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestSurcharge Surcharge { get => _explicitNullValueSurcharge; set { _explicitNullValueSurcharge = value; AdditionalData?.Remove("surcharge"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("surcharge"); else _explicitNullProperties?.Remove("surcharge"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestSurcharge _explicitNullValueSurcharge = default!;
 #endif
+        /// <summary>The tax calculated by Adyen for this payment. Contains the token returned by `/calculateTax`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestTaxCalculation? TaxCalculation { get => _explicitNullValueTaxCalculation; set { _explicitNullValueTaxCalculation = value; AdditionalData?.Remove("taxCalculation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxCalculation"); else _explicitNullProperties?.Remove("taxCalculation"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestTaxCalculation? _explicitNullValueTaxCalculation = default!;
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestTaxCalculation TaxCalculation { get => _explicitNullValueTaxCalculation; set { _explicitNullValueTaxCalculation = value; AdditionalData?.Remove("taxCalculation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxCalculation"); else _explicitNullProperties?.Remove("taxCalculation"); } }
+        private global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestTaxCalculation _explicitNullValueTaxCalculation = default!;
+#endif
         /// <summary>The shopper&apos;s telephone number. The phone number must include a plus sign (+) and a country code (1-3 digits), followed by the number (4-15 digits). If the value you provide does not follow the guidelines, we do not submit it for authentication.&gt; Required for Visa and JCB transactions that require 3D Secure 2 authentication, if you did not include the `shopperEmail`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -805,7 +829,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFields ThreeDS2RequestData { get => _explicitNullValueThreeDS2RequestData; set { _explicitNullValueThreeDS2RequestData = value; AdditionalData?.Remove("threeDS2RequestData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDS2RequestData"); else _explicitNullProperties?.Remove("threeDS2RequestData"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFields _explicitNullValueThreeDS2RequestData = default!;
 #endif
-        /// <summary>Required to trigger the [authentication-only flow](https://docs.adyen.com/online-payments/3d-secure/authentication-only/). If set to **true**, you will only perform the 3D Secure 2 authentication, and will not proceed to the payment authorisation.Default: **false**.</summary>
+        /// <summary>Required to trigger the [authentication-only flow](https://docs.adyen.com/online-payments/3d-secure/authentication-only/). If set to **true**, you will only perform the 3D Secure 2 authentication, and will not proceed to the payment authorization.Default: **false**.</summary>
         [Obsolete("")]
         public bool? ThreeDSAuthenticationOnly { get => _explicitNullValueThreeDSAuthenticationOnly; set { _explicitNullValueThreeDSAuthenticationOnly = value; AdditionalData?.Remove("threeDSAuthenticationOnly"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSAuthenticationOnly"); else _explicitNullProperties?.Remove("threeDSAuthenticationOnly"); } }
         private bool? _explicitNullValueThreeDSAuthenticationOnly = default!;
@@ -836,7 +860,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(77)
             {
                 { "accountInfo", n => { AccountInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestAccountInfo>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestAccountInfo.CreateFromDiscriminatorValue); } },
                 { "additionalAmount", n => { AdditionalAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestAdditionalAmount>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestAdditionalAmount.CreateFromDiscriminatorValue); } },
@@ -901,6 +925,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "shopperName", n => { ShopperName = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestShopperName>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestShopperName.CreateFromDiscriminatorValue); } },
                 { "shopperReference", n => { ShopperReference = n.GetStringValue(); } },
                 { "shopperStatement", n => { ShopperStatement = n.GetStringValue(); } },
+                { "shopperTaxIdentification", n => { ShopperTaxIdentification = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestShopperTaxIdentification>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestShopperTaxIdentification.CreateFromDiscriminatorValue); } },
                 { "shopperTaxInfo", n => { ShopperTaxInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestShopperTaxInfo>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestShopperTaxInfo.CreateFromDiscriminatorValue); } },
                 { "socialSecurityNumber", n => { SocialSecurityNumber = n.GetStringValue(); } },
                 { "splits", n => { Splits = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Split>(global::Soenneker.Adyen.OpenApiClient.Models.Split.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -908,6 +933,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "storePaymentMethod", n => { StorePaymentMethod = n.GetBoolValue(); } },
                 { "subMerchants", n => { SubMerchants = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.SubMerchantInfo>(global::Soenneker.Adyen.OpenApiClient.Models.SubMerchantInfo.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "surcharge", n => { Surcharge = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestSurcharge>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestSurcharge.CreateFromDiscriminatorValue); } },
+                { "taxCalculation", n => { TaxCalculation = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestTaxCalculation>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestTaxCalculation.CreateFromDiscriminatorValue); } },
                 { "telephoneNumber", n => { TelephoneNumber = n.GetStringValue(); } },
                 { "thirdPartyTokenRedundancyInfo", n => { ThirdPartyTokenRedundancyInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestThirdPartyTokenRedundancyInfo>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestThirdPartyTokenRedundancyInfo.CreateFromDiscriminatorValue); } },
                 { "threeDS2RequestData", n => { ThreeDS2RequestData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFields>(global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFields.CreateFromDiscriminatorValue); } },
@@ -985,6 +1011,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestShopperName>("shopperName", ShopperName);
             writer.WriteStringValue("shopperReference", ShopperReference);
             writer.WriteStringValue("shopperStatement", ShopperStatement);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestShopperTaxIdentification>("shopperTaxIdentification", ShopperTaxIdentification);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestShopperTaxInfo>("shopperTaxInfo", ShopperTaxInfo);
             writer.WriteStringValue("socialSecurityNumber", SocialSecurityNumber);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Split>("splits", Splits);
@@ -992,6 +1019,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteBoolValue("storePaymentMethod", StorePaymentMethod);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.SubMerchantInfo>("subMerchants", SubMerchants);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestSurcharge>("surcharge", Surcharge);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestTaxCalculation>("taxCalculation", TaxCalculation);
             writer.WriteStringValue("telephoneNumber", TelephoneNumber);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestThirdPartyTokenRedundancyInfo>("thirdPartyTokenRedundancyInfo", ThirdPartyTokenRedundancyInfo);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFields>("threeDS2RequestData", ThreeDS2RequestData);

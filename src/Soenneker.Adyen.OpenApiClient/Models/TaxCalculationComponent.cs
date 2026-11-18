@@ -35,7 +35,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationComponentTaxAmount TaxAmount { get => _explicitNullValueTaxAmount; set { _explicitNullValueTaxAmount = value; AdditionalData?.Remove("taxAmount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxAmount"); else _explicitNullProperties?.Remove("taxAmount"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationComponentTaxAmount _explicitNullValueTaxAmount = default!;
 #endif
-        /// <summary>The type of the calculated tax component, for example LRS_TCS.</summary>
+        /// <summary>The type of tax calculated. Supported value: **LRS_TCS**, the Indian Liberalised Remittance Scheme Tax Collected at Source.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationComponentType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationComponentType? _explicitNullValueType = default!;
         /// <summary>

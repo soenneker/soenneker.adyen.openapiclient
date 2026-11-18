@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
     /// <summary>
-    /// The taxable amount plus the calculated tax. Use this amount in /payments.amount.
+    /// The sum of `taxableAmount` and `totalTaxAmount`. Use this amount as `amount` in `/payments`.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TaxCalculationTotalAmount : IAdditionalDataHolder, IParsable
@@ -26,7 +26,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes).</summary>
+        /// <summary>The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes) of the amount.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; AdditionalData?.Remove("currency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
@@ -36,7 +36,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; AdditionalData?.Remove("currency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
         private string _explicitNullValueCurrency = default!;
 #endif
-        /// <summary>The amount in [minor units](https://docs.adyen.com/development-resources/currency-codes).</summary>
+        /// <summary>The numeric value of the amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes#minor-units).</summary>
         public long? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
         private long? _explicitNullValueValue = default!;
         /// <summary>

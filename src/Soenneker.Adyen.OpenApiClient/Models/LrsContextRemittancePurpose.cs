@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>The remittance category, for example TOUR_PROGRAMME or EDUCATION.</summary>
+    /// <summary>The purpose of the remittance under the Liberalised Remittance Scheme. Possible values:* **TOUR_PROGRAMME**: a tour program.* **TRAVEL_NON_TOUR**: travel that is not a tour program.* **EDUCATION**: education.* **DIGITAL**: digital services.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum LrsContextRemittancePurpose
     {

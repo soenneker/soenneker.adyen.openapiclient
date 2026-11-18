@@ -223,7 +223,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(19)
             {
                 { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventAmount>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventAmount.CreateFromDiscriminatorValue); } },
                 { "amountAdjustments", n => { AmountAdjustments = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4AmountAdjustment>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4AmountAdjustment.CreateFromDiscriminatorValue)?.AsList(); } },

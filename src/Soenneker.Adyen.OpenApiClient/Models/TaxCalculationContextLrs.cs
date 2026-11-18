@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
     /// <summary>
-    /// India-specific LRS declarations.
+    /// The shopper&apos;s declarations for the Indian Liberalised Remittance Scheme (LRS).
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TaxCalculationContextLrs : IAdditionalDataHolder, IParsable
@@ -26,10 +26,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The remittance category, for example TOUR_PROGRAMME or EDUCATION.</summary>
+        /// <summary>The purpose of the remittance under the Liberalised Remittance Scheme. Possible values:* **TOUR_PROGRAMME**: a tour program.* **TRAVEL_NON_TOUR**: travel that is not a tour program.* **EDUCATION**: education.* **DIGITAL**: digital services.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.LrsContextRemittancePurpose? RemittancePurpose { get => _explicitNullValueRemittancePurpose; set { _explicitNullValueRemittancePurpose = value; AdditionalData?.Remove("remittancePurpose"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remittancePurpose"); else _explicitNullProperties?.Remove("remittancePurpose"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.LrsContextRemittancePurpose? _explicitNullValueRemittancePurpose = default!;
-        /// <summary>The status of the INR 1 million LRS sublimit, for example EXCEEDED.</summary>
+        /// <summary>The status of the INR 1 million Liberalised Remittance Scheme sublimit. Possible values:* **EXCEEDED**: the sublimit is exceeded.* **NOT_EXCEEDED**: the sublimit is not exceeded.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.LrsContextSublimitStatus? SublimitStatus { get => _explicitNullValueSublimitStatus; set { _explicitNullValueSublimitStatus = value; AdditionalData?.Remove("sublimitStatus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sublimitStatus"); else _explicitNullProperties?.Remove("sublimitStatus"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.LrsContextSublimitStatus? _explicitNullValueSublimitStatus = default!;
         /// <summary>

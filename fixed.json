@@ -88567,7 +88567,7 @@
           },
           "executeThreeD": {
             "type": "string",
-            "description": "Indicates if you want to perform 3D Secure authentication on a transaction.\n\n \u003E Alternatively, you can use [Dynamic 3D Secure](/risk-management/dynamic-3d-secure) to configure rules for applying 3D Secure.\n\nPossible values:\n* **true** \u2013 Perform 3D Secure authentication.\n* **false** \u2013 Don\u0027t perform 3D Secure authentication. Note that this setting results in refusals if the issuer mandates 3D Secure because of the PSD2 directive  or other, national regulations. \n",
+            "description": "Indicates if you want to perform 3D Secure authentication on a transaction.\n\n \u003E Alternatively, you can use [Dynamic 3D Secure](/risk-management/dynamic-3d-secure) to configure rules for applying 3D Secure.\n\nPossible values:\n* **true** \u2013 Perform 3D Secure authentication. For browser-based payments, make sure the payment request also contains complete \u0060browserInfo\u0060 and, for the Checkout API, \u0060origin\u0060. Without them, 3D Secure 2 cannot be initiated and the transaction can be authorized without liability shift.\n* **false** \u2013 Don\u0027t perform 3D Secure authentication. Note that this setting results in refusals if the issuer mandates 3D Secure because of the PSD2 directive  or other, national regulations. \n",
             "deprecated": true,
             "x-deprecatedInVersion": "69",
             "x-deprecatedMessage": "Use [\u0060authenticationData.attemptAuthentication\u0060](https://docs.adyen.com/api-explorer/Checkout/latest/post/payments?target=_blank#request-authenticationData-attemptAuthentication) instead"
@@ -89766,7 +89766,7 @@
           },
           "threeDSAuthenticationOnly": {
             "type": "boolean",
-            "description": "Required to trigger the [authentication-only flow](https://docs.adyen.com/online-payments/3d-secure/authentication-only/). If set to **true**, you will only perform the 3D Secure 2 authentication, and will not proceed to the payment authorization.Default: **false**.",
+            "description": "Required to trigger the [authentication-only flow](https://docs.adyen.com/online-payments/3d-secure/authentication-only/). If set to **true**, you will only perform the 3D Secure 2 authentication, and will not proceed to the payment authorization.\n\nDefault: **false**.",
             "default": false,
             "deprecated": true,
             "x-addedInVersion": "50",
@@ -89952,8 +89952,7 @@
         "required": [
           "baseUrl",
           "merchantAccount",
-          "request",
-          "shopperReference"
+          "request"
         ],
         "type": "object",
         "properties": {
@@ -89983,7 +89982,7 @@
           },
           "shopperReference": {
             "type": "string",
-            "description": "Your reference to uniquely identify this shopper, for example user ID or account ID. The value is case-sensitive and must be at least three characters.\n\u003E Your reference must not include personally identifiable information (PII) such as name or email address."
+            "description": "Your reference to uniquely identify this shopper, for example user ID or account ID. The value is case-sensitive and must be at least three characters.\nThis parameter is required unless the request is for PAN forwarding and \u0060options.tokenize\u0060 is false (the default).\n\u003E Your reference must not include personally identifiable information (PII) such as name or email address."
           },
           "storedPaymentMethodId": {
             "type": "string",
@@ -90359,7 +90358,7 @@
           },
           "threeDSAuthenticationOnly": {
             "type": "boolean",
-            "description": "Required to trigger the [authentication-only flow](https://docs.adyen.com/online-payments/3d-secure/authentication-only/). If set to **true**, you will only perform the 3D Secure 2 authentication, and will not proceed to the payment authorization.Default: **false**.",
+            "description": "Required to trigger the [authentication-only flow](https://docs.adyen.com/online-payments/3d-secure/authentication-only/). If set to **true**, you will only perform the 3D Secure 2 authentication, and will not proceed to the payment authorization.\n\nDefault: **false**.",
             "default": false,
             "deprecated": true,
             "x-deprecatedInVersion": "69",
@@ -90645,7 +90644,7 @@
           },
           "threeDSAuthenticationOnly": {
             "type": "boolean",
-            "description": "Required to trigger the [authentication-only flow](https://docs.adyen.com/online-payments/3d-secure/authentication-only/). If set to **true**, you will only perform the 3D Secure 2 authentication, and will not proceed to the payment authorization.Default: **false**.",
+            "description": "Required to trigger the [authentication-only flow](https://docs.adyen.com/online-payments/3d-secure/authentication-only/). If set to **true**, you will only perform the 3D Secure 2 authentication, and will not proceed to the payment authorization.\n\nDefault: **false**.",
             "default": false,
             "deprecated": true,
             "x-deprecatedInVersion": "69",
@@ -90963,7 +90962,7 @@
           "origin": {
             "maxLength": 80,
             "type": "string",
-            "description": "\u003E Required for browser-based (\u0060channel\u0060 **Web**) 3D Secure 2 transactions.Set this to the origin URL of the page where you are rendering the Drop-in/Component. Do not include subdirectories and a trailing slash.",
+            "description": "\u003E Required for browser-based (\u0060channel\u0060 **Web**) 3D Secure 2 transactions.\n\nSet this to the origin URL of the page where you are rendering the Drop-in/Component. Do not include subdirectories and a trailing slash.\n\n\u003E If \u0060origin\u0060 is missing or incorrect, 3D Secure 2 cannot be initiated and the transaction can be authorized without liability shift. Set this value on your server. If you receive it from the client, validate it first. For more information, see [3D Secure 2 authentication](https://docs.adyen.com/online-payments/3d-secure/).",
             "x-addedInVersion": "40"
           },
           "paymentMethod": {
@@ -92881,7 +92880,7 @@
           "origin": {
             "maxLength": 80,
             "type": "string",
-            "description": "\u003E Required for browser-based (\u0060channel\u0060 **Web**) 3D Secure 2 transactions.Set this to the origin URL of the page where you are rendering the Drop-in/Component. Do not include subdirectories and a trailing slash.",
+            "description": "\u003E Required for browser-based (\u0060channel\u0060 **Web**) 3D Secure 2 transactions.\n\nSet this to the origin URL of the page where you are rendering the Drop-in/Component. Do not include subdirectories and a trailing slash.\n\n\u003E If \u0060origin\u0060 is missing or incorrect, 3D Secure 2 cannot be initiated and the transaction can be authorized without liability shift. Set this value on your server. If you receive it from the client, validate it first. For more information, see [3D Secure 2 authentication](https://docs.adyen.com/online-payments/3d-secure/).",
             "x-addedInVersion": "40"
           },
           "paymentMethod": {
@@ -92970,6 +92969,9 @@
             "type": "string",
             "description": "The text to be shown on the shopper\u0027s bank statement.\n We recommend sending a maximum of 22 characters, otherwise banks might truncate the string.\n Allowed characters: **a-z**, **A-Z**, **0-9**, spaces, and special characters **. , \u0027 _ - ? \u002B * /**."
           },
+          "shopperTaxIdentification": {
+            "$ref": "#/components/schemas/PaymentRequestShopperTaxIdentification"
+          },
           "shopperTaxInfo": {
             "$ref": "#/components/schemas/PaymentRequestShopperTaxInfo"
           },
@@ -93007,6 +93009,9 @@
           "surcharge": {
             "$ref": "#/components/schemas/PaymentRequestSurcharge"
           },
+          "taxCalculation": {
+            "$ref": "#/components/schemas/PaymentRequestTaxCalculation"
+          },
           "telephoneNumber": {
             "maxLength": 64,
             "type": "string",
@@ -93020,7 +93025,7 @@
           },
           "threeDSAuthenticationOnly": {
             "type": "boolean",
-            "description": "Required to trigger the [authentication-only flow](https://docs.adyen.com/online-payments/3d-secure/authentication-only/). If set to **true**, you will only perform the 3D Secure 2 authentication, and will not proceed to the payment authorisation.Default: **false**.",
+            "description": "Required to trigger the [authentication-only flow](https://docs.adyen.com/online-payments/3d-secure/authentication-only/). If set to **true**, you will only perform the 3D Secure 2 authentication, and will not proceed to the payment authorization.\n\nDefault: **false**.",
             "default": false,
             "deprecated": true,
             "x-addedInVersion": "50",
@@ -95117,10 +95122,8 @@
         "type": "object",
         "properties": {
           "merchantAccount": {
-            "maxLength": 1000,
-            "minLength": 0,
             "type": "string",
-            "description": "The merchant account identifier requesting the tax calculation."
+            "description": "The merchant account identifier, with which you want to process the transaction."
           },
           "taxCalculationContext": {
             "$ref": "#/components/schemas/CalculateTaxRequestTaxCalculationContext"
@@ -95137,12 +95140,14 @@
             "$ref": "#/components/schemas/CalculateTaxResponseTaxCalculation"
           },
           "taxCalculationReference": {
+            "maxLength": 64,
+            "minLength": 8,
             "type": "string",
-            "description": "The unique reference for this calculation attempt."
+            "description": "The unique reference for the tax calculation."
           },
           "taxCalculationToken": {
             "type": "string",
-            "description": "The opaque, encrypted, and signed token that represents the complete canonical calculation. Required in /payments."
+            "description": "The encrypted and signed token representing the tax calculation. Submit this value as \u0060taxCalculation.taxCalculationToken\u0060 in \u0060/payments\u0060."
           }
         }
       },
@@ -95356,16 +95361,14 @@
         "type": "object",
         "properties": {
           "merchantAccount": {
-            "maxLength": 1000,
-            "minLength": 0,
             "type": "string",
-            "description": "The merchant account identifier requesting the tax verification."
+            "description": "The merchant account identifier, with which you want to process the transaction."
           },
           "shopperReference": {
             "maxLength": 256,
             "minLength": 3,
             "type": "string",
-            "description": "Your reference to uniquely identify this shopper, for example user ID or account ID. Used to bind the verification to the shopper context.\n\n\u003E Your reference must not include personally identifiable information (PII), for example name or email address."
+            "description": "Your reference to uniquely identify this shopper, for example user ID or account ID. The value is case-sensitive and must be at least three characters. Use the same \u0060shopperReference\u0060 in \u0060/payments\u0060.\n\n\u003E Your reference must not include personally identifiable information (PII), for example name or email address."
           },
           "shopperTaxIdentification": {
             "$ref": "#/components/schemas/VerifyShopperTaxIdentificationRequestShopperTaxIdentification"
@@ -95377,25 +95380,27 @@
         "properties": {
           "reason": {
             "type": "string",
-            "description": "The human-readable reason for the unsuccessful result."
+            "description": "The human-readable reason for an **INVALID** or **UNKNOWN** verification result."
           },
           "reasonCode": {
             "type": "string",
-            "description": "The reason code for the unsuccessful result, when available."
+            "description": "The code for an unsuccessful verification, if available."
           },
           "result": {
             "$ref": "#/components/schemas/ResultValue"
           },
           "taxVerificationReference": {
+            "maxLength": 64,
+            "minLength": 8,
             "type": "string",
-            "description": "The unique reference for the verification attempt."
+            "description": "The unique reference for the verification. Returned only when \u0060result\u0060 is **VALID**."
           },
           "verifiedShopperTaxIdentification": {
             "$ref": "#/components/schemas/VerifyShopperTaxIdentificationResponseVerifiedShopperTaxIdentification"
           },
           "verifiedShopperTaxIdentificationToken": {
             "type": "string",
-            "description": "The opaque, encrypted, and signed token representing the successful verification. Required in /payments."
+            "description": "The encrypted and signed token representing a successful verification. Returned only when \u0060result\u0060 is **VALID**. Submit this value as \u0060shopperTaxIdentification.verifiedShopperTaxIdentificationToken\u0060 in \u0060/payments\u0060 with the same \u0060shopperReference\u0060 used for verification."
           }
         }
       },
@@ -97550,7 +97555,7 @@
           "never"
         ],
         "type": "string",
-        "description": "Indicates when 3D Secure authentication should be attempted. This overrides all other rules, including [Dynamic 3D Secure settings](https://docs.adyen.com/risk-management/dynamic-3d-secure).\n\nPossible values:\n\n* **always**: Perform 3D Secure authentication.\n* **never**: Don\u0027t perform 3D Secure authentication. If PSD2 SCA or other national regulations require authentication, the transaction gets declined.",
+        "description": "Indicates when 3D Secure authentication should be attempted. This overrides all other rules, including [Dynamic 3D Secure settings](https://docs.adyen.com/risk-management/dynamic-3d-secure).\n\nPossible values:\n\n* **always**: Perform 3D Secure authentication. For browser-based payments, make sure the payment request also contains complete \u0060browserInfo\u0060 and \u0060origin\u0060. Without them, 3D Secure 2 cannot be initiated and the transaction can be authorized without liability shift.\n* **never**: Don\u0027t perform 3D Secure authentication. If PSD2 SCA or other national regulations require authentication, the transaction gets declined.",
         "x-addedInVersion": "69",
         "x-ms-enum": {
           "name": "AuthenticationDataAttemptAuthentication",
@@ -131422,6 +131427,11 @@
             "description": "Required for Adyen for Platforms integrations if you are a platform model. This is your [reference](https://docs.adyen.com/api-explorer/Management/3/post/merchants/(merchantId)/stores#request-reference) (on [balance platform](https://docs.adyen.com/platforms)) or the [storeReference](https://docs.adyen.com/api-explorer/Account/latest/post/updateAccountHolder#request-accountHolderDetails-storeDetails-storeReference) (in the [classic integration](https://docs.adyen.com/classic-platforms/processing-payments/route-payment-to-store/#route-a-payment-to-a-store)) for the ecommerce or point-of-sale store that is processing the payment.",
             "x-addedInVersion": "23"
           },
+          "storeClickToPayProfile": {
+            "type": "boolean",
+            "description": "When enrolling a new user, this field determines whether to store the shopper\u0027s card in their Click to Pay profile. When this is set to **True**, the request must include \u0060shopperEmail\u0060, \u0060shopperName\u0060, and \u0060telephoneNumber\u0060.",
+            "x-addedInVersion": "68"
+          },
           "telephoneNumber": {
             "type": "string",
             "description": "The shopper\u0027s telephone number.\n The phone number must include a plus sign (\u002B) and a country code (1-3 digits), followed by the number (4-15 digits). If the value you provide does not follow the guidelines, we do not submit it for authentication.\n\u003E Required for Visa and JCB transactions that require 3D Secure 2 authentication, if you did not include the \u0060shopperEmail\u0060.",
@@ -131432,7 +131442,7 @@
           },
           "threeDSAuthenticationOnly": {
             "type": "boolean",
-            "description": "Required to trigger the [authentication-only flow](https://docs.adyen.com/online-payments/3d-secure/authentication-only/). If set to **true**, you will only perform the 3D Secure 2 authentication, and will not proceed to the payment authorization.Default: **false**.",
+            "description": "Required to trigger the [authentication-only flow](https://docs.adyen.com/online-payments/3d-secure/authentication-only/). If set to **true**, you will only perform the 3D Secure 2 authentication, and will not proceed to the payment authorization.\n\nDefault: **false**.",
             "default": false,
             "x-addedInVersion": "50"
           },
@@ -131636,7 +131646,7 @@
           },
           "threeDSAuthenticationOnly": {
             "type": "boolean",
-            "description": "Required to trigger the [authentication-only flow](https://docs.adyen.com/online-payments/3d-secure/authentication-only/). If set to **true**, you will only perform the 3D Secure 2 authentication, and will not proceed to the payment authorization.Default: **false**.",
+            "description": "Required to trigger the [authentication-only flow](https://docs.adyen.com/online-payments/3d-secure/authentication-only/). If set to **true**, you will only perform the 3D Secure 2 authentication, and will not proceed to the payment authorization.\n\nDefault: **false**.",
             "default": false,
             "x-addedInVersion": "50"
           },
@@ -131839,7 +131849,7 @@
           },
           "threeDSAuthenticationOnly": {
             "type": "boolean",
-            "description": "Required to trigger the [authentication-only flow](https://docs.adyen.com/online-payments/3d-secure/authentication-only/). If set to **true**, you will only perform the 3D Secure 2 authentication, and will not proceed to the payment authorization.Default: **false**.",
+            "description": "Required to trigger the [authentication-only flow](https://docs.adyen.com/online-payments/3d-secure/authentication-only/). If set to **true**, you will only perform the 3D Secure 2 authentication, and will not proceed to the payment authorization.\n\nDefault: **false**.",
             "default": false,
             "x-addedInVersion": "50"
           },
@@ -170142,7 +170152,7 @@
         "additionalProperties": {
           "not": {}
         },
-        "description": "The shopper\u0027s browser information.\n\u003E For 3D Secure, the full object is required for web integrations. For mobile app integrations, include the \u0060userAgent\u0060 and \u0060acceptHeader\u0060 fields to indicate  that your integration can support a redirect in case a payment is routed to 3D Secure 2 redirect."
+        "description": "The shopper\u0027s browser information.\n\u003E The 3D Secure 2 guidance for \u0060browserInfo\u0060 applies to the later \u0060/payments\u0060 request, not to this balance check. For browser-based 3D Secure 2 payments, include complete \u0060browserInfo\u0060. For mobile app integrations that can be routed to a 3D Secure 2 redirect, include the \u0060userAgent\u0060 and \u0060acceptHeader\u0060 fields. Native app 3D Secure 2 authentication does not require \u0060browserInfo\u0060.\n\u003E\n\u003E This field is usually collected on the client, so validate its presence and completeness on your server before you submit the payment."
       },
       "BalanceCheckRequestDccQuote": {
         "required": [
@@ -171000,7 +171010,7 @@
         "type": "object",
         "properties": {
           "attemptAuthentication": {
-            "description": "Indicates when 3D Secure authentication should be attempted. This overrides all other rules, including [Dynamic 3D Secure settings](https://docs.adyen.com/risk-management/dynamic-3d-secure).\n\nPossible values:\n\n* **always**: Perform 3D Secure authentication.\n* **never**: Don\u0027t perform 3D Secure authentication. If PSD2 SCA or other national regulations require authentication, the transaction gets declined.",
+            "description": "Indicates when 3D Secure authentication should be attempted. This overrides all other rules, including [Dynamic 3D Secure settings](https://docs.adyen.com/risk-management/dynamic-3d-secure).\n\nPossible values:\n\n* **always**: Perform 3D Secure authentication. For browser-based payments, make sure the payment request also contains complete \u0060browserInfo\u0060 and \u0060origin\u0060. Without them, 3D Secure 2 cannot be initiated and the transaction can be authorized without liability shift.\n* **never**: Don\u0027t perform 3D Secure authentication. If PSD2 SCA or other national regulations require authentication, the transaction gets declined.",
             "$ref": "#/components/schemas/AuthenticationDataAttemptAuthentication"
           },
           "authenticationOnly": {
@@ -171648,7 +171658,7 @@
         "type": "object",
         "properties": {
           "attemptAuthentication": {
-            "description": "Indicates when 3D Secure authentication should be attempted. This overrides all other rules, including [Dynamic 3D Secure settings](https://docs.adyen.com/risk-management/dynamic-3d-secure).\n\nPossible values:\n\n* **always**: Perform 3D Secure authentication.\n* **never**: Don\u0027t perform 3D Secure authentication. If PSD2 SCA or other national regulations require authentication, the transaction gets declined.",
+            "description": "Indicates when 3D Secure authentication should be attempted. This overrides all other rules, including [Dynamic 3D Secure settings](https://docs.adyen.com/risk-management/dynamic-3d-secure).\n\nPossible values:\n\n* **always**: Perform 3D Secure authentication. For browser-based payments, make sure the payment request also contains complete \u0060browserInfo\u0060 and \u0060origin\u0060. Without them, 3D Secure 2 cannot be initiated and the transaction can be authorized without liability shift.\n* **never**: Don\u0027t perform 3D Secure authentication. If PSD2 SCA or other national regulations require authentication, the transaction gets declined.",
             "$ref": "#/components/schemas/AuthenticationDataAttemptAuthentication"
           },
           "authenticationOnly": {
@@ -172461,7 +172471,7 @@
         "type": "object",
         "properties": {
           "attemptAuthentication": {
-            "description": "Indicates when 3D Secure authentication should be attempted. This overrides all other rules, including [Dynamic 3D Secure settings](https://docs.adyen.com/risk-management/dynamic-3d-secure).\n\nPossible values:\n\n* **always**: Perform 3D Secure authentication.\n* **never**: Don\u0027t perform 3D Secure authentication. If PSD2 SCA or other national regulations require authentication, the transaction gets declined.",
+            "description": "Indicates when 3D Secure authentication should be attempted. This overrides all other rules, including [Dynamic 3D Secure settings](https://docs.adyen.com/risk-management/dynamic-3d-secure).\n\nPossible values:\n\n* **always**: Perform 3D Secure authentication. For browser-based payments, make sure the payment request also contains complete \u0060browserInfo\u0060 and \u0060origin\u0060. Without them, 3D Secure 2 cannot be initiated and the transaction can be authorized without liability shift.\n* **never**: Don\u0027t perform 3D Secure authentication. If PSD2 SCA or other national regulations require authentication, the transaction gets declined.",
             "$ref": "#/components/schemas/AuthenticationDataAttemptAuthentication"
           },
           "authenticationOnly": {
@@ -172590,7 +172600,7 @@
         "additionalProperties": {
           "not": {}
         },
-        "description": "The shopper\u0027s browser information.\n\u003E For 3D Secure, the full object is required for web integrations. For mobile app integrations, include the \u0060userAgent\u0060 and \u0060acceptHeader\u0060 fields to indicate  that your integration can support a redirect in case a payment is routed to 3D Secure 2 redirect."
+        "description": "The shopper\u0027s browser information.\n\u003E For 3D Secure, the full object is required for web integrations. For mobile app integrations, include the \u0060userAgent\u0060 and \u0060acceptHeader\u0060 fields to indicate  that your integration can support a redirect in case a payment is routed to 3D Secure 2 redirect.\n\u003E\n\u003E For browser-based payments, missing or incomplete \u0060browserInfo\u0060 means 3D Secure 2 cannot be initiated. The transaction is then treated as ineligible for 3D Secure 2 and can be authorized without liability shift. Native app 3D Secure 2 authentication does not require \u0060browserInfo\u0060. This field is usually collected on the client, so validate its presence and completeness on your server before you submit the payment. For more information, see [3D Secure 2 authentication](https://docs.adyen.com/online-payments/3d-secure/)."
       },
       "DonationPaymentRequestDeliveryAddress": {
         "required": [
@@ -173549,6 +173559,11 @@
             "type": "string",
             "description": "The reference for the Click to Pay token."
           },
+          "storeClickToPayProfile": {
+            "type": "boolean",
+            "description": "When enrolling a new user, this field determines whether to store the shopper\u0027s card in their Click to Pay profile. When this is set to **True**, the request must include \u0060shopperEmail\u0060, \u0060shopperName\u0060, and \u0060telephoneNumber\u0060.",
+            "x-addedInVersion": "72"
+          },
           "storedPaymentMethodId": {
             "maxLength": 64,
             "type": "string",
@@ -174047,7 +174062,7 @@
         "properties": {
           "authenticationOnly": {
             "type": "boolean",
-            "description": "Required to trigger the [authentication-only flow](https://docs.adyen.com/online-payments/3d-secure/authentication-only/). If set to **true**, you will only perform the 3D Secure 2 authentication, and will not proceed to the payment authorization.Default: **false**.",
+            "description": "Required to trigger the [authentication-only flow](https://docs.adyen.com/online-payments/3d-secure/authentication-only/). If set to **true**, you will only perform the 3D Secure 2 authentication, and will not proceed to the payment authorization.\n\nDefault: **false**.",
             "default": false,
             "x-addedInVersion": "69"
           }
@@ -175003,7 +175018,7 @@
         "additionalProperties": {
           "not": {}
         },
-        "description": "The shopper\u0027s browser information.\n\u003E For 3D Secure, the full object is required for web integrations. For mobile app integrations, include the \u0060userAgent\u0060 and \u0060acceptHeader\u0060 fields to indicate  that your integration can support a redirect in case a payment is routed to 3D Secure 2 redirect."
+        "description": "The shopper\u0027s browser information.\n\u003E For 3D Secure, the full object is required for web integrations. For mobile app integrations, include the \u0060userAgent\u0060 and \u0060acceptHeader\u0060 fields to indicate  that your integration can support a redirect in case a payment is routed to 3D Secure 2 redirect.\n\u003E\n\u003E If you proceed with a 3D Secure 2 payment, the following requirements apply to \u0060browserInfo\u0060 in the \u0060/payments\u0060 request. For browser-based 3D Secure 2 payments, include complete \u0060browserInfo\u0060. For mobile app integrations that can be routed to a 3D Secure 2 redirect, include the \u0060userAgent\u0060 and \u0060acceptHeader\u0060 fields. Native app 3D Secure 2 authentication does not require \u0060browserInfo\u0060. If the \u0060/payments\u0060 request of a browser-based payment has missing or incomplete \u0060browserInfo\u0060, the transaction is treated as ineligible for 3D Secure 2 and can be authorized without liability shift. This field is usually collected on the client, so validate its presence and completeness on your server before you submit the payment. For more information, see [3D Secure 2 authentication](https://docs.adyen.com/online-payments/3d-secure/)."
       },
       "PaymentMethodsRequestOrder": {
         "required": [
@@ -175315,7 +175330,7 @@
         "type": "object",
         "properties": {
           "attemptAuthentication": {
-            "description": "Indicates when 3D Secure authentication should be attempted. This overrides all other rules, including [Dynamic 3D Secure settings](https://docs.adyen.com/risk-management/dynamic-3d-secure).\n\nPossible values:\n\n* **always**: Perform 3D Secure authentication.\n* **never**: Don\u0027t perform 3D Secure authentication. If PSD2 SCA or other national regulations require authentication, the transaction gets declined.",
+            "description": "Indicates when 3D Secure authentication should be attempted. This overrides all other rules, including [Dynamic 3D Secure settings](https://docs.adyen.com/risk-management/dynamic-3d-secure).\n\nPossible values:\n\n* **always**: Perform 3D Secure authentication. For browser-based payments, make sure the payment request also contains complete \u0060browserInfo\u0060 and \u0060origin\u0060. Without them, 3D Secure 2 cannot be initiated and the transaction can be authorized without liability shift.\n* **never**: Don\u0027t perform 3D Secure authentication. If PSD2 SCA or other national regulations require authentication, the transaction gets declined.",
             "$ref": "#/components/schemas/AuthenticationDataAttemptAuthentication"
           },
           "authenticationOnly": {
@@ -175493,7 +175508,7 @@
         "additionalProperties": {
           "not": {}
         },
-        "description": "The shopper\u0027s browser information.\n\u003E For 3D Secure, the full object is required for web integrations. For mobile app integrations, include the \u0060userAgent\u0060 and \u0060acceptHeader\u0060 fields to indicate  that your integration can support a redirect in case a payment is routed to 3D Secure 2 redirect."
+        "description": "The shopper\u0027s browser information.\n\u003E For 3D Secure, the full object is required for web integrations. For mobile app integrations, include the \u0060userAgent\u0060 and \u0060acceptHeader\u0060 fields to indicate  that your integration can support a redirect in case a payment is routed to 3D Secure 2 redirect.\n\u003E\n\u003E For browser-based payments, missing or incomplete \u0060browserInfo\u0060 means 3D Secure 2 cannot be initiated. The transaction is then treated as ineligible for 3D Secure 2 and can be authorized without liability shift. Native app 3D Secure 2 authentication does not require \u0060browserInfo\u0060. This field is usually collected on the client, so validate its presence and completeness on your server before you submit the payment. For more information, see [3D Secure 2 authentication](https://docs.adyen.com/online-payments/3d-secure/)."
       },
       "PaymentRequestCompany": {
         "type": "object",
@@ -176094,6 +176109,24 @@
         },
         "description": "The shopper\u0027s full name."
       },
+      "PaymentRequestShopperTaxIdentification": {
+        "required": [
+          "verifiedShopperTaxIdentificationToken"
+        ],
+        "type": "object",
+        "properties": {
+          "verifiedShopperTaxIdentificationToken": {
+            "maxLength": 5000,
+            "type": "string",
+            "description": "The \u0060verifiedShopperTaxIdentificationToken\u0060 returned by \u0060/verifyShopperTaxIdentification\u0060. Treat the token as opaque: do not parse or modify it."
+          }
+        },
+        "additionalProperties": {
+          "not": {}
+        },
+        "description": "The shopper\u0027s tax identification, verified by Adyen. Contains the token returned by \u0060/verifyShopperTaxIdentification\u0060.",
+        "x-addedInVersion": "72"
+      },
       "PaymentRequestShopperTaxInfo": {
         "required": [
           "taxCountryCode",
@@ -176137,6 +176170,24 @@
           "not": {}
         },
         "description": "The [surcharge](https://docs.adyen.com/online-payments/surcharge/) amount to apply to the transaction, in [minor units](https://docs.adyen.com/development-resources/currency-codes). When you apply surcharge, include the surcharge in the \u0060amount.value\u0060 field.\n\nReview our [Surcharge compliance guide](https://docs.adyen.com/development-resources/surcharge-compliance/) to learn about how to comply with regulatory requirements when applying surcharge."
+      },
+      "PaymentRequestTaxCalculation": {
+        "required": [
+          "taxCalculationToken"
+        ],
+        "type": "object",
+        "properties": {
+          "taxCalculationToken": {
+            "maxLength": 5000,
+            "type": "string",
+            "description": "The \u0060taxCalculationToken\u0060 returned by \u0060/calculateTax\u0060. Treat the token as opaque: do not parse or modify it."
+          }
+        },
+        "additionalProperties": {
+          "not": {}
+        },
+        "description": "The tax calculated by Adyen for this payment. Contains the token returned by \u0060/calculateTax\u0060.",
+        "x-addedInVersion": "72"
       },
       "PaymentRequestThirdPartyTokenRedundancyInfo": {
         "required": [
@@ -177277,9 +177328,11 @@
             "$ref": "#/components/schemas/TaxCalculationContextLrs"
           },
           "taxCountryCode": {
-            "minLength": 1,
+            "maxLength": 2,
+            "minLength": 2,
+            "pattern": "^[a-zA-Z]{2}$",
             "type": "string",
-            "description": "The country governing tax processing. Initially only IN is supported."
+            "description": "The two-letter country code governing tax processing, in [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format. Supported value: **IN**."
           }
         },
         "description": "The context used to calculate the tax."
@@ -177292,27 +177345,28 @@
         "type": "object",
         "properties": {
           "currency": {
-            "minLength": 1,
+            "maxLength": 3,
+            "minLength": 3,
             "pattern": "^[A-Z]{3}$",
             "type": "string",
-            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes)."
+            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes) of the amount."
           },
           "value": {
             "maximum": 10000000000,
-            "minimum": 0,
+            "minimum": 1,
             "type": "integer",
-            "description": "The amount in [minor units](https://docs.adyen.com/development-resources/currency-codes).",
+            "description": "The numeric value of the amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes#minor-units)",
             "format": "int64"
           }
         },
-        "description": "The amount on which Adyen calculates the tax."
+        "description": "The amount on which Adyen calculates the tax. The value must be greater than zero."
       },
       "CalculateTaxResponseTaxCalculation": {
         "type": "object",
         "properties": {
           "merchantAccount": {
             "type": "string",
-            "description": "The merchant account for which the calculation was made."
+            "description": "The merchant account identifier, with which you want to process the transaction."
           },
           "taxCalculationContext": {
             "$ref": "#/components/schemas/TaxCalculationTaxCalculationContext"
@@ -177334,7 +177388,7 @@
             "$ref": "#/components/schemas/TaxCalculationTotalTaxAmount"
           }
         },
-        "description": "The canonical calculation accepted and produced by Adyen. Informational in the initial release."
+        "description": "The tax calculation results."
       },
       "CheckoutSessionPatchSessionRequestAmount": {
         "required": [
@@ -177363,7 +177417,7 @@
           "DIGITAL"
         ],
         "type": "string",
-        "description": "The remittance category, for example TOUR_PROGRAMME or EDUCATION.",
+        "description": "The purpose of the remittance under the Liberalised Remittance Scheme. Possible values:\n\n* **TOUR_PROGRAMME**: a tour program.\n* **TRAVEL_NON_TOUR**: travel that is not a tour program.\n* **EDUCATION**: education.\n* **DIGITAL**: digital services.\n",
         "x-ms-enum": {
           "name": "RemittancePurpose",
           "modelAsString": false,
@@ -177393,7 +177447,7 @@
           "NOT_EXCEEDED"
         ],
         "type": "string",
-        "description": "The status of the INR 1 million LRS sublimit, for example EXCEEDED.",
+        "description": "The status of the INR 1 million Liberalised Remittance Scheme sublimit. Possible values:\n\n* **EXCEEDED**: the sublimit is exceeded.\n* **NOT_EXCEEDED**: the sublimit is not exceeded.\n",
         "x-ms-enum": {
           "name": "SublimitStatus",
           "modelAsString": false,
@@ -177414,7 +177468,7 @@
           "PAN"
         ],
         "type": "string",
-        "description": "The type of the tax identification. Initially only PAN is supported.",
+        "description": "The type of tax identification. Supported value: **PAN**, an Indian Permanent Account Number.",
         "x-ms-enum": {
           "name": "TaxIdentificationType",
           "modelAsString": false,
@@ -177441,12 +177495,14 @@
             "$ref": "#/components/schemas/TaxCalculationContextLrs"
           },
           "taxCountryCode": {
-            "minLength": 1,
+            "maxLength": 2,
+            "minLength": 2,
+            "pattern": "^[a-zA-Z]{2}$",
             "type": "string",
-            "description": "The country governing tax processing. Initially only IN is supported."
+            "description": "The two-letter country code governing tax processing, in [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format. Supported value: **IN**."
           }
         },
-        "description": "The tax country, calculation type, and LRS declarations accepted by Adyen."
+        "description": "The tax country, calculation type, and LRS declarations from the request."
       },
       "TaxCalculationTaxableAmount": {
         "required": [
@@ -177456,19 +177512,21 @@
         "type": "object",
         "properties": {
           "currency": {
-            "minLength": 1,
+            "maxLength": 3,
+            "minLength": 3,
             "pattern": "^[A-Z]{3}$",
             "type": "string",
-            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes)."
+            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes) of the amount."
           },
           "value": {
+            "maximum": 10000000000,
             "minimum": 0,
             "type": "integer",
-            "description": "The amount in [minor units](https://docs.adyen.com/development-resources/currency-codes).",
+            "description": "The numeric value of the amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes#minor-units).",
             "format": "int64"
           }
         },
-        "description": "The taxable amount accepted by Adyen."
+        "description": "The taxable amount from the request, before tax."
       },
       "TaxCalculationTotalAmount": {
         "required": [
@@ -177478,19 +177536,21 @@
         "type": "object",
         "properties": {
           "currency": {
-            "minLength": 1,
+            "maxLength": 3,
+            "minLength": 3,
             "pattern": "^[A-Z]{3}$",
             "type": "string",
-            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes)."
+            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes) of the amount."
           },
           "value": {
+            "maximum": 10000000000,
             "minimum": 0,
             "type": "integer",
-            "description": "The amount in [minor units](https://docs.adyen.com/development-resources/currency-codes).",
+            "description": "The numeric value of the amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes#minor-units).",
             "format": "int64"
           }
         },
-        "description": "The taxable amount plus the calculated tax. Use this amount in /payments.amount."
+        "description": "The sum of \u0060taxableAmount\u0060 and \u0060totalTaxAmount\u0060. Use this amount as \u0060amount\u0060 in \u0060/payments\u0060."
       },
       "TaxCalculationTotalTaxAmount": {
         "required": [
@@ -177500,19 +177560,21 @@
         "type": "object",
         "properties": {
           "currency": {
-            "minLength": 1,
+            "maxLength": 3,
+            "minLength": 3,
             "pattern": "^[A-Z]{3}$",
             "type": "string",
-            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes)."
+            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes) of the amount."
           },
           "value": {
+            "maximum": 10000000000,
             "minimum": 0,
             "type": "integer",
-            "description": "The amount in [minor units](https://docs.adyen.com/development-resources/currency-codes).",
+            "description": "The numeric value of the amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes#minor-units).",
             "format": "int64"
           }
         },
-        "description": "The total tax amount calculated by Adyen."
+        "description": "The sum of the individual tax amounts in \u0060taxCalculations\u0060."
       },
       "TaxCalculationComponentTaxAmount": {
         "required": [
@@ -177522,15 +177584,17 @@
         "type": "object",
         "properties": {
           "currency": {
-            "minLength": 1,
+            "maxLength": 3,
+            "minLength": 3,
             "pattern": "^[A-Z]{3}$",
             "type": "string",
-            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes)."
+            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes) of the amount."
           },
           "value": {
+            "maximum": 10000000000,
             "minimum": 0,
             "type": "integer",
-            "description": "The amount in [minor units](https://docs.adyen.com/development-resources/currency-codes).",
+            "description": "The numeric value of the amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes#minor-units).",
             "format": "int64"
           }
         },
@@ -177541,7 +177605,7 @@
           "LRS_TCS"
         ],
         "type": "string",
-        "description": "The type of the calculated tax component, for example LRS_TCS.",
+        "description": "The type of tax calculated. Supported value: **LRS_TCS**, the Indian Liberalised Remittance Scheme Tax Collected at Source.",
         "x-ms-enum": {
           "name": "CalculationType",
           "modelAsString": false,
@@ -177558,7 +177622,7 @@
           "LRS_TCS"
         ],
         "type": "string",
-        "description": "The type of calculation requested. Initially only LRS_TCS is supported.",
+        "description": "The type of tax calculation. Supported value: **LRS_TCS**, the Indian Liberalised Remittance Scheme Tax Collected at Source.",
         "x-ms-enum": {
           "name": "CalculationType",
           "modelAsString": false,
@@ -177584,7 +177648,7 @@
             "$ref": "#/components/schemas/LrsContextSublimitStatus"
           }
         },
-        "description": "India-specific LRS declarations."
+        "description": "The shopper\u0027s declarations for the Indian Liberalised Remittance Scheme (LRS)."
       },
       "ValidateShopperIdRequestPaymentMethod": {
         "required": [
@@ -177615,7 +177679,7 @@
           "PAN"
         ],
         "type": "string",
-        "description": "The type of the verified tax identification.",
+        "description": "The type of verified tax identification. Supported value: **PAN**, an Indian Permanent Account Number.",
         "x-ms-enum": {
           "name": "TaxIdentificationType",
           "modelAsString": false,
@@ -177638,7 +177702,7 @@
           "taxCountryCode": {
             "minLength": 1,
             "type": "string",
-            "description": "The country governing the shopper\u0027s tax processing. Initially only IN is supported."
+            "description": "The two-letter country code governing the shopper\u0027s tax processing, in [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format. Supported value: **IN**."
           },
           "taxIdentificationNumber": {
             "minLength": 1,
@@ -177649,24 +177713,27 @@
             "$ref": "#/components/schemas/ShopperTaxIdentificationTaxIdentificationType"
           }
         },
-        "description": "The shopper tax identification to verify."
+        "description": "The shopper\u0027s tax identification to verify."
       },
       "VerifyShopperTaxIdentificationResponseVerifiedShopperTaxIdentification": {
         "type": "object",
         "properties": {
           "maskedName": {
             "type": "string",
-            "description": "The masked name of the tax identification holder."
+            "description": "The masked name of the tax identification holder. The full name is not returned."
           },
           "taxCountryCode": {
+            "maxLength": 2,
+            "minLength": 2,
+            "pattern": "^[a-zA-Z]{2}$",
             "type": "string",
-            "description": "The country governing the shopper\u0027s tax processing."
+            "description": "The two-letter country code governing the shopper\u0027s tax processing, in [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format. Supported value: **IN**."
           },
           "taxIdentificationType": {
             "$ref": "#/components/schemas/VerifiedShopperTaxIdentificationTaxIdentificationType"
           }
         },
-        "description": "The masked representation of the verified tax identification."
+        "description": "The masked representation of the verified tax identification. Returned only when \u0060result\u0060 is **VALID**."
       },
       "DonationPaymentRequestPaymentMethodOneOf1VariantAllOf2": {
         "required": [
@@ -177832,6 +177899,11 @@
           "srcTokenReference": {
             "type": "string",
             "description": "The reference for the Click to Pay token."
+          },
+          "storeClickToPayProfile": {
+            "type": "boolean",
+            "description": "When enrolling a new user, this field determines whether to store the shopper\u0027s card in their Click to Pay profile. When this is set to **True**, the request must include \u0060shopperEmail\u0060, \u0060shopperName\u0060, and \u0060telephoneNumber\u0060.",
+            "x-addedInVersion": "72"
           },
           "storedPaymentMethodId": {
             "maxLength": 64,
@@ -178641,6 +178713,11 @@
             "type": "string",
             "description": "The reference for the Click to Pay token."
           },
+          "storeClickToPayProfile": {
+            "type": "boolean",
+            "description": "When enrolling a new user, this field determines whether to store the shopper\u0027s card in their Click to Pay profile. When this is set to **True**, the request must include \u0060shopperEmail\u0060, \u0060shopperName\u0060, and \u0060telephoneNumber\u0060.",
+            "x-addedInVersion": "72"
+          },
           "storedPaymentMethodId": {
             "maxLength": 64,
             "type": "string",
@@ -179070,6 +179147,11 @@
           "number": {
             "type": "string",
             "description": "The card number. Only collect raw card data if you are [fully PCI compliant](https://docs.adyen.com/development-resources/pci-dss-compliance-guide)."
+          },
+          "storeClickToPayProfile": {
+            "type": "boolean",
+            "description": "When enrolling a new user, this field determines whether to store the shopper\u0027s card in their Click to Pay profile. When this is set to **True**, the request must include \u0060shopperEmail\u0060, \u0060shopperName\u0060, and \u0060telephoneNumber\u0060.",
+            "x-addedInVersion": "72"
           },
           "storedPaymentMethodId": {
             "maxLength": 64,
@@ -196164,7 +196246,7 @@
         "additionalProperties": {
           "not": {}
         },
-        "description": "The shopper\u0027s browser information.\n\u003E For 3D Secure, the full object is required for web integrations. For mobile app integrations, include the \u0060userAgent\u0060 and \u0060acceptHeader\u0060 fields to indicate  that your integration can support a redirect in case a payment is routed to 3D Secure 2 redirect."
+        "description": "The shopper\u0027s browser information.\n\u003E For 3D Secure, the full object is required for web integrations. For mobile app integrations, include the \u0060userAgent\u0060 and \u0060acceptHeader\u0060 fields to indicate  that your integration can support a redirect in case a payment is routed to 3D Secure 2 redirect.\n\u003E\n\u003E For browser-based payments, missing or incomplete \u0060browserInfo\u0060 means 3D Secure 2 cannot be initiated. The transaction is then treated as ineligible for 3D Secure 2 and can be authorized without liability shift. Native app 3D Secure 2 authentication does not require \u0060browserInfo\u0060. This field is usually collected on the client, so validate its presence and completeness on your server before you submit the payment. For more information, see [3D Secure 2 authentication](https://docs.adyen.com/online-payments/3d-secure/)."
       },
       "PaymentServiceV68PaymentRequestCard": {
         "type": "object",
@@ -197016,7 +197098,7 @@
         "additionalProperties": {
           "not": {}
         },
-        "description": "The shopper\u0027s browser information.\n\u003E For 3D Secure, the full object is required for web integrations. For mobile app integrations, include the \u0060userAgent\u0060 and \u0060acceptHeader\u0060 fields to indicate  that your integration can support a redirect in case a payment is routed to 3D Secure 2 redirect."
+        "description": "The shopper\u0027s browser information.\n\u003E You do not need to include \u0060browserInfo\u0060 in \u0060/authorise3d\u0060.\n\u003E This endpoint continues a 3D Secure 1 payment and does not initiate 3D Secure 2.\n\u003E\n\u003E To initiate a browser-based 3D Secure 2 payment, include complete \u0060browserInfo\u0060 in the initial \u0060/authorise\u0060 request."
       },
       "PaymentRequest3DDccQuote": {
         "required": [
@@ -197558,7 +197640,7 @@
         "additionalProperties": {
           "not": {}
         },
-        "description": "The shopper\u0027s browser information.\n\u003E For 3D Secure, the full object is required for web integrations. For mobile app integrations, include the \u0060userAgent\u0060 and \u0060acceptHeader\u0060 fields to indicate  that your integration can support a redirect in case a payment is routed to 3D Secure 2 redirect."
+        "description": "The shopper\u0027s browser information.\n\u003E Complete \u0060browserInfo\u0060 is required in the \u0060/authorise\u0060 request that initiates a browser-based 3D Secure 2 payment.\n\u003E\n\u003E You do not need to include \u0060browserInfo\u0060 when you continue the payment through \u0060/authorise3ds2\u0060:\n\u003E* After the device fingerprint, send the \u0060threeDS2Token\u0060 and the \u0060threeDS2RequestData.threeDSCompInd\u0060 fingerprint completion indicator.\n\u003E* After the shopper completes the challenge, send the \u0060threeDS2Token\u0060 and the \u0060threeDS2Result\u0060."
       },
       "PaymentRequest3Ds2DccQuote": {
         "required": [
@@ -247461,6 +247543,11 @@
                 "type": "string",
                 "description": "The reference for the Click to Pay token."
               },
+              "storeClickToPayProfile": {
+                "type": "boolean",
+                "description": "When enrolling a new user, this field determines whether to store the shopper\u0027s card in their Click to Pay profile. When this is set to **True**, the request must include \u0060shopperEmail\u0060, \u0060shopperName\u0060, and \u0060telephoneNumber\u0060.",
+                "x-addedInVersion": "72"
+              },
               "storedPaymentMethodId": {
                 "maxLength": 64,
                 "type": "string",
@@ -248228,6 +248315,11 @@
               "number": {
                 "type": "string",
                 "description": "The card number. Only collect raw card data if you are [fully PCI compliant](https://docs.adyen.com/development-resources/pci-dss-compliance-guide)."
+              },
+              "storeClickToPayProfile": {
+                "type": "boolean",
+                "description": "When enrolling a new user, this field determines whether to store the shopper\u0027s card in their Click to Pay profile. When this is set to **True**, the request must include \u0060shopperEmail\u0060, \u0060shopperName\u0060, and \u0060telephoneNumber\u0060.",
+                "x-addedInVersion": "72"
               },
               "storedPaymentMethodId": {
                 "maxLength": 64,
@@ -252097,6 +252189,11 @@
                 "type": "string",
                 "description": "The reference for the Click to Pay token."
               },
+              "storeClickToPayProfile": {
+                "type": "boolean",
+                "description": "When enrolling a new user, this field determines whether to store the shopper\u0027s card in their Click to Pay profile. When this is set to **True**, the request must include \u0060shopperEmail\u0060, \u0060shopperName\u0060, and \u0060telephoneNumber\u0060.",
+                "x-addedInVersion": "72"
+              },
               "storedPaymentMethodId": {
                 "maxLength": 64,
                 "type": "string",
@@ -253025,6 +253122,11 @@
               "srcTokenReference": {
                 "type": "string",
                 "description": "The reference for the Click to Pay token."
+              },
+              "storeClickToPayProfile": {
+                "type": "boolean",
+                "description": "When enrolling a new user, this field determines whether to store the shopper\u0027s card in their Click to Pay profile. When this is set to **True**, the request must include \u0060shopperEmail\u0060, \u0060shopperName\u0060, and \u0060telephoneNumber\u0060.",
+                "x-addedInVersion": "72"
               },
               "storedPaymentMethodId": {
                 "maxLength": 64,
@@ -281623,7 +281725,7 @@
       "type": "object",
       "properties": {
         "attemptAuthentication": {
-          "description": "Indicates when 3D Secure authentication should be attempted. This overrides all other rules, including [Dynamic 3D Secure settings](https://docs.adyen.com/risk-management/dynamic-3d-secure).\n\nPossible values:\n\n* **always**: Perform 3D Secure authentication.\n* **never**: Don\u0027t perform 3D Secure authentication. If PSD2 SCA or other national regulations require authentication, the transaction gets declined.",
+          "description": "Indicates when 3D Secure authentication should be attempted. This overrides all other rules, including [Dynamic 3D Secure settings](https://docs.adyen.com/risk-management/dynamic-3d-secure).\n\nPossible values:\n\n* **always**: Perform 3D Secure authentication. For browser-based payments, make sure the payment request also contains complete \u0060browserInfo\u0060 and \u0060origin\u0060. Without them, 3D Secure 2 cannot be initiated and the transaction can be authorized without liability shift.\n* **never**: Don\u0027t perform 3D Secure authentication. If PSD2 SCA or other national regulations require authentication, the transaction gets declined.",
           "$ref": "#/components/schemas/AuthenticationDataAttemptAuthentication"
         },
         "authenticationOnly": {
@@ -281923,6 +282025,11 @@
         "srcTokenReference": {
           "type": "string",
           "description": "The reference for the Click to Pay token."
+        },
+        "storeClickToPayProfile": {
+          "type": "boolean",
+          "description": "When enrolling a new user, this field determines whether to store the shopper\u0027s card in their Click to Pay profile. When this is set to **True**, the request must include \u0060shopperEmail\u0060, \u0060shopperName\u0060, and \u0060telephoneNumber\u0060.",
+          "x-addedInVersion": "72"
         },
         "storedPaymentMethodId": {
           "maxLength": 64,
@@ -282326,7 +282433,7 @@
       "properties": {
         "authenticationOnly": {
           "type": "boolean",
-          "description": "Required to trigger the [authentication-only flow](https://docs.adyen.com/online-payments/3d-secure/authentication-only/). If set to **true**, you will only perform the 3D Secure 2 authentication, and will not proceed to the payment authorization.Default: **false**.",
+          "description": "Required to trigger the [authentication-only flow](https://docs.adyen.com/online-payments/3d-secure/authentication-only/). If set to **true**, you will only perform the 3D Secure 2 authentication, and will not proceed to the payment authorization.\n\nDefault: **false**.",
           "default": false,
           "x-addedInVersion": "69"
         }
@@ -283769,6 +283876,38 @@
         "not": {}
       }
     },
+    "TokenizedShopperTaxIdentification": {
+      "required": [
+        "verifiedShopperTaxIdentificationToken"
+      ],
+      "type": "object",
+      "properties": {
+        "verifiedShopperTaxIdentificationToken": {
+          "maxLength": 5000,
+          "type": "string",
+          "description": "The \u0060verifiedShopperTaxIdentificationToken\u0060 returned by \u0060/verifyShopperTaxIdentification\u0060. Treat the token as opaque: do not parse or modify it."
+        }
+      },
+      "additionalProperties": {
+        "not": {}
+      }
+    },
+    "TokenizedTaxCalculation": {
+      "required": [
+        "taxCalculationToken"
+      ],
+      "type": "object",
+      "properties": {
+        "taxCalculationToken": {
+          "maxLength": 5000,
+          "type": "string",
+          "description": "The \u0060taxCalculationToken\u0060 returned by \u0060/calculateTax\u0060. Treat the token as opaque: do not parse or modify it."
+        }
+      },
+      "additionalProperties": {
+        "not": {}
+      }
+    },
     "CalculationType": {
       "enum": [
         "LRS_TCS"
@@ -283860,7 +283999,7 @@
         "taxCountryCode": {
           "minLength": 1,
           "type": "string",
-          "description": "The country governing the shopper\u0027s tax processing. Initially only IN is supported."
+          "description": "The two-letter country code governing the shopper\u0027s tax processing, in [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format. Supported value: **IN**."
         },
         "taxIdentificationNumber": {
           "minLength": 1,
@@ -283901,15 +284040,17 @@
       "type": "object",
       "properties": {
         "currency": {
-          "minLength": 1,
+          "maxLength": 3,
+          "minLength": 3,
           "pattern": "^[A-Z]{3}$",
           "type": "string",
-          "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes)."
+          "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes) of the amount."
         },
         "value": {
+          "maximum": 10000000000,
           "minimum": 0,
           "type": "integer",
-          "description": "The amount in [minor units](https://docs.adyen.com/development-resources/currency-codes).",
+          "description": "The numeric value of the amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes#minor-units).",
           "format": "int64"
         }
       }
@@ -283919,7 +284060,7 @@
       "properties": {
         "merchantAccount": {
           "type": "string",
-          "description": "The merchant account for which the calculation was made."
+          "description": "The merchant account identifier, with which you want to process the transaction."
         },
         "taxCalculationContext": {
           "$ref": "#/components/schemas/TaxCalculationTaxCalculationContext"
@@ -283957,9 +284098,11 @@
           "$ref": "#/components/schemas/TaxCalculationContextLrs"
         },
         "taxCountryCode": {
-          "minLength": 1,
+          "maxLength": 2,
+          "minLength": 2,
+          "pattern": "^[a-zA-Z]{2}$",
           "type": "string",
-          "description": "The country governing tax processing. Initially only IN is supported."
+          "description": "The two-letter country code governing tax processing, in [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format. Supported value: **IN**."
         }
       }
     },
@@ -283987,16 +284130,17 @@
       "type": "object",
       "properties": {
         "currency": {
-          "minLength": 1,
+          "maxLength": 3,
+          "minLength": 3,
           "pattern": "^[A-Z]{3}$",
           "type": "string",
-          "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes)."
+          "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes) of the amount."
         },
         "value": {
           "maximum": 10000000000,
-          "minimum": 0,
+          "minimum": 1,
           "type": "integer",
-          "description": "The amount in [minor units](https://docs.adyen.com/development-resources/currency-codes).",
+          "description": "The numeric value of the amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes#minor-units)",
           "format": "int64"
         }
       }
@@ -284006,11 +284150,14 @@
       "properties": {
         "maskedName": {
           "type": "string",
-          "description": "The masked name of the tax identification holder."
+          "description": "The masked name of the tax identification holder. The full name is not returned."
         },
         "taxCountryCode": {
+          "maxLength": 2,
+          "minLength": 2,
+          "pattern": "^[a-zA-Z]{2}$",
           "type": "string",
-          "description": "The country governing the shopper\u0027s tax processing."
+          "description": "The two-letter country code governing the shopper\u0027s tax processing, in [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format. Supported value: **IN**."
         },
         "taxIdentificationType": {
           "$ref": "#/components/schemas/VerifiedShopperTaxIdentificationTaxIdentificationType"
@@ -290985,7 +291132,7 @@
         },
         "executeThreeD": {
           "type": "string",
-          "description": "Indicates if you want to perform 3D Secure authentication on a transaction.\n\n \u003E Alternatively, you can use [Dynamic 3D Secure](/risk-management/dynamic-3d-secure) to configure rules for applying 3D Secure.\n\nPossible values:\n* **true** \u2013 Perform 3D Secure authentication.\n* **false** \u2013 Don\u0027t perform 3D Secure authentication. Note that this setting results in refusals if the issuer mandates 3D Secure because of the PSD2 directive  or other, national regulations. \n"
+          "description": "Indicates if you want to perform 3D Secure authentication on a transaction.\n\n \u003E Alternatively, you can use [Dynamic 3D Secure](/risk-management/dynamic-3d-secure) to configure rules for applying 3D Secure.\n\nPossible values:\n* **true** \u2013 Perform 3D Secure authentication. For browser-based payments, make sure the payment request also contains complete \u0060browserInfo\u0060 and, for the Checkout API, \u0060origin\u0060. Without them, 3D Secure 2 cannot be initiated and the transaction can be authorized without liability shift.\n* **false** \u2013 Don\u0027t perform 3D Secure authentication. Note that this setting results in refusals if the issuer mandates 3D Secure because of the PSD2 directive  or other, national regulations. \n"
         },
         "mpiImplementationType": {
           "type": "string",

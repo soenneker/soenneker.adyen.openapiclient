@@ -160,7 +160,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(20)
             {
                 { "attemptedToReturn", n => { AttemptedToReturn = n.GetBoolValue(); } },
                 { "certificationGuaranteedReservation", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CancelledInfoCertificationGuaranteedReservation>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCertificationGuaranteedReservation = default; _explicitNullProperties?.Remove("certificationGuaranteedReservation"); AdditionalData["certificationGuaranteedReservation"] = unknown; } else { CertificationGuaranteedReservation = parsed; AdditionalData.Remove("certificationGuaranteedReservation"); } } },

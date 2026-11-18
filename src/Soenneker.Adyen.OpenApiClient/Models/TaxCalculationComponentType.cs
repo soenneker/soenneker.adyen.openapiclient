@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>The type of the calculated tax component, for example LRS_TCS.</summary>
+    /// <summary>The type of tax calculated. Supported value: **LRS_TCS**, the Indian Liberalised Remittance Scheme Tax Collected at Source.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TaxCalculationComponentType
     {

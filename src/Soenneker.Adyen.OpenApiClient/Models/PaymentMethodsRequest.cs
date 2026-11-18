@@ -97,7 +97,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public List<string> BlockedPaymentMethods { get => _explicitNullValueBlockedPaymentMethods; set { _explicitNullValueBlockedPaymentMethods = value; AdditionalData?.Remove("blockedPaymentMethods"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blockedPaymentMethods"); else _explicitNullProperties?.Remove("blockedPaymentMethods"); } }
         private List<string> _explicitNullValueBlockedPaymentMethods = default!;
 #endif
-        /// <summary>The shopper&apos;s browser information.&gt; For 3D Secure, the full object is required for web integrations. For mobile app integrations, include the `userAgent` and `acceptHeader` fields to indicate  that your integration can support a redirect in case a payment is routed to 3D Secure 2 redirect.</summary>
+        /// <summary>The shopper&apos;s browser information.&gt; For 3D Secure, the full object is required for web integrations. For mobile app integrations, include the `userAgent` and `acceptHeader` fields to indicate  that your integration can support a redirect in case a payment is routed to 3D Secure 2 redirect.&gt;&gt; If you proceed with a 3D Secure 2 payment, the following requirements apply to `browserInfo` in the `/payments` request. For browser-based 3D Secure 2 payments, include complete `browserInfo`. For mobile app integrations that can be routed to a 3D Secure 2 redirect, include the `userAgent` and `acceptHeader` fields. Native app 3D Secure 2 authentication does not require `browserInfo`. If the `/payments` request of a browser-based payment has missing or incomplete `browserInfo`, the transaction is treated as ineligible for 3D Secure 2 and can be authorized without liability shift. This field is usually collected on the client, so validate its presence and completeness on your server before you submit the payment. For more information, see [3D Secure 2 authentication](https://docs.adyen.com/online-payments/3d-secure/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodsRequestBrowserInfo? BrowserInfo { get => _explicitNullValueBrowserInfo; set { _explicitNullValueBrowserInfo = value; AdditionalData?.Remove("browserInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("browserInfo"); else _explicitNullProperties?.Remove("browserInfo"); } }
@@ -240,7 +240,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(18)
             {
                 { "additionalData", n => { AdditionalDataProperty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodsRequestAdditionalData>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodsRequestAdditionalData.CreateFromDiscriminatorValue); } },
                 { "allowedPaymentMethods", n => { AllowedPaymentMethods = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },

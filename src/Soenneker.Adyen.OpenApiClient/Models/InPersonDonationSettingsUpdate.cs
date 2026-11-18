@@ -105,7 +105,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "defaultAmount", n => { DefaultAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationAmountUpdate>(global::Soenneker.Adyen.OpenApiClient.Models.DonationAmountUpdate.CreateFromDiscriminatorValue); } },
                 { "displayTextField", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettingsUpdateDisplayTextField>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDisplayTextField = default; _explicitNullProperties?.Remove("displayTextField"); AdditionalData["displayTextField"] = unknown; } else { DisplayTextField = parsed; AdditionalData.Remove("displayTextField"); } } },

@@ -104,7 +104,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "caChain", n => { CaChain = global::System.Linq.Enumerable.Select(n.GetCollectionOfPrimitiveValues<string>(), value => value == null ? null! : global::System.Convert.FromBase64String(value))?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
