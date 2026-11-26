@@ -3,11 +3,11 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>The type of tax calculation. Supported value: **LRS_TCS**, the Indian Liberalised Remittance Scheme Tax Collected at Source.</summary>
+    /// <summary>The type of tax calculation. Supported value: **lrsTcs**, the Indian Liberalised Remittance Scheme Tax Collected at Source.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TaxCalculationContextCalculationType
     {
-        [EnumMember(Value = "LRS_TCS")]
+        [EnumMember(Value = "lrsTcs")]
         #pragma warning disable CS1591
         LrsTcs,
         #pragma warning restore CS1591

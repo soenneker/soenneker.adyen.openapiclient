@@ -3,23 +3,23 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>The purpose of the remittance under the Liberalised Remittance Scheme. Possible values:* **TOUR_PROGRAMME**: a tour program.* **TRAVEL_NON_TOUR**: travel that is not a tour program.* **EDUCATION**: education.* **DIGITAL**: digital services.</summary>
+    /// <summary>The purpose of the remittance under the Liberalised Remittance Scheme. Possible values:* **tourProgramme**: a tour program.* **travelNonTour**: travel that is not a tour program.* **education**: education.* **digital**: digital services.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum LrsContextRemittancePurpose
     {
-        [EnumMember(Value = "TOUR_PROGRAMME")]
+        [EnumMember(Value = "tourProgramme")]
         #pragma warning disable CS1591
         TourProgramme,
         #pragma warning restore CS1591
-        [EnumMember(Value = "TRAVEL_NON_TOUR")]
+        [EnumMember(Value = "travelNonTour")]
         #pragma warning disable CS1591
         TravelNonTour,
         #pragma warning restore CS1591
-        [EnumMember(Value = "EDUCATION")]
+        [EnumMember(Value = "education")]
         #pragma warning disable CS1591
         Education,
         #pragma warning restore CS1591
-        [EnumMember(Value = "DIGITAL")]
+        [EnumMember(Value = "digital")]
         #pragma warning disable CS1591
         Digital,
         #pragma warning restore CS1591

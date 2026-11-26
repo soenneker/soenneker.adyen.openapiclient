@@ -102269,82 +102269,6 @@
           "not": { }
         }
       },
-      "AdditionalDataLevel23": {
-        "type": "object",
-        "properties": {
-          "enhancedSchemeData.customerReference": {
-            "type": "string",
-            "description": "The reference number to identify the customer and their order. \n* Encoding: ASCII\n* Max length: 25 characters\n* Must not start with a space or be all spaces.\n* Must not be all zeros."
-          },
-          "enhancedSchemeData.destinationCountryCode": {
-            "type": "string",
-            "description": "The three-letter [ISO 3166-1 alpha-3 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) for the destination address.\n* Encoding: ASCII\n* Fixed length: 3 characters"
-          },
-          "enhancedSchemeData.destinationPostalCode": {
-            "type": "string",
-            "description": "The postal code of the destination address.\n* Encoding: ASCII\n* Max length: 10 characters\n* Must not start with a space.\n* For the US, it must be in five or nine digits format. For example, 10001 or 10001-0000.\n* For Canada, it must be in 6 digits format. For example, M4B 1G5."
-          },
-          "enhancedSchemeData.destinationStateProvinceCode": {
-            "type": "string",
-            "description": "The state or province code of the destination address.\n* Encoding: ASCII\n* Max length: 3 characters\n* Must not start with a space."
-          },
-          "enhancedSchemeData.dutyAmount": {
-            "type": "string",
-            "description": "The duty tax amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes).\n* For example, 2000 means USD 20.00.\n* Encoding: Numeric\n* Max length: 12 characters"
-          },
-          "enhancedSchemeData.freightAmount": {
-            "type": "string",
-            "description": "The shipping amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes).\n* For example, 2000 means USD 20.00.\n* Encoding: Numeric\n* Max length: 12 characters"
-          },
-          "enhancedSchemeData.itemDetailLine[itemNr].commodityCode": {
-            "type": "string",
-            "description": "The code that identifies the item in a standardized commodity coding scheme. There are different commodity coding schemes:\n* [UNSPSC commodity codes](https://www.ungm.org/public/unspsc)\n* [HS commodity codes](https://www.wcoomd.org/en/topics/nomenclature/overview.aspx)\n* [NAICS commodity codes](https://www.census.gov/naics/)\n* [NAPCS commodity codes](https://www.census.gov/naics/napcs/)\n\n\n* Encoding: ASCII\n* Max length: 12 characters\n* Must not start with a space or be all spaces.\n* Must not be all zeros."
-          },
-          "enhancedSchemeData.itemDetailLine[itemNr].description": {
-            "type": "string",
-            "description": "A description of the item, that provides details about the purchase.\n\n For Visa transactions with level 3 ESD, the description must not be the same or very similar to your merchant name, or, consist only of common words like \"product\", or \"service\".\n* Encoding: ASCII\n* Max length: 26 characters\n* Must not be a single character.\n* Must not be blank.\n* Must not be all special characters.\n* Must not be blank.\n* Must not start with a space or be all spaces.\n* Must not be all zeros."
-          },
-          "enhancedSchemeData.itemDetailLine[itemNr].discountAmount": {
-            "type": "string",
-            "description": "The discount amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes).\n* For example, 2000 means USD 20.00.\n* Encoding: Numeric\n* Max length: 12 characters"
-          },
-          "enhancedSchemeData.itemDetailLine[itemNr].productCode": {
-            "type": "string",
-            "description": "The product code. Must be a unique product code associated with the item or service. This can be your unique code for the item, or the manufacturer's product code. \n* Encoding: ASCII.\n* Max length: 12 characters\n* Must not start with a space or be all spaces.\n* Must not be all zeros."
-          },
-          "enhancedSchemeData.itemDetailLine[itemNr].quantity": {
-            "type": "string",
-            "description": "The number of items. Must be an integer greater than zero.\n* Encoding: Numeric\n* Max length: 12 characters\n* Must not start with a space or be all spaces."
-          },
-          "enhancedSchemeData.itemDetailLine[itemNr].totalAmount": {
-            "type": "string",
-            "description": "The total amount for the line item, in [minor units](https://docs.adyen.com/development-resources/currency-codes). See [Amount requirements for level 2/3 ESD](https://docs.adyen.com//payment-methods/cards/enhanced-scheme-data/l2-l3#amount-requirements) to learn more about how to calculate the line item total.\n* For example, 2000 means USD 20.00.\n* Max length: 12 characters\n* Must not start with a space or be all spaces.\n* Must not be all zeros."
-          },
-          "enhancedSchemeData.itemDetailLine[itemNr].unitOfMeasure": {
-            "type": "string",
-            "description": "The unit of measurement for an item.\n* Encoding: ASCII\n* Max length: 3 characters\n* Must not start with a space or be all spaces.\n* Must not be all zeros."
-          },
-          "enhancedSchemeData.itemDetailLine[itemNr].unitPrice": {
-            "type": "string",
-            "description": "The unit price in [minor units](https://docs.adyen.com/development-resources/currency-codes).\n* For example, 2000 means USD 20.00.\n* Encoding: Numeric\n* Max length: 12 characters\n* Must not be all zeros."
-          },
-          "enhancedSchemeData.orderDate": {
-            "type": "string",
-            "description": "The order date.\n* Format: `ddMMyy`\n* Encoding: ASCII\n* Max length: 6 characters"
-          },
-          "enhancedSchemeData.shipFromPostalCode": {
-            "type": "string",
-            "description": "The postal code of the address where the item is shipped from.\n* Encoding: ASCII\n* Max length: 10 characters\n* Must not start with a space or be all spaces.\n* Must not be all zeros.For the US, it must be in five or nine digits format. For example, 10001 or 10001-0000.\n* For Canada, it must be in 6 digits format. For example, M4B 1G5."
-          },
-          "enhancedSchemeData.totalTaxAmount": {
-            "type": "string",
-            "description": "The amount of state or provincial [tax included in the total transaction amount](https://docs.adyen.com/payment-methods/cards/enhanced-scheme-data/l2-l3#requirements-to-send-level-2-3-esd), in [minor units](https://docs.adyen.com/development-resources/currency-codes). \n* For example, 2000 means USD 20.00.\n* Encoding: Numeric \n* Max length: 12 characters \n* For L2 data: must not be all zeroes. \n* For L3 data: can be zero."
-          }
-        },
-        "additionalProperties": {
-          "not": { }
-        }
-      },
       "AdditionalDataLodging": {
         "type": "object",
         "properties": {
@@ -102783,50 +102707,6 @@
           "subMerchant.subSeller[subSellerNr].taxId": {
             "type": "string",
             "description": "Required for transactions performed by registered payment facilitators. The tax ID of the sub-merchant.\n* Format: Numeric\n* Fixed length: 11 digits for the CPF or 14 digits for the CNPJ"
-          }
-        },
-        "additionalProperties": {
-          "not": { }
-        }
-      },
-      "AdditionalDataTemporaryServices": {
-        "type": "object",
-        "properties": {
-          "enhancedSchemeData.customerReference": {
-            "type": "string",
-            "description": "The customer code, if supplied by a customer.\n* Encoding: ASCII\n* maxLength: 25"
-          },
-          "enhancedSchemeData.employeeName": {
-            "type": "string",
-            "description": "The name or ID of the person working in a temporary capacity.\n* maxLength: 40.  \n* Must not be all spaces. \n*Must not be all zeros."
-          },
-          "enhancedSchemeData.jobDescription": {
-            "type": "string",
-            "description": "The job description of the person working in a temporary capacity.\n* maxLength: 40 \n* Must not be all spaces. \n*Must not be all zeros."
-          },
-          "enhancedSchemeData.regularHoursRate": {
-            "type": "string",
-            "description": "The amount paid for regular hours worked, [minor units](https://docs.adyen.com/development-resources/currency-codes).\n* maxLength: 7\n* Must not be empty\n* Can be all zeros"
-          },
-          "enhancedSchemeData.regularHoursWorked": {
-            "type": "string",
-            "description": "The hours worked.\n* maxLength: 7\n* Must not be empty\n* Can be all zeros"
-          },
-          "enhancedSchemeData.requestName": {
-            "type": "string",
-            "description": "The name of the person requesting temporary services.\n* maxLength: 40\n* Must not be all zeros\n* Must not be all spaces"
-          },
-          "enhancedSchemeData.tempStartDate": {
-            "type": "string",
-            "description": "The billing period start date.\n* Format: ddMMyy\n* maxLength: 6"
-          },
-          "enhancedSchemeData.tempWeekEnding": {
-            "type": "string",
-            "description": "The billing period end date.\n* Format: ddMMyy\n* maxLength: 6"
-          },
-          "enhancedSchemeData.totalTaxAmount": {
-            "type": "string",
-            "description": "The total tax amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes). For example, 2000 means USD 20.00\n* maxLength: 12"
           }
         },
         "additionalProperties": {
@@ -103878,6 +103758,16 @@
           "merchantAccount": {
             "type": "string",
             "description": "The merchant account identifier, with which you want to process the transaction."
+          },
+          "shopperReference": {
+            "maxLength": 256,
+            "type": "string",
+            "description": "Your reference to uniquely identify the shopper that owns the `storedPaymentMethodId`. Required when `storedPaymentMethodId` is provided."
+          },
+          "storedPaymentMethodId": {
+            "maxLength": 64,
+            "type": "string",
+            "description": "The unique identifier of the stored payment method to look up, as returned by [`/storedPaymentMethods`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/get/storedPaymentMethods). Use this to get the details of a stored card that is not present at charge time.\n\nWhen provided, `shopperReference` is required and you must not include `cardNumber` or `encryptedCardNumber`."
           },
           "supportedBrands": {
             "type": "array",
@@ -111941,7 +111831,7 @@
       },
       "CalculationType": {
         "enum": [
-          "LRS_TCS"
+          "lrsTcs"
         ],
         "type": "string",
         "x-ms-enum": {
@@ -111949,7 +111839,7 @@
           "modelAsString": false,
           "values": [
             {
-              "value": "LRS_TCS",
+              "value": "lrsTcs",
               "name": "LrsTcs"
             }
           ]
@@ -112028,7 +111918,7 @@
                 "$ref": "#/components/schemas/RemittancePurpose"
               }
             ],
-            "description": "The purpose of the remittance under the Liberalised Remittance Scheme. Possible values:\n\n* **TOUR_PROGRAMME**: a tour program.\n* **TRAVEL_NON_TOUR**: travel that is not a tour program.\n* **EDUCATION**: education.\n* **DIGITAL**: digital services.\n"
+            "description": "The purpose of the remittance under the Liberalised Remittance Scheme. Possible values:\n\n* **tourProgramme**: a tour program.\n* **travelNonTour**: travel that is not a tour program.\n* **education**: education.\n* **digital**: digital services.\n"
           },
           "sublimitStatus": {
             "allOf": [
@@ -112036,7 +111926,7 @@
                 "$ref": "#/components/schemas/SublimitStatus"
               }
             ],
-            "description": "The status of the INR 1 million Liberalised Remittance Scheme sublimit. Possible values:\n\n* **EXCEEDED**: the sublimit is exceeded.\n* **NOT_EXCEEDED**: the sublimit is not exceeded.\n"
+            "description": "The status of the INR 1 million Liberalised Remittance Scheme sublimit. Possible values:\n\n* **exceeded**: the sublimit is exceeded.\n* **notExceeded**: the sublimit is not exceeded.\n"
           }
         }
       },
@@ -112060,10 +111950,10 @@
       },
       "RemittancePurpose": {
         "enum": [
-          "TOUR_PROGRAMME",
-          "TRAVEL_NON_TOUR",
-          "EDUCATION",
-          "DIGITAL"
+          "tourProgramme",
+          "travelNonTour",
+          "education",
+          "digital"
         ],
         "type": "string",
         "x-ms-enum": {
@@ -112071,19 +111961,19 @@
           "modelAsString": false,
           "values": [
             {
-              "value": "TOUR_PROGRAMME",
+              "value": "tourProgramme",
               "name": "TourProgramme"
             },
             {
-              "value": "TRAVEL_NON_TOUR",
+              "value": "travelNonTour",
               "name": "TravelNonTour"
             },
             {
-              "value": "EDUCATION",
+              "value": "education",
               "name": "Education"
             },
             {
-              "value": "DIGITAL",
+              "value": "digital",
               "name": "Digital"
             }
           ]
@@ -112191,8 +112081,8 @@
       },
       "SublimitStatus": {
         "enum": [
-          "EXCEEDED",
-          "NOT_EXCEEDED"
+          "exceeded",
+          "notExceeded"
         ],
         "type": "string",
         "x-ms-enum": {
@@ -112200,11 +112090,11 @@
           "modelAsString": false,
           "values": [
             {
-              "value": "EXCEEDED",
+              "value": "exceeded",
               "name": "Exceeded"
             },
             {
-              "value": "NOT_EXCEEDED",
+              "value": "notExceeded",
               "name": "NotExceeded"
             }
           ]
@@ -112298,7 +112188,7 @@
                 "$ref": "#/components/schemas/CalculationType"
               }
             ],
-            "description": "The type of tax calculated. Supported value: **LRS_TCS**, the Indian Liberalised Remittance Scheme Tax Collected at Source."
+            "description": "The type of tax calculated. Supported value: **lrsTcs**, the Indian Liberalised Remittance Scheme Tax Collected at Source."
           }
         }
       },
@@ -112316,7 +112206,7 @@
                 "$ref": "#/components/schemas/CalculationType"
               }
             ],
-            "description": "The type of tax calculation. Supported value: **LRS_TCS**, the Indian Liberalised Remittance Scheme Tax Collected at Source."
+            "description": "The type of tax calculation. Supported value: **lrsTcs**, the Indian Liberalised Remittance Scheme Tax Collected at Source."
           },
           "lrs": {
             "allOf": [
@@ -114029,9 +113919,6 @@
             "$ref": "#/components/schemas/AdditionalDataCommon"
           },
           {
-            "$ref": "#/components/schemas/AdditionalDataLevel23"
-          },
-          {
             "$ref": "#/components/schemas/AdditionalDataLodging"
           },
           {
@@ -114054,9 +113941,6 @@
           },
           {
             "$ref": "#/components/schemas/AdditionalDataSubMerchant"
-          },
-          {
-            "$ref": "#/components/schemas/AdditionalDataTemporaryServices"
           },
           {
             "$ref": "#/components/schemas/AdditionalDataWallets"
@@ -114180,9 +114064,6 @@
             "$ref": "#/components/schemas/AdditionalDataCommon"
           },
           {
-            "$ref": "#/components/schemas/AdditionalDataLevel23"
-          },
-          {
             "$ref": "#/components/schemas/AdditionalDataLodging"
           },
           {
@@ -114205,9 +114086,6 @@
           },
           {
             "$ref": "#/components/schemas/AdditionalDataSubMerchant"
-          },
-          {
-            "$ref": "#/components/schemas/AdditionalDataTemporaryServices"
           },
           {
             "$ref": "#/components/schemas/AdditionalDataWallets"
@@ -114248,9 +114126,6 @@
             "$ref": "#/components/schemas/AdditionalDataCommon"
           },
           {
-            "$ref": "#/components/schemas/AdditionalDataLevel23"
-          },
-          {
             "$ref": "#/components/schemas/AdditionalDataLodging"
           },
           {
@@ -114273,9 +114148,6 @@
           },
           {
             "$ref": "#/components/schemas/AdditionalDataSubMerchant"
-          },
-          {
-            "$ref": "#/components/schemas/AdditionalDataTemporaryServices"
           },
           {
             "$ref": "#/components/schemas/AdditionalDataWallets"
@@ -114445,9 +114317,6 @@
             "$ref": "#/components/schemas/AdditionalDataCommon"
           },
           {
-            "$ref": "#/components/schemas/AdditionalDataLevel23"
-          },
-          {
             "$ref": "#/components/schemas/AdditionalDataLodging"
           },
           {
@@ -114470,9 +114339,6 @@
           },
           {
             "$ref": "#/components/schemas/AdditionalDataSubMerchant"
-          },
-          {
-            "$ref": "#/components/schemas/AdditionalDataTemporaryServices"
           },
           {
             "$ref": "#/components/schemas/AdditionalDataWallets"
@@ -114499,9 +114365,6 @@
             "$ref": "#/components/schemas/AdditionalDataCommon"
           },
           {
-            "$ref": "#/components/schemas/AdditionalDataLevel23"
-          },
-          {
             "$ref": "#/components/schemas/AdditionalDataLodging"
           },
           {
@@ -114524,9 +114387,6 @@
           },
           {
             "$ref": "#/components/schemas/AdditionalDataSubMerchant"
-          },
-          {
-            "$ref": "#/components/schemas/AdditionalDataTemporaryServices"
           },
           {
             "$ref": "#/components/schemas/AdditionalDataWallets"
@@ -162610,7 +162470,7 @@
           "not": { }
         }
       },
-      "PaymentService_v68_AdditionalDataLevel23": {
+      "AdditionalDataLevel23": {
         "type": "object",
         "properties": {
           "enhancedSchemeData.customerReference": {
@@ -163142,7 +163002,7 @@
           "not": { }
         }
       },
-      "PaymentService_v68_AdditionalDataTemporaryServices": {
+      "AdditionalDataTemporaryServices": {
         "type": "object",
         "properties": {
           "enhancedSchemeData.customerReference": {
@@ -232620,9 +232480,6 @@
                 "$ref": "#/components/schemas/AdditionalDataCommon"
               },
               {
-                "$ref": "#/components/schemas/AdditionalDataLevel23"
-              },
-              {
                 "$ref": "#/components/schemas/AdditionalDataLodging"
               },
               {
@@ -232645,9 +232502,6 @@
               },
               {
                 "$ref": "#/components/schemas/AdditionalDataSubMerchant"
-              },
-              {
-                "$ref": "#/components/schemas/AdditionalDataTemporaryServices"
               },
               {
                 "$ref": "#/components/schemas/AdditionalDataWallets"
@@ -232771,9 +232625,6 @@
                 "$ref": "#/components/schemas/AdditionalDataCommon"
               },
               {
-                "$ref": "#/components/schemas/AdditionalDataLevel23"
-              },
-              {
                 "$ref": "#/components/schemas/AdditionalDataLodging"
               },
               {
@@ -232796,9 +232647,6 @@
               },
               {
                 "$ref": "#/components/schemas/AdditionalDataSubMerchant"
-              },
-              {
-                "$ref": "#/components/schemas/AdditionalDataTemporaryServices"
               },
               {
                 "$ref": "#/components/schemas/AdditionalDataWallets"
@@ -232839,9 +232687,6 @@
                 "$ref": "#/components/schemas/AdditionalDataCommon"
               },
               {
-                "$ref": "#/components/schemas/AdditionalDataLevel23"
-              },
-              {
                 "$ref": "#/components/schemas/AdditionalDataLodging"
               },
               {
@@ -232864,9 +232709,6 @@
               },
               {
                 "$ref": "#/components/schemas/AdditionalDataSubMerchant"
-              },
-              {
-                "$ref": "#/components/schemas/AdditionalDataTemporaryServices"
               },
               {
                 "$ref": "#/components/schemas/AdditionalDataWallets"
@@ -233036,9 +232878,6 @@
                 "$ref": "#/components/schemas/AdditionalDataCommon"
               },
               {
-                "$ref": "#/components/schemas/AdditionalDataLevel23"
-              },
-              {
                 "$ref": "#/components/schemas/AdditionalDataLodging"
               },
               {
@@ -233061,9 +232900,6 @@
               },
               {
                 "$ref": "#/components/schemas/AdditionalDataSubMerchant"
-              },
-              {
-                "$ref": "#/components/schemas/AdditionalDataTemporaryServices"
               },
               {
                 "$ref": "#/components/schemas/AdditionalDataWallets"
@@ -233090,9 +232926,6 @@
                 "$ref": "#/components/schemas/AdditionalDataCommon"
               },
               {
-                "$ref": "#/components/schemas/AdditionalDataLevel23"
-              },
-              {
                 "$ref": "#/components/schemas/AdditionalDataLodging"
               },
               {
@@ -233115,9 +232948,6 @@
               },
               {
                 "$ref": "#/components/schemas/AdditionalDataSubMerchant"
-              },
-              {
-                "$ref": "#/components/schemas/AdditionalDataTemporaryServices"
               },
               {
                 "$ref": "#/components/schemas/AdditionalDataWallets"

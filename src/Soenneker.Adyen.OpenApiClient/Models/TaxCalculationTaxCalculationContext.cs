@@ -28,7 +28,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The type of tax calculation. Supported value: **LRS_TCS**, the Indian Liberalised Remittance Scheme Tax Collected at Source.</summary>
+        /// <summary>The type of tax calculation. Supported value: **lrsTcs**, the Indian Liberalised Remittance Scheme Tax Collected at Source.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationContextCalculationType? CalculationType { get => _explicitNullValueCalculationType; set { _explicitNullValueCalculationType = value; AdditionalData?.Remove("calculationType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("calculationType"); else _explicitNullProperties?.Remove("calculationType"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationContextCalculationType? _explicitNullValueCalculationType = default!;
         /// <summary>The shopper&apos;s declarations for the Indian Liberalised Remittance Scheme (LRS).</summary>

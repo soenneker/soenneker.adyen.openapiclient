@@ -3,15 +3,15 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>The status of the INR 1 million Liberalised Remittance Scheme sublimit. Possible values:* **EXCEEDED**: the sublimit is exceeded.* **NOT_EXCEEDED**: the sublimit is not exceeded.</summary>
+    /// <summary>The status of the INR 1 million Liberalised Remittance Scheme sublimit. Possible values:* **exceeded**: the sublimit is exceeded.* **notExceeded**: the sublimit is not exceeded.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum LrsContextSublimitStatus
     {
-        [EnumMember(Value = "EXCEEDED")]
+        [EnumMember(Value = "exceeded")]
         #pragma warning disable CS1591
         Exceeded,
         #pragma warning restore CS1591
-        [EnumMember(Value = "NOT_EXCEEDED")]
+        [EnumMember(Value = "notExceeded")]
         #pragma warning disable CS1591
         NotExceeded,
         #pragma warning restore CS1591
